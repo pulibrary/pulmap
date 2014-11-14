@@ -1,0 +1,5 @@
+# Igonore Config files
+
+/config/database.yml
+/config/secrets.yml
+/config/solr.yml
