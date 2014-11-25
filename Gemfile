@@ -45,5 +45,5 @@ gem "geoblacklight", '~> 0.0.8'
 # gem "geoblacklight", github: "geoblacklight/geoblacklight"
 gem "jettywrapper"
 gem "devise"
-gem 'devise_cas_authenticatable'
 gem "devise-guests", "~> 0.3"
+gem "omniauth-cas"
