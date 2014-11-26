@@ -17,14 +17,18 @@ class User < ActiveRecord::Base
     username
   end
 
+
   def self.find_for_cas(access_token, signed_in_resource=nil)
     logger.debug "#{access_token.inspect}"
-    username = access_token.uid
-    user = User.where(:username => username).first
-
-    unless user
-        user = User.create(username: username)
+  
+    @user = User.where(provider: access_token.provider, uid: access_token.uid).first_or_create do |user|
+      user.uid = access_token.uid
+      user.username = access_token.uid
+      user.email = "#{access_token.uid}@princeton.edu" 
+      user.password = Devise.friendly_token[0,20]
+      user.provider = access_token.provider
     end
-    user
+    @user
   end
 end
+
