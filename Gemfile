@@ -41,7 +41,7 @@ gem 'spring',        group: :development
 
 
 gem "blacklight"
-gem "geoblacklight", '~> 0.1.0'
+gem "geoblacklight", '~> 0.3.4'
 # gem "geoblacklight", github: "geoblacklight/geoblacklight"
 gem "jettywrapper"
 gem "devise"
