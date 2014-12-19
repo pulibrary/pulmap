@@ -1,5 +1,5 @@
 # Institution deployed at
-INSTITUTION: 'Stanford'
+INSTITUTION: 'Princeton'
 
 # (For external Download) timeout and open_timeout parameters for Faraday
 TIMEOUT_DOWNLOAD: 16
