@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20141125233220) do
 
-  create_table "bookmarks", force: true do |t|
+  create_table "bookmarks", force: :cascade do |t|
     t.integer  "user_id",       null: false
     t.string   "user_type"
     t.string   "document_id"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20141125233220) do
 
   add_index "bookmarks", ["user_id"], name: "index_bookmarks_on_user_id"
 
-  create_table "searches", force: true do |t|
+  create_table "searches", force: :cascade do |t|
     t.text     "query_params"
     t.integer  "user_id"
     t.string   "user_type"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20141125233220) do
 
   add_index "searches", ["user_id"], name: "index_searches_on_user_id"
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
