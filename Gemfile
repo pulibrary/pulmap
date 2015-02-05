@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
+gem 'rails', '4.1.8'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem 'pg'
@@ -45,4 +45,6 @@ gem "geoblacklight", github: "geoblacklight/geoblacklight"
 gem "jettywrapper"
 gem "devise"
 gem "devise-guests", "~> 0.3"
+gem "rails-assets-leaflet-iiif", "~> 0.0.3", source: "https://rails-assets.org"
+gem "rails-assets-readmore", source: "https://rails-assets.org"
 gem "omniauth-cas"
