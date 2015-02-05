@@ -68,12 +68,12 @@ class CatalogController < ApplicationController
     #    :years_25 => { :label => 'within 25 Years', :fq => "pub_date:[#{Time.now.year - 25 } TO *]" }
     # }
 
-    config.add_facet_field 'dct_provenance_s', :label => 'Institution', :limit => 7
-    config.add_facet_field 'dc_creator_sm', :label => 'Author', :limit => 6
-    config.add_facet_field 'dc_publisher_s', :label => 'Publisher', :limit => 6
-    config.add_facet_field 'dc_subject_sm', :label => 'Subject', :limit => 6
-    config.add_facet_field 'dct_spatial_sm', :label => 'Place', :limit => 6
-    config.add_facet_field 'dct_isPartOf_sm', :label => 'Collection', :limit => 6
+    config.add_facet_field 'dct_provenance_s', label: 'Institution', limit: 8, partial: "icon_facet"
+    config.add_facet_field 'dc_creator_sm', :label => 'Author', :limit => 8
+    config.add_facet_field 'dc_publisher_s', :label => 'Publisher', :limit => 8
+    config.add_facet_field 'dc_subject_sm', :label => 'Subject', :limit => 8
+    config.add_facet_field 'dct_spatial_sm', :label => 'Place', :limit => 8
+    config.add_facet_field 'dct_isPartOf_sm', :label => 'Collection', :limit => 8
 
     config.add_facet_field 'solr_year_i', :label => 'Year', :limit => 10, :range => {
       # :num_segments => 6,
@@ -81,11 +81,9 @@ class CatalogController < ApplicationController
       # :segments => true
     }
 
-    config.add_facet_field 'dc_rights_s', :label => 'Access', :limit => 3
-    config.add_facet_field 'layer_geom_type_s', :label => 'Data type', :limit => 5
-    config.add_facet_field 'dc_format_s', :label => 'Format', :limit => 3
-    config.add_facet_field 'dc_language_s', :label => 'Language', :limit => 3
-
+    config.add_facet_field 'dc_rights_s', label: 'Access', limit: 8, partial: "icon_facet"
+    config.add_facet_field 'layer_geom_type_s', label: 'Data type', limit: 8, partial: "icon_facet"
+    config.add_facet_field 'dc_format_s', :label => 'Format', :limit => 8
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -113,22 +111,19 @@ class CatalogController < ApplicationController
 
 
     # solr fields to be displayed in the show (single result) view
-    #   The ordering of the field names is the order of the display
-    # config.add_show_field 'dc_title_t', :label => 'Title:'
-    # config.add_show_field 'title_display', :label => 'Title:'
-    # config.add_show_field 'title_vern_display', :label => 'Title:'
-    # config.add_show_field 'subtitle_display', :label => 'Subtitle:'
-    # config.add_show_field 'subtitle_vern_display', :label => 'Subtitle:'
-    # config.add_show_field 'author_display', :label => 'Author:'
-    # config.add_show_field 'author_vern_display', :label => 'Author:'
-    # config.add_show_field 'format', :label => 'Format:'
-    # config.add_show_field 'url_fulltext_display', :label => 'URL:'
-    # config.add_show_field 'url_suppl_display', :label => 'More Information:'
-    # config.add_show_field 'language_facet', :label => 'Language:'
-    # config.add_show_field 'published_display', :label => 'Published:'
-    # config.add_show_field 'published_vern_display', :label => 'Published:'
-    # config.add_show_field 'lc_callnum_display', :label => 'Call number:'
-    # config.add_show_field 'isbn_t', :label => 'ISBN:'
+    #  The ordering of the field names is the order of the display
+    #
+    # item_prop: [String] property given to span with Schema.org item property
+    # link_to_search: [Boolean] that can be passed to link to a facet search
+    # helper_method: [Symbol] method that can be used to render the value
+    config.add_show_field 'dc_creator_sm', label: 'Author(s)', itemprop: 'author'
+    config.add_show_field 'dc_description_s', label: 'Description', itemprop: 'description', helper_method: :render_value_as_truncate_abstract
+    config.add_show_field 'dc_publisher_s', label: 'Publisher', itemprop: 'publisher'
+    config.add_show_field 'dct_isPartOf_sm', label: 'Collection', itemprop: 'isPartOf'
+    config.add_show_field 'dct_spatial_sm', label: 'Place(s)', itemprop: 'spatial', link_to_search: true
+    config.add_show_field 'dc_subject_sm', label: 'Subject(s)', itemprop: 'keywords', link_to_search: true
+    config.add_show_field 'dct_temporal_sm', label: 'Year', itemprop: 'temporal'
+    config.add_show_field 'dct_provenance_s', label: 'Held by', link_to_search: true
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
