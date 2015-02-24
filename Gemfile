@@ -40,11 +40,10 @@ gem 'spring',group: :development
 # gem 'debugger', group: [:development, :test]
 
 
-gem "blacklight"
-gem "geoblacklight",github: "geoblacklight/geoblacklight"
+
+gem "blacklight", '~> 5.9.3'
+gem "geoblacklight", '~> 0.7.0'
 gem "jettywrapper"
 gem "devise"
-gem "devise-guests", "~> 0.3"
-gem "rails-assets-leaflet-iiif","~> 0.0.3", source: "https://rails-assets.org"
-gem "rails-assets-readmore",source: "https://rails-assets.org"
+gem "devise-guests", "~> 0.3.3"
 gem "omniauth-cas"
