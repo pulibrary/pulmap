@@ -42,7 +42,7 @@ gem 'spring',group: :development
 
 
 gem "blacklight", '~> 5.9.3'
-gem "geoblacklight", '~> 0.7.0'
+gem "geoblacklight", '~> 0.8.0'
 gem "jettywrapper"
 gem "devise"
 gem "devise-guests", "~> 0.3.3"
