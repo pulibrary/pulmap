@@ -21,6 +21,8 @@ class CatalogController < ApplicationController
      :q => '{!raw f=layer_slug_s v=$id}'
     }
 
+    config.search_builder_class = Geoblacklight::SearchBuilder
+
     # solr field configuration for search results/index views
     # config.index.show_link = 'title_display'
     # config.index.record_display_type = 'format'
@@ -205,11 +207,20 @@ class CatalogController < ApplicationController
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
     config.spell_max = 5
-    
+
     # Custom tools for GeoBlacklight
-    config.add_show_tools_partial :web_services, if: proc { |_context, _config, options| (Settings.WEBSERVICES_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any? }
-    config.show.document_actions.delete(:sms)
-    config.show.document_actions.delete(:citation)
+    config.add_show_tools_partial :web_services, if: proc { |_context, _config, options| options[:document] && (Settings.WEBSERVICES_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any? }
+    config.add_show_tools_partial :metadata, if: proc { |_context, _config, options| options[:document] && (Settings.METADATA_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any? }
+    config.add_show_tools_partial :exports, partial: 'exports', if: proc { |_context, _config, options| options[:document] }
+    config.add_show_tools_partial :downloads, partial: 'downloads', if: proc { |_context, _config, options| options[:document] }
+
+    # Configure basemap provider for GeoBlacklight maps (uses https only basemap
+    # providers with open licenses)
+    # Valid basemaps include:
+    # 'mapquest' http://developer.mapquest.com/web/products/open/map
+    # 'positron' http://cartodb.com/basemaps/
+    # 'darkMatter' http://cartodb.com/basemaps/
+    config.basemap_provider = 'mapquest'
   end
 
 
