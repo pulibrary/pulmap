@@ -24,8 +24,8 @@ set :scm, :git
 # Default value for :log_level is :debug
 set :log_level, :debug
 
-# Default value for :pty is false
-# set :pty, true
+# need tty for sudo 
+set :pty, true
 
 # Default value for :linked_files is []
 set :linked_files, fetch(:linked_files, []).push('config/blacklight.yml', 'config/database.yml', 'config/secrets.yml')
@@ -38,6 +38,9 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+
+# pasenger needs sudo for restart
+set :passenger_restart_with_sudo, true
 
 namespace :deploy do
 
