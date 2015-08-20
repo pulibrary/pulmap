@@ -39,7 +39,11 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+##
 # pasenger needs sudo for restart
+# Steps on server:
+# 1. Create file: /etc/sudoers.d/deployer_username
+# 2. Add to file: deployer_username ALL=(ALL) NOPASSWD:/usr/bin/env,/usr/local/bin/passenger-config
 set :passenger_restart_with_sudo, true
 
 namespace :deploy do
