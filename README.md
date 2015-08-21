@@ -1,6 +1,19 @@
-Geoblacklight
+Pulmap
 ======
 
-[![Join the chat at https://gitter.im/pulibrary/pulmap](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/pulibrary/pulmap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+GeoBlacklight for Princeton University Library
 
-Princeton University Library Geoblacklight application.
+###Installation
+```
+bundle
+cp config/blacklight.yml.tmpl config/blacklight.yml
+cp config/database.yml.tmpl config/database.yml
+cp config/secrets.yml.tmpl config/secrets.yml
+rake db:migrate
+rake jetty:download
+rake jetty:unzip
+rake geoblacklight:configure_solr
+rake jetty:start
+rake geoblacklight:solr:seed
+rails server
+```
