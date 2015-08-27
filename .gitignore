@@ -19,5 +19,6 @@
 # Igonore Config files
 /config/database.yml
 /config/secrets.yml
+/config/blacklight.yml
 
 /jetty
