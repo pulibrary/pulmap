@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use sqlite3 as the database for Active Record
@@ -39,21 +38,24 @@ gem 'capistrano-rails'
 gem 'capistrano-bundler'
 gem 'capistrano-passenger'
 
+gem 'coveralls', require: false
+
 group :development, :test do
+  gem 'byebug'
+  gem 'web-console', '~> 2.0'
+  gem 'spring'
   gem 'rspec-rails', '~> 3.1.0'
   gem 'capybara'
   gem 'poltergeist'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
-  gem 'byebug'
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
 end
 
-gem 'blacklight'
-gem 'geoblacklight'
+gem 'blacklight', '~> 5.12.1'
+gem 'geoblacklight', '~> 0.10.2'
 gem 'jettywrapper'
 gem 'rsolr', '~> 1.0.6'
 gem 'devise'
 gem "devise-guests", "~> 0.3.3"
 gem "omniauth-cas"
+gem 'twitter-typeahead-rails'
