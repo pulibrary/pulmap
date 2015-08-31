@@ -8,8 +8,6 @@ ZIP_URL = "https://github.com/projectblacklight/blacklight-jetty/archive/v#{BLAC
 require 'jettywrapper'
 require 'rspec/core/rake_task'
 
-RSpec::Core::RakeTask.new(:spec)
-
 desc 'Execute the test build that runs on travis'
 task ci: [:environment] do
   if Rails.env.test?

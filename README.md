@@ -3,6 +3,10 @@ Pulmap
 
 GeoBlacklight for Princeton University Library
 
+[![Build Status](https://travis-ci.org/pulibrary/pulmap.png?branch=master)](https://travis-ci.org/pulibrary/pulmap)
+[![Coverage Status](https://coveralls.io/repos/pulibrary/pulmap/badge.png)](https://coveralls.io/r/pulibrary/pulmap)
+
+
 ###Installation
 ```
 bundle
