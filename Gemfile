@@ -44,7 +44,6 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'rspec-rails', '~> 3.1.0'
   gem 'capybara'
   gem 'poltergeist'
   gem 'factory_girl_rails'
@@ -53,6 +52,7 @@ end
 
 gem 'blacklight', '~> 5.12.1'
 gem 'geoblacklight', '~> 0.10.2'
+gem 'rspec-rails', '~> 3.1.0'
 gem 'jettywrapper'
 gem 'rsolr', '~> 1.0.6'
 gem 'devise'
