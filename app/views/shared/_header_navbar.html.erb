@@ -1,21 +1,26 @@
-<header role="header">
-  <div id="header-navbar" class="l-branding__pul" role="navigation">
+<header role="banner">
+  <div class="l-branding__pul">
     <div class="container">
       <%= link_to root_path, class: "logo__pul" do %>
         <%= image_tag("library_full_logo.svg", class: "logo-svg") %>
         <%= image_tag("library_full_logo.png", class: "logo-no-svg") %>
       <% end %>
+            <div class="pull-right menu--level-1 col-xs-12 col-sm-6">
+        <ul>
+          <li><a href="http://library.princeton.edu/help/contact-us">Contact Us</a></li>
+          <%= render :partial=>'/account' %>
+        </ul>
+      </div>
     </div>
   </div>
 
-  <%# if controller_name == 'catalog' && has_search_parameters? %>
-    <div id="search-navbar" class="navbar navbar-default navbar-static-top" role="navigation">
-      <div class="container">
-        <%= render_search_bar  %>
-        <div class="collapse navbar-collapse" id="user-util-collapse">
-          <%= render :partial=>'/user_util_links' %>
-        </div>
+  <div class="header__secondary">
+    <nav class="container" role="navigation">
+      <div id="search-navbar" class="col-xs-12 col-sm-12 col-md-8" role="search">
+        <%= render_search_bar %>
       </div>
-    </div>
-  <%# end %>
+      <%= render :partial=>'/user_util_links' %>
+    </nav>
+  </div>
+
 </header>
