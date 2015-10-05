@@ -19,5 +19,4 @@
 //= require_tree .
 
 //= require modernizr
-
 //= require twitter/typeahead.min

@@ -2,6 +2,11 @@
 
 GeoBlacklight.Viewer.Map = GeoBlacklight.Viewer.Map.extend({
 
+  // override initial bbox
+  options: {
+    bbox: [[-28, -177], [73, 175]]
+  },
+
   // options for leaflet map
   mapOptions: {
     scrollWheelZoom: false,

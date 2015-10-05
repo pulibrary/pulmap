@@ -12,7 +12,7 @@ Blacklight.onLoad(function() {
         window.location.href = this.getSearchUrl();
       },
       // staticButton: button,
-      staticButton: '<button type="button" class="btn btn-primary search-btn">Search Map Area</button>'
+      staticButton: '<button type="button" class="btn btn-primary search-btn">Map - - </button>'
     }));
   });
 });
