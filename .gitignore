@@ -27,3 +27,5 @@
 
 # Ignore linter config
 .eslintrc
+
+/public/assets
