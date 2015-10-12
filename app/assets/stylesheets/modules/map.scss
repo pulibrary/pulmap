@@ -1,0 +1,14 @@
+$basemap-color: #ccdddd;
+/* $basemap-color: #cdd2d4; */
+
+.leaflet-container {
+  background-color: $basemap-color;
+}
+
+.leaflet-container[data-protocol="iiif"] {
+  background-color: white;
+
+  .leaflet-control-attribution {
+    display: none;
+  }
+}

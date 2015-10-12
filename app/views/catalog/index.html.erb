@@ -1,7 +1,6 @@
-<% unless has_search_parameters? %>
-  <%# if there are no input/search related params, display the "home" partial -%>
-  <%= render 'home' %>
-<% else %>
+<% if has_search_parameters? %>
+    <%= render :partial=>'/flash_msg', layout: 'shared/flash_messages' %>
+
     <div class="col-md-12">
         <%= render 'search_header' %>
     </div>
@@ -14,4 +13,7 @@
   <div id="content" class="col-md-9 col-sm-8">
     <%= render 'search_results' %>
   </div>
+<% else %>
+  <%# if there are no input/search related params, display the "home" partial -%>
+  <%= render 'home' %>
 <% end %>

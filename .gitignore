@@ -21,3 +21,11 @@
 
 /jetty
 /coverage
+
+# Ignore node modules
+/node_modules
+
+# Ignore linter config
+.eslintrc
+
+/public/assets

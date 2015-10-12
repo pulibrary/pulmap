@@ -12,12 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/typeahead.min
+//= require modules/autocomplete
 
-//
 // Required by Blacklight
 //= require blacklight/blacklight
 //= require_tree .
 
 //= require modernizr
-
-//= require twitter/typeahead.min

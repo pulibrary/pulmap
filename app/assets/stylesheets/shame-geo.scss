@@ -1,0 +1,52 @@
+.home-secondary-navbar {
+    z-index: 9000;
+    box-shadow: 0 4px 8px -2px rgba(0,0,0,0.2);
+}
+
+/* Overlay the search bar on landing page map*/
+.search-bar-overlay {
+   position: absolute;
+   top: 415px;
+   width: 100%;
+}
+
+.mask {
+  background-color: black;
+  height: 80px;
+  opacity: 0.1;
+}
+
+
+.home-search {
+  .search_q.form-control,
+  .search_loc,
+  .search-btn {
+    width: 100%;
+    height: 46px;
+    /*border-radius: 0px;*/
+  }
+}
+
+main {
+    padding: 0 0 0;
+}
+
+/* Keeps user menu on top */
+.l-branding__pul .menu--level-1,
+.l-branding__pul .logo__pul {
+  height: 40px;
+  position: relative;
+  z-index: 9999;
+}
+
+/* brand sizing */
+.pulmap-brand {
+  height: 100%;
+}
+
+/* resize secondary header */
+@media (min-width: $bp-medium) {
+    .header__secondary .container {
+        height: 50px;
+    }
+}
