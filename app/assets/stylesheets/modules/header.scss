@@ -6,7 +6,7 @@
 }
 
 .svg .logo-svg {
-    display: inline-block;
+    display: block;
     max-width: 100%;
 }
 
@@ -15,7 +15,8 @@
 }
 
 .logo__pul {
-    height: 43px;
+    position: relative;
+    height: 33px;
     display: inline-block;
     img {
         position: relative;
@@ -23,19 +24,20 @@
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
+        height: 18px;
     }
 }
 
 .l-branding__pul {
     background: $dark-gray;
     border-top: 3px solid $orange;
-    min-height: 40px;
-    height: 85px;
+    min-height: 30px;
+    // height: 85px;
     position: relative;
 }
 
 @media (min-width: $bp-small) {
     .l-branding__pul {
-        height: 43px;
+        height: 33px;
     }
 }

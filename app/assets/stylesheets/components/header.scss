@@ -4,12 +4,12 @@
 .l-branding__pul {
     background: $dark-gray;
     border-top: 3px solid $orange;
-    min-height: 40px;
+    min-height: 30px;
     height: 85px;
     position: relative;
     .menu--level-1,
     .logo__pul {
-        height: 40px;
+        height: 30px;
         position: relative;
         z-index: 10;
     }
@@ -29,7 +29,7 @@
 
 @media (min-width: $bp-small) {
     .l-branding__pul {
-        height: 43px;
+        height: 33px;
     }
 }
 @media (max-width: $bp-small) {
@@ -48,9 +48,13 @@
         background: none;
         border: none;
     }
+    > li > a {
+        letter-spacing: 0.03em;
+        display: block;
+    }
     > li {
         float: left;
-        padding: 0 20px;
+        padding: 0 15px;
         border-right: 1px solid darken($gray, 40%);
         &:last-child {
             border-right: none;
