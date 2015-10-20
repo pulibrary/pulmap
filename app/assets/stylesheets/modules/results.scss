@@ -1,0 +1,15 @@
+.constraints-container {
+    background: none;
+    border: none;
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: none;
+}
+
+#documents {
+    margin-bottom: 2em;
+
+    > .document:last-child {
+        border: none;
+    }
+}
