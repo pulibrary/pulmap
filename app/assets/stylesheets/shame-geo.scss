@@ -1,52 +1,52 @@
-// .home-secondary-navbar {
-//     z-index: 9000;
-//     box-shadow: 0 4px 8px -2px rgba(0,0,0,0.2);
-// }
+.search-bar-overlay {
+    position: absolute;
+    top: 415px;
 
-// /* Overlay the search bar on landing page map*/
-// .search-bar-overlay {
-//    position: absolute;
-//    top: 415px;
-//    width: 100%;
-// }
+    width: 100%;
+}
 
-// .mask {
-//   background-color: black;
-//   height: 80px;
-//   opacity: 0.1;
-// }
+.mask {
+    height: 80px;
+    opacity: 0.1;
 
+    background-color: black;
+}
 
-// .home-search {
-//   .search_q.form-control,
-//   .search_loc,
-//   .search-btn {
-//     width: 100%;
-//     height: 46px;
-//     /*border-radius: 0px;*/
-//   }
-// }
+.home-search {
+    .search_q.form-control,    .search_loc,    .search-btn {
+        height: 46px;
+        width: 100%;
+    }
+}
 
-// main {
-//     padding: 0 0 0;
-// }
+main {
+    padding: 0 0 0;
+}
 
-// /* Keeps user menu on top */
-// .l-branding__pul .menu--level-1,
-// .l-branding__pul .logo__pul {
-//   height: 30px;
-//   position: relative;
-//   z-index: 9999;
-// }
+.l-branding__pul .menu--level-1,.l-branding__pul .logo__pul {
+    position: relative;
+    z-index: 9999;
 
-// /* brand sizing */
-// .pulmap-brand {
-//   height: 100%;
-// }
+    height: 30px;
+}
 
-// /* resize secondary header */
-// @media (min-width: $bp-medium) {
-//     .header__secondary .container {
-//         height: 50px;
-//     }
-// }
+.pulmap-brand {
+    height: 100%;
+}
+
+#search-navbar {
+    padding: 0;
+
+    .search-query-form {
+        width: 100%;
+        padding: 0;
+
+        > .input-group {
+            width: 100%;
+        }
+
+        > .input-group .input-group-btn {
+            width: 1%;
+        }
+    }
+}

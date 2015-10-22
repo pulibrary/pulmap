@@ -1,5 +1,5 @@
 [data-map="home"] {
-  height: 400px;
+    height: 400px;
 }
 
 main.home {
@@ -9,12 +9,13 @@ main.home {
 .find-by {
     .category-icon {
         font-size: 6em;
+        text-align: center;
         line-height: 1em;
-        text-align: center;
     }
+
     h4 {
-        text-align: center;
         font-size: 24px;
         font-weight: bold;
+        text-align: center;
     }
 }

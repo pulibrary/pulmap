@@ -1,12 +1,18 @@
 <div class="header__secondary navbar">
 	<nav class="container" role="navigation">
-	  <div id="search-navbar" class="col-xs-12 col-sm-12 col-md-8" role="search">
+	  <div id="search-navbar" class="col-xs-12 col-sm-12 col-md-6" role="search">
 	    <%= render_search_bar %>
 	  </div>
-	  <%= render :partial=>'/user_util_links' %>
-      <button class="facets-toggler">More Filters</button>
+      <div class="navbar-right col-xs-12 col-sm-12 col-md-6">
+            Filter by:
+            <div class="subject-facet">
+              <%= render_facet_tags [:dc_subject_sm] %>
+            </div>
+          <button class="btn btn-default facets-toggler">More Filters</button>
+    	  <%#=# render :partial=>'/user_util_links' -%>
+      </div>
 	</nav>
 </div>
 <div class="container">
-<%= render 'facets' %>
+    <%= render 'facets' %>
 </div>

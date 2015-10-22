@@ -1,19 +1,15 @@
-@import 'modules/typeahead';
-@import 'modules/font-face';
-@import 'modules/header';
-@import 'modules/footer';
+@import 'utils/mixins';
+@import 'utils/variables';
 
-@import 'modules/home';
-@import 'modules/map';
-@import 'modules/results';
-
-@import 'variables/breaks';
-@import 'variables/colors';
-@import 'variables/typography';
-
-@import 'components/facets';
+@import 'components/typeahead';
+@import 'components/font-face';
 @import 'components/header';
+@import 'components/footer';
+
+@import 'components/home';
+@import 'components/map';
+@import 'components/results';
+@import 'components/facets';
 @import 'components/lists';
 
-@import 'shame';
 @import 'shame-geo';

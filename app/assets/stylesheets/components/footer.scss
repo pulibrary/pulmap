@@ -1,26 +1,22 @@
-@import 'variables/colors';
-@import 'variables/typography';
-
-body {
-    background: $light-gray;
-}
-
 main {
     background: $white;
 }
 
 .l-footer {
+    padding: 2em 0;
+
     background-color: $light-gray;
-    margin: 2em 0;
 }
 
 footer {
     h2 {
-        font-size: 16px;
         margin-bottom: 0.75em;
-        font-weight: bold;
+
         color: $dark-orange;
         font-family: $font-serif;
+        font-size: 16px;
+        font-weight: bold;
+
         a {
             color: $dark-orange;
         }
@@ -28,16 +24,14 @@ footer {
 }
 
 footer a {
-    color: black;
+    color: $black;
 }
 
 .l-region--footer .leaf a {
     line-height: 1.75em;
 }
 
-.l-region--footer address,
-.l-region--footer .footer--copyright,
-.l-region--footer li a {
+.l-region--footer address,.l-region--footer .footer--copyright,.l-region--footer li a {
     color: $dark-gray;
     font-size: 0.9em;
 }
@@ -46,65 +40,63 @@ footer a {
     margin-bottom: 0;
 }
 
-.svg .facebook-logo:before,
-.svg .twitter-logo:before,
-.svg .govdocs-logo:before,
-.svg .friends-logo:before,
-.svg .pu-logo:before {
-    content: ' ';
+.svg .facebook-logo:before,.svg .twitter-logo:before,.svg .govdocs-logo:before,.svg .friends-logo:before,.svg .pu-logo:before {
     display: inline-block;
     vertical-align: middle;
+
     height: 100%;
+
+    content: ' ';
 }
 
-.svg .facebook-logo,
-.svg .twitter-logo,
-.svg .govdocs-logo,
-.svg .friends-logo,
-.svg .pu-logo {
-    background-size: contain;
+.svg .facebook-logo,.svg .twitter-logo,.svg .govdocs-logo,.svg .friends-logo,.svg .pu-logo {
     display: inline-block;
-    line-height: 11px;
+
     height: 24px;
+
+    background-size: contain;
+
+    line-height: 11px;
 }
 
-.svg .facebook-logo img,
-.svg .twitter-logo img,
-.svg .govdocs-logo img,
-.svg .friends-logo img,
-.svg .pu-logo img {
+.svg .facebook-logo img,.svg .twitter-logo img,.svg .govdocs-logo img,.svg .friends-logo img,.svg .pu-logo img {
     display: none;
 }
 
 .svg .facebook-logo {
-    background-image: image-url("facebook.svg");
     width: 24px;
     margin: 0 0.2em 0.75em;
+
+    background-image: image-url("facebook.svg");
 }
 
 .svg .twitter-logo {
-    background-image: image-url("twitter.svg");
     width: 24px;
     margin: 0 0.2em 0.75em;
+
+    background-image: image-url("twitter.svg");
 }
 
 .svg .govdocs-logo {
-    background-image: image-url("govdocs.svg");
     width: 24px;
     margin: 0 0.2em 0.75em;
+
+    background-image: image-url("govdocs.svg");
 }
 
 .svg .friends-logo {
-    background-image: image-url("friends.svg");
     width: 85px;
     margin: 0 0.2em 0.75em;
+
+    background-image: image-url("friends.svg");
 }
 
 .svg .pu-logo {
-    background-image: image-url("pu.svg");
-    width: 142px;
     height: 40px;
+    width: 142px;
     margin: 0.5em 0 0;
+
+    background-image: image-url("pu.svg");
 }
 
 .l-region--footer .footer--copyright {
@@ -117,5 +109,6 @@ body {
 
 .l-footer .menu {
     padding: 0;
+
     list-style-type: none;
 }

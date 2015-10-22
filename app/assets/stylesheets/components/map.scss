@@ -1,13 +1,12 @@
 $basemap-color: #ccdddd;
 
-/* $basemap-color: #cdd2d4; */
-
 .leaflet-container {
     background-color: $basemap-color;
 }
 
 .leaflet-container[data-protocol="iiif"] {
     background-color: white;
+
     .leaflet-control-attribution {
         display: none;
     }
@@ -18,13 +17,14 @@ $basemap-color: #ccdddd;
     top: 0px;
     bottom: 0px;
     left: 0px;
+
     background: red;
 }
 
 #map-results {
     position: absolute;
     top: 0px;
+    right: 0px;
     bottom: 0px;
     left: 0px;
-    right: 0px;
 }
