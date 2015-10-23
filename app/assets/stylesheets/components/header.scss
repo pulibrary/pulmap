@@ -80,9 +80,29 @@
 }
 
 .home-secondary-navbar {
-    z-index: 9000;
+    z-index: 10001;
+    border: none;
+    background: $gray;
+    &.navbar {
+        border-radius: 0;
+}
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.2);
 
-    box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.2);
+    .container {
+        height: 70px;
+    }
+    .logo {
+        padding-left: 0;
+    }
+    .logo, .util-links {
+        @include vertical-align();
+    }
+    .navbar-nav {
+        float: right;
+    }
+    .nav > li > a:hover, .nav > li > a:focus {
+        background: none;
+    }
 }
 
 .menu--level-1 > ul {

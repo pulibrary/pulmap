@@ -22,7 +22,17 @@ main.home {
 
 .search-bar-overlay {
     height: 80px;
+
     .home-search {
         @include vertical-align();
+    }
+}
+.container-fluid.map-container {
+    background: black;
+    .leaflet-container {
+        opacity: 0.7;
+    }
+    .leaflet-container.active {
+        opacity: 1;
     }
 }

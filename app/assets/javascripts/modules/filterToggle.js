@@ -14,7 +14,7 @@ $(document).ready(function(){
         $(this).find('.btn').toggleClass('active');
         $(this).find('.btn').toggleClass('btn-primary');
         $(this).find('.btn').toggleClass('btn-default');
-
+        $(".leaflet-container").toggleClass('active');
     });
 
 });

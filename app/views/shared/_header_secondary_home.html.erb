@@ -1,19 +1,25 @@
 <div class="home-secondary-navbar navbar">
   <div class="container" role="navigation">
-
+    <div class="col-md-6 logo">
+      <%= image_tag 'lime.png', {:alt => 'GeoBlacklight', :style => 'height: 25px;', :class => 'pulmap-brand'} %>
+    </div>
+    <div class="col-md-6 util-links">
+      <%= render :partial=>'/user_util_links' -%>
+    </div>
   </div>
 </div>
 
-<div class="container-fluid">
-  <div class="row">
-  <%= content_tag :div, '', id: 'map-front', data: { map: 'home', 'catalog-path'=> catalog_index_path , 'map-bbox' => params[:bbox], basemap: geoblacklight_basemap } %>
-  </div>
-</div>
+<div class="row">
+  <div class="container-fluid map-container">
 
-<div class="search-bar-overlay mask"></div>
+    <%= content_tag :div, '', id: 'map-front', data: { map: 'home', 'catalog-path'=> catalog_index_path , 'map-bbox' => params[:bbox], basemap: geoblacklight_basemap } %>
 
-<div class="container">
-  <div id="floating-search" class="search-bar-overlay col-md-12">
-      <%= render :partial=>'catalog/search_form_home' %>
+    <div class="search-bar-overlay mask"></div>
+
+    <div class="container">
+      <div id="floating-search" class="search-bar-overlay">
+          <%= render :partial=>'catalog/search_form_home' %>
+      </div>
+    </div>
   </div>
 </div>

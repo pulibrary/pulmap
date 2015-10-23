@@ -1,12 +1,12 @@
 .search-bar-overlay {
     position: absolute;
-    top: 405px;
+    top: 423px;
 
     width: 100%;
 }
 
 .mask {
-    height: 80px;
+    // height: 80px;
     opacity: 0.1;
 
     background-color: black;
@@ -55,4 +55,8 @@ main {
             width: 1%;
         }
     }
+}
+
+.navbar + .navbar {
+    margin-top: 0;
 }
