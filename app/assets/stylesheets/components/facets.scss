@@ -23,6 +23,7 @@
 .open > .dropdown-menu {
     min-width: 100%;
     z-index: 1001;
+    display: table;
 }
 
 .primary-facets {
@@ -39,4 +40,42 @@
     outline: none;
     color: $blue;
 
+}
+
+#facets .dropdown-menu {
+    width: 250px;
+    padding: 1em;
+
+    .geoblacklight-icon {
+        margin-right: .5em;
+    }
+
+
+}
+
+.facet-values .facet-count {
+        vertical-align: middle;
+    }
+
+
+    .geoblacklight-icon + .facet-label {
+        display: inline;
+        padding-left: 5px;
+    }
+
+    ul.facet-values {
+        border-spacing: 0.3em;
+        font-size: 0.9em;
+    }
+
+    .dropdown-menu > li > a.more_facets_link {
+        padding: 0;
+        &:hover {
+            background: none;
+        }
+    }
+
+    .limit_content.range_limit input.range_begin, .limit_content.range_limit input.range_end {
+  display: inline-block;
+  width: 4.5em;
 }

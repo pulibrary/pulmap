@@ -13,7 +13,8 @@ $basemap-color: #ccdddd;
 }
 
 .leaflet-control-attribution.leaflet-control {
-    opacity: 0.2;
+    // opacity: 0.2;
+    display: none;
 }
 
 #map-container {
