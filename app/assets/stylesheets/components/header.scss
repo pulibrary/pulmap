@@ -5,7 +5,7 @@
 }
 @media (min-width: $bp-medium) {
     .header__secondary .container {
-        height: 50px;
+        height: 62px;
     }
 }
 @media (max-width: 500px) {
@@ -161,4 +161,32 @@
     border-top: 3px solid $orange;
 
     background: $dark-gray;
+}
+
+.header__secondary {
+    background: $light-gray;
+}
+
+.form-control, .input-group-btn button {
+    height: 34px;
+}
+
+.input-group .form-control:not(:first-child):not(:last-child) {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.navbar-right, #search-navbar {
+    @include vertical-align();
+}
+
+.submit-search-text {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    padding:0 !important;
+    border:0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
 }

@@ -315,6 +315,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   blacklight (~> 5.12.1)
   byebug
   capistrano (~> 3.4.0)

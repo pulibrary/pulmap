@@ -1,4 +1,5 @@
 @import 'utils/mixins';
+@import 'utils/flexbox';
 @import 'utils/variables';
 
 @import 'components/typeahead';
@@ -7,9 +8,9 @@
 @import 'components/footer';
 
 @import 'components/home';
+@import 'components/home--cards';
 @import 'components/map';
 @import 'components/results';
 @import 'components/facets';
-@import 'components/lists';
 
 @import 'shame-geo';

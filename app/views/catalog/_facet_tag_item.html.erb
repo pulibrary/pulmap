@@ -5,7 +5,7 @@
     Subject
     <span class="caret"></span>
   </button>
-<ul class="dropdown-menu">
+<ul class="dropdown-menu dropdown-menu-left">
 <% display_facet.items.each do |item| %>
     <li><%= link_to item.value, catalog_index_path({f: {"#{facet_field.field}" => [item.value]}}) %></li>
 

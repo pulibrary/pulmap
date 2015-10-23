@@ -22,6 +22,7 @@
 
 .open > .dropdown-menu {
     min-width: 220px;
+    z-index: 1001;
 }
 
 .subject-facet {
@@ -30,4 +31,12 @@
 
 .navbar-right .nav {
     float: right;
+}
+
+.facets-toggler {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: $blue;
+
 }

@@ -4,11 +4,10 @@
 	    <%= render_search_bar %>
 	  </div>
       <div class="navbar-right col-xs-12 col-sm-12 col-md-6">
-            Filter by:
             <div class="subject-facet">
               <%= render_facet_tags [:dc_subject_sm] %>
             </div>
-          <button class="btn btn-default facets-toggler">More Filters</button>
+            <button class="facets-toggler">More Filters</button>
     	  <%#=# render :partial=>'/user_util_links' -%>
       </div>
 	</nav>
