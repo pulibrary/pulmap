@@ -165,6 +165,11 @@
 
 .header__secondary {
     background: $light-gray;
+    z-index: 1002;
+
+    .navbar-right .dropdown-menu-left {
+        margin-top: 10px;
+    }
 }
 
 .form-control, .input-group-btn button {
@@ -172,21 +177,79 @@
 }
 
 .input-group .form-control:not(:first-child):not(:last-child) {
-    border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
 }
 
-.navbar-right, #search-navbar {
+#search-navbar {
     @include vertical-align();
 }
 
 .submit-search-text {
     position: absolute !important;
-    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-    clip: rect(1px, 1px, 1px, 1px);
-    padding:0 !important;
-    border:0 !important;
+
     height: 1px !important;
     width: 1px !important;
     overflow: hidden;
+    padding: 0 !important;
+    border: 0 !important;
+
+    /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
 }
+
+.navbar-right {
+    height: 62px;
+}
+
+.navbar-right .navbar-nav, .navbar-right .primary-facets, .navbar-right .facets-toggler {
+    @include vertical-align();
+
+
+
+    li a {
+        padding: 0 1em;
+
+        &:hover {
+            background: transparent;
+        }
+    }
+}
+.facets-toggler {
+    padding-left: 0;
+    outline: none;
+    &:focus, &:active, &:active:focus {
+        outline:none;
+    }
+}
+
+.btn-link:hover, .btn-link:focus {
+    text-decoration: none;
+}
+
+    .navbar-right .primary-facets {
+
+        .dropdown {
+            display: inline;
+            margin-right: 1em;
+        }
+
+    }
+
+    #sortAndPerPage {
+        margin: 0;
+    }
+    .status-icons {
+        margin-right: 0;
+    }
+    .more-info-area {
+        padding-right: 0;
+    }
+
+    .dropdown-toggle a:hover {
+        text-decoration: none;
+    }
+
+    .dropdown-toggle a {
+        color: $dark-gray;
+    }

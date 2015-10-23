@@ -2,7 +2,7 @@
 
 <div class="dropdown">
 <button class="btn btn-default dropdown-toggle" type="button" id="dropdown-menu-subject" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Subject
+    <%= link_to facet_field_label(facet_field.key), "#", :"data-no-turbolink" => true %>
     <span class="caret"></span>
   </button>
 <ul class="dropdown-menu dropdown-menu-left">

@@ -21,11 +21,11 @@
 }
 
 .open > .dropdown-menu {
-    min-width: 220px;
+    min-width: 100%;
     z-index: 1001;
 }
 
-.subject-facet {
+.primary-facets {
     display: inline-block;
 }
 

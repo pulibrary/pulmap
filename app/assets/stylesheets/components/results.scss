@@ -13,4 +13,15 @@
     > .document:last-child {
         border: none;
     }
+    .document {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.documentHeader.row {
+    padding: 1em;
+    &:hover {
+        background: $light-gray;
+    }
 }
