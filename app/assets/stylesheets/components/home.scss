@@ -19,3 +19,10 @@ main.home {
         text-align: center;
     }
 }
+
+.search-bar-overlay {
+    height: 80px;
+    .home-search {
+        @include vertical-align();
+    }
+}

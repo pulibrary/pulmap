@@ -1,13 +1,6 @@
 <div class="home-secondary-navbar navbar">
   <div class="container" role="navigation">
-    <div class="navbar-header">
-      <a class="navbar-brand">
-        <%= image_tag 'mango1.png', {:alt => 'GeoBlacklight', :style => 'height: 50px;', :class => 'pulmap-brand'} %>
-      </a>
-    </div>
-    <div class="collapse navbar-collapse">
-      <%= render :partial=>'/user_util_links' %>
-    </div>
+
   </div>
 </div>
 
@@ -19,16 +12,8 @@
 
 <div class="search-bar-overlay mask"></div>
 
-<div id="floating-search" class="search-bar-overlay">
-    <div class="container">
-      <div class="row">
-        <div id="" class="col-md-12" role="search">
-          <div class="row">
-            <div class="col-md-12">
-              <%= render :partial=>'catalog/search_form_home' %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="container">
+  <div id="floating-search" class="search-bar-overlay col-md-12">
+      <%= render :partial=>'catalog/search_form_home' %>
+  </div>
 </div>

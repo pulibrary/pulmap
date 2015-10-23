@@ -8,4 +8,12 @@ $(document).ready(function(){
 
     $("#map-container").css({'height':($("#main-container").height())});
     $("#map-results").css({'height':($("#main-container").height())});
+
+    $('.btn-toggle').click(function() {
+        $(this).find('.btn').toggleClass('active');
+        $(this).find('.btn').toggleClass('btn-primary');
+        $(this).find('.btn').toggleClass('btn-default');
+
+    });
+
 });
