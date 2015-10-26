@@ -6,7 +6,9 @@ body {
     position: absolute;
     top: 423px;
 
-    width: 100%;
+    &.mask {
+        width: 100%;
+    }
 }
 
 .mask {

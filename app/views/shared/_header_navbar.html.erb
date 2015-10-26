@@ -17,8 +17,10 @@
   <% if home_layout? %>
     <%# if there are no input/search related params, display the "secondary home" partial -%>
     <%= render 'shared/header_secondary_home' %>
+  <% elsif item_layout? %>
+    <%= render 'shared/header_secondary_index' %>
   <% else %>
-    <%= render 'shared/header_secondary' %>
+    <%= render 'shared/header_secondary_filters' %>
   <% end %>
 
 </header>

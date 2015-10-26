@@ -1,6 +1,6 @@
 en:
   blacklight:
-    application_name: 'Blacklight'
+    application_name: 'Library Map Exhange | Princeton University'
     search:
       form:
         submit: 'Search'

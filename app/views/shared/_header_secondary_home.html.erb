@@ -1,7 +1,9 @@
 <div class="home-secondary-navbar navbar">
   <div class="container" role="navigation">
     <div class="col-md-6 logo">
+    <%= link_to root_path, class: "logo__pul" do %>
       <%= image_tag 'lime.png', {:alt => 'GeoBlacklight', :style => 'height: 25px;', :class => 'pulmap-brand'} %>
+      <% end %>
     </div>
     <div class="col-md-6 util-links">
       <%= render :partial=>'/user_util_links' -%>
@@ -17,7 +19,7 @@
     <div class="search-bar-overlay mask"></div>
 
     <div class="container">
-      <div id="floating-search" class="search-bar-overlay">
+      <div id="floating-search" class="search-bar-overlay row">
           <%= render :partial=>'catalog/search_form_home' %>
       </div>
     </div>
