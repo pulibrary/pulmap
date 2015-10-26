@@ -1,17 +1,33 @@
 module ApplicationHelper
+  ##
+  # Checks if home is the current layout
+  # @return [Boolean]
   def home_layout?
-    geoblacklight_map_type == 'home'
+    layout_type == 'home'
   end
 
-  def geoblacklight_map_type
+  ##
+  # Checks if index is the current layout
+  # @return [Boolean]
+  def index_layout?
+    layout_type == 'index'
+  end
+
+  ##
+  # Checks if item is the current layout
+  # @return [Boolean]
+  def item_layout?
+    layout_type == 'item'
+  end
+
+  ##
+  # Gets current layout for use in rendering partials
+  # @return [String] item, index, or home
+  def layout_type
     if params[:action] == 'show'
       'item'
     elsif params[:action] == 'index'
-      if has_search_parameters?
-        'index'
-      else
-        'home'
-      end
+      params[:q].present? ? 'index' : 'home'
     end
   end
 end
