@@ -17,8 +17,8 @@
 	  </div>
       <div class="navbar-right col-xs-12 col-sm-12 col-md-6">
         <div class="primary-facets">
-          <%= render_facet_tags [:dc_rights_s] %>
-          <%= render_facet_tags [:dc_subject_sm] %>
+          <%= render partial: 'facet_tag_item', locals: { display_facet: facet_by_field_name(:dc_rights_s) } %>
+           <%= render partial: 'facet_tag_item', locals: { display_facet: facet_by_field_name('dc_subject_sm') } %>
         </div>
         <button class="btn btn-link facets-toggler"><i class="glyphicon glyphicon-triangle-right"></i> <span class="text">More Filters</span></button>
     	  <%#= render :partial=>'/user_util_links' -%>

@@ -24,10 +24,15 @@ module ApplicationHelper
   # Gets current layout for use in rendering partials
   # @return [String] item, index, or home
   def layout_type
-    if params[:action] == 'show'
+    # has search parameters method fails in history page
+    if current_page?(search_history_path)
       'item'
-    elsif params[:action] == 'index'
-      params[:q].present? ? 'index' : 'home'
+    elsif has_search_parameters?
+      'index'
+    elsif current_page?(root_url)
+      'home'
+    else
+      'item'
     end
   end
 end

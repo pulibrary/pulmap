@@ -83,7 +83,7 @@ class CatalogController < ApplicationController
       # :segments => true
     }
 
-    config.add_facet_field 'dc_rights_s', label: 'Access', limit: 8, partial: "icon_facet"
+    config.add_facet_field 'dc_rights_s', label: 'Access', limit: 8, partial: "icon_facet", show: false
     config.add_facet_field 'layer_geom_type_s', label: 'Data type', limit: 8, partial: "icon_facet"
     config.add_facet_field 'dc_format_s', :label => 'Format', :limit => 8
 
