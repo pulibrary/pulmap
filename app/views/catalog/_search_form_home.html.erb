@@ -1,7 +1,7 @@
 <%= form_tag catalog_index_url, :method => :get, :class => 'search-query-form form-inline home-search' do %>
   <%= render_hash_as_hidden_fields(params_for_search().except(:q, :search_field, :qt, :page, :utf8, :model, :rpp, :start)) %>
 
-  <div class="col-md-4">
+  <div class="col-md-3">
     <input type="place" class="form-control search_loc" id="place" placeholder="Find location">
   </div>
 
@@ -15,7 +15,7 @@
         <span class="submit-search-text"><%=t('blacklight.search.form.submit')%></span>
       </button>
   </div>
-  <div class="col-md-2 btn-toggle">
+  <div class="col-md-3 btn-toggle">
     <div class="btn-group" role="group" aria-label="Search by keyword or viewable map area">
       <button type="button" class="btn btn-lg btn-default active">Map Off</button>
       <button type="button" class="btn btn-lg btn-default btn-primary">Map On</button>

@@ -12,14 +12,12 @@
 </div>
 
 <div class="row">
-  <div class="container-fluid map-container">
+  <div class="map-container">
 
     <%= content_tag :div, '', id: 'map-front', data: { map: 'home', 'catalog-path'=> catalog_index_path , 'map-bbox' => params[:bbox], basemap: geoblacklight_basemap } %>
-
-    <div class="search-bar-overlay mask"></div>
-
+  <div class="mask">
     <div class="container">
-      <div id="floating-search" class="search-bar-overlay row">
+      <div id="floating-search" class="search-bar-overlay">
           <%= render :partial=>'catalog/search_form_home' %>
       </div>
     </div>

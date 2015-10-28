@@ -24,10 +24,16 @@ main.home {
     height: 80px;
 
     .home-search {
-        @include vertical-align();
+        height: 80px;
+        // @include vertical-align();
+        > div {
+            @include vertical-align();
+        }
     }
 }
-.container-fluid.map-container {
+.map-container {
+    width: 100%;
+    position: relative;
     background: black;
     .leaflet-container {
         opacity: 0.7;

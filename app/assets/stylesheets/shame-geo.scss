@@ -2,20 +2,12 @@ body {
     background: $light-gray;
 }
 
-.search-bar-overlay {
-    position: absolute;
-    top: 423px;
-
-    &.mask {
-        width: 100%;
-    }
-}
-
 .mask {
-    // height: 80px;
-    opacity: 0.1;
-
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 0;
+    height: 80px;
+    width: 100%;
 }
 
 .home-search {
