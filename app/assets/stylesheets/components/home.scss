@@ -1,0 +1,44 @@
+[data-map="home"] {
+    height: 400px;
+}
+
+main.home {
+    padding-top: 0;
+}
+
+.find-by {
+    .category-icon {
+        font-size: 6em;
+        text-align: center;
+        line-height: 1em;
+    }
+
+    h4 {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+    }
+}
+
+.search-bar-overlay {
+    height: 80px;
+
+    .home-search {
+        height: 80px;
+        // @include vertical-align();
+        > div {
+            @include vertical-align();
+        }
+    }
+}
+.map-container {
+    width: 100%;
+    position: relative;
+    background: black;
+    .leaflet-container {
+        opacity: 0.7;
+    }
+    .leaflet-container.active {
+        opacity: 1;
+    }
+}

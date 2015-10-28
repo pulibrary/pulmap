@@ -34,13 +34,10 @@
   <%= render :partial => 'shared/header_navbar' %>
   <%= render partial: 'shared/ajax_modal' %>
 
-  <main role="main" id="main-container">
-    <div id="main-container" class="container">
+  <main role="main">
+    <div class="container" id="main-container">
       <%= content_tag :h1, application_name, class: 'sr-only application-heading' %>
-
-      <div class="row">
-        <%= yield %>
-      </div>
+      <%= yield %>
     </div>
   </main>
 

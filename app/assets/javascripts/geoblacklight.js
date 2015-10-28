@@ -1,6 +1,7 @@
 //= require geoblacklight/geoblacklight
 //= require geoblacklight/basemaps
 //= require geoblacklight/viewers
+//= require modules/filterToggle
 //= require modules/geosearch
 //= require modules/home
 //= require modules/map

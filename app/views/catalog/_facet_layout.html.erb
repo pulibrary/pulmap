@@ -1,0 +1,9 @@
+<div class="dropdown facet_limit blacklight-<%= facet_field.key.parameterize %> <%= 'facet_limit-active' if facet_field_in_params?(facet_field.key) %>">
+
+<button class="btn btn-default dropdown-toggle" type="button" id="dropdown-menu-<%= facet_field.key.parameterize %>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <%= link_to facet_field_label(facet_field.key), "#", :"data-no-turbolink" => true %>
+    <span class="caret"></span>
+  </button>
+
+      <%= yield %>
+</div>

@@ -1,20 +1,17 @@
-@import 'modules/typeahead';
-@import 'modules/font-face';
-@import 'modules/header';
-@import 'modules/main-container';
-@import 'modules/footer';
+@import 'utils/mixins';
+@import 'utils/flexbox';
+@import 'utils/variables';
 
-@import 'modules/home';
-@import 'modules/map';
-@import 'modules/results';
-
-@import 'variables/breaks';
-@import 'variables/colors';
-@import 'variables/typography';
-
-@import 'components/facets';
+@import 'components/typeahead';
+@import 'components/font-face';
 @import 'components/header';
-@import 'components/lists';
+@import 'components/footer';
 
-@import 'shame';
+@import 'components/home';
+@import 'components/home--cards';
+@import 'components/map';
+@import 'components/results';
+@import 'components/item';
+@import 'components/facets';
+
 @import 'shame-geo';

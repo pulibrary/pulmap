@@ -13,8 +13,6 @@
 
 <%= render 'sort_and_per_page' %>
 
-<%= content_tag :div, '', id: 'map', data: { map: 'index', 'catalog-path'=> catalog_index_path , 'map-bbox' => params[:bbox], basemap: geoblacklight_basemap } %>
-
 <%- if @response.empty? %>
   <%= render "zero_results" %>
 <%- elsif render_grouped_response? %>

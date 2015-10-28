@@ -24,6 +24,7 @@ module ApplicationHelper
   # Gets current layout for use in rendering partials
   # @return [String] item, index, or home
   def layout_type
+    return 'item' if params[:controller] == 'search_history'
     if params[:action] == 'show'
       'item'
     elsif params[:action] == 'index'
