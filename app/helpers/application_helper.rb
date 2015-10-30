@@ -28,7 +28,7 @@ module ApplicationHelper
     if params[:action] == 'show'
       'item'
     elsif params[:action] == 'index'
-      params[:utf8].present? ? 'index' : 'home'
+      has_search_parameters? ? 'index' : 'home'
     end
   end
 end
