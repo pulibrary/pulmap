@@ -7,7 +7,7 @@ describe ApplicationHelper, type: :helper do
       expect(layout_type).to eq 'home'
     end
     it 'should return index when on search results page' do
-      allow(self).to receive(:params).and_return(controller: 'catalog', q: 'roads', action: 'index')
+      allow(self).to receive(:params).and_return(controller: 'catalog', utf8: '✓', q: 'roads', action: 'index')
       expect(layout_type).to eq 'index'
     end
     it 'should return item when on show page' do
@@ -27,7 +27,7 @@ describe ApplicationHelper, type: :helper do
   end
   describe '#index_layout?' do
     it 'should return true when on search results page' do
-      allow(self).to receive(:params).and_return(controller: 'catalog', q: 'roads', action: 'index')
+      allow(self).to receive(:params).and_return(controller: 'catalog', utf8: '✓', q: 'roads', action: 'index')
       expect(index_layout?).to be true
     end
   end

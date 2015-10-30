@@ -223,6 +223,10 @@ class CatalogController < ApplicationController
     config.basemap_provider = 'outdoors'
   end
 
-
-
+  ##
+  # Overrides default Blacklight method to return true for an empty q value
+  # @return [Boolean]
+  def has_search_parameters?
+    !params[:q].nil? || super
+  end
 end

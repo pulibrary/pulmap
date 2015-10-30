@@ -3,6 +3,7 @@
 //= require geoblacklight/viewers
 //= require modules/filterToggle
 //= require modules/geosearch
+//= require modules/locationsearch
 //= require modules/home
 //= require modules/map
 //= require geoblacklight/modules/collapse

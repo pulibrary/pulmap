@@ -65,3 +65,4 @@ gem 'devise'
 gem "devise-guests", "~> 0.3.3"
 gem "omniauth-cas"
 gem 'twitter-typeahead-rails'
+gem 'geocomplete_rails'

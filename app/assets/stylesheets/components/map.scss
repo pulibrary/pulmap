@@ -17,6 +17,10 @@ $basemap-color: #ccdddd;
     display: none;
 }
 
+.leaflet-left {
+    margin-left: 10px;
+}
+
 #map-container {
     position: relative;
     top: 0px;

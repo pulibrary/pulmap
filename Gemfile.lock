@@ -135,6 +135,8 @@ GEM
       leaflet-rails (~> 0.7.3)
       rails_config (~> 0.4.2)
     geoblacklight-icons (0.2.1)
+    geocomplete_rails (1.6.5)
+      railties (>= 3.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hashie (3.4.2)
@@ -330,6 +332,7 @@ DEPENDENCIES
   devise-guests (~> 0.3.3)
   factory_girl_rails
   geoblacklight (~> 0.10.2)
+  geocomplete_rails
   jbuilder (~> 2.0)
   jettywrapper
   jquery-rails
