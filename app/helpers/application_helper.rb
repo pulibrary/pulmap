@@ -21,11 +21,19 @@ module ApplicationHelper
   end
 
   ##
+  # Checks if item is the current layout
+  # @return [Boolean]
+  def bookmarks_layout?
+    layout_type == 'bookmarks'
+  end
+
+  ##
   # Gets current layout for use in rendering partials
-  # @return [String] item, index, or home
+  # @return [String] item, index, home, or bookmarks
   def layout_type
-    return 'item' if params[:controller] == 'search_history'
-    if params[:action] == 'show'
+    if %w(search_history bookmarks).include? params[:controller]
+      'bookmarks'
+    elsif params[:action] == 'show'
       'item'
     elsif params[:action] == 'index'
       has_search_parameters? ? 'index' : 'home'

@@ -21,9 +21,13 @@ describe ApplicationHelper, type: :helper do
         .and_return(controller: 'catalog', action: 'show')
       expect(layout_type).to eq 'item'
     end
-    it 'should return item when on search history page' do
+    it 'should return bookmarks when on search history page' do
       allow(self).to receive(:params).and_return(controller: 'search_history')
-      expect(layout_type).to eq 'item'
+      expect(layout_type).to eq 'bookmarks'
+    end
+    it 'should return bookmarks when on bookmarks page' do
+      allow(self).to receive(:params).and_return(controller: 'bookmarks')
+      expect(layout_type).to eq 'bookmarks'
     end
   end
   describe '#home_layout?' do
@@ -48,9 +52,19 @@ describe ApplicationHelper, type: :helper do
         .and_return(controller: 'catalog', action: 'show')
       expect(item_layout?).to be true
     end
-    it 'should return true when on search history page' do
+    it 'should return false when on search history page' do
       allow(self).to receive(:params).and_return(controller: 'search_history')
-      expect(item_layout?).to be true
+      expect(item_layout?).to be false
+    end
+  end
+  describe '#bookmarks_layout?' do
+    it 'should return true when on search_history page' do
+      allow(self).to receive(:params).and_return(controller: 'search_history')
+      expect(bookmarks_layout?).to be true
+    end
+    it 'should return true when on search history page' do
+      allow(self).to receive(:params).and_return(controller: 'bookmarks')
+      expect(bookmarks_layout?).to be true
     end
   end
 end
