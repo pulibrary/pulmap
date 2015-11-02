@@ -14,8 +14,8 @@ $(document).ready(function() {
     'height': ($('#main-container').height())
   });
 
-  if($('#table-container').length === 0 ) {
-    $('#table-container').removeClass('col-md-4');
-    $('#viewer-container').removeClass('col-md-8');
-  }
+  // if($('#table-container').length === 0 ) {
+  //   $('#table-container').removeClass('col-md-4');
+  //   $('#viewer-container').removeClass('col-md-8');
+  // }
 });
