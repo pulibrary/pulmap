@@ -4,15 +4,12 @@ $(document).ready(function() {
     var docViewBottom = docViewTop + $(window).height();
     var elemTop = $(elem).offset().top; //num of pixels above the elem
     var elemBottom = elemTop + $(elem).height();
-    console.log("Elem Bottom: "+elemBottom);
-    console.log("Return: "+ (elemTop <= docViewTop));
     return ((elemTop <= docViewTop || elemTop >= docViewTop));
   }
   var catcher = $('header');
   var sticky = $('#map-container');
   var footer = $('footer');
   var footTop = footer.offset().top;
-  var lastStickyTop = sticky.offset().top;
   $(window).scroll(function() {
     if(isScrolledTo(sticky)) {
       sticky.css('position','fixed');
@@ -22,14 +19,12 @@ $(document).ready(function() {
     var stickyFoot = sticky.offset().top + sticky.height();
 
     if(stickyFoot > footTop -10){
-      console.log("Top of Footer");
       sticky.css({
         position:'absolute',
         top: (footTop - 20) - sticky.height()
       });
     } else {
       if ( stopHeight > sticky.offset().top) {
-        console.log("Default position");
         sticky.css('position','absolute');
         sticky.css('top',stopHeight);
       }
