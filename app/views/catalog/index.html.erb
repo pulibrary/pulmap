@@ -1,9 +1,11 @@
 <% if has_search_parameters? %>
     <%= render :partial=>'/flash_msg', layout: 'shared/flash_messages' %>
 
-    <div id="map-container" class="col-md-6">
-    <%= content_tag :div, '', id: 'map-results', data: { map: 'index', 'catalog-path'=> catalog_index_path , 'map-bbox' => params[:bbox], basemap: geoblacklight_basemap } %>
-    </div>
+    <%- if !@response.empty? %>
+      <div id="map-container" class="col-md-6">
+      <%= content_tag :div, '', id: 'map-results', data: { map: 'index', 'catalog-path'=> catalog_index_path , 'map-bbox' => params[:bbox], basemap: geoblacklight_basemap } %>
+      </div>
+    <%- end %>
 
   <div id="content" class="col-md-6">
     <%= render 'search_header' %>
