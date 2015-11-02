@@ -71,7 +71,7 @@
 .home-secondary-navbar {
     z-index: 1003;
     border: none;
-    background: $gray;
+    background: $light-gray;
     &.navbar {
         border-radius: 0;
     }
@@ -158,7 +158,7 @@
 }
 
 .header__secondary {
-    background: $light-gray;
+    background: $white;
     z-index: 1002;
     .navbar-right .dropdown-menu-left {
         margin-top: 10px;
