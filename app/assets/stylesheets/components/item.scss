@@ -1,3 +1,18 @@
-.show-document {
+.show-document, .tools-sidebar {
     padding-top: 1em;
+}
+h2 {
+    font-size: 22px;
+}
+#table-container {
+    overflow: initial;
+    table {
+        table-layout: fixed;
+        td {
+            word-wrap: break-word;
+        }
+    }
+}
+.geoblacklight-view-panel {
+    margin-top: 1em;
 }
