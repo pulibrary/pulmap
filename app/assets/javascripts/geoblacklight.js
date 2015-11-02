@@ -2,6 +2,7 @@
 //= require geoblacklight/basemaps
 //= require geoblacklight/viewers
 //= require modules/filterToggle
+//= require modules/mapPosition
 //= require modules/geosearch
 //= require modules/locationsearch
 //= require modules/home

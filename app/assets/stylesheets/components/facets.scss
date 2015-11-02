@@ -85,3 +85,9 @@
             background: none;
         }
     }
+    #facets {
+        background: white;
+        position: fixed;
+        z-index: 10001;
+        width: 100%;
+    }
