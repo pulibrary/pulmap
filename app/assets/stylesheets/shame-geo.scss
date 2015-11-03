@@ -67,3 +67,10 @@ main {
     margin-top: 0;
     margin-bottom: 3em;
 }
+
+li.bullet:hover {
+    cursor: pointer;
+    .bullet-icon {
+        background: $black;
+    }
+}
