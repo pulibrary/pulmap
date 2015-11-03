@@ -2,45 +2,31 @@ main {
     background: $white;
 }
 
+.l-region--footer {
+    height: 47px;
+    position: relative;
+}
+
+.footer--copyright {
+    display: inline-block;
+    float: right;
+    margin: 0;
+    font-size: 0.8em;
+    @include vertical-align();
+}
+.pu {
+    display: inline-block;
+    float: left;
+    @include vertical-align();
+}
+
 .l-footer {
-    padding: 2em 0;
+    padding: 1em 0;
 
     background-color: $light-gray;
 }
 
-footer {
-    h2 {
-        margin-bottom: 0.75em;
-
-        color: $dark-orange;
-        font-family: $font-serif;
-        font-size: 16px;
-        font-weight: bold;
-
-        a {
-            color: $dark-orange;
-        }
-    }
-}
-
-footer a {
-    color: $black;
-}
-
-.l-region--footer .leaf a {
-    line-height: 1.75em;
-}
-
-.l-region--footer address,.l-region--footer .footer--copyright,.l-region--footer li a {
-    color: $dark-gray;
-    font-size: 0.9em;
-}
-
-.l-region--footer address {
-    margin-bottom: 0;
-}
-
-.svg .facebook-logo:before,.svg .twitter-logo:before,.svg .govdocs-logo:before,.svg .friends-logo:before,.svg .pu-logo:before {
+.svg .pu-logo:before {
     display: inline-block;
     vertical-align: middle;
 
@@ -49,7 +35,7 @@ footer a {
     content: ' ';
 }
 
-.svg .facebook-logo,.svg .twitter-logo,.svg .govdocs-logo,.svg .friends-logo,.svg .pu-logo {
+.svg .pu-logo {
     display: inline-block;
 
     height: 24px;
@@ -59,36 +45,8 @@ footer a {
     line-height: 11px;
 }
 
-.svg .facebook-logo img,.svg .twitter-logo img,.svg .govdocs-logo img,.svg .friends-logo img,.svg .pu-logo img {
+.svg .pu-logo img {
     display: none;
-}
-
-.svg .facebook-logo {
-    width: 24px;
-    margin: 0 0.2em 0.75em;
-
-    background-image: image-url("facebook.svg");
-}
-
-.svg .twitter-logo {
-    width: 24px;
-    margin: 0 0.2em 0.75em;
-
-    background-image: image-url("twitter.svg");
-}
-
-.svg .govdocs-logo {
-    width: 24px;
-    margin: 0 0.2em 0.75em;
-
-    background-image: image-url("govdocs.svg");
-}
-
-.svg .friends-logo {
-    width: 85px;
-    margin: 0 0.2em 0.75em;
-
-    background-image: image-url("friends.svg");
 }
 
 .svg .pu-logo {
@@ -97,18 +55,4 @@ footer a {
     margin: 0.5em 0 0;
 
     background-image: image-url("pu.svg");
-}
-
-.l-region--footer .footer--copyright {
-    margin-top: 0.5em;
-}
-
-body {
-    font-family: $font-sans;
-}
-
-.l-footer .menu {
-    padding: 0;
-
-    list-style-type: none;
 }
