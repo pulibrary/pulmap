@@ -173,7 +173,7 @@ GEM
     modernizr-rails (2.7.1)
     multi_json (1.11.2)
     multipart-post (2.0.0)
-    mysql2 (0.3.20)
+    mysql2 (0.4.2)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
