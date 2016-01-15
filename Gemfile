@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.3'
+gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
@@ -56,8 +56,8 @@ group :development, :test do
   gem 'database_cleaner'
 end
 
-gem 'blacklight', '~> 5.12.1'
-gem 'geoblacklight', '~> 0.10.2'
+gem 'blacklight', '~> 5.12.0'
+gem 'geoblacklight', '~> 0.11.0'
 gem 'rspec-rails', '~> 3.1.0'
 gem 'jettywrapper'
 gem 'rsolr', '~> 1.0.6'
