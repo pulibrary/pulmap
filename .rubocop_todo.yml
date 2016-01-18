@@ -137,28 +137,28 @@ Metrics/LineLength:
 
 # Offense count: 2
 # Cop supports --auto-correct.
-Style/SpaceAfterComma:
-  Exclude:
-    - 'app/controllers/users/omniauth_callbacks_controller.rb'
-    - 'app/models/user.rb'
+# Style/SpaceAfterComma:
+#   Exclude:
+#     - 'app/controllers/users/omniauth_callbacks_controller.rb'
+#     - 'app/models/user.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: SupportedStyles.
-Style/SpaceAroundEqualsInParameterDefault:
-  EnforcedStyle: no_space
+# Style/SpaceAroundEqualsInParameterDefault:
+#   EnforcedStyle: no_space
 
 # Offense count: 6
 # Cop supports --auto-correct.
-Style/SpaceInsideBrackets:
-  Exclude:
-    - 'config/initializers/devise.rb'
+# Style/SpaceInsideBrackets:
+#   Exclude:
+#     - 'config/initializers/devise.rb'
 
 # Offense count: 5
 # Cop supports --auto-correct.
-Style/SpaceInsideParens:
-  Exclude:
-    - 'app/models/solr_document.rb'
+# Style/SpaceInsideParens:
+#   Exclude:
+#     - 'app/models/solr_document.rb'
 
 # Offense count: 11
 # Cop supports --auto-correct.
