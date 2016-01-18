@@ -16,8 +16,8 @@ class CatalogController < ApplicationController
     ## parameters included in the Blacklight-jetty document requestHandler.
     #
     config.default_document_solr_params = {
-     :qt => 'document',
-     :q => '{!raw f=layer_slug_s v=$id}'
+     qt: 'document',
+     q: '{!raw f=layer_slug_s v=$id}'
     }
 
     config.search_builder_class = Geoblacklight::SearchBuilder
@@ -72,21 +72,21 @@ class CatalogController < ApplicationController
     # }
 
     config.add_facet_field 'dct_provenance_s', label: 'Institution', limit: 8, partial: "icon_facet"
-    config.add_facet_field 'dc_creator_sm', :label => 'Author', :limit => 8
-    config.add_facet_field 'dc_publisher_s', :label => 'Publisher', :limit => 8
-    config.add_facet_field 'dc_subject_sm', :label => 'Subject', :limit => 8, show: false
-    config.add_facet_field 'dct_spatial_sm', :label => 'Place', :limit => 8
-    config.add_facet_field 'dct_isPartOf_sm', :label => 'Collection', :limit => 8
+    config.add_facet_field 'dc_creator_sm', label: 'Author', limit: 8
+    config.add_facet_field 'dc_publisher_s', label: 'Publisher', limit: 8
+    config.add_facet_field 'dc_subject_sm', label: 'Subject', limit: 8, show: false
+    config.add_facet_field 'dct_spatial_sm', label: 'Place', limit: 8
+    config.add_facet_field 'dct_isPartOf_sm', label: 'Collection', limit: 8
 
-    config.add_facet_field 'solr_year_i', :label => 'Year', :limit => 10, :range => {
+    config.add_facet_field 'solr_year_i', label: 'Year', limit: 10, range: {
       # :num_segments => 6,
-      :assumed_boundaries => [1100, 2015]
+      assumed_boundaries: [1100, 2015]
       # :segments => true
     }
 
     config.add_facet_field 'dc_rights_s', label: 'Access', limit: 8, partial: "icon_facet", show: false
     config.add_facet_field 'layer_geom_type_s', label: 'Data type', limit: 8, partial: "icon_facet"
-    config.add_facet_field 'dc_format_s', :label => 'Format', :limit => 8
+    config.add_facet_field 'dc_format_s', label: 'Format', limit: 8
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -198,10 +198,10 @@ class CatalogController < ApplicationController
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
-    config.add_sort_field 'score desc, dc_title_sort asc', :label => 'relevance'
-    config.add_sort_field 'solr_year_i desc, dc_title_sort asc', :label => 'year'
-    config.add_sort_field 'dc_publisher_sort asc, dc_title_sort asc', :label => 'publisher'
-    config.add_sort_field 'dc_title_sort asc', :label => 'title'
+    config.add_sort_field 'score desc, dc_title_sort asc', label: 'relevance'
+    config.add_sort_field 'solr_year_i desc, dc_title_sort asc', label: 'year'
+    config.add_sort_field 'dc_publisher_sort asc, dc_title_sort asc', label: 'publisher'
+    config.add_sort_field 'dc_title_sort asc', label: 'title'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
