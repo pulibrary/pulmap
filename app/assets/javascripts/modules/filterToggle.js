@@ -1,14 +1,9 @@
 $(document).ready(function() {
-    $('.facets-toggler').click(function() {
-        $('#facets.collapse').collapse('toggle');
-        $('.text').text(function(i, old) {
-            return old === 'More Filters' ? 'Less Filters' : 'More Filters';
-        });
-        $('.facets-toggler .glyphicon').toggleClass('glyphicon-triangle-bottom glyphicon-triangle-right');
+  $('.map-view').hide();
+  $('#map-toggle').on('click', function() {
+    $('#facets .facet-view, #facets .map-view').toggle();
+    $('.map-toggle').text(function(i, old) {
+      return old === 'Turn Map On' ? 'Turn Map Off' : 'Turn Map On';
     });
-
-    // if($('#table-container').length === 0 ) {
-    //   $('#table-container').removeClass('col-md-4');
-    //   $('#viewer-container').removeClass('col-md-8');
-    // }
+  });
 });

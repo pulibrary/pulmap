@@ -44,6 +44,7 @@
         font-size: 1.2em;
     }
     .button--start-over {
+        display: inline-block;
         width: 48%;
         a {
             width: 100%;
@@ -111,6 +112,7 @@
     > li > a {
         display: block;
         letter-spacing: 0.03em;
+        padding: 3px 6px;
     }
     > li {
         float: left;
@@ -262,6 +264,15 @@
     }
 }
 
+.search,
+#search-navbar {
+    height: 70px;
+    .map-toggle,
+    .search-query-form {
+        @include vertical-align();
+    }
+}
+
 .form-inline .input-group .input-group-btn {
     width: 46px;
 }
@@ -273,4 +284,13 @@
 .btn-toggle .btn-primary {
     background: $dark-gray;
     border: $dark-gray;
+}
+
+.button--start-over {
+    display: inline-block;
+    margin-right: 3px;
+    a {
+        width: 100%;
+        font-size: 14px;
+    }
 }

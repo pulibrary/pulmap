@@ -1,19 +1,5 @@
 
-<div class="header__secondary navbar">
-	<nav class="container" role="navigation">
-	  <div id="search-navbar" class="col-xs-12 col-sm-12 col-md-6" role="search">
+	<nav role="search" id="search-navbar">
 	    <%= render_search_bar %>
-	  </div>
-      <div class="navbar-right col-xs-12 col-sm-12 col-md-6">
-        <div class="primary-facets">
-          <%= render partial: 'facet_tag_item', locals: { display_facet: facet_by_field_name(:dc_rights_s) } %>
-           <%= render partial: 'facet_tag_item', locals: { display_facet: facet_by_field_name('dc_subject_sm') } %>
-        </div>
-        <button class="btn btn-link facets-toggler"><i class="glyphicon glyphicon-triangle-right"></i> <span class="text">More Filters</span></button>
-    	  <%#= render :partial=>'/user_util_links' -%>
-      </div>
+      <button id="map-toggle" class="map-toggle btn-default btn">Turn Map On</button>
 	</nav>
-</div>
-<div class="container">
-    <%= render 'facets' %>
-</div>

@@ -1,94 +1,243 @@
-.toggle,
-.toggle-collapsed {
-    line-height: 1.4em;
+@import "utils/variables";
+
+.facet_limit-active,
+.facet_limit-active > .panel-heading {
+    color: #333;
+    border-color: #ddd;
 }
 
-.panel.facet_limit {
-    display: inline-block;
-    float: left;
-    width: 25%;
+.facet-values li .selected {
+    color: #333;
 }
 
-.panel.facet_limit:nth-child(4n+1) {
-    display: table;
-    clear: both;
-    content: "";
+.facet_limit-active > .panel-heading + .panel-collapse > .panel-body {
+    border-top-color: #ddd;
 }
 
-.dropdown.facet_limit {
-    display: inline-block;
-}
-
-.open > .dropdown-menu {
-    min-width: 100%;
-    z-index: 1001;
-    display: table;
-}
-
-.primary-facets {
-    display: inline-block;
-}
-
-.navbar-right .nav {
-    float: right;
-}
-
-.facets-toggler {
-    background: transparent;
-    border: none;
-    outline: none;
-    color: $blue;
-}
-
-#facets .dropdown-menu {
-    width: 250px;
-    padding: 1em;
-    .geoblacklight-icon {
-        margin-right: .5em;
-    }
-}
-
-.facet-values .facet-count {
+.facet-values .remove {
+    text-indent: 0;
+    margin-left: 1em;
     vertical-align: middle;
 }
 
-.geoblacklight-icon + .facet-label {
+.facet-values .remove .glyphicon-remove {
+    top: -1px;
+    font-size: 1.2em;
+}
+
+.facet-values .icon,
+.facet-values .facet-label,
+.facet-values .facet-count {
+    text-indent: 0;
+    line-height: 1.8em;
+    padding: 0;
+}
+
+.facet-values .icon {
+    font-size: 1.275em;
+    line-height: 1.4em;
+}
+
+.icon + .facet-label {
+    padding-left: .5em;
+}
+
+.facet-values .icon,
+.facet-values .facet-label,
+.facet-values .facet-count,
+.facet-label .selected,
+.facet-values .remove .glyphicon-remove {
+    vertical-align: middle;
+}
+
+.facet-values .facet-label,
+.facet-values .facet-count {
+    font-size: .9em;
+    -moz-hyphens: none;
+}
+
+.facets-heading {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.pivot-facet .facet-label {
     display: inline;
-    padding-left: 5px;
+    padding-left: 0;
+    word-break: none;
+}
+
+.document .icon,
+.facet-values .icon {
+    width: 22px;
+    height: 22px;
+    display: table-cell;
+    background-position: center;
+    background-size: contain;
+    padding-right: .5em;
 }
 
 ul.facet-values {
-    border-spacing: 0.3em;
-    font-size: 0.9em;
-}
+    border-spacing: 0 .3em;
+    margin-bottom: 0;
 
-.dropdown-menu > li > a.more_facets_link {
-    // padding: 0;
-    &:hover {
-        background: none;
+    .facet-values,
+    > ul {
+        border-spacing: 0;
     }
 }
 
-.limit_content.range_limit input.range_begin,
-.limit_content.range_limit input.range_end {
+.pivot-facet .pivot-facet {
+    width: 100%;
+    padding: 0 0 0 3.5em;
+
+    &.collapse.in,
+    &.collapsing {
+        display: table;
+    }
+
+}
+
+.toggle, .toggle-collapsed {
+    line-height: 1.4em;
+}
+
+@media max-width bp-small {
+    #facets .top-panel-heading {
+        padding-left: 1em;
+        padding-top: .5em;
+    }
+    h2.facets-heading {
+        font-size: 1.6em;
+        margin-bottom: 0;
+        margin-top: .2em;
+    }
+    .facets-toggle {
+        margin: 0;
+    }
+}
+
+@media (max-width: $bp-small){
+    .facets-toggle {
+        margin: 0;
+    }
+    .facets-heading {
+        padding:0.5em;
+        margin-bottom: 0;
+    }
+}
+
+.top-panel-heading.panel-heading {
+    padding-left: 0;
+}
+
+.panel-group .panel {
+    border-radius: 0;
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+    -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+    -o-box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+}
+
+.panel-default > .panel-heading {
+    background: $light-gray;
+}
+
+.panel-title > a {
+    font-size: 0.9em;
+}
+
+.range_limit input.range_begin, .range_limit input.range_end {
     display: inline-block;
     width: 4.5em;
 }
 
-#facets .dropdown-menu > li > a.more_facets_link {
+#facet-panel-collapse {
     padding: 0;
-    &:hover {
-        background: none;
+}
+
+#sidebar {
+    padding-left: 0;
+}
+
+.facet-values .icon,
+.facet-values .geoblacklight-icon,
+.facet-values .facet-label,
+.facet-values .facet-count {
+    text-indent: 0;
+    line-height: 1.8em;
+    padding: 0;
+}
+
+.facet-values .icon,
+.facet-values .geoblacklight-icon {
+    font-size: 1.275em;
+    line-height: 1.4em;
+}
+
+.icon + .facet-label,
+.geoblacklight-icon + .facet-label {
+    padding-left: .5em;
+}
+
+.facet-values .icon,
+.facet-values .geoblacklight-icon,
+.facet-values .facet-label,
+.facet-values .facet-count,
+.facet-label .selected,
+.facet-values .remove .glyphicon-remove {
+    vertical-align: middle;
+}
+
+.facet-values .facet-label,
+.facet-values .facet-count {
+    font-size: .9em;
+    -moz-hyphens: none;
+}
+
+.facets-heading {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.pivot-facet .facet-label {
+    display: inline;
+    padding-left: 0;
+    word-break: none;
+}
+
+.document .icon,
+.facet-values .icon,
+.facet-values .geoblacklight-icon, {
+    width: 22px;
+    height: 22px;
+    display: table-cell;
+    background-position: center;
+    background-size: contain;
+    padding-right: .5em;
+}
+
+ul.facet-values {
+    border-spacing: 0 .3em;
+    margin-bottom: 0;
+
+    .facet-values,
+    > ul {
+        border-spacing: 0;
     }
 }
 
-#facets {
-    background: white;
-    position: absolute;
-    z-index: 10001;
+.pivot-facet .pivot-facet {
     width: 100%;
+    padding: 0 0 0 3.5em;
+
+    &.collapse.in,
+    &.collapsing {
+        display: table;
+    }
+
 }
 
-h2.facets-heading {
-    margin-top: 0;
+.toggle, .toggle-collapsed {
+    line-height: 1.4em;
 }
