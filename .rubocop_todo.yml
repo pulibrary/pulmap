@@ -117,11 +117,11 @@ Metrics/LineLength:
 # Offense count: 3
 # Cop supports --auto-correct.
 # Configuration parameters: PreferredDelimiters.
-Style/PercentLiteralDelimiters:
-  Exclude:
-    - 'config/deploy/development.rb'
-    - 'config/deploy/production.rb'
-    - 'config/deploy/staging.rb'
+# Style/PercentLiteralDelimiters:
+#   Exclude:
+#     - 'config/deploy/development.rb'
+#     - 'config/deploy/production.rb'
+#     - 'config/deploy/staging.rb'
 
 # Offense count: 1
 # Configuration parameters: NamePrefix, NamePrefixBlacklist, NameWhitelist.
