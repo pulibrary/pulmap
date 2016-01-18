@@ -163,8 +163,8 @@ Metrics/LineLength:
 # Offense count: 11
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/StringLiterals:
-  Enabled: false
+# Style/StringLiterals:
+#   Enabled: false
 
 # Offense count: 4
 # Cop supports --auto-correct.
