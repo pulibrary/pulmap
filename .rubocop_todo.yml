@@ -103,10 +103,10 @@ Metrics/LineLength:
 # Offense count: 2
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/IndentationConsistency:
-  Exclude:
-    - 'app/models/solr_document.rb'
-    - 'config/initializers/devise.rb'
+# Style/IndentationConsistency:
+#   Exclude:
+#     - 'app/models/solr_document.rb'
+#     - 'config/initializers/devise.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.

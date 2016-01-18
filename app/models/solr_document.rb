@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 class SolrDocument 
   include Blacklight::Solr::Document
- include Geoblacklight::SolrDocument
+  include Geoblacklight::SolrDocument
 
   # self.unique_key = 'id'
   self.unique_key = 'layer_slug_s'
