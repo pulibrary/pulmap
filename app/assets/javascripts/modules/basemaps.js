@@ -1,7 +1,7 @@
 // additional leaflet base layers
 
 GeoBlacklight.Basemaps.outdoors = L.tileLayer(
-  'https://api.tiles.mapbox.com/v4/mapbox.outdoors/{z}/{x}/{y}.png?access_token=tk.eyJ1IjoiZWxqb3JkYWNoZSIsImV4cCI6MTQ1Mjg5ODg3MCwiaWF0IjoxNDUyODk1MjcwLCJzY29wZXMiOlsiZXNzZW50aWFscyIsInNjb3BlczpsaXN0IiwibWFwOnJlYWQiLCJtYXA6d3JpdGUiLCJ1c2VyOnJlYWQiLCJ1c2VyOndyaXRlIiwidXBsb2FkczpyZWFkIiwidXBsb2FkczpsaXN0IiwidXBsb2Fkczp3cml0ZSIsInN0eWxlczp0aWxlcyIsInN0eWxlczpyZWFkIiwiZm9udHM6cmVhZCIsInN0eWxlczp3cml0ZSIsInN0eWxlczpsaXN0Iiwic3R5bGVzOmRyYWZ0IiwiZm9udHM6bGlzdCIsImZvbnRzOndyaXRlIiwiZm9udHM6bWV0YWRhdGEiLCJkYXRhc2V0czpyZWFkIiwiZGF0YXNldHM6d3JpdGUiXSwiY2xpZW50IjoibWFwYm94LmNvbSJ9.r7GhabKizIsihUcy_DJdbA&update=ijg8b', {
+  'https://api.tiles.mapbox.com/v4/mapbox.outdoors/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZWxqb3JkYWNoZSIsImEiOiIyNWVkMzk3Zjg4ODM1MDY0MzFmNzYwNjA3NzIzOTgzZSJ9.4EgS3PeSYEhPLy_CaCExSQ', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
     maxZoom: 18,
     worldCopyJump: false,
