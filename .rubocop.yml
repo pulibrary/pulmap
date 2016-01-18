@@ -27,3 +27,8 @@ Metrics/AbcSize:
 # TODO: Add top-level class and module documentation.
 Style/Documentation:
   Enabled: false
+
+# Overrides method in blacklight. Must use method name.
+Style/PredicateName:
+  Exclude:
+    - 'app/controllers/catalog_controller.rb'

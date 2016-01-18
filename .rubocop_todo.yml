@@ -125,9 +125,9 @@ Metrics/LineLength:
 
 # Offense count: 1
 # Configuration parameters: NamePrefix, NamePrefixBlacklist, NameWhitelist.
-Style/PredicateName:
-  Exclude:
-    - 'app/controllers/catalog_controller.rb'
+# Style/PredicateName:
+#   Exclude:
+#     - 'app/controllers/catalog_controller.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
