@@ -111,8 +111,8 @@ Metrics/LineLength:
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/MethodDefParentheses:
-  Enabled: false
+# Style/MethodDefParentheses:
+#   Enabled: false
 
 # Offense count: 3
 # Cop supports --auto-correct.
