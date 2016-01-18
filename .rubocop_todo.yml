@@ -13,9 +13,9 @@
 
 # Offense count: 11
 # Configuration parameters: CustomTransform, IgnoredWords.
-RSpec/ExampleWording:
-  Exclude:
-    - 'spec/helper/application_helper_spec.rb'
+# RSpec/ExampleWording:
+#   Exclude:
+#     - 'spec/helper/application_helper_spec.rb'
 
 # Offense count: 2
 # Configuration parameters: CustomTransform.
