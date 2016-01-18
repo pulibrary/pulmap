@@ -30,10 +30,10 @@ Metrics/LineLength:
 
 # Offense count: 2
 # Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/ClassAndModuleChildren:
-  Exclude:
-    - 'app/controllers/users/omniauth_callbacks_controller.rb'
-    - 'test/test_helper.rb'
+# Style/ClassAndModuleChildren:
+#   Exclude:
+#     - 'app/controllers/users/omniauth_callbacks_controller.rb'
+#     - 'test/test_helper.rb'
 
 # Offense count: 2
 # Cop supports --auto-correct.
