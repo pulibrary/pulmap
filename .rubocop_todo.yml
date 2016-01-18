@@ -7,9 +7,9 @@
 # versions of RuboCop, may require this file to be generated again.
 
 # Offense count: 3
-RSpec/DescribedClass:
-  Exclude:
-    - 'spec/lib/response_spec.rb'
+# RSpec/DescribedClass:
+#   Exclude:
+#     - 'spec/lib/response_spec.rb'
 
 # Offense count: 11
 # Configuration parameters: CustomTransform, IgnoredWords.

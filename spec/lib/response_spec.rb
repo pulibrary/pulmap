@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 describe Pulmap::Suggest::Response do
-  let(:empty_response) { Pulmap::Suggest::Response.new({}, q: 'hello') }
+  let(:empty_response) { described_class.new({}, q: 'hello') }
   let(:response) do
-    Pulmap::Suggest::Response.new(
+    described_class.new(
       {
         'responseHeader' => {
           'status' => 0,
@@ -35,7 +35,7 @@ describe Pulmap::Suggest::Response do
 
   describe '#initialize' do
     it 'creates a Pulmap::Suggest::Response' do
-      expect(empty_response).to be_an Pulmap::Suggest::Response
+      expect(empty_response).to be_an described_class
     end
   end
   describe '#suggestions' do
