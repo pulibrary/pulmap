@@ -131,9 +131,9 @@ Metrics/LineLength:
 
 # Offense count: 1
 # Cop supports --auto-correct.
-Style/RedundantSelf:
-  Exclude:
-    - 'spec/lib/suggest/search_helper_spec.rb'
+# Style/RedundantSelf:
+#   Exclude:
+#     - 'spec/lib/suggest/search_helper_spec.rb'
 
 # Offense count: 2
 # Cop supports --auto-correct.

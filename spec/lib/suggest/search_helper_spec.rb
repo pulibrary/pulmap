@@ -10,7 +10,7 @@ describe Pulmap::Suggest::SearchHelper do
     def initialize(blacklight_config, conn)
       self.blacklight_config = blacklight_config
       self.repository = Blacklight::SolrRepository.new(blacklight_config)
-      self.repository.connection = conn
+      repository.connection = conn
     end
 
     def params
