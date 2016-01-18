@@ -15,14 +15,19 @@ AllCops:
   - 'bin/*'
   - 'db/**/*'
   - 'vendor/**/*'
+  - 'config/initializers/*'
 
-# TODO: reduce method complexity in omniauth callback controller.
+# TODO: Reduce method complexity in omniauth callback controller.
 Metrics/AbcSize:
   Exclude:
     - 'app/controllers/users/omniauth_callbacks_controller.rb'
 
-# Metrics/LineLength:
-#   Enabled: false
+Metrics/LineLength:
+  Max: 100
+  Exclude:
+    - 'Rakefile'
+    # TODO: Refactor add_show_tools_partial procs.
+    - 'app/controllers/catalog_controller.rb'
 
 # TODO: Add top-level class and module documentation.
 Style/Documentation:

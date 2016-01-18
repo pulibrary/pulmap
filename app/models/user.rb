@@ -21,8 +21,9 @@ class User < ActiveRecord::Base
 
   def self.find_for_cas(access_token, _signed_in_resource = nil)
     logger.debug "#{access_token.inspect}"
+    fields = { provider: access_token.provider, uid: access_token.uid }
 
-    @user = User.where(provider: access_token.provider, uid: access_token.uid).first_or_create do |user|
+    @user = User.where(fields).first_or_create do |user|
       user.uid = access_token.uid
       user.username = access_token.uid
       user.email = "#{access_token.uid}@princeton.edu"
