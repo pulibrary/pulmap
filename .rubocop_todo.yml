@@ -44,22 +44,22 @@ Metrics/LineLength:
 
 # Offense count: 12
 # Configuration parameters: Exclude.
-Style/Documentation:
-  Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
-    - 'app/controllers/application_controller.rb'
-    - 'app/controllers/catalog_controller.rb'
-    - 'app/controllers/suggest_controller.rb'
-    - 'app/controllers/users/omniauth_callbacks_controller.rb'
-    - 'app/helpers/application_helper.rb'
-    - 'app/models/search_builder.rb'
-    - 'app/models/solr_document.rb'
-    - 'app/models/user.rb'
-    - 'config/application.rb'
-    - 'lib/suggest.rb'
-    - 'lib/suggest/response.rb'
-    - 'lib/suggest/search_helper.rb'
+# Style/Documentation:
+#   Exclude:
+#     - 'spec/**/*'
+#     - 'test/**/*'
+#     - 'app/controllers/application_controller.rb'
+#     - 'app/controllers/catalog_controller.rb'
+#     - 'app/controllers/suggest_controller.rb'
+#     - 'app/controllers/users/omniauth_callbacks_controller.rb'
+#     - 'app/helpers/application_helper.rb'
+#     - 'app/models/search_builder.rb'
+#     - 'app/models/solr_document.rb'
+#     - 'app/models/user.rb'
+#     - 'config/application.rb'
+#     - 'lib/suggest.rb'
+#     - 'lib/suggest/response.rb'
+#     - 'lib/suggest/search_helper.rb'
 
 # Offense count: 16
 # Cop supports --auto-correct.
