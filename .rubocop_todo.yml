@@ -178,10 +178,10 @@ Metrics/LineLength:
 
 # Offense count: 10
 # Cop supports --auto-correct.
-Style/TrailingWhitespace:
-  Exclude:
-    - 'app/controllers/application_controller.rb'
-    - 'app/models/solr_document.rb'
-    - 'app/models/user.rb'
-    - 'config/deploy.rb'
-    - 'config/environments/production.rb'
+# Style/TrailingWhitespace:
+#   Exclude:
+#     - 'app/controllers/application_controller.rb'
+#     - 'app/models/solr_document.rb'
+#     - 'app/models/user.rb'
+#     - 'config/deploy.rb'
+#     - 'config/environments/production.rb'

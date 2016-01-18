@@ -20,7 +20,7 @@ set :scm, :git
 # Default value for :log_level is :debug
 set :log_level, :debug
 
-# need tty for sudo 
+# need tty for sudo
 set :pty, true
 
 # Default value for :linked_files is []
