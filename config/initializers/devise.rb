@@ -23,14 +23,14 @@ Devise.setup do |config|
   # available as additional gems.
   require 'devise/orm/active_record'
 
-  # ==> Configuration for any authentication mechanism
-  # Configure which keys are used when authenticating a user. The default is
-  # just :email. You can configure it to use [:username, :subdomain], so for
-  # authenticating a user, both parameters are required. Remember that those
-  # parameters are used only when authenticating and not when retrieving from
-  # session. If you need permissions, you should implement that in a before filter.
-  # You can also supply a hash where the value is a boolean determining whether
-  # or not authentication should be aborted when the value is not present.
+ # ==> Configuration for any authentication mechanism
+ # Configure which keys are used when authenticating a user. The default is
+ # just :email. You can configure it to use [:username, :subdomain], so for
+ # authenticating a user, both parameters are required. Remember that those
+ # parameters are used only when authenticating and not when retrieving from
+ # session. If you need permissions, you should implement that in a before filter.
+ # You can also supply a hash where the value is a boolean determining whether
+ # or not authentication should be aborted when the value is not present.
  config.authentication_keys = [ :username ]
 
   # Configure parameters from the request object used for authentication. Each entry
