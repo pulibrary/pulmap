@@ -1,0 +1,20 @@
+# require: rubocop-rspec
+
+inherit_from:
+  - .rubocop_todo.yml
+
+AllCops:
+  RunRailsCops: true
+
+  DisplayCopNames: true
+
+  Include:
+  - '**/Rakefile'
+
+  Exclude:
+  - 'bin/*'
+  - 'db/**/*'
+  - 'vendor/**/*'
+
+# Metrics/LineLength:
+#   Enabled: false
