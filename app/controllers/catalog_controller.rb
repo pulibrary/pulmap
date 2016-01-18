@@ -16,8 +16,8 @@ class CatalogController < ApplicationController
     ## parameters included in the Blacklight-jetty document requestHandler.
     #
     config.default_document_solr_params = {
-     qt: 'document',
-     q: '{!raw f=layer_slug_s v=$id}'
+      qt: 'document',
+      q: '{!raw f=layer_slug_s v=$id}'
     }
 
     config.search_builder_class = Geoblacklight::SearchBuilder
