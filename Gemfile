@@ -56,6 +56,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'rubocop', '0.35.1', require: false
   gem 'rubocop-rspec', '1.3.1', require: false
+  gem 'xray-rails'
 end
 
 gem 'blacklight', '~> 5.12.0'
@@ -66,5 +67,4 @@ gem 'rsolr', '~> 1.0.6'
 gem 'devise'
 gem "devise-guests", "~> 0.3.3"
 gem "omniauth-cas"
-gem 'twitter-typeahead-rails'
 gem 'geocomplete_rails'
