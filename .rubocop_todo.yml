@@ -19,7 +19,7 @@
 
 # Offense count: 2
 # Configuration parameters: CustomTransform.
-RSpec/FilePath:
-  Exclude:
-    - 'spec/lib/response_spec.rb'
-    - 'spec/lib/suggest/search_helper_spec.rb'
+# RSpec/FilePath:
+#   Exclude:
+#     - 'spec/lib/response_spec.rb'
+#     - 'spec/lib/suggest/search_helper_spec.rb'

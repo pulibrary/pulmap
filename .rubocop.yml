@@ -37,3 +37,6 @@ Style/Documentation:
 Style/PredicateName:
   Exclude:
     - 'app/controllers/catalog_controller.rb'
+
+RSpec/FilePath:
+  Enabled: false
