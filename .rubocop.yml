@@ -16,5 +16,10 @@ AllCops:
   - 'db/**/*'
   - 'vendor/**/*'
 
+# TODO: reduce method complexity in omniauth callback controller.
+Metrics/AbcSize:
+  Exclude:
+    - 'app/controllers/users/omniauth_callbacks_controller.rb'
+
 # Metrics/LineLength:
 #   Enabled: false
