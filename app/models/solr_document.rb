@@ -1,6 +1,5 @@
 # -*- encoding : utf-8 -*-
 class SolrDocument 
-
   include Blacklight::Solr::Document
  include Geoblacklight::SolrDocument
 
@@ -19,5 +18,4 @@ class SolrDocument
   # and Blacklight::Document::SemanticFields#to_semantic_values
   # Recommendation: Use field names from Dublin Core
   use_extension( Blacklight::Document::DublinCore)    
-
 end

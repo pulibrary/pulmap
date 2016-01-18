@@ -63,30 +63,30 @@ Metrics/LineLength:
 
 # Offense count: 16
 # Cop supports --auto-correct.
-Style/EmptyLines:
-  Exclude:
-    - 'app/controllers/catalog_controller.rb'
-    - 'config/deploy/development.rb'
-    - 'config/deploy/production.rb'
-    - 'config/deploy/staging.rb'
-    - 'spec/lib/suggest/search_helper_spec.rb'
+# Style/EmptyLines:
+#   Exclude:
+#     - 'app/controllers/catalog_controller.rb'
+#     - 'config/deploy/development.rb'
+#     - 'config/deploy/production.rb'
+#     - 'config/deploy/staging.rb'
+#     - 'spec/lib/suggest/search_helper_spec.rb'
 
 # Offense count: 3
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/EmptyLinesAroundBlockBody:
-  Exclude:
-    - 'config/deploy.rb'
-    - 'spec/lib/suggest/search_helper_spec.rb'
+# Style/EmptyLinesAroundBlockBody:
+#   Exclude:
+#     - 'config/deploy.rb'
+#     - 'spec/lib/suggest/search_helper_spec.rb'
 
 # Offense count: 4
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/EmptyLinesAroundClassBody:
-  Exclude:
-    - 'app/controllers/catalog_controller.rb'
-    - 'app/models/solr_document.rb'
-    - 'app/models/user.rb'
+# Style/EmptyLinesAroundClassBody:
+#   Exclude:
+#     - 'app/controllers/catalog_controller.rb'
+#     - 'app/models/solr_document.rb'
+#     - 'app/models/user.rb'
 
 # Offense count: 26
 # Cop supports --auto-correct.

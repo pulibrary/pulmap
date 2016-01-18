@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe Pulmap::Suggest::SearchHelper do
-
   class SearchHelperTestClass
     include Pulmap::Suggest::SearchHelper
 
@@ -24,8 +23,6 @@ describe Pulmap::Suggest::SearchHelper do
   let(:blacklight_config) { Blacklight::Configuration.new }
   let(:copy_of_catalog_config) { ::CatalogController.blacklight_config.deep_copy }
   let(:blacklight_solr) { RSolr.connect(Blacklight.connection_config) }
-
-
 
   describe '#get_suggestions' do
     it 'returns a Pulmap::Suggest::Response' do

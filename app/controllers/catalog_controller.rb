@@ -2,7 +2,6 @@
 require 'blacklight/catalog'
 
 class CatalogController < ApplicationController
-
   include Blacklight::Catalog
 
   configure_blacklight do |config|
@@ -111,8 +110,6 @@ class CatalogController < ApplicationController
     # config.add_index_field 'dc_rights_s', :label => 'Access:'
     # # config.add_index_field 'Area', :label => 'Area:'
     # config.add_index_field 'dc_subject_sm', :label => 'Keywords:'
-
-
 
     # solr fields to be displayed in the show (single result) view
     #  The ordering of the field names is the order of the display
