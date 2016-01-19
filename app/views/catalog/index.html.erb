@@ -1,17 +1,19 @@
 <% if has_search_parameters? %>
-    <%= render :partial=>'/flash_msg', layout: 'shared/flash_messages' %>
 
-    <%- if !@response.empty? %>
-      <div id="map-container" class="col-md-6">
-      <%= content_tag :div, '', id: 'map-results', data: { map: 'index', 'catalog-path'=> catalog_index_path , 'map-bbox' => params[:bbox], basemap: geoblacklight_basemap } %>
-      </div>
-    <%- end %>
+<%= render :partial=>'/flash_msg', layout: 'shared/flash_messages' %>
+<%= render 'search_header' %>
 
-  <div id="content" class="col-md-6">
-    <%= render 'search_header' %>
+<div id="sidebar" class="col-md-4 col-sm-5">
+  <%= render 'search_sidebar' %>
+</div>
+
+<div id="content" class="col-md-8 col-sm-7">
     <%= render 'search_results' %>
-  </div>
+</div>
+
 <% else %>
-  <%# if there are no input/search related params, display the "home" partial -%>
-  <%= render 'home' %>
+
+<%= render :partial=>'/flash_msg', layout: 'shared/flash_messages' %>
+<%= render 'home' %>
+
 <% end %>

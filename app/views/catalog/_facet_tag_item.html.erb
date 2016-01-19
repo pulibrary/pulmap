@@ -1,15 +1,3 @@
-<!-- Next to search box -->
-
-<div class="dropdown">
-<button class="btn btn-default dropdown-toggle" type="button" id="dropdown-menu-subject" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    <%= link_to facet_field_label(display_facet.name), "#", :"data-no-turbolink" => true %>
-    <span class="caret"></span>
-  </button>
-<ul class="dropdown-menu dropdown-menu-left">
 <% display_facet.items.each do |item| %>
-    <li><%= link_to item.value, catalog_index_path({f: {"#{display_facet.name}" => [item.value]}}) %></li>
-
+  <%= link_to item.value, catalog_index_path({f: {"#{facet_field.field}" => [item.value]}}), class: 'home-facet-link' %><%= "," %>
 <% end %>
-    <li><%= link_to t('blacklight.search.facets.more'), catalog_facet_path(display_facet.name), class: 'more_facets_link' %></li>
-</ul>
-</div>
