@@ -1,0 +1,13 @@
+.thumbnail {
+  border-radius: 0;
+  padding: 0;
+  max-width: 57px;
+}
+
+.thumbnail img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}

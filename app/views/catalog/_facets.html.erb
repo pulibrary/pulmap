@@ -16,7 +16,7 @@
     </h2>
   </div>
 
-  <div class="map-view">
+  <div class="map-view" id="map-container">
     <%= content_tag :div, '', id: 'map-results', data: { map: 'index', 'catalog-path'=> catalog_index_path , 'map-bbox' => params[:bbox], basemap: geoblacklight_basemap } %>
   </div>
 
