@@ -1,13 +1,29 @@
 .thumbnail {
   border-radius: 0;
   padding: 0;
-  max-width: 57px;
+  max-width: 85px;
+  background-color: transparent;
 }
 
 .thumbnail img {
   display: block;
   max-width: 100%;
   height: auto;
+  width: auto;
+  max-width: 80px;
+  max-height: 77px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.thumbnail span {
+  display: block;
+  font-size: 60px;
+  line-height: 77px;
+  text-align: center;
+  color: lightgrey;
+}
+
+.thumbnail .geoblacklight-point {
+  margin-top: 10px;
 }
