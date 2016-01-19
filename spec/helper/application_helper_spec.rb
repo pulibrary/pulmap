@@ -21,13 +21,17 @@ describe ApplicationHelper, type: :helper do
         .and_return(controller: 'catalog', action: 'show')
       expect(layout_type).to eq 'item'
     end
-    it 'returns bookmarks when on search history page' do
+    it 'returns default when on search history page' do
       allow(self).to receive(:params).and_return(controller: 'search_history')
-      expect(layout_type).to eq 'bookmarks'
+      expect(layout_type).to eq 'default'
     end
-    it 'returns bookmarks when on bookmarks page' do
+    it 'returns default when on bookmarks page' do
       allow(self).to receive(:params).and_return(controller: 'bookmarks')
-      expect(layout_type).to eq 'bookmarks'
+      expect(layout_type).to eq 'default'
+    end
+    it 'returns default when on saved searches page' do
+      allow(self).to receive(:params).and_return(controller: 'saved_searches')
+      expect(layout_type).to eq 'default'
     end
   end
   describe '#home_layout?' do
@@ -57,14 +61,18 @@ describe ApplicationHelper, type: :helper do
       expect(item_layout?).to be false
     end
   end
-  describe '#bookmarks_layout?' do
+  describe '#default_layout?' do
     it 'returns true when on search_history page' do
       allow(self).to receive(:params).and_return(controller: 'search_history')
-      expect(bookmarks_layout?).to be true
+      expect(default_layout?).to be true
     end
     it 'returns true when on search history page' do
       allow(self).to receive(:params).and_return(controller: 'bookmarks')
-      expect(bookmarks_layout?).to be true
+      expect(default_layout?).to be true
+    end
+    it 'returns true when on saved searches page' do
+      allow(self).to receive(:params).and_return(controller: 'bookmarks')
+      expect(default_layout?).to be true
     end
   end
 end
