@@ -13,11 +13,14 @@
     <%= link_to_document document, document_show_link_field(document), counter: counter, title: document['dc_title_s'] %>
   </h3>
 
-  <div class='col-md-12 more-info-area'>
+  <div class='col-md-10'>
     <div>
       <small>
         <%= document['solr_year_i'] %>. <i><%= document['dc_creator_sm'].nil?? '' : document['dc_creator_sm'].join(', ') %></i>. <%= snippit(document['dc_description_s']) %>. <%= document['dc_publisher_s'] %>.
       </small>
     </div>
+  </div>
+  <div class="col-md-2 more-info-area thumbnail pull-right">
+    <a href="#"><img src="/assets/thumbnail.png" alt="document title"></a>
   </div>
 <% end %>

@@ -8,6 +8,8 @@ $(document).ready(function() {
       return ((elemTop <= docViewTop || elemTop >= docViewTop));
     }
     var catcher = $('header');
+    var catcher2 = $('#facets .top-panel-heading');
+    var catcher3 = $('#appliedParams');
     var sticky = $('#map-container');
     var footer = $('footer');
     var footTop = footer.offset().top;
@@ -16,10 +18,10 @@ $(document).ready(function() {
         sticky.css('position','fixed');
         sticky.css('top','20px');
       }
-      var stopHeight = catcher.offset().top + catcher.height();
+      var stopHeight = catcher.offset().top + catcher.height() + catcher2.height() + catcher3.height();
       var stickyFoot = sticky.offset().top + sticky.height();
 
-      if(stickyFoot > footTop -10){
+      if(stickyFoot > footTop - 10){
         sticky.css({
           position:'absolute',
           top: (footTop - 20) - sticky.height()
@@ -27,7 +29,7 @@ $(document).ready(function() {
       } else {
         if ( stopHeight > sticky.offset().top) {
           sticky.css('position','absolute');
-          sticky.css('top',stopHeight);
+          sticky.css('top',50);
         }
       }
     });
