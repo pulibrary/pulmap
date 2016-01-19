@@ -1,17 +1,16 @@
 require 'rails_helper'
 
 describe Pulmap::Suggest::SearchHelper do
-
   class SearchHelperTestClass
     include Pulmap::Suggest::SearchHelper
 
     attr_accessor :blacklight_config
     attr_accessor :repository
 
-    def initialize blacklight_config, conn
+    def initialize(blacklight_config, conn)
       self.blacklight_config = blacklight_config
       self.repository = Blacklight::SolrRepository.new(blacklight_config)
-      self.repository.connection = conn
+      repository.connection = conn
     end
 
     def params
@@ -24,8 +23,6 @@ describe Pulmap::Suggest::SearchHelper do
   let(:blacklight_config) { Blacklight::Configuration.new }
   let(:copy_of_catalog_config) { ::CatalogController.blacklight_config.deep_copy }
   let(:blacklight_solr) { RSolr.connect(Blacklight.connection_config) }
-
-
 
   describe '#get_suggestions' do
     it 'returns a Pulmap::Suggest::Response' do

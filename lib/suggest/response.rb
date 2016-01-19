@@ -17,7 +17,10 @@ module Pulmap
       # present
       # @return [Array]
       def suggestions
-        response.try(:[], 'suggest').try(:[], 'mySuggester').try(:[], request_params[:q]).try(:[], 'suggestions') || []
+        response.try(:[], 'suggest')
+          .try(:[], 'mySuggester')
+          .try(:[], request_params[:q])
+          .try(:[], 'suggestions') || []
       end
     end
   end

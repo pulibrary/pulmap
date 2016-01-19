@@ -54,6 +54,8 @@ group :development, :test do
   gem 'poltergeist'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem 'rubocop', '0.35.1', require: false
+  gem 'rubocop-rspec', '1.3.1', require: false
 end
 
 gem 'blacklight', '~> 5.12.0'

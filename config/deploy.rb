@@ -20,14 +20,19 @@ set :scm, :git
 # Default value for :log_level is :debug
 set :log_level, :debug
 
-# need tty for sudo 
+# need tty for sudo
 set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, fetch(:linked_files, []).push('config/blacklight.yml', 'config/database.yml', 'config/secrets.yml')
+set :linked_files, fetch(:linked_files, []).push('config/blacklight.yml',
+                                                 'config/database.yml',
+                                                 'config/secrets.yml')
 
 # Default value for linked_dirs is []
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache/downloads', 'tmp/sockets')
+set :linked_dirs, fetch(:linked_dirs, []).push('log',
+                                               'tmp/pids',
+                                               'tmp/cache/downloads',
+                                               'tmp/sockets')
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -43,7 +48,6 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache/dow
 set :passenger_restart_with_sudo, true
 
 namespace :deploy do
-
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
@@ -52,5 +56,4 @@ namespace :deploy do
       # end
     end
   end
-
 end
