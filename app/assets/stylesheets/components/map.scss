@@ -1,32 +1,87 @@
 $basemap-color: #ccdddd;
+
 .leaflet-container {
-    background-color: $basemap-color;
+  background-color: $basemap-color;
 }
 
 .leaflet-container[data-protocol="iiif"] {
-    background-color: white;
-    .leaflet-control-attribution {
-        display: none;
-    }
+  background-color: white;
+
+  .leaflet-control-attribution {
+    display: none;
+  }
 }
 
 .leaflet-control-attribution.leaflet-control {
-    // opacity: 0.2;
-    display: none;
+  // opacity: 0.2;
+  display: none;
 }
 
 .leaflet-left {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 #map-container {
-    background: #CCDDDD;
-    max-width: 365px;
-    margin-bottom: 1em;
+  background: #CCDDDD;
+  margin-bottom: 1em;
+
+  @media (max-width: $bp-small) {
+    visibility: hidden;
+
+    #map-results {
+        display: none;
+    }
+  }
+
+  @media (min-width: $bp-small) {
+    max-width: 340px;
+    width: 340px;
     height: 480px;
-    width: 365px;
+  }
+
+  @media (min-width: $bp-medium) {
+    max-width: 440px;
+    width: 440px;
+  }
+
+  @media (min-width: $bp-large) {
+    max-width: 540px;
+    width: 540px;
+  }
 }
 
 #content {
-    min-height: 500px;
+  min-height: 500px;
+}
+
+.sidebar,
+.content {
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  &.map-view {
+    width: 100%;
+    @media (min-width: $bp-small) {
+      width: 50%;
+    }
+  }
+}
+
+.sidebar {
+  width: 100%;
+
+  @media (min-width: $bp-small) {
+    width: 33%;
+  }
+}
+
+.content {
+  width: 100%;
+
+  @media (min-width: $bp-small) {
+    width: 66%;
+  }
 }
