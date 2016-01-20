@@ -7,58 +7,14 @@ header {
     background: $white;
 }
 
-.mask {
-    background-color: rgba(0, 0, 0, 0.1);
-    position: absolute;
-    bottom: 0;
-    height: 80px;
-    width: 100%;
-}
 
-.home-search {
-    .search_q.form-control,    .search_loc,    .search-btn {
-        height: 46px;
-        width: 100%;
-    }
-    .col-md-1 {
-        width: 76px;
-    }
-    .search-btn {
-        width: 46px;
-    }
-}
 
 main {
     padding: 0 0 0;
 }
 
-.l-branding__pul .menu--level-1,.l-branding__pul .logo__pul {
-    position: relative;
-    z-index: 9999;
-
-    height: 30px;
-}
-
 .pulmap-brand {
     height: 100%;
-}
-
-#search-navbar {
-    padding: 0;
-
-    .search-query-form {
-        width: calc(100% - 150px);
-        padding: 0;
-        margin: 0 1em 0 0;
-
-        > .input-group {
-            width: 100%;
-        }
-
-        > .input-group .input-group-btn {
-            width: 1%;
-        }
-    }
 }
 
 .navbar + .navbar {
@@ -78,19 +34,6 @@ li.bullet:hover {
 }
 #content {
     padding-right: 0;
-}
-
-.button--start-over a {
-    padding: 6px 12px;
-    margin: 3px 3px 3px 0;
-    background: $light-gray;
-    border: 1px solid $gray;
-    color: $black;
-    &:hover {
-        background: $blue;
-        color: $white;
-        text-decoration: none;
-    }
 }
 
 //constraints.scss

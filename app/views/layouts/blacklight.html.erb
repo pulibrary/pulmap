@@ -32,15 +32,17 @@
 
   </head>
   <body class="<%= render_body_class %>">
-  <%= render :partial => 'shared/header_navbar' %>
-  <%= render partial: 'shared/ajax_modal' %>
+  <div class="wrapper">
+    <%= render :partial => 'shared/header_navbar' %>
+    <%= render partial: 'shared/ajax_modal' %>
 
-  <main role="main">
-    <div class="container" id="main-container">
-      <%= content_tag :h1, application_name, class: 'sr-only application-heading' %>
-      <%= yield %>
-    </div>
-  </main>
+    <main role="main">
+      <div class="container" id="main-container">
+        <%= content_tag :h1, application_name, class: 'sr-only application-heading' %>
+        <%= yield %>
+      </div>
+    </main>
+  </div>
 
   <%= render :partial => 'shared/footer' %>
   </body>

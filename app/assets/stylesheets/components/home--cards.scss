@@ -5,16 +5,29 @@
   $base-font-color: $dark-gray !default;
   $icon-bullet-size: 3.5em;
 
-  @include display(flex);
-  @include flex-wrap(wrap);
   margin-bottom: $base-line-height;
   margin: 2em 1em;
   overflow: auto;
   padding: 0;
 
   .bullet {
-    @include flex-basis(20em);
-    @include flex-grow(1);
+    width: 100%;
+
+    @media (min-width: $bp-small) {
+      width: 50%;
+      float: left;
+
+      &:last-child {
+        width: 100%;
+      }
+    }
+
+    @media (min-width: $bp-medium) {
+      width: 33%;
+      &:last-child {
+        width: 33%;
+      }
+    }
   }
 
   .bullet-icon {

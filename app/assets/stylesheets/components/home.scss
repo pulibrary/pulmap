@@ -1,44 +1,161 @@
 [data-map="home"] {
-    height: 400px;
+  height: 400px;
 }
 
 main.home {
-    padding-top: 0;
+  padding-top: 0;
 }
 
 .find-by {
-    .category-icon {
-        font-size: 6em;
-        text-align: center;
-        line-height: 1em;
+  .category-icon {
+    font-size: 6em;
+    text-align: center;
+    line-height: 1em;
+  }
+
+  h4 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+.mask {
+  background: $white;
+  height: 134px;
+  width: 100%;
+
+  @media (min-width: 625px) {
+    height: 46px;
+  }
+
+  @media (min-width: $bp-small) {
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 0;
+    height: 80px;
+  }
+}
+
+.home-search {
+    .btn-toggle .btn {
+        height: 46px;
+    }
+  .search_q.form-control,
+  .search_loc,
+  .search-btn {
+    height: 46px;
+    width: 100%;
+  }
+
+  .col-md-1 {
+    width: 76px;
+  }
+
+  .search-btn {
+    width: 46px;
+  }
+
+  .find-loc {
+    padding: 0 15px;
+    width: 100%;
+    margin: 1em 0;
+
+    @media (min-width: 625px) {
+      width: 50%;
+      float: left;
     }
 
-    h4 {
-        font-size: 24px;
-        font-weight: bold;
-        text-align: center;
+    @media (min-width: $bp-small) {
+      width: 25%;
+      padding: 0;
+      margin: 0;
     }
+  }
+
+  .search-main {
+    padding: 0 15px;
+    width: 100%;
+    margin-bottom: 1em;
+
+    @media (min-width: 625px) {
+      width: 50%;
+      float: left;
+      margin: 1em 0;
+    }
+
+    @media (min-width: $bp-small) {
+      width: 54%;
+      margin: 0;
+    }
+
+    .input-group-btn {
+      width: 46px;
+    }
+  }
+
+  .btn-toggle {
+    display: none;
+    width: 21%;
+    float: right;
+
+    .btn-primary {
+      background: $dark-gray;
+      border: $dark-gray;
+    }
+
+    @media (min-width: $bp-small) {
+      display: inline-block;
+    }
+  }
 }
 
 .search-bar-overlay {
+  height: 134px;
+
+  .home-search {
+    height: 134px;
+  }
+
+  @media (min-width: 625px) {
+    height: 46px;
+
+    .home-search {
+      height: 46px;
+    }
+  }
+
+  @media (min-width: $bp-small) {
     height: 80px;
 
     .home-search {
-        height: 80px;
-        // @include vertical-align();
-        > div {
-            @include vertical-align();
-        }
+      height: 80px;
+
+      > div {
+        @include vertical-align;
+      }
     }
+  }
 }
+
 .map-container {
-    width: 100%;
-    position: relative;
-    background: black;
-    .leaflet-container {
-        opacity: 0.8;
-    }
-    .leaflet-container.active {
-        opacity: 1;
-    }
+  width: 100%;
+  position: relative;
+  background: black;
+
+  .leaflet-container {
+    opacity: 0.8;
+  }
+
+  .leaflet-container.active {
+    opacity: 1;
+  }
+}
+
+#map-front {
+  display: none;
+
+  @media (min-width: $bp-small) {
+    display: block;
+  }
 }

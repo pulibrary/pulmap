@@ -1,6 +1,35 @@
-main {
-    background: $white;
+// sticky footer
+
+* {
+  margin: 0;
 }
+
+html,
+body {
+  height: 100%;
+}
+
+.wrapper {
+  background: $white;
+  margin-bottom: -75px; //equal to footer height
+  min-height: 100%;
+}
+
+.wrapper:after {
+  content: "";
+  display: block;
+}
+
+footer,
+.wrapper:after {
+  height: 75px;
+}
+
+footer {
+  background: $light-gray;
+}
+
+// footer components
 
 .l-region--footer {
     height: 47px;
@@ -9,10 +38,16 @@ main {
 
 .footer--copyright {
     display: inline-block;
+    width: 50%;
     float: right;
     margin: 0;
     font-size: 0.8em;
     @include vertical-align();
+
+    @media (min-width: 625px) {
+      width: 75%;
+      text-align: right;
+    }
 }
 .pu {
     display: inline-block;
@@ -52,7 +87,7 @@ main {
 .svg .pu-logo {
     height: 40px;
     width: 142px;
-    margin: 0.5em 0 0;
+    margin: 0;
 
     background-image: image-url("pu.svg");
 }
