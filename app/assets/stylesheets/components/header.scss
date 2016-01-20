@@ -271,6 +271,12 @@
     .search-query-form {
         @include vertical-align();
     }
+
+    @media (max-width: $bp-small) {
+        .map-toggle {
+            display: none;
+        }
+    }
 }
 
 .form-inline .input-group .input-group-btn {
