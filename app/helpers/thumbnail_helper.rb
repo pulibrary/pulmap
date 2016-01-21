@@ -3,7 +3,8 @@ module ThumbnailHelper
     url = gbl_thumbnail_url(document, image_width)
 
     if url
-      h = image_tag(gbl_thumbnail_url(document, image_width), alt: 'document title')
+      h = "<img class='item-thumbnail' data-src='#{gbl_thumbnail_url(document)}'>"
+      h += geoblacklight_icon(document['layer_geom_type_s'])
     else
       h = geoblacklight_icon(document['layer_geom_type_s'])
     end
@@ -47,7 +48,7 @@ module ThumbnailHelper
     "&LAYERS=#{document['layer_id_s']}" \
     "&WIDTH=#{dimensions[:width]}" \
     "&HEIGHT=#{dimensions[:height]}" \
-    "&BBOX=#{document.bounding_box_as_wsen.tr(' ', ',')}"
+    "&BBOX=#{document.bounding_box_as_wsen.tr(' ', ',')}".html_safe
   end
 
   def iiif_thumbnail_url(document, dimensions)

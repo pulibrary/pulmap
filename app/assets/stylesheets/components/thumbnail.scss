@@ -1,10 +1,13 @@
+// thumbnail container
 .thumbnail {
   border-radius: 0;
   padding: 0;
   max-width: 85px;
   background-color: transparent;
+  border: none;
 }
 
+// thumbnail image
 .thumbnail img {
   display: block;
   max-width: 100%;
@@ -16,6 +19,7 @@
   margin-right: auto;
 }
 
+// thumbnail placeholder icons
 .thumbnail span {
   display: block;
   font-size: 60px;
@@ -24,6 +28,21 @@
   color: lightgrey;
 }
 
+// centers point icon
 .thumbnail .geoblacklight-point {
   margin-top: 10px;
+}
+
+// hides icon placeholder when thumbnail image is loaded
+.thumbnail {
+  img[src]+span{
+    display: none;
+  }
+}
+
+.blacklight-polygon, .blacklight-line, .blacklight-point {
+  thumbnail img {
+    -webkit-filter: grayscale(80%); filter: grayscale(80%);
+    opacity: 0.8;
+  }
 }
