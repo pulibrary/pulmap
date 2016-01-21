@@ -59,7 +59,8 @@
       }, this);
 
       dynamicSearcher = GeoBlacklight.debounce(function() {
-        if (this.options.dynamic) {
+        var display = $('#map-container')[0].style['display']
+        if (this.options.dynamic && display == 'block') {
           this.options.searcher.apply(this);
         }
       }, this.options.delay);
