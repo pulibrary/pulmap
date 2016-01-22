@@ -32,62 +32,58 @@ footer {
 // footer components
 
 .l-region--footer {
-    height: 47px;
-    position: relative;
+  height: 47px;
+  position: relative;
 }
 
 .footer--copyright {
-    display: inline-block;
-    width: 50%;
-    float: right;
-    margin: 0;
-    font-size: 0.8em;
-    @include vertical-align();
+  display: inline-block;
+  width: 50%;
+  float: right;
+  margin: 0;
+  font-size: 0.8em;
 
-    @media (min-width: 625px) {
-      width: 75%;
-      text-align: right;
-    }
+  @include vertical-align;
+
+  @media (min-width: 625px) {
+    width: 75%;
+    text-align: right;
+  }
 }
+
 .pu {
-    display: inline-block;
-    float: left;
-    @include vertical-align();
+  display: inline-block;
+  float: left;
+
+  @include vertical-align;
 }
 
 .l-footer {
-    padding: 1em 0;
-
-    background-color: $light-gray;
+  padding: 1em 0;
+  background-color: $light-gray;
 }
 
 .svg .pu-logo:before {
-    display: inline-block;
-    vertical-align: middle;
-
-    height: 100%;
-
-    content: ' ';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  content: ' ';
 }
 
 .svg .pu-logo {
-    display: inline-block;
-
-    height: 24px;
-
-    background-size: contain;
-
-    line-height: 11px;
+  display: inline-block;
+  height: 24px;
+  background-size: contain;
+  line-height: 11px;
 }
 
 .svg .pu-logo img {
-    display: none;
+  display: none;
 }
 
 .svg .pu-logo {
-    height: 40px;
-    width: 142px;
-    margin: 0;
-
-    background-image: image-url("pu.svg");
+  height: 40px;
+  width: 142px;
+  margin: 0;
+  background-image: image-url("pu.svg");
 }
