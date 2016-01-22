@@ -1,11 +1,11 @@
 <header role="banner">
   <div class="l-branding__pul">
     <div class="container">
-      <%= link_to root_path, class: "logo__pul" do %>
+      <%= link_to root_path, class: "logo__pul col-xs-12 col-sm-6" do %>
         <%= image_tag("library_full_logo.svg", class: "logo-svg") %>
         <%= image_tag("library_full_logo.png", class: "logo-no-svg") %>
       <% end %>
-            <div class="pull-right menu--level-1 col-xs-12 col-sm-6">
+      <div class="pull-right menu--level-1 col-xs-12 col-sm-6">
         <ul>
           <li><a href="http://library.princeton.edu/help/contact-us">Contact Us</a></li>
           <%= render :partial=>'/account' %>
@@ -13,34 +13,34 @@
       </div>
     </div>
   </div>
-  <div class="home-secondary-navbar navbar">
+  <div class="home-secondary-navbar navbar <% if home_layout? %>home<% end %>">
     <div class="container" role="navigation">
     <% if home_layout? %>
-      <div class="col-md-8 logo">
-      <%= link_to root_path, class: "logo__pul" do %>
+      <div class="col-xs-12 col-sm-8 logo">
+      <%= link_to root_path, class: "logo__app" do %>
         <%= image_tag 'geoblacklight-logo.png', {:alt => 'GeoBlacklight', :style => 'height: 35px;', :class => 'pulmap-brand'} %>
         <% end %>
       </div>
       <% elsif item_layout? %>
-      <div class="col-md-1 logo">
-      <%= link_to root_path, class: "logo__pul" do %>
+      <div class="col-xs-12 col-sm-1 col-md-1 logo">
+      <%= link_to root_path, class: "logo__app" do %>
         <%= image_tag 'geoblacklight-logo.png', {:alt => 'GeoBlacklight', :style => 'height: 35px;', :class => 'pulmap-brand'} %>
         <% end %>
       </div>
-      <div class="col-md-7 search">
+      <div class="col-xs-12 col-sm-7 search">
         <%= render 'shared/header_secondary_index' %>
       </div>
       <% else %>
-      <div class="col-md-1 logo">
-      <%= link_to root_path, class: "logo__pul" do %>
+      <div class="col-xs-12 col-sm-1 col-md-1 logo">
+      <%= link_to root_path, class: "logo__app" do %>
         <%= image_tag 'geoblacklight-logo.png', {:alt => 'GeoBlacklight', :style => 'height: 35px;', :class => 'pulmap-brand'} %>
         <% end %>
       </div>
-      <div class="col-md-7 search">
+      <div class="col-xs-12 col-sm-7 search">
         <%= render 'shared/header_secondary_filters' %>
       </div>
       <% end %>
-      <div class="col-md-4 util-links">
+      <div class="col-xs-12 col-sm-4 util-links">
         <%= render :partial=>'/user_util_links' -%>
       </div>
     </div>
