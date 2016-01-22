@@ -24,13 +24,13 @@ class CatalogController < ApplicationController
 
     # solr field configuration for search results/index views
     # config.index.show_link = 'title_display'
-    # config.index.record_display_type = 'format'
+    config.index.record_display_type = 'layer_geom_type_s'
 
     config.index.title_field = 'dc_title_s'
 
     # solr field configuration for document/show views
 
-    config.show.display_type_field = 'format'
+    config.show.display_type_field = 'layer_geom_type_s'
 
     # Custom GeoBlacklight fields which currently map to GeoBlacklight-Schema
     # v0.3.2

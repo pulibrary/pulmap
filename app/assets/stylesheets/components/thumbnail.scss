@@ -1,13 +1,48 @@
+// thumbnail container
 .thumbnail {
   border-radius: 0;
   padding: 0;
-  max-width: 57px;
+  max-width: 85px;
+  background-color: transparent;
+  border: none;
 }
 
+// thumbnail image
 .thumbnail img {
   display: block;
   max-width: 100%;
   height: auto;
+  width: auto;
+  max-width: 80px;
+  max-height: 77px;
   margin-left: auto;
   margin-right: auto;
+}
+
+// thumbnail placeholder icons
+.thumbnail span {
+  display: block;
+  font-size: 60px;
+  line-height: 77px;
+  text-align: center;
+  color: lightgrey;
+}
+
+// centers point icon
+.thumbnail .geoblacklight-point {
+  margin-top: 10px;
+}
+
+// hides icon placeholder when thumbnail image is loaded
+.thumbnail {
+  img[src]+span{
+    display: none;
+  }
+}
+
+.blacklight-polygon, .blacklight-line, .blacklight-point {
+  thumbnail img {
+    -webkit-filter: grayscale(80%); filter: grayscale(80%);
+    opacity: 0.8;
+  }
 }
