@@ -13,6 +13,7 @@ AllCops:
   - 'db/**/*'
   - 'vendor/**/*'
   - 'config/initializers/*'
+  - 'spec/factories/*'
 
 # TODO: Reduce method complexity in omniauth callback controller.
 Metrics/AbcSize:
