@@ -57,16 +57,19 @@ main.home {
   }
 
   .find-loc {
+    display: none;
     padding: 0 15px;
     width: 100%;
     margin: 1em 0;
 
     @media (min-width: 625px) {
+      display: none;
       width: 50%;
       float: left;
     }
 
     @media (min-width: $bp-small) {
+      display: block;
       width: 25%;
       padding: 0;
       margin: 0;
@@ -76,10 +79,10 @@ main.home {
   .search-main {
     padding: 0 15px;
     width: 100%;
-    margin-bottom: 1em;
+    margin: 1em 0;
 
     @media (min-width: 625px) {
-      width: 50%;
+      width: 100%;
       float: left;
       margin: 1em 0;
     }
