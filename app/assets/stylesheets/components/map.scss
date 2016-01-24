@@ -89,3 +89,8 @@ $basemap-color: #ccdddd;
     padding-right: 0;
   }
 }
+
+// expand viewer container when there is no table container
+#viewer-container:only-child {
+   width: 100% !important;
+}
