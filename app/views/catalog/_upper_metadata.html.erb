@@ -11,9 +11,9 @@
         <dd class="blacklight-<%= solr_fname.parameterize %>"><%= render_document_show_field_value document, field: solr_fname %></dd>
       <% end %>
     <% end %>
-    <% if !@document.references.nil? && !@document.references.url.nil? %>
+<!--     <% if !@document.references.nil? && !@document.references.url.nil? %>
       <dt>More details at</dt>
       <dd itemprop="url"><%= link_to @document.references.url.endpoint, @document.references.url.endpoint %></dd>
-    <% end %>
+    <% end %> -->
   </dl>
 </div>
