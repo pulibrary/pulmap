@@ -1,6 +1,6 @@
 module ThumbnailHelper
-  def gbl_thumbnail_img(document, image_width = 100)
-    url = gbl_thumbnail_url(document, image_width)
+  def gbl_thumbnail_img(document, image_wh = 250)
+    url = gbl_thumbnail_url(document, image_wh)
 
     if url
       h = "<img class='item-thumbnail' data-src='#{gbl_thumbnail_url(document)}'>"
@@ -13,22 +13,23 @@ module ThumbnailHelper
 
   # get thumbnail url from dctrefs, if not in dctrefs, then
   # from a WMS, IIIF service
-  def gbl_thumbnail_url(document, image_width = 100)
-    dimensions = gbl_thumbnail_dimensions(document, image_width)
-    thumbnail_reference(document) || thumbnail_service_url(document, dimensions)
+  def gbl_thumbnail_url(document, image_wh = 250)
+    thumbnail_reference(document) || thumbnail_service_url(document, image_wh)
   end
 
   def gbl_thumbnail_bbox(document)
-    document.bounding_box_as_wsen.split(' ').collect!(&:to_f)
+    bbox = document.bounding_box_as_wsen.split(' ').collect!(&:to_f)
+    gbl_enlarge_bbox(bbox).join(',')
   end
 
-  # return hash {width, height})
-  def gbl_thumbnail_dimensions(document, image_width = 100)
-    bbox = gbl_thumbnail_bbox(document)
-
-    # |north - south| / (|east - west| * 2) * thumb_width
-    calc_height = (((bbox[3] - bbox[1]).abs / (bbox[2] - bbox[0]).abs * 2) * image_width).to_i
-    { width: image_width, height: calc_height }
+  def gbl_enlarge_bbox(bbox)
+    ns = ((bbox[3] - bbox[1]).abs)
+    scale_factor = ns / 4
+    bbox[2] = bbox[2] + scale_factor
+    bbox[0] = bbox[0] - scale_factor
+    bbox[3] = bbox[3] + scale_factor
+    bbox[1] = bbox[1] - scale_factor
+    bbox
   end
 
   # workaround for lack of thumbnail in constants class
@@ -36,22 +37,22 @@ module ThumbnailHelper
     JSON.parse(document[document.references.reference_field])['http://schema.org/thumbnailUrl']
   end
 
-  def thumbnail_service_url(document, dimensions)
+  def thumbnail_service_url(document, image_wh)
     return unless document.available?
     protocol = document.viewer_protocol
-    method("#{protocol}_thumbnail_url").call(document, dimensions) unless protocol == 'map'
+    method("#{protocol}_thumbnail_url").call(document, image_wh) unless protocol == 'map'
   end
 
-  def wms_thumbnail_url(document, dimensions)
+  def wms_thumbnail_url(document, image_wh)
     "#{document.viewer_endpoint}?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&FORMAT=image%2Fpng" \
     '&TRANSPARENT=TRUE' \
     "&LAYERS=#{document['layer_id_s']}" \
-    "&WIDTH=#{dimensions[:width]}" \
-    "&HEIGHT=#{dimensions[:height]}" \
-    "&BBOX=#{document.bounding_box_as_wsen.tr(' ', ',')}".html_safe
+    "&WIDTH=#{image_wh}" \
+    "&HEIGHT=#{image_wh}" \
+    "&BBOX=#{gbl_thumbnail_bbox(document)}".html_safe
   end
 
-  def iiif_thumbnail_url(document, dimensions)
-    "#{document.viewer_endpoint.gsub('info.json', '')}full/#{dimensions[:width]},/0/default.jpg"
+  def iiif_thumbnail_url(document, image_wh)
+    "#{document.viewer_endpoint.gsub('info.json', '')}full/#{image_wh},/0/default.jpg"
   end
 end

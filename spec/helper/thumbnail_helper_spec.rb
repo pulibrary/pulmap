@@ -4,7 +4,7 @@ describe ThumbnailHelper, type: :helper do
   include Geoblacklight::GeoblacklightHelperBehavior
 
   let(:document) { SolrDocument.new(document_attributes) }
-  let(:document_attributes) { { solr_geom: 'ENVELOPE(-180, 180, 90, -90)', dct_references_s: references, dc_rights_s: 'public' } }
+  let(:document_attributes) { { solr_geom: 'ENVELOPE(-90, 90, 45, -45)', dct_references_s: references, dc_rights_s: 'public' } }
   describe '#gbl_thumbnail_url' do
     context 'dct_references with thumbnail ref only' do
       let(:references) do
@@ -42,18 +42,18 @@ describe ThumbnailHelper, type: :helper do
         allow(document).to receive('checked_endpoint').with('wms').and_return('http://www.geoserver.com/layer/wms')
         expect(gbl_thumbnail_url(document)).to eq 'http://www.geoserver.com/wms/layer?SERVICE=WMS&VERSION=1.1.1' \
                                                   '&REQUEST=GetMap&FORMAT=image%2Fpng&TRANSPARENT=TRUE&LAYERS=' \
-                                                  '&WIDTH=100&HEIGHT=100&BBOX=-180,-90,180,90'
+                                                  '&WIDTH=250&HEIGHT=250&BBOX=-112.5,-67.5,112.5,67.5'
       end
     end
     context 'dct_references with no thumbnail ref and iiif ref' do
       let(:references) do
         {
-          'http://iiif.io/api/image' => 'http://wwwexample.com/loris/image.jp2/info.json'
+          'http://iiif.io/api/image' => 'http://www.example.com/loris/image.jp2/info.json'
         }.to_json
       end
       it 'returns thumbnail url from iiif endpoint' do
-        allow(document).to receive('checked_endpoint').with('iiif').and_return('http://wwwexample.com/loris/image.jp2/info.json')
-        expect(gbl_thumbnail_url(document)).to eq 'http://wwwexample.com/loris/image.jp2/full/100,/0/default.jpg'
+        allow(document).to receive('checked_endpoint').with('iiif').and_return('http://www.example.com/loris/image.jp2/info.json')
+        expect(gbl_thumbnail_url(document)).to eq 'http://www.example.com/loris/image.jp2/full/250,/0/default.jpg'
       end
     end
   end
