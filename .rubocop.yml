@@ -26,7 +26,7 @@ Metrics/LineLength:
     - 'Rakefile'
     # TODO: Refactor add_show_tools_partial procs.
     - 'app/controllers/catalog_controller.rb'
-    - 'spec/helper/thumbnail_helper_spec.rb'
+    - 'spec/lib/thumbnail_spec.rb'
 
 # TODO: Add top-level class and module documentation.
 Style/Documentation:

@@ -7,13 +7,16 @@ ZIP_URL = "https://github.com/projectblacklight/blacklight-jetty/archive/v#{BLAC
 
 require 'jettywrapper'
 require 'rspec/core/rake_task'
-require 'rubocop/rake_task'
 
 task default: :ci
 
-desc 'Run style checker'
-RuboCop::RakeTask.new(:rubocop) do |task|
-  task.fail_on_error = true
+unless Rails.env == 'production'
+  require 'rubocop/rake_task'
+
+  desc 'Run style checker'
+  RuboCop::RakeTask.new(:rubocop) do |task|
+    task.fail_on_error = true
+  end
 end
 
 desc 'Run test suite and style checker'

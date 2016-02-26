@@ -39,3 +39,8 @@ WMS_PARAMS:
   :SRS: 'EPSG:4326'
   :EXCEPTIONS: 'application/json'
   :INFO_FORMAT: 'text/html'
+
+THUMBNAIL:
+  SIZE: 200 # Size of thumbnail to request
+  BASE_PATH: "thumbnails" # Base path for thumbnail urls
+  FILE_BASE_PATH: "./public" # Path to parent of thumbnail images directory
