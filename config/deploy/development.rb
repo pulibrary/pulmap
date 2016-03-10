@@ -1,4 +1,3 @@
-set :development, :production
 set :rails_env, 'development'
 
 # server-based syntax
