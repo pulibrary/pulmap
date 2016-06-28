@@ -1,7 +1,7 @@
 GIT
-  remote: https://github.com/geoblacklight/geoblacklight.git
-  revision: 9abeabc468aafc8febbd40a8a1a221bb9a079508
-  ref: 9abeabc468
+  remote: git://github.com/geoblacklight/geoblacklight.git
+  revision: 8d5494a8e7bfabbd17c405d7c1234faec3f2c158
+  branch: master
   specs:
     geoblacklight (0.12.1)
       blacklight (~> 5.12, < 6)
