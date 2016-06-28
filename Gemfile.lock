@@ -1,3 +1,17 @@
+GIT
+  remote: git://github.com/geoblacklight/geoblacklight.git
+  revision: 8d5494a8e7bfabbd17c405d7c1234faec3f2c158
+  branch: master
+  specs:
+    geoblacklight (0.12.1)
+      blacklight (~> 5.12, < 6)
+      coderay
+      faraday
+      font-awesome-rails (~> 4.1.0.0)
+      geoblacklight-icons (>= 0.2)
+      leaflet-rails (~> 0.7.3)
+      rails_config (~> 0.4.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -54,10 +68,6 @@ GEM
       nokogiri (~> 1.6)
       rails (>= 3.2.6, < 5)
       rsolr (~> 1.0.11)
-    blacklight_range_limit (5.0.4)
-      blacklight (>= 5.0.0.pre4, < 6)
-      jquery-rails
-      rails (>= 3.0, < 5.0)
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -84,7 +94,7 @@ GEM
     childprocess (0.5.6)
       ffi (~> 1.0, >= 1.0.11)
     cliver (0.3.2)
-    coderay (1.1.0)
+    coderay (1.1.1)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -129,16 +139,7 @@ GEM
     ffi (1.9.10)
     font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
-    geoblacklight (0.11.0)
-      blacklight (~> 5.12.0)
-      blacklight_range_limit (~> 5.0.3)
-      coderay
-      faraday
-      font-awesome-rails (~> 4.1.0.0)
-      geoblacklight-icons (>= 0.2)
-      leaflet-rails (~> 0.7.3)
-      rails_config (~> 0.4.2)
-    geoblacklight-icons (0.2.1)
+    geoblacklight-icons (0.3.0)
     geocomplete_rails (1.6.5)
       railties (>= 3.1)
     globalid (0.3.6)
@@ -164,7 +165,7 @@ GEM
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    leaflet-rails (0.7.4)
+    leaflet-rails (0.7.7)
     libv8 (3.16.14.11)
     logger (1.2.8)
     loofah (2.0.3)
@@ -348,7 +349,7 @@ DEPENDENCIES
   devise
   devise-guests (~> 0.3.3)
   factory_girl_rails
-  geoblacklight (~> 0.11.0)
+  geoblacklight!
   geocomplete_rails
   jbuilder (~> 2.0)
   jettywrapper
@@ -373,4 +374,4 @@ DEPENDENCIES
   xray-rails
 
 BUNDLED WITH
-   1.10.6
+   1.12.5

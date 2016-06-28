@@ -1,5 +1,6 @@
 //= require geoblacklight/geoblacklight
 //= require geoblacklight/basemaps
+//= require geoblacklight/controls
 //= require geoblacklight/viewers
 //= require modules/filterToggle
 //= require modules/mapPosition
@@ -13,7 +14,7 @@
 //= require geoblacklight/modules/layer_opacity
 //= require geoblacklight/modules/results
 //= require geoblacklight/downloaders
-//= require blacklight_range_limit
 //= require leaflet-iiif
+//= require esri-leaflet
 //= require readmore.min
 //= require modules/thumbnail
