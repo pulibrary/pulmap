@@ -29,6 +29,11 @@ TIMEOUT_WMS: 4
 WEBSERVICES_SHOWN:
   - 'wms'
   - 'wfs'
+  - 'iiif'
+  - 'feature_layer'
+  - 'tiled_map_layer'
+  - 'dynamic_map_layer'
+  - 'image_map_layer'
 
 # WMS Parameters
 WMS_PARAMS:

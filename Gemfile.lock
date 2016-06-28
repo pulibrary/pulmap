@@ -1,3 +1,17 @@
+GIT
+  remote: https://github.com/geoblacklight/geoblacklight.git
+  revision: c23f5035857b5c078f21a849abf20dbb87eaa50e
+  ref: c23f5035857b
+  specs:
+    geoblacklight (0.12.0)
+      blacklight (~> 5.12, < 6)
+      coderay
+      faraday
+      font-awesome-rails (~> 4.1.0.0)
+      geoblacklight-icons (>= 0.2)
+      leaflet-rails (~> 0.7.3)
+      rails_config (~> 0.4.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -125,14 +139,6 @@ GEM
     ffi (1.9.10)
     font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
-    geoblacklight (0.12.1)
-      blacklight (~> 5.12, < 6)
-      coderay
-      faraday
-      font-awesome-rails (~> 4.1.0.0)
-      geoblacklight-icons (>= 0.2)
-      leaflet-rails (~> 0.7.3)
-      rails_config (~> 0.4.2)
     geoblacklight-icons (0.3.0)
     geocomplete_rails (1.6.5)
       railties (>= 3.1)
@@ -343,7 +349,7 @@ DEPENDENCIES
   devise
   devise-guests (~> 0.3.3)
   factory_girl_rails
-  geoblacklight (~> 0.12.1)
+  geoblacklight!
   geocomplete_rails
   jbuilder (~> 2.0)
   jettywrapper
