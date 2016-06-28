@@ -60,7 +60,7 @@ group :development, :test do
 end
 
 gem 'blacklight', '~> 5.12.0'
-gem 'geoblacklight', git: 'https://github.com/geoblacklight/geoblacklight.git', ref: '69b092264'
+gem 'geoblacklight', git: 'https://github.com/geoblacklight/geoblacklight.git', ref: '9abeabc468'
 gem 'rspec-rails', '~> 3.1.0'
 gem 'jettywrapper'
 gem 'rsolr', '~> 1.0.6'

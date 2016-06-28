@@ -51,6 +51,26 @@ WMS_PARAMS:
   :EXCEPTIONS: 'application/json'
   :INFO_FORMAT: 'text/html'
 
+# Settings for leaflet 
+OPACITY_CONTROL: &opacity_control
+  CONTROLS:
+    - 'Opacity'
+
+LEAFLET:
+  MAP:
+  LAYERS:
+  VIEWERS:
+    WMS:
+      <<: *opacity_control
+    TILEDMAPLAYER:
+      <<: *opacity_control
+    FEATURELAYER:
+      <<: *opacity_control
+    DYNAMICMAPLAYER:
+      <<: *opacity_control
+    IMAGEMAPLAYER:
+      <<: *opacity_control
+
 THUMBNAIL:
   SIZE: 200 # Size of thumbnail to request
   BASE_PATH: "thumbnails" # Base path for thumbnail urls

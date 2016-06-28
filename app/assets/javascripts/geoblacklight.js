@@ -1,5 +1,6 @@
 //= require geoblacklight/geoblacklight
 //= require geoblacklight/basemaps
+//= require geoblacklight/controls
 //= require geoblacklight/viewers
 //= require modules/filterToggle
 //= require modules/mapPosition
