@@ -2,10 +2,12 @@ require 'rails_helper'
 
 describe PersistThumbnail do
   let(:response) { double('response') }
-  let(:get) { double('get') }
+  let(:request) { double('request') }
+  let(:req_options) { double('opts', 'timeout=' => 60, 'open_timeout=' => 60) }
   let(:body) { double('body') }
   let(:persist) { described_class.new(options) }
   let(:file_path) { './test/thumbnail.png' }
+  let(:thumb_file) { double('thumb_file') }
   let(:url) { 'http://www.example.com/thumbnail' }
   let(:content_type) { 'image/png' }
   let(:options) do
@@ -53,8 +55,9 @@ describe PersistThumbnail do
 
   describe '#initiate_download' do
     it 'request thumbnail from server' do
-      expect(response).to receive(:get).and_return(get)
       expect(Faraday).to receive(:new).with(url: 'http://www.example.com/thumbnail').and_return(response)
+      expect(response).to receive(:get).and_yield(request)
+      expect(request).to receive(:options).and_return(req_options).twice
       persist.initiate_download
     end
     it 'creates a thumbnail error file with a connection failure' do
@@ -80,7 +83,8 @@ describe PersistThumbnail do
 
     it 'opens the temp file, writes to it, and then renames from tmp if everything is ok' do
       good_file = OpenStruct.new(headers: { 'content-type' => 'image/png' })
-      expect(File).to receive(:open).with("#{file_path}.tmp", 'wb').and_return('')
+      expect(File).to receive(:open).with("#{file_path}.tmp", 'wb').and_yield(thumb_file)
+      expect(thumb_file).to receive(:write)
       expect(File).to receive(:rename).with("#{file_path}.tmp", "#{file_path}")
       persist.save_file(good_file)
     end
