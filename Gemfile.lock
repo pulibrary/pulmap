@@ -343,7 +343,7 @@ DEPENDENCIES
   devise
   devise-guests (~> 0.3.3)
   factory_girl_rails
-  geoblacklight (~> 0.12.0)
+  geoblacklight (~> 0.12.1)
   geocomplete_rails
   jbuilder (~> 2.0)
   jettywrapper

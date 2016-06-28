@@ -14,5 +14,6 @@
 //= require geoblacklight/modules/results
 //= require geoblacklight/downloaders
 //= require leaflet-iiif
+//= require esri-leaflet
 //= require readmore.min
 //= require modules/thumbnail
