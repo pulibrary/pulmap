@@ -10,14 +10,14 @@
           <%= render partial: 'blacklight/nav/saved_searches' %>
         </li>
         <li>
-          <%= link_to t('blacklight.header_links.logout'), destroy_user_session_path %>
+          <%= link_to t('blacklight.header_links.logout'), destroy_user_session_path, :method => :delete %>
         </li>
       </ul>
     </li>
     <% end %>
     <% else %>
     <li>
-      <%= link_to t('blacklight.header_links.login'), user_omniauth_authorize_path(:cas) %>
+      <%= link_to t('blacklight.header_links.login'), user_cas_omniauth_authorize_path %>
     </li>
     <% end %>
 <% end %>
