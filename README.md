@@ -5,7 +5,7 @@ GeoBlacklight for Princeton University Library
 
 [![Build Status](https://travis-ci.org/pulibrary/pulmap.png?branch=master)](https://travis-ci.org/pulibrary/pulmap)
 [![Coverage Status](https://coveralls.io/repos/pulibrary/pulmap/badge.svg?branch=master&service=github)](https://coveralls.io/github/pulibrary/pulmap?branch=master)
-
+[![Stories in Ready](https://badge.waffle.io/pulibrary/pulmap.png?label=ready&title=Ready)](https://waffle.io/pulibrary/pulmap)
 
 ###Installation
 ```
