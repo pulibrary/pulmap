@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     blacklist = [new_user_session_path, new_user_registration_path]
     last_url = URI.parse(request.referer).path if request.referer
     if !last_url || blacklist.include?(last_url)
-      last_url
+      root_path
     else
       last_url
     end

@@ -6,10 +6,6 @@ require 'rspec/rails'
 require 'capybara/poltergeist'
 require 'capybara/rspec'
 require 'capybara/rails'
-require 'coveralls'
-
-Coveralls.wear!('rails')
-
 require 'devise'
 require 'factory_girl'
 
