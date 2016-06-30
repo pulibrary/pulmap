@@ -1,9 +1,6 @@
 <% if query_has_constraints? %>
       <div id="appliedParams" class="clearfix constraints-container">
-        <div class="toggle">
-           <input class="tgl tgl-switch map-toggle" id="map-toggle" type="checkbox">
-           <label class="tgl-btn btn btn-default" data-tg-off="Map Off" data-tg-on="Map On" for="map-toggle"></label>
-        </div>
+        <input id="map-toggle" type="checkbox" data-toggle="toggle" data-on="Map On" data-off="Map Off">
         <div class="button--start-over">
           <%=link_to t('blacklight.search.start_over'), start_over_path, :class => "catalog_startOverLink btn btn-default", :id=>"startOverLink" %>
         </div>

@@ -27,6 +27,7 @@
 
 # Ignore linter config
 .eslintrc
+.jshintrc
 
 /public/assets
 /public/thumbnails
