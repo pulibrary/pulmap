@@ -1,0 +1,6 @@
+<div class="col-md-12">
+  <h2 class="page-heading my-account"><%= I18n.t('blacklight.header_links.account_page') %></h2>
+  <div class="login--cas">
+    <%= link_to "Log in with Princeton Net ID", user_cas_omniauth_authorize_path, :class => "btn btn-primary" %>
+  </div>
+</div>
