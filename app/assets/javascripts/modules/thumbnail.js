@@ -1,4 +1,4 @@
-// Lazy load images with jail.js
+// asynchronously load images with aload.js
 $(document).ready(function() {
-  $('img.item-thumbnail').jail();
+  aload();
 });

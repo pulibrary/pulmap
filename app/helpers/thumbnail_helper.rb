@@ -9,7 +9,7 @@ module ThumbnailHelper
   def gbl_thumbnail_img(document)
     url = document.thumbnail_url
     if url
-      h = "<img class='item-thumbnail' data-src='#{url}'>"
+      h = "<img class='item-thumbnail' data-aload='#{url}'>"
       h += geoblacklight_icon(document['layer_geom_type_s'])
     else
       h = geoblacklight_icon(document['layer_geom_type_s'])
