@@ -11,7 +11,7 @@ describe ThumbnailHelper, type: :helper do
       it 'returns a geoblacklight icon span and an image tag' do
         allow(document).to receive('thumbnail_url').and_return('http://www.example.com/image.jpg')
         html = Capybara.string(gbl_thumbnail_img(document))
-        expect(html).to have_xpath("//img[@data-src='http://www.example.com/image.jpg']")
+        expect(html).to have_xpath("//img[@data-aload='http://www.example.com/image.jpg']")
         expect(html).to have_xpath("//span[contains(@class,'geoblacklight-polygon')]")
       end
     end

@@ -64,7 +64,11 @@ Blacklight.onLoad(function() {
       } else {
         $('#map').after($doc.find('#map').next());
       }
-      $('img.item-thumbnail').jail({event: 'scroll'});
+
+      // reload thumbnail images
+      aload();
+
+      // reload map toggle
       GeoBlacklight.MapToggle.load();
     });
   }

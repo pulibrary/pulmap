@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require geocomplete
-//= require jail.min
+//= require aload
 
 // Required by Blacklight
 //= require blacklight/blacklight
