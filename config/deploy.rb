@@ -6,7 +6,7 @@ set :repo_url, 'git@github.com:pulibrary/pulmap.git'
 set :branch, 'master'
 
 # Default branch is :master
-ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+set :branch, ENV['BRANCH'] || 'master'
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/opt/pulmap'
