@@ -63,6 +63,7 @@ group :development do
 end
 
 gem 'blacklight', '~> 5.18.0'
+gem 'blacklight_range_limit'
 gem 'geoblacklight', github:'geoblacklight/geoblacklight', branch: :master
 gem 'rspec-rails', '~> 3.1.0'
 gem 'jettywrapper'

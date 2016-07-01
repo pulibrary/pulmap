@@ -1,5 +1,4 @@
 # -*- encoding : utf-8 -*-
-require 'blacklight/catalog'
 
 class CatalogController < ApplicationController
   include Blacklight::Catalog
@@ -73,9 +72,11 @@ class CatalogController < ApplicationController
     config.add_facet_field Settings.FIELDS.SUBJECT, label: 'Subject', limit: 8, show: true
     config.add_facet_field Settings.FIELDS.SPATIAL_COVERAGE, label: 'Place', limit: 8
     config.add_facet_field Settings.FIELDS.PART_OF, label: 'Collection', limit: 8
-
-    config.add_facet_field Settings.FIELDS.YEAR, label: 'Year', limit: 10
-
+    config.add_facet_field Settings.FIELDS.YEAR, label: 'Year', limit: 10, range: {
+      assumed_boundaries: [1100, 2016]
+      # :num_segments => 6,
+      # :segments => true
+    }
     config.add_facet_field Settings.FIELDS.RIGHTS, label: 'Access', limit: 8, partial: 'icon_facet', show: true
     config.add_facet_field Settings.FIELDS.GEOM_TYPE, label: 'Data type', limit: 8, partial: 'icon_facet'
     config.add_facet_field Settings.FIELDS.FILE_FORMAT, label: 'Format', limit: 8
