@@ -23,3 +23,11 @@
 //= require blacklight_range_limit
 
 //= require modernizr
+
+//= require Leaflet.fullscreen
+
+GeoBlacklight.Controls.Fullscreen = function() {
+  this.map.addControl(new L.Control.Fullscreen({
+    position: 'topright'
+  }));
+};

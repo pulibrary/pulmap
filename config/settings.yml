@@ -73,8 +73,13 @@ LEAFLET:
   MAP:
   LAYERS:
   VIEWERS:
+    IIIF:
+      CONTROLS:
+        - 'Fullscreen'
     WMS:
-      <<: *opacity_control
+      CONTROLS:
+        - 'Opacity'
+        - 'Fullscreen'
     TILEDMAPLAYER:
       <<: *opacity_control
     FEATURELAYER:
