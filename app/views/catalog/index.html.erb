@@ -1,6 +1,5 @@
 <% if has_search_parameters? %>
 
-<%= render :partial=>'/flash_msg', layout: 'shared/flash_messages' %>
 <%= render 'search_header' %>
 
 <div id="side-content" class="sidebar">
@@ -12,8 +11,6 @@
 </div>
 
 <% else %>
-
-<%= render :partial=>'/flash_msg', layout: 'shared/flash_messages' %>
 <%= render 'home' %>
 
 <% end %>
