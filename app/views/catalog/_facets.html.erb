@@ -20,7 +20,7 @@
     <%= content_tag :div, '', id: 'map-results', data: { map: 'index', 'catalog-path'=> catalog_index_path , 'map-bbox' => params[:bbox], basemap: geoblacklight_basemap } %>
   </div>
 
-  <div class="facet-view">
+  <div id="facet-view" class="facet-view">
       <div id="facet-panel-collapse" class="collapse panel-group">
       <%= render_facet_partials %>
     </div>

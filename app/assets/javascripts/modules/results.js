@@ -55,9 +55,8 @@ Blacklight.onLoad(function() {
     $.get(url).done(function(data) {
       var resp = $.parseHTML(data);
       $doc = $(resp);
-      $('#documents').replaceWith($doc.find('#documents'));
-      $('#sidebar').replaceWith($doc.find('#sidebar'));
-      $('#sortAndPerPage').replaceWith($doc.find('#sortAndPerPage'));
+      $('#content').replaceWith($doc.find('#content'));
+      $('#facet-view').replaceWith($doc.find('#facet-view'));
       $('#appliedParams').replaceWith($doc.find('#appliedParams'));
       if ($('#map').next().length) {
         $('#map').next().replaceWith($doc.find('#map').next());
