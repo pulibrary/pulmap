@@ -48,7 +48,6 @@ gem 'coveralls', require: false
 
 group :development, :test do
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'capybara'
   gem 'poltergeist'
@@ -56,10 +55,14 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'rubocop', '0.35.1', require: false
   gem 'rubocop-rspec', '1.3.1', require: false
+end
+
+group :development do
+  gem 'web-console', '~> 2.0'
   gem 'xray-rails'
 end
 
-gem 'blacklight', '~> 5.12.0'
+gem 'blacklight', '~> 5.18.0'
 gem 'geoblacklight', github:'geoblacklight/geoblacklight', branch: :master
 gem 'rspec-rails', '~> 3.1.0'
 gem 'jettywrapper'
@@ -68,3 +71,5 @@ gem 'devise'
 gem "devise-guests", "~> 0.3.3"
 gem "omniauth-cas"
 gem 'geocomplete_rails'
+gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
+
