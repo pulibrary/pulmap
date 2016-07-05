@@ -38,9 +38,9 @@ main.home {
 }
 
 .home-search {
-    .btn-toggle .btn {
-        height: 46px;
-    }
+  .btn-toggle .btn {
+      height: 46px;
+  }
   .search_q.form-control,
   .search_loc,
   .search-btn {
@@ -99,11 +99,12 @@ main.home {
 
   .btn-toggle {
     display: none;
-    width: 21%;
-    float: right;
+
+    .btn{
+      padding-top: 12px;
+    }
 
     .btn-primary {
-      background: $dark-gray;
       border: $dark-gray;
     }
 
