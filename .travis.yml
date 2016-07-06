@@ -5,10 +5,18 @@ notifications:
   email: false
 
 rvm:
-  - 2.1.4
+  - 2.2.5
+
+jdk:
+- oraclejdk8
+
+cache:
+  directories:
+  - /tmp/solr-6.1.0
 
 before_script:
   - cp config/database.yml.tmpl config/database.yml
+  - RAILS_ENV=test bundle exec rake db:migrate
 
 env:
   global:
