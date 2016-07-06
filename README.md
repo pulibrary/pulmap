@@ -12,12 +12,7 @@ GeoBlacklight for Princeton University Library
 bundle
 cp config/database.yml.tmpl config/database.yml
 rake db:migrate
-rake jetty:download
-rake jetty:unzip
-rake geoblacklight:configure_solr
-rake jetty:start
-rake geoblacklight:solr:seed
-rails server
+rake server
 ```
 ###Production Requirements
 

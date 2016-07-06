@@ -24,7 +24,6 @@
 # Igonore Config files
 /config/database.yml
 
-/jetty
 /coverage
 
 # Ignore node modules
@@ -36,3 +35,9 @@
 
 /public/assets
 /public/thumbnails
+
+# Ignore sorl config and libs downloaded from https://github.com/pulibrary/pul_solr/
+config/solr_configs/*.txt
+config/solr_configs/*.xml
+config/solr_configs/*.jar
+
