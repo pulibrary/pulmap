@@ -77,7 +77,22 @@ class CatalogController < ApplicationController
       # :num_segments => 6,
       # :segments => true
     }
-    config.add_facet_field Settings.FIELDS.RIGHTS, label: 'Access', limit: 8, partial: 'icon_facet', show: true
+
+    config.add_facet_field 'access', label: 'Access', query: {
+      public: {
+        label: 'Public', fq: 'dc_rights_s:Public'
+      },
+      restricted: {
+        label: 'Restricted', fq: 'dc_rights_s:Restricted'
+      },
+      available: {
+        label: 'Available', fq: "(layer_availability_score_f:[#{Settings.GEOMONITOR_TOLERANCE} TO 1])"
+      },
+      unavailable: {
+        label: 'Unavailable', fq: "layer_availability_score_f:[0 TO #{Settings.GEOMONITOR_TOLERANCE}]"
+      }
+    }, partial: 'icon_facet'
+
     config.add_facet_field Settings.FIELDS.GEOM_TYPE, label: 'Data type', limit: 8, partial: 'icon_facet'
     config.add_facet_field Settings.FIELDS.FILE_FORMAT, label: 'Format', limit: 8
 
