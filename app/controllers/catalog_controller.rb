@@ -80,10 +80,10 @@ class CatalogController < ApplicationController
 
     config.add_facet_field 'access', label: 'Access', query: {
       public: {
-        label: 'Public', fq: 'dc_rights_s:Public'
+        label: 'Public', fq: "#{Settings.FIELDS.RIGHTS}:Public"
       },
       restricted: {
-        label: 'Restricted', fq: 'dc_rights_s:Restricted'
+        label: 'Restricted', fq: "#{Settings.FIELDS.RIGHTS}:Restricted"
       },
       available: {
         label: 'Available', fq: "(layer_availability_score_f:[#{Settings.GEOMONITOR_TOLERANCE} TO 1])"
