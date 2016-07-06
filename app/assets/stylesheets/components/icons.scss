@@ -1,0 +1,7 @@
+.geoblacklight-available {
+  @extend .fa, .fa-check;
+}
+
+.geoblacklight-unavailable {
+  @extend .fa, .fa-times;
+}

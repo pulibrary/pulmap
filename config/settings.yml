@@ -29,7 +29,7 @@ FIELDS:
   :TEMPORAL: 'dct_temporal_sm'
   :TITLE: 'dc_title_s'
 
-# Institution deployed at
+GEOMONITOR_TOLERANCE: 0.8
 INSTITUTION: 'Princeton'
 
 # Metadata shown in tool panel
