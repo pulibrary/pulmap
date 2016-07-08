@@ -4,12 +4,16 @@ class Thumbnail
   end
 
   ##
-  # Get the thumbnail url from dctrefs. Ff not in dctrefs, then
-  # get it from a service endpoint (WMS, IIIF, etc...). Return
-  # nil if both of those fail, so the thumbnail is not displayed.
+  # Get the thumbnail url from dctrefs if turned on in settings.
+  # If not in dctrefs, then get it from a service endpoint (WMS, IIIF, etc...).
+  # Return nil if both of those fail, so the thumbnail is not displayed.
   # @return [String, nil] thumbnail url
   def url
-    thumbnail_reference || generated_thumbnail
+    if Settings.THUMBNAIL.USE_DCT_REFS
+      thumbnail_reference || generated_thumbnail
+    else
+      generated_thumbnail
+    end
   end
 
   ##
