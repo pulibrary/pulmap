@@ -1,9 +1,3 @@
-$basemap-color: #ccdddd;
-
-.leaflet-container {
-  background-color: $basemap-color;
-}
-
 .leaflet-container[data-protocol="iiif"] {
   background-color: white;
 
