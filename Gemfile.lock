@@ -330,7 +330,7 @@ DEPENDENCIES
   blacklight (~> 5.18.0)
   blacklight_range_limit
   byebug
-  capistrano (~> 3.4.0)
+  capistrano (~> 3.4.1)
   capistrano-bundler
   capistrano-passenger
   capistrano-rails
