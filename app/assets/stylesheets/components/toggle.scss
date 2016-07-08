@@ -10,3 +10,10 @@
 .toggle {
   border-color: $gray;
 }
+
+#appliedParams > .toggle {
+
+  @media (max-width: $bp-small) {
+    display: none;
+  }
+}

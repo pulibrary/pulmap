@@ -10,6 +10,7 @@
 //= require geoblacklight/downloaders
 //= require modules/mapPosition
 //= require modules/locationsearch
+//= require modules/facets-toggle
 //= require modules/home
 //= require modules/map
 //= require modules/results
