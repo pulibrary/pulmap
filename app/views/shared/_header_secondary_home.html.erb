@@ -4,7 +4,7 @@
 
     <%= content_tag :div, '', id: 'map-front', data: { map: 'home', 'catalog-path'=> catalog_index_path , 'map-bbox' => params[:bbox], basemap: geoblacklight_basemap } %>
   <div class="mask">
-    <div class="container">
+    <div id="search-bar-container" class="container">
       <div id="floating-search" class="search-bar-overlay">
           <%= render :partial=>'catalog/search_form_home' %>
       </div>

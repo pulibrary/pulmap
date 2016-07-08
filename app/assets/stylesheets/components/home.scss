@@ -37,6 +37,13 @@ main.home {
   }
 }
 
+#search-bar-container {
+  @media (min-width: $bp-small) {
+    padding-right: 0px;
+  }
+  padding-right: 30px;
+}
+
 .home-search {
   .btn-toggle .btn {
       height: 46px;
@@ -46,6 +53,10 @@ main.home {
   .search-btn {
     height: 46px;
     width: 100%;
+  }
+
+  .toggle.btn {
+    width: 100% !important;
   }
 
   .col-md-1 {
@@ -88,7 +99,7 @@ main.home {
     }
 
     @media (min-width: $bp-small) {
-      width: 54%;
+      width: 60%;
       margin: 0;
     }
 
@@ -99,6 +110,7 @@ main.home {
 
   .btn-toggle {
     display: none;
+    width: 15%;
 
     .btn{
       padding-top: 12px;
@@ -116,6 +128,7 @@ main.home {
 
 .search-bar-overlay {
   height: 134px;
+  padding-left: 15px;
 
   .home-search {
     height: 134px;
@@ -123,7 +136,7 @@ main.home {
 
   @media (min-width: 625px) {
     height: 46px;
-
+    
     .home-search {
       height: 46px;
     }
@@ -162,4 +175,29 @@ main.home {
   @media (min-width: $bp-small) {
     display: block;
   }
+}
+
+section.topics {
+  padding-bottom: 14px;
+  margin-bottom: 28px;
+}
+
+.line-behind-text {
+  border-bottom: 1px solid #cacaca;
+  margin-bottom: 4.5em;
+  text-align: center;
+}
+
+.line-behind-text h6 {
+  background: #fff;
+  color: #808080;
+  display: inline-block;
+  font-family: "Oswald", sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 0 10px;
+  position: relative;
+  text-transform: uppercase;
+  top: 34px;
+  margin-bottom: 1.8em;
 }

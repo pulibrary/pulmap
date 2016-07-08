@@ -1,14 +1,16 @@
 @import 'utils/mixins';
 @import 'utils/variables';
 
+@import 'icons/variables';
+@import 'icons/icons';
+
 @import 'components/typeahead';
 @import 'components/font-face';
 @import 'components/header';
 @import 'components/footer';
-
 @import 'components/alerts';
 @import 'components/home';
-@import 'components/home--cards';
+@import 'components/cards';
 @import 'components/map';
 @import 'components/results';
 @import 'components/item';
@@ -17,6 +19,7 @@
 @import 'components/pagination';
 @import 'components/toggle';
 @import 'components/icons';
+@import 'components/grid-items';
 
 @import 'blacklight_range_limit/blacklight_range_limit';
 @import 'slider';
