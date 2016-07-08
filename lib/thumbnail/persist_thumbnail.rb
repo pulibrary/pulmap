@@ -20,6 +20,7 @@ class PersistThumbnail
     create_temp_file
     download = initiate_download
     return if download.nil?
+    return unless download.class == Faraday::Request
     save_file(download)
   end
 
@@ -65,6 +66,6 @@ class PersistThumbnail
     end
     File.rename("#{@file_path}.tmp", "#{@file_path}")
   rescue Geoblacklight::Exceptions::WrongDownloadFormat
-    File.rename("#{@file_path}.tmp", "#{@file_path}.error")
+    suppress(Exception) { File.rename("#{@file_path}.tmp", "#{@file_path}.error") }
   end
 end

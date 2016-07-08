@@ -15,6 +15,7 @@ describe Thumbnail do
     allow(Settings.THUMBNAIL).to receive(:SIZE).and_return(256)
     allow(Settings.THUMBNAIL).to receive(:BASE_PATH).and_return('thumbnails')
     allow(Settings.THUMBNAIL).to receive(:FILE_BASE_PATH).and_return('./testroot/public')
+    allow(Settings.THUMBNAIL).to receive(:USE_DCT_REFS).and_return(true)
 
     # Stub persistance so thumbnails aren't saved to disk.
     persist = double('thumb', create_file: 'filename')
@@ -145,6 +146,28 @@ describe Thumbnail do
           allow(File).to receive(:file?).with("#{thumbnail.file_path_and_name}.tmp").and_return(true)
           allow(File).to receive(:file?).with("#{thumbnail.file_path_and_name}.error").and_return(false)
           expect(thumbnail.generated_thumbnail).to eq(wms_service_url)
+        end
+      end
+    end
+
+    context 'document has a wms reference and a thumbnail reference' do
+      let(:references) do
+        {
+          'http://schema.org/thumbnailUrl' => 'http://www.example.com/image.jpg',
+          'http://www.opengis.net/def/serviceType/ogc/wms' => 'http://www.example.com/wms'
+        }.to_json
+      end
+      let(:wms_service_url) do
+        'http://www.example.com/wms/reflect?&FORMAT=image%2Fpng&'\
+          'TRANSPARENT=TRUE&LAYERS=testlayer&WIDTH=256&HEIGHT=256'
+      end
+
+      context 'use of thumbnail endpoint urls are turned off in settings' do
+        describe '#url' do
+          it 'returns a web map service thumbnail url' do
+            allow(Settings.THUMBNAIL).to receive(:USE_DCT_REFS).and_return(false)
+            expect(thumbnail.url).to eq(wms_service_url)
+          end
         end
       end
     end
