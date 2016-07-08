@@ -50,20 +50,17 @@
           staticSearcher, dynamicSearcher;
       this._map = map;
 
-      var mapCenter = map.getCenter();
-
       staticSearcher = L.Util.bind(function() {
         this.$staticButton.hide();
         this.$dynamicButton.show();
         this.options.searcher.apply(this);
       }, this);
 
-      var _this = this;
-      dynamicSearcher = function() {
-        if (_this.options.dynamic) {
-          _this.options.searcher.apply(_this);
+      dynamicSearcher = GeoBlacklight.debounce(function() {
+        if (this.options.dynamic) {
+          this.options.searcher.apply(this);
         }
-      };
+      }, this.options.delay);
 
       this.$staticButton.on('click', staticSearcher);
 
@@ -79,17 +76,8 @@
         this.$dynamicButton.hide();
       }
 
-      map.on("zoomend", function() {
-        GeoBlacklight.debounce(dynamicSearcher(), this.options.delay);
-      });
-
-      map.on("moveend", function() {
-        if (JSON.stringify(map.getCenter()) !== JSON.stringify(mapCenter)) {
-          mapCenter = map.getCenter();
-          GeoBlacklight.debounce(dynamicSearcher(), this.options.delay);
-        }
-      });
-
+      map.on("zoomend", dynamicSearcher, this);
+      map.on("dragend", dynamicSearcher, this);
       map.on("movestart", function() {
         if (!this.options.dynamic) {
           this.$dynamicButton.hide();
