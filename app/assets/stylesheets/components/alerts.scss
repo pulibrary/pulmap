@@ -3,7 +3,7 @@
 main > .container .flash_messages {
   position: fixed;
   top: 10px;
-  z-index: 1005;
+  z-index: 1006;
 
   .alert {
     animation: slide-down 1.25s;
@@ -29,5 +29,17 @@ main > .container .flash_messages {
 
   .alert-success .close {
     display: none;
+  }
+}
+
+.beta {
+  border-left: 4px solid #E0CB52;
+  z-index: 1005;
+  margin: 0;
+  border-radius: 0;
+  padding: 10px 15px;
+
+  p {
+    margin: 0;
   }
 }
