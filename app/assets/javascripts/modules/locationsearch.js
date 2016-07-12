@@ -37,6 +37,9 @@ $(document).ready(function() {
       $('.leaflet-container').toggleClass('active');
     });
 
+    // hide zoom control on load
+    $('.leaflet-control-zoom').toggle();
+
     // update bbox field on map move
     GeoBlacklight.Home.map.on('moveend', function(e) {
       if (searchState) {
