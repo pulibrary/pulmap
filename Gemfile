@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails', '~> 4.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
@@ -62,9 +62,8 @@ group :development do
   gem 'xray-rails'
 end
 
-gem 'blacklight', '~> 5.18.0'
 gem 'blacklight_range_limit'
-gem 'geoblacklight', github:'geoblacklight/geoblacklight', branch: :master
+gem 'geoblacklight', '1.0.0.pre1'
 gem 'bourbon'
 gem 'neat'
 gem 'rspec-rails', '~> 3.1.0'
@@ -75,4 +74,3 @@ gem "devise-guests", "~> 0.3.3"
 gem "omniauth-cas"
 gem 'geocomplete_rails'
 gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
-

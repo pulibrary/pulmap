@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/typeahead.min
-//= require modules/autocomplete
 //= require geocomplete
 //= require aload
 
@@ -23,6 +22,13 @@
 //= require blacklight_range_limit
 
 //= require modernizr
+//= require bootstrap-toggle
+
+//= require modules/mapPosition
+//= require modules/facets-toggle
+//= require modules/map
+//= require modules/locationsearch
+//= require modules/thumbnail
 
 //= require Leaflet.fullscreen
 

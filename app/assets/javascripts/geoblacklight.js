@@ -2,20 +2,9 @@
 //= require geoblacklight/basemaps
 //= require geoblacklight/controls
 //= require geoblacklight/viewers
-//= require geoblacklight/modules/geosearch
-//= require geoblacklight/modules/collapse
-//= require geoblacklight/modules/download
-//= require geoblacklight/modules/item
-//= require geoblacklight/modules/layer_opacity
+//= require geoblacklight/modules
 //= require geoblacklight/downloaders
-//= require modules/mapPosition
-//= require modules/locationsearch
-//= require modules/facets-toggle
-//= require modules/home
-//= require modules/map
-//= require modules/results
-//= require modules/thumbnail
+
 //= require leaflet-iiif
 //= require esri-leaflet
 //= require readmore.min
-//= require bootstrap-toggle

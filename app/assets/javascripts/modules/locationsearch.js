@@ -1,8 +1,8 @@
-$(document).ready(function() {
+Blacklight.onLoad(function() {
   $('[data-map="home"]').each(function(i, element) {
     // map search off by default
     var searchState = false;
-
+  
     function updateBboxField() {
       var bounds = L.boundsToBbox(GeoBlacklight.Home.map.getBounds());
       $("input[name='bbox']").val(bounds.join(' '));
