@@ -1,17 +1,3 @@
-GIT
-  remote: git://github.com/geoblacklight/geoblacklight.git
-  revision: 8d5494a8e7bfabbd17c405d7c1234faec3f2c158
-  branch: master
-  specs:
-    geoblacklight (0.12.1)
-      blacklight (~> 5.12, < 6)
-      coderay
-      faraday
-      font-awesome-rails (~> 4.1.0.0)
-      geoblacklight-icons (>= 0.2)
-      leaflet-rails (~> 0.7.3)
-      rails_config (~> 0.4.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -55,20 +41,22 @@ GEM
     ast (2.3.0)
     astrolabe (1.3.1)
       parser (~> 2.2)
-    autoprefixer-rails (6.3.6.2)
+    autoprefixer-rails (6.3.7)
       execjs
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    blacklight (5.18.0)
+    blacklight (6.3.1)
       bootstrap-sass (~> 3.2)
       deprecation
+      globalid
       kaminari (>= 0.15)
       nokogiri (~> 1.6)
-      rails (>= 3.2.6, < 5)
-      rsolr (~> 1.0.11)
-    blacklight_range_limit (5.1.0)
-      blacklight (>= 5.0.0.pre4, < 6)
+      rails (>= 4.2, < 6)
+      rsolr (~> 1.0, >= 1.0.6)
+      twitter-typeahead-rails (~> 0.11)
+    blacklight_range_limit (6.0.0)
+      blacklight (>= 6.0.0.pre2, < 7)
       jquery-rails
       rails (>= 3.0, < 5.0)
     bootstrap-sass (3.3.6)
@@ -108,9 +96,9 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
-    coveralls (0.8.13)
-      json (~> 1.8)
-      simplecov (~> 0.11.0)
+    coveralls (0.8.14)
+      json (>= 1.8, < 3)
+      simplecov (~> 0.12.0)
       term-ansicolor (~> 1.3)
       thor (~> 0.19.1)
       tins (~> 1.6.0)
@@ -118,7 +106,7 @@ GEM
     debug_inspector (0.0.2)
     deprecation (1.0.0)
       activesupport
-    devise (4.1.1)
+    devise (4.2.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 5.1)
@@ -139,6 +127,14 @@ GEM
       multipart-post (>= 1.2, < 3)
     font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
+    geoblacklight (1.0.0.pre1)
+      blacklight (~> 6.3)
+      coderay
+      faraday
+      font-awesome-rails (~> 4.1.0.0)
+      geoblacklight-icons (>= 0.2)
+      leaflet-rails (~> 0.7.3)
+      rails_config (~> 0.4.2)
     geoblacklight-icons (0.3.0)
     geocomplete_rails (1.7.0)
       railties (>= 3.1)
@@ -271,17 +267,17 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    simplecov (0.11.2)
+    simplecov (0.12.0)
       docile (~> 1.1.0)
-      json (~> 1.8)
+      json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
-    solr_wrapper (0.13.2)
+    solr_wrapper (0.14.2)
       faraday
       ruby-progressbar
       rubyzip
-    spring (1.7.1)
-    sprockets (3.6.2)
+    spring (1.7.2)
+    sprockets (3.6.3)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (3.1.1)
@@ -333,7 +329,6 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
-  blacklight (~> 5.18.0)
   blacklight_range_limit
   bourbon
   byebug
@@ -348,7 +343,7 @@ DEPENDENCIES
   devise
   devise-guests (~> 0.3.3)
   factory_girl_rails
-  geoblacklight!
+  geoblacklight (= 1.0.0.pre1)
   geocomplete_rails
   jbuilder (~> 2.0)
   jquery-rails
@@ -357,7 +352,7 @@ DEPENDENCIES
   neat
   omniauth-cas
   poltergeist
-  rails (= 4.2.5)
+  rails (~> 4.2)
   rsolr (~> 1.0.6)
   rspec-rails (~> 3.1.0)
   rubocop (= 0.35.1)

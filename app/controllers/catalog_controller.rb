@@ -19,8 +19,6 @@ class CatalogController < ApplicationController
       q: '{!raw f=layer_slug_s v=$id}'
     }
 
-    config.search_builder_class = Geoblacklight::SearchBuilder
-
     # solr field configuration for search results/index views
     # config.index.show_link = 'title_display'
     # config.index.record_display_type = 'layer_geom_type_s'
@@ -30,6 +28,9 @@ class CatalogController < ApplicationController
     # solr field configuration for document/show views
 
     config.show.display_type_field = Settings.FIELDS.GEOM_TYPE
+
+    # Configure the index document presenter.
+    config.index.document_presenter_class = Geoblacklight::DocumentPresenter
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
@@ -233,6 +234,10 @@ class CatalogController < ApplicationController
     # 'positron' http://cartodb.com/basemaps/
     # 'darkMatter' http://cartodb.com/basemaps/
     config.basemap_provider = 'outdoors'
+
+    # Configuration for autocomplete suggestor
+    config.autocomplete_enabled = true
+    config.autocomplete_path = 'suggest'
   end
 
   ##

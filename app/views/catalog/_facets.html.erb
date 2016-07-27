@@ -17,7 +17,7 @@
   </div>
 
   <div id="map-container">
-    <%= content_tag :div, '', id: 'map-results', data: { map: 'index', 'catalog-path'=> catalog_index_path , 'map-bbox' => params[:bbox], basemap: geoblacklight_basemap } %>
+    <%= content_tag :div, '', id: 'map-results', data: { map: 'index', 'catalog-path'=> search_catalog_path, 'map-bbox' => params[:bbox], basemap: geoblacklight_basemap } %>
   </div>
 
   <div id="facet-view" class="facet-view">

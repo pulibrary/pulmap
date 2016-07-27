@@ -2,7 +2,7 @@
 <div class="row">
   <div class="map-container">
 
-    <%= content_tag :div, '', id: 'map-front', data: { map: 'home', 'catalog-path'=> catalog_index_path , 'map-bbox' => params[:bbox], basemap: geoblacklight_basemap } %>
+    <%= content_tag :div, '', id: 'map-front', data: { map: 'home', 'catalog-path'=> search_catalog_path, 'map-bbox' => params[:bbox], basemap: geoblacklight_basemap } %>
   <div class="mask">
     <div id="search-bar-container" class="container">
       <div id="floating-search" class="search-bar-overlay">
