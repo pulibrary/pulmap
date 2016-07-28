@@ -63,7 +63,7 @@ group :development do
 end
 
 gem 'blacklight_range_limit'
-gem 'geoblacklight', '1.0.0.pre1'
+gem 'geoblacklight', '1.0.0'
 gem 'bourbon'
 gem 'neat'
 gem 'rspec-rails', '~> 3.1.0'
