@@ -1,4 +1,4 @@
-Blacklight.onLoad(function() {
+$(document).ready(function() {
   var historySupported = !!(window.history && window.history.pushState);
   
   if (historySupported) {
