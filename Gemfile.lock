@@ -127,7 +127,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
-    geoblacklight (1.0.0)
+    geoblacklight (1.0.1)
       blacklight (~> 6.3)
       coderay
       faraday
@@ -343,7 +343,7 @@ DEPENDENCIES
   devise
   devise-guests (~> 0.3.3)
   factory_girl_rails
-  geoblacklight (= 1.0.0)
+  geoblacklight (= 1.0.1)
   geocomplete_rails
   jbuilder (~> 2.0)
   jquery-rails
