@@ -62,8 +62,7 @@ group :development do
   gem 'xray-rails'
 end
 
-gem 'blacklight_range_limit'
-gem 'geoblacklight', '1.0.1'
+gem 'geoblacklight', '1.1.0'
 gem 'bourbon'
 gem 'neat'
 gem 'rspec-rails', '~> 3.1.0'

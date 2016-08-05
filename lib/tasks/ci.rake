@@ -12,39 +12,9 @@ task :ci do
   end
 end
 
-desc 'Run solr and orangelight for interactive development'
-task :server, [:rails_server_args] do |t, args|
-  run_solr('development', { port: '8983' }) do
-    Rake::Task['geoblacklight:solr:seed'].invoke
-    system "bundle exec rails s #{args[:rails_server_args]}"
-  end
-end
-
-namespace :server do
-  desc 'Run development solr'
-  task :dev do
-    run_solr('development', { port: '8983' }) do
-      Rake::Task['geoblacklight:solr:seed'].invoke
-      sleep
-    end
-  end
-
-  desc 'Run test solr'
-  task :test do
-    if Rails.env.test?
-      run_solr('test', { port: '8888' }) do
-        Rake::Task['geoblacklight:solr:seed'].invoke
-        sleep
-      end
-    else
-      system('rake server:test RAILS_ENV=test')
-    end
-  end
-end
-
 def run_solr(environment, solr_params)
   solr_dir = File.join(File.expand_path('.', File.dirname(__FILE__)),
-                       '../../', 'config', 'solr_configs')
+                       '../../', 'solr', 'conf')
   SolrWrapper.wrap(solr_params) do |solr|
     ENV['SOLR_TEST_PORT'] = solr.port
 
