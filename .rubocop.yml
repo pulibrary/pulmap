@@ -1,8 +1,9 @@
 require: rubocop-rspec
 
-AllCops:
-  RunRailsCops: true
+Rails:
+  Enabled: true
 
+AllCops:
   DisplayCopNames: true
 
   Include:

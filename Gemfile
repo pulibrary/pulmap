@@ -53,8 +53,8 @@ group :development, :test do
   gem 'poltergeist'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
-  gem 'rubocop', '0.35.1', require: false
-  gem 'rubocop-rspec', '1.3.1', require: false
+  gem 'rubocop', '~> 0.42.0', require: false
+  gem 'rubocop-rspec', '~> 1.6.0', require: false
 end
 
 group :development do
@@ -67,7 +67,7 @@ gem 'bourbon'
 gem 'neat'
 gem 'rspec-rails', '~> 3.5.0'
 gem 'solr_wrapper'
-gem 'rsolr', '~> 1.0.6'
+gem 'rsolr', '~> 1.1.1'
 gem 'devise'
 gem 'devise-guests', '~> 0.3.3'
 gem 'omniauth-cas'
