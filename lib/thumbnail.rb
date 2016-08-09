@@ -41,7 +41,7 @@ class Thumbnail
   # Base thumbnail file name.
   # @return [String] thumbnail name
   def name
-    "#{@document['layer_slug_s']}"
+    (@document['layer_slug_s']).to_s
   end
 
   ##

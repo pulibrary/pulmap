@@ -10,6 +10,7 @@ describe Thumbnail do
       dc_rights_s: 'public' }
   end
   let(:references) {}
+  let(:persist) { instance_double('PersistThumbnail', create_file: 'filename') }
 
   before do
     allow(Settings.THUMBNAIL).to receive(:SIZE).and_return(256)
@@ -18,7 +19,6 @@ describe Thumbnail do
     allow(Settings.THUMBNAIL).to receive(:USE_DCT_REFS).and_return(true)
 
     # Stub persistance so thumbnails aren't saved to disk.
-    persist = double('thumb', create_file: 'filename')
     allow(PersistThumbnail).to receive(:new).and_return(persist)
   end
 

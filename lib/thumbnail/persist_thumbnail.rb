@@ -62,9 +62,9 @@ class PersistThumbnail
         file.write download.body
       end
     else
-      fail Geoblacklight::Exceptions::WrongDownloadFormat
+      raise Geoblacklight::Exceptions::WrongDownloadFormat
     end
-    File.rename("#{@file_path}.tmp", "#{@file_path}")
+    File.rename("#{@file_path}.tmp", @file_path.to_s)
   rescue Geoblacklight::Exceptions::WrongDownloadFormat
     suppress(Exception) { File.rename("#{@file_path}.tmp", "#{@file_path}.error") }
   end

@@ -1,14 +1,13 @@
 require 'rails_helper'
 
 describe PersistThumbnail do
-  let(:response) { double('response') }
-  let(:request) { double('request') }
-  let(:req_options) { double('opts', 'timeout=' => 60, 'open_timeout=' => 60) }
-  let(:body) { double('body') }
+  let(:connection) { instance_double('Faraday::Connection') }
+  let(:request) { instance_double('Faraday::Request') }
+  let(:req_options) { instance_double('opts', 'timeout=' => 60, 'open_timeout=' => 60) }
   let(:persist) { described_class.new(options) }
-  let(:download) { double('file') }
+  let(:download) { instance_double('Faraday::Request') }
   let(:file_path) { './test/thumbnail.png' }
-  let(:thumb_file) { double('thumb_file') }
+  let(:thumb_file) { instance_double(File) }
   let(:url) { 'http://www.example.com/thumbnail' }
   let(:content_type) { 'image/png' }
   let(:options) do
@@ -26,7 +25,7 @@ describe PersistThumbnail do
 
   describe '#create_file' do
     it 'creates temp file, downloads thumbnail and saves it' do
-      allow(download).to receive(:class).and_return(Faraday::Request)
+      expect(download).to receive(:class).twice.and_return(Faraday::Request)
       expect(persist).to receive(:create_temp_file)
       expect(persist).to receive(:initiate_download).and_return(download)
       expect(persist).to receive(:save_file).with(download)
@@ -57,20 +56,20 @@ describe PersistThumbnail do
 
   describe '#initiate_download' do
     it 'request thumbnail from server' do
-      expect(Faraday).to receive(:new).with(url: 'http://www.example.com/thumbnail').and_return(response)
-      expect(response).to receive(:get).and_yield(request)
+      expect(Faraday).to receive(:new).with(url: 'http://www.example.com/thumbnail').and_return(connection)
+      expect(connection).to receive(:get).and_yield(request)
       expect(request).to receive(:options).and_return(req_options).twice
       persist.initiate_download
     end
     it 'creates a thumbnail error file with a connection failure' do
-      expect(response).to receive(:get).and_raise(Faraday::Error::ConnectionFailed.new('Failed'))
-      expect(Faraday).to receive(:new).with(url: 'http://www.example.com/thumbnail').and_return(response)
+      expect(connection).to receive(:get).and_raise(Faraday::Error::ConnectionFailed.new('Failed'))
+      expect(Faraday).to receive(:new).with(url: 'http://www.example.com/thumbnail').and_return(connection)
       expect(File).to receive(:rename).with("#{file_path}.tmp", "#{file_path}.error")
       persist.initiate_download
     end
     it 'creates a thumbnail error file with a timeout error' do
-      expect(response).to receive(:get).and_raise(Faraday::Error::TimeoutError.new('Time Out'))
-      expect(Faraday).to receive(:new).with(url: 'http://www.example.com/thumbnail').and_return(response)
+      expect(connection).to receive(:get).and_raise(Faraday::Error::TimeoutError.new('Time Out'))
+      expect(Faraday).to receive(:new).with(url: 'http://www.example.com/thumbnail').and_return(connection)
       expect(File).to receive(:rename).with("#{file_path}.tmp", "#{file_path}.error")
       persist.initiate_download
     end
@@ -87,7 +86,7 @@ describe PersistThumbnail do
       good_file = OpenStruct.new(headers: { 'content-type' => 'image/png' })
       expect(File).to receive(:open).with("#{file_path}.tmp", 'wb').and_yield(thumb_file)
       expect(thumb_file).to receive(:write)
-      expect(File).to receive(:rename).with("#{file_path}.tmp", "#{file_path}")
+      expect(File).to receive(:rename).with("#{file_path}.tmp", file_path.to_s)
       persist.save_file(good_file)
     end
   end

@@ -1,14 +1,13 @@
 <% document ||= @document %>
+<% doc_presenter = show_presenter(document) %>
 <div class="geoblacklight-view-panel">
-
   <%# From https://github.com/projectblacklight/blacklight/blob/master/app/views/catalog/_show_default.html.erb %>
   <%# default partial to display solr document fields in catalog show view -%>
   <dl class="dl-horizontal">
-    <%# render 'abstract_metadata' %>
-    <% document_show_fields(document).each do |solr_fname, field| %>
+    <% document_show_fields(document).each do |field_name, field| %>
       <% if should_render_show_field? document, field %>
-        <dt class="blacklight-<%= solr_fname.parameterize %>"><%= render_document_show_field_label document, field: solr_fname %></dt>
-        <dd class="blacklight-<%= solr_fname.parameterize %>"><%= render_document_show_field_value document, field: solr_fname %></dd>
+        <dt class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_label document, field: field_name %></dt>
+        <dd class="blacklight-<%= field_name.parameterize %>"><%= doc_presenter.field_value field_name %></dd>
       <% end %>
     <% end %>
 <!--     <% if !@document.references.nil? && !@document.references.url.nil? %>

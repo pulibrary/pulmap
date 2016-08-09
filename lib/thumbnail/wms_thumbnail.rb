@@ -9,10 +9,10 @@ module WmsThumbnail
   # @return [String] wms thumbnail url
   def self.thumbnail_url(document, size)
     "#{document.viewer_endpoint}/reflect?" \
-    '&FORMAT=image%2Fpng' \
-    '&TRANSPARENT=TRUE' \
-    "&LAYERS=#{document['layer_id_s']}" \
-    "&WIDTH=#{size}" \
-    "&HEIGHT=#{size}".html_safe
+      '&FORMAT=image%2Fpng' \
+      '&TRANSPARENT=TRUE' \
+      "&LAYERS=#{document['layer_id_s']}" \
+      "&WIDTH=#{size}" \
+      "&HEIGHT=#{size}"
   end
 end
