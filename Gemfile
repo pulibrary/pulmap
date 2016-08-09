@@ -39,7 +39,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-gem 'capistrano', '~> 3.4.1'
+gem 'capistrano', '~> 3.6'
 gem 'capistrano-rails'
 gem 'capistrano-bundler'
 gem 'capistrano-passenger'
