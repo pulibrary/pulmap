@@ -141,8 +141,6 @@ GEM
       leaflet-rails (~> 0.7.3)
       rails (>= 4.2.0, < 6)
     geoblacklight-icons (0.3.0)
-    geocomplete_rails (1.7.0)
-      railties (>= 3.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     hashie (2.1.2)
@@ -273,7 +271,7 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
-    solr_wrapper (0.15.0)
+    solr_wrapper (0.18.0)
       faraday
       ruby-progressbar
       rubyzip
@@ -345,7 +343,6 @@ DEPENDENCIES
   devise-guests (~> 0.3.3)
   factory_girl_rails
   geoblacklight (= 1.1.0)
-  geocomplete_rails
   jbuilder (~> 2.5)
   jquery-rails
   modernizr-rails
