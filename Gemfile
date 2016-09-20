@@ -6,7 +6,10 @@ gem 'rails', '~> 5.0'
 gem 'sqlite3'
 
 # Use mysql
-gem 'mysql2'
+# gem 'mysql2'
+
+#Use postgres
+gem 'pg'
 
 gem 'puma', '~> 3.0'
 

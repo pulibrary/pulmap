@@ -9,7 +9,7 @@ set :branch, 'master'
 set :branch, ENV['BRANCH'] || 'master'
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/opt/pulmap'
+set :deploy_to, '/opt/rails_app'
 
 # Default value for :scm is :git
 set :scm, :git
