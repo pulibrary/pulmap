@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/typeahead.min
-//= require geocomplete
 //= require aload
 
 // Required by Blacklight
@@ -30,6 +29,7 @@
 //= require modules/thumbnail
 
 //= require Leaflet.fullscreen
+//= require leaflet-geocoder-mapzen
 
 GeoBlacklight.Controls.Fullscreen = function() {
   this.map.addControl(new L.Control.Fullscreen({

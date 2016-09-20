@@ -47,17 +47,5 @@ Blacklight.onLoad(function() {
         resetPlaceInput();
       }
     });
-
-    $('#place').geocomplete({ types: ['(regions)']})
-      .bind('geocode:result', function(event, result) {
-        var viewport = result.geometry.viewport;
-        var SW = viewport.getSouthWest();
-        var NE = viewport.getNorthEast();
-
-        GeoBlacklight.Home.map.fitBounds([
-          [SW.lat(), SW.lng()],
-          [NE.lat(), NE.lng()]
-        ]);
-      });
   });
 });

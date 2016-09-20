@@ -53,6 +53,7 @@ main.home {
   .search-btn {
     height: 46px;
     width: 100%;
+    padding-left: 12px;
   }
 
   .toggle.btn {
@@ -77,6 +78,15 @@ main.home {
       display: none;
       width: 50%;
       float: left;
+    }
+
+    .leaflet-pelias-control {
+      background-color: $input-bg;
+      background-image: none;
+      border: 1px solid $input-border;
+      border-radius: $input-border-radius;
+      @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+      @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
     }
 
     @media (min-width: $bp-small) {
