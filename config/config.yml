@@ -1,0 +1,16 @@
+defaults: &defaults
+  events:
+    server: 'amqp://localhost:5672'
+    exchange: 'gbl_events'
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+
+staging:
+  <<: *defaults
