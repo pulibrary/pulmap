@@ -67,9 +67,9 @@ class CatalogController < ApplicationController
     #    :years_25 => { :label => 'within 25 Years', :fq => "pub_date:[#{Time.now.year - 25 } TO *]" }
     # }
 
-    config.add_facet_field Settings.FIELDS.PROVENANCE, label: 'Institution', limit: 8, partial: 'icon_facet'
+    config.add_facet_field Settings.FIELDS.PROVENANCE, label: 'Institution', limit: 8, partial: 'icon_facet', single: true
     config.add_facet_field Settings.FIELDS.CREATOR, label: 'Author', limit: 8
-    config.add_facet_field Settings.FIELDS.PUBLISHER, label: 'Publisher', limit: 8
+    config.add_facet_field Settings.FIELDS.PUBLISHER, label: 'Publisher', limit: 8, single: true
     config.add_facet_field Settings.FIELDS.SUBJECT, label: 'Subject', limit: 8, show: true
     config.add_facet_field Settings.FIELDS.SPATIAL_COVERAGE, label: 'Place', limit: 8
     config.add_facet_field Settings.FIELDS.PART_OF, label: 'Collection', limit: 8
@@ -94,8 +94,8 @@ class CatalogController < ApplicationController
       }
     }, partial: 'icon_facet'
 
-    config.add_facet_field Settings.FIELDS.GEOM_TYPE, label: 'Data type', limit: 8, partial: 'icon_facet'
-    config.add_facet_field Settings.FIELDS.FILE_FORMAT, label: 'Format', limit: 8
+    config.add_facet_field Settings.FIELDS.GEOM_TYPE, label: 'Data type', limit: 8, partial: 'icon_facet', single: true
+    config.add_facet_field Settings.FIELDS.FILE_FORMAT, label: 'Format', limit: 8, single: true
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
