@@ -29,7 +29,7 @@ rake geoblacklight:solr:seed
 Pulmap can listen for events published on a RabbitMQ fanout exhange. In order to use them, do the
 following:
 
-1. Configure the `events` settings in `config/config.yml`
+1. Configure the `events` settings in `config/pulmap.yml`
 2. Run `WORKERS=GeoblacklightEventHandler rake sneakers:run`
 
 This will subscribe pulmap to the events and update geoblacklight records when they're

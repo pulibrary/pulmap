@@ -6,7 +6,7 @@ module Pulmap
   private
 
     def config_yaml
-      YAML.load(ERB.new(File.read("#{Rails.root}/config/config.yml")).result)[Rails.env]
+      YAML.load(ERB.new(File.read("#{Rails.root}/config/pulmap.yml")).result)[Rails.env]
     end
 
     module_function :config, :config_yaml
