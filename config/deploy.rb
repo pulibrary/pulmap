@@ -2,7 +2,7 @@
 lock '>=3.4'
 
 set :application, 'pulmap'
-set :repo_url, 'git@github.com:pulibrary/pulmap.git'
+set :repo_url, 'https://github.com/pulibrary/pulmap.git'
 set :branch, 'master'
 
 # Default branch is :master
