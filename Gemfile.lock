@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/projectblacklight/blacklight_range_limit.git
+  revision: 3e09cea8b1eae4d3401ef7bc5a45b0a17735abbc
+  specs:
+    blacklight_range_limit (6.0.0)
+      blacklight (~> 6.0)
+      jquery-rails
+      rails (>= 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -329,6 +338,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
+  blacklight_range_limit!
   bourbon
   byebug
   capistrano (~> 3.6)
@@ -368,4 +378,4 @@ DEPENDENCIES
   xray-rails
 
 BUNDLED WITH
-   1.12.5
+   1.13.1

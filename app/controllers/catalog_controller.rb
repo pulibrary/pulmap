@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
-
 class CatalogController < ApplicationController
+  include BlacklightRangeLimit::ControllerOverride
   include Blacklight::Catalog
 
   configure_blacklight do |config|
