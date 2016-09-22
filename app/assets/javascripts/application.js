@@ -19,6 +19,8 @@
 //= require blacklight/blacklight
 //= require_tree .
 
+//= require 'blacklight_range_limit'
+
 //= require modernizr
 //= require bootstrap-toggle
 
@@ -36,3 +38,4 @@ GeoBlacklight.Controls.Fullscreen = function() {
     position: 'topright'
   }));
 };
+
