@@ -1,0 +1,101 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13pt;
+}
+
+a,
+a:visited {
+  text-decoration: underline;
+}
+
+a[href]:after {
+  content: "";
+}
+
+pre,
+blockquote {
+  border: 1px solid #999;
+  page-break-inside: avoid;
+}
+
+// Printing Tables:
+// http://css-discuss.incutio.com/wiki/Printing_Tables
+
+thead {
+  display: table-header-group;
+}
+
+tbody {
+  display: table-row-group;
+}
+
+tr,
+img {
+  page-break-inside: avoid;
+}
+
+td {
+  padding: 0;
+}
+
+img {
+  max-width: 100% !important;
+}
+
+p,
+h2,
+h3 {
+  orphans: 3;
+  widows: 3;
+}
+
+h2,
+h3 {
+  page-break-after: avoid;
+}
+
+header,
+footer,
+#facets,
+.documents-list .col-md-2,
+.search-widgets,
+.pagination,
+.pagination-search-widgets,
+#sidebar,
+#tools-sidebar,
+.umlaut-section,
+.availability,
+.dropdown-toggle,
+.button--start-over,
+.button--edit-search,
+.index-document-functions,
+.alert.announcement,
+.icon-rssfeed,
+.request.btn {
+  display: none;
+}
+
+.document dt,
+h1,
+.panel-heading {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.dl-horizontal dt {
+  display: block;
+  clear: both;
+  text-align: left;
+}
+
+.dl-horizontal dd {
+  clear: both;
+  margin-left: 0;
+}
+
+.blacklight-holdings a,
+.document-metadata a,
+.search-subjects,
+.dl-horizontal a {
+  text-decoration: none;
+}
