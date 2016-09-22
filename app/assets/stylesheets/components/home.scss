@@ -22,12 +22,8 @@ main.home {
 
 .mask {
   background: $white;
-  height: 134px;
+  height: 40px;
   width: 100%;
-
-  @media (min-width: 625px) {
-    height: 46px;
-  }
 
   @media (min-width: $bp-small) {
     background-color: rgba(0, 0, 0, 0.1);
@@ -81,6 +77,7 @@ main.home {
     }
 
     .leaflet-pelias-control {
+      width: 100%;
       background-color: $input-bg;
       background-image: none;
       border: 1px solid $input-border;
