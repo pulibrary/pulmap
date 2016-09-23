@@ -25,6 +25,7 @@ Blacklight.onLoad(function() {
 
     function toggleMapSearch() {
       searchState = !searchState;
+      $('.leaflet-container').toggleClass('active');
       if (searchState) {
         addBboxField();
       } else {
@@ -34,18 +35,19 @@ Blacklight.onLoad(function() {
 
     $('.btn-toggle').click(function() {
       toggleMapSearch();
-      $('.leaflet-container').toggleClass('active');
     });
 
     // hide zoom control on load
     $('.leaflet-control-zoom').toggle();
 
-    // update bbox field on map move
+    // turn on map search and update bbox field on map move
     GeoBlacklight.Home.map.on('moveend', function(e) {
-      if (searchState) {
-        updateBboxField();
-        resetPlaceInput();
+      if (!searchState) {
+        toggleMapSearch();
+        $('#map-toggle').prop('checked', true).change()
       }
+      updateBboxField();
+      resetPlaceInput();
     });
   });
 });

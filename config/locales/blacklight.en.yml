@@ -4,5 +4,7 @@ en:
     search:
       form:
         submit: 'Search'
+        search_field:
+          label: 'Search...'
     header_links:
       account_page: 'Your Account'
