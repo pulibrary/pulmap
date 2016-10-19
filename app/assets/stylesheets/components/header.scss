@@ -442,3 +442,28 @@
     }
   }
 }
+
+@media (min-width: $bp-small) and (max-width: $bp-medium) {
+  .col-sm-2.logo {
+    width: 23%;
+  }
+
+  .col-sm-7.search {
+    width: 55%;
+  }
+
+  .col-sm-3.util-links {
+    width: 22%
+  }
+
+  #search-navbar .search-query-form {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media (min-width: $bp-large) {
+  #search-navbar .search-query-form {
+    margin-left: 2em;
+  }
+}
