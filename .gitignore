@@ -41,3 +41,5 @@ config/solr_configs/*.txt
 config/solr_configs/*.xml
 config/solr_configs/*.jar
 
+.byebug_history
+
