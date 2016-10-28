@@ -29,6 +29,14 @@ Metrics/LineLength:
     - 'app/controllers/catalog_controller.rb'
     - 'spec/lib/thumbnail_spec.rb'
 
+Metrics/MethodLength:
+  Exclude:
+    - 'app/models/search_builder.rb'
+
+RSpec/NamedSubject:
+  Exclude:
+    - 'spec/models/search_builder_spec.rb'
+
 # TODO: Add top-level class and module documentation.
 Style/Documentation:
   Enabled: false
