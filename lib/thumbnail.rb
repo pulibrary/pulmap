@@ -137,11 +137,9 @@ class Thumbnail
   # generated thumbnail in the background.
   # @return [String] url for that points to service endpoint
   def save_thumbnail
-    Thread.new do
-      PersistThumbnail.new(url: service_url,
-                           file_path: file_path_and_name,
-                           content_type: 'image/png',
-                           timeout: 60).create_file
-    end
+    PersistThumbnailJob.perform_later(url: service_url,
+                                      file_path: file_path_and_name,
+                                      content_type: 'image/png',
+                                      timeout: 60)
   end
 end

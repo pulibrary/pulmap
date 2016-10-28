@@ -20,7 +20,7 @@ class PersistThumbnail
     create_temp_file
     download = initiate_download
     return if download.nil?
-    return unless download.class == Faraday::Request
+    return unless download.class == Faraday::Response
     save_file(download)
   end
 

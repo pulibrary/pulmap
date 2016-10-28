@@ -10,7 +10,6 @@ describe Thumbnail do
       dc_rights_s: 'public' }
   end
   let(:references) {}
-  let(:persist) { instance_double('PersistThumbnail', create_file: 'filename') }
 
   before do
     allow(Settings.THUMBNAIL).to receive(:SIZE).and_return(256)
@@ -19,7 +18,8 @@ describe Thumbnail do
     allow(Settings.THUMBNAIL).to receive(:USE_DCT_REFS).and_return(true)
 
     # Stub persistance so thumbnails aren't saved to disk.
-    allow(PersistThumbnail).to receive(:new).and_return(persist)
+    # allow(PersistThumbnailJob).to receive(:new).and_return(persist)
+    allow(PersistThumbnailJob).to receive(:perform_later)
   end
 
   describe '#initialize' do
@@ -196,10 +196,9 @@ describe Thumbnail do
     end
 
     describe '#save_thumbnail' do
-      it 'creates a new thread to save thumbnail' do
-        save_thread = thumbnail.save_thumbnail
-        expect(save_thread).to be_a Thread
-        expect(save_thread.join.value).to eq('filename')
+      it 'creates a new persist thumbnail job' do
+        expect(PersistThumbnailJob).to receive(:perform_later)
+        thumbnail.save_thumbnail
       end
     end
   end
