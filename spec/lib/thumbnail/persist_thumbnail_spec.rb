@@ -5,7 +5,7 @@ describe PersistThumbnail do
   let(:request) { instance_double('Faraday::Request') }
   let(:req_options) { instance_double('opts', 'timeout=' => 60, 'open_timeout=' => 60) }
   let(:persist) { described_class.new(options) }
-  let(:download) { instance_double('Faraday::Request') }
+  let(:download) { instance_double('Faraday::Response') }
   let(:file_path) { './test/thumbnail.png' }
   let(:thumb_file) { instance_double(File) }
   let(:url) { 'http://www.example.com/thumbnail' }
@@ -25,7 +25,7 @@ describe PersistThumbnail do
 
   describe '#create_file' do
     it 'creates temp file, downloads thumbnail and saves it' do
-      expect(download).to receive(:class).twice.and_return(Faraday::Request)
+      expect(download).to receive(:class).twice.and_return(Faraday::Response)
       expect(persist).to receive(:create_temp_file)
       expect(persist).to receive(:initiate_download).and_return(download)
       expect(persist).to receive(:save_file).with(download)
