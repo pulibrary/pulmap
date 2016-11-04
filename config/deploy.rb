@@ -27,7 +27,8 @@ set :pty, true
 set :linked_files, fetch(:linked_files, []).push('config/blacklight.yml',
                                                  'config/database.yml',
                                                  'config/secrets.yml',
-                                                 'config/settings.yml')
+                                                 'config/settings.yml',
+                                                 'config/initializers/sneakers.rb')
 
 # Default value for linked_dirs is []
 set :linked_dirs, fetch(:linked_dirs, []).push('log',
@@ -59,3 +60,14 @@ namespace :deploy do
     end
   end
 end
+
+namespace :sneakers do
+  task :restart do
+    on roles(:worker) do
+      execute :sudo, :initctl, :restart, 'pulmap-sneakers'
+    end
+  end
+end
+
+after 'deploy:reverted', 'sneakers:restart'
+after 'deploy:published', 'sneakers:restart'
