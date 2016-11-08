@@ -25,6 +25,11 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+.geoblacklight-stanford {
+  color: $gray-light;
+}
+
 .icon-graphbar {
     &:before {
         content: $icon-graphbar;
