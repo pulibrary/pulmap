@@ -67,7 +67,7 @@ end
 
 gem 'geoblacklight', '~> 1.4'
 gem 'bourbon'
-gem 'neat'
+gem 'neat', '~> 1.8'
 gem 'rspec-rails', '~> 3.5.0'
 gem 'solr_wrapper'
 gem 'rsolr', '~> 1.1.1'

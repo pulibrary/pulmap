@@ -6,15 +6,9 @@
   $base-background-color: white !default;
   $dark-gray: #333 !default;
   $light-gray: #DDD !default;
+  $medium-screen: em(640) !default;
+  $large-screen: em(860) !default;
   $base-font-color: $dark-gray !default;
-
-  $large-screen: (
-    media: em(860),
-  );
-
-  $medium-screen: (
-    media: em(640),
-  );
 
   p {
     line-height: 1.5em;
@@ -26,7 +20,7 @@
 
   $grid-items-background: $base-background-color;
   $grid-item-background: $base-background-color;
-  $grid-item-border: 1px solid transparentize($base-font-color, 0.8);
+  $grid-item-border: 1px solid transparentize($base-font-color, 0.8); 
   $grid-item-columns: 4;
   $grid-item-big-columns: 8;
   $grid-item-color: $base-font-color;
@@ -39,7 +33,7 @@
 
   @include clearfix;
   position: static;
-
+    
   .grid-item {
     transition: all 0.2s ease-in-out;
     background: $grid-item-background;
@@ -53,7 +47,7 @@
     padding: 2em;
     width: 100%;
 
-    @include grid-media($large-screen) {
+    @include media($large-screen) {
       @include grid-item-columns($grid-item-columns);
     }
 
@@ -91,19 +85,19 @@
       color: transparentize($grid-item-color, 0.4);
       margin: auto;
       text-align: center;
-      @include grid-media($medium-screen) {
+      @include media($medium-screen) {
         max-width: 100%;
       }
     }
 
   .grid-item-big {
-    @include grid-media($large-screen) {
+    @include media($large-screen) {
       @include grid-item-columns($grid-item-big-columns);
     }
     p {
-      @include grid-media($medium-screen) {
+      @include media($medium-screen) {
         max-width: 60%;
-      }
+      }  
     }
   }
 
@@ -124,3 +118,4 @@
     width: 4px;
   }
 }
+
