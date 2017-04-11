@@ -65,9 +65,9 @@ group :development do
   gem 'xray-rails'
 end
 
-gem 'geoblacklight', '~> 1.2'
+gem 'geoblacklight', '~> 1.4'
 gem 'bourbon'
-gem 'neat'
+gem 'neat', '~> 1.8'
 gem 'rspec-rails', '~> 3.5.0'
 gem 'solr_wrapper'
 gem 'rsolr', '~> 1.1.1'
@@ -75,5 +75,5 @@ gem 'devise'
 gem 'devise-guests', '~> 0.3.3'
 gem 'omniauth-cas'
 gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
-gem 'blacklight_range_limit', github: 'projectblacklight/blacklight_range_limit'
+gem 'blacklight_range_limit', '~> 6.1'
 gem 'sneakers'

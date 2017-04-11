@@ -1,6 +1,8 @@
 # Configurable Logo Used for CartoDB export
 APPLICATION_LOGO_URL: 'http://geoblacklight.org/images/geoblacklight-logo.png'
 
+BBOX_WITHIN_BOOST: '300'
+
 # Carto OneClick Service https://cartodb.com/open-in-cartodb/
 CARTO_ONECLICK_LINK: 'http://oneclick.cartodb.com/'
 
@@ -64,7 +66,7 @@ WMS_PARAMS:
   :EXCEPTIONS: 'application/json'
   :INFO_FORMAT: 'text/html'
 
-# Settings for leaflet 
+# Settings for leaflet
 OPACITY_CONTROL: &opacity_control
   CONTROLS:
     - 'Opacity'
