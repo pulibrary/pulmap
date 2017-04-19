@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/pulibrary/pulmap.png?label=ready&title=Ready)](https://waffle.io/pulibrary/pulmap)
 Pulmap
 ======
 
