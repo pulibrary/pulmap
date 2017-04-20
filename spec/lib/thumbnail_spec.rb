@@ -96,6 +96,30 @@ describe Thumbnail do
     end
   end
 
+  context 'document is a restricted scanned map with a thumbnail reference' do
+    let(:document_attributes) do
+      { layer_slug_s: 'testdoc',
+        layer_id_s: 'testlayer',
+        dct_provenance_s: 'Princeton',
+        dct_references_s: references,
+        dc_rights_s: 'Restricted',
+        layer_geom_type_s: 'Scanned Map' }
+    end
+    let(:references) do
+      {
+        'http://schema.org/thumbnailUrl' => 'http://www.example.com/image.jpg'
+      }.to_json
+    end
+
+    before { allow(Settings.THUMBNAIL).to receive(:USE_DCT_REFS).and_return(false) }
+
+    describe '#url' do
+      it 'returns the thumbnail endpoint url' do
+        expect(thumbnail.url).to eq('http://www.example.com/image.jpg')
+      end
+    end
+  end
+
   context 'document has a wms reference' do
     let(:references) do
       {

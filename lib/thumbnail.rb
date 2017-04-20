@@ -11,9 +11,17 @@ class Thumbnail
   def url
     if Settings.THUMBNAIL.USE_DCT_REFS
       thumbnail_reference || generated_thumbnail
+    elsif restricted_scanned_map?
+      thumbnail_reference
     else
       generated_thumbnail
     end
+  end
+
+  # Checks if the document is has restriced access and is a scanned map
+  # @return [Boolean]
+  def restricted_scanned_map?
+    @document['dc_rights_s'] == 'Restricted' && @document['layer_geom_type_s'] == 'Scanned Map'
   end
 
   ##
