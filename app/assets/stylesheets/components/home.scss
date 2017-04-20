@@ -99,6 +99,7 @@ main.home {
     padding: 0 15px;
     width: 100%;
     margin: 1em 0;
+    z-index: 10;
 
     @media (min-width: 625px) {
       width: 100%;

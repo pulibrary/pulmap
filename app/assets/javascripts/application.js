@@ -24,7 +24,6 @@
 //= require modernizr
 //= require bootstrap-toggle
 
-//= require modules/mapPosition
 //= require modules/map
 //= require modules/thumbnail
 
