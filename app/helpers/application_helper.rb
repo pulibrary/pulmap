@@ -35,7 +35,7 @@ module ApplicationHelper
       if params[:action] == 'show'
         'item'
       elsif params[:action] == 'index'
-        has_search_parameters? ? 'index' : 'home'
+        'index'
       end
     else
       'default'

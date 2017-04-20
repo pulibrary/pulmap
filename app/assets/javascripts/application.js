@@ -26,7 +26,6 @@
 
 //= require modules/mapPosition
 //= require modules/map
-//= require modules/locationsearch
 //= require modules/thumbnail
 
 //= require Leaflet.fullscreen
