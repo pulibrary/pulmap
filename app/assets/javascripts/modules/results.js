@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var historySupported = !!(window.history && window.history.pushState);
-  
+
   if (historySupported) {
     History.Adapter.bind(window, 'statechange', function() {
       var state = History.getState();

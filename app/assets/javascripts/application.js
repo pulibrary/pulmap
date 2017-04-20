@@ -25,7 +25,6 @@
 //= require bootstrap-toggle
 
 //= require modules/mapPosition
-//= require modules/facets-toggle
 //= require modules/map
 //= require modules/locationsearch
 //= require modules/thumbnail
@@ -38,4 +37,3 @@ GeoBlacklight.Controls.Fullscreen = function() {
     position: 'topright'
   }));
 };
-

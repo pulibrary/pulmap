@@ -1,5 +1,3 @@
-<% if has_search_parameters? %>
-
 <%= render 'search_header' %>
 
 <div id="side-content" class="sidebar">
@@ -7,10 +5,5 @@
 </div>
 
 <div id="content" class="content">
-    <%= render 'search_results' %>
+  <%= render 'search_results' %>
 </div>
-
-<% else %>
-<%= render 'home' %>
-
-<% end %>
