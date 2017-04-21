@@ -1,12 +1,5 @@
 module ApplicationHelper
   ##
-  # Checks if home is the current layout
-  # @return [Boolean]
-  def home_layout?
-    layout_type == 'home'
-  end
-
-  ##
   # Checks if index is the current layout
   # @return [Boolean]
   def index_layout?
