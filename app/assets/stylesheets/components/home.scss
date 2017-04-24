@@ -69,6 +69,7 @@ main.home {
     padding: 0 15px;
     width: 100%;
     margin: 1em 0;
+    z-index: 10;
 
     @media (min-width: 625px) {
       display: none;
@@ -98,6 +99,7 @@ main.home {
     padding: 0 15px;
     width: 100%;
     margin: 1em 0;
+    z-index: 10;
 
     @media (min-width: 625px) {
       width: 100%;
@@ -106,7 +108,7 @@ main.home {
     }
 
     @media (min-width: $bp-small) {
-      width: 60%;
+      width: 74%;
       margin: 0;
     }
 
@@ -135,7 +137,6 @@ main.home {
 
 .search-bar-overlay {
   height: 134px;
-  padding-left: 15px;
 
   .home-search {
     height: 134px;
@@ -143,7 +144,7 @@ main.home {
 
   @media (min-width: 625px) {
     height: 46px;
-    
+
     .home-search {
       height: 46px;
     }
@@ -168,10 +169,6 @@ main.home {
   background: black;
 
   .leaflet-container {
-    opacity: 0.8;
-  }
-
-  .leaflet-container.active {
     opacity: 1;
   }
 }

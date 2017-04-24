@@ -1,5 +1,5 @@
 !function(global) {
-  "use strict";
+  'use strict';
 
   /**
    * Convert LatLngBounds to array of values.
@@ -27,7 +27,6 @@
   };
 
   L.Control.GeoSearch = L.Control.extend({
-
     options: {
       dynamic: true,
       baseUrl: '',
@@ -41,20 +40,12 @@
 
     initialize: function(options) {
       L.Util.setOptions(this, options);
-      this.$staticButton = $(this.options.staticButton);
-      this.$dynamicButton = $(this.options.dynamicButton);
     },
 
     onAdd: function(map) {
       var $container = $('<div class="leaflet-control search-control"></div>'),
-          staticSearcher, dynamicSearcher;
+          dynamicSearcher;
       this._map = map;
-
-      staticSearcher = L.Util.bind(function() {
-        this.$staticButton.hide();
-        this.$dynamicButton.show();
-        this.options.searcher.apply(this);
-      }, this);
 
       dynamicSearcher = GeoBlacklight.debounce(function() {
         if (this.options.dynamic) {
@@ -62,30 +53,15 @@
         }
       }, this.options.delay);
 
-      this.$staticButton.on('click', staticSearcher);
-
-      $container.on("change", "input[type=checkbox]",
-        L.Util.bind(function() {
-          this.options.dynamic = !this.options.dynamic;
-        }, this)
-      );
-
-      if (this.options.dynamic) {
-        this.$staticButton.hide();
-      } else {
-        this.$dynamicButton.hide();
-      }
-
-      map.on("zoomend", dynamicSearcher, this);
-      map.on("dragend", dynamicSearcher, this);
-      map.on("movestart", function() {
+      map.on('zoomend', dynamicSearcher, this);
+      map.on('dragend', dynamicSearcher, this);
+      map.on('movestart', function() {
         if (!this.options.dynamic) {
           this.$dynamicButton.hide();
           this.$staticButton.show();
         }
       }, this);
 
-      $container.append(this.$staticButton, this.$dynamicButton);
       return $container.get(0);
     },
 
@@ -101,7 +77,7 @@
       var querystring = window.location.search.substr(1),
           params = [];
 
-      if (querystring !== "") {
+      if (querystring !== '') {
         params = $.map(querystring.split('&'), function(value) {
           if ($.inArray(value.split('=')[0], filterList) > -1) {
             return null;

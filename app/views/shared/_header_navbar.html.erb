@@ -14,44 +14,30 @@
       </div>
     </div>
   </div>
-  <div class="home-secondary-navbar navbar <% if home_layout? %>home<% end %>">
+  <div class="home-secondary-navbar navbar <% if index_layout? %>home<% end %>">
     <div class="container" role="navigation">
-    <% if home_layout? %>
-      <div class="col-xs-12 col-sm-9 logo">
-      <%= link_to root_path, class: "logo__app" do %>
-        <%= image_tag 'geo-logo.png', {:alt => 'Digital Maps and Geographic Data', :style => 'height: 40px;', :class => 'pulmap-brand'} %>
-        <% end %>
-      </div>
-      <% elsif item_layout? %>
-      <div class="col-xs-12 col-sm-2 logo">
-      <%= link_to root_path, class: "logo__app" do %>
-        <%= image_tag 'geo-logo.png', {:alt => 'Digital Maps and Geographic Data', :style => 'height: 40px;', :class => 'pulmap-brand'} %>
-        <% end %>
-      </div>
-      <div class="col-xs-12 col-sm-7 search">
-        <%= render 'shared/header_secondary_index' %>
-      </div>
+      <% if item_layout? %>
+        <div class="col-xs-12 col-sm-2 logo">
+        <%= link_to root_path, class: "logo__app" do %>
+          <%= image_tag 'geo-logo.png', {:alt => 'Digital Maps and Geographic Data', :style => 'height: 40px;', :class => 'pulmap-brand'} %>
+          <% end %>
+        </div>
+        <div class="col-xs-12 col-sm-7 search">
+          <%= render 'shared/header_secondary_index' %>
+        </div>
       <% else %>
-      <div class="col-xs-12 col-sm-2 logo">
-      <%= link_to root_path, class: "logo__app" do %>
-        <%= image_tag 'geo-logo.png', {:alt => 'Digital Maps and Geographic Data', :style => 'height: 40px;', :class => 'pulmap-brand'} %>
-        <% end %>
-      </div>
-      <div class="col-xs-12 col-sm-7 search">
-        <%= render 'shared/header_secondary_filters' %>
-      </div>
+        <div class="col-xs-12 col-sm-9 logo">
+        <%= link_to root_path, class: "logo__app" do %>
+          <%= image_tag 'geo-logo.png', {:alt => 'Digital Maps and Geographic Data', :style => 'height: 40px;', :class => 'pulmap-brand'} %>
+          <% end %>
+        </div>
       <% end %>
       <div class="col-xs-12 col-sm-3 util-links">
         <%= render :partial=>'/user_util_links' -%>
       </div>
     </div>
   </div>
-
-  <% if home_layout? %>
-    <%# if there are no input/search related params, display the "secondary home" partial -%>
-    <%= render 'shared/header_secondary_home' %>
-  <% else %>
-
-  <% end %>
-
+<% if index_layout? %>
+  <%= render 'shared/header_secondary_home' %>
+<% end %>
 </header>
