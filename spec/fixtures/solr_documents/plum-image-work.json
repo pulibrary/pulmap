@@ -1,0 +1,29 @@
+{
+  "geoblacklight_version": "1.0",
+  "dc_identifier_s": "ark:/88435/8c97ks94m",
+  "layer_slug_s": "princeton-8c97ks94m",
+  "uuid": "princeton-8c97ks94m",
+  "dc_title_s": "Karte von Ost-China [Pyo¨ng yang]",
+  "solr_geom": "ENVELOPE(73.4997347, 134.7754563, 53.5608154, 3.966232)",
+  "dct_provenance_s": "Princeton",
+  "dc_rights_s": "Public",
+  "dc_description_s": "Set covers eastern China, Korea and adjacent parts of Mongolia.",
+  "dc_creator_sm": [
+    "Prussia (Germany). Landesaufnahme. Kartogr. Abteilung"
+  ],
+  "dc_language_s": "German",
+  "dc_publisher_s": "[Berlin] : Königl. Preuss. Landes-Aufnahme, 1901-",
+  "dc_subject_sm": [
+    "Korea—Maps",
+    "China—Maps"
+  ],
+  "dct_spatial_sm": [
+    "Korea",
+    "China"
+  ],
+  "layer_modified_dt": "2017-05-23T22:19:55Z",
+  "layer_id_s": "public:p2z110f14p",
+  "dct_references_s": "{\"http://schema.org/url\":\"https://plum.princeton.edu/concern/image_works/p31981b007\",\"http://schema.org/downloadUrl\":\"https://plum.princeton.edu/downloads/p2z110f14p\",\"http://schema.org/thumbnailUrl\":\"https://plum.princeton.edu/downloads/p2z110f14p?file=thumbnail\",\"http://iiif.io/api/image\":\"https://libimages1.princeton.edu/loris/plum_prod/p2%2Fz1%2F10%2Ff1%2F4p-intermediate_file.jp2/info.json\",\"http://iiif.io/api/presentation#manifest\":\"https://plum.princeton.edu/concern/image_works/p31981b007/manifest\"}",
+  "layer_geom_type_s": "Scanned Map",
+  "dc_format_s": "TIFF"
+}
