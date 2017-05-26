@@ -10,6 +10,9 @@
           <%= render partial: 'blacklight/nav/saved_searches' %>
         </li>
         <li>
+          <%= render partial: 'blacklight/nav/search_history' %>
+        </li>
+        <li>
           <%= link_to t('blacklight.header_links.logout'), destroy_user_session_path, :method => :delete %>
         </li>
       </ul>
