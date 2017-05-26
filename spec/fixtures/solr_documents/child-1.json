@@ -1,0 +1,28 @@
+{
+  "geoblacklight_version": "1.0",
+  "dc_identifier_s": "ark:/88435/n009w382v",
+  "layer_slug_s": "princeton-n009w382v",
+  "uuid": "princeton-n009w382v",
+  "dc_title_s": "Fire Insurance Map of Princeton, New Jersey (Sheet 1) (1885)",
+  "solr_geom": "ENVELOPE(-74.68, -74.63, 40.37, 40.33)",
+  "dct_provenance_s": "Princeton",
+  "dc_rights_s": "Public",
+  "dc_description_s": "Feb. 1885.",
+  "dc_creator_sm": [
+    "Sanborn Map Company"
+  ],
+  "dc_language_s": "English",
+  "dc_publisher_s": "New York : Sanborn Map & Publishing Co., Limited, 1885.",
+  "dc_subject_sm": [
+    "Real property—New Jersey—Princeton—Maps",
+    "Princeton (N.J.)—Maps"
+  ],
+  "layer_modified_dt": "2017-05-23T21:37:01Z",
+  "layer_id_s": "public:p8g84q7230",
+  "dct_references_s": "{\"http://schema.org/url\":\"https://plum.princeton.edu/concern/image_works/pgx41q6224\",\"http://schema.org/downloadUrl\":\"https://plum.princeton.edu/downloads/p8g84q7230\",\"http://schema.org/thumbnailUrl\":\"https://plum.princeton.edu/downloads/p8g84q7230?file=thumbnail\",\"http://iiif.io/api/image\":\"https://libimages1.princeton.edu/loris/plum_prod/p8%2Fg8%2F4q%2F72%2F30-intermediate_file.jp2/info.json\",\"http://iiif.io/api/presentation#manifest\":\"https://plum.princeton.edu/concern/image_works/pgx41q6224/manifest\"}",
+  "layer_geom_type_s": "Scanned Map",
+  "dc_format_s": "TIFF",
+  "dct_source_sm": [
+    "princeton-1r66j405w"
+  ]
+}

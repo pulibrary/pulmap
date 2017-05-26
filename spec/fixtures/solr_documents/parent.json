@@ -1,0 +1,25 @@
+{
+  "geoblacklight_version": "1.0",
+  "dc_identifier_s": "ark:/88435/1r66j405w",
+  "layer_slug_s": "princeton-1r66j405w",
+  "uuid": "princeton-1r66j405w",
+  "dc_title_s": "Princeton, Mercer County, New Jersey",
+  "solr_geom": "ENVELOPE(-74.784622, -74.533997, 40.414542, 40.283716)",
+  "dct_provenance_s": "Princeton",
+  "dc_rights_s": "Public",
+  "dc_description_s": "Oriented with the north to the upper left.",
+  "dc_creator_sm": [
+    "Sanborn Map Company"
+  ],
+  "dc_language_s": "English",
+  "dc_publisher_s": "New York : Sanborn Map & Publishing Co., Limited, 1885.",
+  "dc_subject_sm": [
+    "Princeton (N.J.)—Maps",
+    "Real property—New Jersey—Princeton—Maps"
+  ],
+  "layer_modified_dt": "2017-05-30T15:25:13Z",
+  "layer_id_s": "ark:/88435/1r66j405w",
+  "dct_references_s": "{\"http://schema.org/url\":\"https://plum.princeton.edu/concern/map_sets/p4455c1542\",\"http://schema.org/thumbnailUrl\":\"https://plum.princeton.edu/downloads/p4455c1542?file=thumbnail\",\"http://iiif.io/api/presentation#manifest\":\"https://plum.princeton.edu/concern/map_sets/p4455c1542/manifest\"}",
+  "layer_geom_type_s": "Scanned Map",
+  "dc_format_s": "TIFF"
+}
