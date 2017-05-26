@@ -31,3 +31,9 @@ h2 {
   border: 1px solid $gray;
   color: #000000;
 }
+
+.show-document > .document > div {
+  h2 {
+    margin-top: 0px;
+  }
+}
