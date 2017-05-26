@@ -19,6 +19,8 @@ class CatalogController < ApplicationController
       q: '{!raw f=layer_slug_s v=$id}'
     }
 
+    config.navbar.partials.delete(:saved_searches)
+    config.navbar.partials.delete(:search_history)
     # solr field configuration for search results/index views
     # config.index.show_link = 'title_display'
     # config.index.record_display_type = 'layer_geom_type_s'
