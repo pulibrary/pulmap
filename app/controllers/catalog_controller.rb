@@ -1,9 +1,23 @@
 # -*- encoding : utf-8 -*-
 class CatalogController < ApplicationController
+  include BlacklightAdvancedSearch::Controller
   include BlacklightRangeLimit::ControllerOverride
   include Blacklight::Catalog
 
   configure_blacklight do |config|
+    # default advanced config values
+    config.advanced_search ||= Blacklight::OpenStructWithHashAccess.new
+    # config.advanced_search[:qt] ||= 'advanced'
+    config.advanced_search[:url_key] ||= 'advanced'
+    config.advanced_search[:query_parser] ||= 'edismax'
+    config.advanced_search[:form_solr_parameters] ||= {}
+    config.advanced_search[:form_solr_parameters]['facet.field'] ||= %W(#{Settings.FIELDS.GEOM_TYPE}
+                                                                        #{Settings.FIELDS.PROVENANCE}
+                                                                        #{Settings.FIELDS.FILE_FORMAT})
+    config.advanced_search[:form_solr_parameters]['facet.query'] ||= ''
+    config.advanced_search[:form_solr_parameters]['facet.limit'] ||= -1
+    config.advanced_search[:form_solr_parameters]['facet.sort'] ||= 'index'
+
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
     config.default_solr_params = {
       :start => 0,

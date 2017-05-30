@@ -11,6 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require 'blacklight_advanced_search'
+
+//= require chosen-jquery
+
 //= require jquery_ujs
 //= require twitter/typeahead.min
 //= require aload
@@ -26,6 +30,7 @@
 
 //= require modules/map
 //= require modules/thumbnail
+//= require modules/advanced_chosen
 
 //= require Leaflet.fullscreen
 //= require leaflet-geocoder-mapzen
