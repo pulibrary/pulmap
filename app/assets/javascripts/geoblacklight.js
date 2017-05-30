@@ -8,6 +8,7 @@
 //= require geoblacklight/modules/layer_opacity
 //= require geoblacklight/modules/util
 //= require geoblacklight/downloaders
+//= require geoblacklight/modules/relations
 
 //= require leaflet-iiif
 //= require esri-leaflet

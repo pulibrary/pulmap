@@ -31,3 +31,8 @@ en:
       tiled_map_layer: 'ArcGIS Tiled Map Layer'
       dynamic_map_layer: 'ArcGIS Dynamic Map Layer'
       image_map_layer: 'ArcGIS Image Map Layer'
+    relations:
+      ancestor: 'Parent Records'
+      descendant: 'Child Records (%{count})'
+      browse_all: "Browse all %{count} records..."
+      title: 'Relationships'

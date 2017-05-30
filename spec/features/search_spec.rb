@@ -19,4 +19,9 @@ feature 'Search' do
       expect(page).to have_content '1 entry found'
     end
   end
+
+  scenario 'Suppressed records are hidden' do
+    visit '/?q=Sanborn+Map+Company'
+    expect(page).to have_css '.document', count: 1
+  end
 end
