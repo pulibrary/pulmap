@@ -7,6 +7,8 @@ class SearchBuilder < Blacklight::SearchBuilder
   self.default_processor_chain += [:hide_suppressed_records]
 
   def hide_suppressed_records(solr_params)
+    # Show child records if searching for a specific source parent
+    return unless blacklight_params.fetch(:f, {})[:dct_source_sm].nil?
     solr_params[:fq] ||= []
     solr_params[:fq] << '-suppressed_b: true'
   end
