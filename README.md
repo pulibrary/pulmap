@@ -7,7 +7,7 @@ GeoBlacklight for Princeton University Library
 [![Coverage Status](https://coveralls.io/repos/pulibrary/pulmap/badge.svg?branch=master&service=github)](https://coveralls.io/github/pulibrary/pulmap?branch=master)
 [![Stories in Ready](https://badge.waffle.io/pulibrary/pulmap.png?label=ready&title=Ready)](https://waffle.io/pulibrary/pulmap)
 
-###Installation
+### Installation
 ```
 bundle
 cp config/database.yml.tmpl config/database.yml
@@ -18,9 +18,9 @@ To index sample data into solr, in another terminal run:
 ```
 rake geoblacklight:solr:seed
 ```
-###Production Requirements
+### Production Requirements
 
-####mod_xsendfile
+#### mod_xsendfile
 
     $ sudo apt-get install libapache2-mod-xsendfile
 
