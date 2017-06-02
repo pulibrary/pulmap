@@ -20,6 +20,20 @@ AllCops:
 Metrics/AbcSize:
   Exclude:
     - 'app/controllers/users/omniauth_callbacks_controller.rb'
+    - 'app/helpers/advanced_helper.rb'
+
+Metrics/BlockNesting:
+  Exclude:
+    - 'app/helpers/advanced_helper.rb'
+
+Metrics/ClassLength:
+  Max: 100
+  Exclude:
+    - app/controllers/catalog_controller.rb
+
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - 'app/helpers/advanced_helper.rb'
 
 Metrics/LineLength:
   Max: 100
@@ -28,6 +42,15 @@ Metrics/LineLength:
     # TODO: Refactor add_show_tools_partial procs.
     - 'app/controllers/catalog_controller.rb'
     - 'spec/lib/thumbnail_spec.rb'
+    - app/helpers/advanced_helper.rb
+
+Metrics/MethodLength:
+  Exclude:
+    - 'app/helpers/advanced_helper.rb'
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - 'app/helpers/advanced_helper.rb'  
 
 # TODO: Add top-level class and module documentation.
 Style/Documentation:
