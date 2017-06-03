@@ -88,7 +88,7 @@ class CatalogController < ApplicationController
       assumed_boundaries: [1100, 2016]
       # :num_segments => 6,
       # :segments => true
-    }, collapse: false
+    }
     config.add_facet_field Settings.FIELDS.SUBJECT, label: 'Subject', limit: 8, show: true
     config.add_facet_field Settings.FIELDS.PROVENANCE, label: 'Institution', limit: 8, partial: 'icon_facet', single: true
     # config.add_facet_field Settings.FIELDS.CREATOR, label: 'Author', limit: 8
