@@ -103,7 +103,7 @@ describe Thumbnail do
         dct_provenance_s: 'Princeton',
         dct_references_s: references,
         dc_rights_s: 'Restricted',
-        layer_geom_type_s: 'Scanned Map' }
+        layer_geom_type_s: 'Image' }
     end
     let(:references) do
       {

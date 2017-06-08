@@ -21,7 +21,7 @@ class Thumbnail
   # Checks if the document is has restriced access and is a scanned map
   # @return [Boolean]
   def restricted_scanned_map?
-    @document['dc_rights_s'] == 'Restricted' && @document['layer_geom_type_s'] == 'Scanned Map'
+    @document['dc_rights_s'] == 'Restricted' && @document['layer_geom_type_s'] == 'Image'
   end
 
   ##
