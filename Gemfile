@@ -65,7 +65,7 @@ group :development do
   gem 'xray-rails'
 end
 
-gem 'geoblacklight', '~> 1.4'
+gem 'geoblacklight', '~> 1.5'
 gem 'bourbon'
 gem 'neat', '~> 1.8'
 gem 'rspec-rails', '~> 3.5.0'
