@@ -37,3 +37,8 @@ h2 {
     margin-top: 0px;
   }
 }
+
+// Remove the horizontal rule above the Universal Viewer
+#viewer-container > hr.clear {
+  display: none;
+}

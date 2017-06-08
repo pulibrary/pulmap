@@ -21,6 +21,7 @@ class CatalogController < ApplicationController
 
     config.navbar.partials.delete(:saved_searches)
     config.navbar.partials.delete(:search_history)
+    config.show.partials.delete(:show_header)
     # solr field configuration for search results/index views
     # config.index.show_link = 'title_display'
     # config.index.record_display_type = 'layer_geom_type_s'
