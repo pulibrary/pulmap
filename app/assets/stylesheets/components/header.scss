@@ -155,6 +155,7 @@
     background: none;
     color: $gray;
     font-size: 0.75em;
+    vertical-align: middle;
   }
 
   > li > a {
@@ -461,4 +462,9 @@
   #search-navbar .search-query-form {
     margin-left: 2em;
   }
+}
+
+// Align Contact Us with Your Account
+.menu--level-1 > ul:first-child {
+  padding-top: 2px;
 }
