@@ -76,4 +76,8 @@ gem 'devise-guests', '~> 0.3.3'
 gem 'omniauth-cas'
 gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
 gem 'blacklight_range_limit', '~> 6.1'
+gem 'blacklight_advanced_search'
 gem 'sneakers'
+
+#  jquery multiselect plugin for advanced search
+gem 'chosen-rails'

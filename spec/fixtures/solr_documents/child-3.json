@@ -20,7 +20,7 @@
   "layer_modified_dt": "2017-05-23T21:37:00Z",
   "layer_id_s": "public:pwd378j08b",
   "dct_references_s": "{\"http://schema.org/url\":\"https://plum.princeton.edu/concern/image_works/pd504v7930\",\"http://schema.org/downloadUrl\":\"https://plum.princeton.edu/downloads/pwd378j08b\",\"http://schema.org/thumbnailUrl\":\"https://plum.princeton.edu/downloads/pwd378j08b?file=thumbnail\",\"http://iiif.io/api/image\":\"https://libimages1.princeton.edu/loris/plum_prod/pw%2Fd3%2F78%2Fj0%2F8b-intermediate_file.jp2/info.json\",\"http://iiif.io/api/presentation#manifest\":\"https://plum.princeton.edu/concern/image_works/pd504v7930/manifest\"}",
-  "layer_geom_type_s": "Scanned Map",
+  "layer_geom_type_s": "Image",
   "dc_format_s": "TIFF",
   "suppressed_b": true,
   "dct_source_sm": [
