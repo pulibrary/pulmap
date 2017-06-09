@@ -134,10 +134,10 @@ GEM
       railties (>= 3.0.0)
     faraday (0.12.0.1)
       multipart-post (>= 1.2, < 3)
-    font-awesome-rails (4.7.0.1)
-      railties (>= 3.2, < 5.1)
-    geoblacklight (1.4.0)
-      blacklight (~> 6.3)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
+    geoblacklight (1.5.0)
+      blacklight (~> 6.3, < 6.10)
       coderay
       config
       deprecation
@@ -145,7 +145,7 @@ GEM
       font-awesome-rails
       geoblacklight-icons (>= 0.2)
       leaflet-rails (~> 0.7.3)
-      rails (>= 4.2.0, < 6)
+      rails (>= 4.2.0, < 5.1)
     geoblacklight-icons (1.1.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
@@ -366,7 +366,7 @@ DEPENDENCIES
   devise
   devise-guests (~> 0.3.3)
   factory_girl_rails
-  geoblacklight (~> 1.4)
+  geoblacklight (~> 1.5)
   jbuilder (~> 2.5)
   jquery-rails
   modernizr-rails
