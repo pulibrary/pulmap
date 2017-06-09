@@ -7,5 +7,6 @@ en:
         search_field:
           label: 'Search...'
       start_over: 'Start over'
+      edit_search: 'Edit search'
     header_links:
       account_page: 'Your Account'
