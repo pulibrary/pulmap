@@ -7,25 +7,24 @@ feature 'advanced search' do
       click_link 'Edit search'
       expect(page).to have_css "#q1[value='map']", count: 1
     end
-  end
-
-  feature 'date range' do
-    scenario 'limits search results' do
-      visit '/?q='
-      fill_in 'range_solr_year_i_begin', with: '1778'
-      fill_in 'range_solr_year_i_end', with: '1800'
-      click_button 'Limit'
-      expect(page).to have_content '1 entry found'
+    scenario 'advanced keyword terms, fields, and operations carried over' do
+      visit '/?f1=all_fields&q1=maps&op2=NOT&f2=title&q2=princeton&op3=NOT'\
+            '&f3=title&q3=russia&search_field=advanced'
+      click_link 'Edit search'
+      expect(page).to have_css "#q1[value='maps']", count: 1
+      expect(page).to have_css "#q2[value='princeton']", count: 1
+      expect(page).to have_css "#q3[value='russia']", count: 1
+      expect(page).to have_css "#f2 > option[value='title'][selected='selected']", count: 1
+      expect(page).to have_css "#f3 > option[value='title'][selected='selected']", count: 1
+      expect(page).to have_css "#op2_NOT[checked='checked']", count: 1
+      expect(page).to have_css "#op3_NOT[checked='checked']", count: 1
     end
-  end
-
-  scenario 'Suppressed records are hidden' do
-    visit '/?q=Sanborn+Map+Company'
-    expect(page).to have_css '.document', count: 1
-  end
-
-  scenario 'When searching child records from a parent record, supressed records are not hidden' do
-    visit '/?f[dct_source_sm][]=princeton-1r66j405w&q='
-    expect(page).to have_css '.document', count: 4
+    scenario 'advanced facets are carried over' do
+      visit '/?f_inclusive%5Bdc_format_s%5D%5B%5D=GeoTIFF&f_inclusive'\
+            '%5Bdc_format_s%5D%5B%5D=Paper&search_field=advanced'
+      click_link 'Edit search'
+      expect(page).to have_css "option[value='GeoTIFF'][selected='selected']", count: 1
+      expect(page).to have_css "option[value='Paper'][selected='selected']", count: 1
+    end
   end
 end
