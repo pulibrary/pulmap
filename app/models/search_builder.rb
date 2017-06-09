@@ -2,11 +2,11 @@
 class SearchBuilder < Blacklight::SearchBuilder
   include Blacklight::Solr::SearchBuilderBehavior
   include BlacklightAdvancedSearch::AdvancedSearchBuilder
-  self.default_processor_chain += [:add_advanced_parse_q_to_solr, :add_advanced_search_to_solr]
   include BlacklightRangeLimit::RangeLimitBuilder
   include Geoblacklight::SpatialSearchBehavior
 
-  self.default_processor_chain += [:hide_suppressed_records]
+  self.default_processor_chain += [:add_advanced_parse_q_to_solr, :add_advanced_search_to_solr,
+                                   :hide_suppressed_records]
 
   def hide_suppressed_records(solr_params)
     # Show child records if searching for a specific source parent
