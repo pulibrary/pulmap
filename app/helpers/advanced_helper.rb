@@ -90,12 +90,9 @@ module BlacklightAdvancedSearch
 
         return @keyword_queries unless @params[:search_field] == ::AdvancedController.blacklight_config.advanced_search[:url_key]
 
-        # spaces need to be stripped from the query because they don't get properly stripped in Solr
-        ###### TO GET STARTS WITH TO WORK #######
-        q1 = %w(left_anchor in_series).include?(@params[:f1]) ? @params[:q1].delete(' ') : @params[:q1]
-        q2 = @params[:f2] == 'left_anchor' ? @params[:q2].delete(' ') : @params[:q2]
-        q3 = @params[:f3] == 'left_anchor' ? @params[:q3].delete(' ') : @params[:q3]
-        #########################################
+        q1 = @params[:q1]
+        q2 = @params[:q2]
+        q3 = @params[:q3]
 
         been_combined = false
         @keyword_queries[@params[:f1]] = q1 unless @params[:q1].blank?

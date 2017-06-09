@@ -20,6 +20,6 @@
   "layer_modified_dt": "2017-05-30T15:25:13Z",
   "layer_id_s": "ark:/88435/1r66j405w",
   "dct_references_s": "{\"http://schema.org/url\":\"https://plum.princeton.edu/concern/map_sets/p4455c1542\",\"http://schema.org/thumbnailUrl\":\"https://plum.princeton.edu/downloads/p4455c1542?file=thumbnail\",\"http://iiif.io/api/presentation#manifest\":\"https://plum.princeton.edu/concern/map_sets/p4455c1542/manifest\"}",
-  "layer_geom_type_s": "Scanned Map",
+  "layer_geom_type_s": "Image",
   "dc_format_s": "TIFF"
 }
