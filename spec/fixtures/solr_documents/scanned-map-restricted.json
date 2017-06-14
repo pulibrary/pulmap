@@ -1,0 +1,22 @@
+{
+  "geoblacklight_version": "1.0",
+  "dc_identifier_s": "ark:/88435/3x816p22x",
+  "layer_slug_s": "princeton-3x816p22x",
+  "uuid": "princeton-3x816p22x",
+  "dc_title_s": "Poland 1:100,000. Kolo, sheet P-13. A.M.S. M651 (G.S.G.S. 4416)",
+  "solr_geom": "ENVELOPE(18.333333333333332, 19.333333333333332, 52.25, 51.75)",
+  "dct_provenance_s": "Princeton",
+  "dc_rights_s": "Restricted",
+  "dc_description_s": "AMS 2.",
+  "dc_language_s": "Undetermined",
+  "dc_publisher_s": "Washington, D.C. : Army Map Service, U.S. Army, 1945.",
+  "dc_subject_sm": [
+    "Poland—Maps",
+    "Topographic maps"
+  ],
+  "layer_modified_dt": "2017-04-20T02:46:18Z",
+  "layer_id_s": "public:s79408014x",
+  "dct_references_s": "{\"http://schema.org/url\":\"https://hydra-dev.princeton.edu/concern/image_works/snk322g61c\",\"http://schema.org/downloadUrl\":\"https://hydra-dev.princeton.edu/downloads/s79408014x\",\"http://schema.org/thumbnailUrl\":\"https://hydra-dev.princeton.edu/downloads/s79408014x?file=thumbnail\"}",
+  "layer_geom_type_s": "Image",
+  "dc_format_s": "TIFF"
+}

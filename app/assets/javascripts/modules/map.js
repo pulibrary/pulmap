@@ -20,5 +20,8 @@ GeoBlacklight.Viewer.Map = GeoBlacklight.Viewer.Map.extend({
     this.map = L.map(this.element, this.mapOptions ).fitBounds(this.options.bbox);
     this.map.addLayer(this.selectBasemap());
     this.map.addLayer(this.overlay);
+    if (this.data.map !== 'index') {
+      this.addBoundsOverlay(this.options.bbox);
+    }
   },
 });
