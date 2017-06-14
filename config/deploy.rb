@@ -27,7 +27,6 @@ set :pty, true
 set :linked_files, fetch(:linked_files, []).push('config/blacklight.yml',
                                                  'config/database.yml',
                                                  'config/secrets.yml',
-                                                 'config/settings.yml',
                                                  'config/initializers/sneakers.rb',
                                                  'config/pulmap.yml')
 
