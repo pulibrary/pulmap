@@ -238,9 +238,9 @@ class CatalogController < ApplicationController
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
     config.add_sort_field 'score desc, dc_title_sort asc', label: 'relevance'
-    config.add_sort_field '#{Settings.FIELDS.YEAR} desc, dc_title_sort asc', label: 'year'
-    config.add_sort_field '#{Settings.FIELDS.PUBLISHER} asc, dc_title_sort asc', label: 'publisher'
-    config.add_sort_field '#{Settings.FIELDS.TITLE} asc', label: 'title'
+    config.add_sort_field "#{Settings.FIELDS.YEAR} desc, dc_title_sort asc", label: 'year'
+    config.add_sort_field "#{Settings.FIELDS.PUBLISHER} asc, dc_title_sort asc", label: 'publisher'
+    config.add_sort_field "#{Settings.FIELDS.TITLE} asc", label: 'title'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
