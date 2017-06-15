@@ -66,7 +66,7 @@
     },
 
     // Clamps the search bounding box size to a box with a width smaller than a max value.
-    // Smaller than the map panel size. Helps focus spatial searches on large screens.
+    // Helps focus spatial searches on large screens.
     searchBounds: function() {
       var max_width = 1000,
           width = this._map.getSize().x,
