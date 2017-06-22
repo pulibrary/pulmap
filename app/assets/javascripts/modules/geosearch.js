@@ -65,10 +65,27 @@
       return $container.get(0);
     },
 
+    // Clamps the search bounding box size to a box with a width smaller than a max value.
+    // Helps focus spatial searches on large screens.
+    searchBounds: function() {
+      var max_width = 1000,
+          width = this._map.getSize().x,
+          padding = (width - max_width) / 2,
+          bounds = this._map.getBounds(),
+          bbox = L.boundsToBbox(bounds),
+          sw_layer = this._map.latLngToLayerPoint(bounds.getSouthWest()),
+          ne_layer = this._map.latLngToLayerPoint(bounds.getNorthEast());
+      if (width <= max_width) return bbox;
+      sw_layer.x = sw_layer.x + padding;
+      ne_layer.x = ne_layer.x - padding;
+      bbox[0] = this._map.layerPointToLatLng(sw_layer).lng
+      bbox[2] = this._map.layerPointToLatLng(ne_layer).lng
+      return bbox;
+    },
+
     getSearchUrl: function() {
       var params = this.filterParams(['bbox', 'page']),
-          bounds = L.boundsToBbox(this._map.getBounds());
-
+          bounds = this.searchBounds();
       params.push('bbox=' + encodeURIComponent(bounds.join(' ')));
       return this.options.baseUrl + '?' + params.join('&');
     },
