@@ -473,3 +473,14 @@
 .menu--level-1 > ul:first-child {
   padding-top: 2px;
 }
+
+.logo-text {
+  font-weight: 300;
+  font-size: 23px;
+  color: rgb(70, 70, 70);
+}
+
+.logo-text:hover{
+  text-decoration: none;
+  color: rgb(70, 70, 70);
+}
