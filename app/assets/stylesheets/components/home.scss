@@ -95,7 +95,7 @@ main.home {
       display: block;
       width: 31%;
       padding: 0;
-      margin: 0;
+      margin: 0 0 0 15px;
     }
   }
 
@@ -112,7 +112,7 @@ main.home {
     }
 
     @media (min-width: $bp-small) {
-      width: 68%;
+      width: 67%;
       margin: 0;
     }
 

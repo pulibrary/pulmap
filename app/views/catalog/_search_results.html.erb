@@ -11,20 +11,14 @@
 
 <h2 class="sr-only"><%= t('blacklight.search.search_results') %></h2>
 
-<% if has_search_parameters? %>
+<%= render 'sort_and_per_page' %>
 
-  <%= render 'sort_and_per_page' %>
+<%- if @response.empty? %>
+  <%= render "zero_results" %>
+<%- elsif render_grouped_response? %>
+  <%= render_grouped_document_index %>
+<%- else %>
+  <%= render_document_index %>
+<%- end %>
 
-  <%- if @response.empty? %>
-    <%= render "zero_results" %>
-  <%- elsif render_grouped_response? %>
-    <%= render_grouped_document_index %>
-  <%- else %>
-    <%= render_document_index %>
-  <%- end %>
-
-  <%= render 'results_pagination' %>
-
-<% else %>
-  <%= render 'featured_content' %>
-<% end %>
+<%= render 'results_pagination' %>
