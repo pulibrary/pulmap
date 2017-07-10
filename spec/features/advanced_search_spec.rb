@@ -20,11 +20,12 @@ feature 'advanced search' do
       expect(page).to have_css "#op3_NOT[checked='checked']", count: 1
     end
     scenario 'advanced facets are carried over' do
-      visit '/?f_inclusive%5Bdc_format_s%5D%5B%5D=GeoTIFF&f_inclusive'\
-            '%5Bdc_format_s%5D%5B%5D=Paper&search_field=advanced'
+      visit '/?f_inclusive%5Blayer_geom_type_s%5D%5B%5D=Image'\
+            '&f_inclusive%5Blayer_geom_type_s%5D%5B%5D=Line&'\
+            'search_field=advanced'
       click_link 'Edit search'
-      expect(page).to have_css "option[value='GeoTIFF'][selected='selected']", count: 1
-      expect(page).to have_css "option[value='Paper'][selected='selected']", count: 1
+      expect(page).to have_css "option[value='Image'][selected='selected']", count: 1
+      expect(page).to have_css "option[value='Line'][selected='selected']", count: 1
     end
   end
 end

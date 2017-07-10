@@ -111,7 +111,6 @@ class CatalogController < ApplicationController
     # config.add_facet_field Settings.FIELDS.PUBLISHER, label: 'Publisher', limit: 8, single: true
     # config.add_facet_field Settings.FIELDS.SPATIAL_COVERAGE, label: 'Place', limit: 8
     config.add_facet_field Settings.FIELDS.PART_OF, label: 'Collection', limit: 8
-    config.add_facet_field Settings.FIELDS.FILE_FORMAT, label: 'Format', limit: 8, single: true
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
