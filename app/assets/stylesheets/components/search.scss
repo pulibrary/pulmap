@@ -145,9 +145,9 @@ header .input-group-addon {
 }
 
 .search-options {
-  clear: both;
-  display: block;
-  float: none;
+  margin-top: 10px;
+  color: darken($blue, 3);
+  font-size: 0.8em;
 
   li {
     display: inline-block;

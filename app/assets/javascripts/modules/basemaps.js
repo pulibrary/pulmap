@@ -32,11 +32,8 @@ GeoBlacklight.Basemaps.antique = L.tileLayer(
 GeoBlacklight.Basemaps.positron = L.tileLayer(
   'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
-    maxZoom: 18,
-    worldCopyJump: false,
-    detectRetina: true,
-    continuousWorld: false,
-    noWrap: true
+    worldCopyJump: true,
+    detectRetina: true
   }
 );
 
@@ -46,7 +43,6 @@ GeoBlacklight.Basemaps.esri =  L.tileLayer('https://server.arcgisonline.com/ArcG
   maxZoom: 18,
   worldCopyJump: false,
   detectRetina: true,
-  continuousWorld: false,
   noWrap: true
 });
 

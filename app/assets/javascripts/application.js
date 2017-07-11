@@ -35,6 +35,8 @@
 //= require Leaflet.fullscreen
 //= require leaflet-geocoder-mapzen
 
+//= require bootstrap/affix
+
 GeoBlacklight.Controls.Fullscreen = function() {
   this.map.addControl(new L.Control.Fullscreen({
     position: 'topright'
