@@ -3,7 +3,9 @@ Blacklight.onLoad(function() {
     $.get(url).done(function(data) {
       var resp = $.parseHTML(data);
       $doc = $(resp);
-      $('#content').replaceWith($doc.find('#content'));
+      $('#documents').replaceWith($doc.find('#documents'));
+      $('#index-pagination').replaceWith($doc.find('#index-pagination'));
+      $('#sortAndPerPage').replaceWith($doc.find('#sortAndPerPage'));
       $('#facet-view').replaceWith($doc.find('#facet-view'));
       if ($('#appliedParams').length) {
         $('#appliedParams').replaceWith($doc.find('#appliedParams'));
@@ -36,7 +38,7 @@ Blacklight.onLoad(function() {
 
     GeoBlacklight.Home = new GeoBlacklight.Viewer.Map(this);
     L.control.geocoder('search-gczeV3H', {
-      placeholder: 'Find location',
+      placeholder: 'Near a location',
       markers: true,
       pointIcon: false,
       polygonIcon: false,
@@ -47,5 +49,16 @@ Blacklight.onLoad(function() {
     }).addTo(GeoBlacklight.Home.map);
 
     L.control.geosearch(opts).addTo(GeoBlacklight.Home.map);
+
+
+        // set hover listeners on map
+    $('#content')
+      .on('mouseenter', '#documents [data-layer-id]', function() {
+        var bounds = L.bboxToBounds($(this).data('bbox'));
+        GeoBlacklight.Home.addBoundsOverlay(bounds);
+      })
+      .on('mouseleave', '#documents [data-layer-id]', function() {
+        GeoBlacklight.Home.removeBoundsOverlay();
+      });
   });
 });
