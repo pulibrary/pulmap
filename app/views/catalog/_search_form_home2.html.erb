@@ -1,0 +1,23 @@
+  <%= form_tag search_action_url, :method => :get, :class => 'search-query-form form-inline home-search navbar-form' do %>
+    <%= render_hash_as_hidden_fields(search_state.params_for_search().except(:q, :search_field, :qt, :page, :utf8, :model, :rpp, :start)) %>
+    <%= hidden_field_tag(:search_field, 'all_fields') %>
+
+    <div class="col-md-5 search_q_col">
+      <%= text_field_tag :q, params[:q], :placeholder => t('blacklight.search.form.search_field.label'), :class => "search_q q form-control", :id => "q", :autocomplete => "off", autocorrect: "off", autocapitalize: "off",spellcheck: "false", :autofocus => should_autofocus_on_search_box?, data: { autocomplete_enabled: autocomplete_enabled?, autocomplete_path: blacklight.suggest_index_path }  %>      
+    </div>
+    <div class="col-md-2 find_loc_col">
+      <div class="input-group find_loc_input_group">
+        <div class="find_loc_class" id="find-loc"></div>
+      </div>
+    </div>
+    <div class="col-md-1 search_button_col">
+     <button type="submit" class="btn btn-primary search-btn" id="search">
+        <span class="glyphicon glyphicon-search"></span>
+      </button>
+    </div>
+  <% end %>
+  <ul class="search-options">
+    <li>
+      <%= link_to 'Advanced Search', blacklight_advanced_search_engine.advanced_search_path, :class=>'advanced_search'%>
+    </li>
+  </ul>
