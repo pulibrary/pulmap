@@ -111,12 +111,14 @@
 
   &.navbar {
     border-radius: 0;
+    height: 60px;
   }
 
-  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.2);
+  border: solid 1px #ddd;
 
   .container {
-    height: 70px;
+    height: 100%;
+    padding-top: 10px;
   }
 
   .logo {
@@ -183,8 +185,12 @@
   }
 }
 
-.search-options a {
-  color: darken($blue, 3);
+.search-options {
+  padding-left: 0;
+
+  a {
+    color: darken($blue, 3);
+  }
 }
 
 .navbar {
@@ -308,7 +314,7 @@
 }
 
 #sortAndPerPage {
-  margin: 0;
+  margin-top: 20px;
 }
 
 .status-icons {
@@ -330,16 +336,6 @@
 .start-over-row {
   padding-top: 1em;
   padding-bottom: 1em;
-}
-
-.search {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-
-  @media (min-width: $bp-small) {
-    position: relative;
-  }
 }
 
 .search,
@@ -490,7 +486,18 @@
   padding-top: 2px;
 }
 
-.button--start-over .icon-refresh:before,
-.button--back-to-search .icon-moveback:before {
-    margin: 0;
+.logo_col {
+  padding-left: 0px;
+}
+
+.logo__app {
+  font-family: princeton_monticello,Georgia,sans-serif;
+  color: #494f57;
+  font-weight: bold;
+  font-size: 28px;
+  font-weight: bolder;
+}
+
+.logo__app:hover {
+  text-decoration: none;
 }

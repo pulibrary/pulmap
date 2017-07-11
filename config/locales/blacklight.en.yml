@@ -5,8 +5,8 @@ en:
       form:
         submit: 'Search'
         search_field:
-          label: 'Search...'
-      start_over: '<span class="icon-refresh"></span> <span class="hidden-xs hidden-sm">Start over</span>'
+          label: 'Seach for maps and geographic data...'
+      start_over: 'Start over'
       edit_search: 'Edit search'
     header_links:
       account_page: 'Your Account'
