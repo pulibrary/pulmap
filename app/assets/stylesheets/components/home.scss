@@ -1,5 +1,5 @@
 [data-map="home"] {
-  height: 400px;
+  height: 260px;
 }
 
 main.home {
@@ -20,16 +20,52 @@ main.home {
   }
 }
 
-.mask {
-  background: $white;
-  height: 40px;
+.hero--container {
+  background: #F2994A;
+  height: calc(100vh - 30px);
+  min-height: 400px;
   width: 100%;
+  position: relative;
+}
+
+.hero--content {
+  @include vertical-align();
+
+  width: 300px;
+  margin: 0 auto;
+  z-index: 9999;
 
   @media (min-width: $bp-small) {
-    background-color: rgba(0, 0, 0, 0.1);
-    position: absolute;
-    bottom: 0;
-    height: 80px;
+    width: 600px;
+  }
+
+  h1 {
+    text-align: center;
+    margin: 0 0 0.5em 0;
+    font-size: 3.25em;
+    text-transform: uppercase;
+    color: #494f57;
+  }
+
+  p {
+    text-align: center;
+    font-size: 1.15em;
+    margin-bottom: 1em;
+  }
+
+  .home-search {
+    display: inline-block;
+    width: calc(100% - 80px);
+  }
+
+  a {
+    @include vertical-align();
+
+    color: $white;
+    display: inline-block;
+    float: right;
+    height: 40px;
+    padding: 8px 12px;
   }
 }
 
@@ -47,7 +83,7 @@ main.home {
   .search_q.form-control,
   .search_loc,
   .search-btn {
-    height: 46px;
+    height: 40px;
     width: 100%;
     padding-left: 12px;
   }
@@ -170,7 +206,10 @@ main.home {
 .map-container {
   width: 100%;
   position: relative;
-  background: black;
+  background: white;
+  padding-top: 10px;
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.2);
+  border: solid 1px lightgrey;
 
   .leaflet-container {
     opacity: 1;
