@@ -1,3 +1,7 @@
+[data-map="index"] {
+  height: 260px;
+}
+
 .constraints-container {
     padding-left: 0;
     padding-right: 0;
@@ -21,10 +25,14 @@
 
 .documentHeader.row {
     padding: 1em;
+    padding-bottom: 5px;
+    padding-top: 5px;
+
     &:hover {
         background: $light-gray;
     }
 }
+
 #map-container + #content {
     float: right;
 }
@@ -40,4 +48,15 @@
 .document-wrapper {
   width: calc(100% - 95px);
   display: inline-block;
+}
+
+.map-container {
+  margin-top: 16px;
+  padding-top: 0;
+}
+
+.affix {
+  top: 0;
+  z-index: 2 !important;
+  position: sticky;
 }

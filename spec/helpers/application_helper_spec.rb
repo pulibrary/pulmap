@@ -4,11 +4,11 @@ describe ApplicationHelper, type: :helper do
   include Geoblacklight::ViewHelperOverride
 
   describe '#layout_type' do
-    it 'returns index when on landing page' do
+    it 'returns home when on landing page' do
       allow(self).to receive(:params)
         .and_return(controller: 'catalog', action: 'index')
       allow(self).to receive(:has_search_parameters?).and_return(false)
-      expect(layout_type).to eq 'index'
+      expect(layout_type).to eq 'home'
     end
     it 'returns index when on search results page' do
       allow(self).to receive(:params)
