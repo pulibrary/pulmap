@@ -45,4 +45,10 @@ li.bullet:hover {
     margin-bottom: 0.35em;
     margin-top: 1em;
     padding: 2px 0;
+
+    .appliedFilter {
+      .filterName.filterBlank:after {
+        content: none;
+      }
+    }
 }
