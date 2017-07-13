@@ -41,7 +41,7 @@
 
 /* Expanded state in touch style, overrides touch style above */
 .leaflet-touch .leaflet-pelias-control.leaflet-pelias-expanded {
-  width: 300px;
+  width: 280px;
   height: 44px;
   line-height: 32px; /* The height will be expanded with additional padding */
 }
@@ -99,23 +99,25 @@ img.leaflet-pelias-layer-icon {
 }
 
 .leaflet-pelias-layer-icon-point {
-  background-image: url('images/point_icon.png');
+  background-image: url('point_icon.png');
 }
 
 .leaflet-pelias-layer-icon-polygon {
-  background-image: url('images/polygon_icon.png');
+  background-image: url('polygon_icon.png');
 }
 
-@media only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2/1),
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-device-pixel-ratio: 2) {
+@media only screen and (min--moz-device-pixel-ratio: 1.25),
+only screen and (-o-min-device-pixel-ratio: 2.5/2),
+only screen and (-webkit-min-device-pixel-ratio: 1.25),
+only screen and (min-device-pixel-ratio: 1.25),
+only screen and (min-resolution: 120dpi),
+only screen and (min-resolution: 1.25dppx) {
   .leaflet-pelias-layer-icon-point {
-    background-image: url('images/point_icon@2x.png');
+    background-image: url('point_icon@2x.png');
   }
 
   .leaflet-pelias-layer-icon-polygon {
-    background-image: url('images/polygon_icon@2x.png');
+    background-image: url('polygon_icon@2x.png');
   }
 }
 
@@ -172,7 +174,8 @@ only screen and (min-device-pixel-ratio: 2) {
 .leaflet-pelias-search-icon {
   position: absolute;
   height: 100%;
-  background-image: url('images/search.png');
+  background-image: url('
+    search.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 16px;
@@ -201,18 +204,20 @@ only screen and (min-device-pixel-ratio: 2) {
 }
 
 .leaflet-pelias-search-icon.leaflet-pelias-loading {
-  background-image: url('images/loading.gif');
+  background-image: url('loading.gif');
 }
 
-@media only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2/1),
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-device-pixel-ratio: 2) {
+@media only screen and (min--moz-device-pixel-ratio: 1.25),
+only screen and (-o-min-device-pixel-ratio: 2.5/2),
+only screen and (-webkit-min-device-pixel-ratio: 1.25),
+only screen and (min-device-pixel-ratio: 1.25),
+only screen and (min-resolution: 120dpi),
+only screen and (min-resolution: 1.25dppx) {
   .leaflet-pelias-search-icon {
-    background-image: url('images/search@2x.png');
+    background-image: url('search@2x.png');
   }
   .leaflet-pelias-search-icon.leaflet-pelias-loading {
-    background-image: url('images/loading@2x.gif');
+    background-image: url('loading@2x.gif');
   }
 }
 
@@ -232,7 +237,6 @@ only screen and (min-device-pixel-ratio: 2) {
   overflow-y: auto;
   overflow-x: hidden;
   display: none;
-  margin-top: 50px;
 }
 
 .leaflet-touch .leaflet-pelias-results {
