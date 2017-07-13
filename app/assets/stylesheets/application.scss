@@ -25,24 +25,14 @@
 }
 
 .home-secondary-navbar .container {
-  height: 60px;
+  height: 100%;
+  padding-top: 10px;
 }
 
 .home-secondary-navbar.navbar {
   border: solid 1px #ddd;
   box-shadow: none;
-}
-
-.leaflet-pelias-control {
-  height: 38px;
-  background-color: $input-bg;
-  background-image: none;
-  border: 1px solid $input-border;
-  border-radius: 0;
-  border-left-width: 0px;
-  width: 100% !important;
-  @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
-  @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+  height: 60px;
 }
 
 .home-search .search_q.form-control,
@@ -51,56 +41,17 @@
   height: 40px;
 }
 
-.find_loc_class {
-  width: inherit;
-}
-
-.find_loc_input_group {
-  width: 100%;
-}
-
-.find_loc_col {
-  padding-left: 0px;
-  padding-right: 0px;	
-}
-
-.submit-search-text {
-  position: static !important;
-  padding-left: 5px !important;
-}
-
-.home-search .search-btn {
-  width: 100%;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-  border-left-width: 0px;
-}
-
-.search_q_col {
-  padding-right: 0px;
-}
-
-.search_q {
-  padding-right: 0px;
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-}
-
-.search_button_col {
-  padding-left: 0px;
-}
-
 // Set location input color on home page
-input.search_loc::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+input.leaflet-pelias-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: rgb(204, 204, 204);
 }
-input.search_loc::-moz-placeholder { /* Firefox 19+ */
+input.leaflet-pelias-input::-moz-placeholder { /* Firefox 19+ */
   color: rgb(204, 204, 204);
 }
-input.search_loc::-ms-input-placeholder { /* IE 10+ */
+input.leaflet-pelias-input::-ms-input-placeholder { /* IE 10+ */
   color: rgb(204, 204, 204);
 }
-input.search_loc:-moz-placeholder { /* Firefox 18- */
+input.leaflet-pelias-input:-moz-placeholder { /* Firefox 18- */
   color: rgb(204, 204, 204);
 }
 
@@ -119,14 +70,9 @@ input.search_q:-moz-placeholder { /* Firefox 18- */
 }
 
 .affix {
-  top: 0;
+  top: -1px;
   z-index: 9999 !important;
   position: sticky;
-}
-
-.map-container {
-  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.2);
-  border: solid 1px #ddd;
 }
 
 .logo__app {
@@ -135,6 +81,10 @@ input.search_q:-moz-placeholder { /* Firefox 18- */
   font-weight: bold;
   font-size: 28px;
   font-weight: bolder;
+}
+
+.logo__app:hover {
+  text-decoration: none;
 }
 
 #sortAndPerPage {
@@ -151,5 +101,17 @@ input.search_q:-moz-placeholder { /* Firefox 18- */
 
 .documentHeader.row {
     padding-bottom: 5px;
-    padding-top: 0px;
+    padding-top: 5px;
+}
+
+.navbar-form .input-group {
+  width: 550px;
+}
+
+.logo_col {
+  padding-left: 0px;
+}
+
+.search-options {
+  padding-left: 0;
 }
