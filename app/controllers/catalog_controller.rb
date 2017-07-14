@@ -92,13 +92,13 @@ class CatalogController < ApplicationController
       },
       restricted: {
         label: 'Restricted', fq: "#{Settings.FIELDS.RIGHTS}:Restricted"
-      },
-      available: {
-        label: 'Available', fq: "(layer_availability_score_f:[#{Settings.GEOMONITOR_TOLERANCE} TO 1])"
-      },
-      unavailable: {
-        label: 'Unavailable', fq: "layer_availability_score_f:[0 TO #{Settings.GEOMONITOR_TOLERANCE}]"
       }
+      # available: {
+      #   label: 'Available', fq: "(layer_availability_score_f:[#{Settings.GEOMONITOR_TOLERANCE} TO 1])"
+      # },
+      # unavailable: {
+      #   label: 'Unavailable', fq: "layer_availability_score_f:[0 TO #{Settings.GEOMONITOR_TOLERANCE}]"
+      # }
     }, partial: 'icon_facet', collapse: false
     config.add_facet_field Settings.FIELDS.YEAR, label: 'Year', limit: 10, range: {
       assumed_boundaries: [1100, 2016]
