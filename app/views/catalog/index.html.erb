@@ -1,9 +1,13 @@
 <%= render 'search_header' %>
 
-<div id="side-content" class="sidebar">
-  <%= render 'search_sidebar' %>
-</div>
-
-<div id="content" class="content">
-  <%= render 'search_results' %>
-</div>
+<% if has_search_parameters? %>
+  <div id="side-content" class="sidebar">
+    <%= render 'search_sidebar' %>
+  </div>
+  <div id="content" class="content">
+    <%= render 'search_results' %>
+  </div>
+<% else %>
+  <%= render 'welcome' %>
+  <%= render 'featured_content' %>
+<% end %>

@@ -49,4 +49,3 @@ GeoBlacklight.Basemaps.esri =  L.tileLayer('https://server.arcgisonline.com/ArcG
   continuousWorld: false,
   noWrap: true
 });
-

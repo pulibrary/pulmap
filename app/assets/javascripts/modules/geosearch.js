@@ -48,8 +48,13 @@
       this._map = map;
 
       dynamicSearcher = GeoBlacklight.debounce(function() {
-        if (this.options.dynamic) {
+        // Apply dynamic searcher only if there are returned documents.
+        // This allows bbox-only searches from to return results.
+        if (this.options.dynamic && $('#documents').length > 0) {
           this.options.searcher.apply(this);
+        } else {
+          // Use static searcher. 
+          window.location.href = this.getSearchUrl();
         }
       }, this.options.delay);
 
