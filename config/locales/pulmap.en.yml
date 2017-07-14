@@ -1,0 +1,5 @@
+en:
+  pulmap:
+    search:
+      bbox:
+        label: 'Bounding Box'

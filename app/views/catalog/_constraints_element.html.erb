@@ -10,7 +10,7 @@
 <span class="btn-group appliedFilter constraint <%= options[:classes].join(" ") if options[:classes] %>">
   <span class="constraint-value btn btn-default btn-disabled">
     <% unless label.blank? %>
-      <span class="filterName"><%= label %></span>
+      <span class="filterName <%= 'filterBlank' if value.blank? %>"><%= label %></span>
     <% end %>
     <% unless value.blank? %>
       <%= content_tag :span, value, class: 'filterValue', title: value %>

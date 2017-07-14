@@ -29,4 +29,13 @@ feature 'Search' do
     visit '/?f[dct_source_sm][]=princeton-1r66j405w&q='
     expect(page).to have_css '.document', count: 4
   end
+
+  feature 'spatial search' do
+    scenario 'When searching using a bbox constraint, hide the coordinates' do
+      visit '/catalog?bbox=-74.97447967529297%2040.237605%20-74.28783416748047%2040.446947'
+      expect(page).to have_css 'span.appliedFilter.constraint', count: 1
+      expect(page).to have_content 'Bounding Box'
+      expect(page).not_to have_content '-74.97447967529297 40.237605 -74.28783416748047 40.446947'
+    end
+  end
 end
