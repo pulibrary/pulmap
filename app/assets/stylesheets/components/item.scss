@@ -1,5 +1,28 @@
 .show-document, .tools-sidebar {
   padding-top: 1em;
+
+  .show-sanborn-legend {
+    .panel-heading {
+      background-color: #565656;
+      border-bottom-color: #000;
+
+      .panel-title {
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        font-family: sans-serif;
+      }
+    }
+
+    .panel-body {
+      background-color: #000;
+    }
+
+    .sanborn-legend {
+      height: auto;
+      max-width: 100%;
+    }
+  }
 }
 
 h1 {

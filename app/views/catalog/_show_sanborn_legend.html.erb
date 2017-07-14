@@ -1,0 +1,14 @@
+<%-
+  # Renders the link to the legend for the scanned Sanborn maps
+  # @see http://library.princeton.edu/libraries/firestone/rbsc/aids/sanborn/key.jpg
+
+-%>
+<div class="panel panel-default show-sanborn-legend">
+  <div class="collapse-toggle panel-heading collapsed" data-toggle="collapse" data-target="#sanborn-legend-panel-body" aria-expanded="false">
+    <h5 class="panel-title">Legend</h5>
+  </div>
+
+  <div id="sanborn-legend-panel-body" class="panel-collapse panel-body collapse">
+    <%= image_tag("sanborn_legend.jpg", id: 'sanborn-legend', class: 'sanborn-legend', size: "571x934", alt: "Legend for Sanborn Maps") %>
+  </div>
+</div>

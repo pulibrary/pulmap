@@ -4,6 +4,7 @@ class SolrDocument
   include Geoblacklight::SolrDocument
   include ThumbnailConcern
   include GeomonitorConcern
+  include SanbornConcern
 
   # self.unique_key = 'id'
   self.unique_key = 'layer_slug_s'
