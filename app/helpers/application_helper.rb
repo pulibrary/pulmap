@@ -25,7 +25,7 @@ module ApplicationHelper
   # @return [String] item, index, home, or default
   def layout_type
     if params[:controller] == 'catalog'
-      if params[:action] == 'show'
+      if params[:action] == 'show' || params[:action] == 'downloads'
         'item'
       elsif params[:action] == 'index'
         'index'
