@@ -2,6 +2,12 @@ module ApplicationHelper
   ##
   # Checks if index is the current layout
   # @return [Boolean]
+  def home_layout?
+    layout_type == 'home'
+  end
+  ##
+  # Checks if index is the current layout
+  # @return [Boolean]
   def index_layout?
     layout_type == 'index'
   end
@@ -28,7 +34,7 @@ module ApplicationHelper
       if params[:action] == 'show'
         'item'
       elsif params[:action] == 'index'
-        'index'
+        has_search_parameters? ? 'index' : 'home'
       end
     else
       'default'

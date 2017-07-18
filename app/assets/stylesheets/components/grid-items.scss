@@ -20,8 +20,8 @@
 
   $grid-items-background: $base-background-color;
   $grid-item-background: $base-background-color;
-  $grid-item-border: 1px solid transparentize($base-font-color, 0.8); 
-  $grid-item-columns: 6;
+  $grid-item-border: 1px solid transparentize($base-font-color, 0.8);
+  $grid-item-columns: 3;
   $grid-item-big-columns: 8;
   $grid-item-color: $base-font-color;
   $grid-item-icon-color: #777777;
@@ -33,7 +33,7 @@
 
   @include clearfix;
   position: static;
-    
+
   .grid-item {
     transition: all 0.2s ease-in-out;
     background: $grid-item-background;
@@ -97,7 +97,7 @@
     p {
       @include media($medium-screen) {
         max-width: 60%;
-      }  
+      }
     }
   }
 
@@ -118,4 +118,3 @@
     width: 4px;
   }
 }
-

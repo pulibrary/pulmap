@@ -96,7 +96,7 @@ input.search_q:-moz-placeholder { /* Firefox 18- */
 }
 
 .content {
-  margin-top: 10px;
+  margin-top: 0;
 }
 
 .documentHeader.row {
@@ -104,8 +104,17 @@ input.search_q:-moz-placeholder { /* Firefox 18- */
     padding-top: 5px;
 }
 
+.navbar-form {
+	border: 0;
+	box-shadow: none;
+}
+
 .navbar-form .input-group {
-  width: 550px;
+  width: 100%;
+
+	@media (min-width: $bp-small) {
+		width: 550px;
+	}
 }
 
 .logo_col {
