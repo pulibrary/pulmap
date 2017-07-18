@@ -67,18 +67,6 @@ Blacklight.onLoad(function() {
 
     // Remove initial overlay
     GeoBlacklight.Home.removeBoundsOverlay();
-
-    L.control.geocoder('search-gczeV3H', {
-      placeholder: 'Zoom to a location',
-      markers: true,
-      pointIcon: false,
-      polygonIcon: false,
-      expanded: false,
-      params: {
-        sources: ['whosonfirst']
-      }
-    }).addTo(GeoBlacklight.Home.map);
-
     L.control.geosearch(opts).addTo(GeoBlacklight.Home.map);
 
     // set hover listeners on map
