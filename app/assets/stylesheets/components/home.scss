@@ -20,16 +20,38 @@ main.home {
   }
 }
 
-.mask {
-  background: $white;
-  height: 40px;
+.hero--container {
+  background: #F2994A;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, rgba(242,190,76, 0.5), rgba(242,153,74, 0.7)), image-url('cartographer.png');  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, rgba(242,190,76, 0.5), rgba(242,153,74, 0.7)), image-url('cartographer.png');
+  height: calc(100vh - 30px);
+  min-height: 400px;
   width: 100%;
+  position: relative;
+}
+
+.hero--content {
+  @include vertical-align();
+
+  width: 300px;
+  margin: 0 auto;
 
   @media (min-width: $bp-small) {
-    background-color: rgba(0, 0, 0, 0.1);
-    position: absolute;
-    bottom: 0;
-    height: 80px;
+    width: 600px;
+  }
+
+  h1 {
+    text-align: center;
+    margin: 0 0 0.5em 0;
+    font-size: 3.25em;
+    text-transform: uppercase;
+    color: $black;
+  }
+
+  p {
+    text-align: center;
+    font-size: 1.15em;
+    margin-bottom: 1em;
   }
 }
 
@@ -170,7 +192,8 @@ main.home {
 .map-container {
   width: 100%;
   position: relative;
-  background: black;
+  background: white;
+  padding-top: 10px;
 
   .leaflet-container {
     opacity: 1;

@@ -328,16 +328,6 @@
   padding-bottom: 1em;
 }
 
-.search {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-
-  @media (min-width: $bp-small) {
-    position: relative;
-  }
-}
-
 .search,
 #search-navbar {
   height: 70px;
