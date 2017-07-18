@@ -33,7 +33,6 @@
 //= require modules/advanced_chosen
 
 //= require Leaflet.fullscreen
-//= require leaflet-geocoder-mapzen
 
 //= require bootstrap/affix
 
