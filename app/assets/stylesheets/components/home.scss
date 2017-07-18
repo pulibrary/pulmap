@@ -52,6 +52,21 @@ main.home {
     font-size: 1.15em;
     margin-bottom: 1em;
   }
+
+  .home-search {
+    display: inline-block;
+    width: calc(100% - 80px);
+  }
+
+  a {
+    @include vertical-align();
+
+    color: $white;
+    display: inline-block;
+    float: right;
+    height: 40px;
+    padding: 8px 12px;
+  }
 }
 
 #search-bar-container {

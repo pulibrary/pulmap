@@ -1,6 +1,4 @@
-<% unless has_search_parameters? %>
-  <%#= render 'home' %>
-<% else %>
+<% if has_search_parameters? %>
   <div class="map-container" data-spy="affix">
     <%= content_tag :div, '', id: 'map-results', style: 'width: 100%', data: { map: 'index', 'catalog-path'=> search_catalog_path, 'map-bbox' => params[:bbox], basemap: geoblacklight_basemap } %>
   </div>
