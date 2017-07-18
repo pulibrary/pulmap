@@ -79,8 +79,6 @@ Blacklight.onLoad(function() {
       }
     }).addTo(GeoBlacklight.Home.map);
 
-    // L.control.
-
     L.control.geosearch(opts).addTo(GeoBlacklight.Home.map);
 
     // set hover listeners on map

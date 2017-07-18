@@ -1,16 +1,16 @@
 <% unless has_search_parameters? %>
   <%#= render 'home' %>
 <% else %>
-  <%= render 'search_header' %>
+  <div class="map-container" data-spy="affix">
+    <%= content_tag :div, '', id: 'map-results', style: 'width: 100%', data: { map: 'index', 'catalog-path'=> search_catalog_path, 'map-bbox' => params[:bbox], basemap: geoblacklight_basemap } %>
+  </div>
 
-  <div id="side-content" class="sidebar" data-spy="affix">
+  <div id="side-content" class="sidebar">
     <%= render 'search_sidebar' %>
   </div>
 
   <div id="content" class="content">
-    <div class="map-container" data-spy="affix">
-      <%= content_tag :div, '', id: 'map-results', style: 'width: 100%', data: { map: 'index', 'catalog-path'=> search_catalog_path, 'map-bbox' => params[:bbox], basemap: geoblacklight_basemap } %>
-    </div>
+    <%= render 'search_header' %>
     <%= render 'search_results' %>
   </div>
 <% end %>
