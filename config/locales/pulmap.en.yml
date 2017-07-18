@@ -1,5 +1,7 @@
 en:
   pulmap:
     search:
+      topics:
+        heading: 'Featured Content'
       bbox:
         label: 'Bounding Box'
