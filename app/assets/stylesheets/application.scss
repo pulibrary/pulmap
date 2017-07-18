@@ -111,10 +111,6 @@ input.search_q:-moz-placeholder { /* Firefox 18- */
 
 .navbar-form .input-group {
   width: 100%;
-
-	@media (min-width: $bp-small) {
-		width: 550px;
-	}
 }
 
 .logo_col {
@@ -137,4 +133,12 @@ input.search_q:-moz-placeholder { /* Firefox 18- */
 
 .top-panel-heading.panel-heading {
   margin-top: 8px;
+}
+
+.mask {
+  //background: rgba(0,0,0,0.15);
+  height: calc(100vh - 30px);
+  position: absolute;
+  width: 100%;
+  z-index: 9999;
 }
