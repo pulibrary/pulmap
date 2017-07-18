@@ -21,9 +21,7 @@ main.home {
 }
 
 .hero--container {
-  background: #F2994A;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, rgba(242,190,76, 0.5), rgba(242,153,74, 0.7)), image-url('cartographer.png');  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, rgba(242,190,76, 0.5), rgba(242,153,74, 0.7)), image-url('cartographer.png');
+  background: #F2994A;
   height: calc(100vh - 30px);
   min-height: 400px;
   width: 100%;
@@ -35,6 +33,7 @@ main.home {
 
   width: 300px;
   margin: 0 auto;
+  z-index: 9999;
 
   @media (min-width: $bp-small) {
     width: 600px;
@@ -69,7 +68,7 @@ main.home {
   .search_q.form-control,
   .search_loc,
   .search-btn {
-    height: 46px;
+    height: 40px;
     width: 100%;
     padding-left: 12px;
   }

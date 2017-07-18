@@ -107,12 +107,14 @@
 
   &.navbar {
     border-radius: 0;
+    height: 60px;
   }
 
-  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.2);
+  border: solid 1px #ddd;
 
   .container {
-    height: 70px;
+    height: 100%;
+    padding-top: 10px;
   }
 
   .logo {
@@ -179,8 +181,12 @@
   }
 }
 
-.search-options a {
-  color: darken($blue, 3);
+.search-options {
+  padding-left: 0;
+
+  a {
+    color: darken($blue, 3);
+  }
 }
 
 .navbar {
@@ -304,7 +310,7 @@
 }
 
 #sortAndPerPage {
-  margin: 0;
+  margin-top: 20px;
 }
 
 .status-icons {
@@ -462,4 +468,20 @@
 // Align Contact Us with Your Account
 .menu--level-1 > ul:first-child {
   padding-top: 2px;
+}
+
+.logo_col {
+  padding-left: 0px;
+}
+
+.logo__app {
+  font-family: princeton_monticello,Georgia,sans-serif;
+  color: #896144;
+  font-weight: bold;
+  font-size: 28px;
+  font-weight: bolder;
+}
+
+.logo__app:hover {
+  text-decoration: none;
 }

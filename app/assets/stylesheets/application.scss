@@ -17,110 +17,16 @@
 @import 'blacklight';
 @import 'geoblacklight';
 @import 'pulmap';
-@import 'leaflet-geocoder-mapzen';
-
 
 .beta {
 	display: none;
 }
 
-.home-secondary-navbar .container {
-  height: 100%;
-  padding-top: 10px;
-}
-
-.home-secondary-navbar.navbar {
-  border: solid 1px #ddd;
-  box-shadow: none;
-  height: 60px;
-}
-
-.home-search .search_q.form-control,
-.home-search .search_loc,
-.home-search .search-btn {
-  height: 40px;
-}
-
-// Set location input color on home page
-input.leaflet-pelias-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: rgb(204, 204, 204);
-}
-input.leaflet-pelias-input::-moz-placeholder { /* Firefox 19+ */
-  color: rgb(204, 204, 204);
-}
-input.leaflet-pelias-input::-ms-input-placeholder { /* IE 10+ */
-  color: rgb(204, 204, 204);
-}
-input.leaflet-pelias-input:-moz-placeholder { /* Firefox 18- */
-  color: rgb(204, 204, 204);
-}
-
-// Set location input color on home page
-input.search_q::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: rgb(204, 204, 204);
-}
-input.search_q::-moz-placeholder { /* Firefox 19+ */
-  color: rgb(204, 204, 204);
-}
-input.search_q::-ms-input-placeholder { /* IE 10+ */
-  color: rgb(204, 204, 204);
-}
-input.search_q:-moz-placeholder { /* Firefox 18- */
-  color: rgb(204, 204, 204);
-}
-
-.affix {
-  top: -1px;
-  z-index: 9999 !important;
-  position: sticky;
-}
-
-.logo__app {
-  font-family: princeton_monticello,Georgia,sans-serif;
-  color: #896144;
-  font-weight: bold;
-  font-size: 28px;
-  font-weight: bolder;
-}
-
-.logo__app:hover {
-  text-decoration: none;
-}
-
-#sortAndPerPage {
-  margin-top: 20px;
-}
-
-.top-panel-heading {
-  padding-top: 0px;
-}
-
-.content {
-  margin-top: 0;
-}
-
-.documentHeader.row {
-    padding-bottom: 5px;
-    padding-top: 5px;
-}
-
-.navbar-form {
-	border: 0;
-	box-shadow: none;
-}
-
-.navbar-form .input-group {
+.mask {
+  // background: rgba(0,0,0,0.15);
+  height: calc(100vh - 30px);
+  position: absolute;
   width: 100%;
-
-	@media (min-width: $bp-small) {
-		width: 550px;
-	}
+  z-index: 9999;
 }
 
-.logo_col {
-  padding-left: 0px;
-}
-
-.search-options {
-  padding-left: 0;
-}
