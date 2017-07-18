@@ -38,4 +38,10 @@ feature 'Search' do
       expect(page).not_to have_content '-74.97447967529297 40.237605 -74.28783416748047 40.446947'
     end
   end
+
+  scenario 'When searching, link the thumbnails in the results to the items' do
+    visit '/?q='
+    expect(page).to have_css '.document .row .thumbnail a'
+    expect(first('.document .row .thumbnail a')[:href]).to include('/catalog/')
+  end
 end
