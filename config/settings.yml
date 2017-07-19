@@ -85,13 +85,21 @@ LEAFLET:
         - 'Opacity'
         - 'Fullscreen'
     TILEDMAPLAYER:
-      <<: *opacity_control
+      CONTROLS:
+        - 'Opacity'
+        - 'Fullscreen'
     FEATURELAYER:
-      <<: *opacity_control
+      CONTROLS:
+        - 'Opacity'
+        - 'Fullscreen'
     DYNAMICMAPLAYER:
-      <<: *opacity_control
+      CONTROLS:
+        - 'Opacity'
+        - 'Fullscreen'
     IMAGEMAPLAYER:
-      <<: *opacity_control
+      CONTROLS:
+        - 'Opacity'
+        - 'Fullscreen'
 
 THUMBNAIL:
   USE_DCT_REFS: false
