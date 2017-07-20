@@ -6,7 +6,6 @@ module ApplicationHelper
     layout_type == 'home'
   end
 
->>>>>>> Redesign home screen. Closes #308
   ##
   # Checks if index is the current layout
   # @return [Boolean]
