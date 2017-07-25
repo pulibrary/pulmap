@@ -5,7 +5,7 @@ en:
       form:
         submit: 'Search'
         search_field:
-          label: 'Search...'
+          label: 'Seach for maps and geographic data...'
       start_over: 'Start over'
       edit_search: 'Edit search'
     header_links:
