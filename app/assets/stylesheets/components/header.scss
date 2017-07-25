@@ -46,7 +46,7 @@
     }
   }
 
-  .button--start-over {
+  .button--start-over, .button--back-to-search {
     display: inline-block;
     width: 48%;
 
@@ -57,6 +57,10 @@
   }
 
   .button--start-over + .btn {
+    width: 48%;
+  }
+
+  .button--back-to-search + .btn {
     width: 48%;
   }
 
@@ -420,7 +424,7 @@
   width: 46px;
 }
 
-.button--start-over {
+.button--start-over, .button--back-to-search {
   display: inline-block;
 
   @media (max-width: 525px) {
@@ -472,4 +476,9 @@
 // Align Contact Us with Your Account
 .menu--level-1 > ul:first-child {
   padding-top: 2px;
+}
+
+.button--start-over .icon-refresh:before,
+.button--back-to-search .icon-moveback:before {
+    margin: 0;
 }

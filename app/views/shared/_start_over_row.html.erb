@@ -1,5 +1,5 @@
 <div class="col-sm-12 start-over-row">
-  <div class="button--start-over">
-    <%=link_to t('blacklight.search.start_over').html_safe, root_path, :class => "catalog_startOverLink btn btn-primary", :id=>"startOverLink" %>
-  </div>
+  <%=link_to start_over_path(current_search_session.try(:query_params) || {}), id: 'startOverLink', class: 'btn btn-primary button--start-over' do %>
+    <span class="icon-refresh" aria-hidden="true"></span> <%= t('blacklight.search.start_over') %>
+  <% end %>
 </div>
