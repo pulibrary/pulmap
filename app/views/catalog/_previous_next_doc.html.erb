@@ -2,9 +2,7 @@
 <% #DEPRECATED - using id="previousNextDocument" as a selector is deprecated and will be removed in Blacklight 6.0 %>
 <div id='previousNextDocument' class='pagination-search-widgets'>
 <% if current_search_session %>
-  <%=link_to start_over_path(current_search_session.try(:query_params) || {}), id: 'startOverLink', class: 'btn btn-primary button--start-over' do %>
-      <span class="icon-refresh" aria-hidden="true"></span> <%= t('blacklight.search.start_over') %>
-  <% end %>
+  <%=link_to t('blacklight.search.start_over').html_safe, start_over_path(current_search_session.try(:query_params) || {}), id: 'startOverLink', class: 'btn btn-primary button--start-over' %>
   <%= link_back_to_catalog class: 'btn btn-default button--back-to-search' %>
 <% end %>
   <% if @previous_document || @next_document %>

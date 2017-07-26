@@ -50,7 +50,6 @@ h2 {
   margin-top: 1em;
 }
 
-.button--start-over a,
 .button--back-to-search a,
 .pagination-search-widgets a.btn-default {
   padding: 6px 12px;
@@ -58,6 +57,13 @@ h2 {
   background: $light-gray;
   border: 1px solid $gray;
   color: #000000;
+
+  &:hover {
+    background: $blue;
+    color: $white;
+    text-decoration: none;
+  }
+
 }
 
 .show-document > .document > div {
