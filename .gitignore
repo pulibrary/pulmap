@@ -42,3 +42,5 @@ solr/conf/*.xml
 solr/conf/*.jar
 
 .byebug_history
+
+.DS_Store

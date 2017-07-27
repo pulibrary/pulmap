@@ -56,4 +56,13 @@
         content: $icon-building;
     }
 }
-
+.icon-refresh {
+    &:before {
+        content: $icon-refresh;
+    }
+}
+.icon-moveback {
+    &:before {
+        content: $icon-moveback;
+    }
+}

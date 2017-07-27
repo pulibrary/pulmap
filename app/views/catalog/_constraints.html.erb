@@ -1,8 +1,6 @@
 <% if query_has_constraints? %>
       <div id="appliedParams" class="clearfix constraints-container">
-        <div class="button--start-over">
-          <%=link_to t('blacklight.search.start_over'), start_over_path, :class => "catalog_startOverLink btn btn-default", :id=>"startOverLink" %>
-        </div>
+        <%=link_to t('blacklight.search.start_over').html_safe, start_over_path, :class => "btn btn-primary button--start-over", :id=>"startOverLink" %>
         <div class="button--edit-search">
           <%=link_to t('blacklight.search.edit_search'), blacklight_advanced_search_engine.advanced_search_path(search_state.to_h), :class => "btn btn-default", :id=>"editSearchLink" %>
         </div>
