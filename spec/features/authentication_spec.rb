@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature 'Authentication', type: :feature do
-  describe 'log in and out redirect' do
+  describe 'log out redirect' do
     let(:user) { FactoryGirl.create(:user) }
 
     before do
@@ -9,8 +9,8 @@ RSpec.feature 'Authentication', type: :feature do
       visit solr_document_path 'columbia-columbia-landinfo-global-aet'
       sign_in(user)
     end
-    scenario 'after login, user returns to last visited page' do
-      expect(page).to have_css '.blacklight-catalog-show', count: 1
+    scenario 'after logout, user returns to root page' do
+      expect(current_path).to eq root_path
     end
   end
 end
