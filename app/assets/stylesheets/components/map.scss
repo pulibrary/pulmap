@@ -78,9 +78,9 @@ $basemap-color: #ade0ff;
 
 
   @media (min-width: $bp-small) {
-    width: 33%;
-    padding-right: 15px;
-    padding-left: 0;
+    width: 66%;
+    padding-right: 0px;
+    padding-left: 15px;
   }
 }
 
@@ -89,7 +89,7 @@ $basemap-color: #ade0ff;
 
 
   @media (min-width: $bp-small) {
-    width: 66%;
+    width: 33%;
     padding-left: 15px;
     padding-right: 0;
   }
