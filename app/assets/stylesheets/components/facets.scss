@@ -1,5 +1,9 @@
 @import "utils/variables";
 
+.facet {
+  display: inline-block;
+}
+
 .facet_limit-active,
 .facet_limit-active > .panel-heading {
     color: #333;
