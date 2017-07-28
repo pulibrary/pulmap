@@ -12,6 +12,7 @@
     <% unless label.blank? %>
       <span class="filterName <%= 'filterBlank' if value.blank? %>"><%= label %></span>
     <% end %>
+    <!-- This needs to go into the 'facet_layout' partial -->
     <% unless value.blank? %>
       <%= content_tag :span, value, class: 'filterValue', title: value %>
     <% end %>
