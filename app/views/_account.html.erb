@@ -6,6 +6,9 @@
       </button>
       <ul class="dropdown-menu" role="menu">
         <li>
+          <%= render partial: 'blacklight/nav/bookmark' %>
+        </li>
+        <li>
           <%= link_to t('blacklight.header_links.saved_searches'), blacklight.saved_searches_path %>
         </li>
         <li>
@@ -24,6 +27,9 @@
       <ul class="dropdown-menu" role="menu">
         <li>
           <%= link_to t('blacklight.header_links.login'), main_app.user_cas_omniauth_authorize_path %>
+        </li>
+        <li>
+          <%= render partial: 'blacklight/nav/bookmark' %>
         </li>
         <li>
           <%= link_to t('blacklight.header_links.search_history'), blacklight.search_history_path %>

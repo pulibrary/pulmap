@@ -33,6 +33,7 @@ class CatalogController < ApplicationController
       q: '{!raw f=layer_slug_s v=$id}'
     }
 
+    config.navbar.partials.delete(:bookmark)
     config.navbar.partials.delete(:saved_searches)
     config.navbar.partials.delete(:search_history)
     config.show.partials.delete(:show_header)

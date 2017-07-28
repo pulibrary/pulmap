@@ -26,18 +26,15 @@
           <%= render 'shared/header_secondary_index' %>
         </div>
       <% else %>
-        <div class="col-xs-12 col-sm-9 logo">
+        <div class="col-xs-12 col-sm-2 logo">
         <%= link_to root_path, class: "logo__app" do %>
           <%= image_tag 'geo-logo.png', {:alt => 'Digital Maps and Geographic Data', :style => 'height: 40px;', :class => 'pulmap-brand'} %>
           <% end %>
         </div>
       <% end %>
-      <div class="col-xs-12 col-sm-3 util-links">
-        <%= render :partial=>'/user_util_links' -%>
+      <div class="col-xs-12 col-sm-10 search">
+        <%= render 'shared/header_secondary_home' %>
       </div>
     </div>
   </div>
-<% if index_layout? %>
-  <%= render 'shared/header_secondary_home' %>
-<% end %>
 </header>
