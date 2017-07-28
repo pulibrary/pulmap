@@ -50,4 +50,26 @@ module PulmapGeoblacklightHelper
                 id: 'view',
                 data: { manifest: @document.references.references(:iiif_manifest).endpoint })
   end
+
+  ##
+  # Override display of a facet value in a list. Used in both _facets sidebar
+  # partial and catalog/facet expanded list. Will output facet value name as
+  # a link to add that to your restrictions, with count in parens.
+  #
+  # @param [Blacklight::Solr::Response::Facets::FacetField] facet_field
+  # @param [Blacklight::Solr::Response::Facets::FacetItem] item
+  # @param [Hash] options
+  # @option options [Boolean] :suppress_link display the facet, but don't link to it
+  # @return [String]
+  def render_facet_val(facet_field, item, options = {})
+    path = path_for_facet(facet_field, item)
+    content_tag(:span, class: "facet-label") do
+      link_to_unless(options[:suppress_link],
+                     facet_display_value(facet_field, item),
+                     path,
+                     class: "foo facet-select")
+    end + render_facet_count(item.hits)
+  end
+
+
 end

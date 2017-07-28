@@ -4,6 +4,16 @@
   display: inline-block;
 }
 
+.facet .btn {
+  font-size: small;
+  text-align: left;
+}
+
+.facet > .btn-default > small {
+  color: red;
+  display: block;
+}
+
 .facet_limit-active,
 .facet_limit-active > .panel-heading {
     color: #333;

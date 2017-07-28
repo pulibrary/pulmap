@@ -6,7 +6,7 @@
     <% if facet_in_params?( solr_field, item.value ) %>
     <%= render_selected_facet_value(solr_field, item) %>
     <% else %>
-    <%= render_facet_value(solr_field, item) %>
+    <%= render_facet_val(solr_field, item) %>
     <% end -%>
   </li>
   <% end %>
