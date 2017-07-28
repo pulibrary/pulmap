@@ -2,11 +2,22 @@
   <% paginator = facet_paginator(facet_field, display_facet) %>
   <% paginator.items.each do |item| -%>
   <li>
-    <%= geoblacklight_icon item.value %>
-    <% if facet_in_params?( solr_field, item.value ) %>
-    <%= render_selected_facet_value(solr_field, item) %>
+    <% if facet_in_params?(solr_field, item.value) %>
+      <% remove_href = search_action_path(search_state.remove_facet_params(solr_field, item)) %>
+      <%= link_to(remove_href, class: "remove") do %>
+        <%= geoblacklight_icon item.value %>
+        <%= content_tag(:span, facet_display_value(solr_field, item), class: "selected") %>
+        <%= content_tag(:span, '✖', class: "remove-icon text-danger") %>
+        <%= content_tag(:span, '[remove]', class: 'sr-only') %>
+        <%= render_facet_count(item.hits, :classes => ["selected"]) %>
+      <% end %>
+      <%#= render_selected_facet_value(solr_field, item) %>
     <% else %>
-    <%= render_facet_val(solr_field, item) %>
+      <%= link_to(path_for_facet(solr_field, item.value)) do %>
+        <%= geoblacklight_icon item.value %>
+        <%= facet_display_value(solr_field, item.value) %>
+        <%= render_facet_count(item.hits) %>
+      <% end %>
     <% end -%>
   </li>
   <% end %>
