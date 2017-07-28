@@ -182,6 +182,23 @@ module BlacklightAdvancedSearch
       constraints
     end
 
+    # Render a label/value constraint on the screen. Can be called
+    # by plugins and such to get application-defined rendering.
+    #
+    # Can pass in nil label if desired.
+    # @see Blacklight::RenderConstraintsHelperBehavior#render_constraint_element
+    #
+    # @param [String] label to display
+    # @param [String] value to display
+    # @param [Hash] options
+    # @option options [String] :remove url to execute for a 'remove' action
+    # @option options [Array<String>] :classes an array of classes to add to container span.
+    # @return [String]
+    def render_constraint_element(label, value, options = {})
+      value = nil if params[:bbox] && label == t('pulmap.search.bbox.label')
+      super(label, value, options)
+    end
+
     # Over-ride of Blacklight method, provide advanced constraints if needed,
     # otherwise call super.
     def render_constraints_query(my_params = params)
