@@ -28,6 +28,7 @@
 //= require modernizr
 //= require bootstrap-toggle
 
+//= require modules/mapPosition.js
 //= require modules/map
 //= require modules/thumbnail
 //= require modules/advanced_chosen

@@ -26,9 +26,20 @@ $basemap-color: #ade0ff;
   margin-right: 0px;
 }
 
+// #map-container {
+//   width: 100%;
+//   position: relative;
+//   background: black;
+//
+//   .leaflet-container {
+//     opacity: 1;
+//   }
+// }
+
 #map-container {
   background: #CCDDDD;
   margin-bottom: 1em;
+  position: relative;
 
   @media (max-width: $bp-small) {
     visibility: hidden;
@@ -39,19 +50,18 @@ $basemap-color: #ade0ff;
   }
 
   @media (min-width: $bp-small) {
-    max-width: 340px;
-    width: 340px;
-    height: 480px;
+    max-width: 500px;
+    width: 500px;
   }
 
   @media (min-width: $bp-medium) {
-    max-width: 440px;
-    width: 440px;
+    max-width: 600px;
+    width: 600px;
   }
 
   @media (min-width: $bp-large) {
-    max-width: 540px;
-    width: 540px;
+    max-width: 700px;
+    width: 700px;
   }
 }
 
