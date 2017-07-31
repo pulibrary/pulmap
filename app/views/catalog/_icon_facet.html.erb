@@ -11,7 +11,6 @@
         <%= content_tag(:span, '[remove]', class: 'sr-only') %>
         <%= render_facet_count(item.hits, :classes => ["selected"]) %>
       <% end %>
-      <%#= render_selected_facet_value(solr_field, item) %>
     <% else %>
       <%= link_to(path_for_facet(solr_field, item.value)) do %>
         <%= geoblacklight_icon item.value %>
