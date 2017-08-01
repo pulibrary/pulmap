@@ -4,6 +4,8 @@
         <div class="button--edit-search">
           <%=link_to t('blacklight.search.edit_search'), blacklight_advanced_search_engine.advanced_search_path(search_state.to_h), :class => "btn btn-default", :id=>"editSearchLink" %>
         </div>
+        <%= render 'facets' %>
+
         <div class="params">
           <span class="constraints-label sr-only"><%= t('blacklight.search.filters.title') %></span>
           <%= render_constraints(params) %>
