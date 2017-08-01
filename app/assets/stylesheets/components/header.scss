@@ -49,6 +49,7 @@
   .button--start-over, .button--back-to-search {
     display: inline-block;
     width: 48%;
+    min-height: 45px;
 
     a {
       width: 100%;
@@ -429,10 +430,15 @@
 .button--edit-search {
   display: inline-block;
   margin: 0 3px 0 0;
+  min-height: 45px;
+  line-height: 33px !important;
 
   a {
     font-size: 14px;
     margin: 0;
+    min-height: 45px;
+    line-height: 33px;
+
   }
 }
 
