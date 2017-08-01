@@ -28,7 +28,7 @@
 
 #map-container {
   position: fixed;
-  top: 250px;
+  top: 178px;
   z-index: 1;
 }
 
@@ -38,20 +38,15 @@
 
 #content {
   position: relative;
-  top: 250px;
+  top: 175px;
   overflow: auto;
-  height: 400px;
+  height: 550px;
   padding-right: 25px;
 }
 
 .inner {
     position: relative;
     height: auto;
-}
-
-#appliedParams {
-  position: fixed;
-  top: 175px;
 }
 
 .params {

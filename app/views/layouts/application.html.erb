@@ -37,7 +37,7 @@
     <%= render partial: 'shared/ajax_modal' %>
 
     <main role="main">
-      <div class="container" id="main-container">
+      <div class="container-fluid" id="main-container">
         <%= content_tag :h1, application_name, class: 'sr-only application-heading' %>
         <%= render :partial=>'shared/flash_msg' %>
         <%= yield %>

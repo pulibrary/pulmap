@@ -9,14 +9,6 @@
         <span class="glyphicon glyphicon-search"></span>
         <span class="submit-search-text"><%=t('blacklight.search.form.submit')%></span>
       </button>
-      <button type="button" class="btn btn-primary btn-advanced-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="caret"></span>
-        <span class="sr-only">Toggle Dropdown</span>
-      </button>
-      <ul class="dropdown-menu dropdown-menu-right">
-        <li><a href="/?search_field=all_fields&q=">Browse all</a></li>
-        <li><%= link_to 'Advanced search', blacklight_advanced_search_engine.advanced_search_path %></li>
-      </ul>
     </span>
   </div>
 <% end %>
