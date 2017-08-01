@@ -262,4 +262,7 @@ ul.facet-values {
 
 #facet-view {
   display: inline-block;
+  ul.dropdown-menu {
+    z-index: 10001;
+  }
 }

@@ -5,11 +5,6 @@ Blacklight.onLoad(function() {
       $doc = $(resp);
       $('#content').replaceWith($doc.find('#content'));
       $('#facet-view').replaceWith($doc.find('#facet-view'));
-      if ($('#appliedParams').length) {
-        $('#appliedParams').replaceWith($doc.find('#appliedParams'));
-      } else {
-        $('#main-container').prepend($doc.find('#appliedParams'));
-      }
       if ($('#map').next().length) {
         $('#map').next().replaceWith($doc.find('#map').next());
       } else {
