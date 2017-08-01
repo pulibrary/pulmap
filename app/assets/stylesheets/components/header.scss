@@ -430,15 +430,10 @@
 .button--edit-search {
   display: inline-block;
   margin: 0 3px 0 0;
-  min-height: 45px;
-  line-height: 33px !important;
 
   a {
     font-size: 14px;
     margin: 0;
-    min-height: 45px;
-    line-height: 33px;
-
   }
 }
 
@@ -501,7 +496,9 @@
     margin: 0;
 }
 
-header {
-    position: fixed;
-    width: 100%;
+
+.container-fluid > .container {
+  position: relative;
+  top: 178px;
+  overflow: auto;
 }

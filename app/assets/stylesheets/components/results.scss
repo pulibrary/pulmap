@@ -39,14 +39,13 @@
 #content {
   position: relative;
   top: 175px;
-  overflow: auto;
-  height: 550px;
+  height: 100%;
   padding-right: 25px;
 }
 
-.inner {
-    position: relative;
-    height: auto;
+#inner {
+    overflow: auto;
+    height: 100%;
 }
 
 .params {
