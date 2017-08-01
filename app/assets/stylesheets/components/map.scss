@@ -39,34 +39,32 @@ $basemap-color: #ade0ff;
 #map-container {
   background: #CCDDDD;
   margin-bottom: 1em;
-  position: relative;
+  position: fixed;
+  width: 100%;
+  height: auto;
 
-  @media (max-width: $bp-small) {
-    visibility: hidden;
-
-    #map-results {
-        display: none;
-    }
-  }
-
-  @media (min-width: $bp-small) {
-    max-width: 500px;
-    width: 500px;
-  }
-
-  @media (min-width: $bp-medium) {
-    max-width: 600px;
-    width: 600px;
-  }
-
-  @media (min-width: $bp-large) {
-    max-width: 700px;
-    width: 700px;
-  }
-}
-
-#content {
-  min-height: 550px;
+  // @media (max-width: $bp-small) {
+  //   visibility: hidden;
+  //
+  //   #map-results {
+  //       display: none;
+  //   }
+  // }
+  //
+  // @media (min-width: $bp-small) {
+  //   max-width: 500px;
+  //   width: 500px;
+  // }
+  //
+  // @media (min-width: $bp-medium) {
+  //   max-width: 600px;
+  //   width: 600px;
+  // }
+  //
+  // @media (min-width: $bp-large) {
+  //   max-width: 700px;
+  //   width: 700px;
+  // }
 }
 
 .sidebar,
@@ -88,7 +86,7 @@ $basemap-color: #ade0ff;
 
 
   @media (min-width: $bp-small) {
-    width: 66%;
+    width: 55%;
     padding-right: 0px;
     padding-left: 25px;
   }
@@ -99,7 +97,7 @@ $basemap-color: #ade0ff;
 
 
   @media (min-width: $bp-small) {
-    width: 33%;
+    width: 45%;
     padding-left: 25px;
     padding-right: 0;
   }

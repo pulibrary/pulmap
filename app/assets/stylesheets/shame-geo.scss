@@ -1,3 +1,7 @@
+html, body {
+  overflow: hidden;
+}
+
 body {
     background: $light-gray;
     font-family: $font-sans;
@@ -32,9 +36,9 @@ li.bullet:hover {
         background: $black;
     }
 }
-#content {
-    padding-right: 0;
-}
+// #content {
+//     padding-right: 0;
+// }
 
 //constraints.scss
 .constraints-container {
@@ -51,4 +55,10 @@ li.bullet:hover {
         content: none;
       }
     }
+}
+
+.container {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 100%;
 }
