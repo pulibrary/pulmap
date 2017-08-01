@@ -4,7 +4,7 @@ GeoBlacklight.Viewer.Map = GeoBlacklight.Viewer.Map.extend({
 
   // override initial bbox
   options: {
-    bbox: [[-30, -80],[70, 0]]
+    bbox: [[-60, 160],[55, 20]]
   },
 
   // options for leaflet map
