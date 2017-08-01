@@ -31,6 +31,23 @@ module PulmapGeoblacklightHelper
     end
   end
 
+  def all_facet_values_label(field)
+    field_config = blacklight_config.facet_fields[field]
+    field_config[:all] || 'All types'
+  end
+
+  def multiple_facet_selection_label(n)
+    "Multiple (#{n})"
+  end
+
+  def remove_all_facet_values(field)
+    p = params.dup
+    p[:f] = (p[:f] || {}).dup
+    p[:f].delete(field)
+    p.delete(:f) if p[:f].empty?
+    p
+  end
+
   private
 
   def leaflet_viewer
@@ -49,10 +66,5 @@ module PulmapGeoblacklightHelper
     content_tag(:div, nil,
                 id: 'view',
                 data: { manifest: @document.references.references(:iiif_manifest).endpoint })
-  end
-
-  def all_facet_values_label(field)
-    field_config = blacklight_config.facet_fields[field]
-    field_config[:all] || 'All types'
   end
 end

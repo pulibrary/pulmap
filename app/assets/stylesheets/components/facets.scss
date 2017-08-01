@@ -189,6 +189,10 @@ ul.facet-values {
     line-height: 1.4em;
 }
 
+li.active > a > .geoblacklight-icon {
+  color: $white;
+}
+
 .icon + .facet-label,
 .geoblacklight-icon + .facet-label {
     padding-left: .5em;

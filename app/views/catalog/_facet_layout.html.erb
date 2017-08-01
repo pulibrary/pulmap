@@ -4,9 +4,9 @@
     <small><%= link_to facet_field_label(facet_field.key), "#", :"data-no-turbolink" => true %></small>
     <% if facet_field_in_params?(facet_field.key) %>
       <% if facet_params(facet_field.key).length == 1 %>
-        <%= facet_params(facet_field.key).first %>
+        <%= facet_display_value(facet_field.key, facet_params(facet_field.key).first) %>
       <% else %>
-        Multiple (<%= facet_params(facet_field.key).length %>)
+        <%= multiple_facet_selection_label(facet_params(facet_field.key).length) %>
       <% end %>
     <% else %>
       <%= all_facet_values_label(facet_field.key) %>
