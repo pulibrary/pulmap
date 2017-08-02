@@ -48,6 +48,22 @@ module PulmapGeoblacklightHelper
     p
   end
 
+  def facet_active(facet_field)
+    if facet_field_in_params?(facet_field)
+      'active'
+    else
+      ''
+    end
+  end
+
+  def map_filter_active
+    ''
+  end
+
+  def bbox_present?
+    true
+  end
+
   private
 
   def leaflet_viewer

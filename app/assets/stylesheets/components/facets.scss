@@ -10,8 +10,21 @@
 }
 
 .facet > .btn-default > small {
-  color: red;
+  color: $dark-gray;
   display: block;
+}
+
+.facet > .btn-default a:hover {
+  text-decoration: none;
+}
+
+.facet > .btn-default a {
+  color: $dark-gray;
+}
+
+.start-over-row {
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .facet_limit-active,
@@ -264,5 +277,8 @@ ul.facet-values {
   display: inline-block;
   ul.dropdown-menu {
     z-index: 10001;
+  }
+  .btn {
+    min-height: 45px;
   }
 }

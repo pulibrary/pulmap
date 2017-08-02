@@ -1,0 +1,16 @@
+
+<div class="facet dropdown">
+  <button class="btn btn-default dropdown-toggle <%= map_filter_active %>" type="button" id="map_filter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <small><a href=#>Location</a></small>
+    <% if bbox_present? %>
+      Viewable Map
+    <% else %>
+      Entire World
+    <% end %>
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="map_filter">
+     <li><a href="#">Entire World</a></li>
+     <li><a href="#">Viewable Map</a></li>
+  </ul>
+ </div>
