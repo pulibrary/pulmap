@@ -248,7 +248,7 @@ only screen and (min-device-pixel-ratio: 2) {
 .leaflet-top .leaflet-pelias-results {
   /* This should be adjusted for proper positioning if height of .leaflet-pelias-expanded is changed */
   /* remove when relocating to map */
-  top: 50px;
+  /* top: 50px; */
 }
 
 .leaflet-bottom .leaflet-pelias-results {
