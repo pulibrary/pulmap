@@ -63,7 +63,7 @@ Blacklight.onLoad(function() {
     L.control.findloc({ position: 'topleft' }).addTo(GeoBlacklight.Home.map);
 
     L.control.geocoder('search-gczeV3H', {
-      placeholder: 'Find location',
+      placeholder: 'Zoom to location',
       markers: true,
       pointIcon: false,
       polygonIcon: false,
