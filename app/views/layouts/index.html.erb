@@ -31,13 +31,13 @@
     <![endif]-->
 
   </head>
-  <body class="<%= render_body_class %>">
-  <div class="wrapper">
+  <body class="<%= render_body_class %> index-bg">
+  <div class="wrapper-index">
     <%= render :partial => 'shared/header_navbar' %>
     <%= render partial: 'shared/ajax_modal' %>
 
     <main role="main">
-      <div class="container" id="main-container">
+      <div class="container-fluid" id="index-container">
         <%= content_tag :h1, application_name, class: 'sr-only application-heading' %>
         <%= render :partial=>'shared/flash_msg' %>
         <%= yield %>
@@ -45,6 +45,5 @@
     </main>
   </div>
 
-  <%= render :partial => 'shared/footer' %>
   </body>
 </html>

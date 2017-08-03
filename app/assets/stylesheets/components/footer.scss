@@ -11,7 +11,6 @@ body {
 
 
 footer {
-  display: none;
   background: $light-gray;
   position: fixed;
   bottom: 0;
@@ -20,8 +19,18 @@ footer {
 
 .wrapper {
   background: $white;
-  margin-bottom: -75px; //equal to footer height
+  margin-bottom: -75px; // equal to footer height
   min-height: 100%;
+}
+
+.wrapper-index {
+  background: $white;
+  margin-bottom: 0; // no footer
+  min-height: 100%;
+}
+
+.index-bg {
+  background-color: $white;
 }
 
 .wrapper:after {
