@@ -1,6 +1,6 @@
 
 <div class="facet dropdown">
-  <button class="btn btn-default dropdown-toggle <%= facet_active(facet_field.key) %>" type="button" id="<%= facet_field_label(facet_field.key).downcase.gsub(/[^a-z1-9]+/, '-').chomp('-') %>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+  <button class="btn btn-default dropdown-toggle<%= facet_active(facet_field.key) %>" type="button" id="<%= facet_field_label(facet_field.key).downcase.gsub(/[^a-z1-9]+/, '-').chomp('-') %>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
     <small><%= link_to facet_field_label(facet_field.key), "#", :"data-no-turbolink" => true %></small>
     <% if facet_field_in_params?(facet_field.key) %>
       <% if facet_params(facet_field.key).length == 1 %>

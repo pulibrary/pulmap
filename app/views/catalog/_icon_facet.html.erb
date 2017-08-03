@@ -7,7 +7,7 @@
       <% end %>
     <% end %>
   <% else %>
-    <%= content_tag(:li, class: "active") do %>
+    <%= content_tag(:li, class: 'active') do %>
       <%= link_to('#') do %>
         <%= content_tag(:span, all_facet_values_label(facet_field.key)) %>
       <% end %>
@@ -17,8 +17,8 @@
   <% paginator.items.each do |item| -%>
     <% if facet_in_params?(solr_field, item.value) %>
       <% remove_href = search_action_path(search_state.remove_facet_params(solr_field, item)) %>
-      <%= content_tag(:li, class: "active") do %>
-        <%= link_to(remove_href, class: "remove") do %>
+      <%= content_tag(:li, class: 'active') do %>
+        <%= link_to(remove_href, class: 'remove') do %>
           <%= geoblacklight_icon item.value %>
           <%= content_tag(:span, facet_display_value(solr_field, item)) %>
           <%= render_facet_count(item.hits) %>

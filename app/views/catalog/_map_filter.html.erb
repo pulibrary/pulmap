@@ -1,6 +1,6 @@
 
 <div class="facet dropdown">
-  <button class="btn btn-default dropdown-toggle <%= map_filter_active %>" type="button" id="map_filter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+  <button class="btn btn-default dropdown-toggle<%= map_filter_active %>" type="button" id="map_filter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
     <small><a href=#>Location</a></small>
     <% if bbox_present? %>
       Viewable Map
@@ -10,7 +10,20 @@
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" aria-labelledby="map_filter">
-     <li><a href="#">Entire World</a></li>
-     <li><a href="#">Viewable Map</a></li>
+    <% if bbox_present? %>
+    <%= content_tag(:li) do %>
+      <%= link_to 'Entire world', search_action_path(params.except(:bbox)) %>
+    <% end %>
+    <%= content_tag(:li, class: 'active') do %>
+      <%= link_to 'Viewable map', '#' %>
+    <% end %>
+    <% else %>
+      <%= content_tag(:li, class: 'active') do %>
+        <%= link_to 'Entire World', '#' %>
+      <% end %>
+      <%= content_tag(:li) do %>
+        <%= link_to 'Viewable map', '#' %>
+      <% end %>
+    <% end %>
   </ul>
  </div>

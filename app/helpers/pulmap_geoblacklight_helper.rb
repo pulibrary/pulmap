@@ -50,18 +50,26 @@ module PulmapGeoblacklightHelper
 
   def facet_active(facet_field)
     if facet_field_in_params?(facet_field)
-      'active'
+      ' active'
     else
       ''
     end
   end
 
   def map_filter_active
-    ''
+    if bbox_present?
+      ' active'
+    else
+      ''
+    end
   end
 
   def bbox_present?
-    true
+    if params[:bbox]
+      true
+    else
+      false
+    end
   end
 
   private
