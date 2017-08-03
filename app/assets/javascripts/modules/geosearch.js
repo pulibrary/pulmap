@@ -64,7 +64,7 @@
 
       return $container.get(0);
     },
-
+    
     // Clamps the search bounding box size to a box with a width smaller than a max value.
     // Helps focus spatial searches on large screens.
     searchBounds: function() {

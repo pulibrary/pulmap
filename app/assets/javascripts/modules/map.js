@@ -9,7 +9,7 @@ GeoBlacklight.Viewer.Map = GeoBlacklight.Viewer.Map.extend({
 
   // options for leaflet map
   mapOptions: {
-    scrollWheelZoom: false,
+    scrollWheelZoom: true,
   },
 
   // override load function to add map options

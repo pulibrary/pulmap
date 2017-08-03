@@ -59,6 +59,9 @@ Blacklight.onLoad(function() {
     }
 
     GeoBlacklight.Home = new GeoBlacklight.Viewer.Map(this);
+
+    L.control.findloc({ position: 'topleft' }).addTo(GeoBlacklight.Home.map);
+
     L.control.geocoder('search-gczeV3H', {
       placeholder: 'Find location',
       markers: true,
@@ -71,6 +74,7 @@ Blacklight.onLoad(function() {
     }).addTo(GeoBlacklight.Home.map);
 
     L.control.geosearch(opts).addTo(GeoBlacklight.Home.map);
+
 
     $('#content')
       .on('mouseenter', '#documents [data-layer-id]', function() {

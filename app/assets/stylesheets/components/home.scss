@@ -68,7 +68,10 @@ main.home {
   }
 
   .find-loc {
-    display: none;
+    // for when we relocate to map
+    display: inline-block;
+    background-color: red;
+    //display: none;
     padding: 0 15px;
     width: 100%;
     margin: 1em 0;
@@ -214,4 +217,8 @@ section.topics {
   text-transform: uppercase;
   top: 34px;
   margin-bottom: 1.8em;
+}
+
+.leaflet-left .leaflet-control {
+    clear: none;
 }
