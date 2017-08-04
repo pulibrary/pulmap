@@ -63,6 +63,7 @@
       }, this.options.delay);
 
       this.$staticButton.on('click', staticSearcher);
+      $( "#map-search-facet" ).on('click', staticSearcher);
 
       $container.on("change", "input[type=checkbox]",
         L.Util.bind(function() {
