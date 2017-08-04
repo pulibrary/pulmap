@@ -29,7 +29,7 @@
   L.Control.GeoSearch = L.Control.extend({
 
     options: {
-      dynamic: true,
+      dynamic: false,
       baseUrl: '',
       searcher: function() {
         History.pushState(null, document.title, this.getSearchUrl());
