@@ -29,8 +29,10 @@ Blacklight.onLoad(function() {
 
   $('[data-map="home"]').each(function(i, element) {
     var data = $(this).data(),
-        opts = { baseUrl: data.catalogPath }.
-        bbox;
+        // opts = { baseUrl: data.catalogPath }.
+        // bbox;
+        opts = { baseUrl: data.catalogPath },
+        geoblacklight, bbox;
 
     var lngRe = '(-?[0-9]{1,2}(\\.[0-9]+)?)';
     var latRe = '(-?[0-9]{1,3}(\\.[0-9]+)?)';
