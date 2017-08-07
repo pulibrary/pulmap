@@ -67,6 +67,11 @@ main.home {
     height: 46px;
   }
 
+  .btn-clear-search {
+    height: 46px;
+    display: none;
+  }
+
   .find-loc input.leaflet-pelias-input {
     border: 1px solid $input-border !important;
     border-radius: $input-border-radius;
