@@ -6,8 +6,9 @@
 </h2>
 -->
 <div id="facet-view" class="facet-view">
-      <%= render_facet_partials %>
-      <%= render 'catalog/map_filter' %>
+  <%=link_to t('blacklight.search.start_over').html_safe, start_over_path, :class => "btn btn-primary button--start-over", :id=>"startOverLink" %>
+  <%= render_facet_partials %>
+  <%= render 'catalog/map_filter' %>
 </div>
 
 

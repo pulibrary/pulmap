@@ -275,10 +275,17 @@ ul.facet-values {
 
 #facet-view {
   display: inline-block;
-  ul.dropdown-menu {
-    z-index: 10001;
-  }
   .btn {
     min-height: 45px;
+  }
+  .button--start-over,.button--edit-search {
+    line-height: 33px !important;
+    a {
+      min-height: 45px;
+      line-height: 33px !important;
+    }
+  }
+  ul.dropdown-menu {
+    z-index: 10001;
   }
 }
