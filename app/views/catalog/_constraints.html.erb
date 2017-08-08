@@ -1,3 +1,7 @@
 <div id="appliedParams" class="clearfix constraints-container">
-  <%= render 'facets' %>
+  <div id="facet-view" class="facet-view">
+    <%=link_to t('blacklight.search.start_over').html_safe, start_over_path, :class => "btn btn-primary button--start-over", :id=>"startOverLink" %>
+    <%= render_constraints(params.except(:f)) %>
+    <%= render_facet_partials %>
+  </div>
 </div>
