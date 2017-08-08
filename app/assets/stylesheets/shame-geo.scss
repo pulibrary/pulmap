@@ -1,16 +1,25 @@
 body {
-    background: $light-gray;
     font-family: $font-sans;
 }
 
-header {
-    background: $white;
+footer {
+    background: $light-gray;
 }
-
-
 
 main {
     padding: 0 0 0;
+}
+
+.wrapper {
+  background: $white;
+  margin-bottom: -75px; // equal to footer height
+  min-height: 100%;
+}
+
+.wrapper-index {
+  background: $white;
+  margin-bottom: 0; // no footer
+  min-height: 100%;
 }
 
 .pulmap-brand {
@@ -31,9 +40,6 @@ li.bullet:hover {
     .bullet-icon {
         background: $black;
     }
-}
-#content {
-    padding-right: 0;
 }
 
 //constraints.scss

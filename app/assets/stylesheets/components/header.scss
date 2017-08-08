@@ -111,7 +111,9 @@
 
   &.navbar {
     border-radius: 0;
-    height: 60px;
+    box-shadow: 0 4px 4px -2px rgba(0,0,0,0.2);
+    height: 60px; 
+    background: #f5f4f1;
   }
 
   border: solid 1px #ddd;
@@ -500,4 +502,10 @@
 
 .logo__app:hover {
   text-decoration: none;
+}
+
+.container-fluid > .container {
+  position: relative;
+  top: 93px;
+  overflow: auto;
 }

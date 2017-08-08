@@ -1,5 +1,32 @@
 @import "utils/variables";
 
+.facet {
+  display: inline-block;
+}
+
+.facet .btn {
+  font-size: small;
+  text-align: left;
+}
+
+.facet > .btn-default > small {
+  color: $dark-gray;
+  display: block;
+}
+
+.facet > .btn-default a:hover {
+  text-decoration: none;
+}
+
+.facet > .btn-default a {
+  color: $dark-gray;
+}
+
+.start-over-row {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
 .facet_limit-active,
 .facet_limit-active > .panel-heading {
     color: #333;
@@ -177,6 +204,10 @@ ul.facet-values {
     line-height: 1.4em;
 }
 
+li.active > a > .geoblacklight-icon {
+  color: $white;
+}
+
 .icon + .facet-label,
 .geoblacklight-icon + .facet-label {
     padding-left: .5em;
@@ -243,3 +274,21 @@ ul.facet-values {
 .toggle, .toggle-collapsed {
     line-height: 1.4em;
 }
+
+#facet-view {
+  display: inline-block;
+  .btn {
+    min-height: 45px;
+  }
+  .button--start-over,.button--edit-search {
+    line-height: 33px !important;
+    a {
+      min-height: 45px;
+      line-height: 33px !important;
+    }
+  }
+  ul.dropdown-menu {
+    z-index: 10001;
+  }
+}
+

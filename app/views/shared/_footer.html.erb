@@ -1,4 +1,5 @@
-<footer class="l-footer" role="contentinfo">
+<% unless index_layout? %>
+  <footer class="l-footer" role="contentinfo">
     <div class="l-region l-region--footer pul-processed container">
 
         <div class="pu">
@@ -10,4 +11,5 @@
         <p class="footer--copyright">© <%= Date.current.year %> The Trustees of
                 Princeton University. All rights reserved.</p>
     </div>
-</footer>
+  </footer>
+<% end %>

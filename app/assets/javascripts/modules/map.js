@@ -4,12 +4,12 @@ GeoBlacklight.Viewer.Map = GeoBlacklight.Viewer.Map.extend({
 
   // override initial bbox
   options: {
-     bbox: [[-10, -10],[60, 30]]
+     bbox: [[-60, 160],[55, 20]]
   },
 
   // options for leaflet map
   mapOptions: {
-    scrollWheelZoom: false,
+    scrollWheelZoom: true,
   },
 
   // override load function to add map options

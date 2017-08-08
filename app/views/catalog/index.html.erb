@@ -1,14 +1,10 @@
-<% if has_search_parameters? %>
-  <div class="map-container" data-spy="affix">
-    <%= content_tag :div, '', id: 'map-results', style: 'width: 100%', data: { map: 'index', 'catalog-path'=> search_catalog_path, 'map-bbox' => params[:bbox], basemap: geoblacklight_basemap } %>
-  </div>
-
-  <div id="side-content" class="sidebar">
-    <%= render 'search_sidebar' %>
-  </div>
-
-  <div id="content" class="content">
-    <%= render 'search_header' %>
+<div id="content" class="content">
+  <%= render 'search_header' %>
+  <div id="inner">
     <%= render 'search_results' %>
   </div>
-<% end %>
+</div>
+
+<div id="side-content" class="sidebar">
+  <%= render 'search_sidebar' %>
+</div>
