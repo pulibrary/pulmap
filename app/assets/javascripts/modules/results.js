@@ -10,7 +10,7 @@ Blacklight.onLoad(function() {
       if ($('#appliedParams').length) {
         $('#appliedParams').replaceWith($doc.find('#appliedParams'));
       } else {
-        $('#main-container').prepend($doc.find('#appliedParams'));
+        $('#content').prepend($doc.find('#appliedParams'));
       }
       if ($('#map').next().length) {
         $('#map').next().replaceWith($doc.find('#map').next());
@@ -37,8 +37,8 @@ Blacklight.onLoad(function() {
         opts = { baseUrl: data.catalogPath }.
         bbox;
 
-    var lngRe = '(-?[0-9]{1,2}(\\.[0-9]+)?)';
-    var latRe = '(-?[0-9]{1,3}(\\.[0-9]+)?)';
+    var lngRe = '(-?[0-9]{1,3}(\\.[0-9]+)?)';
+    var latRe = '(-?[0-9]{1,2}(\\.[0-9]+)?)';
 
     var parseableBbox = new RegExp(
       [lngRe,latRe,lngRe,latRe].join('\\s+')
@@ -49,6 +49,7 @@ Blacklight.onLoad(function() {
     } else {
       $('.document [data-bbox]').each(function() {
         var currentBbox = $(this).data().bbox;
+
         if (parseableBbox.test(currentBbox)) {
           if (typeof bbox === 'undefined') {
             bbox = L.bboxToBounds(currentBbox);
@@ -62,8 +63,11 @@ Blacklight.onLoad(function() {
       });
     }
 
-    if (typeof bbox === 'undefined') {
-      bbox = L.latLngBounds([[77, 180],[-47, -180]]);
+    var filter_params = L.Control.GeoSearch.prototype.filterParams();
+
+    // Set bbox to default value if bbox is empty or there are no filter params
+    if ((typeof bbox === 'undefined') || (filter_params.length === 0)) {
+      bbox = L.latLngBounds([[-20, -100],[45, 100]]);
     }
 
     GeoBlacklight.Home = new GeoBlacklight.Viewer.Map(this, { bbox: bbox });

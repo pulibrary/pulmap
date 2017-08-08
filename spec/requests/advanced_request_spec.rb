@@ -8,7 +8,7 @@ describe 'advanced search', type: :request do
     expect(r['response']['docs'].length).to eq 1
   end
   it 'supports advanced render constraints' do
-    get '/catalog?&search_field=advanced&f1=title&q1=for1&op2=AND&f2='\
+    get '/catalog?search_field=advanced&f1=title&q1=for1&op2=AND&f2=' \
         'title&q2=s&op3=AND&f3=title&q3=searching+for'
     expect(response.body.include?('<a class="btn btn-default remove dropdown-toggle" href="/catalog?action=index&amp;controller=catalog&amp;f2=title&amp;'\
                                   'f3=title&amp;op2=AND&amp;op3=AND&amp;q2=s&amp;q3=searching+for&amp;search_field=advanced"><span class="glyphicon glyphicon-'\
