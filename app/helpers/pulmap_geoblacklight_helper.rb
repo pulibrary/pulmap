@@ -41,7 +41,7 @@ module PulmapGeoblacklightHelper
   end
 
   def remove_all_facet_values(field)
-    p = params.dup
+    p = search_state.to_h.dup
     p[:f] = (p[:f] || {}).dup
     p[:f].delete(field)
     p.delete(:f) if p[:f].empty?

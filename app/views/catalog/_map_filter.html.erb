@@ -3,23 +3,23 @@
   <button class="btn btn-default dropdown-toggle<%= map_filter_active %>" type="button" id="map_filter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
     <small><a href=#>Location</a></small>
     <% if bbox_present? %>
-      Viewable Map
+      Viewable map
     <% else %>
-      Entire World
+      Entire world
     <% end %>
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" aria-labelledby="map_filter">
     <% if bbox_present? %>
     <%= content_tag(:li) do %>
-      <%= link_to 'Entire world', search_action_path(params.except(:bbox)) %>
+      <%= link_to 'Entire world', search_action_path(search_state.to_h.except(:bbox)) %>
     <% end %>
     <%= content_tag(:li, class: 'active') do %>
       <%= link_to 'Viewable map', '#', id: 'map-search-facet' %>
     <% end %>
     <% else %>
       <%= content_tag(:li, class: 'active') do %>
-        <%= link_to 'Entire World', '#' %>
+        <%= link_to 'Entire world', '#' %>
       <% end %>
       <%= content_tag(:li) do %>
         <%= link_to 'Viewable map', '#', id: 'map-search-facet' %>
