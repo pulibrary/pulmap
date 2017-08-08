@@ -3,6 +3,7 @@ Blacklight.onLoad(function() {
     $.get(url).done(function(data) {
       var resp = $.parseHTML(data);
       $doc = $(resp);
+      $('#search-bar-container').replaceWith($doc.find('#search-bar-container'));
       $('#documents').replaceWith($doc.find('#documents'));
       $('#index-pagination').replaceWith($doc.find('#index-pagination'));
       $('#sortAndPerPage').replaceWith($doc.find('#sortAndPerPage'));
