@@ -13,11 +13,13 @@
 // thumbnail image
 .thumbnail img {
   display: block;
+  vertical-align: top;
   max-width: 100%;
   height: auto;
   width: auto;
   max-width: 80px;
   max-height: 77px;
+  min-width: 60px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -25,8 +27,10 @@
 // thumbnail placeholder icons
 .thumbnail span {
   display: block;
+  vertical-align: top;
+  padding-right: 10px;
   font-size: 60px;
-  line-height: 77px;
+  line-height: 0px;
   text-align: center;
   color: lightgrey;
 }
@@ -41,6 +45,12 @@
   img[src]+span{
     display: none;
   }
+}
+
+.media {
+  display: -webkit-flex; /* Safari */
+  -webkit-flex-direction: row-reverse; /* Safari 6.1+ */
+  display: flex;
 }
 
 .blacklight-polygon, .blacklight-line, .blacklight-point {
