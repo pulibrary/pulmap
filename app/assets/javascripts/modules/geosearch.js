@@ -29,14 +29,14 @@
   L.Control.GeoSearch = L.Control.extend({
 
     options: {
-      dynamic: false,
+      dynamic: true,
       baseUrl: '',
       searcher: function() {
         History.pushState(null, document.title, this.getSearchUrl());
       },
       delay: 800,
       staticButton: '<a class="btn btn-primary">Search here <span class="glyphicon glyphicon-repeat"></span></a>',
-      dynamicButton: '<label><input type="checkbox"> Search when I move the map</label>'
+      dynamicButton: '<label><input type="checkbox" checked> Search when I move the map</label>'
     },
 
     initialize: function(options) {
