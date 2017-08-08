@@ -1,5 +1,7 @@
-<header role="banner">
-  <%= render :partial => 'shared/this_is_beta' %>
-  <%= render :partial => 'shared/pul_branding' %>
-  <%= render :partial => 'shared/project_header' unless home_layout? %>
-</header>
+<div class="<%= navbar_type %>">
+  <header role="banner">
+    <%= render :partial => 'shared/this_is_beta' %>
+    <%= render :partial => 'shared/pul_branding' %>
+    <%= render :partial => 'shared/project_header' %>
+  </header>
+</div>

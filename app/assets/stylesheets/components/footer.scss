@@ -7,6 +7,13 @@
 html,
 body {
   height: 100%;
+
+  .blacklight-catalog-index {
+    background-color: $white;
+  }
+  .blacklight-catalog-show {
+    background-color: $light-gray;
+  }
 }
 
 .wrapper {

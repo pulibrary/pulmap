@@ -26,37 +26,17 @@ $basemap-color: #ade0ff;
   margin-right: 0px;
 }
 
+#map-results {
+  width: calc(100vw - 640px);
+  height: calc(100% - 93px);
+}
+
 #map-container {
   background: #CCDDDD;
   margin-bottom: 1em;
-
-  @media (max-width: $bp-small) {
-    visibility: hidden;
-
-    #map-results {
-        display: none;
-    }
-  }
-
-  @media (min-width: $bp-small) {
-    max-width: 340px;
-    width: 340px;
-    height: 480px;
-  }
-
-  @media (min-width: $bp-medium) {
-    max-width: 440px;
-    width: 440px;
-  }
-
-  @media (min-width: $bp-large) {
-    max-width: 540px;
-    width: 540px;
-  }
-}
-
-#content {
-  min-height: 550px;
+  position: fixed;
+  width: 100%;
+  height: 100%;
 }
 
 .sidebar,
@@ -74,13 +54,12 @@ $basemap-color: #ade0ff;
 }
 
 .sidebar {
-  width: 100%;
-
+  width: calc(100vw - 650px);
 
   @media (min-width: $bp-small) {
-    width: 30%;
-    padding-right: 15px;
-    padding-left: 0;
+    width: calc(100vw - 650px);
+    padding-right: 0px;
+    padding-left: 25px;
   }
 }
 
@@ -88,14 +67,18 @@ $basemap-color: #ade0ff;
   width: 100%;
 
   @media (min-width: $bp-small) {
-    width: 70%;
-    padding-left: 15px;
+    width: 600px;
+    padding-left: 25px;
     padding-right: 0;
-    margin-top: 0;
   }
 }
 
 // expand viewer container when there is no table container
 #viewer-container:only-child {
    width: 100% !important;
+}
+
+#map-results .btn-primary {
+  min-height: 44px;
+  line-height: 2.2;
 }
