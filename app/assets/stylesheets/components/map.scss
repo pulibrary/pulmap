@@ -27,7 +27,7 @@ $basemap-color: #ade0ff;
 }
 
 #map-results {
-  width: 54%;
+  width: calc(100vw - 640px);
   height: calc(100% - 93px);
 }
 
@@ -54,11 +54,10 @@ $basemap-color: #ade0ff;
 }
 
 .sidebar {
-  width: 100%;
-
+  width: calc(100vw - 650px);
 
   @media (min-width: $bp-small) {
-    width: 55%;
+    width: calc(100vw - 650px);
     padding-right: 0px;
     padding-left: 25px;
   }
@@ -68,7 +67,7 @@ $basemap-color: #ade0ff;
   width: 100%;
 
   @media (min-width: $bp-small) {
-    width: 45%;
+    width: 600px;
     padding-left: 25px;
     padding-right: 0;
   }

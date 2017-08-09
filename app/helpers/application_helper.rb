@@ -57,4 +57,8 @@ module ApplicationHelper
       'default'
     end
   end
+
+  def pulmap_query_has_constraints?
+    !(params[:q].blank? && params[:f].blank? && params[:bbox].blank?)
+  end
 end

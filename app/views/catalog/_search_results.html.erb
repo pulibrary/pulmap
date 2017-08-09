@@ -12,7 +12,6 @@
 <h2 class="sr-only"><%= t('blacklight.search.search_results') %></h2>
 
 <% if has_search_parameters? %>
-
   <%= render 'sort_and_per_page' %>
 
   <%- if @response.empty? %>
@@ -24,7 +23,6 @@
   <%- end %>
 
   <%= render 'results_pagination' %>
-
 <% else %>
   <%= render 'featured_content' %>
 <% end %>

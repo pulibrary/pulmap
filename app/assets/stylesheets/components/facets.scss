@@ -278,17 +278,43 @@ ul.facet-values {
 #facet-view {
   display: inline-block;
   .btn {
-    min-height: 45px;
+    min-height: 40px;
   }
   .button--start-over,.button--edit-search {
-    line-height: 33px !important;
+    line-height: 23px !important;
     a {
-      min-height: 45px;
+      min-height: 40px;
       line-height: 33px !important;
     }
   }
   ul.dropdown-menu {
     z-index: 10001;
+  }
+}
+
+.facets-container {
+  line-height: 4;
+  margin-top: 1em;
+  background: none;
+}
+
+.list-unstyled {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.limit_content.range_limit {
+  padding: 0 0 10px 15px;
+  width: 240px;
+
+  form {
+    margin-top: 8px;
+  }
+
+  input[value=Limit] {
+    height: 34px;
+    margin-left: 10px;
+    min-height: 0 !important;
   }
 }
 

@@ -96,7 +96,7 @@
 }
 
 .home-secondary-navbar {
-  z-index: 1003;
+  z-index: 10002;
   border: none;
   background: $light-gray;
   height: 140px;
@@ -112,7 +112,7 @@
   &.navbar {
     border-radius: 0;
     box-shadow: 0 4px 4px -2px rgba(0,0,0,0.2);
-    height: 60px; 
+    height: 80px; 
     background: #f5f4f1;
   }
 
@@ -121,6 +121,14 @@
   .container {
     height: 100%;
     padding-top: 10px;
+  }
+
+  .index-container {
+    margin-top: 17px;
+  }
+
+  .item-container {
+    margin-top: 9px;
   }
 
   .logo {
@@ -506,6 +514,16 @@
 
 .container-fluid > .container {
   position: relative;
-  top: 93px;
+  top: 112px;
   overflow: auto;
 }
+
+.index-container {
+  margin-left: 35px;
+  margin-right: 35px;
+}
+
+.navbar-fixed-top {
+  z-index: 10002;
+}
+

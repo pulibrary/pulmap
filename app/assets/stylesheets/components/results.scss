@@ -2,16 +2,6 @@
   height: 100%;
 }
 
-.constraints-container {
-    padding-left: 0;
-    padding-right: 0;
-    border: none;
-    line-height: 4;
-
-    background: none;
-    box-shadow: none;
-}
-
 #documents {
     margin-bottom: 2em;
 
@@ -36,13 +26,13 @@
 
 #map-container {
   position: fixed;
-  top: 93px;
+  top: 112px;
   z-index: 1;
 }
 
 #content {
   position: relative;
-  top: 93px;
+  top: 112px;
   height: 100%;
   padding-right: 25px;
 }

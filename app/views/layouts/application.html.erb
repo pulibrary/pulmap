@@ -37,11 +37,9 @@
     <%= render partial: 'shared/ajax_modal' %>
 
     <main role="main">
-      <% render :partial => 'home' if home_layout? %>
       <div class="<%= container_type %>" id="main-container">
         <%= content_tag :h1, application_name, class: 'sr-only application-heading' %>
         <%= render :partial=>'shared/flash_msg' %>
-        <%= render :partial => 'featured_content' if home_layout? %>
         <%= yield %>
       </div>
     </main>
