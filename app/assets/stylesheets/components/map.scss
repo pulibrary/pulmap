@@ -1,4 +1,4 @@
-$basemap-color: #ade0ff;
+$basemap-color: #b8e6fe;
 
 #map-front, #map-results {
   background-color: $basemap-color;
@@ -82,3 +82,8 @@ $basemap-color: #ade0ff;
   min-height: 44px;
   line-height: 2.2;
 }
+
+.search-control {
+  margin-right: 25px !important;
+}
+
