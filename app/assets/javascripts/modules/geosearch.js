@@ -32,7 +32,7 @@
       dynamic: true,
       baseUrl: '',
       searcher: function() {
-        this.compositeSearcher()
+        this.pushStateSearcher();
       },
       delay: 800,
       staticButton: '<a class="btn btn-primary">Search here <span class="glyphicon glyphicon-repeat"></span></a>',
@@ -81,15 +81,6 @@
 
       $container.append(this.$staticButton, this.$dynamicButton);
       return $container.get(0);
-    },
-
-    compositeSearcher: function() {
-      var params = this.filterParams(['page']);
-      if (params.length > 0) {
-        this.pushStateSearcher()
-      } else {
-        this.static_searcher()
-      }
     },
 
     static_searcher: function(){
