@@ -33,6 +33,7 @@
 //= require modules/advanced_chosen
 
 //= require Leaflet.fullscreen
+//= require Leaflet.ExtraMarkers
 
 //= require bootstrap/affix
 
