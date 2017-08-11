@@ -20,10 +20,6 @@ module PulmapGeoblacklightHelper
     field_config[:all] || 'All types'
   end
 
-  def multiple_facet_selection_label(n)
-    "Multiple (#{n})"
-  end
-
   def remove_all_facet_values(field)
     p = search_state.to_h.dup
     p[:f] = (p[:f] || {}).dup
@@ -37,22 +33,6 @@ module PulmapGeoblacklightHelper
       ' active'
     else
       ''
-    end
-  end
-
-  def map_filter_active
-    if bbox_present?
-      ' active'
-    else
-      ''
-    end
-  end
-
-  def bbox_present?
-    if params[:bbox]
-      true
-    else
-      false
     end
   end
 

@@ -1,9 +1,7 @@
 <% # main container for facets/limits menu -%>
 <% if has_facet_values?  %>
   <div id="facet-view" class="facet-view">
-  	<% if query_has_constraints? %>
-      <%=link_to t('blacklight.search.start_over').html_safe, start_over_path, :class => "btn btn-primary button--start-over", :id=>"startOverLink" %>
-    <% end %>
+    <%=link_to t('blacklight.search.start_over').html_safe, start_over_path, :class => "btn btn-primary button--start-over", :id=>"startOverLink" %>
     <%= render_facet_partials %>
   </div>
 <% end %>

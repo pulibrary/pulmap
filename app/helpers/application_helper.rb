@@ -2,13 +2,6 @@ module ApplicationHelper
   ##
   # Checks if index is the current layout
   # @return [Boolean]
-  def home_layout?
-    layout_type == 'home'
-  end
-
-  ##
-  # Checks if index is the current layout
-  # @return [Boolean]
   def index_layout?
     layout_type == 'index'
   end
@@ -56,9 +49,5 @@ module ApplicationHelper
     else
       'default'
     end
-  end
-
-  def pulmap_query_has_constraints?
-    !(params[:q].blank? && params[:f].blank? && params[:bbox].blank?)
   end
 end

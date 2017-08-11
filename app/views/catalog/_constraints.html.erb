@@ -2,11 +2,14 @@
   <%= render partial: 'facets' %>
 </div>
 
-<% if pulmap_query_has_constraints? %>
+<% if query_has_constraints? %>
     <div id="appliedParams" class="clearfix constraints-container">
       <div class="params">
-        <span class="constraints-label sr-only"><%= t('blacklight.search.filters.title') %></span>
+        <div class="button--edit-search">
+          <%=link_to t('blacklight.search.edit_search'), blacklight_advanced_search_engine.advanced_search_path(search_state.to_h), :class => "btn btn-default", :id=>"editSearchLink" %>
+        </div>
         <%= render_constraints(params) %>
+        <span class="constraints-label sr-only"><%= t('blacklight.search.filters.title') %></span>
       </div>
     </div>
 <% end %>
