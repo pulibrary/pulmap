@@ -195,7 +195,12 @@ module BlacklightAdvancedSearch
     # @option options [Array<String>] :classes an array of classes to add to container span.
     # @return [String]
     def render_constraint_element(label, value, options = {})
-      value = nil if params[:bbox] && label == t('pulmap.search.bbox.label')
+      if params[:bbox]
+        if label == 'Bounding Box'
+          value = nil
+          label = t('geoblacklight.bbox_label')
+        end
+      end
       super(label, value, options)
     end
 
