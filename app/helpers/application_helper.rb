@@ -20,6 +20,22 @@ module ApplicationHelper
     layout_type == 'default'
   end
 
+  def container_type
+    if index_layout?
+      'container-fluid'
+    else
+      'container'
+    end
+  end
+
+  def navbar_type
+    if index_layout?
+      'navbar-fixed-top'
+    else
+      'navbar'
+    end
+  end
+
   ##
   # Gets current layout for use in rendering partials
   # @return [String] item, index, home, or default

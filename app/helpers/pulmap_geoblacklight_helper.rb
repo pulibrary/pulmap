@@ -15,6 +15,47 @@ module PulmapGeoblacklightHelper
     end
   end
 
+  def all_facet_values_label(field)
+    field_config = blacklight_config.facet_fields[field]
+    field_config[:all] || 'All types'
+  end
+
+  def multiple_facet_selection_label(n)
+    "Multiple (#{n})"
+  end
+
+  def remove_all_facet_values(field)
+    p = search_state.to_h.dup
+    p[:f] = (p[:f] || {}).dup
+    p[:f].delete(field)
+    p.delete(:f) if p[:f].empty?
+    p
+  end
+
+  def facet_active(facet_field)
+    if facet_field_in_params?(facet_field)
+      ' active'
+    else
+      ''
+    end
+  end
+
+  def map_filter_active
+    if bbox_present?
+      ' active'
+    else
+      ''
+    end
+  end
+
+  def bbox_present?
+    if params[:bbox]
+      true
+    else
+      false
+    end
+  end
+
   private
 
   def leaflet_viewer

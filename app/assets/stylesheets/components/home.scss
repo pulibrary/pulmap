@@ -1,5 +1,5 @@
 [data-map="home"] {
-  height: 400px;
+  height: 100%;
 }
 
 main.home {
@@ -27,7 +27,6 @@ main.home {
 
   @media (min-width: $bp-small) {
     background-color: rgba(0, 0, 0, 0.1);
-    position: absolute;
     bottom: 0;
     height: 80px;
   }
@@ -68,8 +67,23 @@ main.home {
     height: 46px;
   }
 
-  .find-loc {
+  .btn-clear-search {
+    height: 46px;
     display: none;
+  }
+
+  .find-loc input.leaflet-pelias-input {
+    border: 1px solid $input-border !important;
+    border-radius: $input-border-radius;
+    @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+    @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+  }
+
+
+  .find-loc {
+    // for when we relocate to map
+    display: inline-block;
+    //display: none;
     padding: 0 15px;
     width: 100%;
     margin: 1em 0;
@@ -82,6 +96,7 @@ main.home {
     }
 
     .leaflet-pelias-control {
+      top: -10px;
       width: 100%;
       background-color: $input-bg;
       background-image: none;
@@ -175,6 +190,13 @@ main.home {
   .leaflet-container {
     opacity: 1;
   }
+}
+
+.search-container {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  background: black;
 }
 
 #map-front {

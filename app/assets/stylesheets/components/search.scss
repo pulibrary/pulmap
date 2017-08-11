@@ -106,10 +106,6 @@ header .input-group-addon {
   outline:0 !important;
 }
 
-.btn-advanced-search {
-  height: 42px;
-}
-
 @media (min-width: $bp-medium) {
   .navbar-form .input-group > .search_q.form-control {
     width: 250px;
@@ -118,12 +114,13 @@ header .input-group-addon {
 
 @media (min-width: $bp-large) {
   .navbar-form .input-group > .search_q.form-control {
-    width: 375px;
+    width: 100%;
   }
 }
 
 .search-query-form.home-search {
   padding: 0px;
+  margin-bottom: -10px;
 }
 
 .search-query-form,

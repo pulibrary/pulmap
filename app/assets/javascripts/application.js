@@ -28,6 +28,7 @@
 //= require modernizr
 //= require bootstrap-toggle
 
+//= require modules/mapPosition.js
 //= require modules/map
 //= require modules/thumbnail
 //= require modules/advanced_chosen
@@ -40,3 +41,17 @@ GeoBlacklight.Controls.Fullscreen = function() {
     position: 'topright'
   }));
 };
+
+$(document).ready(function() {
+  // clear search terms
+  var keywords = $('input#q').val();
+  if (keywords.length > 0 ) {
+    $('.btn-clear-search').show();
+  }
+
+  $(document).on("click", ".btn-clear-search", function(){
+    $('input#q').val('');
+    $('.btn-clear-search').hide();
+  });
+  // end clear search terms
+});

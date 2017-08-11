@@ -9,10 +9,10 @@ body {
   height: 100%;
 }
 
-.wrapper {
-  background: $white;
-  margin-bottom: -75px; //equal to footer height
-  min-height: 100%;
+
+footer {
+  bottom: 0;
+  width: 100%;
 }
 
 .wrapper:after {
@@ -25,9 +25,6 @@ footer,
   height: 75px;
 }
 
-footer {
-  background: $light-gray;
-}
 
 // footer components
 

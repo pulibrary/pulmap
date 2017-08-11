@@ -12,6 +12,7 @@
     <% unless label.blank? %>
       <span class="filterName <%= 'filterBlank' if value.blank? %>"><%= label %></span>
     <% end %>
+    <!-- This needs to go into the 'facet_layout' partial -->
     <% unless value.blank? %>
       <%= content_tag :span, value, class: 'filterValue', title: value %>
     <% end %>
@@ -27,7 +28,7 @@
     %>
 
     <%= link_to(content_tag(:span, '', class: 'glyphicon glyphicon-remove') + accessible_remove_label,
-			options[:remove], class: 'btn btn-default remove dropdown-toggle'
+			options[:remove], class: 'constraint-value btn btn-default remove dropdown-toggle'
 		) %>
   <%- end -%>
 </span>

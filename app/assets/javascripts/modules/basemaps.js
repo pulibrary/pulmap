@@ -44,9 +44,7 @@ GeoBlacklight.Basemaps.esri =  L.tileLayer('https://server.arcgisonline.com/ArcG
   attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012',
   minZoom: 1,
   maxZoom: 18,
-  worldCopyJump: false,
+  worldCopyJump: true,
   detectRetina: true,
-  continuousWorld: false,
-  noWrap: true
+  noWrap: false
 });
-

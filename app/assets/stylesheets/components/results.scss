@@ -2,6 +2,7 @@
     padding-left: 0;
     padding-right: 0;
     border: none;
+    line-height: 4;
 
     background: none;
     box-shadow: none;
@@ -20,21 +21,42 @@
 }
 
 .documentHeader.row {
-    padding: 1em;
+    padding: 1em 0em 1em 0em;
     &:hover {
         background: $light-gray;
     }
 }
-#map-container + #content {
-    float: right;
+
+#map-container {
+  position: fixed;
+  top: 175px;
+  z-index: 1;
+}
+
+// #map-container + #content {
+//     float: right;
+// }
+
+#content {
+  position: relative;
+  top: 175px;
+  height: 100%;
+  padding-right: 25px;
+}
+
+#inner {
+    height: 100%;
+    padding-top: 10px;
 }
 
 .params {
-    display: inline-block;
+    display: block;
 }
 
 .index_title {
   white-space: normal;
+  float: none;
+  width: 100%;
 }
 
 .document-wrapper {

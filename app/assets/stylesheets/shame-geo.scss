@@ -1,16 +1,27 @@
 body {
-    background: $light-gray;
     font-family: $font-sans;
 }
 
-header {
-    background: $white;
+footer {
+    background: $light-gray;
 }
 
 
 
 main {
     padding: 0 0 0;
+}
+
+.wrapper {
+  background: $white;
+  margin-bottom: -75px; // equal to footer height
+  min-height: 100%;
+}
+
+.wrapper-index {
+  background: $white;
+  margin-bottom: 0; // no footer
+  min-height: 100%;
 }
 
 .pulmap-brand {
@@ -32,9 +43,9 @@ li.bullet:hover {
         background: $black;
     }
 }
-#content {
-    padding-right: 0;
-}
+// #content {
+//     padding-right: 0;
+// }
 
 //constraints.scss
 .constraints-container {
@@ -42,7 +53,7 @@ li.bullet:hover {
     border: none;
     box-shadow: none;
     -webkit-box-shadow: none;
-    margin-bottom: 0.35em;
+    margin-bottom: 1em;
     margin-top: 1em;
     padding: 2px 0;
 
@@ -51,4 +62,8 @@ li.bullet:hover {
         content: none;
       }
     }
+}
+
+.constraint-value {
+  padding-top: 12px;
 }
