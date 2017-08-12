@@ -3,5 +3,3 @@ en:
     search:
       topics:
         heading: 'Featured Content'
-      bbox:
-        label: 'Bounding Box'
