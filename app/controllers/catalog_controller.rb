@@ -101,7 +101,7 @@ class CatalogController < ApplicationController
       # }
     }, partial: 'icon_facet', all: 'All types', collapse: false
     config.add_facet_field Settings.FIELDS.PROVENANCE, label: 'Institution', limit: 8, partial: 'icon_facet', single: true, all: 'All institutions'
-    config.add_facet_field Settings.FIELDS.GEOM_TYPE, label: 'Data type', limit: 8, partial: 'icon_facet', collapse: false, single: true, all: 'All data types'
+    config.add_facet_field Settings.FIELDS.GEOM_TYPE, label: 'Format', limit: 8, partial: 'icon_facet', collapse: false, single: true, all: 'All data types'
     config.add_facet_field Settings.FIELDS.YEAR, label: 'Year', limit: 10, all: 'Any year', range: {
       assumed_boundaries: [1100, 2016]
       # :num_segments => 6,
