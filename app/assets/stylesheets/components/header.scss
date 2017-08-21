@@ -96,7 +96,7 @@
 }
 
 .home-secondary-navbar {
-  z-index: 10002;
+  z-index: 900;
   border: none;
   background: $light-gray;
   height: 140px;
@@ -524,6 +524,6 @@
 }
 
 .navbar-fixed-top {
-  z-index: 10002;
+  z-index: 1000;
 }
 
