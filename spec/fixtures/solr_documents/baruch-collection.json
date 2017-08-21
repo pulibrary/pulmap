@@ -1,0 +1,36 @@
+{
+  "dc_identifier_s": "http://hdl.handle.net/2451/34548",
+  "dc_title_s": "2016 New York City Election Districts (Clipped to Shoreline)",
+  "dc_description_s": "This polygon shapefile layer represents the Election District boundaries for the City of New York. These district boundaries represent the redistricting as of the US Census 2010. This file was generated from the 16A release of the Department of City Planning's LION file. ",
+  "dc_rights_s": "Public",
+  "dct_provenance_s": "NYU",
+  "dct_references_s": "{\"http://schema.org/url\":\"http://hdl.handle.net/2451/34548\",\"http://schema.org/downloadUrl\":\"https://archive.nyu.edu/retrieve/74530/nyu_2451_34548.zip\",\"http://www.opengis.net/def/serviceType/ogc/wfs\":\"https://maps-public.geo.nyu.edu/geoserver/sdr/wfs\",\"http://www.opengis.net/def/serviceType/ogc/wms\":\"https://maps-public.geo.nyu.edu/geoserver/sdr/wms\"}",
+  "layer_id_s": "sdr:nyu_2451_34548",
+  "layer_slug_s": "nyu_2451_34548",
+  "layer_geom_type_s": "Polygon",
+  "layer_modified_dt": "2016-04-20T21:31:17Z",
+  "dc_format_s": "Shapefile",
+  "dc_language_s": "English",
+  "dc_type_s": "Dataset",
+  "dc_publisher_s": "New York (City). Department of City Planning",
+  "dc_subject_sm": [
+    "Election districts",
+    "Administrative and political divisions",
+    "Boundaries",
+    "Elections",
+    "Voting"
+  ],
+  "dct_isPartOf_sm": [
+    "Bytes of the Big Apple"
+  ],
+  "dct_issued_s": "2016",
+  "dct_temporal_sm": [
+    "2016"
+  ],
+  "dct_spatial_sm": [
+    "New York, New York, United States"
+  ],
+  "solr_geom": "ENVELOPE(-74.2555913638125, -73.7000090638712, 40.9155327760001, 40.4961153952116)",
+  "solr_year_i": 2016,
+  "geoblacklight_version": "1.0"
+}
