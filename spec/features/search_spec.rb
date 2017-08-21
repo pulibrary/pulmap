@@ -51,4 +51,9 @@ feature 'Search' do
       expect(page).not_to have_content('You searched for')
     end
   end
+
+  scenario 'When a user searches, collection facet is hidden' do
+    visit '/?f[dct_provenance_s][]=NYU&q='
+    expect(page).not_to have_content 'Bytes of the Big Apple'
+  end
 end
