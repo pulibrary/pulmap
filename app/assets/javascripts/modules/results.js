@@ -67,8 +67,10 @@ Blacklight.onLoad(function() {
     GeoBlacklight.Home.removeMarkers();
 
     $('.document [data-bbox]').each(function() {
-      var currentBbox = $(this).data().bbox,
-          counter = $(this).data().counter + 1,
+      var _this = $(this),
+          currentBbox = _this.data().bbox,
+          layerId = _this.data().layerId;
+          counter = _this.data().counter + 1,
           redMarker = L.ExtraMarkers.icon({
             innerHTML: '<p style="color: white; margin-top: 8px;">' + counter + '</p>',
             markerColor: 'blue',
@@ -78,7 +80,15 @@ Blacklight.onLoad(function() {
 
       if (currentBbox) {
         var bounds = L.bboxToBounds(currentBbox);
-        L.marker(bounds.getCenter(), {icon: redMarker}).addTo(GeoBlacklight.Home.markers);
+        var marker = L.marker(bounds.getCenter(), {icon: redMarker});
+
+        // Add marker to map
+        marker.addTo(GeoBlacklight.Home.markers);
+
+        // Set scroll click event on marker
+        marker.on('click', function() {
+          $('html, body').animate({scrollTop: _this.offset().top - 120}, 200);
+        });
       }
     });
   }
