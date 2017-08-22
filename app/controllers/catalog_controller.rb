@@ -239,7 +239,7 @@ class CatalogController < ApplicationController
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
-    config.add_sort_field 'score desc, dc_title_sort asc', label: 'relevance'
+    config.add_sort_field 'score desc', label: 'relevance'
     config.add_sort_field "#{Settings.FIELDS.YEAR} desc, dc_title_sort asc", label: 'year'
     config.add_sort_field "#{Settings.FIELDS.PUBLISHER} asc, dc_title_sort asc", label: 'publisher'
     config.add_sort_field "#{Settings.FIELDS.TITLE} asc", label: 'title'
