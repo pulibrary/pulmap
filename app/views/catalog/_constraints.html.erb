@@ -2,7 +2,7 @@
   <%= render partial: 'facets' %>
 </div>
 
-<% if query_has_constraints? %>
+<% if query_has_constraints? && !hide_constraints? %>
     <div id="appliedParams" class="clearfix constraints-container">
       <div class="params">
         <span class="constraints-label"><%= t('blacklight.search.filters.title') %></span>

@@ -44,4 +44,11 @@ feature 'Search' do
     expect(page).to have_css '.document .row .thumbnail a'
     expect(first('.document .row .thumbnail a')[:href]).to include('/catalog/')
   end
+
+  feature 'constraints' do
+    scenario 'when searching with an empty query parameter' do
+      visit '/?utf8=true&search_field=all_fields&q='
+      expect(page).not_to have_content('You searched for')
+    end
+  end
 end
