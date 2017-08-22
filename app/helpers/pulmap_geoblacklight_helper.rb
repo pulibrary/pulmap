@@ -53,6 +53,10 @@ module PulmapGeoblacklightHelper
   def manifest_viewer
     content_tag(:div, nil,
                 id: 'view',
-                data: { manifest: @document.references.references(:iiif_manifest).endpoint })
+                data: {
+                  manifest: @document.references.references(:iiif_manifest).endpoint,
+                  config: asset_url('uv/uv_config.json'),
+                  src: PulUvRails::UniversalViewer.instance.viewer_link
+                })
   end
 end
