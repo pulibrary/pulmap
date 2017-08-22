@@ -10,7 +10,7 @@ describe CatalogController, type: :controller do
   end
   describe '#downloads' do
     it 'download page renders' do
-      get :downloads, id: 'princeton-3x816p22x'
+      get :downloads, params: { id: 'princeton-3x816p22x' }
       expect(response).to have_http_status(200)
       expect(assigns(:document)).not_to be_nil
     end
