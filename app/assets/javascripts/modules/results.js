@@ -16,6 +16,9 @@ Blacklight.onLoad(function() {
     // Instantiate new map
     GeoBlacklight.Home = new GeoBlacklight.Viewer.Map(this, { bbox: bbox });
 
+    // Add geocoder
+    addGeocoder(GeoBlacklight.Home.map)
+
     // Remove initial overlay
     GeoBlacklight.Home.removeBoundsOverlay();
 
@@ -106,6 +109,30 @@ Blacklight.onLoad(function() {
           GeoBlacklight.Home.removeBoundsOverlay();
       });
     });
+  }
+
+  function addGeocoder(map) {
+    L.control.geocoder('search-gczeV3H', {
+      placeholder: 'Search for location',
+      markers: true,
+      pointIcon: false,
+      polygonIcon: false,
+      expanded: false,
+      params: {
+        sources: ['whosonfirst']
+      }
+    }).addTo(map);
+
+    var options = {
+      placement: 'right',
+      delay: { "show": 1000, "hide": 100 },
+      container: 'body',
+      title: 'Zoom map to location'
+    };
+
+    // Set tooltips on geocoder
+    $('.leaflet-pelias-search-icon').attr('data-toggle','tooltip');
+    $('.leaflet-pelias-search-icon').tooltip(options);
   }
 
   function updatePage(url) {
