@@ -109,6 +109,8 @@ Blacklight.onLoad(function() {
   }
 
   function updatePage(url) {
+    $( ".overlay" ).fadeIn( 100 );
+
     $.get(url).done(function(data) {
       var resp = $.parseHTML(data);
       $doc = $(resp);
@@ -129,6 +131,9 @@ Blacklight.onLoad(function() {
       // Reload markers and listeners
       placeMarkers();
       setHoverListeners();
+
+      // Allow interaction with results
+      $( ".overlay" ).fadeOut( 500 );
     });
   }
 });

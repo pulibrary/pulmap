@@ -1,10 +1,12 @@
 <div id="content" class="content">
   <%= render 'search_header' %>
-  <div id="inner">
+  <div id="inner" aria-live="polite">
     <%= render 'search_results' %>
   </div>
 </div>
-
+<div class="overlay">
+  <div class="sp sp-circle"></div>
+</div>
 <div id="side-content" class="sidebar">
   <%= render 'search_sidebar' %>
 </div>
