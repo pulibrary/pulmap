@@ -12,22 +12,21 @@
 //
 //= require jquery
 //= require 'blacklight_advanced_search'
-
 //= require chosen-jquery
-
 //= require jquery_ujs
 //= require twitter/typeahead.min
 //= require aload
 
 // Required by Blacklight
 //= require blacklight/blacklight
-//= require_tree .
-
 //= require 'blacklight_range_limit'
 
 //= require modernizr
 //= require bootstrap-toggle
 
+//= require_tree .
+
+//= stub modules/results
 //= require modules/map
 //= require modules/thumbnail
 //= require modules/advanced_chosen

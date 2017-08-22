@@ -79,7 +79,6 @@ gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
 gem 'blacklight_range_limit'
 gem 'blacklight_advanced_search'
 gem 'sneakers'
-
-#  jquery multiselect plugin for advanced search
-gem 'chosen-rails'
+gem 'chosen-rails' #  jquery multiselect plugin for advanced search
 gem 'rails-reverse-proxy'
+gem 'pul_uv_rails', git: 'https://github.com/pulibrary/pul_uv_rails', branch: 'master'
