@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/pulibrary/pul_uv_rails
+  revision: ce493942cfdbfd398f686c34324312df03cf6bf2
+  branch: master
+  specs:
+    pul_uv_rails (2.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -400,6 +407,7 @@ DEPENDENCIES
   omniauth-cas
   pg
   poltergeist
+  pul_uv_rails!
   puma (~> 3.0)
   rails (~> 5.0)
   rails-controller-testing
@@ -420,4 +428,4 @@ DEPENDENCIES
   xray-rails
 
 BUNDLED WITH
-   1.14.6
+   1.15.3
