@@ -87,7 +87,9 @@ Blacklight.onLoad(function() {
 
         // Set scroll click event on marker
         marker.on('click', function() {
+          $( ".document .selected" ).removeClass( "selected" );
           $('html, body').animate({scrollTop: _this.offset().top - 120}, 200);
+          $( _this ).addClass( "selected" );
         });
       }
     });
