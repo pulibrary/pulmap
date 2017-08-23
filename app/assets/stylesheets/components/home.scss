@@ -107,7 +107,7 @@ main.home {
   .btn-clear-search {
     height: 46px;
     display: none;
-  } 
+  }
 
   .find-loc {
     display: none;
@@ -252,4 +252,17 @@ section.topics {
   text-transform: uppercase;
   top: 34px;
   margin-bottom: 1.8em;
+}
+
+.intro {
+  text-align: center;
+  margin-top: 4em;
+}
+
+.intro h1 {
+  font-family: Georgia, sans-serif;
+  color: #4D4D4C;
+  font-size: 28px;
+  font-weight: bolder;
+  line-height: 36px;
 }
