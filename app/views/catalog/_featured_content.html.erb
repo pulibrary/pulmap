@@ -1,29 +1,29 @@
-<div class="col-md-12">
-  <section class="topics">
-    <div class="line-behind-text">
-      <h6 class="er_toc_tag" id="er-toc-id-2"><%= t('pulmap.search.topics.heading') %></h6>
-    </div>
-    <div class="grid-items">
-      <a href="/?f%5Blayer_geom_type_s%5D%5B%5D=Image&q=Sanborn" class="grid-item">
-        <span class="icon-building"></span>
-        <h1>Sanborn</h1>
-        <p>Detailed fire insurance maps of cities and towns in New Jersey.</p>
-      </a>
-      <a href="/?f%5Bdc_format_s%5D%5B%5D=Shapefile&q=parcels" class="grid-item">
-        <span class="icon-locationmap"></span>
-        <h1>Parcels</h1>
-        <p>Property boundry data for identification of ownership, land use, and land value.</p>
-      </a>
-      <a href="/?f%5Bdc_subject_sm%5D%5B%5D=population" class="grid-item">
-        <span class="icon-graphbar"></span>
-        <h1>Census</h1>
-        <p>Worldwide population and demographic data.</p>
-      </a>
-        <a href="/?utf8=✓&search_field=all_fields&sort=timestamp+desc&q=" class="grid-item">
-        <span class="icon-map"></span>
-        <h1>Recent Additions</h1>
-        <p>Recent additions to the collection.</p>
-      </a>
-    </div>
-  </section>
+<div class="intro col-md-12">
+    <section class="topics">
+      <%= image_tag("magellan_small.png", id: 'magellan-logo', class: 'magellan-logo', alt: "Magellan Logo") %>
+      <h1><small>Introducing a new research tool to </small><br/>
+        Explore Maps and Geospatial Data</h1>
+      <div class="grid-items">
+        <a href="/?utf8=%E2%9C%93&search_field=all_fields&q=" class="grid-item">
+          <span class="icon-locationmap"></span>
+          <h1>Browse Everything</h1>
+          <p>See all of our records and filter results by dragging, zooming, or jumping directly to locations on the map.</p>
+        </a>
+        <a href="/?f%5Blayer_geom_type_s%5D%5B%5D=Raster&q=&search_field=all_fields" class="grid-item">
+          <span class="geoblacklight-icon geoblacklight-raster"></span>
+          <h1>Raster Data</h1>
+          <p>View heatmaps and other geospatial data visualizations directly on the map by selecting the Raster format.</p>
+        </a>
+        <a href="/?f%5Blayer_geom_type_s%5D%5B%5D=Polygon&q=&search_field=all_fields" class="grid-item">
+          <span class="geoblacklight-icon geoblacklight-polygon"></span>
+          <h1>Vector Data</h1>
+          <p>View geographical boundaries by selecting Polygon, Line and Point formats.</p>
+        </a>
+          <a href="?f%5Blayer_geom_type_s%5D%5B%5D=Image&q=&search_field=all_fields" class="grid-item">
+          <span class="geoblacklight-icon geoblacklight-image"></span>
+          <h1>Historic Maps</h1>
+          <p>View maps of from our Special Collections by selecting the Image format.</p>
+        </a>
+      </div>
+    </section>
 </div>

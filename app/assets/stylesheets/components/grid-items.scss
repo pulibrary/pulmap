@@ -20,8 +20,8 @@
 
   $grid-items-background: $base-background-color;
   $grid-item-background: $base-background-color;
-  $grid-item-border: 1px solid transparentize($base-font-color, 0.8);
-  $grid-item-columns: 3;
+  $grid-item-border: 0px solid transparentize($base-font-color, 0.8);
+  $grid-item-columns: 6;
   $grid-item-big-columns: 8;
   $grid-item-color: $base-font-color;
   $grid-item-icon-color: #777777;
