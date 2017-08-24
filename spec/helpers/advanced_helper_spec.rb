@@ -12,7 +12,7 @@ describe BlacklightAdvancedSearch::RenderConstraintsOverride, type: :helper do
       end
 
       it 'does not render values for bounding box constraints' do
-        expect(helper.render_constraint_element('Bounding Box',\
+        expect(helper.render_constraint_element('Current Map View',\
                                                 '-43.9453125 04.214943 043.9453125 036.597889'))\
           .not_to have_content('-43.9453125 04.214943 043.9453125 036.597889')
       end
