@@ -1,8 +1,10 @@
 @import "utils/variables";
 
-main > .container .flash_messages {
+.flash_messages {
   position: fixed;
   top: 10px;
+  left: 0;
+  width: 100%;
   z-index: 1006;
 
   .alert {
