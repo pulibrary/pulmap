@@ -112,7 +112,7 @@ Blacklight.onLoad(function() {
   }
 
   function addGeocoder(map) {
-    L.control.geocoder('search-gczeV3H', {
+    var geocoder = L.control.geocoder('search-gczeV3H', {
       placeholder: 'Search for location',
       markers: true,
       pointIcon: false,
@@ -121,7 +121,11 @@ Blacklight.onLoad(function() {
       params: {
         sources: ['whosonfirst']
       }
-    }).addTo(map);
+    })
+    geocoder.addTo(map);
+    geocoder.on('select', function (e) {
+      geocoder.collapse();
+    });
 
     var options = {
       placement: 'right',

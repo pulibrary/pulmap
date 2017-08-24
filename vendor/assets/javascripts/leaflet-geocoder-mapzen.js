@@ -915,7 +915,7 @@ var Geocoder = L.Control.extend({
             // Otherwise, toggle to hidden state
             L.DomUtil.addClass(this._reset, 'leaflet-pelias-hidden');
             // Remove container tooltip
-            $('.tooltip').remove();
+            $('.leaflet-pelias-search-icon').tooltip('destroy')
             this.collapse();
           }
         } else {
@@ -924,7 +924,7 @@ var Geocoder = L.Control.extend({
             L.DomUtil.removeClass(this._reset, 'leaflet-pelias-hidden');
           }
           // Remove container tooltip
-          $('.tooltip').remove();
+          $('.leaflet-pelias-search-icon').tooltip('destroy')
           this.expand();
           this._input.focus();
         }
