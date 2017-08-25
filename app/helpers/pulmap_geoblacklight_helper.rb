@@ -50,13 +50,16 @@ module PulmapGeoblacklightHelper
                                    leaflet_options: leaflet_options })
   end
 
-  def manifest_viewer
+  def viewer_tags(classes)
     content_tag(:div, nil,
-                id: 'view',
+                class: classes,
                 data: {
-                  manifest: @document.references.references(:iiif_manifest).endpoint,
-                  config: asset_url('uv/uv_config.json'),
-                  src: PulUvRails::UniversalViewer.instance.viewer_link
-                })
+                  uri: @document.references.references(:iiif_manifest).endpoint,
+                  config: asset_url('uv/uv_config.json')
+                }) + PulUvRails::UniversalViewer.script_tag
+  end
+
+  def manifest_viewer
+    safe_join [viewer_tags(%w(view uv)), viewer_tags(%w(view uv hidden))]
   end
 end
