@@ -70,7 +70,7 @@
 
 .overlay{
     display: none;
-    position:absolute;
+    position:fixed;
     top:0px;
     left:0px;
     bottom:0px;
@@ -87,11 +87,10 @@
   left: 285px;
 }
 
-$spCol: red;
 /* Spinner Circle Rotation */
 .sp-circle {
-	border: 4px rgba($spCol,0.25) solid;
-	border-top: 4px rgba($spCol,1) solid;
+	border: 4px rgba($orange,0.25) solid;
+	border-top: 4px rgba($orange,1) solid;
 	border-radius: 50%;
 	-webkit-animation: spCircRot .6s infinite linear;
 	animation: spCircRot .6s infinite linear;
