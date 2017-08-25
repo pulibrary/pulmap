@@ -292,6 +292,10 @@ ul.facet-values {
   }
 }
 
+.facet ul.dropdown-menu {
+  margin:0;
+}
+
 .facets-container {
   line-height: 4;
   margin-top: 1em;
@@ -318,4 +322,3 @@ ul.facet-values {
     min-height: 0 !important;
   }
 }
-
