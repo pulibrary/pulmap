@@ -85,7 +85,11 @@ class CatalogController < ApplicationController
     #    :years_10 => { :label => 'within 10 Years', :fq => "pub_date:[#{Time.now.year - 10 } TO *]" },
     #    :years_25 => { :label => 'within 25 Years', :fq => "pub_date:[#{Time.now.year - 25 } TO *]" }
     # }
-
+    config.add_facet_field Settings.FIELDS.YEAR, label: 'Year', limit: 10, all: 'Any year', range: {
+      assumed_boundaries: [1100, 2016]
+      # :num_segments => 6,
+      # :segments => true
+    }
     config.add_facet_field 'access', label: 'Access', query: {
       public: {
         label: 'Public', fq: "#{Settings.FIELDS.RIGHTS}:Public"
@@ -102,11 +106,6 @@ class CatalogController < ApplicationController
     }, partial: 'icon_facet', all: 'All types', collapse: false
     config.add_facet_field Settings.FIELDS.PROVENANCE, label: 'Institution', limit: 8, partial: 'icon_facet', single: true, all: 'All institutions'
     config.add_facet_field Settings.FIELDS.GEOM_TYPE, label: 'Format', limit: 8, partial: 'icon_facet', collapse: false, single: true, all: 'All data types'
-    config.add_facet_field Settings.FIELDS.YEAR, label: 'Year', limit: 10, all: 'Any year', range: {
-      assumed_boundaries: [1100, 2016]
-      # :num_segments => 6,
-      # :segments => true
-    }
     config.add_facet_field Settings.FIELDS.SUBJECT, label: 'Subject', limit: 8, show: true, all: 'All subjects'
     # config.add_facet_field Settings.FIELDS.CREATOR, label: 'Author', limit: 8
     # config.add_facet_field Settings.FIELDS.PUBLISHER, label: 'Publisher', limit: 8, single: true
