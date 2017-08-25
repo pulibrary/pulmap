@@ -21,7 +21,7 @@
         <%= link_to(remove_href, class: 'remove') do %>
           <%= geoblacklight_icon item.value %>
           <%= content_tag(:span, facet_display_value(solr_field, item)) %>
-          <%= render_facet_count(item.hits) %>
+          <span class="facet-count pull-right"><%= render_facet_count(item.hits) %></span>
         <% end %>
       <% end %>
     <% else %>
@@ -29,7 +29,7 @@
         <%= link_to(path_for_facet(solr_field, item.value)) do %>
           <%= geoblacklight_icon item.value %>
           <%= facet_display_value(solr_field, item.value) %>
-          <%= render_facet_count(item.hits) %>
+          <span class="facet-count pull-right"><%= render_facet_count(item.hits) %></span>
         <% end %>
       <% end %>
     <% end -%>
