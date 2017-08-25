@@ -112,7 +112,7 @@
   &.navbar {
     border-radius: 0;
     box-shadow: 0 4px 4px -2px rgba(0,0,0,0.2);
-    height: 80px; 
+    height: 80px;
     background: #f5f4f1;
   }
 
@@ -335,6 +335,10 @@
   padding-right: 0;
 }
 
+#your-account-dropdown {
+  margin-top: 5px;
+}
+
 .dropdown-toggle a:hover {
   text-decoration: none;
 }
@@ -526,4 +530,3 @@
 .navbar-fixed-top {
   z-index: 1000;
 }
-
