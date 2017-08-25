@@ -3,26 +3,32 @@
       <%= image_tag("magellan_small.png", id: 'magellan-logo', class: 'magellan-logo', alt: "Magellan Logo") %>
       <h1><small>Introducing a new research tool to </small><br/>
         Explore Maps and Geospatial Data</h1>
+
       <div class="grid-items">
         <a href="/?utf8=%E2%9C%93&search_field=all_fields&q=" class="grid-item">
-          <span class="icon-locationmap"></span>
-          <h1>Browse Everything</h1>
-          <p>See all of our records and filter results by dragging, zooming, or jumping directly to locations on the map.</p>
+          <span class="icon-locationmap"></span> 
+          <h1>Browse Collection</h1>
+          <p>See all records and filter results by dragging, zooming, or searching for locations on the map.</p>
         </a>
-        <a href="/?f%5Blayer_geom_type_s%5D%5B%5D=Raster&q=&search_field=all_fields" class="grid-item">
+        <a href="/?f%5Blayer_geom_type_s%5D%5B%5D=Image&q=Sanborn" class="grid-item">
+          <span class="icon-building"></span>
+          <h1>Sanborn</h1>
+          <p>Detailed building maps of cities and towns created by The Sanborn Map Company.</p>
+        </a>
+        <a href="/?f%5Blayer_geom_type_s%5D%5B%5D=Image&q=NOT+sanborn" class="grid-item">
+          <span class="icon-map"></span>
+          <h1>Scanned Maps</h1>
+          <p>Scanned historic, geoscientific, topographic, and bathymetric maps and charts.</p>
+        </a>
+        <a href="/?f%5Blayer_geom_type_s%5D%5B%5D=Raster&q=" class="grid-item">
           <span class="geoblacklight-icon geoblacklight-raster"></span>
           <h1>Raster Data</h1>
-          <p>View heatmaps and other geospatial data visualizations directly on the map by selecting the Raster format.</p>
+          <p>Pixel-based data such as aerial photographs, satellite imagery, land-use maps, and elevation.</p>
         </a>
-        <a href="/?f%5Blayer_geom_type_s%5D%5B%5D=Polygon&q=&search_field=all_fields" class="grid-item">
+        <a href="/?f%5Blayer_geom_type_s%5D%5B%5D=Polygon&q=" class="grid-item center-grid-item">
           <span class="geoblacklight-icon geoblacklight-polygon"></span>
           <h1>Vector Data</h1>
-          <p>View geographical boundaries by selecting Polygon, Line and Point formats.</p>
-        </a>
-          <a href="?f%5Blayer_geom_type_s%5D%5B%5D=Image&q=&search_field=all_fields" class="grid-item">
-          <span class="geoblacklight-icon geoblacklight-image"></span>
-          <h1>Historic Maps</h1>
-          <p>View maps of from our Special Collections by selecting the Image format.</p>
+          <p>Data representing geographic features as points, lines, and polygons.</p>
         </a>
       </div>
     </section>

@@ -101,6 +101,10 @@
     }
   }
 
+  .center-grid-item {
+    margin-left: calc(25% - 25px + 40px);
+  }
+
   // this, below, might not be the most beautiful solution but it removes the outer borders by using the background color.
   .bottom-cover {
     background: $grid-items-background;
