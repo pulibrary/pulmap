@@ -79,6 +79,7 @@
 
       map.on("moveend", dynamicSearcher, this);
 
+      $container.append(this.$staticButton, this.$dynamicButton);
       return $container.get(0);
     },
 
