@@ -93,6 +93,11 @@ header .input-group-addon {
   margin-left: 2px;
 }
 
+// Reduce jitter on typeahead input
+#q {
+  width: 100%
+}
+
 // Remove blue glow from search input
 .search_q.form-control:focus {
   outline: none;
@@ -128,7 +133,7 @@ header .input-group-addon {
 
 .search-query-form,
 #search-navbar .search-query-form {
-  margin: 0;
+  margin: 13px 0 0 0 ;
 }
 
 #search-navbar .search-query-form {
@@ -145,7 +150,7 @@ header .input-group-addon {
 }
 
 .search-options {
-  margin-top: 10px;
+  margin-top: 25px;
   color: darken($blue, 3);
   font-size: 0.8em;
 

@@ -29,13 +29,14 @@
 
 #map-container {
   position: fixed;
-  top: 112px;
+  top: 70px;
   z-index: 1;
+  border-left: 1px solid lightgrey;
 }
 
 #content {
   position: relative;
-  top: 112px;
+  top: 70px;
   height: 100%;
   padding-right: 25px;
 }

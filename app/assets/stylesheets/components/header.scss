@@ -199,7 +199,8 @@
   padding-left: 0;
 
   a {
-    color: darken($blue, 3);
+    color: darken(white, 3);
+    font-size: 10.5px;
   }
 }
 
@@ -223,10 +224,9 @@
 }
 
 .l-branding__pul .menu--level-1, .l-branding__pul .logo__pul {
-  height: 30px;
+  height: 65px;
 
   @media (min-width: 475px) {
-    width: 50%;
     padding: 0;
   }
 }
@@ -239,17 +239,18 @@
   img {
     @include vertical-align;
 
-    height: 18px;
+    height: 40px;
   }
 }
 
 .l-branding__pul {
   position: relative;
-  min-height: 30px;
+  min-height: 70px;
   border-top: 3px solid $orange;
   clear: both;
   background: $dark-gray;
   z-index: 1004;
+  box-shadow: 0 4px 4px -2px rgba(0,0,0,0.2);
 }
 
 .header__secondary {

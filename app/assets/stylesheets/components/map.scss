@@ -27,8 +27,8 @@ $basemap-color: #b8e6fe;
 }
 
 #map-results {
-  width: calc(100vw - 640px);
-  height: calc(100% - 93px);
+  width: calc(100vw - 615px);
+  height: calc(100% - 70px);
 }
 
 #map-container {
@@ -59,7 +59,6 @@ $basemap-color: #b8e6fe;
   @media (min-width: $bp-small) {
     width: calc(100vw - 650px);
     padding-right: 0px;
-    padding-left: 25px;
   }
 }
 

@@ -6,11 +6,8 @@
 
 <% if query_has_constraints? && !hide_constraints? %>
     <div id="appliedParams" class="clearfix constraints-container">
-      <fieldset>
-        <legend><%= t('blacklight.search.filters.title') %></legend>
-        <div class="params">
-          <%= render_constraints(params) %>
-        </div>
-      </fieldset>
-  </div>
+      <div class="params">
+        <%= render_constraints(params) %>
+      </div>
+    </div>
 <% end %>
