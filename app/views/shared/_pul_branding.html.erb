@@ -11,7 +11,7 @@
         <%= render :partial=>'catalog/search_form_index' %>
       </div>
 
-      <div class="col-xs-12 col-sm-12 col-md-2">
+      <div class="col-xs-12 col-sm-12 col-md-1">
         <ul class="search-options">
           <li>
             <%= link_to 'Advanced Search', blacklight_advanced_search_engine.advanced_search_path(search_state.to_h), :class=>'advanced_search'%>
@@ -20,7 +20,7 @@
       </div>
     <% end %>
 
-    <div class="pull-right menu--level-1 col-xs-12 col-sm-2">
+    <div class="pull-right menu--level-1 col-xs-12 col-sm-3">
       <ul>
         <li><a href="http://library.princeton.edu/help/contact-us">Contact Us</a></li>
         <%= render :partial=>'/account' %>
