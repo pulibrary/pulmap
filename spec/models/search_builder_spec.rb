@@ -25,4 +25,30 @@ describe SearchBuilder do
       expect(builder.add_spatial_params(solr_params)[:fq].to_s).to include('IsWithin')
     end
   end
+
+  describe '#add_featured_content' do
+    it 'returns search for sanborn records when featured param is set to sanborn' do
+      params = { featured: 'sanborn' }
+      builder.with(params)
+      expect(builder.add_featured_content(solr_params)[:fq].to_s).to include('dc_title_s:*Sanborn')
+    end
+
+    it 'returns search for scanned maps when featured param is set to scanned_maps' do
+      params = { featured: 'scanned_maps' }
+      builder.with(params)
+      expect(builder.add_featured_content(solr_params)[:fq].to_s).to include('-dc_title_s:*Sanborn')
+    end
+
+    it 'returns search for raster datasets when featured param is set to raster' do
+      params = { featured: 'raster' }
+      builder.with(params)
+      expect(builder.add_featured_content(solr_params)[:fq].to_s).to include('Raster')
+    end
+
+    it 'returns search for vector datasets when featured param is set to vector' do
+      params = { featured: 'vector' }
+      builder.with(params)
+      expect(builder.add_featured_content(solr_params)[:fq].to_s).to include('Polygon')
+    end
+  end
 end

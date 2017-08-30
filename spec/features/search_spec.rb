@@ -49,6 +49,12 @@ feature 'Search' do
       visit '/?f[dct_provenance_s][]=NYU&q='
       expect(page).not_to have_content 'Bytes of the Big Apple'
     end
+
+    scenario 'searching with a featured content parameter' do
+      visit '/?search_field=all_fields&q=&featured=scanned_maps'
+      expect(page).to have_content('Featured')
+      expect(page).to have_content('Scanned Maps')
+    end
   end
 
   scenario 'thumbnails in the results link to the items' do
