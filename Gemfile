@@ -82,3 +82,4 @@ gem 'sneakers'
 
 #  jquery multiselect plugin for advanced search
 gem 'chosen-rails'
+gem 'rails-reverse-proxy'

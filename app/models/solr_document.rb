@@ -5,6 +5,7 @@ class SolrDocument
   include ThumbnailConcern
   include GeomonitorConcern
   include SanbornConcern
+  include WmsRewriteConcern
 
   # self.unique_key = 'id'
   self.unique_key = 'layer_slug_s'
