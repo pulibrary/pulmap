@@ -223,6 +223,8 @@ GEM
     public_suffix (2.0.5)
     puma (3.9.1)
     rack (2.0.3)
+    rack-proxy (0.6.2)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.1.2)
@@ -246,6 +248,11 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-reverse-proxy (0.9.1)
+      addressable
+      rack
+      rack-proxy
+      rails
     railties (5.1.2)
       actionpack (= 5.1.2)
       activesupport (= 5.1.2)
@@ -403,6 +410,7 @@ DEPENDENCIES
   puma (~> 3.0)
   rails (~> 5.0)
   rails-controller-testing
+  rails-reverse-proxy
   rsolr (~> 1.1.1)
   rspec-rails (~> 3.5.0)
   rubocop (~> 0.42.0)
@@ -420,4 +428,4 @@ DEPENDENCIES
   xray-rails
 
 BUNDLED WITH
-   1.14.6
+   1.15.3

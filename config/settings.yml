@@ -35,6 +35,10 @@ FIELDS:
 GEOMONITOR_TOLERANCE: 0.8
 INSTITUTION: 'Princeton'
 
+PRINCETON_GEOSERVER_URL: <%= ENV['PRINCETON_GEOSERVER_URL'] || "https://geoserver.princeton.edu" %>
+PROXY_GEOSERVER_URL: <%= ENV['PROXY_GEOSERVER_URL'] || "http://localhost:3000" %>
+PROXY_GEOSERVER_AUTH: <%= ENV['PROXY_GEOSERVER_AUTH'] %>
+
 # Metadata shown in tool panel
 METADATA_SHOWN:
   - 'fgdc'

@@ -48,4 +48,8 @@ Rails.application.routes.draw do
   resources :download, only: [:show]
 
   resources :suggest, only: :index, defaults: { format: 'json' }
+
+  authenticate :user do
+    match 'geoserver/restricted/*path' => 'geoserver#index', via: [:get]
+  end
 end
