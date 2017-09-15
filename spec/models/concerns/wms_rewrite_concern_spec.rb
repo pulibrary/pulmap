@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe WmsRewriteConcern do
   let(:document) { SolrDocument.new(document_attributes) }
-  describe 'viewer_endpoint' do
+  describe '#viewer_endpoint' do
     context 'when princeton and restricted' do
       let(:document_attributes) do
         {
@@ -58,6 +58,20 @@ describe WmsRewriteConcern do
       it 'identifies princeton documents' do
         expect(document.princeton?).to be_falsey
       end
+    end
+  end
+  describe '#thumbnail_generator_endpoint' do
+    let(:document_attributes) do
+      {
+        dct_provenance_s: 'Princeton',
+        dc_rights_s: 'Restricted',
+        dct_references_s: {
+          'http://www.opengis.net/def/serviceType/ogc/wms' => 'https://geoserver.princeton.edu/restricted/geoserver/wms'
+        }.to_json
+      }
+    end
+    it 'returns the original un-rewritten url' do
+      expect(document.thumbnail_generator_endpoint).to eq 'https://geoserver.princeton.edu/restricted/geoserver/wms'
     end
   end
 end
