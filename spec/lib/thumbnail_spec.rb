@@ -225,5 +225,19 @@ describe Thumbnail do
         thumbnail.save_thumbnail
       end
     end
+
+    describe '#geoserver_credentials' do
+      let(:credentials) { 'base64encodedusername:password' }
+
+      context 'with a restricted Princeton document' do
+        before do
+          document_attributes.merge!(dct_provenance_s: 'Princeton', dc_rights_s: 'Restricted')
+        end
+
+        it 'returns base64 encoded geoserver auth credentials' do
+          expect(thumbnail.geoserver_credentials).to eq(credentials)
+        end
+      end
+    end
   end
 end

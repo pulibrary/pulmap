@@ -141,13 +141,24 @@ class Thumbnail
   end
 
   ##
+  # Returns geoserver auth credentials if the document is Princeton and restricted.
+  # @return [String, nil] auth credentials for accessing restricted geoserver content
+  def geoserver_credentials
+    return unless @document.princeton_restricted?
+    Settings.PROXY_GEOSERVER_AUTH.gsub('Basic ', '')
+  end
+
+  ##
   # Creates a new thread which saves a local copy of a
   # generated thumbnail in the background.
   # @return [String] url for that points to service endpoint
   def save_thumbnail
-    PersistThumbnailJob.perform_later(url: service_url,
+    # Don't use proxy wms when saving thumbnails
+    url = service_url.gsub(Settings.PROXY_GEOSERVER_URL, Settings.PRINCETON_GEOSERVER_URL)
+    PersistThumbnailJob.perform_later(url: url,
                                       file_path: file_path_and_name,
                                       content_type: 'image/png',
-                                      timeout: 60)
+                                      timeout: 60,
+                                      auth: geoserver_credentials)
   end
 end
