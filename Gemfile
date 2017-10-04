@@ -82,3 +82,5 @@ gem 'sneakers'
 gem 'chosen-rails' #  jquery multiselect plugin for advanced search
 gem 'rails-reverse-proxy'
 gem 'pul_uv_rails', git: 'https://github.com/pulibrary/pul_uv_rails', branch: 'master'
+gem 'mail_form'
+gem 'simple_form'

@@ -1,0 +1,41 @@
+@import "utils/variables";
+
+// reset form styling cross-browser
+.form-control,
+.form-control:focus {
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+  -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+  -o-box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+}
+
+form table th:first-child {
+  width: 30px;
+}
+
+.blacklight-feedback h1 {
+  margin-bottom: 0.25em;
+  display: block;
+}
+.blacklight-feedback small {
+  margin-bottom: 2em;
+  display: block;
+}
+
+// overwrite bootstrap glyphicon for errors in input fields
+.form-control-feedback {
+  right: 15px;
+}
+
+.feedback-button {
+  margin-bottom: 15px;
+}
+
+.has-error .error {
+  font-weight: bold;
+  color: $brand-danger;
+}
+
+.blacklight-feedback-hidden {
+  display: none;
+}

@@ -13,3 +13,8 @@ en:
     header_links:
       account_page: 'Your Account'
     back_to_search: '<span class="icon-moveback"></span> <span class="hidden-xs hidden-sm">Back to search</span>'
+    feedback:
+      success: 'Your comments have been submitted'
+      error: 'Please fill in the required form values.'
+      return: '<span class="icon-moveback"></span> Back to the previous page.'
+      confirmation: 'Thank you for your comments. They are helpful as we work to improve this new Library service.'
