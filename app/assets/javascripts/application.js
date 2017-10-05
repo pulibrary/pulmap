@@ -37,6 +37,20 @@
 
 //= require bootstrap/affix
 
+// Leaflet layer visibility control.
+GeoBlacklight.Controls.Layers = function() {
+  var baseMap = {
+    "Basemap": this.selectBasemap(),
+    "None": L.tileLayer('')
+  };
+
+  var overlay = {
+    "Overlay": this.overlay
+  }
+
+  this.map.addControl(new L.control.layers(baseMap, overlay));
+};
+
 GeoBlacklight.Controls.Fullscreen = function() {
   this.map.addControl(new L.Control.Fullscreen({
     position: 'topright'

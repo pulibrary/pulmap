@@ -86,3 +86,20 @@ $basemap-color: #b8e6fe;
   margin-right: 25px !important;
 }
 
+.leaflet-container {
+  background: white;
+}
+
+// Layer control style
+.leaflet-control-layers-toggle {
+  width: 26px;
+  height: 26px;
+}
+
+.leaflet-retina .leaflet-control-layers-toggle {
+  background-size: 17px 17px;
+}
+
+.leaflet-control-layers-toggle {
+  background-size: 17px 17px;
+}
