@@ -6,6 +6,9 @@
     <%= t('blacklight.search.documents.counter', :counter => document_counter + 1) if counter %>
   </span>
   <%= link_to_document document, document_show_link_field(document), counter: counter, title: document[blacklight_config.index.title_field] %>
+  <div class='status-icons'>
+    <%= render partial: 'header_icons', locals: { document: document } %>
+  </div>
 </h3>
 
   <div class="col-sm-9 cosl-lg-10">
