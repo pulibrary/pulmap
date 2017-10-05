@@ -13,7 +13,6 @@ $basemap-color: #b8e6fe;
 }
 
 .leaflet-control-attribution.leaflet-control {
-  // opacity: 0.2;
   display: none;
 }
 
@@ -26,50 +25,13 @@ $basemap-color: #b8e6fe;
   margin-right: 0px;
 }
 
-#map-results {
-  width: calc(100vw - 615px);
-  height: calc(100% - 70px);
-}
-
 #map-container {
-  background: #CCDDDD;
-  margin-bottom: 1em;
   position: fixed;
-  width: 100%;
+  top: 70px;
   height: 100%;
-}
-
-.sidebar,
-.content {
-  float: left;
-  position: relative;
-  min-height: 1px;
-
-  &.map-view {
-    width: 100%;
-    @media (min-width: $bp-small) {
-      width: 50%;
-    }
-  }
-}
-
-.sidebar {
-  width: calc(100vw - 650px);
-
-  @media (min-width: $bp-small) {
-    width: calc(100vw - 650px);
-    padding-right: 0px;
-  }
-}
-
-.content {
-  width: 100%;
-
-  @media (min-width: $bp-small) {
-    width: 600px;
-    padding-left: 25px;
-    padding-right: 0;
-  }
+  padding-left: 0;
+  z-index: 1;
+  border-left: 1px solid lightgrey;
 }
 
 // expand viewer container when there is no table container
