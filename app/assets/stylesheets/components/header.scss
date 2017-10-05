@@ -171,7 +171,9 @@
   > li {
     float: left;
     padding: 0 15px;
-    border-right: 1px solid darken($gray, 40%);
+    @media (min-width: $bp-medium) {
+      border-right: 1px solid darken($gray, 40%);
+    }
 
     &:last-child {
       border-right: none;
@@ -212,7 +214,7 @@
 }
 
 .l-branding__pul .menu--level-1, .l-branding__pul .logo__pul {
-  height: 65px;
+  height: 67px;
 
   @media (min-width: 475px) {
     padding: 0;
@@ -221,23 +223,45 @@
 
 .logo__pul {
   position: relative;
+}
+
+.logo__pul a {
   display: inline-block;
-  height: 33px;
+  
+  &.pul-logo {
+    @include vertical-align;
+  }
 
   img {
-    @include vertical-align;
+    @media (max-width: 359px) {
+      max-width: 149px;
+    }
+    height: 36px;
+    vertical-align: bottom;
+  }
 
-    @media (min-width: 1100px) {
-      height: 40px;
+  &.site-title {
+    @include vertical-align;
+    margin-left: 1rem;
+    border-left: 1px solid darken($gray, 50%);
+    height: 36px;
+    padding-left: 1rem;
+    color: white;
+    font-size: 16px;
+    line-height: 18px;
+
+    &:hover {
+      text-decoration: none;
     }
 
-    @media (max-width: 1100px) {
-      height: 43%;
+    &:focus,
+    &:active {
+      color: $orange;
     }
   }
 }
 
-@media (max-width: $bp-small) {
+@media (max-width: 767px) {
   .l-branding__pul.index-branding {
    min-height: 150px;
   }
@@ -529,8 +553,11 @@
 }
 
 .index-container {
-  margin-left: 35px;
-  margin-right: 35px;
+  padding: 0 1em;
+
+  @media (min-width: $bp-medium){
+    padding: 0 35px;
+  }
 
   div {
     @media (max-width: $bp-small) {
