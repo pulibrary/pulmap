@@ -62,7 +62,7 @@ describe PulmapGeoblacklightHelper, type: :helper do
         node = Capybara.string(helper.viewer_container)
         div = node.first('div')
         expect(div[:'data-leaflet-options']).to include(
-          '"TILEDMAPLAYER":{"CONTROLS":["Opacity","Fullscreen"]}'
+          '"TILEDMAPLAYER":{"CONTROLS":["Opacity","Fullscreen","Layers"]}'
         )
       end
     end
@@ -88,7 +88,7 @@ describe PulmapGeoblacklightHelper, type: :helper do
         node = Capybara.string(helper.viewer_container)
         div = node.first('div')
         expect(div[:'data-leaflet-options']).to include(
-          '"FEATURELAYER":{"CONTROLS":["Opacity","Fullscreen"]}'
+          '"FEATURELAYER":{"CONTROLS":["Opacity","Fullscreen","Layers"]}'
         )
       end
     end
@@ -114,7 +114,7 @@ describe PulmapGeoblacklightHelper, type: :helper do
         node = Capybara.string(helper.viewer_container)
         div = node.first('div')
         expect(div[:'data-leaflet-options']).to include(
-          '"DYNAMICMAPLAYER":{"CONTROLS":["Opacity","Fullscreen"]}'
+          '"DYNAMICMAPLAYER":{"CONTROLS":["Opacity","Fullscreen","Layers"]}'
         )
       end
     end
@@ -140,7 +140,7 @@ describe PulmapGeoblacklightHelper, type: :helper do
         node = Capybara.string(helper.viewer_container)
         div = node.first('div')
         expect(div[:'data-leaflet-options']).to include(
-          '"IMAGEMAPLAYER":{"CONTROLS":["Opacity","Fullscreen"]}'
+          '"IMAGEMAPLAYER":{"CONTROLS":["Opacity","Fullscreen","Layers"]}'
         )
       end
     end
