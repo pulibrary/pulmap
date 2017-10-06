@@ -27,18 +27,18 @@
     background: $light-gray;
 }
 
-#map-container {
-  position: fixed;
-  top: 70px;
-  z-index: 1;
-  border-left: 1px solid lightgrey;
-}
-
 #content {
   position: relative;
-  top: 70px;
   height: 100%;
   padding-right: 25px;
+
+  @media (max-width: $bp-small) {
+    top: 150px;
+  }
+
+  @media (min-width: $bp-small) {
+    top: 70px;
+  }
 }
 
 #inner {

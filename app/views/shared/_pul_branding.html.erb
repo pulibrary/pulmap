@@ -1,26 +1,29 @@
-<div class="l-branding__pul">
+<div class="l-branding__pul <%= layout_type %>-branding">
   <div class="<% unless index_layout? %>container<% end %> <%= layout_type %>-container ">
-    <div class="col-xs-12 col-sm-4">
-      <%= link_to root_path, class: "logo__pul" do %>
-        <%= image_tag("pul-logo-maps.png") %>
+    <div class="logo__pul col-xs-12 col-sm-5 col-md-4">
+      <a href="https://library.princeton.edu" title="Princeton University Library" class="pul-logo">
+       <%= image_tag("pul-logo-new.svg") %>
+      </a>
+      <%= link_to root_path, class: "site-title" do %>
+        Digital Maps &amp;<br />Geospatial Data
       <% end %>
     </div>
 
     <% if index_layout? %>
-      <div class="col-xs-12 col-sm-12 col-md-4">
+      <div class="col-xs-12 col-sm-5 col-md-4">
         <%= render :partial=>'catalog/search_form_index' %>
       </div>
 
-      <div class="col-xs-12 col-sm-12 col-md-1">
+      <div class="hidden-sm hidden-xs col-md-1">
         <ul class="search-options">
           <li>
-            <%= link_to 'Advanced Search', blacklight_advanced_search_engine.advanced_search_path(search_state.to_h), :class=>'advanced_search'%>
+            <%= link_to 'Advanced', blacklight_advanced_search_engine.advanced_search_path(search_state.to_h), :class=>'advanced_search'%>
           </li>
         </ul>
       </div>
     <% end %>
 
-    <div class="pull-right menu--level-1 col-xs-12 col-sm-3">
+    <div class="pull-right menu--level-1 hidden-xs col-sm-2 col-md-3">
       <ul>
         <li><a href="/contact-us">Contact Us</a></li>
         <%= render :partial=>'/account' %>

@@ -29,7 +29,6 @@
 
   border-top: $grid-item-border;
   border-left: $grid-item-border;
-  margin-top: 50px;
 
   @include clearfix;
   position: static;
@@ -101,10 +100,11 @@
     }
   }
 
-  .center-grid-item {
-    margin-left: calc(25% - 25px + 40px);
-  }
-
+.center-grid-item {
+  float: none;
+  display: inline-block;
+}
+  
   // this, below, might not be the most beautiful solution but it removes the outer borders by using the background color.
   .bottom-cover {
     background: $grid-items-background;

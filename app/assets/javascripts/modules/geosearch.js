@@ -47,7 +47,7 @@
 
     onAdd: function(map) {
       var $container = $('<div class="leaflet-control search-control"></div>'),
-          staticSearcher, dynamicSearcher;
+          staticSearcher, dynamicSearcher, resizeFlag;
       this._map = map;
 
       staticSearcher = L.Util.bind(function() {
@@ -55,9 +55,11 @@
         this.$dynamicButton.show();
         this.options.searcher.apply(this);
       }, this);
-
+  
       dynamicSearcher = GeoBlacklight.debounce(function() {
-        if (this.options.dynamic) {
+        if (this.resizeFlag === true) {
+          this.resizeFlag = false;
+        } else if (this.options.dynamic) {
           this.options.searcher.apply(this);
         }
       }, this.options.delay);
@@ -77,6 +79,12 @@
         this.$dynamicButton.hide();
       }
 
+      // Don't trigger dynamic search on resize event
+      map.on("resize", function() {
+        this.resizeFlag = true;
+      }, this);
+
+      // Trigger dynamic search on map move
       map.on("moveend", dynamicSearcher, this);
 
       $container.append(this.$staticButton, this.$dynamicButton);

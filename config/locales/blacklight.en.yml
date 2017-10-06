@@ -1,6 +1,6 @@
 en:
   blacklight:
-    application_name: 'Library Map Exhange | Princeton University'
+    application_name: 'Digital Maps and Geospatial Data | Princeton University'
     search:
       filters:
         title: 'Applied filters: '
@@ -8,7 +8,7 @@ en:
         submit: 'Search'
         search_field:
           label: 'Search...'
-      start_over: '<span class="icon-refresh"></span> <span class="hidden-xs hidden-sm">Start over</span>'
+      start_over: '<span class="icon-refresh"></span> <span>Start over</span>'
       edit_search: 'Edit search'
     header_links:
       account_page: 'Your Account'
