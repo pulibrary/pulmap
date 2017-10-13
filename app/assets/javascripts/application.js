@@ -22,7 +22,6 @@
 //= require 'blacklight_range_limit'
 
 //= require modernizr
-//= require bootstrap-toggle
 
 //= require_tree .
 

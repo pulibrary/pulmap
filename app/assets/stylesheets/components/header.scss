@@ -1,8 +1,4 @@
-@media (min-width: $bp-medium) {
-  .header__secondary .container {
-    height: 72px;
-  }
-}
+
 
 @media (max-width: 500px) {
   .header__secondary .container {
@@ -117,17 +113,6 @@
 
   .item-container {
     margin-top: 9px;
-  }
-
-  .logo {
-    @media (min-width: $bp-small) {
-      padding-left: 0;
-    }
-  }
-
-  .logo,
-  .util-links {
-    @include vertical-align;
   }
 
   .navbar-nav {
@@ -317,8 +302,7 @@
 }
 
 .navbar-right .navbar-nav,
-.navbar-right .primary-facets,
-.navbar-right .facets-toggler {
+.navbar-right .primary-facets {
   @include vertical-align;
 
   li a {
@@ -327,17 +311,6 @@
     &:hover {
       background: transparent;
     }
-  }
-}
-
-.facets-toggler {
-  padding-left: 0;
-  outline: none;
-
-  &:focus,
-  &:active,
-  &:active:focus {
-    outline: none;
   }
 }
 
@@ -386,15 +359,8 @@
 #search-navbar {
   height: 70px;
 
-  .map-toggle,
   .search-query-form {
     @include vertical-align;
-  }
-
-  @media (max-width: $bp-small) {
-    .map-toggle {
-      display: none;
-    }
   }
 }
 
@@ -420,10 +386,6 @@
       width: 1%;
     }
   }
-}
-
-.map-toggle {
-  float: right;
 }
 
 .logo {
@@ -465,9 +427,7 @@
 }
 
 
-.button--start-over,
-.button--edit-search {
-  display: inline-block;
+.button--start-over {
   margin: 0 3px 0 0;
 
   a {
@@ -528,22 +488,6 @@
 // Align Contact Us with Your Account
 .menu--level-1 > ul:first-child {
   padding-top: 2px;
-}
-
-.logo_col {
-  padding-left: 0px;
-}
-
-.logo__app {
-  font-family: princeton_monticello,Georgia,sans-serif;
-  color: #494f57;
-  font-weight: bold;
-  font-size: 28px;
-  font-weight: bolder;
-}
-
-.logo__app:hover {
-  text-decoration: none;
 }
 
 .container-fluid > .container {

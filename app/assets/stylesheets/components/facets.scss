@@ -125,10 +125,6 @@ ul.facet-values {
 
 }
 
-.toggle, .toggle-collapsed {
-    line-height: 1.4em;
-}
-
 @media max-width bp-small {
     #facets .top-panel-heading {
         padding-left: 1em;
@@ -139,15 +135,9 @@ ul.facet-values {
         margin-bottom: 0;
         margin-top: .2em;
     }
-    .facets-toggle {
-        margin: 0;
-    }
 }
 
 @media (max-width: $bp-small){
-    .facets-toggle {
-        margin: 0;
-    }
     .facets-heading {
         padding:0.5em;
         margin-bottom: 0;
@@ -271,17 +261,13 @@ ul.facet-values {
 
 }
 
-.toggle, .toggle-collapsed {
-    line-height: 1.4em;
-}
-
 #facet-view {
   padding: 0;
   display: inline-block;
   .btn {
     min-height: 40px;
   }
-  .button--start-over,.button--edit-search {
+  .button--start-over {
     line-height: 23px !important;
     a {
       min-height: 40px;
