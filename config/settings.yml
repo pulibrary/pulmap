@@ -37,7 +37,7 @@ INSTITUTION: 'Princeton'
 
 PRINCETON_GEOSERVER_URL: <%= ENV['PRINCETON_GEOSERVER_URL'] || "https://geoserver.princeton.edu" %>
 PROXY_GEOSERVER_URL: <%= ENV['PROXY_GEOSERVER_URL'] || "http://localhost:3000" %>
-PROXY_GEOSERVER_AUTH: <%= ENV['PROXY_GEOSERVER_AUTH'] %>
+PROXY_GEOSERVER_AUTH: <%= ENV['PROXY_GEOSERVER_AUTH'] || "Basic base64encodedusername:password" %>
 
 # Metadata shown in tool panel
 METADATA_SHOWN:
@@ -88,22 +88,27 @@ LEAFLET:
       CONTROLS:
         - 'Opacity'
         - 'Fullscreen'
+        - 'Layers'
     TILEDMAPLAYER:
       CONTROLS:
         - 'Opacity'
         - 'Fullscreen'
+        - 'Layers'
     FEATURELAYER:
       CONTROLS:
         - 'Opacity'
         - 'Fullscreen'
+        - 'Layers'
     DYNAMICMAPLAYER:
       CONTROLS:
         - 'Opacity'
         - 'Fullscreen'
+        - 'Layers'
     IMAGEMAPLAYER:
       CONTROLS:
         - 'Opacity'
         - 'Fullscreen'
+        - 'Layers'
 
 THUMBNAIL:
   USE_DCT_REFS: false

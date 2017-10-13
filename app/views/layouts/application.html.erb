@@ -35,11 +35,11 @@
   <div class="wrapper">
     <%= render :partial => 'shared/header_navbar' %>
     <%= render partial: 'shared/ajax_modal' %>
+    <%= render :partial=>'shared/flash_msg' %>
 
     <main role="main">
-      <div class="container" id="main-container">
+      <div class="<%= container_type %>" id="main-container">
         <%= content_tag :h1, application_name, class: 'sr-only application-heading' %>
-        <%= render :partial=>'shared/flash_msg' %>
         <%= yield %>
       </div>
     </main>

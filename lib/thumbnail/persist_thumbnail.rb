@@ -10,6 +10,7 @@ class PersistThumbnail
     @file_path = options[:file_path]
     @content_type = options[:content_type]
     @timeout = options[:timeout]
+    @auth = options[:auth]
   end
 
   ##
@@ -41,6 +42,7 @@ class PersistThumbnail
   # @return [Faraday::Request] returns a Faraday::Request object
   def initiate_download
     conn = Faraday.new(url: @url)
+    conn.authorization :Basic, @auth if @auth
     conn.get do |request|
       request.options.timeout = @timeout
       request.options.open_timeout = @timeout

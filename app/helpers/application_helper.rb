@@ -20,6 +20,40 @@ module ApplicationHelper
     layout_type == 'default'
   end
 
+  def container_type
+    if index_layout?
+      'container-fluid'
+    else
+      'container'
+    end
+  end
+
+  def navbar_type
+    if index_layout?
+      'navbar-fixed-top'
+    else
+      'navbar'
+    end
+  end
+
+  def hide_constraints?
+    skip_params = constraint_params_to_skip
+    skip_params << 'q' if params[:q] && params[:q].empty?
+    params.reject { |p| skip_params.include?(p) }.empty?
+  end
+
+  def constraint_params_to_skip
+    %w(
+      page
+      per_page
+      search_field
+      sort
+      controller
+      action
+      utf8
+    )
+  end
+
   ##
   # Gets current layout for use in rendering partials
   # @return [String] item, index, home, or default

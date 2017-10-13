@@ -26,6 +26,9 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'contact-us', to: 'feedback#new'
+  post 'contact-us', to: 'feedback#create'
+
   mount Geoblacklight::Engine => 'geoblacklight'
 
   concern :gbl_exportable, Geoblacklight::Routes::Exportable.new

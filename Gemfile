@@ -66,7 +66,7 @@ group :development do
   gem 'xray-rails'
 end
 
-gem 'geoblacklight', '~> 1.5.1'
+gem 'geoblacklight', '~> 1.6.0'
 gem 'bourbon'
 gem 'neat', '~> 1.8'
 gem 'rspec-rails', '~> 3.5.0'
@@ -79,7 +79,8 @@ gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
 gem 'blacklight_range_limit'
 gem 'blacklight_advanced_search'
 gem 'sneakers'
-
-#  jquery multiselect plugin for advanced search
-gem 'chosen-rails'
+gem 'chosen-rails' #  jquery multiselect plugin for advanced search
 gem 'rails-reverse-proxy'
+gem 'pul_uv_rails', git: 'https://github.com/pulibrary/pul_uv_rails', branch: 'master'
+gem 'mail_form'
+gem 'simple_form'

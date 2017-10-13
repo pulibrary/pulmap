@@ -196,10 +196,7 @@ module BlacklightAdvancedSearch
     # @return [String]
     def render_constraint_element(label, value, options = {})
       if params[:bbox]
-        if label == 'Bounding Box'
-          value = nil
-          label = t('geoblacklight.bbox_label')
-        end
+        value = nil if label == t('geoblacklight.bbox_label')
       end
       super(label, value, options)
     end

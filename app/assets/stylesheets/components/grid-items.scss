@@ -20,7 +20,7 @@
 
   $grid-items-background: $base-background-color;
   $grid-item-background: $base-background-color;
-  $grid-item-border: 1px solid transparentize($base-font-color, 0.8); 
+  $grid-item-border: 0px solid transparentize($base-font-color, 0.8);
   $grid-item-columns: 6;
   $grid-item-big-columns: 8;
   $grid-item-color: $base-font-color;
@@ -29,11 +29,10 @@
 
   border-top: $grid-item-border;
   border-left: $grid-item-border;
-  margin-top: 50px;
 
   @include clearfix;
   position: static;
-    
+
   .grid-item {
     transition: all 0.2s ease-in-out;
     background: $grid-item-background;
@@ -97,10 +96,15 @@
     p {
       @include media($medium-screen) {
         max-width: 60%;
-      }  
+      }
     }
   }
 
+.center-grid-item {
+  float: none;
+  display: inline-block;
+}
+  
   // this, below, might not be the most beautiful solution but it removes the outer borders by using the background color.
   .bottom-cover {
     background: $grid-items-background;
@@ -118,4 +122,3 @@
     width: 4px;
   }
 }
-

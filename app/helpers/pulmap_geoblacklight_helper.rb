@@ -15,6 +15,27 @@ module PulmapGeoblacklightHelper
     end
   end
 
+  def all_facet_values_label(field)
+    field_config = blacklight_config.facet_fields[field]
+    field_config[:all] || 'All types'
+  end
+
+  def remove_all_facet_values(field)
+    p = search_state.to_h.dup
+    p[:f] = (p[:f] || {}).dup
+    p[:f].delete(field)
+    p.delete(:f) if p[:f].empty?
+    p
+  end
+
+  def facet_active(facet_field)
+    if facet_field_in_params?(facet_field)
+      ' active'
+    else
+      ''
+    end
+  end
+
   private
 
   def leaflet_viewer
@@ -29,9 +50,16 @@ module PulmapGeoblacklightHelper
                                    leaflet_options: leaflet_options })
   end
 
-  def manifest_viewer
+  def viewer_tags(classes)
     content_tag(:div, nil,
-                id: 'view',
-                data: { manifest: @document.references.references(:iiif_manifest).endpoint })
+                class: classes,
+                data: {
+                  uri: @document.references.references(:iiif_manifest).endpoint,
+                  config: asset_url('uv/uv_config.json')
+                }) + PulUvRails::UniversalViewer.script_tag
+  end
+
+  def manifest_viewer
+    safe_join [viewer_tags(%w(view uv)), viewer_tags(%w(view uv hidden))]
   end
 end

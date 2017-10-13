@@ -1,0 +1,14 @@
+<div class="home-secondary-navbar navbar">
+  <div class="<% unless index_layout? %>container<% end %> home-secondary-navbar-container <%= layout_type %>-container" role="navigation">
+    <div class="col-xs-12 col-sm-12 col-md-5">
+      <%= render :partial=>'catalog/search_form_index' %>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-2">
+      <ul class="search-options">
+        <li>
+          <%= link_to 'Advanced Search', blacklight_advanced_search_engine.advanced_search_path(search_state.to_h), :class=>'advanced_search'%>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

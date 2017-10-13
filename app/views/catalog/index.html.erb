@@ -1,9 +1,12 @@
-<%= render 'search_header' %>
-
-<div id="side-content" class="sidebar">
-  <%= render 'search_sidebar' %>
+<div id="content" class="content col-xs-12 col-sm-4">
+  <%= render 'search_header' %>
+  <div id="inner" aria-live="polite">
+    <%= render 'search_results' %>
+  </div>
 </div>
-
-<div id="content" class="content">
-  <%= render 'search_results' %>
+<div class="overlay">
+  <div class="sp sp-circle"></div>
+</div>
+<div id="side-content" class="hidden-xs col-sm-8">
+  <%= render 'search_sidebar' %>
 </div>

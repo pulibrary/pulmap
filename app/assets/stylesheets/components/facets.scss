@@ -1,5 +1,32 @@
 @import "utils/variables";
 
+.facet {
+  display: inline-block;
+}
+
+.facet .btn {
+  font-size: small;
+  text-align: left;
+}
+
+.facet > .btn-default > small {
+  color: $dark-gray;
+  display: block;
+}
+
+.facet > .btn-default a:hover {
+  text-decoration: none;
+}
+
+.facet > .btn-default a {
+  color: $dark-gray;
+}
+
+.start-over-row {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
 .facet_limit-active,
 .facet_limit-active > .panel-heading {
     color: #333;
@@ -98,10 +125,6 @@ ul.facet-values {
 
 }
 
-.toggle, .toggle-collapsed {
-    line-height: 1.4em;
-}
-
 @media max-width bp-small {
     #facets .top-panel-heading {
         padding-left: 1em;
@@ -112,15 +135,9 @@ ul.facet-values {
         margin-bottom: 0;
         margin-top: .2em;
     }
-    .facets-toggle {
-        margin: 0;
-    }
 }
 
 @media (max-width: $bp-small){
-    .facets-toggle {
-        margin: 0;
-    }
     .facets-heading {
         padding:0.5em;
         margin-bottom: 0;
@@ -129,6 +146,8 @@ ul.facet-values {
 
 .top-panel-heading.panel-heading {
     padding-left: 0;
+    padding-top: 0;
+    margin-top: 8px;
 }
 
 .panel-group .panel {
@@ -173,6 +192,10 @@ ul.facet-values {
 .facet-values .geoblacklight-icon {
     font-size: 1.275em;
     line-height: 1.4em;
+}
+
+li.active > a > .geoblacklight-icon {
+  color: $white;
 }
 
 .icon + .facet-label,
@@ -238,6 +261,52 @@ ul.facet-values {
 
 }
 
-.toggle, .toggle-collapsed {
-    line-height: 1.4em;
+#facet-view {
+  padding: 0;
+  display: inline-block;
+  .btn {
+    min-height: 40px;
+  }
+  .button--start-over {
+    line-height: 23px !important;
+    a {
+      min-height: 40px;
+      line-height: 33px !important;
+    }
+  }
+  ul.dropdown-menu {
+    z-index: 999;
+    min-width: 200px;
+  }
+}
+
+.facet ul.dropdown-menu {
+  margin:0;
+}
+
+.facets-container {
+  line-height: 4;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  background: none;
+}
+
+.list-unstyled {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.limit_content.range_limit {
+  padding: 0 0 10px 15px;
+  width: 240px;
+
+  form {
+    margin-top: 8px;
+  }
+
+  input[value=Limit] {
+    height: 34px;
+    margin-left: 10px;
+    min-height: 0 !important;
+  }
 }

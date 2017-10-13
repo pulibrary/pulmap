@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe WmsRewriteConcern do
   let(:document) { SolrDocument.new(document_attributes) }
-  describe 'viewer_endpoint' do
+  describe '#viewer_endpoint' do
     context 'when princeton and restricted' do
       let(:document_attributes) do
         {

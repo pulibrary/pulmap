@@ -33,6 +33,7 @@ class CatalogController < ApplicationController
       q: '{!raw f=layer_slug_s v=$id}'
     }
 
+    config.navbar.partials.delete(:bookmark)
     config.navbar.partials.delete(:saved_searches)
     config.navbar.partials.delete(:search_history)
     config.show.partials.delete(:show_header)
@@ -84,33 +85,32 @@ class CatalogController < ApplicationController
     #    :years_10 => { :label => 'within 10 Years', :fq => "pub_date:[#{Time.now.year - 10 } TO *]" },
     #    :years_25 => { :label => 'within 25 Years', :fq => "pub_date:[#{Time.now.year - 25 } TO *]" }
     # }
-
-    config.add_facet_field Settings.FIELDS.GEOM_TYPE, label: 'Data type', limit: 8, partial: 'icon_facet', collapse: false, single: true
+    config.add_facet_field Settings.FIELDS.YEAR, label: 'Year', limit: 10, all: 'Any year', range: {
+      assumed_boundaries: [1100, 2016]
+      # :num_segments => 6,
+      # :segments => true
+    }
     config.add_facet_field 'access', label: 'Access', query: {
       public: {
         label: 'Public', fq: "#{Settings.FIELDS.RIGHTS}:Public"
       },
       restricted: {
         label: 'Restricted', fq: "#{Settings.FIELDS.RIGHTS}:Restricted"
-      },
-      available: {
-        label: 'Available', fq: "(layer_availability_score_f:[#{Settings.GEOMONITOR_TOLERANCE} TO 1])"
-      },
-      unavailable: {
-        label: 'Unavailable', fq: "layer_availability_score_f:[0 TO #{Settings.GEOMONITOR_TOLERANCE}]"
       }
-    }, partial: 'icon_facet', collapse: false
-    config.add_facet_field Settings.FIELDS.YEAR, label: 'Year', limit: 10, range: {
-      assumed_boundaries: [1100, 2016]
-      # :num_segments => 6,
-      # :segments => true
-    }
-    config.add_facet_field Settings.FIELDS.SUBJECT, label: 'Subject', limit: 8, show: true
-    config.add_facet_field Settings.FIELDS.PROVENANCE, label: 'Institution', limit: 8, partial: 'icon_facet', single: true
+      # available: {
+      #   label: 'Available', fq: "(layer_availability_score_f:[#{Settings.GEOMONITOR_TOLERANCE} TO 1])"
+      # },
+      # unavailable: {
+      #   label: 'Unavailable', fq: "layer_availability_score_f:[0 TO #{Settings.GEOMONITOR_TOLERANCE}]"
+      # }
+    }, partial: 'icon_facet', all: 'All types', collapse: false
+    config.add_facet_field Settings.FIELDS.PROVENANCE, label: 'Institution', limit: 8, partial: 'icon_facet', single: true, all: 'All institutions'
+    config.add_facet_field Settings.FIELDS.GEOM_TYPE, label: 'Format', limit: 8, partial: 'icon_facet', collapse: false, single: true, all: 'All data types'
+    config.add_facet_field Settings.FIELDS.SUBJECT, label: 'Subject', limit: 8, show: true, all: 'All subjects'
     # config.add_facet_field Settings.FIELDS.CREATOR, label: 'Author', limit: 8
     # config.add_facet_field Settings.FIELDS.PUBLISHER, label: 'Publisher', limit: 8, single: true
     # config.add_facet_field Settings.FIELDS.SPATIAL_COVERAGE, label: 'Place', limit: 8
-    config.add_facet_field Settings.FIELDS.PART_OF, label: 'Collection', limit: 8
+    # config.add_facet_field Settings.FIELDS.PART_OF, label: 'Collection', limit: 8
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -138,7 +138,6 @@ class CatalogController < ApplicationController
     config.add_index_field Settings.FIELDS.YEAR
     config.add_index_field Settings.FIELDS.CREATOR
     config.add_index_field Settings.FIELDS.DESCRIPTION, helper_method: :snippit
-    config.add_index_field Settings.FIELDS.PUBLISHER
 
     # solr fields to be displayed in the show (single result) view
     #  The ordering of the field names is the order of the display
@@ -238,7 +237,7 @@ class CatalogController < ApplicationController
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
-    config.add_sort_field 'score desc, dc_title_sort asc', label: 'relevance'
+    config.add_sort_field 'score desc', label: 'relevance'
     config.add_sort_field "#{Settings.FIELDS.YEAR} desc, dc_title_sort asc", label: 'year'
     config.add_sort_field "#{Settings.FIELDS.PUBLISHER} asc, dc_title_sort asc", label: 'publisher'
     config.add_sort_field "#{Settings.FIELDS.TITLE} asc", label: 'title'

@@ -1,5 +1,5 @@
 en:
   pulmap:
     search:
-      topics:
-        heading: 'Featured Content'
+      filters:
+        featured_label: 'Featured'

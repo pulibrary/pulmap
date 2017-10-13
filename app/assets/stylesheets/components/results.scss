@@ -1,10 +1,5 @@
-.constraints-container {
-    padding-left: 0;
-    padding-right: 0;
-    border: none;
-
-    background: none;
-    box-shadow: none;
+[data-map="index"] {
+  height: 100%;
 }
 
 #documents {
@@ -21,12 +16,34 @@
 
 .documentHeader.row {
     padding: 1em;
+
     &:hover {
         background: $light-gray;
     }
 }
-#map-container + #content {
-    float: right;
+
+.documentHeader.row.selected{
+    padding: 1em;
+    background: $light-gray;
+}
+
+#content {
+  position: relative;
+  height: 100%;
+  padding-right: 25px;
+
+  @media (max-width: $bp-small) {
+    top: 182px;
+  }
+
+  @media (min-width: $bp-small) {
+    top: 102px;
+  }
+}
+
+#inner {
+    height: 100%;
+    padding-top: 10px;
 }
 
 .params {
@@ -35,9 +52,59 @@
 
 .index_title {
   white-space: normal;
+  float: none;
+  width: 100%;
+  line-height: 1.4em;
 }
 
 .document-wrapper {
   width: calc(100% - 95px);
   display: inline-block;
+}
+
+.map-container {
+  margin-top: 16px;
+  padding-top: 0;
+}
+
+.affix {
+  top: 0;
+  z-index: 2 !important;
+  position: sticky;
+}
+
+.overlay{
+    display: none;
+    position:fixed;
+    top:0px;
+    left:0px;
+    bottom:0px;
+    right:0px;
+    background-color:rgba(255,255,255,0.8);
+}
+
+/* Spinner Circle */
+.sp {
+  width: 75px;
+  height: 75px;
+  position: relative;
+  top: 50%;
+  left: 285px;
+}
+
+/* Spinner Circle Rotation */
+.sp-circle {
+	border: 4px rgba($orange,0.25) solid;
+	border-top: 4px rgba($orange,1) solid;
+	border-radius: 50%;
+	-webkit-animation: spCircRot .6s infinite linear;
+	animation: spCircRot .6s infinite linear;
+}
+@-webkit-keyframes spCircRot {
+	from { -webkit-transform: rotate(0deg); }
+	to { -webkit-transform: rotate(359deg); }
+}
+@keyframes spCircRot {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(359deg); }
 }

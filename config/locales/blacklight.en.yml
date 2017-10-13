@@ -1,13 +1,20 @@
 en:
   blacklight:
-    application_name: 'Library Map Exhange | Princeton University'
+    application_name: 'Digital Maps and Geospatial Data | Princeton University'
     search:
+      filters:
+        title: 'Applied filters: '
       form:
         submit: 'Search'
         search_field:
           label: 'Search...'
-      start_over: '<span class="icon-refresh"></span> <span class="hidden-xs hidden-sm">Start over</span>'
+      start_over: '<span class="icon-refresh"></span> <span>Start over</span>'
       edit_search: 'Edit search'
     header_links:
       account_page: 'Your Account'
     back_to_search: '<span class="icon-moveback"></span> <span class="hidden-xs hidden-sm">Back to search</span>'
+    feedback:
+      success: 'Your comments have been submitted'
+      error: 'Please fill in the required form values.'
+      return: '<span class="icon-moveback"></span> Back to the previous page.'
+      confirmation: 'Thank you for your comments. They are helpful as we work to improve this new Library service.'
