@@ -19,8 +19,12 @@ module ThumbnailHelper
   # @return [String]
   def gbl_thumbnail_img_tag(document)
     url = document.thumbnail_url
+    title = document['dc_title_s']
     h = [geoblacklight_icon(document['layer_geom_type_s'])]
-    h.unshift content_tag(:img, nil, class: 'item-thumbnail', data: { aload: url.to_s }) if url
+    h.unshift content_tag(:img, nil,
+                          class: 'item-thumbnail',
+                          data: { aload: url.to_s },
+                          alt: title) if url
     safe_join h
   end
 end
