@@ -52,12 +52,12 @@ describe ApplicationHelper, type: :helper do
       allow(self).to receive(:params).and_return(controller: 'search_history')
       expect(default_layout?).to be true
     end
-    it 'returns true when on search history page' do
+    it 'returns true when on bookmarks page' do
       allow(self).to receive(:params).and_return(controller: 'bookmarks')
       expect(default_layout?).to be true
     end
     it 'returns true when on saved searches page' do
-      allow(self).to receive(:params).and_return(controller: 'bookmarks')
+      allow(self).to receive(:params).and_return(controller: 'saved_searches')
       expect(default_layout?).to be true
     end
   end
