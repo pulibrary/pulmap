@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe GeoblacklightEventHandler do
-  subject(:handler) { described_class.new }
+  let(:handler) { described_class.new }
 
   describe '#work' do
     let(:processor) { instance_double(GeoblacklightEventProcessor, process: process) }
