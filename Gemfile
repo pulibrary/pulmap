@@ -8,7 +8,7 @@ gem 'sqlite3'
 # Use mysql
 # gem 'mysql2'
 
-#Use postgres
+# Use postgres
 gem 'pg'
 
 gem 'puma', '~> 3.0'
@@ -43,22 +43,22 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 gem 'capistrano', '~> 3.6'
-gem 'capistrano-rails'
 gem 'capistrano-bundler'
 gem 'capistrano-passenger'
+gem 'capistrano-rails'
 
 gem 'coveralls', require: false
 
 group :development, :test do
   gem 'byebug'
-  gem 'spring'
   gem 'capybara'
-  gem 'poltergeist'
-  gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'poltergeist'
   gem 'rails-controller-testing'
-  gem 'rubocop', '~> 0.42.0', require: false
-  gem 'rubocop-rspec', '~> 1.6.0', require: false
+  gem 'rubocop', '~> 0.5', require: false
+  gem 'rubocop-rspec', '~> 1.20', require: false
+  gem 'spring'
 end
 
 group :development do
@@ -66,21 +66,21 @@ group :development do
   gem 'xray-rails'
 end
 
-gem 'geoblacklight', '~> 1.6.0'
+gem 'blacklight_advanced_search'
+gem 'blacklight_range_limit'
 gem 'bourbon'
-gem 'neat', '~> 1.8'
-gem 'rspec-rails', '~> 3.5.0'
-gem 'solr_wrapper'
-gem 'rsolr', '~> 1.1.1'
+gem 'chosen-rails' #  jquery multiselect plugin for advanced search
 gem 'devise'
 gem 'devise-guests', '~> 0.3.3'
-gem 'omniauth-cas'
-gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
-gem 'blacklight_range_limit'
-gem 'blacklight_advanced_search'
-gem 'sneakers'
-gem 'chosen-rails' #  jquery multiselect plugin for advanced search
-gem 'rails-reverse-proxy'
-gem 'pul_uv_rails', git: 'https://github.com/pulibrary/pul_uv_rails', branch: 'master'
+gem 'geoblacklight', '~> 1.6.0'
 gem 'mail_form'
+gem 'neat', '~> 1.8'
+gem 'omniauth-cas'
+gem 'pul_uv_rails', git: 'https://github.com/pulibrary/pul_uv_rails', branch: 'master'
+gem 'rails-reverse-proxy'
+gem 'rsolr', '~> 1.1.1'
+gem 'rspec-rails', '~> 3.5.0'
 gem 'simple_form'
+gem 'sneakers'
+gem 'solr_wrapper'
+gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
