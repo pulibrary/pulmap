@@ -17,7 +17,7 @@ RSpec.describe FeedbackForm do
       expect(feedback).to respond_to(:deliver)
     end
 
-    context 'It has invalid data' do
+    context 'when data is invalid' do
       let(:params) do
         { name: 'Bar',
           email: 'foo',

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Feedback Form', type: :feature do
-  context 'User has not signed in' do
+  context 'when user has not signed in' do
     before do
       visit('/catalog/princeton-8c97ks94m')
       click_link('Contact Us')
@@ -33,7 +33,7 @@ describe 'Feedback Form', type: :feature do
     end
   end
 
-  context 'Princeton Community User has signed in' do
+  context 'when Princeton Community User has signed in' do
     let(:user) { FactoryGirl.create(:user) }
 
     before { OmniAuth.config.test_mode = true }

@@ -27,7 +27,7 @@ describe PulmapGeoblacklightHelper, type: :helper do
       end
     end
 
-    context 'missing iiif manifest' do
+    context 'when missing iiif manifest' do
       let(:leaflet_viewer) { double }
       let(:document_attributes) do
         {

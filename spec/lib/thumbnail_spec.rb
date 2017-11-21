@@ -72,7 +72,7 @@ describe Thumbnail do
     end
   end
 
-  context 'document has no refs for generating a thumbnail' do
+  context 'when document has no refs for generating a thumbnail' do
     let(:references) do
       {}.to_json
     end
@@ -84,7 +84,7 @@ describe Thumbnail do
     end
   end
 
-  context 'document has a thumbnail reference' do
+  context 'when document has a thumbnail reference' do
     let(:references) do
       {
         'http://schema.org/thumbnailUrl' => 'http://www.example.com/image.jpg'
@@ -98,7 +98,7 @@ describe Thumbnail do
     end
   end
 
-  context 'document is a restricted scanned map with a thumbnail reference' do
+  context 'when document is a restricted scanned map with a thumbnail reference' do
     let(:document_attributes) do
       { layer_slug_s: 'testdoc',
         layer_id_s: 'testlayer',
@@ -122,7 +122,7 @@ describe Thumbnail do
     end
   end
 
-  context 'document has a wms reference' do
+  context 'when document has a wms reference' do
     let(:references) do
       {
         'http://www.opengis.net/def/serviceType/ogc/wms' => 'http://www.example.com/wms'
@@ -140,14 +140,14 @@ describe Thumbnail do
     end
 
     describe '#generated_thumbnail' do
-      context 'cached thumbnail file already exists' do
+      context 'when cached thumbnail file already exists' do
         it 'returns url to cached thumbnail' do
           allow(File).to receive('file?').with(thumbnail.file_path_and_name).and_return(true)
           expect(thumbnail.generated_thumbnail).to eq(thumbnail.thumb_path_and_name)
         end
       end
 
-      context 'cached thumbnail file does not exist' do
+      context 'when cached thumbnail file does not exist' do
         it 'triggers a save thread and returns a url to wms service' do
           allow(File).to receive(:file?).with(thumbnail.file_path_and_name).and_return(false)
           allow(File).to receive(:file?).with("#{thumbnail.file_path_and_name}.tmp").and_return(false)
@@ -157,7 +157,7 @@ describe Thumbnail do
         end
       end
 
-      context 'thumbnail error file does exist' do
+      context 'when thumbnail error file does exist' do
         it 'returns nil' do
           allow(File).to receive(:file?).with(thumbnail.file_path_and_name).and_return(false)
           allow(File).to receive(:file?).with("#{thumbnail.file_path_and_name}.tmp").and_return(false)
@@ -166,7 +166,7 @@ describe Thumbnail do
         end
       end
 
-      context 'thumbnail temp file does exist' do
+      context 'when thumbnail temp file does exist' do
         it 'returns url to wms service' do
           allow(File).to receive(:file?).with(thumbnail.file_path_and_name).and_return(false)
           allow(File).to receive(:file?).with("#{thumbnail.file_path_and_name}.tmp").and_return(true)
@@ -176,7 +176,7 @@ describe Thumbnail do
       end
     end
 
-    context 'document has a wms reference and a thumbnail reference' do
+    context 'when document has a wms reference and a thumbnail reference' do
       let(:references) do
         {
           'http://schema.org/thumbnailUrl' => 'http://www.example.com/image.jpg',
@@ -188,7 +188,7 @@ describe Thumbnail do
           'TRANSPARENT=TRUE&LAYERS=testlayer&WIDTH=256&HEIGHT=256'
       end
 
-      context 'use of thumbnail endpoint urls are turned off in settings' do
+      context 'when use of thumbnail endpoint urls are turned off in settings' do
         describe '#url' do
           it 'returns a web map service thumbnail url' do
             allow(Settings.THUMBNAIL).to receive(:USE_DCT_REFS).and_return(false)
@@ -199,21 +199,21 @@ describe Thumbnail do
     end
 
     describe '#service_url' do
-      context 'document is unavailable' do
+      context 'when document is unavailable' do
         it 'returns nil' do
           allow(document).to receive(:available?).and_return(false)
           expect(thumbnail.service_url).to eq(nil)
         end
       end
 
-      context 'viewer protocol is map' do
+      context 'when viewer protocol is map' do
         it 'returns nil' do
           allow(document).to receive(:viewer_protocol).and_return('map')
           expect(thumbnail.service_url).to eq(nil)
         end
       end
 
-      context 'viewer protocol is unsupported' do
+      context 'when viewer protocol is unsupported' do
         it 'returns nil' do
           allow(document).to receive(:viewer_protocol).and_return('obscure_protocol')
           expect(thumbnail.service_url).to eq(nil)

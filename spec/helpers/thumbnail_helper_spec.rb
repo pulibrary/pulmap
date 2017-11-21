@@ -5,7 +5,7 @@ describe ThumbnailHelper, type: :helper do
   let(:document_attributes) { { dc_title_s: 'title', layer_geom_type_s: 'Polygon' } }
 
   describe '#gbl_thumbnail_img_tag' do
-    context 'document has a thumbnail url' do
+    context 'when document has a thumbnail url' do
       before do
         allow(document).to receive(:thumbnail_url).and_return('http://www.example.com/image.jpg')
       end
@@ -18,7 +18,7 @@ describe ThumbnailHelper, type: :helper do
       end
     end
 
-    context 'document does not have a thumbnail url' do
+    context 'when document does not have a thumbnail url' do
       before do
         allow(document).to receive(:thumbnail_url).and_return(nil)
       end

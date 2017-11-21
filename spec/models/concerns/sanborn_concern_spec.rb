@@ -4,7 +4,7 @@ describe SanbornConcern do
   let(:document) { SolrDocument.new(document_attributes) }
 
   describe 'published_by_sanborn?' do
-    context 'for resources published by Sanborn Map & Publishing Co.' do
+    context 'with resources published by Sanborn Map & Publishing Co.' do
       let(:document_attributes) do
         {
           dc_publisher_s: 'New York : Sanborn Map & Publishing Co., Limited, 1885.'
@@ -16,7 +16,7 @@ describe SanbornConcern do
       end
     end
 
-    context 'for resources published by other bodies' do
+    context 'with resources published by other bodies' do
       let(:document_attributes) do
         {
           dc_publisher_s: 'U.S. Census Bureau'
