@@ -2,7 +2,7 @@ namespace :pulmap do
   namespace :thumbnails do
     desc 'Delete all cached thumbnails'
     task delete: :environment do
-      file_base_path = Settings.THUMBNAIL.FILE_BASE_PATH || "#{Rails.root}/public"
+      file_base_path = Settings.THUMBNAIL.FILE_BASE_PATH || Rails.root.join("public")
       thumb_path = Settings.THUMBNAIL.BASE_PATH || 'thumbnails'
       FileUtils.rm_rf "#{file_base_path}/#{thumb_path}"
     end
