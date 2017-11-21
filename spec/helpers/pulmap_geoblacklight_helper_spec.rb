@@ -18,6 +18,7 @@ describe PulmapGeoblacklightHelper, type: :helper do
           }.to_json
         }
       end
+
       it 'renders a UV container' do
         assign(:document, document)
         expect(helper).to receive(:manifest_viewer)
@@ -34,6 +35,7 @@ describe PulmapGeoblacklightHelper, type: :helper do
           }.to_json
         }
       end
+
       it 'renders a Leaflet container' do
         assign(:document, document)
         expect(helper).to receive(:leaflet_viewer)

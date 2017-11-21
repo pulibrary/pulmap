@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe PersistThumbnailJob do
   subject(:job) { described_class }
+
   let(:options) {}
   let(:persist) { instance_double(PersistThumbnail) }
 

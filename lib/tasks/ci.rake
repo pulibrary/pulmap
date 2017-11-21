@@ -4,7 +4,7 @@ desc 'Run test suite'
 task :ci do
   if Rails.env.test?
     Rake::Task['rubocop'].invoke
-    run_solr('ci', { port: '8985' }) do
+    run_solr('ci', port: '8985') do
       Rake::Task['geoblacklight:solr:seed'].invoke
       Rake::Task['spec'].invoke
     end
@@ -16,30 +16,30 @@ end
 namespace :server do
   desc 'Run Solr for development environment'
   task :development do
-    run_solr('development', { port: '8983' }) do
+    run_solr('development', port: '8983') do
       Rake::Task['geoblacklight:solr:seed'].invoke
       begin
         sleep
       rescue Interrupt
-        puts "Shutting down..."
+        puts 'Shutting down...'
       end
     end
   end
   desc 'Run Solr for test environment'
   task :test do
     if Rails.env.test?
-      run_solr('ci', { port: '8985' }) do
+      run_solr('ci', port: '8985') do
         Rake::Task['geoblacklight:solr:seed'].invoke
         begin
           sleep
         rescue Interrupt
-          puts "Shutting down..."
+          puts 'Shutting down...'
         end
       end
     else
       system('rake server:test RAILS_ENV=test')
     end
-  end  
+  end
 end
 
 def run_solr(environment, solr_params)
@@ -53,11 +53,11 @@ def run_solr(environment, solr_params)
     solr.with_collection(name: 'blacklight-core', dir: File.join(solr_dir)) do
       puts "\n#{environment.titlecase} solr server running: http://localhost:#{solr.port}/solr/#/blacklight-core"
       puts "\n^C to stop"
-      puts " "
+      puts ' '
       begin
         yield
       rescue Interrupt
-        puts "Shutting down..."
+        puts 'Shutting down...'
       end
     end
   end

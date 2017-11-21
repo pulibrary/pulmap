@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 describe SearchBuilder do
-  let(:user_params) { Hash.new }
-  let(:solr_params) { Hash.new }
+  subject(:builder) { search_builder.with(user_params) }
+
+  let(:user_params) { {} }
+  let(:solr_params) { {} }
   let(:context) { CatalogController.new }
   let(:search_builder) { described_class.new(context) }
-
-  subject(:builder) { search_builder.with(user_params) }
 
   describe '#add_spatial_params' do
     it 'returns the solr_params when no bbox is given' do

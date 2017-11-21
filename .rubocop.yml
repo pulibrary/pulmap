@@ -6,9 +6,6 @@ Rails:
 AllCops:
   DisplayCopNames: true
 
-  Include:
-  - '**/Rakefile'
-
   Exclude:
   - 'bin/*'
   - 'db/**/*'

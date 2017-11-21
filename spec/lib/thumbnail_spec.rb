@@ -76,6 +76,7 @@ describe Thumbnail do
     let(:references) do
       {}.to_json
     end
+
     describe '#url' do
       it 'returns nil' do
         expect(thumbnail.url).to be_nil
@@ -89,6 +90,7 @@ describe Thumbnail do
         'http://schema.org/thumbnailUrl' => 'http://www.example.com/image.jpg'
       }.to_json
     end
+
     describe '#url' do
       it 'returns the thumbnail endpoint url' do
         expect(thumbnail.url).to eq('http://www.example.com/image.jpg')

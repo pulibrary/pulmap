@@ -1,4 +1,4 @@
-# -*- encoding : utf-8 -*-
+
 class CatalogController < ApplicationController
   include BlacklightAdvancedSearch::Controller
   include BlacklightRangeLimit::ControllerOverride
@@ -11,9 +11,9 @@ class CatalogController < ApplicationController
     config.advanced_search[:url_key] ||= 'advanced'
     config.advanced_search[:query_parser] ||= 'edismax'
     config.advanced_search[:form_solr_parameters] ||= {}
-    config.advanced_search[:form_solr_parameters]['facet.field'] ||= %W(#{Settings.FIELDS.GEOM_TYPE}
+    config.advanced_search[:form_solr_parameters]['facet.field'] ||= %W[#{Settings.FIELDS.GEOM_TYPE}
                                                                         #{Settings.FIELDS.PROVENANCE}
-                                                                        #{Settings.FIELDS.FILE_FORMAT})
+                                                                        #{Settings.FIELDS.FILE_FORMAT}]
     config.advanced_search[:form_solr_parameters]['facet.query'] ||= ''
     config.advanced_search[:form_solr_parameters]['facet.limit'] ||= -1
     config.advanced_search[:form_solr_parameters]['facet.sort'] ||= 'index'

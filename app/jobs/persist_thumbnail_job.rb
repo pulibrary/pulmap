@@ -1,4 +1,4 @@
-class PersistThumbnailJob < ActiveJob::Base
+class PersistThumbnailJob < ApplicationJob
   queue_as :default
 
   def perform(options)

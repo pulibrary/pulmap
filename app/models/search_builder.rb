@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class SearchBuilder < Blacklight::SearchBuilder
   include Blacklight::Solr::SearchBuilderBehavior
   include BlacklightAdvancedSearch::AdvancedSearchBuilder
@@ -6,8 +7,8 @@ class SearchBuilder < Blacklight::SearchBuilder
   include Geoblacklight::SpatialSearchBehavior
   include ::FeaturedContentBehavior
 
-  self.default_processor_chain += [:add_advanced_parse_q_to_solr, :add_advanced_search_to_solr,
-                                   :hide_suppressed_records, :add_featured_content]
+  self.default_processor_chain += %i[add_advanced_parse_q_to_solr add_advanced_search_to_solr
+                                     hide_suppressed_records add_featured_content]
 
   def hide_suppressed_records(solr_params)
     # Show child records if searching for a specific source parent
