@@ -140,84 +140,48 @@ describe Thumbnail do
     end
 
     describe '#generated_thumbnail' do
-      context 'when cached thumbnail file already exists' do
-        it 'returns url to cached thumbnail' do
-          allow(File).to receive('file?').with(thumbnail.file_path_and_name).and_return(true)
-          expect(thumbnail.generated_thumbnail).to eq(thumbnail.thumb_path_and_name)
-        end
+      it 'returns url to cached thumbnail when cached thumbnail file already exists' do
+        allow(File).to receive('file?').with(thumbnail.file_path_and_name).and_return(true)
+        expect(thumbnail.generated_thumbnail).to eq(thumbnail.thumb_path_and_name)
       end
 
-      context 'when cached thumbnail file does not exist' do
-        it 'triggers a save thread and returns a url to wms service' do
-          allow(File).to receive(:file?).with(thumbnail.file_path_and_name).and_return(false)
-          allow(File).to receive(:file?).with("#{thumbnail.file_path_and_name}.tmp").and_return(false)
-          allow(File).to receive(:file?).with("#{thumbnail.file_path_and_name}.error").and_return(false)
-          allow(thumbnail).to receive(:save_thumbnail).and_return('http://www.example.com/test/wms')
-          expect(thumbnail.generated_thumbnail).to eq(wms_service_url)
-        end
+      it 'returns a url to wms service when cached thumbnail file does not exist' do
+        allow(File).to receive(:file?).with(thumbnail.file_path_and_name).and_return(false)
+        allow(File).to receive(:file?).with("#{thumbnail.file_path_and_name}.tmp").and_return(false)
+        allow(File).to receive(:file?).with("#{thumbnail.file_path_and_name}.error").and_return(false)
+        allow(thumbnail).to receive(:save_thumbnail).and_return('http://www.example.com/test/wms')
+        expect(thumbnail.generated_thumbnail).to eq(wms_service_url)
       end
 
-      context 'when thumbnail error file does exist' do
-        it 'returns nil' do
-          allow(File).to receive(:file?).with(thumbnail.file_path_and_name).and_return(false)
-          allow(File).to receive(:file?).with("#{thumbnail.file_path_and_name}.tmp").and_return(false)
-          allow(File).to receive(:file?).with("#{thumbnail.file_path_and_name}.error").and_return(true)
-          expect(thumbnail.generated_thumbnail).to be_nil
-        end
+      it 'returns nil when thumbnail error file does exist' do
+        allow(File).to receive(:file?).with(thumbnail.file_path_and_name).and_return(false)
+        allow(File).to receive(:file?).with("#{thumbnail.file_path_and_name}.tmp").and_return(false)
+        allow(File).to receive(:file?).with("#{thumbnail.file_path_and_name}.error").and_return(true)
+        expect(thumbnail.generated_thumbnail).to be_nil
       end
 
-      context 'when thumbnail temp file does exist' do
-        it 'returns url to wms service' do
-          allow(File).to receive(:file?).with(thumbnail.file_path_and_name).and_return(false)
-          allow(File).to receive(:file?).with("#{thumbnail.file_path_and_name}.tmp").and_return(true)
-          allow(File).to receive(:file?).with("#{thumbnail.file_path_and_name}.error").and_return(false)
-          expect(thumbnail.generated_thumbnail).to eq(wms_service_url)
-        end
-      end
-    end
-
-    context 'when document has a wms reference and a thumbnail reference' do
-      let(:references) do
-        {
-          'http://schema.org/thumbnailUrl' => 'http://www.example.com/image.jpg',
-          'http://www.opengis.net/def/serviceType/ogc/wms' => 'http://www.example.com/wms'
-        }.to_json
-      end
-      let(:wms_service_url) do
-        'http://www.example.com/wms/reflect?&FORMAT=image%2Fpng&'\
-          'TRANSPARENT=TRUE&LAYERS=testlayer&WIDTH=256&HEIGHT=256'
-      end
-
-      context 'when use of thumbnail endpoint urls are turned off in settings' do
-        describe '#url' do
-          it 'returns a web map service thumbnail url' do
-            allow(Settings.THUMBNAIL).to receive(:USE_DCT_REFS).and_return(false)
-            expect(thumbnail.url).to eq(wms_service_url)
-          end
-        end
+      it 'returns url to wms service when thumbnail temp file does exist' do
+        allow(File).to receive(:file?).with(thumbnail.file_path_and_name).and_return(false)
+        allow(File).to receive(:file?).with("#{thumbnail.file_path_and_name}.tmp").and_return(true)
+        allow(File).to receive(:file?).with("#{thumbnail.file_path_and_name}.error").and_return(false)
+        expect(thumbnail.generated_thumbnail).to eq(wms_service_url)
       end
     end
 
     describe '#service_url' do
-      context 'when document is unavailable' do
-        it 'returns nil' do
-          allow(document).to receive(:available?).and_return(false)
-          expect(thumbnail.service_url).to eq(nil)
-        end
+      it 'returns nil when document is unavailable' do
+        allow(document).to receive(:available?).and_return(false)
+        expect(thumbnail.service_url).to eq(nil)
       end
 
-      context 'when viewer protocol is map' do
-        it 'returns nil' do
-          allow(document).to receive(:viewer_protocol).and_return('map')
-          expect(thumbnail.service_url).to eq(nil)
-        end
+      it 'returns nil when viewer protocol is map' do
+        allow(document).to receive(:viewer_protocol).and_return('map')
+        expect(thumbnail.service_url).to eq(nil)
       end
 
-      context 'when viewer protocol is unsupported' do
-        it 'returns nil' do
-          allow(document).to receive(:viewer_protocol).and_return('obscure_protocol')
-          expect(thumbnail.service_url).to eq(nil)
-        end
+      it 'returns nil when viewer protocol is unsupported' do
+        allow(document).to receive(:viewer_protocol).and_return('obscure_protocol')
+        expect(thumbnail.service_url).to eq(nil)
       end
     end
 
@@ -232,14 +196,32 @@ describe Thumbnail do
     describe '#geoserver_credentials' do
       let(:credentials) { 'base64encodedusername:password' }
 
-      context 'with a restricted Princeton document' do
-        before do
-          document_attributes.merge!(dct_provenance_s: 'Princeton', dc_rights_s: 'Restricted')
-        end
+      before do
+        document_attributes.merge!(dct_provenance_s: 'Princeton', dc_rights_s: 'Restricted')
+      end
 
-        it 'returns base64 encoded geoserver auth credentials' do
-          expect(thumbnail.geoserver_credentials).to eq(credentials)
-        end
+      it 'returns base64 encoded geoserver auth credentials with a restricted Princeton document' do
+        expect(thumbnail.geoserver_credentials).to eq(credentials)
+      end
+    end
+  end
+
+  context 'when document has a wms reference and a thumbnail reference' do
+    let(:references) do
+      {
+        'http://schema.org/thumbnailUrl' => 'http://www.example.com/image.jpg',
+        'http://www.opengis.net/def/serviceType/ogc/wms' => 'http://www.example.com/wms'
+      }.to_json
+    end
+    let(:wms_service_url) do
+      'http://www.example.com/wms/reflect?&FORMAT=image%2Fpng&'\
+        'TRANSPARENT=TRUE&LAYERS=testlayer&WIDTH=256&HEIGHT=256'
+    end
+
+    describe '#url' do
+      it 'returns a wms thumbnail url when use of thumbnail endpoint urls are turned off in settings' do
+        allow(Settings.THUMBNAIL).to receive(:USE_DCT_REFS).and_return(false)
+        expect(thumbnail.url).to eq(wms_service_url)
       end
     end
   end
