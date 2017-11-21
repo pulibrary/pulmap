@@ -59,12 +59,10 @@ class PersistThumbnail
   # @param [Faraday::Request]
   # @return [String] file name of the downloaded thumbnail
   def save_file(download)
-    if download.headers['content-type'] == @content_type
-      File.open("#{@file_path}.tmp", 'wb') do |file|
-        file.write download.body
-      end
-    else
-      raise Geoblacklight::Exceptions::WrongDownloadFormat
+    header = download.headers['content-type']
+    raise Geoblacklight::Exceptions::WrongDownloadFormat unless header == @content_type
+    File.open("#{@file_path}.tmp", 'wb') do |file|
+      file.write download.body
     end
     File.rename("#{@file_path}.tmp", @file_path.to_s)
   rescue Geoblacklight::Exceptions::WrongDownloadFormat
