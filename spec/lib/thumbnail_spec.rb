@@ -223,8 +223,9 @@ describe Thumbnail do
 
     describe '#save_thumbnail' do
       it 'creates a new persist thumbnail job' do
-        expect(PersistThumbnailJob).to receive(:perform_later)
+        allow(PersistThumbnailJob).to receive(:perform_later)
         thumbnail.save_thumbnail
+        expect(PersistThumbnailJob).to have_received(:perform_later)
       end
     end
 

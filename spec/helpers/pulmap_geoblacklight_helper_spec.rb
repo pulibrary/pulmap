@@ -21,8 +21,9 @@ describe PulmapGeoblacklightHelper, type: :helper do
 
       it 'renders a UV container' do
         assign(:document, document)
-        expect(helper).to receive(:manifest_viewer)
+        allow(helper).to receive(:manifest_viewer)
         helper.viewer_container
+        expect(helper).to have_received(:manifest_viewer)
       end
     end
 
@@ -38,8 +39,9 @@ describe PulmapGeoblacklightHelper, type: :helper do
 
       it 'renders a Leaflet container' do
         assign(:document, document)
-        expect(helper).to receive(:leaflet_viewer)
+        allow(helper).to receive(:leaflet_viewer)
         helper.viewer_container
+        expect(helper).to have_received(:leaflet_viewer)
       end
     end
 

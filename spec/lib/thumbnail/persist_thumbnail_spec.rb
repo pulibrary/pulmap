@@ -25,69 +25,77 @@ describe PersistThumbnail do
 
   describe '#create_file' do
     it 'creates temp file, downloads thumbnail and saves it' do
-      expect(download).to receive(:class).twice.and_return(Faraday::Response)
-      expect(persist).to receive(:create_temp_file)
-      expect(persist).to receive(:initiate_download).and_return(download)
-      expect(persist).to receive(:save_file).with(download)
+      allow(download).to receive(:class).twice.and_return(Faraday::Response)
+      allow(persist).to receive(:create_temp_file)
+      allow(persist).to receive(:initiate_download).and_return(download)
+      allow(persist).to receive(:save_file)
       persist.create_file
+      expect(persist).to have_received(:save_file).with(download)
     end
 
     it 'creates temp file and returns nil if there is a problem' do
-      expect(persist).to receive(:create_temp_file)
-      expect(persist).to receive(:initiate_download).and_return(nil)
+      allow(persist).to receive(:create_temp_file)
+      allow(persist).to receive(:initiate_download).and_return(nil)
       expect(persist.create_file).to be_nil
     end
   end
 
   describe '#create_temp_file' do
     it 'creates a temp file in the fs in a new directory' do
-      expect(File).to receive(:directory?).with(File.dirname(file_path)).and_return(false)
-      expect(FileUtils).to receive(:mkdir_p).with(File.dirname(file_path))
-      expect(File).to receive(:open).with("#{file_path}.tmp", 'wb').and_return('')
+      allow(File).to receive(:directory?).with(File.dirname(file_path)).and_return(false)
+      allow(FileUtils).to receive(:mkdir_p).with(File.dirname(file_path))
+      allow(File).to receive(:open)
       persist.create_temp_file
+      expect(File).to have_received(:open).with("#{file_path}.tmp", 'wb')
     end
 
     it 'creates a temp file in the fs in an existing directory' do
-      expect(File).to receive(:directory?).with(File.dirname(file_path)).and_return(true)
-      expect(File).to receive(:open).with("#{file_path}.tmp", 'wb').and_return('')
+      allow(File).to receive(:directory?).with(File.dirname(file_path)).and_return(true)
+      allow(File).to receive(:open)
       persist.create_temp_file
+      expect(File).to have_received(:open).with("#{file_path}.tmp", 'wb')
     end
   end
 
   describe '#initiate_download' do
-    it 'request thumbnail from server' do
-      expect(Faraday).to receive(:new).with(url: 'http://www.example.com/thumbnail').and_return(connection)
-      expect(connection).to receive(:get).and_yield(request)
-      expect(request).to receive(:options).and_return(req_options).twice
+    it 'requests thumbnail from server' do
+      allow(Faraday).to receive(:new).and_return(connection)
+      allow(connection).to receive(:get).and_yield(request)
+      allow(request).to receive(:options).and_return(req_options)
       persist.initiate_download
+      expect(Faraday).to have_received(:new).with(url: 'http://www.example.com/thumbnail')
     end
     it 'creates a thumbnail error file with a connection failure' do
-      expect(connection).to receive(:get).and_raise(Faraday::Error::ConnectionFailed.new('Failed'))
-      expect(Faraday).to receive(:new).with(url: 'http://www.example.com/thumbnail').and_return(connection)
-      expect(File).to receive(:rename).with("#{file_path}.tmp", "#{file_path}.error")
+      allow(connection).to receive(:get).and_raise(Faraday::Error::ConnectionFailed.new('Failed'))
+      allow(Faraday).to receive(:new).with(url: 'http://www.example.com/thumbnail').and_return(connection)
+      allow(File).to receive(:rename)
       persist.initiate_download
+      expect(File).to have_received(:rename).with("#{file_path}.tmp", "#{file_path}.error")
     end
     it 'creates a thumbnail error file with a timeout error' do
-      expect(connection).to receive(:get).and_raise(Faraday::Error::TimeoutError.new('Time Out'))
-      expect(Faraday).to receive(:new).with(url: 'http://www.example.com/thumbnail').and_return(connection)
-      expect(File).to receive(:rename).with("#{file_path}.tmp", "#{file_path}.error")
+      allow(connection).to receive(:get).and_raise(Faraday::Error::TimeoutError.new('Time Out'))
+      allow(Faraday).to receive(:new).with(url: 'http://www.example.com/thumbnail').and_return(connection)
+      allow(File).to receive(:rename)
       persist.initiate_download
+      expect(File).to have_received(:rename).with("#{file_path}.tmp", "#{file_path}.error")
     end
   end
 
   describe '#save_file' do
     it 'opens the temp file and deletes it if the content headers are not correct' do
       bad_file = OpenStruct.new(headers: { 'content-type' => 'bad/file' })
-      expect(File).to receive(:rename).with("#{file_path}.tmp", "#{file_path}.error")
+      allow(File).to receive(:rename)
       persist.save_file(bad_file)
+      expect(File).to have_received(:rename).with("#{file_path}.tmp", "#{file_path}.error")
     end
 
     it 'opens the temp file, writes to it, and then renames from tmp if everything is ok' do
       good_file = OpenStruct.new(headers: { 'content-type' => 'image/png' })
-      expect(File).to receive(:open).with("#{file_path}.tmp", 'wb').and_yield(thumb_file)
-      expect(thumb_file).to receive(:write)
-      expect(File).to receive(:rename).with("#{file_path}.tmp", file_path.to_s)
+      allow(File).to receive(:open).with("#{file_path}.tmp", 'wb').and_yield(thumb_file)
+      allow(thumb_file).to receive(:write)
+      allow(File).to receive(:rename)
       persist.save_file(good_file)
+      expect(File).to have_received(:rename).with("#{file_path}.tmp", file_path.to_s)
     end
   end
 end
