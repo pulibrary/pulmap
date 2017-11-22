@@ -10,7 +10,7 @@ RSpec.describe 'Authentication', type: :feature do
       sign_in(user)
     end
     it 'after logout, user returns to root page' do
-      expect(current_path).to eq root_path
+      expect(page).to have_current_path(root_path)
     end
   end
 end
