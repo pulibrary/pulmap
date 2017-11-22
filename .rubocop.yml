@@ -78,6 +78,9 @@ RSpec/DescribeClass:
   Exclude:
     - 'spec/features/**/*'
 
+RSpec/ExampleLength:
+  Enabled: false
+
 RSpec/FilePath:
   Enabled: false
 
