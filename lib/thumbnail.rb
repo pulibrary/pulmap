@@ -42,7 +42,7 @@ class Thumbnail
   # Base path for storing thumbnail images.
   # @return [String] path to thumbnail files directory
   def file_base_path
-    Settings.THUMBNAIL.FILE_BASE_PATH || "#{Rails.root}/public"
+    Settings.THUMBNAIL.FILE_BASE_PATH || Rails.root.join("public")
   end
 
   ##

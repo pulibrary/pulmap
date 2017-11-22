@@ -21,10 +21,12 @@ module ThumbnailHelper
     url = document.thumbnail_url
     title = document['dc_title_s']
     h = [geoblacklight_icon(document['layer_geom_type_s'])]
-    h.unshift content_tag(:img, nil,
-                          class: 'item-thumbnail',
-                          data: { aload: url.to_s },
-                          alt: title) if url
+    if url
+      h.unshift content_tag(:img, nil,
+                            class: 'item-thumbnail',
+                            data: { aload: url.to_s },
+                            alt: title)
+    end
     safe_join h
   end
 end

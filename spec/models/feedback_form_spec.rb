@@ -7,23 +7,25 @@ RSpec.describe FeedbackForm do
       email: 'bsmith@university.edu',
       message: 'Awesome Site!!!!' }
   end
+
   describe 'A vaild Feedback Email' do
     it 'is valid' do
-      expect(feedback.valid?).to be_truthy
+      expect(feedback).to be_valid
     end
 
     it 'Can deliver a message' do
       expect(feedback).to respond_to(:deliver)
     end
 
-    context 'It has invalid data' do
+    context 'when data is invalid' do
       let(:params) do
         { name: 'Bar',
           email: 'foo',
           message: nil }
       end
+
       it 'is invalid' do
-        expect(feedback.valid?).to be_falsey
+        expect(feedback).not_to be_valid
       end
     end
   end

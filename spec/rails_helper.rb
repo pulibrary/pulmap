@@ -17,7 +17,7 @@ Capybara.default_max_wait_time = 10
 
 ActiveRecord::Migration.maintain_test_schema!
 
-Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+Dir[Rails.root.join("spec", "support", "**", "*.rb")].sort.each { |file| require file }
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures

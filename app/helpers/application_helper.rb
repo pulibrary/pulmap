@@ -43,7 +43,7 @@ module ApplicationHelper
   end
 
   def constraint_params_to_skip
-    %w(
+    %w[
       page
       per_page
       search_field
@@ -51,7 +51,7 @@ module ApplicationHelper
       controller
       action
       utf8
-    )
+    ]
   end
 
   ##

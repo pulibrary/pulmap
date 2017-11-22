@@ -6,9 +6,6 @@ Rails:
 AllCops:
   DisplayCopNames: true
 
-  Include:
-  - '**/Rakefile'
-
   Exclude:
   - 'bin/*'
   - 'db/**/*'
@@ -21,6 +18,15 @@ Metrics/AbcSize:
   Exclude:
     - 'app/controllers/users/omniauth_callbacks_controller.rb'
     - 'app/helpers/advanced_helper.rb'
+    - 'lib/tasks/ci.rake'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'app/controllers/catalog_controller.rb'
+    - 'config/routes.rb'
+    - 'lib/tasks/ci.rake'
+    - 'lib/tasks/thumbnails.rake'
+    - 'spec/**/*'
 
 Metrics/BlockNesting:
   Exclude:
@@ -29,7 +35,7 @@ Metrics/BlockNesting:
 Metrics/ClassLength:
   Max: 100
   Exclude:
-    - app/controllers/catalog_controller.rb
+    - 'app/controllers/catalog_controller.rb'
 
 Metrics/CyclomaticComplexity:
   Exclude:
@@ -41,13 +47,16 @@ Metrics/LineLength:
     - 'Rakefile'
     # TODO: Refactor add_show_tools_partial procs.
     - 'app/controllers/catalog_controller.rb'
+    - 'app/helpers/advanced_helper.rb'
+    - 'lib/tasks/ci.rake'
+    - 'lib/tasks/thumbnails.rake'
     - 'spec/lib/thumbnail_spec.rb'
-    - app/helpers/advanced_helper.rb
-    - spec/requests/advanced_request_spec.rb
+    - 'spec/requests/advanced_request_spec.rb'
 
 Metrics/MethodLength:
   Exclude:
     - 'app/helpers/advanced_helper.rb'
+    - 'lib/tasks/ci.rake'
 
 Metrics/PerceivedComplexity:
   Exclude:
@@ -57,10 +66,23 @@ Metrics/PerceivedComplexity:
 Style/Documentation:
   Enabled: false
 
+Style/StringLiterals:
+  Enabled: false
+
 # Overrides method in blacklight. Must use method name.
-Style/PredicateName:
+Naming/PredicateName:
   Exclude:
     - 'app/controllers/catalog_controller.rb'
 
+RSpec/DescribeClass:
+  Exclude:
+    - 'spec/features/**/*'
+
+RSpec/ExampleLength:
+  Enabled: false
+
 RSpec/FilePath:
+  Enabled: false
+
+RSpec/MultipleExpectations:
   Enabled: false

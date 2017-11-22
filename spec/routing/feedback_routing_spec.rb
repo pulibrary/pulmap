@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe FeedbackController, type: :routing do
+describe "Feedback Routing", type: :routing do
   describe 'routing' do
     it '/feedback routes to a new form' do
       expect(get: '/contact-us').to route_to('feedback#new')

@@ -18,14 +18,16 @@ describe PulmapGeoblacklightHelper, type: :helper do
           }.to_json
         }
       end
+
       it 'renders a UV container' do
         assign(:document, document)
-        expect(helper).to receive(:manifest_viewer)
+        allow(helper).to receive(:manifest_viewer)
         helper.viewer_container
+        expect(helper).to have_received(:manifest_viewer)
       end
     end
 
-    context 'missing iiif manifest' do
+    context 'when missing iiif manifest' do
       let(:leaflet_viewer) { double }
       let(:document_attributes) do
         {
@@ -34,10 +36,12 @@ describe PulmapGeoblacklightHelper, type: :helper do
           }.to_json
         }
       end
+
       it 'renders a Leaflet container' do
         assign(:document, document)
-        expect(helper).to receive(:leaflet_viewer)
+        allow(helper).to receive(:leaflet_viewer)
         helper.viewer_container
+        expect(helper).to have_received(:leaflet_viewer)
       end
     end
 

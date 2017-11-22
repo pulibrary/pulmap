@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Authentication', type: :feature do
+RSpec.describe 'Authentication', type: :feature do
   describe 'log out redirect' do
     let(:user) { FactoryGirl.create(:user) }
 
@@ -9,8 +9,8 @@ RSpec.feature 'Authentication', type: :feature do
       visit solr_document_path 'columbia-columbia-landinfo-global-aet'
       sign_in(user)
     end
-    scenario 'after logout, user returns to root page' do
-      expect(current_path).to eq root_path
+    it 'after logout, user returns to root page' do
+      expect(page).to have_current_path(root_path)
     end
   end
 end

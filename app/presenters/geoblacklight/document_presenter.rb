@@ -10,9 +10,9 @@ module Geoblacklight
     # @return [String]
     def index_fields_display
       fields_values = []
-      @configuration.index_fields.each do |field_name, _|
+      @configuration.index_fields.each_key do |field_name|
         val = field_value(field_name)
-        unless val.blank?
+        if val.present?
           val += '.' unless val.end_with?('.')
           fields_values << val
         end
