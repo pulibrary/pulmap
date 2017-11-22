@@ -56,7 +56,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'poltergeist'
   gem 'rails-controller-testing'
-  gem 'rubocop', '~> 0.5', require: false
+  gem 'rubocop', '~> 0.51.0', require: false
   gem 'rubocop-rspec', '~> 1.20', require: false
   gem 'spring'
 end

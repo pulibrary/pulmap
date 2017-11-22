@@ -449,7 +449,7 @@ DEPENDENCIES
   rails-reverse-proxy
   rsolr (~> 1.1.1)
   rspec-rails (~> 3.5.0)
-  rubocop (~> 0.5)
+  rubocop (~> 0.51.0)
   rubocop-rspec (~> 1.20)
   sass-rails (~> 5.0)
   simple_form
