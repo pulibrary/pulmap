@@ -74,6 +74,10 @@ Naming/PredicateName:
   Exclude:
     - 'app/controllers/catalog_controller.rb'
 
+RSpec/DescribeClass:
+  Exclude:
+    - 'spec/features/**/*'
+
 RSpec/FilePath:
   Enabled: false
 
