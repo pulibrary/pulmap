@@ -11,22 +11,16 @@ module ThumbnailHelper
   end
 
   ##
-  # Returns html for displaying a geoblacklight thumbnail. If there isn't a
-  # thumbnail url, a placeholder showing the geometry type is displayed. If there
-  # is a thumbnail url, a placeholder is displayed along with an image tag. The
-  # thumbnail image is then loaded asynchronously via javascript.
+  # Returns html for displaying a geoblacklight thumbnail.
+  # The thumbnail image is then loaded asynchronously via javascript.
   # @param [SolrDocument]
   # @return [String]
   def gbl_thumbnail_img_tag(document)
-    url = document.thumbnail_url
+    url = "#{polymorphic_url(document)}/thumbnail"
     title = document['dc_title_s']
-    h = [geoblacklight_icon(document['layer_geom_type_s'])]
-    if url
-      h.unshift content_tag(:img, nil,
-                            class: 'item-thumbnail',
-                            data: { aload: url.to_s },
-                            alt: title)
-    end
-    safe_join h
+    content_tag(:img, nil,
+                class: 'item-thumbnail',
+                data: { aload: url.to_s },
+                alt: title)
   end
 end

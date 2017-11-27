@@ -2,7 +2,6 @@
 class SolrDocument
   include Blacklight::Solr::Document
   include Geoblacklight::SolrDocument
-  include ThumbnailConcern
   include GeomonitorConcern
   include SanbornConcern
   include WmsRewriteConcern
