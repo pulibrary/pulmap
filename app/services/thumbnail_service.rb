@@ -46,7 +46,7 @@ class ThumbnailService
 
   # Path to placeholder image based on the layer geometry.
   def placeholder_image_path
-    geom_type = @document["layer_geom_type_s"].tr(" ", "-").downcase
+    geom_type = @document.fetch("layer_geom_type_s", "").tr(" ", "-").downcase
     thumb_path = "#{placeholder_base_path}/thumbnail-#{geom_type}.png"
     return "#{placeholder_base_path}/thumbnail-paper-map.png" unless File.exist?(thumb_path)
     thumb_path
