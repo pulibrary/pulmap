@@ -8,14 +8,12 @@ Bundler.require(*Rails.groups)
 
 module Pulmap
   class Application < Rails::Application
-    # config.application_name = 'Pulmap'
-    require 'thumbnail'
-    require 'thumbnail/dynamic_map_layer_thumbnail'
-    require 'thumbnail/iiif_thumbnail'
-    require 'thumbnail/image_map_layer_thumbnail'
-    require 'thumbnail/persist_thumbnail'
-    require 'thumbnail/tiled_map_layer_thumbnail'
-    require 'thumbnail/wms_thumbnail'
+    config.cache_store = :file_store, Rails.root.join("tmp", "thumbnails")
+    config.active_job.queue_adapter = :async
+    config.active_job.queue_adapter = ActiveJob::QueueAdapters::AsyncAdapter.new \
+      min_threads: 1,
+      max_threads: 2 * Concurrent.processor_count,
+      idletime: 600.seconds
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'leaflet bbox overlay', js: true do
   it 'renders for restricted image works' do
-    visit solr_document_path('princeton-3x816p22x')
+    visit solr_document_path('stanford-cg357zz0321')
     expect(page).to have_css('.leaflet-overlay-pane > svg')
   end
   it 'does not render in search results' do

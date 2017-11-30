@@ -1,0 +1,40 @@
+{
+  "geoblacklight_version": "1.0",
+  "dc_identifier_s": "ark:/88435/m613n013z",
+  "layer_slug_s": "princeton-m613n013z",
+  "uuid": "princeton-m613n013z",
+  "dc_title_s": "Louisiana Tracts 2002",
+  "solr_geom": "ENVELOPE(-94.043341, -88.816516, 33.019544, 28.926454)",
+  "dct_provenance_s": "Princeton",
+  "dc_rights_s": "Restricted",
+  "dc_description_s": "Louisiana Tracts represents the U.S. Census tracts and block numbering areas (BNA) of Louisiana.",
+  "dc_creator_sm": [
+    "Geographic Data Technology, Inc. (GDT)",
+    "Environmental Systems Research Institute, Inc. (ESRI)"
+  ],
+  "dc_subject_sm": [
+    "census block numbering areas",
+    "Society",
+    "demographics",
+    "households",
+    "population",
+    "polygon",
+    "Boundaries",
+    "census tracts"
+  ],
+  "dct_spatial_sm": [
+    "Louisiana",
+    "United States"
+  ],
+  "dct_temporal_sm": [
+    "2001",
+    "2002",
+    "2000"
+  ],
+  "solr_year_i": 2001,
+  "layer_modified_dt": "2017-09-08T17:39:13Z",
+  "layer_id_s": "restricted:pks65mg55z",
+  "dct_references_s": "{\"http://schema.org/url\":\"https://plum.princeton.edu/concern/vector_works/pf4755j414\",\"http://www.opengis.net/cat/csw/csdgm\":\"https://plum.princeton.edu/downloads/p2b88tc313\",\"http://schema.org/downloadUrl\":\"https://plum.princeton.edu/downloads/pks65mg55z\",\"http://schema.org/thumbnailUrl\":\"https://plum.princeton.edu/downloads/pks65mg55z?file=thumbnail\",\"http://www.opengis.net/def/serviceType/ogc/wms\":\"https://geoserver.princeton.edu/geoserver/restricted/wms\",\"http://www.opengis.net/def/serviceType/ogc/wfs\":\"https://geoserver.princeton.edu/geoserver/restricted/wfs\"}",
+  "layer_geom_type_s": "Polygon",
+  "dc_format_s": "Shapefile"
+}

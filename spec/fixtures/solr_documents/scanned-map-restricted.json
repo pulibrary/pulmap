@@ -14,9 +14,10 @@
     "Poland—Maps",
     "Topographic maps"
   ],
-  "layer_modified_dt": "2017-04-20T02:46:18Z",
-  "layer_id_s": "public:s79408014x",
-  "dct_references_s": "{\"http://schema.org/url\":\"https://hydra-dev.princeton.edu/concern/image_works/snk322g61c\",\"http://schema.org/downloadUrl\":\"https://hydra-dev.princeton.edu/downloads/s79408014x\",\"http://schema.org/thumbnailUrl\":\"https://hydra-dev.princeton.edu/downloads/s79408014x?file=thumbnail\"}",
+  "solr_year_i": 1945,
+  "layer_modified_dt": "2017-05-05T09:26:16Z",
+  "layer_id_s": "public:p0g356x08n",
+  "dct_references_s": "{\"http://schema.org/url\":\"https://plum.princeton.edu/concern/image_works/p8336kk07s\",\"http://www.opengis.net/cat/csw/csdgm\":\"https://plum.princeton.edu/downloads/pxp68nz74p\",\"http://schema.org/downloadUrl\":\"https://plum.princeton.edu/downloads/p0g356x08n\",\"http://schema.org/thumbnailUrl\":\"https://plum.princeton.edu/downloads/p0g356x08n?file=thumbnail\",\"http://iiif.io/api/image\":\"https://libimages1.princeton.edu/loris/plum_prod/p0%2Fg3%2F56%2Fx0%2F8n-intermediate_file.jp2/info.json\",\"http://iiif.io/api/presentation#manifest\":\"https://plum.princeton.edu/concern/image_works/p8336kk07s/manifest\"}",
   "layer_geom_type_s": "Image",
   "dc_format_s": "TIFF"
 }
