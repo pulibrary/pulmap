@@ -11,6 +11,12 @@ test:
 
 production:
   <<: *defaults
+  events:
+    server: <%= ENV['PULMAP_RABBIT_SERVER'] || 'amqp://localhost:5672' %>
+    exchange: 'gbl_events'
 
 staging:
   <<: *defaults
+  events:
+    server: <%= ENV['PULMAP_RABBIT_SERVER'] || 'amqp://localhost:5672' %>
+    exchange: 'gbl_events'

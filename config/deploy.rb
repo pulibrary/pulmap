@@ -23,32 +23,14 @@ set :log_level, :debug
 # need tty for sudo
 set :pty, true
 
-# Default value for :linked_files is []
-set :linked_files, fetch(:linked_files, []).push('config/blacklight.yml',
-                                                 'config/database.yml',
-                                                 'config/secrets.yml',
-                                                 'config/initializers/sneakers.rb',
-                                                 'config/pulmap.yml')
-
 # Default value for linked_dirs is []
 set :linked_dirs, fetch(:linked_dirs, []).push('log',
                                                'tmp/pids',
                                                'tmp/cache/downloads',
                                                'tmp/sockets',
-                                               'public/thumbnails')
+                                               'tmp/thumbnails')
 
-# Default value for default_env is {}
-# set :default_env, { path: "/opt/ruby/bin:$PATH" }
-
-# Default value for keep_releases is 5
-# set :keep_releases, 5
-
-##
-# pasenger needs sudo for restart
-# Steps on server:
-# 1. Create file: /etc/sudoers.d/deployer_username
-# 2. Add to file: deployer_username ALL=(ALL) NOPASSWD:/usr/bin/env,/usr/local/bin/passenger-config
-set :passenger_restart_with_sudo, true
+set :passenger_restart_with_touch, true
 
 namespace :deploy do
   after :restart, :clear_cache do
@@ -64,7 +46,7 @@ end
 namespace :sneakers do
   task :restart do
     on roles(:worker) do
-      execute :sudo, :initctl, :restart, 'pulmap-sneakers'
+      execute :sudo, :service, 'pulmap-sneakers', :restart
     end
   end
 end
