@@ -14,14 +14,10 @@ test:
   <<: *default
   database: db/test.sqlite3
 
-production:
-  adapter: mysql2
-  collation: utf8_bin
-  encoding: utf8
-  database: db
-  pool: 5
-  username: user
-  password: pass
-  timeout: 5000
-  host: localhost
-  
+production: &deploy
+  <<: *default
+  adapter: postgresql
+  database: <%= ENV["PULMAP_DB"] %>
+  host: <%= ENV["PULMAP_DB_HOST"] %>
+  username: <%= ENV["PULAMP_DB_USERNAME"] %>
+  password: <%= ENV["PULMAP_DB_PASSWORD"] %>

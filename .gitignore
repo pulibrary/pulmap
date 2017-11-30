@@ -21,9 +21,6 @@
 /tmp/cache/downloads/*
 !/tmp/cache/downloads/.keep
 
-# Igonore Config files
-/config/database.yml
-
 /coverage
 
 # Ignore node modules
