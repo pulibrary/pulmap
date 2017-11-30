@@ -80,6 +80,7 @@ gem 'pul_uv_rails', git: 'https://github.com/pulibrary/pul_uv_rails', branch: 'm
 gem 'rails-reverse-proxy'
 gem 'rsolr', '~> 1.1.1'
 gem 'rspec-rails', '~> 3.5.0'
+gem 'sidekiq'
 gem 'simple_form'
 gem 'sneakers'
 gem 'solr_wrapper'

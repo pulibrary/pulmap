@@ -48,6 +48,7 @@ Metrics/LineLength:
     # TODO: Refactor add_show_tools_partial procs.
     - 'app/controllers/catalog_controller.rb'
     - 'app/helpers/advanced_helper.rb'
+    - 'config/deploy.rb'
     - 'lib/tasks/ci.rake'
     - 'lib/tasks/thumbnails.rake'
     - 'spec/lib/thumbnail_spec.rb'
@@ -74,6 +75,10 @@ Style/StringLiterals:
 Naming/PredicateName:
   Exclude:
     - 'app/controllers/catalog_controller.rb'
+
+Rails/Output:
+  Exclude:
+    - 'config/deploy.rb'
 
 RSpec/DescribeClass:
   Exclude:

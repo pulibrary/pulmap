@@ -11,7 +11,7 @@ namespace :pulmap do
         document = Geoblacklight::SolrDocument.find(args[:doc_id])
         raise Blacklight::Exceptions::RecordNotFound if document[:layer_slug_s] != args[:doc_id]
         if !Rails.cache.exist?("thumbnails/#{args[:doc_id]}") || args[:override_existing]
-          CacheThumbnailJob.perform_now(document.to_h)
+          CacheThumbnailJob.perform_later(document.to_h)
         end
       end
     end
@@ -33,7 +33,7 @@ namespace :pulmap do
           puts "#{document[:layer_slug_s]} (#{doc_counter}/#{num_found})"
           begin
             if !Rails.cache.exist?("thumbnails/#{document[:layer_slug_s]}") || args[:override_existing]
-              CacheThumbnailJob.perform_now(document.to_h)
+              CacheThumbnailJob.perform_later(document.to_h)
             end
           rescue Blacklight::Exceptions::RecordNotFound
             next
@@ -60,7 +60,7 @@ namespace :pulmap do
           puts "#{document[:layer_slug_s]} (#{doc_counter}/#{num_found})"
           begin
             if !Rails.cache.exist?("thumbnails/#{document[:layer_slug_s]}") || args[:override_existing]
-              CacheThumbnailJob.perform_now(document.to_h)
+              CacheThumbnailJob.perform_later(document.to_h)
             end
           rescue Blacklight::Exceptions::RecordNotFound
             next

@@ -32,17 +32,6 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log',
 
 set :passenger_restart_with_touch, true
 
-namespace :deploy do
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
-    end
-  end
-end
-
 namespace :sneakers do
   task :restart do
     on roles(:worker) do
@@ -51,5 +40,21 @@ namespace :sneakers do
   end
 end
 
+namespace :sidekiq do
+  task :quiet do
+    # Horrible hack to get PID without having to use terrible PID files
+    on roles(:worker) do
+      puts capture("kill -USR1 $(sudo service sidekiq-workers status | grep /running | awk '{print $NF}') || :")
+    end
+  end
+  task :restart do
+    on roles(:worker) do
+      execute :sudo, :service, 'sidekiq-workers', :restart
+    end
+  end
+end
+after 'deploy:starting', 'sidekiq:quiet'
+after 'deploy:reverted', 'sidekiq:restart'
 after 'deploy:reverted', 'sneakers:restart'
+after 'deploy:published', 'sidekiq:restart'
 after 'deploy:published', 'sneakers:restart'
