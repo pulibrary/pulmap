@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module Pulmap
   class Application < Rails::Application
+    require 'sidekiq_chart'
+
     config.cache_store = :file_store, Rails.root.join("tmp", "thumbnails")
     config.active_job.queue_adapter = if Rails.env == "production"
                                         :sidekiq
