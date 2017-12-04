@@ -73,6 +73,7 @@ gem 'chosen-rails' #  jquery multiselect plugin for advanced search
 gem 'devise'
 gem 'devise-guests', '~> 0.3.3'
 gem 'geoblacklight', '~> 1.6.0'
+gem 'honeybadger', '~> 3.1'
 gem 'mail_form'
 gem 'neat', '~> 1.8'
 gem 'omniauth-cas'
