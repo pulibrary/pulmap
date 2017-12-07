@@ -9,7 +9,11 @@ class ThumbnailService
     # @param [Integer] thumbnail size
     # @return [String] wms thumbnail url
     def self.thumbnail_url(document, size)
-      "#{document.viewer_endpoint}/reflect?" \
+      # Swap proxy url with princeton geoserver url.
+      # Thumbnail requests send geoserver auth.
+      endpoint = document.viewer_endpoint.gsub(Settings.PROXY_GEOSERVER_URL,
+                                               Settings.PRINCETON_GEOSERVER_URL)
+      "#{endpoint}/reflect?" \
         '&FORMAT=image%2Fpng' \
         '&TRANSPARENT=TRUE' \
         "&LAYERS=#{document['layer_id_s']}" \
