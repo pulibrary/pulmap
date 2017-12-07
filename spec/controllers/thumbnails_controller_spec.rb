@@ -82,9 +82,10 @@ RSpec.describe ThumbnailsController, type: :controller do
         get :index, params: { id: "princeton-m613n013z" }
         expect(connection).to have_received(:authorization).with(:Basic, "realuser:realpass")
       end
-      it "caches a thumbnail via geoserver proxy" do
+      it "caches a thumbnail via geoserver server and not the geoserver proxy" do
         get :index, params: { id: "princeton-m613n013z" }
-        expect(Faraday).to have_received(:new).with(url: /restricted:pks65mg55/)
+        expect(Faraday).to have_received(:new)
+          .with(url: /geoserver.princeton.edu.*restricted:pks65mg55/)
       end
     end
 
