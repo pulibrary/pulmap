@@ -34,7 +34,7 @@ describe 'Feedback Form', type: :feature do
   end
 
   context 'when Princeton Community User has signed in' do
-    let(:user) { FactoryGirl.create(:user) }
+    let(:user) { FactoryBot.create(:user) }
 
     before { OmniAuth.config.test_mode = true }
     it 'Populates Email Field' do

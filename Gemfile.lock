@@ -143,10 +143,10 @@ GEM
     docile (1.1.5)
     erubi (1.6.1)
     execjs (2.7.0)
-    factory_girl (4.8.0)
+    factory_bot (4.8.2)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.8.0)
-      factory_girl (~> 4.8.0)
+    factory_bot_rails (4.8.2)
+      factory_bot (~> 4.8.2)
       railties (>= 3.0.0)
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
@@ -442,7 +442,7 @@ DEPENDENCIES
   database_cleaner
   devise
   devise-guests (~> 0.3.3)
-  factory_girl_rails
+  factory_bot_rails
   geoblacklight (~> 1.6.0)
   honeybadger (~> 3.1)
   jbuilder (~> 2.5)
