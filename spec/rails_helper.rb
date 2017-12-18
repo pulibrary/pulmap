@@ -7,7 +7,7 @@ require 'capybara/poltergeist'
 require 'capybara/rspec'
 require 'capybara/rails'
 require 'devise'
-require 'factory_girl'
+require 'factory_bot'
 
 Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, timeout: 60)
@@ -33,7 +33,7 @@ RSpec.configure do |config|
   config.before(:suite) do
     begin
       DatabaseCleaner.start
-      # FactoryGirl.lint
+      # FactoryBot.lint
     ensure
       DatabaseCleaner.clean
     end
@@ -43,7 +43,7 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Devise::Test::ControllerHelpers, type: :view
   config.include Warden::Test::Helpers, type: :feature
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
   config.include Features::SessionHelpers, type: :feature
 
   config.infer_spec_type_from_file_location!

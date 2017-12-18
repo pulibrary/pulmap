@@ -53,7 +53,7 @@ group :development, :test do
   gem 'byebug'
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'poltergeist'
   gem 'rails-controller-testing'
   gem 'rubocop', '~> 0.51.0', require: false

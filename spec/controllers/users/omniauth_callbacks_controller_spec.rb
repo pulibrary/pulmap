@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Users::OmniauthCallbacksController do
   describe 'log in redirect' do
-    let(:user) { FactoryGirl.create(:user) }
+    let(:user) { FactoryBot.create(:user) }
 
     it 'after login, user returns to origin page' do
       request.env['omniauth.origin'] = solr_document_path 'columbia-columbia-landinfo-global-aet'
