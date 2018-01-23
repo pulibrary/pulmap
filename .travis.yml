@@ -13,15 +13,27 @@ jdk:
 cache:
   directories:
   - /tmp/solr-6.1.0
+  - node_modules
+  yarn: true
 
 before_install:
   - gem update --system
 
+install:
+  - bundle install
+  - nvm install node
+  - node -v
+  - npm i -g yarn
+  - yarn
+
 before_script:
+  - NODE_ENV=test bundle exec rails webpacker:compile
   - RAILS_ENV=test bundle exec rake db:migrate
 
 env:
   global:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 
-script: bundle exec rake ci
+script:
+  - yarn lint
+  - bundle exec rake ci

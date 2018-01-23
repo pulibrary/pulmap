@@ -32,7 +32,6 @@
 
 //= require Leaflet.fullscreen
 //= require Leaflet.ExtraMarkers
-//= require leaflet-geocoder-mapzen
 
 //= require bootstrap/affix
 

@@ -4,7 +4,7 @@ desc 'Run test suite'
 task :ci do
   if Rails.env.test?
     Rake::Task['rubocop'].invoke
-    run_solr('ci', port: '8985') do
+    run_solr('ci', port: '8985', url: 'http://apache.claz.org/lucene/solr/6.6.2/solr-6.6.2.zip', ignore_md5sum: true) do
       Rake::Task['geoblacklight:solr:seed'].invoke
       Rake::Task['spec'].invoke
     end

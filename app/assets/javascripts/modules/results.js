@@ -111,21 +111,12 @@ Blacklight.onLoad(function() {
     });
   }
 
+  /**
+   * Add a geocoding plugin to the map
+   * @param {L.Map} map Leaflet Map instance
+   */
   function addGeocoder(map) {
-    var geocoder = L.control.geocoder('search-gczeV3H', {
-      placeholder: 'Search for location',
-      markers: true,
-      pointIcon: false,
-      polygonIcon: false,
-      expanded: false,
-      params: {
-        sources: ['whosonfirst']
-      }
-    })
-    geocoder.addTo(map);
-    geocoder.on('select', function (e) {
-      geocoder.collapse();
-    });
+    window.geoCoder.addTo(map);
 
     var options = {
       placement: 'right',
@@ -135,8 +126,8 @@ Blacklight.onLoad(function() {
     };
 
     // Set tooltips on geocoder
-    $('.leaflet-pelias-search-icon').attr('data-toggle','tooltip');
-    $('.leaflet-pelias-search-icon').tooltip(options);
+    $('.geosearch a.leaflet-bar-part-single').attr('data-toggle','tooltip');
+    $('.geosearch a.leaflet-bar-part-single').tooltip(options);
   }
 
   function updatePage(url) {
