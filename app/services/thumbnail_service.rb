@@ -119,7 +119,7 @@ class ThumbnailService
 
   # Default thumbnail size.
   def thumbnail_size
-    256
+    77
   end
 
   # Faraday timeout value.
