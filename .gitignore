@@ -41,3 +41,6 @@ solr/conf/*.jar
 .byebug_history
 
 .DS_Store
+/public/packs
+/public/packs-test
+/node_modules

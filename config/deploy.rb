@@ -58,3 +58,16 @@ after 'deploy:reverted', 'sidekiq:restart'
 after 'deploy:reverted', 'sneakers:restart'
 after 'deploy:published', 'sidekiq:restart'
 after 'deploy:published', 'sneakers:restart'
+
+before "deploy:assets:precompile", "deploy:npm_install"
+
+namespace :deploy do
+  desc 'Run rake npm install'
+  task :npm_install do
+    on roles(:web) do
+      within release_path do
+        execute("cd #{release_path} && npm install")
+      end
+    end
+  end
+end

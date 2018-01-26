@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "@rails/webpacker": "^3.2.1",
+    "babel-polyfill": "^6.26.0",
+    "coffeescript": "1.12.7",
+    "leaflet-geosearch": "^2.6.0",
+    "rails-erb-loader": "^5.2.1",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "webpack-dev-server": "^2.11.1"
+  },
+  "scripts": {
+    "lint": "eslint app/javascript/"
+  }
+}

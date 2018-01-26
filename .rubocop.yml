@@ -12,6 +12,7 @@ AllCops:
   - 'vendor/**/*'
   - 'config/initializers/*'
   - 'spec/factories/*'
+  - 'node_modules/**/*'
 
 # TODO: Reduce method complexity in omniauth callback controller.
 Metrics/AbcSize:

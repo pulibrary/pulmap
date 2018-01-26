@@ -12,6 +12,8 @@ GeoBlacklight for Princeton University Library
 bundle
 cp config/database.yml.tmpl config/database.yml
 rake db:migrate
+npm install --global yarn
+yarn
 rake geoblacklight:server
 ```
 To index sample data into solr, in another terminal run:

@@ -2,6 +2,10 @@ defaults: &defaults
   events:
     server: 'amqp://localhost:5672'
     exchange: 'gbl_events'
+  leaflet_geocoder:
+    provider:
+      name: <%= ENV['LEAFLET_GEOCODER_PROVIDER'] || 'OpenStreetMap' %>
+      key: <%= ENV['LEAFLET_GEOCODER_KEY'] || 'secret' %>
 
 development:
   <<: *defaults
