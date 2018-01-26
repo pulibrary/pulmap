@@ -2,7 +2,7 @@
 //= depend_on_asset 'fullscreen-2x.png'
 
 .leaflet-control-fullscreen a {
-  background:#fff url(<%= asset_data_uri 'fullscreen.png' %>) no-repeat 0 0;
+  background:#fff url(<%= asset_url 'fullscreen.png' %>) no-repeat 0 0;
   background-size:26px 52px;
   }
   .leaflet-touch .leaflet-control-fullscreen a {
@@ -38,6 +38,6 @@
   (-webkit-min-device-pixel-ratio:2),
   (min-resolution:192dpi) {
     .leaflet-control-fullscreen a {
-      background-image:url(<%= asset_data_uri 'fullscreen@2x.png' %>);
+      background-image:url(<%= asset_url 'fullscreen@2x.png' %>);
     }
   }
