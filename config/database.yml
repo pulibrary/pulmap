@@ -19,5 +19,5 @@ production: &deploy
   adapter: postgresql
   database: <%= ENV["PULMAP_DB"] %>
   host: <%= ENV["PULMAP_DB_HOST"] %>
-  username: <%= ENV["PULAMP_DB_USERNAME"] %>
+  username: <%= ENV["PULMAP_DB_USERNAME"] %>
   password: <%= ENV["PULMAP_DB_PASSWORD"] %>
