@@ -1,4 +1,14 @@
 GIT
+  remote: https://github.com/pulibrary/geoserver-worker
+  revision: 39d48e5d45531a3aa99c9002a9ab5c04f9f3d2e1
+  branch: master
+  specs:
+    geoserver-worker (0.1.0)
+      bundler (~> 1.16)
+      geoserver-publish
+      sneakers
+
+GIT
   remote: https://github.com/pulibrary/pul_uv_rails
   revision: e3dd14a13aa8468751dd5d870b3647bafc0db9ff
   branch: master
@@ -204,6 +214,8 @@ GEM
       mime-types
       rails (~> 5.0)
     geoblacklight-icons (1.2.0)
+    geoserver-publish (0.2.0)
+      faraday
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     hashie (3.5.7)
@@ -481,6 +493,7 @@ DEPENDENCIES
   devise-guests (~> 0.3.3)
   factory_bot_rails
   geoblacklight (~> 1.7.0)
+  geoserver-worker!
   honeybadger (~> 3.1)
   jbuilder (~> 2.5)
   jquery-rails
@@ -488,7 +501,7 @@ DEPENDENCIES
   modernizr-rails
   neat (~> 1.8)
   omniauth-cas
-  pg (~> 0.9)
+  pg (~> 0.21)
   poltergeist
   pul_uv_rails!
   puma (~> 3.0)
