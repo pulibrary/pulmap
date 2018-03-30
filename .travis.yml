@@ -12,7 +12,7 @@ jdk:
 
 cache:
   directories:
-  - /tmp/solr-6.1.0
+  - /tmp/solr
   - node_modules
   yarn: true
 
