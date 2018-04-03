@@ -10,7 +10,6 @@ GeoBlacklight for Princeton University Library
 ### Installation
 ```
 bundle
-cp config/database.yml.tmpl config/database.yml
 rake db:migrate
 npm install --global yarn
 yarn
