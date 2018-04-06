@@ -54,6 +54,7 @@ Rails.application.routes.draw do
   resources :suggest, only: :index, defaults: { format: 'json' }
 
   authenticate :user do
-    match 'geoserver/restricted/*path' => 'geoserver#index', via: [:get]
+    match 'geoserver/restricted-figgy/*path' => 'geoserver#index', via: [:get]
+    match 'geoserver/restricted-figgy-staging/*path' => 'geoserver#index', via: [:get]
   end
 end
