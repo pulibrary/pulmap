@@ -1,0 +1,64 @@
+
+version: 2
+jobs:
+  build:
+    
+    docker:
+      # The primary container is an instance of the first list image listed. Your build commands run in this container.
+      - image: circleci/ruby:2.4.1-node-browsers
+        environment:
+          RAILS_ENV: test
+          PULMAP_DB_HOST: localhost
+          PULMAP_DB_USERNAME: geoblacklight
+      
+    working_directory: ~/pulmap  
+    steps:
+      - checkout
+
+    # Only necessary if app uses webpacker or yarn in some other way
+      - restore_cache:
+          keys:
+            - pulmap-{{ checksum "package-lock.json" }}
+            - pulmap-
+      - run:
+          name: NPM Install
+          command: npm install
+      # Store yarn / webpacker cache
+      - save_cache:
+          key: pulmap-{{ checksum "package-lock.json" }}
+          paths:
+            - npm_modules
+      
+      - persist_to_workspace:
+          root: '~/pulmap'
+          paths: '*'
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - pulmap-{{ checksum "Gemfile.lock" }}
+          - pulmap-
+
+      - run:
+          name: Install dependencies
+          command: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs 4 --retry 3
+      
+      - run: gem update --system
+      
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: pulmap-{{ checksum "Gemfile.lock" }}
+      
+      - run: NODE_ENV=test bundle exec rails webpacker:compile
+        
+      - run:
+          name: Database setup 
+          command: bundle exec rake db:migrate
+   
+      - run:
+          name: Run test suite 
+          command: bundle exec rake ci
+          background: true
+
+      - run: bin/jetty_wait
