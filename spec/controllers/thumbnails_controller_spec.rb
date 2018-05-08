@@ -67,8 +67,8 @@ RSpec.describe ThumbnailsController, type: :controller do
 
     context "with a restricted Princeton scanned map" do
       it "caches a static thumbnail" do
-        get :index, params: { id: "princeton-3x816p22x" }
-        expect(Faraday).to have_received(:new).with(url: /p0g356x08n\?file=thumbnail/)
+        get :index, params: { id: "princeton-kk91fn37z" }
+        expect(Faraday).to have_received(:new).with(url: %r{file\/ff421116-2bea-495b-b76a-3494af5a})
       end
     end
 

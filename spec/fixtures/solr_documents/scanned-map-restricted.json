@@ -1,23 +1,24 @@
 {
   "geoblacklight_version": "1.0",
-  "dc_identifier_s": "ark:/88435/3x816p22x",
-  "layer_slug_s": "princeton-3x816p22x",
-  "uuid": "princeton-3x816p22x",
-  "dc_title_s": "Poland 1:100,000. Kolo, sheet P-13. A.M.S. M651 (G.S.G.S. 4416)",
-  "solr_geom": "ENVELOPE(18.333333333333332, 19.333333333333332, 52.25, 51.75)",
+  "dc_identifier_s": "ark:/88435/kk91fn37z",
+  "layer_slug_s": "princeton-kk91fn37z",
+  "uuid": "princeton-kk91fn37z",
+  "dc_title_s": "Dublin",
+  "solr_geom": "ENVELOPE(-6.316666666666666, -6.033333333333333, 53.4, 53.266666666666666)",
   "dct_provenance_s": "Princeton",
   "dc_rights_s": "Restricted",
-  "dc_description_s": "AMS 2.",
-  "dc_language_s": "Undetermined",
-  "dc_publisher_s": "Washington, D.C. : Army Map Service, U.S. Army, 1945.",
+  "dc_description_s": "Ireland. Ordnance Survey Office. Popular edition, revised 1962. Inset: map of Dublin city center. Postal districts are located. Index of national grid. In lower left margin: \"Revised in 1962.\" In lower right margin: \"6-63; 10,000.\".",
+  "dc_language_s": "English",
+  "dc_publisher_s": "Dublin : [s.n.], 1963.",
   "dc_subject_sm": [
-    "Poland—Maps",
-    "Topographic maps"
+    "Road maps",
+    "Postal zones",
+    "Cities and towns",
+    "Ireland—Maps"
   ],
-  "solr_year_i": 1945,
-  "layer_modified_dt": "2017-05-05T09:26:16Z",
-  "layer_id_s": "public:p0g356x08n",
-  "dct_references_s": "{\"http://schema.org/url\":\"https://plum.princeton.edu/concern/image_works/p8336kk07s\",\"http://www.opengis.net/cat/csw/csdgm\":\"https://plum.princeton.edu/downloads/pxp68nz74p\",\"http://schema.org/downloadUrl\":\"https://plum.princeton.edu/downloads/p0g356x08n\",\"http://schema.org/thumbnailUrl\":\"https://plum.princeton.edu/downloads/p0g356x08n?file=thumbnail\",\"http://iiif.io/api/image\":\"https://libimages1.princeton.edu/loris/plum_prod/p0%2Fg3%2F56%2Fx0%2F8n-intermediate_file.jp2/info.json\",\"http://iiif.io/api/presentation#manifest\":\"https://plum.princeton.edu/concern/image_works/p8336kk07s/manifest\"}",
+  "layer_modified_dt": "2018-02-24T00:28:13Z",
+  "layer_id_s": "restricted-figgy:dbda842f-824b-41b6-b238-216a405c06e6",
+  "dct_references_s": "{\"http://schema.org/url\":\"https://figgy.princeton.edu/concern/scanned_maps/c52103c1-b51d-4778-93b4-9ce3eba3696e\",\"http://schema.org/thumbnailUrl\":\"https://figgy.princeton.edu/downloads/dbda842f-824b-41b6-b238-216a405c06e6/file/ff421116-2bea-495b-b76a-3494af5a12fe\"}",
   "layer_geom_type_s": "Image",
   "dc_format_s": "TIFF"
 }
