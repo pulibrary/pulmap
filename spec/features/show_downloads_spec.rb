@@ -2,12 +2,12 @@ require 'rails_helper'
 
 describe 'Show page downloads' do
   it 'renders the the link to the download credit request page for Princeton Documents' do
-    visit solr_document_path('princeton-8c97ks94m')
+    visit solr_document_path('princeton-cv43nz62s')
     expect(page).to have_css '#downloadsLink'
   end
 
   it 'renders the the authentication link for access-restricted Princeton Documents' do
-    visit solr_document_path('princeton-3x816p22x')
+    visit solr_document_path('princeton-m613n013z')
     expect(page).to have_link 'Login to view and download'
   end
 

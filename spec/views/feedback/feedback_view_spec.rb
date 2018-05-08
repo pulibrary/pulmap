@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Feedback Form', type: :feature do
   context 'when user has not signed in' do
     before do
-      visit('/catalog/princeton-8c97ks94m')
+      visit('/catalog/princeton-cv43nz62s')
       click_link('Contact Us')
     end
 
@@ -39,7 +39,7 @@ describe 'Feedback Form', type: :feature do
     before { OmniAuth.config.test_mode = true }
     it 'Populates Email Field' do
       sign_in user
-      visit('/catalog/princeton-8c97ks94m')
+      visit('/catalog/princeton-cv43nz62s')
       click_link('Contact Us')
       expect(page).to have_field('feedback_form_email', with: "#{user.uid}@princeton.edu")
     end

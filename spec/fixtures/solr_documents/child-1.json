@@ -7,7 +7,7 @@
   "solr_geom": "ENVELOPE(-74.68, -74.63, 40.37, 40.33)",
   "dct_provenance_s": "Princeton",
   "dc_rights_s": "Public",
-  "dc_description_s": "Feb. 1885.",
+  "dc_description_s": "\"Feb. 1885.\" Oriented with the north to the upper left. Includes location map and key. Title taken from sheet 1 of 1927 map.",
   "dc_creator_sm": [
     "Sanborn Map Company"
   ],
@@ -17,9 +17,9 @@
     "Real property—New Jersey—Princeton—Maps",
     "Princeton (N.J.)—Maps"
   ],
-  "layer_modified_dt": "2017-05-23T21:37:01Z",
-  "layer_id_s": "public:p8g84q7230",
-  "dct_references_s": "{\"http://schema.org/url\":\"https://plum.princeton.edu/concern/image_works/pgx41q6224\",\"http://schema.org/downloadUrl\":\"https://plum.princeton.edu/downloads/p8g84q7230\",\"http://schema.org/thumbnailUrl\":\"https://plum.princeton.edu/downloads/p8g84q7230?file=thumbnail\",\"http://iiif.io/api/image\":\"https://libimages1.princeton.edu/loris/plum_prod/p8%2Fg8%2F4q%2F72%2F30-intermediate_file.jp2/info.json\",\"http://iiif.io/api/presentation#manifest\":\"https://plum.princeton.edu/concern/image_works/pgx41q6224/manifest\"}",
+  "layer_modified_dt": "2018-02-23T23:53:39Z",
+  "layer_id_s": "public-figgy:b6ba3091-fcf4-4d2d-9d6a-df7df5c8c588",
+  "dct_references_s": "{\"http://schema.org/url\":\"https://figgy.princeton.edu/concern/scanned_maps/2806e4cf-effc-4827-b116-952dfe776d14\",\"http://schema.org/downloadUrl\":\"https://figgy.princeton.edu/downloads/b6ba3091-fcf4-4d2d-9d6a-df7df5c8c588/file/ff89fcc8-e61b-4b27-938f-a03e63d4f5f1\",\"http://schema.org/thumbnailUrl\":\"https://figgy.princeton.edu/downloads/b6ba3091-fcf4-4d2d-9d6a-df7df5c8c588/file/0cb6b6c7-bce2-46a8-8c79-2864c7ec5459\",\"http://iiif.io/api/image\":\"https://libimages1.princeton.edu/loris/figgy_prod/5a%2F20%2F58%2F5a20585db50d44959fe5ae44821fd174%2Fintermediate_file.jp2/info.json\",\"http://iiif.io/api/presentation#manifest\":\"https://figgy.princeton.edu/concern/scanned_maps/2806e4cf-effc-4827-b116-952dfe776d14/manifest\"}",
   "layer_geom_type_s": "Image",
   "dc_format_s": "TIFF",
   "suppressed_b": true,
