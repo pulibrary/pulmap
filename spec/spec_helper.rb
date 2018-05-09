@@ -1,13 +1,17 @@
-require 'simplecov'
-if ENV['CI']
-  require 'coveralls'
-  SimpleCov.formatter = Coveralls::SimpleCov::Formatter
-end
+# frozen_string_literal: true
 
-if ENV['COVERAGE'] || ENV['CI']
-  SimpleCov.start('rails') do
-    add_filter '/spec'
-  end
+ENV["RACK_ENV"] = "test"
+require 'simplecov'
+require 'coveralls'
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
+  [
+    SimpleCov::Formatter::HTMLFormatter,
+    Coveralls::SimpleCov::Formatter
+  ]
+)
+SimpleCov.start "rails" do
+  add_filter '/spec'
 end
 
 RSpec.configure do |config|

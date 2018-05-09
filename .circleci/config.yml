@@ -1,8 +1,8 @@
-
+---
 version: 2
 jobs:
   build:
-    
+    working_directory: ~/pulmap
     docker:
       # The primary container is an instance of the first list image listed. Your build commands run in this container.
       - image: circleci/ruby:2.4.1-node-browsers
@@ -10,55 +10,78 @@ jobs:
           RAILS_ENV: test
           PULMAP_DB_HOST: localhost
           PULMAP_DB_USERNAME: geoblacklight
-      
-    working_directory: ~/pulmap  
     steps:
       - checkout
-
-    # Only necessary if app uses webpacker or yarn in some other way
+      # Restore Cached Dependencies
+      - type: cache-restore
+        name: Restore bundle cache
+        key: pulmap-{{ checksum "Gemfile.lock" }}
+      # Bundle install dependencies
+      - run: bundle install --path vendor/bundle
+      # Cache Dependencies
+      - type: cache-save
+        name: Store bundle cache
+        key: pulmap-{{ checksum "Gemfile.lock" }}
+        paths:
+          - vendor/bundle
+      # Only necessary if app uses webpacker or yarn in some other way
       - restore_cache:
           keys:
-            - pulmap-{{ checksum "package-lock.json" }}
-            - pulmap-
+            - pulmap-npm-{{ checksum "package-lock.json" }}
+            - pulmap-npm
       - run:
           name: NPM Install
           command: npm install
       # Store yarn / webpacker cache
       - save_cache:
-          key: pulmap-{{ checksum "package-lock.json" }}
+          key: pulmap-npm{{ checksum "package-lock.json" }}
           paths:
             - npm_modules
-      
+      - run: NODE_ENV=test bundle exec rails webpacker:compile
       - persist_to_workspace:
           root: '~/pulmap'
           paths: '*'
-
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-          - pulmap-{{ checksum "Gemfile.lock" }}
-          - pulmap-
-
+  test:
+    working_directory: ~/pulmap
+    docker:
+      - image: circleci/ruby:2.4.1-node-browsers
+        environment:
+          RAILS_ENV: test
+          PULMAP_DB_HOST: localhost
+          PULMAP_DB_USERNAME: geoblacklight
+    steps:
+      - attach_workspace:
+          at: '~/pulmap'
+      # Bundle install dependencies
+      - run: bundle install --path vendor/bundle
       - run:
-          name: Install dependencies
-          command: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs 4 --retry 3
-      
-      - run: gem update --system
-      
-      - save_cache:
-          paths:
-            - ./vendor/bundle
-          key: pulmap-{{ checksum "Gemfile.lock" }}
-      
-      - run: NODE_ENV=test bundle exec rails webpacker:compile
-        
-      - run:
-          name: Database setup 
-          command: bundle exec rake db:migrate
-   
-      - run:
-          name: Run test suite 
-          command: bundle exec rake ci
+          command: bundle exec rake server:test
           background: true
-
       - run: bin/jetty_wait
+      - run: bundle exec rake db:migrate
+      - run: bundle exec rspec spec
+  rubocop:
+    working_directory: ~/pulmap
+    docker:
+      - image: circleci/ruby:2.4.1-node-browsers
+        environment:
+          RAILS_ENV: test
+          PULMAP_DB_HOST: localhost
+          PULMAP_DB_USERNAME: geoblacklight
+    steps:
+      - attach_workspace:
+          at: '~/pulmap'
+      # Bundle install dependencies
+      - run: bundle install --path vendor/bundle
+      - run: bundle exec rake rubocop
+workflows:
+  version: 2
+  build_accept_deploy:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - rubocop:
+          requires:
+            - build
