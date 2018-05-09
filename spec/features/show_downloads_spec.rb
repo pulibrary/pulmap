@@ -20,4 +20,9 @@ describe 'Show page downloads' do
     visit solr_document_path('stanford-cz128vq0535')
     expect(page).to have_link 'Download Shapefile'
   end
+
+  it 'does not render the download link for public Princeton scanned maps without tiff download' do
+    visit solr_document_path('princeton-1r66j405w')
+    expect(page).not_to have_css '#downloadsLink'
+  end
 end
