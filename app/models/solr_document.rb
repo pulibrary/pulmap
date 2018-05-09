@@ -21,4 +21,11 @@ class SolrDocument
   # and Blacklight::Document::SemanticFields#to_semantic_values
   # Recommendation: Use field names from Dublin Core
   use_extension(Blacklight::Document::DublinCore)
+
+  # Override to disable iiif downloads for Princeton scanned maps because the user
+  # can download the images using the Universal Viewer.
+  def iiif_download
+    return super unless same_institution?
+    false
+  end
 end
