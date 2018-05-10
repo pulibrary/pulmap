@@ -85,7 +85,7 @@ RSpec.describe ThumbnailsController, type: :controller do
       it "caches a thumbnail via geoserver server and not the geoserver proxy" do
         get :index, params: { id: "princeton-m613n013z" }
         expect(Faraday).to have_received(:new)
-          .with(url: /geoserver.princeton.edu.*restricted:pks65mg55/)
+          .with(url: /geoserver.princeton.edu.*restricted-figgy:735d9ddb/)
       end
     end
 
@@ -96,7 +96,7 @@ RSpec.describe ThumbnailsController, type: :controller do
 
       it "caches a static thumbnail" do
         get :index, params: { id: "princeton-m613n013z" }
-        expect(Faraday).to have_received(:new).with(url: %r{downloads\/pks65mg55z})
+        expect(Faraday).to have_received(:new).with(url: %r{downloads\/735d9ddb})
       end
     end
 
