@@ -13,5 +13,3 @@ unless Rails.env == 'production'
     task.fail_on_error = true
   end
 end
-
-task default: [:ci]

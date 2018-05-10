@@ -1,9 +1,9 @@
 development:
   adapter: solr
-  url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/blacklight-core" %>
+  url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/pulmap-core-dev" %>
 test: &test
   adapter: solr
-  url: <%= "http://127.0.0.1:#{ENV['SOLR_TEST_PORT'] || 8985}/solr/blacklight-core" %>
+  url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:#{ENV['TEST_JETTY_PORT'] || 8985}/solr/pulmap-core-test" %>
 production:
   adapter: solr
   url: <%= ENV['PULMAP_SOLR_URL'] %>

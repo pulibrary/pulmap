@@ -13,12 +13,18 @@ bundle
 rake db:migrate
 npm install --global yarn
 yarn
-rake geoblacklight:server
 ```
-To index sample data into solr, in another terminal run:
-```
-rake geoblacklight:solr:seed
-```
+
+### Setup server
+
+1. For test:
+   - `rake pulmap:test`
+   - In a separate terminal: `bundle exec rspec`
+2. For development:
+   - `rake pulmap:development`
+   - In a separate terminal: `rails s`
+   - Access Pulmap at http://localhost:3000/
+
 ### Production Requirements
 
 #### mod_xsendfile
