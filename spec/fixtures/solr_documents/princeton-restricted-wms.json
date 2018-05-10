@@ -12,29 +12,30 @@
     "Geographic Data Technology, Inc. (GDT)",
     "Environmental Systems Research Institute, Inc. (ESRI)"
   ],
+  "dc_publisher_s": "Environmental Systems Research Institute, Inc. (ESRI)",
   "dc_subject_sm": [
-    "census block numbering areas",
-    "Society",
-    "demographics",
-    "households",
-    "population",
     "polygon",
+    "census tracts",
+    "census block numbering areas",
+    "demographics",
+    "population",
+    "households",
     "Boundaries",
-    "census tracts"
+    "Society"
   ],
   "dct_spatial_sm": [
-    "Louisiana",
-    "United States"
+    "United States",
+    "Louisiana"
   ],
   "dct_temporal_sm": [
-    "2001",
     "2002",
-    "2000"
+    "2000",
+    "2001"
   ],
-  "solr_year_i": 2001,
-  "layer_modified_dt": "2017-09-08T17:39:13Z",
-  "layer_id_s": "restricted:pks65mg55z",
-  "dct_references_s": "{\"http://schema.org/url\":\"https://plum.princeton.edu/concern/vector_works/pf4755j414\",\"http://www.opengis.net/cat/csw/csdgm\":\"https://plum.princeton.edu/downloads/p2b88tc313\",\"http://schema.org/downloadUrl\":\"https://plum.princeton.edu/downloads/pks65mg55z\",\"http://schema.org/thumbnailUrl\":\"https://plum.princeton.edu/downloads/pks65mg55z?file=thumbnail\",\"http://www.opengis.net/def/serviceType/ogc/wms\":\"https://geoserver.princeton.edu/geoserver/restricted/wms\",\"http://www.opengis.net/def/serviceType/ogc/wfs\":\"https://geoserver.princeton.edu/geoserver/restricted/wfs\"}",
+  "solr_year_i": 2002,
+  "layer_modified_dt": "2018-04-05T01:16:21Z",
+  "layer_id_s": "restricted-figgy:735d9ddb-d293-4454-b85b-e4d972f0708a",
+  "dct_references_s": "{\"http://schema.org/url\":\"https://figgy.princeton.edu/concern/vector_resources/b0d2a81e-7668-4027-8901-4de5c011bcba\",\"http://www.opengis.net/cat/csw/csdgm\":\"https://figgy.princeton.edu/downloads/295c9e22-1163-461b-aff3-862a995c0600/file/b61ded13-7b29-4652-af80-0678fef09f9e\",\"http://schema.org/downloadUrl\":\"https://figgy.princeton.edu/downloads/735d9ddb-d293-4454-b85b-e4d972f0708a/file/021997fa-ba79-4445-989a-fb79f8b7382d\",\"http://schema.org/thumbnailUrl\":\"https://figgy.princeton.edu/downloads/735d9ddb-d293-4454-b85b-e4d972f0708a/file/891fa154-d4f9-4a0d-ba89-f46601f44acd\",\"http://www.opengis.net/def/serviceType/ogc/wms\":\"https://geoserver.princeton.edu/geoserver/restricted-figgy/wms\",\"http://www.opengis.net/def/serviceType/ogc/wfs\":\"https://geoserver.princeton.edu/geoserver/restricted-figgy/wfs\"}",
   "layer_geom_type_s": "Polygon",
   "dc_format_s": "Shapefile"
 }
