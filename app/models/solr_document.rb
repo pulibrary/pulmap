@@ -28,4 +28,10 @@ class SolrDocument
     return super unless same_institution?
     false
   end
+
+  # Tests if record has a thumbnail reference for display on show page.
+  def thumbnail_reference?
+    return true if fetch(references.reference_field, {})['http://schema.org/thumbnailUrl']
+    false
+  end
 end
