@@ -25,7 +25,7 @@ Metrics/BlockLength:
   Exclude:
     - 'app/controllers/catalog_controller.rb'
     - 'config/routes.rb'
-    - 'lib/tasks/ci.rake'
+    - 'lib/tasks/pulmap.rake'
     - 'lib/tasks/thumbnails.rake'
     - 'spec/**/*'
 
@@ -50,7 +50,7 @@ Metrics/LineLength:
     - 'app/controllers/catalog_controller.rb'
     - 'app/helpers/advanced_helper.rb'
     - 'config/deploy.rb'
-    - 'lib/tasks/ci.rake'
+    - 'lib/tasks/pulmap.rake'
     - 'lib/tasks/thumbnails.rake'
     - 'spec/lib/thumbnail_spec.rb'
     - 'spec/requests/advanced_request_spec.rb'
@@ -59,7 +59,6 @@ Metrics/MethodLength:
   Max: 14
   Exclude:
     - 'app/helpers/advanced_helper.rb'
-    - 'lib/tasks/ci.rake'
 
 Metrics/PerceivedComplexity:
   Exclude:
