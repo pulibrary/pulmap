@@ -6,9 +6,11 @@
 //= require geoblacklight/modules/download
 //= require geoblacklight/modules/item
 //= require geoblacklight/modules/layer_opacity
+//= require geoblacklight/modules/metadata
+//= require geoblacklight/modules/metadata_download_button
+//= require geoblacklight/modules/relations
 //= require geoblacklight/modules/util
 //= require geoblacklight/downloaders
-//= require geoblacklight/modules/relations
 
 //= require leaflet-iiif
 //= require esri-leaflet
