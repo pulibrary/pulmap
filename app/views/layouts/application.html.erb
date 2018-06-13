@@ -30,12 +30,15 @@
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    <% if Rails.env.production? %>
+      <%= render partial: 'shared/matomo' %>
+    <% end %>
   </head>
   <body class="<%= render_body_class %>">
   <div class="wrapper">
-    <%= render :partial => 'shared/header_navbar' %>
+    <%= render partial: 'shared/header_navbar' %>
     <%= render partial: 'shared/ajax_modal' %>
-    <%= render :partial=>'shared/flash_msg' %>
+    <%= render partial: 'shared/flash_msg' %>
 
     <main role="main">
       <div class="<%= container_type %>" id="main-container">
@@ -45,6 +48,6 @@
     </main>
   </div>
 
-  <%= render :partial => 'shared/footer' %>
+  <%= render partial: 'shared/footer' %>
   </body>
 </html>
