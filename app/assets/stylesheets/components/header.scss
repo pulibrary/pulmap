@@ -212,7 +212,7 @@
 
 .logo__pul a {
   display: inline-block;
-  
+
   &.pul-logo {
     @include vertical-align;
   }
@@ -518,4 +518,11 @@
 
 .navbar-fixed-top {
   z-index: 1000;
+}
+
+.search-widgets {
+  float: right;
+  @media (max-width: 1508px) {
+    float: none;
+  }
 }
