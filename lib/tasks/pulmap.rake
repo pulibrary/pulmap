@@ -1,3 +1,5 @@
+require Rails.root.join('app', 'services', 'robots_generator_service').to_s
+
 namespace :pulmap do
   namespace :solr do
     desc 'Updates solr config files from github'

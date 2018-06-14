@@ -78,4 +78,4 @@ task :robots_txt do
     end
   end
 end
-after :publishing, :robots_txt
+after 'deploy:published', 'robots_txt'
