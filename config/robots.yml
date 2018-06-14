@@ -1,0 +1,30 @@
+# Configuration file for generation robots.txt
+defaults: &defaults
+  sitemap_url: https://maps.princeton.edu/sitemap.xml.gz
+  disallowed_paths:
+    - '/*?q=*'
+    - '/*?f*'
+    - '/bookmarks'
+    - '/catalog/*/'
+    - '/catalog/email'
+    - '/catalog/opensearch'
+    - '/catalog/range_limit'
+    - '/catalog/sms'
+    - '/saved_searches'
+    - '/search_history'
+    - '/suggest'
+    - '/users'
+    - '/404'
+    - '/422'
+    - '/500'
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+
+staging:
+  <<: *defaults

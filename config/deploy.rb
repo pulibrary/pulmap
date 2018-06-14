@@ -59,8 +59,6 @@ after 'deploy:reverted', 'sneakers:restart'
 after 'deploy:published', 'sidekiq:restart'
 after 'deploy:published', 'sneakers:restart'
 
-before "deploy:assets:precompile", "deploy:npm_install"
-
 namespace :deploy do
   desc 'Run rake npm install'
   task :npm_install do
@@ -71,3 +69,13 @@ namespace :deploy do
     end
   end
 end
+before "deploy:assets:precompile", "deploy:npm_install"
+
+task :robots_txt do
+  on roles(:app) do
+    within release_path do
+      execute :rake, 'pulmap:robots_txt'
+    end
+  end
+end
+after :publishing, :robots_txt

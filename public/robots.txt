@@ -1,5 +1,18 @@
-# See http://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
-#
-# To ban all spiders from the entire site uncomment the next two lines:
-# User-agent: *
-# Disallow: /
+User-agent: *
+Crawl-delay: 10
+Sitemap: https://pulsearch.princeton.edu/sitemap.xml.gz
+Disallow: /*?q=*
+Disallow: /*?f*
+Disallow: /bookmarks
+Disallow: /catalog/*/
+Disallow: /catalog/email
+Disallow: /catalog/opensearch
+Disallow: /catalog/range_limit
+Disallow: /catalog/sms
+Disallow: /saved_searches
+Disallow: /search_history
+Disallow: /suggest
+Disallow: /users
+Disallow: /404
+Disallow: /422
+Disallow: /500

@@ -54,6 +54,7 @@ Metrics/LineLength:
     - 'lib/tasks/thumbnails.rake'
     - 'spec/lib/thumbnail_spec.rb'
     - 'spec/requests/advanced_request_spec.rb'
+    - 'spec/services/robots_generator_service_spec.rb'
 
 Metrics/MethodLength:
   Max: 14
