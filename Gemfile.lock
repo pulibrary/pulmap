@@ -140,6 +140,8 @@ GEM
       tins (~> 1.6)
     crass (1.0.4)
     database_cleaner (1.6.2)
+    ddtrace (0.12.1)
+      msgpack
     deep_merge (1.1.1)
     deprecation (1.0.0)
       activesupport
@@ -247,6 +249,12 @@ GEM
     kaminari-core (1.1.1)
     leaflet-rails (0.7.7)
     libv8 (3.16.14.19)
+    lograge (0.10.0)
+      actionpack (>= 4)
+      activesupport (>= 4)
+      railties (>= 4)
+      request_store (~> 1.0)
+    logstash-event (1.2.02)
     loofah (2.2.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -263,6 +271,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.1)
     modernizr-rails (2.7.1)
+    msgpack (1.2.4)
     multi_json (1.13.1)
     multipart-post (2.0.0)
     neat (1.9.0)
@@ -343,6 +352,8 @@ GEM
       ffi (>= 0.5.0, < 2)
     redis (4.0.1)
     ref (2.0.0)
+    request_store (1.4.1)
+      rack (>= 1.4)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -491,6 +502,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   coveralls
   database_cleaner
+  ddtrace
   devise
   devise-guests (~> 0.3.3)
   factory_bot_rails
@@ -499,6 +511,8 @@ DEPENDENCIES
   honeybadger (~> 3.1)
   jbuilder (~> 2.5)
   jquery-rails
+  lograge
+  logstash-event
   mail_form
   modernizr-rails
   neat (~> 1.8)
