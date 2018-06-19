@@ -275,5 +275,6 @@ class CatalogController < ApplicationController
 
   def downloads
     @response, @document = fetch params[:id]
+    not_found unless @document.downloadable? && @document.same_institution?
   end
 end
