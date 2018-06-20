@@ -7,18 +7,19 @@
   "solr_geom": "ENVELOPE(-6.316666666666666, -6.033333333333333, 53.4, 53.266666666666666)",
   "dct_provenance_s": "Princeton",
   "dc_rights_s": "Restricted",
-  "dc_description_s": "Ireland. Ordnance Survey Office. Popular edition, revised 1962. Inset: map of Dublin city center. Postal districts are located. Index of national grid. In lower left margin: \"Revised in 1962.\" In lower right margin: \"6-63; 10,000.\".",
-  "dc_language_s": "English",
+  "dc_description_s": "Popular edition, revised 1962. Ireland. Ordnance Survey Office. Inset: map of Dublin city center. Postal districts are located. Index of national grid. In lower left margin: \"Revised in 1962.\" In lower right margin: \"6-63; 10,000.\".",
+  "dc_language_s": "eng",
   "dc_publisher_s": "Dublin : [s.n.], 1963.",
   "dc_subject_sm": [
     "Road maps",
-    "Postal zones",
     "Cities and towns",
+    "Postal zones",
     "Ireland—Maps"
   ],
-  "layer_modified_dt": "2018-02-24T00:28:13Z",
+  "layer_modified_dt": "2018-06-07T06:26:29Z",
   "layer_id_s": "restricted-figgy:dbda842f-824b-41b6-b238-216a405c06e6",
-  "dct_references_s": "{\"http://schema.org/url\":\"https://figgy.princeton.edu/concern/scanned_maps/c52103c1-b51d-4778-93b4-9ce3eba3696e\",\"http://schema.org/thumbnailUrl\":\"https://figgy.princeton.edu/downloads/dbda842f-824b-41b6-b238-216a405c06e6/file/ff421116-2bea-495b-b76a-3494af5a12fe\"}",
+  "dct_references_s": "{\"http://schema.org/url\":\"https://catalog.princeton.edu/catalog/6865840\",\"http://schema.org/thumbnailUrl\":\"https://figgy.princeton.edu/downloads/dbda842f-824b-41b6-b238-216a405c06e6/file/ff421116-2bea-495b-b76a-3494af5a12fe\"}",
   "layer_geom_type_s": "Image",
-  "dc_format_s": "TIFF"
+  "dc_format_s": "TIFF",
+  "call_number_s": "G5784.D8.1963.I7"
 }
