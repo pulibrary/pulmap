@@ -6,6 +6,7 @@ describe 'advanced search' do
       visit '/?search_field=all_fields&q=map'
       click_link 'Advanced'
       expect(page).to have_css "#q1[value='map']", count: 1
+      expect(page).to have_css "option[value='dc_title_s asc']", text: "title"
     end
     it 'advanced keyword terms, fields, and operations carried over' do
       visit '/?f1=all_fields&q1=maps&op2=NOT&f2=title&q2=princeton&op3=NOT'\
