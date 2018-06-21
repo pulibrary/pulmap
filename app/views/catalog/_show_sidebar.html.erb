@@ -4,6 +4,10 @@
 
 <%= render :partial => 'show_tools' %>
 
+<% if source_panel_markup %>
+  <%= render :partial => 'show_source' %>
+<% end %>
+
 <% unless @document.more_like_this.empty? %>
   <div class="panel panel-default">
     <div class="panel-heading">More Like This</div>

@@ -11,6 +11,7 @@ describe 'Metadata display on show page' do
       expect(page).to have_css '.blacklight-dct_spatial_sm', text: 'Place(s):'
       expect(page).to have_css '.blacklight-dc_subject_sm', text: 'Subject(s):'
       expect(page).to have_css '.blacklight-dct_temporal_sm', text: 'Year:'
+      expect(page).to have_css '.blacklight-call_number_s', text: 'Call number:'
       expect(page).to have_css '.blacklight-dct_provenance_s', text: 'Held by:'
       expect(page).not_to have_content 'Thumbnail:'
     end

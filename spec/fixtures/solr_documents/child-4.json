@@ -19,11 +19,12 @@
   ],
   "layer_modified_dt": "2018-02-23T23:37:50Z",
   "layer_id_s": "public-figgy:f7074845-f1c4-4993-95cc-1ac34b2d07de",
-  "dct_references_s": "{\"http://schema.org/url\":\"https://figgy.princeton.edu/concern/scanned_maps/4bf7b087-3675-4791-bc3d-3fcbf5c1ba5e\",\"http://schema.org/downloadUrl\":\"https://figgy.princeton.edu/downloads/f7074845-f1c4-4993-95cc-1ac34b2d07de/file/dc07f19e-806b-49e0-8f3e-d93e795220cf\",\"http://schema.org/thumbnailUrl\":\"https://figgy.princeton.edu/downloads/f7074845-f1c4-4993-95cc-1ac34b2d07de/file/8604e132-4d77-4346-ac76-ed303656bbcc\",\"http://iiif.io/api/image\":\"https://libimages1.princeton.edu/loris/figgy_prod/46%2F2a%2Fc0%2F462ac078bf2c4b99a3c247841d23195f%2Fintermediate_file.jp2/info.json\",\"http://iiif.io/api/presentation#manifest\":\"https://figgy.princeton.edu/concern/scanned_maps/4bf7b087-3675-4791-bc3d-3fcbf5c1ba5e/manifest\"}",
+  "dct_references_s": "{\"http://schema.org/url\":\"https://catalog.princeton.edu/catalog/4266648\",\"http://schema.org/downloadUrl\":\"https://figgy.princeton.edu/downloads/f7074845-f1c4-4993-95cc-1ac34b2d07de/file/dc07f19e-806b-49e0-8f3e-d93e795220cf\",\"http://schema.org/thumbnailUrl\":\"https://figgy.princeton.edu/downloads/f7074845-f1c4-4993-95cc-1ac34b2d07de/file/8604e132-4d77-4346-ac76-ed303656bbcc\",\"http://iiif.io/api/image\":\"https://libimages1.princeton.edu/loris/figgy_prod/46%2F2a%2Fc0%2F462ac078bf2c4b99a3c247841d23195f%2Fintermediate_file.jp2/info.json\",\"http://iiif.io/api/presentation#manifest\":\"https://figgy.princeton.edu/concern/scanned_maps/4bf7b087-3675-4791-bc3d-3fcbf5c1ba5e/manifest\"}",
   "layer_geom_type_s": "Image",
   "dc_format_s": "TIFF",
   "suppressed_b": true,
   "dct_source_sm": [
     "princeton-1r66j405w"
-  ]
+  ],
+  "call_number_s": "HMC04 (Princeton)"
 }
