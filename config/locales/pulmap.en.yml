@@ -3,3 +3,8 @@ en:
     search:
       filters:
         featured_label: 'Featured'
+    source:
+      historic_maps: <div>Historic Map Division</div>
+                     <div>Rare Books and Special Collections</div>
+                     <div>Firestone Library</div>
+                     <a href="mailto:rbsc@princeton.edu">rbsc@princeton.edu</a>
