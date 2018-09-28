@@ -4,6 +4,10 @@ class CatalogController < ApplicationController
   include BlacklightRangeLimit::ControllerOverride
   include Blacklight::Catalog
 
+  rescue_from BlacklightRangeLimit::InvalidRange do
+    redirect_to '/', flash: { error: 'The start year must be before the end year.' }
+  end
+
   configure_blacklight do |config|
     # default advanced config values
     config.advanced_search ||= Blacklight::OpenStructWithHashAccess.new
