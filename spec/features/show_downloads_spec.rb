@@ -18,7 +18,7 @@ describe 'Show page downloads' do
 
   it 'renders the panel containing the download links for non-Princeton Documents' do
     visit solr_document_path('stanford-cz128vq0535')
-    expect(page).to have_link 'Download Shapefile'
+    expect(page).to have_link 'Original Shapefile'
   end
 
   it 'does not render the download link for public Princeton scanned maps without tiff download' do

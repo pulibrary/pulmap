@@ -1,6 +1,11 @@
 .show-document, .tools-sidebar {
   padding-top: 1em;
 
+  h2 {
+    font-size: 1.2em;
+    display: inline-block;
+  }
+
   .show-sanborn-legend {
     .panel-heading {
       background-color: #565656;
@@ -21,6 +26,28 @@
     .sanborn-legend {
       height: auto;
       max-width: 100%;
+    }
+  }
+
+  .downloads {
+    .panel-heading {
+      border-bottom-color: #ddd;
+    }    
+  }
+
+  .exports {
+    .panel-heading {
+      border-bottom-color: #ddd;
+    }
+
+    .export {
+      padding-left: 1.1em;
+      padding-right: 1.1em;
+
+      &-link-container {
+        display: block;
+        float: none;
+      }
     }
   }
 }
@@ -75,8 +102,4 @@ h2 {
 // Remove the horizontal rule above the Universal Viewer
 #viewer-container > hr.clear {
   display: none;
-}
-
-.downloads {
-  margin-left: 10px;
 }

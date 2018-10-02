@@ -36,6 +36,12 @@ module PulmapGeoblacklightHelper
     end
   end
 
+  def data_download_text(format)
+    download_format = proper_case_format(format)
+    value = t('geoblacklight.data_download.download_link', download_format: download_format)
+    value.html_safe
+  end
+
   private
 
   def leaflet_viewer

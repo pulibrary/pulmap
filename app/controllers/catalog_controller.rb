@@ -271,6 +271,7 @@ class CatalogController < ApplicationController
   end
 
   add_show_tools_partial :downloads, partial: 'downloads', if: proc { |_context, _config, options| options[:document] }
+
   ##
   # Overrides default Blacklight method to return true for an empty q value
   # @return [Boolean]
