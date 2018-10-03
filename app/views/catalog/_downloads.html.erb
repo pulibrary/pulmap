@@ -12,9 +12,4 @@
   <% elsif document.restricted? %>
     <%= link_to('Request offline access', '/contact-us') %>
   <% end %>
-<% elsif document_downloadable? %>
-  <div class='btn-group' itemprop='distribution' itemscope='itemscope' itemtype='http://schema.org/DataDownload'>
-	  <%= render 'downloads_primary' %>
-	  <%= render 'downloads_secondary' %>
-	</div>
 <% end %>

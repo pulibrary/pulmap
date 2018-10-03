@@ -24,6 +24,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'poltergeist'
+  gem 'pry-byebug'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.5.0'
   gem 'rubocop', '~> 0.51.0', require: false
@@ -46,7 +47,7 @@ gem 'capistrano-rails'
 gem 'chosen-rails' #  jquery multiselect plugin for advanced search
 gem 'devise'
 gem 'devise-guests', '~> 0.3.3'
-gem 'geoblacklight', '~> 1.7.0'
+gem 'geoblacklight', '~> 1.9.1'
 gem 'geoserver-worker', git: 'https://github.com/pulibrary/geoserver-worker', branch: 'master'
 gem 'honeybadger', '~> 3.1'
 gem 'mail_form'

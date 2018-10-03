@@ -81,6 +81,10 @@ Rails/Output:
   Exclude:
     - 'config/deploy.rb'
 
+Rails/OutputSafety:
+  Exclude:
+    - 'app/helpers/pulmap_geoblacklight_helper.rb'
+
 RSpec/DescribeClass:
   Exclude:
     - 'spec/features/**/*'

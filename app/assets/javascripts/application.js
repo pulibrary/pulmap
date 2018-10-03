@@ -22,6 +22,7 @@
 //= require 'blacklight_range_limit'
 
 //= require modernizr
+//= require handlebars.runtime
 
 //= require_tree .
 

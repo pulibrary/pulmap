@@ -149,4 +149,10 @@ describe PulmapGeoblacklightHelper, type: :helper do
       end
     end
   end
+
+  describe '#data_download_text' do
+    it 'generates the text for the download link element for original and generated files' do
+      expect(helper.data_download_text('GeoTIFF')).to eq 'Download GeoTIFF'
+    end
+  end
 end
