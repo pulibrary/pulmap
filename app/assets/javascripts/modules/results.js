@@ -37,8 +37,10 @@ Blacklight.onLoad(function() {
     var filter_params = L.Control.GeoSearch.prototype.filterParams();
 
     if (typeof data.mapBbox === 'string') {
+      GeoBlacklight.supressDynamicSearch = false; // Ensures that dynamic search is triggered
       bbox = L.bboxToBounds(data.mapBbox);
     } else {
+      GeoBlacklight.supressDynamicSearch = true; // Supresses dynamic search
       $('.document [data-bbox]').each(function() {
 
         try {
