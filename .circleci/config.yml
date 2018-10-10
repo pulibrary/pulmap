@@ -54,11 +54,12 @@ jobs:
           at: '~/pulmap'
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
+      - run: bundle exec rake db:migrate
       - run:
           command: bundle exec rake pulmap:test
           background: true
       - run: bin/jetty_wait
-      - run: bundle exec rake db:migrate
+      - run: bundle exec rake geoblacklight:solr:seed
       - run: bundle exec rspec spec
   rubocop:
     working_directory: ~/pulmap
