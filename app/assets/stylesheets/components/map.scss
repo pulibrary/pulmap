@@ -54,8 +54,13 @@ $basemap-color: #b8e6fe;
 
 // Layer control style
 .leaflet-control-layers-toggle {
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
+}
+
+.leaflet-touch .leaflet-control-layers-toggle {
+  width: 30px;
+  height: 30px;
 }
 
 .leaflet-retina .leaflet-control-layers-toggle {
