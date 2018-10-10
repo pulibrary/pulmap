@@ -24,7 +24,6 @@ namespace :pulmap do
         solr.with_collection(name: "pulmap-core-test", dir: Rails.root.join("solr", "conf").to_s) do
           puts "Solr running at http://localhost:8985/solr/pulmap-core-test/, ^C to exit"
           begin
-            Rake::Task['geoblacklight:solr:seed'].invoke
             sleep
           rescue Interrupt
             puts "\nShutting down..."
