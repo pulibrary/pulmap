@@ -55,3 +55,6 @@ GeoBlacklight.Controls.Fullscreen = function() {
     position: 'topright'
   }));
 };
+
+// Controls whether dynamic search on index page map is supressed
+GeoBlacklight.supressDynamicSearch = false;
