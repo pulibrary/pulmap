@@ -1,5 +1,18 @@
 require Rails.root.join('app', 'services', 'robots_generator_service').to_s
 
+desc 'Run test suite'
+task :ci do
+  shared_solr_opts = { managed: true, verbose: true, persist: false, download_dir: 'tmp' }
+  shared_solr_opts[:version] = ENV['SOLR_VERSION'] if ENV['SOLR_VERSION']
+
+  SolrWrapper.wrap(shared_solr_opts.merge(port: 8985, instance_dir: 'tmp/pulmap-core-test')) do |solr|
+    solr.with_collection(name: "pulmap-core-test", dir: Rails.root.join("solr", "conf").to_s) do
+      system 'RAILS_ENV=test rake geoblacklight:index:seed'
+      system 'RAILS_ENV=test rake spec'
+    end
+  end
+end
+
 namespace :pulmap do
   namespace :solr do
     desc 'Updates solr config files from github'
