@@ -54,12 +54,8 @@ jobs:
           at: '~/pulmap'
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
-      - run:
-          command: bundle exec rake pulmap:test
-          background: true
-      - run: bin/jetty_wait
       - run: bundle exec rake db:migrate
-      - run: bundle exec rspec spec
+      - run: bundle exec rake ci
   rubocop:
     working_directory: ~/pulmap
     docker:
