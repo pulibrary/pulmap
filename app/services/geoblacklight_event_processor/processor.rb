@@ -19,6 +19,10 @@ class GeoblacklightEventProcessor
       event['doc']
     end
 
+    def bulk?
+      event['bulk'] == 'true'
+    end
+
     def index
       Blacklight.default_index.connection
     end
