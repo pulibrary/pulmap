@@ -4,7 +4,7 @@ class GeoblacklightEventProcessor
       index.update params: { overwrite: true },
                    data: [doc].to_json,
                    headers: { 'Content-Type' => 'application/json' }
-      index.commit
+      index.commit unless bulk?
       true
     rescue RSolr::Error::Http
       false

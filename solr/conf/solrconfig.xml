@@ -48,10 +48,16 @@
     <updateLog>
       <str name="dir">${solr.ulog.dir:}</str>
     </updateLog>
+    <!-- Hard commit every 60 minutes -->
     <autoCommit>
-      <maxTime>15000</maxTime>
+      <maxDocs>10000</maxDocs>
+      <maxTime>3600000</maxTime>
       <openSearcher>false</openSearcher>
     </autoCommit>
+    <!-- Soft commit every 5 minutes -->
+    <autoSoftCommit>
+      <maxTime>300000</maxTime>
+    </autoSoftCommit>
   </updateHandler>
 
   <!-- realtime get handler, guaranteed to return the latest stored fields
