@@ -16,9 +16,9 @@
     "Postal zones",
     "Ireland—Maps"
   ],
-  "layer_modified_dt": "2018-06-07T06:26:29Z",
-  "layer_id_s": "restricted-figgy:dbda842f-824b-41b6-b238-216a405c06e6",
-  "dct_references_s": "{\"http://schema.org/url\":\"https://catalog.princeton.edu/catalog/6865840\",\"http://schema.org/thumbnailUrl\":\"https://figgy.princeton.edu/downloads/dbda842f-824b-41b6-b238-216a405c06e6/file/ff421116-2bea-495b-b76a-3494af5a12fe\"}",
+  "layer_modified_dt": "2018-10-12T19:21:35Z",
+  "layer_id_s": "restricted-figgy:p-f0705bc6-2bda-4f61-8459-7651a93efdce",
+  "dct_references_s": "{\"http://schema.org/url\":\"https://catalog.princeton.edu/catalog/6865840\",\"http://schema.org/thumbnailUrl\":\"https://figgy.princeton.edu/downloads/f0705bc6-2bda-4f61-8459-7651a93efdce/file/6e0974f3-4bb8-40cb-81a7-baf82975617f\"}",
   "layer_geom_type_s": "Image",
   "dc_format_s": "TIFF",
   "call_number_s": "G5784.D8.1963.I7"

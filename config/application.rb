@@ -17,5 +17,6 @@ module Pulmap
                                         :async
                                       end
     config.robots = OpenStruct.new(config_for(:robots))
+    config.active_record.sqlite3.represent_boolean_as_integer = true
   end
 end
