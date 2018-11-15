@@ -8,7 +8,7 @@ task :ci do
   SolrWrapper.wrap(shared_solr_opts.merge(port: 8985, instance_dir: 'tmp/pulmap-core-test')) do |solr|
     solr.with_collection(name: "pulmap-core-test", dir: Rails.root.join("solr", "conf").to_s) do
       system 'RAILS_ENV=test rake geoblacklight:index:seed'
-      system 'RAILS_ENV=test rake spec'
+      Rake::Task['spec'].invoke
     end
   end
 end
