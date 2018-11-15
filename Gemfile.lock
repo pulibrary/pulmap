@@ -266,7 +266,7 @@ GEM
       railties (>= 4)
       request_store (~> 1.0)
     logstash-event (1.2.02)
-    loofah (2.2.2)
+    loofah (2.2.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.0)
@@ -528,6 +528,7 @@ DEPENDENCIES
   jquery-rails
   lograge
   logstash-event
+  loofah (>= 2.2.3)
   mail_form
   modernizr-rails
   neat (~> 1.8)
