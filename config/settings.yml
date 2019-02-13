@@ -25,7 +25,7 @@ FIELDS:
   :PROVENANCE: 'dct_provenance_s'
   :REFERENCES: 'dct_references_s'
   :RIGHTS: 'dc_rights_s'
-  :SOURCE: 'dct_source_sm'
+  :SOURCE: 'dc_source_sm'
   :SPATIAL_COVERAGE: 'dct_spatial_sm'
   :SUBJECT: 'dc_subject_sm'
   :TEMPORAL: 'dct_temporal_sm'

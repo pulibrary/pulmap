@@ -46,7 +46,7 @@ describe 'Search' do
     end
 
     it 'are not hidden when searching child records from a parent record' do
-      visit '/?f[dct_source_sm][]=princeton-1r66j405w&q='
+      visit '/?f[dc_source_sm][]=princeton-1r66j405w&q='
       expect(page).to have_css '.document', count: 4
     end
   end
