@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 describe 'Search' do
+  let(:thumbnails_controller) { ThumbnailsController.new }
+
+  before do
+    allow(thumbnails_controller).to receive(:index)
+    allow(ThumbnailsController).to receive(:new).and_return(thumbnails_controller)
+  end
+
   describe 'Spelling suggestions' do
     it 'are turned on' do
       visit root_path
