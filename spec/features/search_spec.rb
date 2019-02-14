@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 describe 'Search' do
+  let(:thumbnails_controller) { ThumbnailsController.new }
+
+  before do
+    allow(thumbnails_controller).to receive(:index)
+    allow(ThumbnailsController).to receive(:new).and_return(thumbnails_controller)
+  end
+
   describe 'Spelling suggestions' do
     it 'are turned on' do
       visit root_path
@@ -46,7 +53,7 @@ describe 'Search' do
     end
 
     it 'are not hidden when searching child records from a parent record' do
-      visit '/?f[dct_source_sm][]=princeton-1r66j405w&q='
+      visit '/?f[dc_source_sm][]=princeton-1r66j405w&q='
       expect(page).to have_css '.document', count: 4
     end
   end
