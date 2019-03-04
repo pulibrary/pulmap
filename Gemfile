@@ -39,6 +39,7 @@ end
 
 gem 'blacklight_advanced_search'
 gem 'blacklight_range_limit'
+gem 'bootstrap-sass', '~> 3.4'
 gem 'bourbon', '4.3.4'
 gem 'capistrano', '~> 3.7.1'
 gem 'capistrano-bundler'
