@@ -46,7 +46,7 @@ gem 'capistrano-bundler'
 gem 'capistrano-passenger'
 gem 'capistrano-rails'
 gem 'chosen-rails' #  jquery multiselect plugin for advanced search
-gem 'devise'
+gem 'devise', '~> 4.6.0'
 gem 'devise-guests'
 gem 'geoblacklight', '~> 1.9.1'
 gem 'geoserver-worker', git: 'https://github.com/pulibrary/geoserver-worker', branch: 'master'
