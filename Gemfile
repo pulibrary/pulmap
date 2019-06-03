@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'autoprefixer-rails'
-gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails'
 gem 'ddtrace'
 gem 'jbuilder'
 gem 'jquery-rails'
