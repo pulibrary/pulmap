@@ -120,11 +120,12 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
+    childprocess (0.9.0)
+      ffi (~> 1.0, >= 1.0.11)
     chosen-rails (1.8.7)
       coffee-rails (>= 3.2)
       railties (>= 3.0)
       sass-rails (>= 3.2)
-    cliver (0.3.2)
     coderay (1.1.2)
     coffee-rails (5.0.0)
       coffee-script (>= 2.2.0)
@@ -314,10 +315,6 @@ GEM
       ast (~> 2.4.0)
     parslet (1.8.2)
     pg (1.1.4)
-    poltergeist (1.18.1)
-      capybara (>= 2.1, < 4)
-      cliver (~> 0.3.1)
-      websocket-driver (>= 0.2.0)
     powerpack (0.1.2)
     pry (0.12.2)
       coderay (~> 1.1.0)
@@ -429,6 +426,9 @@ GEM
     sassc (2.0.1)
       ffi (~> 1.9)
       rake
+    selenium-webdriver (3.141.0)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.2, >= 1.2.2)
     serverengine (2.0.7)
       sigdump (~> 0.2.2)
     sidekiq (5.2.7)
@@ -498,6 +498,10 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+    webdrivers (3.8.0)
+      nokogiri (~> 1.6)
+      rubyzip (~> 1.0)
+      selenium-webdriver (~> 3.0)
     webpacker (3.6.0)
       activesupport (>= 4.2)
       rack-proxy (>= 0.6.1)
@@ -544,7 +548,6 @@ DEPENDENCIES
   neat (~> 1.8)
   omniauth-cas
   pg (~> 1.0)
-  poltergeist
   pry-byebug
   pul_uv_rails!
   puma
@@ -557,6 +560,7 @@ DEPENDENCIES
   rubocop (~> 0.51.0)
   rubocop-rspec (~> 1.20)
   sass-rails (~> 5.0)
+  selenium-webdriver
   sidekiq
   simple_form
   sitemap_generator (~> 6.0)
@@ -568,6 +572,7 @@ DEPENDENCIES
   twitter-typeahead-rails (= 0.11.1.pre.corejavascript)
   uglifier
   web-console
+  webdrivers
   webpacker (~> 3.2)
 
 BUNDLED WITH
