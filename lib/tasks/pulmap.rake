@@ -78,7 +78,7 @@ namespace :pulmap do
 
   private
 
-  def url_for_file(file)
-    "https://raw.githubusercontent.com/pulibrary/pul_solr/master/solr_configs/pulmap/#{file}"
-  end
+    def url_for_file(file)
+      "https://raw.githubusercontent.com/pulibrary/pul_solr/master/solr_configs/pulmap/#{file}"
+    end
 end

@@ -7,17 +7,17 @@ class ThumbnailsController < ApplicationController
 
   private
 
-  def thumbnail
-    if Rails.cache.exist?("thumbnails/#{params[:id]}")
-      Rails.cache.read("thumbnails/#{params[:id]}")
-    else
-      _response, @document = fetch params[:id]
-      CacheThumbnailJob.perform_later(@document.to_h)
-      placeholder
+    def thumbnail
+      if Rails.cache.exist?("thumbnails/#{params[:id]}")
+        Rails.cache.read("thumbnails/#{params[:id]}")
+      else
+        _response, @document = fetch params[:id]
+        CacheThumbnailJob.perform_later(@document.to_h)
+        placeholder
+      end
     end
-  end
 
-  def placeholder
-    ThumbnailService.new(@document).placeholder
-  end
+    def placeholder
+      ThumbnailService.new(@document).placeholder
+    end
 end

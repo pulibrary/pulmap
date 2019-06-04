@@ -19,6 +19,7 @@ gem 'turbolinks'
 gem 'uglifier'
 
 group :development, :test do
+  gem 'bixby'
   gem 'byebug'
   gem 'capybara'
   gem 'coveralls', require: false
@@ -27,8 +28,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.5'
-  gem 'rubocop', '~> 0.51.0', require: false
-  gem 'rubocop-rspec', '~> 1.20', require: false
+  gem 'selenium-webdriver'
   gem 'spring'
   gem 'webdrivers'
 end
