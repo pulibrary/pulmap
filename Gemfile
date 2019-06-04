@@ -24,13 +24,14 @@ group :development, :test do
   gem 'coveralls', require: false
   gem 'database_cleaner'
   gem 'factory_bot_rails'
-  gem 'poltergeist'
   gem 'pry-byebug'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.5'
   gem 'rubocop', '~> 0.51.0', require: false
   gem 'rubocop-rspec', '~> 1.20', require: false
+  gem 'selenium-webdriver'
   gem 'spring'
+  gem 'webdrivers'
 end
 
 group :development do
@@ -63,4 +64,4 @@ gem 'sitemap_generator', '~> 6.0'
 gem 'sneakers'
 gem 'solr_wrapper'
 gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
-gem 'webpacker', '~> 3.2'
+gem 'webpacker'
