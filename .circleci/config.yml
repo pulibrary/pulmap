@@ -30,7 +30,7 @@ jobs:
             - pulmap-yarn-{{ checksum "yarn.lock" }}
             - pulmap-yarn-
       - run:
-          name: NPM Install
+          name: Install NPM Dependencies via Yarn
           command: yarn install
       # Store yarn / webpacker cache
       - save_cache:
