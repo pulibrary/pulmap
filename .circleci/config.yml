@@ -31,12 +31,12 @@ jobs:
             - pulmap-yarn-
       - run:
           name: NPM Install
-          command: npm install
+          command: yarn install
       # Store yarn / webpacker cache
       - save_cache:
           key: pulmap-yarn-{{ checksum "yarn.lock" }}
           paths:
-            - npm_modules
+            - ~/.cache/yarn
       - run: NODE_ENV=test bundle exec rails webpacker:compile
       - persist_to_workspace:
           root: '~/pulmap'
