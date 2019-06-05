@@ -560,7 +560,6 @@ DEPENDENCIES
   rubocop (~> 0.51.0)
   rubocop-rspec (~> 1.20)
   sass-rails (~> 5.0)
-  selenium-webdriver
   sidekiq
   simple_form
   sitemap_generator (~> 6.0)
