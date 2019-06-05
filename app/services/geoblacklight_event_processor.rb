@@ -8,20 +8,20 @@ class GeoblacklightEventProcessor
 
   private
 
-  def event_type
-    event['event']
-  end
-
-  def processor
-    case event_type
-    when 'CREATED'
-      UpdateProcessor.new(event)
-    when 'UPDATED'
-      UpdateProcessor.new(event)
-    when 'DELETED'
-      DeleteProcessor.new(event)
-    else
-      UnknownEvent.new(event)
+    def event_type
+      event['event']
     end
-  end
+
+    def processor
+      case event_type
+      when 'CREATED'
+        UpdateProcessor.new(event)
+      when 'UPDATED'
+        UpdateProcessor.new(event)
+      when 'DELETED'
+        DeleteProcessor.new(event)
+      else
+        UnknownEvent.new(event)
+      end
+    end
 end

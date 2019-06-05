@@ -1,4 +1,6 @@
 require: rubocop-rspec
+inherit_gem:
+  bixby: bixby_default.yml
 
 Rails:
   Enabled: true
