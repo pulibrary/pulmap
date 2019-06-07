@@ -522,10 +522,10 @@ DEPENDENCIES
   bixby
   blacklight_advanced_search
   blacklight_range_limit
-  bootstrap-sass (~> 3.4)
+  bootstrap-sass
   bourbon (= 4.3.4)
   byebug
-  capistrano (~> 3.7.1)
+  capistrano
   capistrano-bundler
   capistrano-passenger
   capistrano-rails
@@ -569,9 +569,9 @@ DEPENDENCIES
   spring
   sqlite3
   turbolinks
-  twitter-typeahead-rails (= 0.11.1.pre.corejavascript)
+  twitter-typeahead-rails
   uglifier
-  web-console
+  web-console (~> 3.7.0)
   webdrivers
   webpacker
 
