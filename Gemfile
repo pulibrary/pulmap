@@ -33,14 +33,14 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console'
+  gem 'web-console', '~> 3.7.0'
 end
 
 gem 'blacklight_advanced_search'
 gem 'blacklight_range_limit'
-gem 'bootstrap-sass', '~> 3.4'
+gem 'bootstrap-sass'
 gem 'bourbon', '4.3.4'
-gem 'capistrano', '~> 3.7.1'
+gem 'capistrano'
 gem 'capistrano-bundler'
 gem 'capistrano-passenger'
 gem 'capistrano-rails'
@@ -61,5 +61,5 @@ gem 'simple_form'
 gem 'sitemap_generator', '~> 6.0'
 gem 'sneakers'
 gem 'solr_wrapper'
-gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
+gem 'twitter-typeahead-rails'
 gem 'webpacker'
