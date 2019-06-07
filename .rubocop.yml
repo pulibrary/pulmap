@@ -45,7 +45,7 @@ Metrics/CyclomaticComplexity:
     - 'app/helpers/advanced_helper.rb'
 
 Metrics/LineLength:
-  Max: 118
+  Max: 125
   Exclude:
     - 'Rakefile'
     # TODO: Refactor add_show_tools_partial procs.
