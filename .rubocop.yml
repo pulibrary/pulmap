@@ -21,6 +21,7 @@ Metrics/AbcSize:
   Exclude:
     - 'app/controllers/users/omniauth_callbacks_controller.rb'
     - 'app/helpers/advanced_helper.rb'
+    - 'app/helpers/pulmap_geoblacklight_helper.rb'
     - 'lib/tasks/ci.rake'
 
 Metrics/BlockLength:
@@ -43,6 +44,7 @@ Metrics/ClassLength:
 Metrics/CyclomaticComplexity:
   Exclude:
     - 'app/helpers/advanced_helper.rb'
+    - 'app/helpers/pulmap_geoblacklight_helper.rb'
 
 Metrics/LineLength:
   Max: 125
@@ -51,6 +53,7 @@ Metrics/LineLength:
     # TODO: Refactor add_show_tools_partial procs.
     - 'app/controllers/catalog_controller.rb'
     - 'app/helpers/advanced_helper.rb'
+    - 'app/helpers/pulmap_geoblacklight_helper.rb'
     - 'config/deploy.rb'
     - 'lib/tasks/pulmap.rake'
     - 'lib/tasks/thumbnails.rake'
@@ -62,10 +65,12 @@ Metrics/MethodLength:
   Max: 14
   Exclude:
     - 'app/helpers/advanced_helper.rb'
+    - 'app/helpers/pulmap_geoblacklight_helper.rb'
 
 Metrics/PerceivedComplexity:
   Exclude:
     - 'app/helpers/advanced_helper.rb'
+    - 'app/helpers/pulmap_geoblacklight_helper.rb'
 
 # TODO: Add top-level class and module documentation.
 Style/Documentation:

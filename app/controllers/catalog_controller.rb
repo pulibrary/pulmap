@@ -254,6 +254,7 @@ class CatalogController < ApplicationController
     # Custom tools for GeoBlacklight
     config.add_show_tools_partial :web_services, if: proc { |_context, _config, options| options[:document] && (Settings.WEBSERVICES_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any? }
     config.add_show_tools_partial :metadata, if: proc { |_context, _config, options| options[:document] && (Settings.METADATA_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any? }
+    config.add_show_tools_partial :downloads, partial: 'downloads', if: proc { |_context, _config, options| options[:document] }
     # Removes Carto from the tools sidebar. It will not create an empty li tag ,exports class.
     # config.add_show_tools_partial :exports, partial: 'exports', if: proc { |_context, _config, options| options[:document] }
 
@@ -269,8 +270,6 @@ class CatalogController < ApplicationController
     config.autocomplete_enabled = true
     config.autocomplete_path = 'suggest'
   end
-
-  add_show_tools_partial :downloads, partial: 'downloads', if: proc { |_context, _config, options| options[:document] }
 
   ##
   # Overrides default Blacklight method to return true for an empty q value
