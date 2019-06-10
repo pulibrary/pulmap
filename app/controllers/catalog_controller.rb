@@ -279,7 +279,7 @@ class CatalogController < ApplicationController
   end
 
   def downloads
-    @response, @document = fetch params[:id]
+    @response, @document = search_service.fetch params[:id]
     not_found unless @document.downloadable? && @document.same_institution?
   end
 end
