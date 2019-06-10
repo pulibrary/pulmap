@@ -2,10 +2,10 @@
 <% facets_from_request(facet_field_names).each do |display_facet| %>
     <% if display_facet.items.present? %>
       <div class="form-group advanced-search-facet row">
-          <%= label_tag display_facet.name.parameterize, :class => "col-sm-4 control-label" do %>
+          <%= label_tag display_facet.name.parameterize, :class => "col-md-4 control-label" do %>
               <%= facet_field_label(display_facet.name) %>
           <% end %>
-      <div class="col-sm-8">
+      <div class="col-md-8">
         <%= content_tag(:select, :multiple => true,
           :name   => "f_inclusive[#{display_facet.name}][]",
           :id     => display_facet.name.parameterize,
@@ -26,10 +26,10 @@
 <%# Publication Date is a range input %>
 <% pub_date = facet_configuration_for_field(Settings.FIELDS.YEAR) %>
 <div class="form-group advanced-search-facet row">
-  <%= label_tag pub_date.field.parameterize, :class => "col-sm-4 control-label" do %>
+  <%= label_tag pub_date.field.parameterize, :class => "col-md-4 control-label" do %>
       <%= pub_date.label %>
   <% end %>
-  <div class="col-sm-8 range_limit">
+  <div class="col-md-8 range_limit">
     <%= render_range_input(pub_date.field, :begin) %> – <%= render_range_input(pub_date.field, :end) %>
   </div>
 </div>

@@ -30,7 +30,7 @@ module ApplicationHelper
 
   def navbar_type
     if index_layout?
-      'navbar-fixed-top'
+      'fixed-top'
     else
       'navbar'
     end
