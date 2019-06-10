@@ -18,6 +18,8 @@
 //= require aload
 
 // Required by Blacklight
+//= require popper
+//= require bootstrap
 //= require blacklight/blacklight
 //= require 'blacklight_range_limit'
 
@@ -33,8 +35,6 @@
 
 //= require Leaflet.fullscreen
 //= require Leaflet.ExtraMarkers
-
-//= require bootstrap/affix
 
 // Leaflet layer visibility control.
 GeoBlacklight.Controls.Layers = function() {
