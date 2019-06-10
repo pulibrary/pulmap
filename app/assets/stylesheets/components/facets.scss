@@ -125,7 +125,7 @@ ul.facet-values {
 
 }
 
-@media max-width bp-small {
+@media (max-width: $bp-small) {
     #facets .top-panel-heading {
         padding-left: 1em;
         padding-top: .5em;
@@ -137,7 +137,7 @@ ul.facet-values {
     }
 }
 
-@media (max-width: $bp-small){
+@media (max-width: $bp-small) {
     .facets-heading {
         padding:0.5em;
         margin-bottom: 0;
