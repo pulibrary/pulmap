@@ -38,7 +38,7 @@ end
 
 gem 'blacklight_advanced_search', git: 'https://github.com/projectblacklight/blacklight_advanced_search', branch: 'master'
 gem 'blacklight_range_limit'
-gem 'bootstrap-sass'
+gem 'bootstrap'
 gem 'bourbon', '4.3.4'
 gem 'capistrano'
 gem 'capistrano-bundler'
