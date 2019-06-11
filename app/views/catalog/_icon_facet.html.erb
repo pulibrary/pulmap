@@ -1,36 +1,35 @@
-
-  <% if facet_field_in_params?(facet_field.key) %>
-    <% remove_href = search_action_path(remove_all_facet_values(field_name)) %>
-    <%= content_tag(:li) do %>
-      <%= link_to(remove_href) do %>
-        <%= content_tag(:span, all_facet_values_label(facet_field.key)) %>
+<% if facet_field_in_params?(facet_field.key) %>
+  <% remove_href = search_action_path(remove_all_facet_values(field_name)) %>
+  <%= content_tag(:li) do %>
+    <%= link_to(remove_href) do %>
+      <%= content_tag(:span, all_facet_values_label(facet_field.key)) %>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= content_tag(:li, class: 'active') do %>
+    <%= link_to('#') do %>
+      <%= content_tag(:span, all_facet_values_label(facet_field.key)) %>
+    <% end %>
+  <% end %>
+<% end %>
+<% paginator = facet_paginator(facet_field, display_facet) %>
+<% paginator.items.each do |item| -%>
+  <% if facet_in_params?(field_name, item.value) %>
+    <% remove_href = search_action_path(search_state.remove_facet_params(field_name, item)) %>
+    <%= content_tag(:li, class: 'active') do %>
+      <%= link_to(remove_href, class: 'remove') do %>
+        <%= geoblacklight_icon item.value %>
+        <%= content_tag(:span, facet_display_value(field_name, item)) %>
+        <span class="facet-count pull-right"><%= render_facet_count(item.hits) %></span>
       <% end %>
     <% end %>
   <% else %>
-    <%= content_tag(:li, class: 'active') do %>
-      <%= link_to('#') do %>
-        <%= content_tag(:span, all_facet_values_label(facet_field.key)) %>
+    <%= content_tag(:li) do %>
+      <%= link_to(path_for_facet(field_name, item.value)) do %>
+        <%= geoblacklight_icon item.value %>
+        <%= facet_display_value(field_name, item.value) %>
+        <span class="facet-count pull-right"><%= render_facet_count(item.hits) %></span>
       <% end %>
     <% end %>
-  <% end %>
-  <% paginator = facet_paginator(facet_field, display_facet) %>
-  <% paginator.items.each do |item| -%>
-    <% if facet_in_params?(field_name, item.value) %>
-      <% remove_href = search_action_path(search_state.remove_facet_params(field_name, item)) %>
-      <%= content_tag(:li, class: 'active') do %>
-        <%= link_to(remove_href, class: 'remove') do %>
-          <%= geoblacklight_icon item.value %>
-          <%= content_tag(:span, facet_display_value(field_name, item)) %>
-          <span class="facet-count pull-right"><%= render_facet_count(item.hits) %></span>
-        <% end %>
-      <% end %>
-    <% else %>
-      <%= content_tag(:li) do %>
-        <%= link_to(path_for_facet(field_name, item.value)) do %>
-          <%= geoblacklight_icon item.value %>
-          <%= facet_display_value(field_name, item.value) %>
-          <span class="facet-count pull-right"><%= render_facet_count(item.hits) %></span>
-        <% end %>
-      <% end %>
-    <% end -%>
-  <% end %>
+  <% end -%>
+<% end %>

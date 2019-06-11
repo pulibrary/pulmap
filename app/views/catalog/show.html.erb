@@ -1,12 +1,12 @@
-<div class="col-sm-12 show-document">
+<div class="col-md-12 show-document">
   <%= render 'previous_next_doc' %>
 </div>
 
-<div class="col-sm-12">
+<div class="col-md-12">
   <%= render partial: 'show_header_default', locals: { document: @document } %>
 </div>
 
-<div id="item-record" class="col-md-9 col-sm-8 show-document">
+<div id="item-record" class="col-lg-9 col-md-8 show-document">
 
 <% @page_title = t('blacklight.search.show.title', :document_title => document_show_html_title, :application_name => application_name).html_safe -%>
 <% content_for(:head) { render_link_rel_alternates } -%>
@@ -34,6 +34,6 @@
 
 </div>
 
-<div id="tools-sidebar" class="col-md-3 col-sm-4 tools-sidebar">
+<div id="tools-sidebar" class="col-lg-3 col-md-4 tools-sidebar">
    <%= render_document_sidebar_partial %>
 </div>
