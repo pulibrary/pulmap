@@ -5,7 +5,7 @@ describe 'advanced search', type: :request do
     get '/catalog.json?f1=subject&q1=&op2=AND&f2=title&q2=foot&op3=AND&f3=publisher'\
         '&q3=cambridge&search_field=advanced'
     r = JSON.parse(response.body)
-    expect(r['response']['docs'].length).to eq 1
+    expect(r['data'].length).to eq 1
   end
   it 'supports advanced render constraints' do
     get '/catalog?search_field=advanced&f1=title&q1=for1&op2=AND&f2=' \
