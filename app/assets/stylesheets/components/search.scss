@@ -5,10 +5,11 @@
 /* update the search bar input width after upgrading -> BS4 */
 .navbar-form .input-group .input-group-text {
   width: 90%;
+  padding: 0;
 }
 
-@media (max-width: 500px) {
-  header .navbar-form .input-group .input-group-addon {
+@include media-breakpoint-only(xs) {
+  header .navbar-form .input-group {
     width: 100%;
     clear: both;
     display: block;
