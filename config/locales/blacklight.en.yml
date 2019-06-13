@@ -12,7 +12,7 @@ en:
       edit_search: 'Edit search'
     header_links:
       account_page: 'Your Account'
-    back_to_search: '<span class="icon-moveback"></span> <span class="hidden-xs hidden-sm">Back to search</span>'
+    back_to_search: '<span class="icon-moveback"></span> <span class="d-none d-md-block">Back to search</span>'
     feedback:
       success: 'Your comments have been submitted'
       error: 'Please fill in the required form values.'

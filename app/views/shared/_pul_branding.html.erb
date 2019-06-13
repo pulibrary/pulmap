@@ -15,7 +15,7 @@
             <%= render :partial=>'catalog/search_form_index' %>
           </div>
 
-          <div class="hidden-sm hidden-xs col-md-1">
+          <div class="d-none d-md-block col-md-1">
             <ul class="search-options">
               <li>
                 <%= link_to 'Advanced', blacklight_advanced_search_engine.advanced_search_path(search_state.to_h), :class=>'advanced_search'%>
@@ -23,7 +23,7 @@
             </ul>
           </div>
         <% end %>
-        <div class="menu--level-1 hidden-xs col-sm-2 col-md-3">
+        <div class="menu--level-1 d-none d-sm-block col-sm-2 col-md-3">
           <ul>
             <li><a href="/contact-us">Contact Us</a></li>
             <%= render :partial=>'/account' %>
