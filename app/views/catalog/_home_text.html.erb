@@ -8,28 +8,28 @@
       <%= content_tag :h3, t('geoblacklight.home.category_heading'), class: 'text-center' %>
       <div class='find-by col-lg-3'>
         <div class='category-icon'>
-          <span class='glyphicon glyphicon-home'></span>
+          <i class="fa fa-home" aria-hidden="true"></i>
         </div>
         <h4>Institution</h4>
         <%= render_facet_tags [Settings.FIELDS.PROVENANCE] %>
       </div>
       <div class='find-by col-lg-3'>
         <div class='category-icon'>
-          <span class='glyphicon glyphicon-download'></span>
+          <i class="fa fa-download" aria-hidden="true"></i>
         </div>
         <h4>Data type</h4>
         <%= render_facet_tags [Settings.FIELDS.GEOM_TYPE] %>
       </div>
       <div class='find-by col-lg-3'>
         <div class='category-icon'>
-          <span class='glyphicon glyphicon-globe'></span>
+          <i class="fa fa-globe" aria-hidden="true"></i>
         </div>
         <h4>Placename</h4>
         <%= render_facet_tags [Settings.FIELDS.SPATIAL_COVERAGE] %>
       </div>
       <div class='find-by col-lg-3'>
         <div class='category-icon'>
-          <span class='glyphicon glyphicon-tags'></span>
+          <i class="fa fa-tags" aria-hidden="true"></i>
         </div>
         <h4>Subject</h4>
         <%= render_facet_tags [Settings.FIELDS.SUBJECT] %>
