@@ -5,6 +5,7 @@
 /* update the search bar input width after upgrading -> BS4 */
 .navbar-form .input-group .input-group-text {
   width: 90%;
+  padding: 0;
 }
 
 @media (max-width: 500px) {
