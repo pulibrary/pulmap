@@ -1,6 +1,6 @@
 
 
-@media (max-width: 500px) {
+@include media-breakpoint-only(sm) {
   .header__secondary .container {
     height: 140px;
   }
@@ -74,7 +74,7 @@
 .home.home-secondary-navbar {
   height: 100px;
 
-  @media (min-width: 475px) {
+  @include media-breakpoint-up(sm) {
     height: auto;
   }
 }
@@ -89,7 +89,7 @@
     height: 120px;
   }
 
-  @media (min-width: $bp-small) {
+  @include media-breakpoint-up(sm) {
     height: auto;
   }
 
@@ -131,8 +131,10 @@
   padding: 0;
   list-style-type: none;
   text-align: center;
+  vertical-align: bottom;
+  float: right;
 
-  @media (min-width: 475px) {
+  @include media-breakpoint-only(sm) {
     @include vertical-align;
 
     float: right;
@@ -156,14 +158,14 @@
   > li {
     float: left;
     padding: 0 15px;
-    @media (min-width: $bp-medium) {
+    @include media-breakpoint-up(xl) {
       border-right: 1px solid darken($gray, 40%);
     }
 
     &:last-child {
       border-right: none;
 
-      @media (min-width: 475px) {
+      @include media-breakpoint-up(sm) {
         padding-right: 0;
       }
     }
@@ -201,7 +203,7 @@
 .l-branding__pul .menu--level-1, .l-branding__pul .logo__pul {
   height: 67px;
 
-  @media (min-width: 475px) {
+  @include media-breakpoint-up(sm) {
     padding: 0;
   }
 }

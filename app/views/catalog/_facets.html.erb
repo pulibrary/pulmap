@@ -2,8 +2,8 @@
 <% if has_facet_values?  %>
   <div id="facet-view" class="facet-view col col-sm-12">
     <%=link_to t('blacklight.search.start_over').html_safe, start_over_path, :class => "btn btn-primary button--start-over", :id=>"startOverLink" %>
-    <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#facet-partials">
-      <span class="glyphicon glyphicon-filter" aria-hidden="true"></span><span>&nbspFilters</span>
+    <button type="button" class="btn btn-outline-secondary" data-toggle="collapse" data-target="#facet-partials">
+      <i class="fa fa-filter" aria-hidden="true">&nbspFilters</i>
     </button>
     <div id="facet-partials" class="collapse in">
       <%= render_facet_partials %>
