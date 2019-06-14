@@ -2,7 +2,7 @@
   <div class="<% unless index_layout? %>container<% end %> <%= layout_type %>-container ">
     <nav class="navbar <%= navbar_type %> navbar-dark bg-dark">
       
-        <div class="logo__pul col col-sm-5 col-md-4">
+        <div class="logo__pul col-12 col-sm-5 col-md-4">
           <a href="https://library.princeton.edu" title="Princeton University Library" class="pul-logo">
            <%= image_tag("pul-logo-new.svg") %>
           </a>
@@ -11,7 +11,7 @@
           <% end %>
         </div>
         <% if index_layout? %>
-          <div class="col col-sm-5 col-md-4">
+          <div class="col-12 col-sm-5 col-md-4">
             <%= render :partial=>'catalog/search_form_index' %>
           </div>
 
@@ -23,7 +23,7 @@
             </ul>
           </div>
         <% end %>
-        <div class="menu--level-1 d-none d-sm-block col-sm-2 col-md-3">
+        <div class="menu--level-1 d-none d-sm-block col-sm-2 col-md-3 ml-auto justify-content-sm-end">
           <ul>
             <li><a href="/contact-us">Contact Us</a></li>
             <%= render :partial=>'/account' %>

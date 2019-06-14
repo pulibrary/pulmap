@@ -1,4 +1,4 @@
-
+/* .header__secondary is used in orangelight */
 
 @include media-breakpoint-only(sm) {
   .header__secondary .container {
@@ -131,8 +131,7 @@
   padding: 0;
   list-style-type: none;
   text-align: center;
-  vertical-align: bottom;
-  float: right;
+
 
   @include media-breakpoint-only(sm) {
     @include vertical-align;
