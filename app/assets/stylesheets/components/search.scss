@@ -27,7 +27,7 @@
   }
 }
 
-header .navbar-form .input-group .input-group-btn {
+header .navbar-form .input-group .input-group-append {
   width: 40px;
 }
 
@@ -163,7 +163,7 @@ header .input-group-addon {
   li {
     display: inline-block;
 
-    @media (min-width: 500px) {
+    @include media-breakpoint-up(xs) {
       padding-right: 1em;
     }
   }
