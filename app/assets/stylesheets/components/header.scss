@@ -107,14 +107,6 @@
     padding-top: 10px;
   }
 
-  .index-container {
-    margin-top: 17px;
-  }
-
-  .item-container {
-    margin-top: 9px;
-  }
-
   .navbar-nav {
     float: right;
   }
@@ -131,13 +123,8 @@
   padding: 0;
   list-style-type: none;
   text-align: center;
-
-
-  @include media-breakpoint-only(sm) {
-    @include vertical-align;
-
-    float: right;
-  }
+  @include vertical-align;
+  float: right;
 
   > li > a,
   .btn-account {
@@ -266,6 +253,10 @@
   background: $dark-gray;
   z-index: 1004;
   box-shadow: 0 4px 4px -2px rgba(0,0,0,0.2);
+
+  .navbar {
+    padding: 0;
+  }
 }
 
 .header__secondary {
@@ -498,21 +489,16 @@
 }
 
 .index-container {
-  padding: 0 1em;
-
-  @media (min-width: $bp-medium){
-    padding: 0 35px;
-  }
-
-  div {
-    @media (max-width: $bp-small) {
-      padding-left: 0;
-      padding-right: 0;
+  .navbar {
+    @media (min-width: $bp-medium){
+      padding: 0 35px;
     }
 
-    @media (min-width: $bp-small) {
-      padding-left: 15px;
-      padding-right: 15px;
+    div {
+      @media (max-width: $bp-small) {
+        padding-left: 0;
+        padding-right: 0;
+      }
     }
   }
 }
