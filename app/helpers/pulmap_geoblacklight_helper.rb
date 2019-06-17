@@ -112,6 +112,6 @@ module PulmapGeoblacklightHelper
     end
 
     def manifest_viewer
-      safe_join [viewer_tags(%w[view uv]), viewer_tags(%w[view uv hidden])]
+      safe_join [viewer_tags(%w[view uv]), viewer_tags(%w[view uv d-none])]
     end
 end
