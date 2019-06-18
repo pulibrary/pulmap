@@ -30,7 +30,7 @@ module PulmapGeoblacklightHelper
 
   def facet_active(facet_field)
     if facet_field_in_params?(facet_field)
-      ' active'
+      ' facet-limit-active'
     else
       ''
     end
