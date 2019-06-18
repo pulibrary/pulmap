@@ -288,6 +288,20 @@ ul.facet-values {
   ul.dropdown-menu {
     z-index: 999;
     min-width: 200px;
+    font-size: 14px;
+    padding: 5px 0;
+    li {
+      padding: 0 20px;
+      a {
+        color: $black
+      }
+    }
+    li.active {
+      background-color: $blue;
+      a {
+        color: $white;
+      }
+    }
   }
 }
 
