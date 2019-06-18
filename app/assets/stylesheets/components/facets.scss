@@ -281,10 +281,17 @@ ul.facet-values {
     border-color: #ccc;
 
     &:hover {
-      background-color: #e6e6e6;
+      background-color: $whisper;
       border-color: #adadad;
     }
+
   }
+  .show {
+    > .btn-filter {
+      background-color: $whisper;
+    }
+  }
+
   ul.dropdown-menu {
     z-index: 999;
     min-width: 200px;
@@ -293,7 +300,11 @@ ul.facet-values {
     li {
       padding: 0 20px;
       a {
-        color: $black
+        color: $black;
+        text-decoration: none;
+      }
+      &:hover {
+        background-color: $white-smoke;
       }
     }
     li.active {
@@ -304,7 +315,6 @@ ul.facet-values {
     }
   }
 }
-
 .facet ul.dropdown-menu {
   line-height: 24px;
   margin-top: 8px;
