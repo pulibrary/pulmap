@@ -30,9 +30,15 @@ module PulmapGeoblacklightHelper
 
   def facet_active(facet_field)
     if facet_field_in_params?(facet_field)
-      ' active'
+      ' facet-limit-active'
     else
       ''
+    end
+  end
+
+  def facet_fields_show
+    facet_field_names.each do |f|
+      return 'show' if facet_field_in_params?(f)
     end
   end
 
