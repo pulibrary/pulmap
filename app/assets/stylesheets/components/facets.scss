@@ -297,7 +297,7 @@ ul.facet-values {
     min-width: 200px;
     font-size: 14px;
     padding: 5px 0;
-    li {
+    > li {
       padding: 0 20px;
       a {
         color: $black;
@@ -307,7 +307,7 @@ ul.facet-values {
         background-color: $white-smoke;
       }
     }
-    li.active {
+    > li.active {
       background-color: $blue;
       a {
         color: $white;

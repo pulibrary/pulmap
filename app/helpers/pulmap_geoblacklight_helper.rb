@@ -36,6 +36,12 @@ module PulmapGeoblacklightHelper
     end
   end
 
+  def facet_fields_show
+    facet_field_names.each do |f|
+      return 'show' if facet_field_in_params?(f)
+    end
+  end
+
   def data_download_text(format)
     download_format = proper_case_format(format)
     value = t('geoblacklight.data_download.download_link', download_format: download_format)
