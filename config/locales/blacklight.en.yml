@@ -8,7 +8,7 @@ en:
         submit: 'Search'
         search_field:
           label: 'Search...'
-      start_over: '<span class="icon-refresh"></span> <span>Start over</span>'
+      start_over: '<span class="icon-refresh align-middle"></span> <span class="align-middle">Start over</span>'
       edit_search: 'Edit search'
       title: 'Digital Maps and Geospatial Data | Princeton University'
     header_links:
