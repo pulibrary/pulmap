@@ -19,4 +19,17 @@
       }
     }
   }
+
+  // Set paginator link and active color
+  li {
+    > a { color: $blue }
+    &.page-item.active > span {
+      background-color: $blue;
+    }
+  }
+
+  // Remove box shadow on focus
+  .page-link:focus {
+    box-shadow: none;
+  }
 }

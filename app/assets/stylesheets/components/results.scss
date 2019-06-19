@@ -3,15 +3,17 @@
 }
 
 #documents {
-    margin-bottom: 2em;
-
-    > .document:last-child {
-        border: none;
-    }
-    .document {
-        margin: 0;
-        padding: 0;
-    }
+  border-top: 1px solid #ddd;
+  margin-bottom: 2em;
+  margin-top: 1em;
+  padding-top: 1em;
+  > .document:last-child {
+      border: none;
+  }
+  .document {
+      margin: 0;
+      padding: 0;
+  }
 }
 
 .documentHeader.row {
@@ -51,6 +53,7 @@
   float: none;
   width: 100%;
   line-height: 1.4em;
+  order: 0; // Pushes title to the top of the index page document display
 }
 
 .document-wrapper {
