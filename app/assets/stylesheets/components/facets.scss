@@ -255,14 +255,14 @@ ul.facet-values {
 
 }
 
-#facet-view {
+#facet-view, .params {
   padding: 0;
   display: inline-block;
   .btn {
     min-height: 40px;
   }
   .button--start-over {
-    line-height: 23px !important;
+    line-height: 27px !important;
     a {
       min-height: 40px;
       line-height: 33px !important;
@@ -308,6 +308,8 @@ ul.facet-values {
     }
   }
 }
+
+
 .facet ul.dropdown-menu {
   line-height: 24px;
   margin-top: 8px;
