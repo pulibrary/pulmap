@@ -3,15 +3,17 @@
 }
 
 #documents {
-    margin-bottom: 2em;
-
-    > .document:last-child {
-        border: none;
-    }
-    .document {
-        margin: 0;
-        padding: 0;
-    }
+  border-top: 1px solid #ddd;
+  margin-bottom: 2em;
+  margin-top: 1em;
+  padding-top: 1em;
+  > .document:last-child {
+      border: none;
+  }
+  .document {
+      margin: 0;
+      padding: 0;
+  }
 }
 
 .documentHeader.row {
