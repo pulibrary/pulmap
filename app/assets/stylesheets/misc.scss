@@ -18,6 +18,11 @@ main {
     padding: 0 0 0;
 }
 
+// Remove focus box shadow on primary buttons
+.btn-primary:focus {
+  box-shadow: none;
+}
+
 .wrapper {
   background: $white;
   margin-bottom: -75px; // equal to footer height

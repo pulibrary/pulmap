@@ -1,6 +1,10 @@
+// Turn off focus box shadow
+$input-btn-focus-box-shadow: none;
+
 @import "bootstrap/functions";
 @import "bootstrap/variables";
 
+// Set primary theme color
 $theme-colors: (
-  primary: #337ab7
+  primary: $blue
 );
