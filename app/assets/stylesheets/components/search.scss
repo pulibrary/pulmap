@@ -1,5 +1,17 @@
-.navbar-form .input-group {
-  width: 100%;
+.navbar-form {
+  .input-group {
+    width: 100%;
+  }
+
+  // Style search input so that it displays without a right-side border radius
+  .input-group-text {
+    border: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    input {
+      border-radius: 0;
+    }
+  }
 }
 
 /* update the search bar input width after upgrading -> BS4 */
