@@ -1,18 +1,18 @@
 <% document ||= @document %>
 <% doc_presenter = show_presenter(document) %>
-<div class="geoblacklight-view-panel">
+<div class="geoblacklight-view-card">
   <%# From https://github.com/projectblacklight/blacklight/blob/master/app/views/catalog/_show_default.html.erb %>
   <%# default partial to display solr document fields in catalog show view -%>
-  <dl class="dl-horizontal">
+<dl class="row dl-invert document-metadata">
     <% document_show_fields(document).each do |field_name, field| %>
       <% if should_render_show_field? document, field %>
-        <dt class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_label document, field: field_name %></dt>
-        <dd class="blacklight-<%= field_name.parameterize %>"><%= doc_presenter.field_value field %></dd>
+        <dt class="blacklight-<%= field_name.parameterize %> col-md-3"><%= render_document_show_field_label document, field: field_name %></dt>
+        <dd class="blacklight-<%= field_name.parameterize %> col-md-9"><%= doc_presenter.field_value field %></dd>
       <% end %>
     <% end %>
     <% if document.restricted? && document.thumbnail_reference? %>
-      <dt>Thumbnail:</dt>
-      <dd>
+      <dt class="col-md-3">Thumbnail:</dt>
+      <dd class="col-md-9">
         <%= gbl_thumbnail_img(document) %>
       </dd>
     <% end %>
