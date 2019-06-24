@@ -95,3 +95,8 @@ h2 {
 #viewer-container > hr.clear {
   display: none;
 }
+
+// Set item viewer map height
+#document #viewer-container [data-map="item"] {
+  height: 440px;
+}
