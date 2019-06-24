@@ -1,7 +1,7 @@
 module SourceHelper
-  # Markup for a document's source sidebar panel
+  # Markup for a document's source sidebar card
   # rubocop:disable Rails/OutputSafety
-  def source_panel_markup
+  def source_card_markup
     t('pulmap.source.historic_maps').html_safe if princeton_historic_map?
   end
   # rubocop:enable Rails/OutputSafety

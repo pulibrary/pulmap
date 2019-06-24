@@ -16,7 +16,7 @@ describe 'Show page downloads' do
     expect(page).to have_link 'Request offline access'
   end
 
-  it 'renders the panel containing the download links for non-Princeton Documents' do
+  it 'renders the card containing the download links for non-Princeton Documents' do
     visit solr_document_path('stanford-cz128vq0535')
     expect(page).to have_link 'Original Shapefile'
   end

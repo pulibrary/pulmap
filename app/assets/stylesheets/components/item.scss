@@ -1,9 +1,6 @@
-.tools-sidebar {
-  padding-top: 39px;
-}
-
 .show-document {
-  padding-top: 1em;
+  padding-top: 16px;
+  margin-bottom: 18px;
 }
 
 .show-document, .tools-sidebar {
@@ -13,47 +10,37 @@
   }
 
   .show-sanborn-legend {
-    .panel-heading {
+    margin-top: 16px;
+
+    .card-header {
       background-color: #565656;
       border-bottom-color: #000;
+      height: 36px;
 
-      .panel-title {
+      padding-top: 6px;
+      padding-bottom: 4px;
+
+      .card-title {
         color: #fff;
-        font-size: 12px;
+        font-size: 1rem;
         font-weight: bold;
         font-family: sans-serif;
       }
     }
 
-    .panel-body {
+    // Styling the toggle caret on legend card
+    .card-header.collapse-toggle::after {
+      color: $gray-light;
+      font-size: 12px;
+    }
+
+    .card-body {
       background-color: #000;
     }
 
     .sanborn-legend {
       height: auto;
       max-width: 100%;
-    }
-  }
-
-  .downloads {
-    .panel-heading {
-      border-bottom-color: #ddd;
-    }    
-  }
-
-  .exports {
-    .panel-heading {
-      border-bottom-color: #ddd;
-    }
-
-    .export {
-      padding-left: 1.1em;
-      padding-right: 1.1em;
-
-      &-link-container {
-        display: block;
-        float: none;
-      }
     }
   }
 }
@@ -79,7 +66,7 @@ h2 {
   }
 }
 
-.geoblacklight-view-panel {
+.geoblacklight-view-card {
   margin-top: 1em;
 }
 
@@ -108,4 +95,9 @@ h2 {
 // Remove the horizontal rule above the Universal Viewer
 #viewer-container > hr.clear {
   display: none;
+}
+
+// Set item viewer map height
+#document #viewer-container [data-map="item"] {
+  height: 440px;
 }
