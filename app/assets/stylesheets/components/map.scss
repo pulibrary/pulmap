@@ -54,6 +54,7 @@ $basemap-color: #b8e6fe;
 
 // Layer control style
 .leaflet-control-layers-toggle {
+  background-image: image-url('layers.png');
   width: 30px;
   height: 30px;
 }
