@@ -1,9 +1,10 @@
 @import "utils/variables";
 
 .flash_messages {
+  left: 0;
+  padding: 0 10px;
   position: fixed;
   top: 10px;
-  left: 0;
   width: 100%;
   z-index: 1006;
 
