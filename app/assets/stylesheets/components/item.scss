@@ -9,19 +9,31 @@
   }
 
   .show-sanborn-legend {
-    .panel-heading {
+    margin-top: 16px;
+
+    .card-header {
       background-color: #565656;
       border-bottom-color: #000;
+      height: 36px;
 
-      .panel-title {
+      padding-top: 6px;
+      padding-bottom: 4px;
+
+      .card-title {
         color: #fff;
-        font-size: 12px;
+        font-size: 1rem;
         font-weight: bold;
         font-family: sans-serif;
       }
     }
 
-    .panel-body {
+    // Styling the toggle caret on legend card
+    .card-header.collapse-toggle::after {
+      color: $gray-light;
+      font-size: 12px;
+    }
+
+    .card-body {
       background-color: #000;
     }
 
