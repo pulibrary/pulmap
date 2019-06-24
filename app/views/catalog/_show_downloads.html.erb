@@ -3,7 +3,7 @@
 <% if document_downloadable? %>
   <% if !document.same_institution? && (document.direct_download.present? || document.hgl_download.present? || document.iiif_download.present?) %>
     <div class="card downloads">
-      <div class="card-header panel-heading">
+      <div class="card-header">
         <h2><%= t('geoblacklight.download.download').pluralize %></h2>
       </div>
 
