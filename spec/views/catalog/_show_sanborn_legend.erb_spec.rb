@@ -6,7 +6,7 @@ describe 'catalog/_show_sanborn_legend.html.erb', type: :view do
 
     it 'renders a collapsed card' do
       render
-      expect(rendered).to have_css '.show-sanborn-legend .panel-heading.collapse-toggle.collapsed'\
+      expect(rendered).to have_css '.show-sanborn-legend .card-header.collapse-toggle.collapsed'\
                                    '[data-target="#sanborn-legend-card-body"]'
       expect(rendered).to have_css '#sanborn-legend-card-body'
     end

@@ -40,7 +40,7 @@ PRINCETON_GEOSERVER_URL: <%= ENV['PRINCETON_GEOSERVER_URL'] || "https://geoserve
 PROXY_GEOSERVER_URL: <%= ENV['PROXY_GEOSERVER_URL'] || "http://localhost:3000" %>
 PROXY_GEOSERVER_AUTH: <%= ENV['PROXY_GEOSERVER_AUTH'] || "Basic base64encodedusername:password" %>
 
-# Metadata shown in tool panel
+# Metadata shown in tool card
 METADATA_SHOWN:
   - 'fgdc'
   - 'iso19139'
@@ -52,7 +52,7 @@ TIMEOUT_DOWNLOAD: 16
 # (For WMS inspection) timeout and open_timeout parameters for Faraday
 TIMEOUT_WMS: 4
 
-# Web services shown in tool panel
+# Web services shown in tool card
 WEBSERVICES_SHOWN:
   - 'wms'
   - 'wfs'
