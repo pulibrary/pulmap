@@ -4,11 +4,11 @@ describe 'catalog/_show_sanborn_legend.html.erb', type: :view do
   context 'when the resource is a Sanborn map' do
     let(:document) { instance_double('document', published_by_sanborn?: true) }
 
-    it 'renders a collapsed panel' do
+    it 'renders a collapsed card' do
       render
       expect(rendered).to have_css '.show-sanborn-legend .panel-heading.collapse-toggle.collapsed'\
-                                   '[data-target="#sanborn-legend-panel-body"]'
-      expect(rendered).to have_css '#sanborn-legend-panel-body'
+                                   '[data-target="#sanborn-legend-card-body"]'
+      expect(rendered).to have_css '#sanborn-legend-card-body'
     end
   end
 end
