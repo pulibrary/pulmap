@@ -42,34 +42,6 @@ module PulmapGeoblacklightHelper
     value.html_safe
   end
 
-  # Overrides method in Blacklight::UrlHelperBehavior
-  # to style show page 'back to search' button.
-  def link_back_to_catalog(opts = { label: nil })
-    scope = opts.delete(:route_set) || self
-    query_params = current_search_session.try(:query_params) || ActionController::Parameters.new
-
-    if search_session['counter']
-      per_page = (search_session['per_page'] || default_per_page).to_i
-      counter = search_session['counter'].to_i
-
-      query_params[:per_page] = per_page unless search_session['per_page'].to_i == default_per_page
-      query_params[:page] = ((counter - 1) / per_page) + 1
-    end
-
-    link_url = if query_params.empty?
-                 search_action_path(only_path: true)
-               else
-                 scope.url_for(query_params)
-               end
-    label = opts.delete(:label)
-
-    label ||= t('blacklight.back_to_bookmarks') if link_url =~ /bookmarks/
-
-    label ||= t('blacklight.back_to_search').html_safe
-
-    link_to label, link_url, opts
-  end
-
   private
 
     def leaflet_viewer
