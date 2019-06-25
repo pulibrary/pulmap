@@ -19,3 +19,7 @@ en:
       error: 'Please fill in the required form values.'
       return: '<span class="icon-moveback"></span> Back to the previous page.'
       confirmation: 'Thank you for your comments. They are helpful as we work to improve this new Library service.'
+  views:
+    pagination:
+      previous: 'Previous'
+      next: 'Next'
