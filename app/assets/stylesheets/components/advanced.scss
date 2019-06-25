@@ -43,6 +43,15 @@
   margin-bottom: 0;
 }
 
+.limit_input .advanced-search-facet .control-label {
+  text-align: right;
+  font-weight: 700;
+}
+
+.advanced-search-field .search-operators label {
+  font-weight: 700;
+}
+
 .chosen-container-multi .chosen-choices {
   min-height: 34px;
   border-radius: 4px;
@@ -64,6 +73,11 @@
 
 .page-header {
   margin: 0 0 10px;
+}
+
+.advanced.page-header {
+  padding-bottom: 9px;
+  border-bottom: 1px solid #eeeeee;
 }
 
 .well > h4 {
