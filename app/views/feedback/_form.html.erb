@@ -1,6 +1,6 @@
 <%= simple_form_for(@feedback_form, url: '/contact-us', id: 'feedback_form', remote: true, class: "form-horizontal" ) do |f| %>
-  <fieldset class="form-group">
-    <label class="control-label col-md-2" for="name">
+  <div class="form-group row">
+    <label class="col-md-2 col-form-label" for="name">
       Your name
     </label>
     <div class="col-md-10">
@@ -11,9 +11,9 @@
         <span class="error">This field <%= @feedback_form.errors[:name].first %></span>
       <% end %>
     </div>
-  </fieldset>
-  <fieldset class="form-group">
-    <label class="control-label col-md-2" for="email">
+  </div>
+  <div class="form-group row">
+    <label class="col-md-2 col-form-label" for="email">
       Your email
     </label>
     <div class="col-md-10">
@@ -24,9 +24,9 @@
         <span class="error">Email <%= @feedback_form.errors[:email].first %></span>
       <% end %>
     </div>
-  </fieldset>
-  <fieldset class="form-group">
-    <label class="control-label col-md-2" for="message">
+  </div>
+  <div class="form-group row">
+    <label class="col-md-2 col-form-label" for="message">
       Questions or comments
     </label>
     <div class="col-md-10">
@@ -35,19 +35,19 @@
         <span class="error">This field <%= @feedback_form.errors[:message].first %></span>
       <% end %>
     </div>
-  </fieldset>
-  <fieldset class="form-group blacklight-feedback-hidden">
-    <label class="control-label col-md-2" for="feedback_desc">
+  </div>
+  <div class="form-group row blacklight-feedback-hidden">
+    <label class="col-md-2 col-form-label" for="feedback_desc">
       If you are a human do not fill in this value
     </label>
     <div class="col-md-10">
       <%= f.text_field :feedback_desc, class: 'form-control', error: 'Please describe' %>
     </div>
-  </fieldset>
+  </div>
 
   <%= f.hidden_field :current_url %>
-  <div class="form-group">
-    <div class="col-md-offset-2 col-lg-10 feedback-button">
+  <div class="form-group row mb-0">
+    <div class="col-md-12">
       <%= f.submit t('blacklight.sms.form.submit'), class: 'btn btn-primary pull-right' %>
     </div>
   </div>
