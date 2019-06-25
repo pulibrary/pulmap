@@ -165,8 +165,9 @@
 }
 
 .logo__pul img {
-  @media (max-width: 475px) {
+  @include media-breakpoint-down(xs) {
     margin: 0 auto;
+    padding-left: 10px;
   }
 }
 

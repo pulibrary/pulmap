@@ -15,32 +15,31 @@
 }
 
 /* update the search bar input width after upgrading -> BS4 */
-.navbar-form .input-group .input-group-text {
-  width: 90%;
+.navbar-form .input-group {
+  width: 100%;
   padding: 0;
 }
 
-@include media-breakpoint-only(xs) {
+@include media-breakpoint-up(xs) {
   header .navbar-form .input-group {
     width: 100%;
     clear: both;
     display: block;
     margin-bottom: 1em;
+    padding: 10px;
 
     select {
       font-size: 12px;
     }
   }
 
-  header .navbar-form .input-group .input-group .search_q {
+  header .navbar-form .input-group .input-group-append .search_q {
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
     -webkit-appearance: none;
   }
-}
-
-header .navbar-form .input-group .input-group-append {
-  width: 40px;
 }
 
 header .input-group-addon {
