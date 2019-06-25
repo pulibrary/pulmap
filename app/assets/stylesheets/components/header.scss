@@ -237,8 +237,12 @@
 // Background and margin styles for navbar
 .pul-header {
   background: $dark-gray !important;
-  border-top: 3px solid $orange;
   z-index: 1004;
+}
+
+// Adds top border to index navbar
+.index-container .pul-header, {
+  border-top: 3px solid $orange;
 }
 
 .l-branding__pul {
