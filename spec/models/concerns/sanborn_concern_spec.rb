@@ -27,5 +27,17 @@ describe SanbornConcern do
         expect(document.published_by_sanborn?).to be false
       end
     end
+
+    context 'with resources that have no publisher' do
+      let(:document_attributes) do
+        {
+          dc_title_s: 'Test title'
+        }
+      end
+
+      it 'confirms that this is a not Sanborn Map surrogate' do
+        expect(document.published_by_sanborn?).to be false
+      end
+    end
   end
 end
