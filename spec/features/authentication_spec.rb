@@ -6,7 +6,7 @@ RSpec.describe 'Authentication', type: :feature do
 
     before do
       OmniAuth.config.test_mode = true
-      visit solr_document_path 'columbia-columbia-landinfo-global-aet'
+      visit solr_document_path 'nyu-2451-34564'
       sign_in(user)
     end
     it 'after logout, user returns to root page' do

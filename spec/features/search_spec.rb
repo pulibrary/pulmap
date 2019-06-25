@@ -25,7 +25,7 @@ describe 'Search' do
       click_button 'Limit'
       expect(page).to have_content '1 entry found'
     end
-    context 'wrong date_range_limit', js: true do
+    context 'wrong date_range_limit' do
       it 'advanced search will not raise an error' do
         visit '/advanced'
         page.find(:xpath, '//*[@id="range_solr_year_i_begin"]').set '2000'
@@ -35,7 +35,7 @@ describe 'Search' do
         expect(page).to have_content 'The start year must be before the end year.'
       end
       it 'year facet will not raise an error' do
-        visit '/?utf8=✓&search_field=all_fields&q=New+York'
+        visit '/?search_field=all_fields&q=New+York'
         page.find(:xpath, '//*[@id="year"]').click
         page.find(:xpath, '//*[@id="range_solr_year_i_begin"]').set '2000'
         page.find(:xpath, '//*[@id="range_solr_year_i_end"]').set '1900'
@@ -61,7 +61,7 @@ describe 'Search' do
   describe 'Constraints' do
     it 'searching using a bbox constraint, hides the coordinates' do
       visit '/catalog?bbox=-74.97447967529297%2040.237605%20-74.28783416748047%2040.446947'
-      expect(page).to have_css 'span.appliedFilter.constraint', count: 1
+      expect(page).to have_css 'span.applied-filter.constraint', count: 1
       expect(page).to have_content 'Current Map View'
       expect(page).not_to have_content '-74.97447967529297 40.237605 -74.28783416748047 40.446947'
     end
