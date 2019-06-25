@@ -246,6 +246,13 @@
   }
 }
 
+// Background and margin styles for navbar
+.pul-header {
+  background: $dark-gray !important;
+  border-top: 3px solid $orange;
+  z-index: 1004;
+}
+
 .l-branding__pul {
   background: $dark-gray !important;
   border-top: 3px solid $orange;
