@@ -246,15 +246,13 @@
   }
 }
 
-// Background and margin styles for navbar
-.pul-header {
-  @include pul-header;
-}
-
 .l-branding__pul {
-  @include pul-header;
-  position: relative;
+  background: $dark-gray !important;
+  border-top: 3px solid $orange;
+  box-shadow: 0 4px 4px -2px rgba(0,0,0,0.2);
   clear: both;
+  position: relative;
+  z-index: 1004;
 
   .navbar {
     padding: 0;
