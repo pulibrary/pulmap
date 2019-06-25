@@ -8,7 +8,7 @@ describe 'catalog/_constraints_element.html.erb', type: :view do
 
     it 'does not render blank values' do
       expect(rendered).not_to have_content 'my value'
-      expect(rendered).to have_css '.filterBlank'
+      expect(rendered).to have_css '.filter-blank'
     end
   end
   context 'when a value is supplied' do
@@ -19,7 +19,7 @@ describe 'catalog/_constraints_element.html.erb', type: :view do
 
     it 'renders values' do
       expect(rendered).to have_content 'my value'
-      expect(rendered).not_to have_css '.filterBlank'
+      expect(rendered).not_to have_css '.filter-blank'
     end
   end
 end

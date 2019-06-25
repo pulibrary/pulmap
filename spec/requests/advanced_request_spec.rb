@@ -10,9 +10,9 @@ describe 'advanced search', type: :request do
   it 'supports advanced render constraints' do
     get '/catalog?search_field=advanced&f1=title&q1=for1&op2=AND&f2=' \
         'title&q2=s&op3=AND&f3=title&q3=searching+for'
-    expect(response.body.include?('<a class="btn btn-default remove dropdown-toggle" href="/catalog?action=index&amp;controller=catalog&amp;f2=title&amp;'\
-                                  'f3=title&amp;op2=AND&amp;op3=AND&amp;q2=s&amp;q3=searching+for&amp;search_field=advanced"><span class="glyphicon glyphicon-'\
-                                  'remove"></span><span class="sr-only">Remove constraint Title: for1</span></a>')).to eq true
+    expect(response.body.include?('<a class="btn btn-default btn-constraint remove" href="/catalog?action=index&amp;controller=catalog&amp;f2=title&amp;'\
+                                  'f3=title&amp;op2=AND&amp;op3=AND&amp;q2=s&amp;q3=searching+for&amp;search_field=advanced"><span class="remove-icon"></span>'\
+                                  '<span class="sr-only">Remove constraint Title: for1</span></a>')).to eq true
   end
   it 'does not error when only the 3rd query field has a value' do
     get '/catalog?f1=subject&q1=&op2=AND&f2=publisher&q2=&op3=AND&f3=title&q3='\
