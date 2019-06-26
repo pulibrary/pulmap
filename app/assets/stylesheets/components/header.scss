@@ -1,3 +1,9 @@
+@include media-breakpoint-between(xs, md) {
+  .l-branding__pul .logo__pul {
+    padding: 5px !important;
+  }
+}
+
 @include media-breakpoint-only(xs) {
   .search-options,
   .l-branding__pul .menu--level-1 {
@@ -176,10 +182,6 @@
 
 .l-branding__pul .menu--level-1, .l-branding__pul .logo__pul {
   height: 67px;
-
-  @include media-breakpoint-up(xs) {
-    padding: 5px;
-  }
 }
 
 .logo__pul {
