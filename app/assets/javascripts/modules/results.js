@@ -121,7 +121,7 @@ Blacklight.onLoad(function() {
     window.geoCoder.addTo(map);
 
     var options = {
-      placement: 'right',
+      placement: 'bottom',
       delay: { "show": 1000, "hide": 100 },
       container: 'body',
       title: 'Zoom map to location'
