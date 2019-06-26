@@ -167,7 +167,6 @@
 .logo__pul img {
   @include media-breakpoint-down(xs) {
     margin: 0 auto;
-    padding-left: 10px;
   }
 }
 
@@ -179,7 +178,7 @@
   height: 67px;
 
   @include media-breakpoint-up(xs) {
-    padding: 0;
+    padding: 5px;
   }
 }
 
