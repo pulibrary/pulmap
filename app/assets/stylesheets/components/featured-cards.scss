@@ -1,0 +1,44 @@
+.featured-cards {
+  .card {
+    transition: all 0.2s ease-in-out;
+    border: 0px solid transparentize(#333, 0.8);
+    outline: none;
+
+    &:focus,
+    &:hover {
+      background: transparentize(#333, 0.95);
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  h1 {
+    color: #494f57;
+    font-size: 1.3em;
+    margin-top: 0.625em;
+    margin-bottom: 0.4em;
+    text-align: center;
+  }
+
+  p {
+    color: rgba(73, 79, 87, 0.6);
+    margin: auto;
+    text-align: center;
+  }
+
+  span {
+    display: block;
+    margin-bottom: 1em;
+    margin: auto;
+    font-size: 48px;
+    color: #777777;
+    text-align: center;
+    &.geoblacklight-icon {
+      font-size: 44px;
+      margin-top: -11px;
+      margin-bottom: -7px;
+    }
+  }
+}
