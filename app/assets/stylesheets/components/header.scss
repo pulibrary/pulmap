@@ -1,4 +1,4 @@
-@include media-breakpoint-only(sm) {
+@include media-breakpoint-only(xs) {
   .search-options,
   .l-branding__pul .menu--level-1 {
     width: 100%;
@@ -62,7 +62,7 @@
 .home.home-secondary-navbar {
   height: 100px;
 
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(xs) {
     height: auto;
   }
 }
@@ -77,7 +77,7 @@
     height: 120px;
   }
 
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(xs) {
     height: auto;
   }
 
@@ -139,7 +139,7 @@
     &:last-child {
       border-right: none;
 
-      @include media-breakpoint-up(sm) {
+      @include media-breakpoint-up(xs) {
         padding-right: 0;
       }
     }
@@ -178,7 +178,7 @@
 .l-branding__pul .menu--level-1, .l-branding__pul .logo__pul {
   height: 67px;
 
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(xs) {
     padding: 0;
   }
 }
@@ -391,10 +391,6 @@
     > .input-group {
       width: 100%;
     }
-
-    > .input-group .input-group-btn {
-      width: 1%;
-    }
   }
 }
 
@@ -431,11 +427,6 @@
     }
   }
 }
-
-.form-inline .input-group .input-group-btn {
-  width: 46px;
-}
-
 
 .button--start-over {
   margin: 0 3px 0 0;

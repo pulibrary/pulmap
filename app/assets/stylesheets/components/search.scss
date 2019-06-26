@@ -17,7 +17,6 @@
 /* update the search bar input width after upgrading -> BS4 */
 .navbar-form .input-group {
   width: 100%;
-  padding: 0;
 }
 
 @include media-breakpoint-up(xs) {
@@ -25,7 +24,6 @@
     width: 100%;
     clear: both;
     display: block;
-    margin-bottom: 1em;
     padding: 10px;
 
     select {
