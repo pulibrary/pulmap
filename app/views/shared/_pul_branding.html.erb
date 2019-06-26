@@ -1,7 +1,7 @@
 <div class="l-branding__pul <%= layout_type %>-branding">
   <div class="<% unless index_layout? %>container<% end %> <%= layout_type %>-container ">
     <nav class="navbar <%= navbar_type %> navbar-dark pul-header">
-        <div class="logo__pul col-12 col-sm-5 col-md-5">
+        <div class="logo__pul col-12 col-md-5 col-lg-4">
           <a href="https://library.princeton.edu" title="Princeton University Library" class="pul-logo">
            <%= image_tag("pul-logo-new.svg") %>
           </a>
@@ -22,7 +22,7 @@
             </ul>
           </div>
         <% end %>
-        <div class="menu--level-1 d-none d-md-block col-md-3 ml-auto justify-content-sm-end">
+        <div class="menu--level-1 d-none d-md-block col-md-2 col-lg-3 justify-content-sm-end">
           <ul>
             <li><a href="/contact-us">Contact Us</a></li>
             <%= render :partial=>'/account' %>
