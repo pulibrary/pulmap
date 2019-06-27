@@ -40,7 +40,7 @@ Blacklight.onLoad(function() {
       GeoBlacklight.supressDynamicSearch = false; // Ensures that dynamic search is triggered
       bbox = L.bboxToBounds(data.mapBbox);
     } else {
-      GeoBlacklight.supressDynamicSearch = false; // Ensures that dynamic search is triggered
+      GeoBlacklight.supressDynamicSearch = true;
       $('.document [data-bbox]').each(function() {
 
         try {
