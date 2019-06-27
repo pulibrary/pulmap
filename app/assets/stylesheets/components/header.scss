@@ -135,6 +135,10 @@
     padding: 3px 6px;
   }
 
+  > li > button {
+      padding-bottom: 3px;
+    }
+
   > li {
     float: left;
     padding: 0 15px;
