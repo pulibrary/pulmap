@@ -16,15 +16,4 @@ class SearchBuilder < Blacklight::SearchBuilder
     solr_params[:fq] ||= []
     solr_params[:fq] << '-suppressed_b: true'
   end
-
-  # Override to use IsWithin instead of Intesects
-  def add_spatial_params(solr_params)
-    if blacklight_params[:bbox]
-      solr_params[:fq] ||= []
-      solr_params[:fq] << "#{Settings.FIELDS.GEOMETRY}:\"IsWithin(#{envelope_bounds})\""
-    end
-    solr_params
-  rescue Geoblacklight::Exceptions::WrongBoundingBoxFormat
-    solr_params
-  end
 end

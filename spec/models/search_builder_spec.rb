@@ -18,12 +18,6 @@ describe SearchBuilder do
       builder.with(params)
       expect(builder.add_spatial_params(solr_params)).to eq solr_params
     end
-
-    it 'returns a spatial search using IsWithin if bbox is given' do
-      params = { bbox: '-180 -80 120 80' }
-      builder.with(params)
-      expect(builder.add_spatial_params(solr_params)[:fq].to_s).to include('IsWithin')
-    end
   end
 
   describe '#add_featured_content' do
