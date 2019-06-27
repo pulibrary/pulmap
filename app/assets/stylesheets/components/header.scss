@@ -209,10 +209,10 @@
 
   &.site-title {
     @include vertical-align;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     border-left: 1px solid darken($gray, 50%);
     height: 36px;
-    padding-left: 1rem;
+    padding-left: 0.5rem;
     color: white;
     font-size: 16px;
     line-height: 18px;
