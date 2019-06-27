@@ -1,6 +1,17 @@
-@include media-breakpoint-between(xs, md) {
-  .l-branding__pul .logo__pul {
-    padding: 5px !important;
+/* all screens > 576px */
+@include media-breakpoint-up(xs) {
+  .l-branding__pul.index-branding .logo__pul {
+    padding: 4px !important;
+  }
+}
+
+/* screens < 576px */
+@include media-breakpoint-down(xs) {
+  .l-branding__pul.item-branding .logo__pul {
+    padding: 0.5px;
+  }
+  .l-branding__pul.index-branding .logo__pul {
+    padding: 0.5rem;
   }
 }
 
@@ -225,6 +236,13 @@
     &:active {
       color: $orange;
     }
+  }
+}
+
+/* screens < 576, site-tile in the item show page*/
+@include media-breakpoint-down(xs) {
+  .l-branding__pul.item-branding .site-title {
+    padding-left: 0.2rem;
   }
 }
 

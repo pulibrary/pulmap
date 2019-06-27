@@ -40,19 +40,6 @@
   }
 }
 
-header .input-group-addon {
-  border: none;
-  padding: 0;
-  background: none;
-
-  .caret {
-    position: relative;
-    z-index: 99999991;
-    left: -30px;
-    pointer-events: none;
-  }
-}
-
 .search_field {
   -webkit-appearance: none;
   -moz-appearance: none;
