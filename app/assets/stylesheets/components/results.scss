@@ -33,10 +33,6 @@
   position: relative;
   height: 100%;
   padding-right: 25px;
-
-  @media (max-width: $bp-small) {
-    top: 150px;
-  }
 }
 
 #inner {
