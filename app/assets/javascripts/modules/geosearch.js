@@ -85,6 +85,12 @@
         GeoBlacklight.supressDynamicSearch = true;
       }, this);
 
+      // Trigger a map move after a geocoder location has been selected. A workaround
+      // for an issue with supressing the dynamic search on inital load.
+      map.on("geosearch/showlocation", function(event) {
+        event.target.fitBounds(event.location.bounds)
+      });
+
       // Trigger dynamic search on map move
       map.on("moveend", function(event) {
         if (GeoBlacklight.supressDynamicSearch === true) {
