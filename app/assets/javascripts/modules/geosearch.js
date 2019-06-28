@@ -35,7 +35,7 @@
         this.pushStateSearcher();
       },
       delay: 800,
-      staticButton: '<a class="btn btn-primary">Search here <span class="glyphicon glyphicon-repeat"></span></a>',
+      staticButton: '<a class="btn btn-primary">Search here <i class="fa fa-repeat" aria-hidden="true"></i></a>',
       dynamicButton: '<label><input type="checkbox" checked> Search when I move the map</label>'
     },
 

@@ -6,8 +6,7 @@
     <div class="col-md-10">
       <%= f.text_field :name, class: 'form-control', error: 'Please provide a name' %>
       <% unless @feedback_form.errors[:name].empty? %>
-        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-        <span id="inputError2Status" class="sr-only">(error)</span>
+        <span id="inputError2Status" class="d-none">(error)</span>
         <span class="error">This field <%= @feedback_form.errors[:name].first %></span>
       <% end %>
     </div>
@@ -19,8 +18,7 @@
     <div class="col-md-10">
       <%= f.email_field :email, class: 'form-control', error: 'Please provide a valid email address', value: @user_email %>
       <% unless @feedback_form.errors[:email].empty? %>
-        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-        <span id="inputError2Status" class="sr-only">(error)</span>
+        <span id="inputError2Status" class="d-none">(error)</span>
         <span class="error">Email <%= @feedback_form.errors[:email].first %></span>
       <% end %>
     </div>
