@@ -30,7 +30,7 @@ module PulmapGeoblacklightHelper
 
   def facet_active(facet_field)
     if facet_field_in_params?(facet_field)
-      ' active'
+      ' facet-limit-active'
     else
       ''
     end
@@ -44,28 +44,28 @@ module PulmapGeoblacklightHelper
 
   private
 
-  def leaflet_viewer
-    content_tag(:div, nil, id: 'map',
-                           data: { map: 'item', protocol: @document.viewer_protocol.camelize,
-                                   url: @document.viewer_endpoint,
-                                   'layer-id' => @document.wxs_identifier,
-                                   'map-bbox' => @document.bounding_box_as_wsen,
-                                   'catalog-path' => search_catalog_path,
-                                   available: document_available?,
-                                   basemap: geoblacklight_basemap,
-                                   leaflet_options: leaflet_options })
-  end
+    def leaflet_viewer
+      content_tag(:div, nil, id: 'map',
+                             data: { map: 'item', protocol: @document.viewer_protocol.camelize,
+                                     url: @document.viewer_endpoint,
+                                     'layer-id' => @document.wxs_identifier,
+                                     'map-bbox' => @document.bounding_box_as_wsen,
+                                     'catalog-path' => search_catalog_path,
+                                     available: document_available?,
+                                     basemap: geoblacklight_basemap,
+                                     leaflet_options: leaflet_options })
+    end
 
-  def viewer_tags(classes)
-    content_tag(:div, nil,
-                class: classes,
-                data: {
-                  uri: @document.references.references(:iiif_manifest).endpoint,
-                  config: asset_url('uv/uv_config.json')
-                }) + PulUvRails::UniversalViewer.script_tag
-  end
+    def viewer_tags(classes)
+      content_tag(:div, nil,
+                  class: classes,
+                  data: {
+                    uri: @document.references.references(:iiif_manifest).endpoint,
+                    config: asset_url('uv/uv_config.json')
+                  }) + PulUvRails::UniversalViewer.script_tag
+    end
 
-  def manifest_viewer
-    safe_join [viewer_tags(%w[view uv]), viewer_tags(%w[view uv hidden])]
-  end
+    def manifest_viewer
+      safe_join [viewer_tags(%w[view uv]), viewer_tags(%w[view uv d-none])]
+    end
 end

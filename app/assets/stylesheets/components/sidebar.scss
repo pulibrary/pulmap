@@ -1,0 +1,20 @@
+.tools-sidebar {
+  .list-group {
+    .list-group-item:not(.export) {
+      padding-bottom: 0;
+      padding-top: 0;
+      > a {
+        display: block;
+        &:hover, &:focus {
+          text-decoration: none;
+          background-color: #eeeeee;
+        }
+      }
+    }
+    .list-group-item.downloads {
+      margin-top: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}

@@ -19,4 +19,12 @@
       }
     }
   }
+
+  // Set paginator link and active color
+  li {
+    > a { color: $blue }
+    &.page-item.active > span {
+      background-color: $blue;
+    }
+  }
 }

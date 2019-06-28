@@ -34,4 +34,9 @@ class SolrDocument
     return true if fetch(references.reference_field, {})['http://schema.org/thumbnailUrl']
     false
   end
+
+  # Override to disable the open in carto export button
+  def carto_reference
+    nil
+  end
 end

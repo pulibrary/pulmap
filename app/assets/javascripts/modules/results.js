@@ -40,7 +40,7 @@ Blacklight.onLoad(function() {
       GeoBlacklight.supressDynamicSearch = false; // Ensures that dynamic search is triggered
       bbox = L.bboxToBounds(data.mapBbox);
     } else {
-      GeoBlacklight.supressDynamicSearch = true; // Supresses dynamic search
+      GeoBlacklight.supressDynamicSearch = true;
       $('.document [data-bbox]').each(function() {
 
         try {
@@ -121,7 +121,7 @@ Blacklight.onLoad(function() {
     window.geoCoder.addTo(map);
 
     var options = {
-      placement: 'right',
+      placement: 'bottom',
       delay: { "show": 1000, "hide": 100 },
       container: 'body',
       title: 'Zoom map to location'

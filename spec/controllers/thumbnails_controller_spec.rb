@@ -46,7 +46,7 @@ RSpec.describe ThumbnailsController, type: :controller do
 
     context "with a dynamic map layer" do
       it "caches a generated thumbnail" do
-        get :index, params: { id: "minnesota-f14ff4-1359-4beb-b931-5cb41d20ab90" }
+        get :index, params: { id: "90f14ff4-1359-4beb-b931-5cb41d20ab90" }
         expect(Faraday).to have_received(:new).with(url: %r{Glacial_Boundaries\/MapServer\/info})
       end
     end
@@ -60,8 +60,8 @@ RSpec.describe ThumbnailsController, type: :controller do
 
     context "with an image map layer" do
       it "caches a generated thumbnail" do
-        get :index, params: { id: "princeton-test-oregon-naip-2011" }
-        expect(Faraday).to have_received(:new).with(url: %r{NAIP_2011_Dynamic\/ImageServer\/info})
+        get :index, params: { id: "32653ed6-8d83-4692-8a06-bf13ffe2c018" }
+        expect(Faraday).to have_received(:new).with(url: %r{wabashtopo\/ImageServer\/info})
       end
     end
 
@@ -112,7 +112,7 @@ RSpec.describe ThumbnailsController, type: :controller do
 
     context "with an unimplemented service url generator" do
       it "caches a static thumbnail" do
-        get :index, params: { id: "minnesota-e2f33b52-4039-4bbb-9095-b5cdc0175943" }
+        get :index, params: { id: "f406332e63eb4478a9560ad86ae90327_18" }
         expect(Faraday).to have_received(:new).with(url: "http://exampleserver/thumbnail.png")
       end
     end

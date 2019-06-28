@@ -1,10 +1,16 @@
 # Configurable Logo Used for CartoDB export
 APPLICATION_LOGO_URL: 'http://geoblacklight.org/images/geoblacklight-logo.png'
 
-BBOX_WITHIN_BOOST: '300'
+BBOX_WITHIN_BOOST: '10'
+
+# The bf boost value for overlap ratio
+OVERLAP_RATIO_BOOST: '10'
 
 # Carto OneClick Service https://cartodb.com/open-in-cartodb/
 CARTO_ONECLICK_LINK: 'http://oneclick.cartodb.com/'
+
+# ArcGIS Online Base URL
+ARCGIS_BASE_URL: 'https://www.arcgis.com/home/webmap/viewer.html'
 
 # Download path can be configured using this setting
 DOWNLOAD_PATH: <%= ENV['PULMAP_DOWNLOAD_PATH'] || "./tmp/cache/downloads" %>
@@ -40,7 +46,7 @@ PRINCETON_GEOSERVER_URL: <%= ENV['PRINCETON_GEOSERVER_URL'] || "https://geoserve
 PROXY_GEOSERVER_URL: <%= ENV['PROXY_GEOSERVER_URL'] || "http://localhost:3000" %>
 PROXY_GEOSERVER_AUTH: <%= ENV['PROXY_GEOSERVER_AUTH'] || "Basic base64encodedusername:password" %>
 
-# Metadata shown in tool panel
+# Metadata shown in tool card
 METADATA_SHOWN:
   - 'fgdc'
   - 'iso19139'
@@ -52,7 +58,7 @@ TIMEOUT_DOWNLOAD: 16
 # (For WMS inspection) timeout and open_timeout parameters for Faraday
 TIMEOUT_WMS: 4
 
-# Web services shown in tool panel
+# Web services shown in tool card
 WEBSERVICES_SHOWN:
   - 'wms'
   - 'wfs'
@@ -81,6 +87,17 @@ LEAFLET:
   MAP:
   LAYERS:
     DETECT_RETINA: true
+    INDEX:
+      DEFAULT: &default
+        color: "#1eb300"
+        weight: "1"
+        radius: "4"
+      UNAVAILABLE:
+        <<: *default
+        color: "#b3001e"
+      SELECTED:
+        <<: *default
+        color: "#006bde"
   VIEWERS:
     IIIF:
       CONTROLS:

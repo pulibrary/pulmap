@@ -7,9 +7,9 @@ class GeoserverController < ApplicationController
 
   private
 
-  def headers
-    {
-      'Authorization' => Settings.PROXY_GEOSERVER_AUTH
-    }
-  end
+    def headers
+      {
+        'Authorization' => Settings.PROXY_GEOSERVER_AUTH
+      }
+    end
 end

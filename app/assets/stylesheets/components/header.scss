@@ -1,17 +1,22 @@
-
-
-@media (max-width: 500px) {
-  .header__secondary .container {
-    height: 140px;
+/* all screens > 576px */
+@include media-breakpoint-up(xs) {
+  .l-branding__pul.index-branding .logo__pul {
+    padding: 4px !important;
   }
+}
 
-  .header__secondary .container .navbar-right {
-    width: 100%;
-    margin-top: 1em;
+/* screens < 576px */
+@include media-breakpoint-down(xs) {
+  .l-branding__pul.item-branding .logo__pul {
+    padding: 0.5px;
   }
+  .l-branding__pul.index-branding .logo__pul {
+    padding: 0.5rem;
+  }
+}
 
+@include media-breakpoint-only(xs) {
   .search-options,
-  .header__secondary .container .navbar-right .navbar-nav,
   .l-branding__pul .menu--level-1 {
     width: 100%;
     margin: 0 auto;
@@ -74,7 +79,7 @@
 .home.home-secondary-navbar {
   height: 100px;
 
-  @media (min-width: 475px) {
+  @include media-breakpoint-up(xs) {
     height: auto;
   }
 }
@@ -89,7 +94,7 @@
     height: 120px;
   }
 
-  @media (min-width: $bp-small) {
+  @include media-breakpoint-up(xs) {
     height: auto;
   }
 
@@ -105,14 +110,6 @@
   .container {
     height: 100%;
     padding-top: 10px;
-  }
-
-  .index-container {
-    margin-top: 17px;
-  }
-
-  .item-container {
-    margin-top: 9px;
   }
 
   .navbar-nav {
@@ -131,12 +128,8 @@
   padding: 0;
   list-style-type: none;
   text-align: center;
-
-  @media (min-width: 475px) {
-    @include vertical-align;
-
-    float: right;
-  }
+  @include vertical-align;
+  float: right;
 
   > li > a,
   .btn-account {
@@ -153,17 +146,22 @@
     padding: 3px 6px;
   }
 
+  > li > button {
+      padding-bottom: 3px;
+      padding-left: 6px;
+    }
+
   > li {
     float: left;
     padding: 0 15px;
-    @media (min-width: $bp-medium) {
+    @include media-breakpoint-up(xl) {
       border-right: 1px solid darken($gray, 40%);
     }
 
     &:last-child {
       border-right: none;
 
-      @media (min-width: 475px) {
+      @include media-breakpoint-up(xs) {
         padding-right: 0;
       }
     }
@@ -189,7 +187,7 @@
 }
 
 .logo__pul img {
-  @media (max-width: 475px) {
+  @include media-breakpoint-down(xs) {
     margin: 0 auto;
   }
 }
@@ -200,10 +198,6 @@
 
 .l-branding__pul .menu--level-1, .l-branding__pul .logo__pul {
   height: 67px;
-
-  @media (min-width: 475px) {
-    padding: 0;
-  }
 }
 
 .logo__pul {
@@ -227,10 +221,10 @@
 
   &.site-title {
     @include vertical-align;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     border-left: 1px solid darken($gray, 50%);
     height: 36px;
-    padding-left: 1rem;
+    padding-left: 0.5rem;
     color: white;
     font-size: 16px;
     line-height: 18px;
@@ -246,6 +240,13 @@
   }
 }
 
+/* screens < 576, site-tile in the item show page*/
+@include media-breakpoint-down(xs) {
+  .l-branding__pul.item-branding .site-title {
+    padding-left: 0.2rem;
+  }
+}
+
 @media (max-width: 767px) {
   .l-branding__pul.index-branding {
    min-height: 150px;
@@ -258,21 +259,27 @@
   }
 }
 
-.l-branding__pul {
-  position: relative;
-  border-top: 3px solid $orange;
-  clear: both;
-  background: $dark-gray;
+// Background and margin styles for navbar
+.pul-header {
+  background: $dark-gray !important;
   z-index: 1004;
-  box-shadow: 0 4px 4px -2px rgba(0,0,0,0.2);
 }
 
-.header__secondary {
-  background: $white;
-  z-index: 1002;
+// Adds top border to index navbar
+.index-container .pul-header, {
+  border-top: 3px solid $orange;
+}
 
-  .navbar-right .dropdown-menu-left {
-    margin-top: 10px;
+.l-branding__pul {
+  background: $dark-gray !important;
+  border-top: 3px solid $orange;
+  box-shadow: 0 4px 4px -2px rgba(0,0,0,0.2);
+  clear: both;
+  position: relative;
+  z-index: 1004;
+
+  .navbar {
+    padding: 0;
   }
 }
 
@@ -338,8 +345,35 @@
   padding-right: 0;
 }
 
-#your-account-dropdown {
-  margin-top: 5px;
+// Style account dropdown menu
+.account-dropdown {
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  li:not(.dropdown-partial) {
+    padding: 7px 14px;
+  }
+
+  li:hover {
+    background-color: $white-smoke;
+  }
+
+  .badge-secondary {
+    background-color: inherit;
+    color: inherit;
+    font-size: inherit;
+    font-weight:inherit;
+
+    &:before {
+      content: "(";
+    }
+
+    &:after {
+      content: ")";
+    }
+  }
 }
 
 .dropdown-toggle a:hover {
@@ -381,10 +415,6 @@
     > .input-group {
       width: 100%;
     }
-
-    > .input-group .input-group-btn {
-      width: 1%;
-    }
   }
 }
 
@@ -421,11 +451,6 @@
     }
   }
 }
-
-.form-inline .input-group .input-group-btn {
-  width: 46px;
-}
-
 
 .button--start-over {
   margin: 0 3px 0 0;
@@ -497,23 +522,24 @@
 }
 
 .index-container {
-  padding: 0 1em;
-
-  @media (min-width: $bp-medium){
-    padding: 0 35px;
-  }
-
-  div {
-    @media (max-width: $bp-small) {
-      padding-left: 0;
-      padding-right: 0;
+  .navbar {
+    @media (min-width: $bp-medium){
+      padding: 0 35px;
     }
 
-    @media (min-width: $bp-small) {
-      padding-left: 15px;
-      padding-right: 15px;
+    div {
+      @media (max-width: $bp-small) {
+        padding-left: 0;
+        padding-right: 0;
+      }
     }
   }
+}
+
+
+// Removes top border on show page navbar so the header displays properly
+.item-container .pul-header {
+  border-top: 0;
 }
 
 .navbar-fixed-top {

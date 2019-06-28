@@ -54,6 +54,7 @@ $basemap-color: #b8e6fe;
 
 // Layer control style
 .leaflet-control-layers-toggle {
+  background-image: image-url('layers.png');
   width: 30px;
   height: 30px;
 }
@@ -64,6 +65,7 @@ $basemap-color: #b8e6fe;
 }
 
 .leaflet-retina .leaflet-control-layers-toggle {
+  background-image: image-url('layers-2x.png');
   background-size: 17px 17px;
 }
 

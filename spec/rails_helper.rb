@@ -3,17 +3,8 @@ ENV['RAILS_ENV'] ||= 'test'
 require 'spec_helper'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
-require 'capybara/poltergeist'
-require 'capybara/rspec'
-require 'capybara/rails'
 require 'devise'
 require 'factory_bot'
-
-Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, timeout: 60)
-end
-Capybara.javascript_driver = :poltergeist
-Capybara.default_max_wait_time = 10
 
 ActiveRecord::Migration.maintain_test_schema!
 

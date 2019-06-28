@@ -8,7 +8,7 @@ describe 'Show page downloads' do
 
   it 'renders the the authentication link for access-restricted Princeton Documents' do
     visit solr_document_path('princeton-m613n013z')
-    expect(page).to have_link 'Login to view and download'
+    expect(page).to have_link 'Login to view'
   end
 
   it 'renders a link to request offline access for Princeton Documents unavailable online' do
@@ -16,7 +16,7 @@ describe 'Show page downloads' do
     expect(page).to have_link 'Request offline access'
   end
 
-  it 'renders the panel containing the download links for non-Princeton Documents' do
+  it 'renders the card containing the download links for non-Princeton Documents' do
     visit solr_document_path('stanford-cz128vq0535')
     expect(page).to have_link 'Original Shapefile'
   end

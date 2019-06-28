@@ -9,6 +9,10 @@ class CatalogController < ApplicationController
   end
 
   configure_blacklight do |config|
+    # Ensures that JSON representations of Solr Documents can be retrieved using
+    # the path /catalog/:id/raw
+    config.raw_endpoint.enabled = true
+
     # default advanced config values
     config.advanced_search ||= Blacklight::OpenStructWithHashAccess.new
     # config.advanced_search[:qt] ||= 'advanced'
@@ -251,9 +255,18 @@ class CatalogController < ApplicationController
     # mean") suggestion is offered.
     config.spell_max = 5
 
+    # Tools from Blacklight
+    config.add_results_collection_tool(:sort_widget)
+    config.add_results_collection_tool(:per_page_widget)
+    config.add_show_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
+    config.add_show_tools_partial(:email, callback: :email_action, validator: :validate_email_params)
+    config.add_show_tools_partial(:sms, if: :render_sms_action?, callback: :sms_action, validator: :validate_sms_params)
+
     # Custom tools for GeoBlacklight
     config.add_show_tools_partial :web_services, if: proc { |_context, _config, options| options[:document] && (Settings.WEBSERVICES_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any? }
+    config.add_show_tools_partial :exports, partial: 'exports', if: proc { |_context, _config, options| options[:document] }
     config.add_show_tools_partial :metadata, if: proc { |_context, _config, options| options[:document] && (Settings.METADATA_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any? }
+    config.add_show_tools_partial :downloads, partial: 'downloads', if: proc { |_context, _config, options| options[:document] }
     # Removes Carto from the tools sidebar. It will not create an empty li tag ,exports class.
     # config.add_show_tools_partial :exports, partial: 'exports', if: proc { |_context, _config, options| options[:document] }
 
@@ -270,8 +283,6 @@ class CatalogController < ApplicationController
     config.autocomplete_path = 'suggest'
   end
 
-  add_show_tools_partial :downloads, partial: 'downloads', if: proc { |_context, _config, options| options[:document] }
-
   ##
   # Overrides default Blacklight method to return true for an empty q value
   # @return [Boolean]
@@ -280,7 +291,7 @@ class CatalogController < ApplicationController
   end
 
   def downloads
-    @response, @document = fetch params[:id]
+    @response, @document = search_service.fetch params[:id]
     not_found unless @document.downloadable? && @document.same_institution?
   end
 end

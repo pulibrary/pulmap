@@ -11,9 +11,11 @@
 // Import font first
 @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
 
-@import 'font-awesome';
-@import 'bourbon';
-@import 'neat';
+@import 'utils/mixins';
+@import 'utils/variables';
+@import 'icons/variables';
+@import 'icons/icons';
+@import 'bootstrap-config';
 @import 'blacklight';
 @import 'geoblacklight';
 @import 'pulmap';

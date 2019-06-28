@@ -1,3 +1,11 @@
+a {
+    color: $blue;
+}
+
+html {
+    font-size:  0.875rem;
+}
+
 body {
     font-family: $font-sans;
 }
@@ -8,6 +16,11 @@ footer {
 
 main {
     padding: 0 0 0;
+}
+
+// Remove focus box shadow on primary buttons
+.btn-primary:focus {
+  box-shadow: none;
 }
 
 .wrapper {
@@ -35,24 +48,5 @@ li.bullet:hover {
     cursor: pointer;
     .bullet-icon {
         background: $black;
-    }
-}
-
-//constraints.scss
-.constraints-container {
-    background-color: white;
-    border: 1px solid #e3e3e3;
-    border-radius: 4px;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-    min-height: 20px;
-    padding: 19px;
-    margin-top: 30px;
-    margin-bottom: 20px;
-
-    .appliedFilter {
-      .filterName.filterBlank:after {
-        content: none;
-      }
     }
 }

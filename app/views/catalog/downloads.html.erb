@@ -1,15 +1,15 @@
 <% document ||= @document %>
-<div class="col-sm-12 show-document pagination-search-widgets">
+<div class="col-md-12 show-document pagination-search-widgets">
   <%= link_to "Back to item", solr_document_path(document), :class => "btn btn-default" %>
 </div>
 
-<div class="col-sm-12">
+<div class="col-md-12">
 	<p>The Princeton University Library makes available maps and geospatial data in order to support research, teaching, and private study. Please include the following credit statement in all publications that make use of the data:</p>
 	<p><%= document['dc_title_s'].gsub(/[[:punct:]]/,'') %>, Maps and Geospatial Data, Princeton University Library.</p>
-  <div class="col-sm-4">
-  	<div class='data-download btn-group' itemprop='distribution' itemscope='itemscope' itemtype='http://schema.org/DataDownload'>
-  	  <%= render 'data_download_primary' %>
-  	  <%= render 'data_download_secondary' %>
-  	</div>
+  <div class="col-md-4">
+    <div class='data-download' itemprop='distribution' itemscope='itemscope' itemtype='http://schema.org/DataDownload'>
+      <%= render 'data_download_primary' %>
+      <%= render 'data_download_secondary' %>
+    </div>
   </div>
 </div>

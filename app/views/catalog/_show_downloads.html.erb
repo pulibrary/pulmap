@@ -3,12 +3,25 @@
 <% if document_downloadable? %>
   <% if !document.same_institution? && (document.direct_download.present? || document.hgl_download.present? || document.iiif_download.present?) %>
     <div class="card downloads">
-      <div class="card-header panel-heading">
+      <div class="card-header">
         <h2><%= t('geoblacklight.download.download').pluralize %></h2>
       </div>
 
-      <ul class="list-group list-group-flush">
+      <ul class="list-group list-group-flush js-download-list">
         <%= render 'downloads_primary' %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if !document.same_institution? &&  document.download_types.present? %>
+    <div class="card exports">
+      <div class="card-header">
+
+        <h2><%= t('geoblacklight.download.export_formats') %></h2>
+      </div>
+
+      <ul class="list-group list-group-flush">
+        <%= render 'downloads_generated' %>
       </ul>
     </div>
   <% end %>

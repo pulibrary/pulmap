@@ -35,7 +35,7 @@
         this.pushStateSearcher();
       },
       delay: 800,
-      staticButton: '<a class="btn btn-primary">Search here <span class="glyphicon glyphicon-repeat"></span></a>',
+      staticButton: '<a class="btn btn-primary">Search here <i class="fa fa-repeat" aria-hidden="true"></i></a>',
       dynamicButton: '<label><input type="checkbox" checked> Search when I move the map</label>'
     },
 
@@ -84,6 +84,12 @@
       map.on("resize", function() {
         GeoBlacklight.supressDynamicSearch = true;
       }, this);
+
+      // Trigger a map move after a geocoder location has been selected. A workaround
+      // for an issue with supressing the dynamic search on inital load.
+      map.on("geosearch/showlocation", function(event) {
+        event.target.fitBounds(event.location.bounds)
+      });
 
       // Trigger dynamic search on map move
       map.on("moveend", function(event) {

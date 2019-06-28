@@ -1,4 +1,4 @@
-<div class="flash_messages container">
+<div class="flash_messages">
     <% [:success, :notice, :error, :alert].each do |type| %>
       <%- alert_class = case type
         when :success then "alert-success"

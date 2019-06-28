@@ -1,0 +1,4 @@
+// Removes an extra `x` on the leaflet geocoder input widget
+.leaflet-control-geosearch a.reset:after {
+  content: none !important;
+}

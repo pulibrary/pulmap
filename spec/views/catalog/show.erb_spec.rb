@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'catalog#show', type: :view do
-  let(:solr_doc_id) { 'mit-us-ma-e25zcta5dct-2000' }
+  let(:solr_doc_id) { 'mit-f6rqs4ucovjk2' }
 
   context 'when a public dataset is rendered the tools sidebar' do
     it 'does not include carto label' do

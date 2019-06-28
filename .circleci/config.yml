@@ -5,7 +5,7 @@ jobs:
     working_directory: ~/pulmap
     docker:
       # The primary container is an instance of the first list image listed. Your build commands run in this container.
-      - image: circleci/ruby:2.4.1-node-browsers
+      - image: circleci/ruby:2.4.6-node-browsers
         environment:
           RAILS_ENV: test
           PULMAP_DB_HOST: localhost
@@ -27,39 +27,50 @@ jobs:
       # Only necessary if app uses webpacker or yarn in some other way
       - restore_cache:
           keys:
-            - pulmap-npm-{{ checksum "package-lock.json" }}
-            - pulmap-npm
+            - pulmap-yarn-{{ checksum "yarn.lock" }}
+            - pulmap-yarn-
       - run:
-          name: NPM Install
-          command: npm install
+          name: Install NPM Dependencies via Yarn
+          command: yarn install
       # Store yarn / webpacker cache
       - save_cache:
-          key: pulmap-npm{{ checksum "package-lock.json" }}
+          key: pulmap-yarn-{{ checksum "yarn.lock" }}
           paths:
-            - npm_modules
-      - run: NODE_ENV=test bundle exec rails webpacker:compile
+            - ~/.cache/yarn
+      # Disable spring while precompiling webpacker
+      - run: DISABLE_SPRING=1 NODE_ENV=test bundle exec rails webpacker:compile
       - persist_to_workspace:
           root: '~/pulmap'
           paths: '*'
   test:
     working_directory: ~/pulmap
     docker:
-      - image: circleci/ruby:2.4.1-node-browsers
+      - image: circleci/ruby:2.4.6-node-browsers
         environment:
           RAILS_ENV: test
           PULMAP_DB_HOST: localhost
           PULMAP_DB_USERNAME: geoblacklight
+      - image: solr:7.1-alpine
+        command: bin/solr -cloud -noprompt -f -p 8985
     steps:
       - attach_workspace:
           at: '~/pulmap'
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
+      - run:
+          name: Load config into solr
+          command: |
+            cd solr/conf
+            zip -1 -r solr_config.zip ./*
+            curl -H "Content-type:application/octet-stream" --data-binary @solr_config.zip "http://localhost:8985/solr/admin/configs?action=UPLOAD&name=pulmap"
+            curl -H 'Content-type: application/json' http://localhost:8985/api/collections/ -d '{create: {name: pulmap-core-test, config: pulmap, numShards: 1}}'
       - run: bundle exec rake db:migrate
-      - run: bundle exec rake ci
+      - run: bundle exec rake geoblacklight:solr:seed
+      - run: bundle exec rspec spec/
   rubocop:
     working_directory: ~/pulmap
     docker:
-      - image: circleci/ruby:2.4.1-node-browsers
+      - image: circleci/ruby:2.4.6-node-browsers
         environment:
           RAILS_ENV: test
           PULMAP_DB_HOST: localhost

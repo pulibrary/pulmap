@@ -1,9 +1,3 @@
-@import 'utils/mixins';
-@import 'utils/variables';
-
-@import 'icons/variables';
-@import 'icons/icons';
-
 @import 'components/typeahead';
 @import 'components/font-face';
 @import 'components/header';
@@ -16,12 +10,17 @@
 @import 'components/thumbnail';
 @import 'components/facets';
 @import 'components/pagination';
-@import 'components/grid-items';
+@import 'components/featured-cards';
 @import 'components/search';
 @import 'components/universal-viewer';
 @import 'components/advanced';
 @import 'components/forms';
+@import 'components/constraints';
+@import 'components/search-widgets';
+@import 'components/geocoder';
+@import 'components/sidebar';
+@import 'components/search-history';
 
-@import 'shame-geo';
+@import 'misc';
 @import 'leaflet.fullscreen';
 @import 'leaflet.extra-markers';

@@ -7,17 +7,17 @@
     options ||= {}
 %>
 
-<span class="btn-group appliedFilter constraint <%= options[:classes].join(" ") if options[:classes] %>">
-  <span class="constraint-value btn btn-default btn-disabled">
+<span class="btn-group applied-filter constraint <%= options[:classes].join(" ") if options[:classes] %>">
+  <span class="constraint-value btn btn-default btn-constraint">
     <% unless label.blank? %>
-      <span class="filterName <%= 'filterBlank' if value.blank? %>"><%= label %></span>
+      <span class="filter-name <%= 'filter-blank' if value.blank? %>"><%= label %></span>
     <% end %>
     <% unless value.blank? %>
-      <%= content_tag :span, value, class: 'filterValue', title: value %>
+      <%= content_tag :span, value, class: 'filter-value', title: value %>
     <% end %>
   </span>
   <% unless options[:remove].blank? %>
-    <% accessible_remove_label = content_tag :span, class: 'sr-only' do
+    <% accessible_remove_label = content_tag :span, class: 'd-none' do
         if label.blank?
           t('blacklight.search.filters.remove.value', value: value)
         else
@@ -26,8 +26,8 @@
       end
     %>
 
-    <%= link_to(content_tag(:span, '', class: 'glyphicon glyphicon-remove') + accessible_remove_label,
-			options[:remove], class: 'btn btn-default remove dropdown-toggle'
-		) %>
+    <%= link_to(content_tag(:span, '', class: 'remove-icon') + accessible_remove_label,
+      options[:remove], class: 'btn btn-default btn-constraint remove'
+    ) %>
   <%- end -%>
 </span>

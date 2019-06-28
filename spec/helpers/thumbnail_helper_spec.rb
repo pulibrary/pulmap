@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe ThumbnailHelper, type: :helper do
   let(:document) { SolrDocument.new(document_attributes) }
-  let(:document_attributes) { { layer_slug_s: "mit-us-ma-e25zcta5dct-2000", dc_title_s: 'title' } }
-  let(:thumbnail_url) { "http://test.host/catalog/mit-us-ma-e25zcta5dct-2000/thumbnail" }
+  let(:document_attributes) { { layer_slug_s: "mit-f6rqs4ucovjk2", dc_title_s: 'title' } }
+  let(:thumbnail_url) { "http://test.host/catalog/mit-f6rqs4ucovjk2/thumbnail" }
 
   describe '#gbl_thumbnail_img_tag' do
     context 'when document has a thumbnail url' do
