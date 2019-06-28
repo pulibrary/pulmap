@@ -9,6 +9,9 @@ OVERLAP_RATIO_BOOST: '10'
 # Carto OneClick Service https://cartodb.com/open-in-cartodb/
 CARTO_ONECLICK_LINK: 'http://oneclick.cartodb.com/'
 
+# ArcGIS Online Base URL
+ARCGIS_BASE_URL: 'https://www.arcgis.com/home/webmap/viewer.html'
+
 # Download path can be configured using this setting
 DOWNLOAD_PATH: <%= ENV['PULMAP_DOWNLOAD_PATH'] || "./tmp/cache/downloads" %>
 
@@ -84,6 +87,17 @@ LEAFLET:
   MAP:
   LAYERS:
     DETECT_RETINA: true
+    INDEX:
+      DEFAULT: &default
+        color: "#1eb300"
+        weight: "1"
+        radius: "4"
+      UNAVAILABLE:
+        <<: *default
+        color: "#b3001e"
+      SELECTED:
+        <<: *default
+        color: "#006bde"
   VIEWERS:
     IIIF:
       CONTROLS:
