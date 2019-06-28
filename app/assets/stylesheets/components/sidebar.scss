@@ -1,6 +1,6 @@
 .tools-sidebar {
   .list-group {
-    .list-group-item {
+    .list-group-item:not(.export) {
       padding-bottom: 0;
       padding-top: 0;
       > a {
