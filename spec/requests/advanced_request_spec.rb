@@ -12,7 +12,7 @@ describe 'advanced search', type: :request do
         'title&q2=s&op3=AND&f3=title&q3=searching+for'
     expect(response.body.include?('<a class="btn btn-default btn-constraint remove" href="/catalog?action=index&amp;controller=catalog&amp;f2=title&amp;'\
                                   'f3=title&amp;op2=AND&amp;op3=AND&amp;q2=s&amp;q3=searching+for&amp;search_field=advanced"><span class="remove-icon"></span>'\
-                                  '<span class="sr-only">Remove constraint Title: for1</span></a>')).to eq true
+                                  '<span class="d-none">Remove constraint Title: for1</span></a>')).to eq true
   end
   it 'does not error when only the 3rd query field has a value' do
     get '/catalog?f1=subject&q1=&op2=AND&f2=publisher&q2=&op3=AND&f3=title&q3='\

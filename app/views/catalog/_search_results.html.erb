@@ -1,7 +1,7 @@
 <%= javascript_pack_tag 'config' %>
 <%= javascript_pack_tag 'application' %>
 <%= javascript_include_tag 'modules/results' %>
-<h2 class="sr-only top-content-title"><%= t('blacklight.search.search_results_header') %></h2>
+<h2 class="d-none top-content-title"><%= t('blacklight.search.search_results_header') %></h2>
 
 <% @page_title = t('blacklight.search.title', :application_name => application_name) %>
 
@@ -12,7 +12,7 @@
   <%= atom_feed_link_tag %>
 <% end -%>
 
-<h2 class="sr-only"><%= t('blacklight.search.search_results') %></h2>
+<h2 class="d-none"><%= t('blacklight.search.search_results') %></h2>
 
 <% if has_search_parameters? %>
   <%= render 'sort_and_per_page' %>
