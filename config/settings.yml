@@ -9,6 +9,9 @@ OVERLAP_RATIO_BOOST: '10'
 # Carto OneClick Service https://cartodb.com/open-in-cartodb/
 CARTO_ONECLICK_LINK: 'http://oneclick.cartodb.com/'
 
+# ArcGIS Online Base URL
+ARCGIS_BASE_URL: 'https://www.arcgis.com/home/webmap/viewer.html'
+
 # Download path can be configured using this setting
 DOWNLOAD_PATH: <%= ENV['PULMAP_DOWNLOAD_PATH'] || "./tmp/cache/downloads" %>
 
