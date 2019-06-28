@@ -9,6 +9,10 @@ class CatalogController < ApplicationController
   end
 
   configure_blacklight do |config|
+    # Ensures that JSON representations of Solr Documents can be retrieved using
+    # the path /catalog/:id/raw
+    config.raw_endpoint.enabled = true
+
     # default advanced config values
     config.advanced_search ||= Blacklight::OpenStructWithHashAccess.new
     # config.advanced_search[:qt] ||= 'advanced'
