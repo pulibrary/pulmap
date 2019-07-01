@@ -1,17 +1,27 @@
-/* all screens > 576px */
-@include media-breakpoint-up(xs) {
+/* all screens > 992px. xl screens in BS4 */
+@media (min-width: 992px) {
   .l-branding__pul.index-branding .logo__pul {
     padding: 4px !important;
   }
 }
 
-/* screens < 576px */
-@include media-breakpoint-down(xs) {
+/* 768px < screens < 992px, md and lg screens in BS4 */
+@media (min-width: 768px) and (max-width: 991.98px) {
   .l-branding__pul.item-branding .logo__pul {
     padding: 0.5px;
   }
   .l-branding__pul.index-branding .logo__pul {
-    padding: 0.5rem;
+    padding: 0.75rem;
+  }
+}
+
+/* screens < 768px, xs and sm screens in BS4 */
+@media (max-width: 767.98px) {
+  .l-branding__pul.item-branding .logo__pul {
+    padding: 0.5px;
+  }
+  .l-branding__pul.index-branding .logo__pul {
+    padding:1rem;
   }
 }
 
