@@ -6,6 +6,8 @@ defaults: &defaults
     provider:
       name: <%= ENV['LEAFLET_GEOCODER_PROVIDER'] || 'OpenStreetMap' %>
       key: <%= ENV['LEAFLET_GEOCODER_KEY'] || 'secret' %>
+  figgy_universal_viewer_url: 'https://figgy.princeton.edu/uv/uv'
+  figgy_universal_viewer_config: 'https://figgy.princeton.edu/uv/uv_config.json'
 
 development:
   <<: *defaults

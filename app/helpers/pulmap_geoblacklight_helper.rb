@@ -56,16 +56,11 @@ module PulmapGeoblacklightHelper
                                      leaflet_options: leaflet_options })
     end
 
-    def viewer_tags(classes)
-      content_tag(:div, nil,
-                  class: classes,
-                  data: {
-                    uri: @document.references.references(:iiif_manifest).endpoint,
-                    config: asset_url('uv/uv_config.json')
-                  }) + PulUvRails::UniversalViewer.script_tag
-    end
-
     def manifest_viewer
-      safe_join [viewer_tags(%w[view uv]), viewer_tags(%w[view uv d-none])]
+      content_tag :div, nil, class: "uv" do
+        content_tag :iframe, nil,
+                    allowfullscreen: true,
+                    src: "#{Pulmap.config['figgy_universal_viewer_url']}#?manifest=#{@document.references.references(:iiif_manifest).endpoint}&config=#{Pulmap.config['figgy_universal_viewer_config']}"
+      end
     end
 end
