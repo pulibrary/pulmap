@@ -30,6 +30,10 @@
   color: $gray-light;
 }
 
+.geoblacklight-icon.geoblacklight-restricted {
+    color: #be0000 !important;
+}
+
 .icon-graphbar {
     &:before {
         content: $icon-graphbar;
