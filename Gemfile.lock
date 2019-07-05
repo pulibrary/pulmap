@@ -17,13 +17,6 @@ GIT
       geoserver-publish
       sneakers
 
-GIT
-  remote: https://github.com/pulibrary/pul_uv_rails
-  revision: e3dd14a13aa8468751dd5d870b3647bafc0db9ff
-  branch: master
-  specs:
-    pul_uv_rails (2.0.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -547,7 +540,6 @@ DEPENDENCIES
   omniauth-cas
   pg (~> 1.0)
   pry-byebug
-  pul_uv_rails!
   puma
   rack (>= 2.0.6)
   rails (~> 5.2)

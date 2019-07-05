@@ -104,3 +104,7 @@ RSpec/FilePath:
 
 RSpec/MultipleExpectations:
   Enabled: false
+
+Layout/AlignHash:
+  Exclude:
+    - 'app/helpers/pulmap_geoblacklight_helper.rb'
