@@ -1,10 +1,11 @@
 User-agent: *
 Crawl-delay: 10
-Sitemap: https://pulsearch.princeton.edu/sitemap.xml.gz
+Sitemap: https://maps.princeton.edu/sitemap.xml.gz
 Disallow: /*?q=*
 Disallow: /*?f*
 Disallow: /bookmarks
 Disallow: /catalog/*/
+Disallow: /catalog/*/web_services
 Disallow: /catalog/email
 Disallow: /catalog/opensearch
 Disallow: /catalog/range_limit

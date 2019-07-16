@@ -6,6 +6,7 @@ defaults: &defaults
     - '/*?f*'
     - '/bookmarks'
     - '/catalog/*/'
+    - '/catalog/*/web_services'
     - '/catalog/email'
     - '/catalog/opensearch'
     - '/catalog/range_limit'
