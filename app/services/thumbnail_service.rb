@@ -70,6 +70,8 @@ class ThumbnailService
       return placeholder_image
     rescue Faraday::Error::TimeoutError
       return placeholder_image
+    rescue Faraday::SSLError
+      return placeholder_image
     end
 
     # Returns the thumbnail url.
