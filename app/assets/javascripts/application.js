@@ -14,7 +14,7 @@
 //= require 'blacklight_advanced_search'
 //= require chosen-jquery
 //= require jquery_ujs
-//= require twitter/typeahead.min
+//= require twitter/typeahead
 //= require aload
 
 // Required by Blacklight
