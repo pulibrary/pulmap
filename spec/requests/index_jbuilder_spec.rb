@@ -9,7 +9,8 @@ describe 'index jbuilder', type: :request do
       expect(attributes).to include Settings.FIELDS.DESCRIPTION,
                                     Settings.FIELDS.TITLE,
                                     Settings.FIELDS.FILE_FORMAT,
-                                    Settings.FIELDS.PUBLISHER
+                                    Settings.FIELDS.PUBLISHER,
+                                    'layer_slug_s'
     end
   end
 end

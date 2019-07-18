@@ -130,6 +130,7 @@ class CatalogController < ApplicationController
     config.add_index_field Settings.FIELDS.TITLE
     config.add_index_field Settings.FIELDS.FILE_FORMAT
     config.add_index_field Settings.FIELDS.PUBLISHER
+    config.add_index_field 'layer_slug_s'
     config.add_index_field Settings.FIELDS.YEAR
     config.add_index_field Settings.FIELDS.CREATOR
     config.add_index_field Settings.FIELDS.DESCRIPTION, helper_method: :snippit
