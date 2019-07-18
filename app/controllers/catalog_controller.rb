@@ -125,24 +125,11 @@ class CatalogController < ApplicationController
     # handler defaults, or have no facets.
     config.add_facet_fields_to_solr_request!
 
-    # solr fields to be displayed in the index (search results) view
-    #   The ordering of the field names is the order of the display
-    # config.add_index_field 'title_display', :label => 'Title:'
-    # config.add_index_field 'title_vern_display', :label => 'Title:'
-    # config.add_index_field 'author_display', :label => 'Author:'
-    # config.add_index_field 'author_vern_display', :label => 'Author:'
-    # config.add_index_field 'format', :label => 'Format:'
-    # config.add_index_field 'language_facet', :label => 'Language:'
-    # config.add_index_field 'published_display', :label => 'Published:'
-    # config.add_index_field 'published_vern_display', :label => 'Published:'
-    # config.add_index_field 'lc_callnum_display', :label => 'Call number:'
-
-    # config.add_index_field 'dc_title_t', :label => 'Display Name:'
-    # config.add_index_field 'dct_provenance_s', :label => 'Institution:'
-    # config.add_index_field 'dc_rights_s', :label => 'Access:'
-    # # config.add_index_field 'Area', :label => 'Area:'
-    # config.add_index_field 'dc_subject_sm', :label => 'Keywords:'
-
+    # Solr fields to be displayed in the index (search results) view
+    # Necessary to return needed metadata fields in the index JSON builder
+    config.add_index_field Settings.FIELDS.TITLE
+    config.add_index_field Settings.FIELDS.FILE_FORMAT
+    config.add_index_field Settings.FIELDS.PUBLISHER
     config.add_index_field Settings.FIELDS.YEAR
     config.add_index_field Settings.FIELDS.CREATOR
     config.add_index_field Settings.FIELDS.DESCRIPTION, helper_method: :snippit
