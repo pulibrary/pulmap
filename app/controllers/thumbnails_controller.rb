@@ -19,8 +19,13 @@ class ThumbnailsController < ApplicationController
       if Rails.cache.exist?("thumbnails/#{params[:id]}")
         Rails.cache.read("thumbnails/#{params[:id]}")
       else
-        _response, @document = search_service.fetch params[:id]
-        CacheThumbnailJob.perform_later(@document.to_h)
+        begin
+          _response, @document = search_service.fetch params[:id]
+          CacheThumbnailJob.perform_later(@document.to_h)
+        rescue Blacklight::Exceptions::RecordNotFound
+          Rails.logger.error("Failed to retrieve the thumbnail for: #{params[:id]}")
+        end
+
         placeholder
       end
     end
