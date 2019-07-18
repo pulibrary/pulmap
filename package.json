@@ -6,7 +6,10 @@
     "leaflet-geosearch": "^2.7.0",
     "npm": "^6.4.0",
     "rails-erb-loader": "^5.5.0",
-    "whatwg-fetch": "^3.0.0"
+    "whatwg-fetch": "^3.0.0",
+    "lodash": "^4.17.13",
+    "lodash.template": "^4.5.0",
+    "fstream": "^1.0.12"
   },
   "devDependencies": {
     "eslint": "^5.6.1",
