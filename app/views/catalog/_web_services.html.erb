@@ -1,0 +1,10 @@
+<% document ||= @documents.first %>
+
+<% if !document.nil? %>
+  <% document.references.refs.each do |reference| %>
+    <% if Settings.WEBSERVICES_SHOWN.include? reference.type.to_s %>
+      <%= render_web_services(reference) %>
+      <hr>
+    <% end %>
+  <% end %>
+<% end %>
