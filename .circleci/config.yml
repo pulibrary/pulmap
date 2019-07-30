@@ -50,7 +50,7 @@ jobs:
           RAILS_ENV: test
           PULMAP_DB_HOST: localhost
           PULMAP_DB_USERNAME: geoblacklight
-      - image: solr:7.1-alpine
+      - image: solr:7.7-alpine
         command: bin/solr -cloud -noprompt -f -p 8985
     steps:
       - attach_workspace:
