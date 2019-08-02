@@ -35,6 +35,19 @@ RSpec.describe ThumbnailsController, type: :controller do
         get :index, params: { id: "nyu_2451_34548" }
         expect(response.body).not_to eq placeholder
       end
+
+      context "when a thumbnail cannot be retrieved" do
+        let(:placeholder) { File.read(Rails.root.join(placeholder_base, "thumbnail-paper-map.png")) }
+        before do
+          allow(Rails.logger).to receive(:error)
+        end
+
+        it "returns the paper map placeholder" do
+          get :index, params: { id: "uva-FullUSGS-FGDCmetadata(UVAcopy)" }
+          expect(response.body).to eq placeholder
+          expect(Rails.logger).to have_received(:error).with("Failed to retrieve the thumbnail for: uva-FullUSGS-FGDCmetadata(UVAcopy)").at_least(:once)
+        end
+      end
     end
 
     context "with a iiif layer" do
