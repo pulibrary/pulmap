@@ -51,7 +51,6 @@ gem 'geoserver-worker', git: 'https://github.com/pulibrary/geoserver-worker', br
 gem 'honeybadger'
 gem 'mail_form'
 gem 'omniauth-cas'
-gem 'rails-reverse-proxy'
 gem 'rsolr', '~> 1.1.1'
 gem 'sidekiq'
 gem 'simple_form'

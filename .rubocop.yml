@@ -45,6 +45,7 @@ Metrics/CyclomaticComplexity:
   Exclude:
     - 'app/helpers/advanced_helper.rb'
     - 'app/helpers/pulmap_geoblacklight_helper.rb'
+    - 'app/controllers/geoserver_controller.rb'
 
 Metrics/LineLength:
   Max: 125
@@ -62,12 +63,14 @@ Metrics/LineLength:
     - 'spec/services/robots_generator_service_spec.rb'
     - 'spec/views/catalog/_web_services.erb_spec.rb'
     - 'spec/controllers/thumbnails_controller_spec.rb'
+    - 'spec/requests/geoserver_requests_spec.rb'
 
 Metrics/MethodLength:
   Max: 14
   Exclude:
     - 'app/helpers/advanced_helper.rb'
     - 'app/helpers/pulmap_geoblacklight_helper.rb'
+    - 'app/controllers/geoserver_controller.rb'
 
 Metrics/PerceivedComplexity:
   Exclude:

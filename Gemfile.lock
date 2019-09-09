@@ -342,11 +342,6 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
-    rails-reverse-proxy (0.9.1)
-      addressable
-      rack
-      rack-proxy
-      rails
     railties (5.2.3)
       actionpack (= 5.2.3)
       activesupport (= 5.2.3)
@@ -544,7 +539,6 @@ DEPENDENCIES
   rack (>= 2.0.6)
   rails (~> 5.2)
   rails-controller-testing
-  rails-reverse-proxy
   rsolr (~> 1.1.1)
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
