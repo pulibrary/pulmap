@@ -32,7 +32,7 @@
 //= require modules/map
 //= require modules/thumbnail
 //= require modules/advanced_chosen
-
+//= require modules/autocomplete
 //= require Leaflet.fullscreen
 //= require Leaflet.ExtraMarkers
 
