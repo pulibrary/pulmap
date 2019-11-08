@@ -4,6 +4,7 @@ defaults: &defaults
   disallowed_paths:
     - '/*?q=*'
     - '/*?f*'
+    - '/*?bbox*'
     - '/bookmarks'
     - '/catalog/*/'
     - '/catalog/*/web_services'
