@@ -125,11 +125,19 @@ end
 
 module BlacklightAdvancedSearch
   module ParsingNestingParser
+    def local_param_hash(key, config)
+      field_def = config.search_fields[key] || {}
+
+      (field_def[:solr_adv_parameters] || field_def[:solr_parameters] || {}).merge(field_def[:solr_local_parameters] || {})
+    end
+
     def process_query(_params, config)
+      query_parser_config = config.advanced_search[:query_parser]
       queries = []
       ops = keyword_op
       keyword_queries.each do |field, query|
-        queries << ParsingNesting::Tree.parse(query, config.advanced_search[:query_parser]).to_query(local_param_hash(field, config))
+        query_parameter = local_param_hash(field, config)
+        queries << ParsingNesting::Tree.parse(query, query_parser_config).to_query(query_parameter)
         queries << ops.shift
       end
       queries.join(' ')
