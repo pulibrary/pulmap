@@ -16,6 +16,8 @@ jobs:
       - type: cache-restore
         name: Restore bundle cache
         key: pulmap-{{ checksum "Gemfile.lock" }}
+      # Install Bundler
+      - run: gem install bundler -v '~> 2.0'
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
       # Cache Dependencies
@@ -55,6 +57,8 @@ jobs:
     steps: &test_steps
       - attach_workspace:
           at: '~/pulmap'
+      # Install Bundler
+      - run: gem install bundler -v '~> 2.0'
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
       - run:
@@ -89,6 +93,8 @@ jobs:
     steps:
       - attach_workspace:
           at: '~/pulmap'
+      # Install Bundler
+      - run: gem install bundler -v '~> 2.0'
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
       - run: bundle exec rake rubocop
