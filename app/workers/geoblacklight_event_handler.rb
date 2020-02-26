@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GeoblacklightEventHandler
   include Sneakers::Worker
   from_queue :pulmap

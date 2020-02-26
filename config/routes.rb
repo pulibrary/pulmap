@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
   mount Blacklight::Engine => '/'

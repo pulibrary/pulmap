@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GeoblacklightEventProcessor
   class DeleteProcessor < Processor
     def process

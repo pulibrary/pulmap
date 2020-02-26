@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GeoserverController < ApplicationController
   def index
     url = Settings.PRINCETON_GEOSERVER_URL
@@ -56,7 +58,7 @@ class GeoserverController < ApplicationController
       content_type = proxied_response['Content-Type']
       body = proxied_response.body.to_s
 
-      if content_type && content_type.match(/image/)
+      if content_type&.match(/image/)
         send_data body, content_type: content_type, disposition: "inline", status: code
       else
         render body: body, content_type: content_type, status: code

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module SourceHelper
   # Markup for a document's source sidebar card
   # rubocop:disable Rails/OutputSafety

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'catalog/_web_services.html.erb', type: :view do

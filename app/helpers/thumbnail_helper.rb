@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ThumbnailHelper
   ##
   # Returns the GeoBlacklight thumbnail linked to the item record

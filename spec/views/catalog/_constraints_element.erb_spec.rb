@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'catalog/_constraints_element.html.erb', type: :view do

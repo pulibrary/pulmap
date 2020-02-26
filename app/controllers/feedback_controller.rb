@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FeedbackController < ApplicationController
   before_action :current_user_email
   before_action :build_feedback_form, only: [:create]
