@@ -9,11 +9,11 @@ GIT
 
 GIT
   remote: https://github.com/pulibrary/geoserver-worker
-  revision: 95dd7ce5a4565cbfdc154acb4634d361502d4476
+  revision: 843440880eaeba827f9478c364834138ad8eb25c
   branch: master
   specs:
     geoserver-worker (0.1.0)
-      bundler (~> 1.16)
+      bundler (>= 1.16)
       geoserver-publish
       sneakers
 
@@ -221,7 +221,7 @@ GEM
       rails (~> 5.0)
       webpacker
     geoblacklight-icons (1.3.1)
-    geoserver-publish (0.2.0)
+    geoserver-publish (0.2.1)
       faraday
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -557,4 +557,4 @@ DEPENDENCIES
   webpacker
 
 BUNDLED WITH
-   1.17.3
+   2.1.4
