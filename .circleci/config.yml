@@ -52,7 +52,7 @@ jobs:
           PULMAP_DB_USERNAME: geoblacklight
       - image: solr:7.7-alpine
         command: bin/solr -cloud -noprompt -f -p 8985
-    steps:
+    steps: &test_steps
       - attach_workspace:
           at: '~/pulmap'
       # Bundle install dependencies
@@ -67,6 +67,17 @@ jobs:
       - run: bundle exec rake db:migrate
       - run: bundle exec rake geoblacklight:solr:seed
       - run: bundle exec rspec spec/
+  test_2_6:
+    working_directory: ~/pulmap
+    docker:
+      - image: circleci/ruby:2.6-node-browsers
+        environment:
+          RAILS_ENV: test
+          PULMAP_DB_HOST: localhost
+          PULMAP_DB_USERNAME: geoblacklight
+      - image: solr:7.7-alpine
+        command: bin/solr -cloud -noprompt -f -p 8985
+    steps: *test_steps
   rubocop:
     working_directory: ~/pulmap
     docker:
@@ -87,6 +98,9 @@ workflows:
     jobs:
       - build
       - test:
+          requires:
+            - build
+      - test_2_6:
           requires:
             - build
       - rubocop:
