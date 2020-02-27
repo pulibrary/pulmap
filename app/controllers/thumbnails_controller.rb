@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ThumbnailsController < ApplicationController
   def index
     send_data thumbnail[:data], type: thumbnail[:type], disposition: 'inline'

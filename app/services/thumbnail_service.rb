@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ThumbnailService
   def initialize(document)
     @document = document
@@ -69,11 +71,11 @@ class ThumbnailService
       conn.authorization :Basic, auth if auth
       conn.get.body
     rescue Faraday::Error::ConnectionFailed
-      return placeholder_image
+      placeholder_image
     rescue Faraday::Error::TimeoutError
-      return placeholder_image
+      placeholder_image
     rescue Faraday::SSLError
-      return placeholder_image
+      placeholder_image
     end
 
     # Returns the thumbnail url.
@@ -113,7 +115,7 @@ class ThumbnailService
       return if protocol == 'map' || protocol.nil?
       "ThumbnailService::#{protocol.camelcase}".constantize.thumbnail_url(@document, thumbnail_size)
     rescue NameError
-      return nil
+      nil
     end
 
     # Retreives a url to a static thumbnail from the document's dct_references field, if it exists.

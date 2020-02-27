@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CacheThumbnailJob < ApplicationJob
   queue_as :default
 

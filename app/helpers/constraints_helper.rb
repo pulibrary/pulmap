@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ConstraintsHelper
   def render_constraints_filters(localized_params = params)
     content = super(localized_params)

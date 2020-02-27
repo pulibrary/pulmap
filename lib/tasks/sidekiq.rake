@@ -1,16 +1,16 @@
+# frozen_string_literal: true
+
 namespace :sidekiq do
   desc 'Show sidekiq stats'
   task stats: :environment do
     chart_builder = SidekiqChart.new
     loop do
-      begin
-        chart = chart_builder.render
-        puts "\e[H\e[2J"
-        puts chart
-        sleep 5
-      rescue Interrupt
-        break
-      end
+      chart = chart_builder.render
+      puts "\e[H\e[2J"
+      puts chart
+      sleep 5
+    rescue Interrupt
+      break
     end
   end
   desc 'Clear queues'

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Helper methods for the advanced search form
 module AdvancedHelper
   # Fill in default from existing search, if present

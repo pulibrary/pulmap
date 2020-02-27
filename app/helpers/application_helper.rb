@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
   ##
   # Checks if index is the current layout
@@ -38,7 +40,7 @@ module ApplicationHelper
 
   def hide_constraints?
     skip_params = constraint_params_to_skip
-    skip_params << 'q' if params[:q] && params[:q].empty?
+    skip_params << 'q' if params[:q]&.empty?
     params.reject { |p| skip_params.include?(p) }.empty?
   end
 

@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'sidekiq/api'
 
 class SidekiqChart
   def render
     chart = ""
     sidekiq_data.each_key do |k|
-      chart << build_chart_line(k)
+      chart += build_chart_line(k)
     end
 
     chart

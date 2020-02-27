@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe PulmapGeoblacklightHelper, type: :helper do

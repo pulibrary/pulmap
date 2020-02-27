@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module GeomonitorConcern
   extend Geoblacklight::SolrDocument
 
