@@ -24,7 +24,7 @@ describe 'Search' do
       visit '/?q='
       fill_in 'range_solr_year_i_begin', with: '1778'
       fill_in 'range_solr_year_i_end', with: '1800'
-      click_button 'Limit'
+      click_button 'Apply'
       expect(page).to have_content '1 entry found'
     end
     context 'wrong date_range_limit' do
