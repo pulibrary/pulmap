@@ -70,9 +70,9 @@ class ThumbnailService
       conn.options.timeout = timeout
       conn.authorization :Basic, auth if auth
       conn.get.body
-    rescue Faraday::Error::ConnectionFailed
+    rescue Faraday::ConnectionFailed
       placeholder_image
-    rescue Faraday::Error::TimeoutError
+    rescue Faraday::TimeoutError
       placeholder_image
     rescue Faraday::SSLError
       placeholder_image

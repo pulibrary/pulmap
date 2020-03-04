@@ -30,7 +30,6 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.5'
-  gem 'rubocop', '~> 0.50.x'
   gem 'spring'
   gem 'webdrivers'
 end

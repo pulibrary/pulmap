@@ -136,7 +136,7 @@ RSpec.describe ThumbnailsController, type: :controller do
       let(:placeholder) { File.read(Rails.root.join(placeholder_base, "thumbnail-polygon.png")) }
 
       before do
-        allow(connection).to receive(:get).and_raise(Faraday::Error::ConnectionFailed.new('Failed'))
+        allow(connection).to receive(:get).and_raise(Faraday::ConnectionFailed.new('Failed'))
       end
 
       it "caches the place holder image" do
@@ -150,7 +150,21 @@ RSpec.describe ThumbnailsController, type: :controller do
       let(:placeholder) { File.read(Rails.root.join(placeholder_base, "thumbnail-polygon.png")) }
 
       before do
-        allow(connection).to receive(:get).and_raise(Faraday::Error::TimeoutError.new('Failed'))
+        allow(connection).to receive(:get).and_raise(Faraday::TimeoutError.new('Failed'))
+      end
+
+      it "caches the placeholder image" do
+        get :index, params: { id: "nyu_2451_34548" }
+        get :index, params: { id: "nyu_2451_34548" }
+        expect(response.body).to eq placeholder
+      end
+    end
+
+    context "with a request that has an SSL error" do
+      let(:placeholder) { File.read(Rails.root.join(placeholder_base, "thumbnail-polygon.png")) }
+
+      before do
+        allow(connection).to receive(:get).and_raise(Faraday::SSLError.new('Failed'))
       end
 
       it "caches the placeholder image" do
