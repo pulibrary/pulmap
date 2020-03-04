@@ -49,6 +49,7 @@ gem 'chosen-rails' #  jquery multiselect plugin for advanced search
 gem 'devise', '~> 4.7.1'
 gem 'devise-guests'
 gem 'geoblacklight', '~> 2.1'
+gem 'geoblacklight_sidecar_images', git: 'https://github.com/pulibrary/geoblacklight_sidecar_images', branch: 'service_url'
 gem 'geoserver-worker', git: 'https://github.com/pulibrary/geoserver-worker', branch: 'master'
 gem 'honeybadger'
 gem 'mail_form'

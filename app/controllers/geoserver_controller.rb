@@ -2,7 +2,7 @@
 
 class GeoserverController < ApplicationController
   def index
-    url = Settings.PRINCETON_GEOSERVER_URL
+    url = Settings.INSTITUTION_GEOSERVER_URL
     url += '/geoserver/' unless url =~ /geoserver\/?$/
     url += '/' unless url.last == '/'
     path = params[:path]

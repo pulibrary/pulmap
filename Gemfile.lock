@@ -8,6 +8,19 @@ GIT
       parslet
 
 GIT
+  remote: https://github.com/pulibrary/geoblacklight_sidecar_images
+  revision: e2d6c7ed0cbdffabee00259598b1a84ed19c0aad
+  branch: service_url
+  specs:
+    geoblacklight_sidecar_images (0.6.2)
+      geoblacklight (~> 2.0)
+      image_processing (~> 1.6)
+      mimemagic (~> 0.3)
+      mini_magick (~> 4.9.4)
+      rails (>= 5.2, < 6)
+      statesman (~> 3.4)
+
+GIT
   remote: https://github.com/pulibrary/geoserver-worker
   revision: 843440880eaeba827f9478c364834138ad8eb25c
   branch: master
@@ -239,6 +252,9 @@ GEM
     honeybadger (4.5.6)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
+    image_processing (1.10.3)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     jaro_winkler (1.5.4)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
@@ -282,6 +298,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.1009)
     mimemagic (0.3.4)
+    mini_magick (4.9.5)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.14.0)
@@ -399,6 +416,8 @@ GEM
     rubocop-rspec (1.31.0)
       rubocop (>= 0.60.0)
     ruby-progressbar (1.10.1)
+    ruby-vips (2.0.17)
+      ffi (~> 1.9)
     rubyzip (2.2.0)
     sanitize (5.1.0)
       crass (~> 1.0.2)
@@ -467,6 +486,7 @@ GEM
     sshkit (1.20.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
+    statesman (3.5.0)
     sync (0.5.0)
     term-ansicolor (1.7.1)
       tins (~> 1.0)
@@ -532,6 +552,7 @@ DEPENDENCIES
   devise-guests
   factory_bot_rails
   geoblacklight (~> 2.1)
+  geoblacklight_sidecar_images!
   geoserver-worker!
   honeybadger
   jbuilder

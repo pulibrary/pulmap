@@ -39,7 +39,6 @@ Rails.application.routes.draw do
   end
 
   get '/catalog/:id/downloads' => 'catalog#downloads', as: 'downloads_solr_document'
-  get '/catalog/:id/thumbnail', to: 'thumbnails#index', as: 'document_thumbnail'
 
   concern :gbl_wms, Geoblacklight::Routes::Wms.new
   namespace :wms do
