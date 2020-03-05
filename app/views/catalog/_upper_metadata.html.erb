@@ -11,8 +11,13 @@
     <% if document.restricted? && document.thumbnail_reference? %>
       <dt class="col-md-3">Thumbnail:</dt>
       <dd class="col-md-9">
-        # TODO: Fix
-        <# gbl_thumbnail_img(document) %>
+        <% if document.sidecar.image.attached? %>
+          <% if document.sidecar.image.variable? %>
+            <%= image_tag document.sidecar.image.variant(resize: "200"), {class: 'mr-3'} %>
+          <% else %>
+            <%= image_tag document.sidecar.image, {class: 'mr-3'} %>
+          <% end %>
+        <% end %>
       </dd>
     <% end %>
   </dl>

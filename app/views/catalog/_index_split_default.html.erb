@@ -23,9 +23,9 @@
           <%= image_tag document.sidecar.image, {class: 'mr-3'} %>
         <% end %>
       <% else %>
-        <span class="icon square mr-3" title="<%=document[Settings.FIELDS.GEOM_TYPE]%>">
-          <%= geoblacklight_icon(document[Settings.FIELDS.GEOM_TYPE]) %>
-        </span>
+          <div class="placeholder">
+            <%= placeholder_thumbnail_icon(document[Settings.FIELDS.GEOM_TYPE]) %>
+          </div>
       <% end %>
     </div>
   </div>
