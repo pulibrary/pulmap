@@ -3,13 +3,6 @@
 require 'rails_helper'
 
 describe 'Search' do
-  let(:thumbnails_controller) { ThumbnailsController.new }
-
-  before do
-    allow(thumbnails_controller).to receive(:index)
-    allow(ThumbnailsController).to receive(:new).and_return(thumbnails_controller)
-  end
-
   describe 'Spelling suggestions' do
     it 'are turned on' do
       visit root_path
@@ -87,7 +80,7 @@ describe 'Search' do
 
   it 'thumbnails in the results link to the items' do
     visit '/?q='
-    expect(page).to have_css '.document .row .thumbnail a'
-    expect(first('.document .row .thumbnail a')[:href]).to include('/catalog/')
+    expect(page).to have_css '.document .row .thumbnail .placeholder a'
+    expect(first('.document .row .thumbnail .placeholder a')[:href]).to include('/catalog/')
   end
 end
