@@ -90,4 +90,4 @@ task :whenever do
     end
   end
 end
-before "deploy:assets:precompile", "deploy:whenever"
+before "deploy:assets:precompile", "whenever"
