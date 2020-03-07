@@ -12,6 +12,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
 )
 SimpleCov.start "rails" do
   add_filter '/spec'
+  add_filter 'app/controllers/geoserver_controller.rb'
 end
 
 RSpec.configure do |config|
