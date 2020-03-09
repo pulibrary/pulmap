@@ -8,19 +8,6 @@ GIT
       parslet
 
 GIT
-  remote: https://github.com/pulibrary/geoblacklight_sidecar_images
-  revision: e2d6c7ed0cbdffabee00259598b1a84ed19c0aad
-  branch: service_url
-  specs:
-    geoblacklight_sidecar_images (0.6.2)
-      geoblacklight (~> 2.0)
-      image_processing (~> 1.6)
-      mimemagic (~> 0.3)
-      mini_magick (~> 4.9.4)
-      rails (>= 5.2, < 6)
-      statesman (~> 3.4)
-
-GIT
   remote: https://github.com/pulibrary/geoserver-worker
   revision: 843440880eaeba827f9478c364834138ad8eb25c
   branch: master
@@ -244,6 +231,13 @@ GEM
       rails (~> 5.0)
       webpacker
     geoblacklight-icons (1.4.0)
+    geoblacklight_sidecar_images (0.6.4)
+      geoblacklight (~> 2.0)
+      image_processing (~> 1.6)
+      mimemagic (~> 0.3)
+      mini_magick (~> 4.9.4)
+      rails (>= 5.2, < 6)
+      statesman (~> 3.4)
     geoserver-publish (0.2.1)
       faraday
     globalid (0.4.2)
@@ -601,7 +595,7 @@ DEPENDENCIES
   devise-guests
   factory_bot_rails
   geoblacklight (~> 2.1)
-  geoblacklight_sidecar_images!
+  geoblacklight_sidecar_images (>= 0.6.4)
   geoserver-worker!
   google-cloud-storage (~> 1.11)
   honeybadger
