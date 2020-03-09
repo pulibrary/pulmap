@@ -46,9 +46,7 @@ class SolrDocument
     sidecar = SolrDocumentSidecar.where(
       document_id: id,
       document_type: self.class.to_s
-    ).first_or_create do |sc|
-      sc.version = _source["_version_"]
-    end
+    ).first_or_create
 
     sidecar.version = _source["_version_"]
     sidecar.save

@@ -12,6 +12,8 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
 )
 SimpleCov.start "rails" do
   add_filter '/spec'
+  # TODO: Add full coverage for geoserver reverse proxy functionality.
+  # This is difficult to test at the moment and could use refactoring in the future.
   add_filter 'app/controllers/geoserver_controller.rb'
 end
 
