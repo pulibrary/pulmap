@@ -70,4 +70,13 @@ module ApplicationHelper
       'default'
     end
   end
+
+  # rubocop:disable Rails/OutputSafety
+  def placeholder_thumbnail_icon(name, document)
+    icon_name = name ? name.to_s.parameterize : 'none'
+    icon = Blacklight::Icon.new(icon_name)
+    icon.svg.html_safe
+    link_to icon.svg.html_safe, url_for_document(document), document_link_params(document, {})
+  end
+  # rubocop:enable Rails/OutputSafety
 end

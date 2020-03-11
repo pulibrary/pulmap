@@ -1,89 +1,55 @@
 # frozen_string_literal: true
 
-namespace :pulmap do
-  namespace :thumbnails do
-    desc 'Delete all cached thumbnails'
-    task delete: :environment do
-      Rails.cache.clear
-    end
-    desc 'Pre-cache a thumbnail'
-    task :precache, %i[doc_id override_existing] => [:environment] do |_t, args|
-      raise 'Please supply required argument [document_id]' unless args[:doc_id]
-      document = Geoblacklight::SolrDocument.find(args[:doc_id])
-      raise Blacklight::Exceptions::RecordNotFound if document[:layer_slug_s] != args[:doc_id]
-      if !Rails.cache.exist?("thumbnails/#{args[:doc_id]}") || args[:override_existing]
-        CacheThumbnailJob.perform_later(document.to_h)
-      end
-    end
-
-    desc 'Pre-cache all thumbnails'
-    task :precache_all, [:override_existing] => [:environment] do |_t, args|
-      query = "layer_slug_s:*"
-      layers = 'layer_slug_s, layer_id_s, dc_rights_s, dct_provenance_s, layer_geom_type_s, dct_references_s'
+namespace :gblsci do
+  namespace :images do
+    desc 'Harvest all new thumbnails'
+    task harvest_new: :environment do
+      query = '*:*'
       index = Geoblacklight::SolrDocument.index
       results = index.send_and_receive(index.blacklight_config.solr_path,
                                        q: query,
-                                       fl: layers,
+                                       fl: "*",
                                        rows: 100_000_000)
-      num_found = results.response[:numFound]
-      doc_counter = 0
       results.docs.each do |document|
-        doc_counter += 1
-        puts "#{document[:layer_slug_s]} (#{doc_counter}/#{num_found})"
-        begin
-          if !Rails.cache.exist?("thumbnails/#{document[:layer_slug_s]}") || args[:override_existing]
-            CacheThumbnailJob.perform_later(document.to_h)
-          end
-        rescue Blacklight::Exceptions::RecordNotFound
-          next
+        if document.sidecar.image_state.last_transition.nil?
+          GeoblacklightSidecarImages::StoreImageJob.perform_later(document.id)
         end
+      rescue Blacklight::Exceptions::RecordNotFound
+        next
       end
     end
 
-    desc 'Pre-cache all thumbnails for an institution'
-    task :precache_institution, %i[institution override_existing] => [:environment] do |_t, args|
-      raise 'Please supply required arguments [institution]' unless args[:institution]
-      query = "dct_provenance_s:#{args[:institution]}"
-      layers = 'layer_slug_s, layer_id_s, dc_rights_s, dct_provenance_s dct_references_s'
+    desc 'Harvest all images without built-in pause between records'
+    task harvest_all_quick: :environment do
+      query = '*:*'
       index = Geoblacklight::SolrDocument.index
       results = index.send_and_receive(index.blacklight_config.solr_path,
                                        q: query,
-                                       fl: layers,
+                                       fl: "*",
                                        rows: 100_000_000)
-      num_found = results.response[:numFound]
-      doc_counter = 0
       results.docs.each do |document|
-        doc_counter += 1
-        puts "#{document[:layer_slug_s]} (#{doc_counter}/#{num_found})"
-        begin
-          if !Rails.cache.exist?("thumbnails/#{document[:layer_slug_s]}") || args[:override_existing]
-            CacheThumbnailJob.perform_later(document.to_h)
-          end
-        rescue Blacklight::Exceptions::RecordNotFound
-          next
-        end
+        GeoblacklightSidecarImages::StoreImageJob.perform_later(document.id)
+      rescue Blacklight::Exceptions::RecordNotFound
+        next
       end
     end
 
-    desc 'Pre-cache thumbnails by Solr query'
-    task :precache_query, %i[query override_existing] => [:environment] do |_t, args|
-      raise 'Please supply required arguments [query]. rake precache_query["layer_slug_s:*"]' unless args[:query]
+    desc 'Harvest images by solr query'
+    task :harvest_by_query, [:query] => [:environment] do |_t, args|
+      raise 'Please supply required arguments [query]. harvest_by_query["layer_slug_s:*"]' unless args[:query]
       query = args[:query]
-      layers = 'layer_slug_s, layer_id_s, dc_rights_s, dct_provenance_s, layer_geom_type_s, dct_references_s'
-      index = Geoblacklight::SolrDocument.index
-      results = index.send_and_receive(index.blacklight_config.solr_path,
-                                       q: query,
-                                       fl: layers,
-                                       rows: 100_000_000)
-      num_found = results.response[:numFound]
-      doc_counter = 0
-      results.docs.each do |document|
-        doc_counter += 1
-        puts "#{document[:layer_slug_s]} (#{doc_counter}/#{num_found})"
-        begin
-          if !Rails.cache.exist?("thumbnails/#{document[:layer_slug_s]}") || args[:override_existing]
-            CacheThumbnailJob.perform_later(document.to_h)
-          end
+      begin
+        index = Geoblacklight::SolrDocument.index
+        results = index.send_and_receive(index.blacklight_config.solr_path,
+                                         q: query,
+                                         fl: "*",
+                                         rows: 100_000_000)
+        num_found = results.response[:numFound]
+        doc_counter = 0
+        results.docs.each do |document|
+          doc_counter += 1
+          puts "#{document[:layer_slug_s]} (#{doc_counter}/#{num_found})"
+          GeoblacklightSidecarImages::StoreImageJob.perform_later(document.id)
         rescue Blacklight::Exceptions::RecordNotFound
           next
         end

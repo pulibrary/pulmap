@@ -27,14 +27,12 @@
 }
 
 // thumbnail placeholder icons
-.thumbnail span {
-  display: block;
-  vertical-align: top;
-  padding-right: 10px;
-  font-size: 60px;
-  line-height: 0px;
-  text-align: center;
-  color: lightgrey;
+.thumbnail .placeholder {
+  padding-right: 15px;
+  svg {
+   height: 4rem;
+   width: 4rem;
+  }
 }
 
 // centers point icon

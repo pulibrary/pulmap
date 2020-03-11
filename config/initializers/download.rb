@@ -14,11 +14,11 @@ module Geoblacklight
       request.options.timeout = timeout
       request.options.open_timeout = timeout
     end
-  rescue Faraday::Error::ConnectionFailed
+  rescue Faraday::ConnectionFailed
     raise Geoblacklight::Exceptions::ExternalDownloadFailed,
           message: 'Download connection failed',
           url: conn.url_prefix.to_s
-  rescue Faraday::Error::TimeoutError
+  rescue Faraday::TimeoutError
     raise Geoblacklight::Exceptions::ExternalDownloadFailed,
           message: 'Download timed out',
           url: conn.url_prefix.to_s
@@ -33,7 +33,7 @@ module Geoblacklight
 
     # Checks if the document is Princeton restriced access and is a wms layer.
     def restricted_wms_layer?
-      @document.princeton_restricted? && @document.viewer_protocol == 'wms'
+      @document.local_restricted? && @document.viewer_protocol == 'wms'
     end
   end
 end

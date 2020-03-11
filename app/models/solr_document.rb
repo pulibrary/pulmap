@@ -40,4 +40,16 @@ class SolrDocument
   def carto_reference
     nil
   end
+
+  def sidecar
+    # Find or create, and set version
+    sidecar = SolrDocumentSidecar.where(
+      document_id: id,
+      document_type: self.class.to_s
+    ).first_or_create do |sc|
+      sc.version = _source["_version_"]
+    end
+
+    sidecar
+  end
 end
