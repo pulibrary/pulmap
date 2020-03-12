@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# Set path. See: https://github.com/javan/whenever/issues/542
+env :PATH, ENV['PATH']
+
 # Use this file to easily define all of your cron jobs.
 #
 # It's helpful, but not entirely necessary to understand cron before proceeding.
