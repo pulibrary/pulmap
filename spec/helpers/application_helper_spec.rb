@@ -63,4 +63,26 @@ describe ApplicationHelper, type: :helper do
       expect(default_layout?).to be true
     end
   end
+  describe '#placeholder_thumbnail_icon' do
+    context 'when the document generates an icon with the name "vector"' do
+      let(:document) { SolrDocument.new }
+      let(:output) { placeholder_thumbnail_icon('vector', document) }
+
+      # This is necessary given the helper methods
+      # These are only available within within the context of the ApplicationHelper
+      define_method :url_for_document do |_doc|
+        'http://localhost/catalog/test'
+      end
+      define_method :document_link_params do |_doc, _options|
+        {}
+      end
+
+      it 'generates the "polygon" icon' do
+        expect(output).to include '<a href="http://localhost/catalog/test">'
+        expect(output).to include '<svg'
+        expect(output).to include 'polygon'
+        expect(output).to include '</svg>'
+      end
+    end
+  end
 end

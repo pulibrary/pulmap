@@ -74,6 +74,10 @@ module ApplicationHelper
   # rubocop:disable Rails/OutputSafety
   def placeholder_thumbnail_icon(name, document)
     icon_name = name ? name.to_s.parameterize : 'none'
+    # Cases where 'vector' is generated for the icon name
+    # This may actually be a problem with the data (please see https://github.com/pulibrary/pulmap/issues/844)
+    icon_name = 'polygon' if icon_name == 'vector'
+
     icon = Blacklight::Icon.new(icon_name)
     icon.svg.html_safe
     link_to icon.svg.html_safe, url_for_document(document), document_link_params(document, {})
