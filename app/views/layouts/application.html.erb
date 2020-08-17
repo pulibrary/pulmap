@@ -31,7 +31,7 @@
     <![endif]-->
 
     <% if Rails.env.production? %>
-      <%= render partial: 'shared/matomo' %>
+      <%= render partial: 'shared/analytics' %>
     <% end %>
   </head>
   <body class="<%= render_body_class %>">
