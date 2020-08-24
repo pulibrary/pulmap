@@ -11,11 +11,12 @@ AllCops:
 
   Exclude:
   - 'bin/*'
-  - 'db/**/*'
-  - 'vendor/**/*'
   - 'config/initializers/*'
-  - 'spec/factories/*'
+  - 'db/**/*'
   - 'node_modules/**/*'
+  - 'spec/factories/*'
+  - 'tmp/**/*'
+  - 'vendor/**/*'
 
 # TODO: Reduce method complexity in omniauth callback controller.
 Metrics/AbcSize:
