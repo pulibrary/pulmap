@@ -38,7 +38,7 @@ group :development do
   gem 'web-console', '~> 3.7.0'
 end
 
-gem 'blacklight_advanced_search', git: 'https://github.com/projectblacklight/blacklight_advanced_search', branch: 'master'
+gem 'blacklight_advanced_search', '~> 7.0.0'
 gem 'blacklight_range_limit'
 gem 'bootstrap'
 gem 'capistrano'
@@ -48,7 +48,7 @@ gem 'capistrano-rails'
 gem 'chosen-rails' #  jquery multiselect plugin for advanced search
 gem 'devise', '~> 4.7.1'
 gem 'devise-guests'
-gem 'geoblacklight', '~> 2.1'
+gem 'geoblacklight', '2.3.0'
 gem 'geoblacklight_sidecar_images', '>= 0.6.4'
 gem 'geoserver-worker', git: 'https://github.com/pulibrary/geoserver-worker', branch: 'master'
 gem 'google-cloud-storage', '~> 1.11'
