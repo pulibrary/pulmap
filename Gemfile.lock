@@ -207,7 +207,7 @@ GEM
       rsolr
       sanitize
       thor
-    geoblacklight (2.3.0)
+    geoblacklight (2.4.0)
       blacklight (~> 7.0)
       coderay
       config
@@ -588,7 +588,7 @@ DEPENDENCIES
   devise (~> 4.7.1)
   devise-guests
   factory_bot_rails
-  geoblacklight (= 2.3.0)
+  geoblacklight (= 2.4.0)
   geoblacklight_sidecar_images (>= 0.6.4)
   geoserver-worker!
   google-cloud-storage (~> 1.11)

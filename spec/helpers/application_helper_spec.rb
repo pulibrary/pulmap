@@ -80,7 +80,7 @@ describe ApplicationHelper, type: :helper do
       it 'generates the "polygon" icon' do
         expect(output).to include '<a href="http://localhost/catalog/test">'
         expect(output).to include '<svg'
-        expect(output).to include 'polygon'
+        expect(output).to include 'Polygon'
         expect(output).to include '</svg>'
       end
     end
