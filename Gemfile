@@ -45,7 +45,6 @@ gem 'capistrano'
 gem 'capistrano-bundler'
 gem 'capistrano-passenger'
 gem 'capistrano-rails'
-gem 'chosen-rails' #  jquery multiselect plugin for advanced search
 gem 'devise', '~> 4.7.1'
 gem 'devise-guests'
 gem 'geoblacklight', '2.3.0'

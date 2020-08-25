@@ -21,14 +21,6 @@ describe 'Search' do
       expect(page).to have_content '1 entry found'
     end
     context 'wrong date_range_limit' do
-      it 'advanced search will not raise an error' do
-        visit '/advanced'
-        page.find(:xpath, '//*[@id="range_solr_year_i_begin"]').set '2000'
-        page.find(:xpath, '//*[@id="range_solr_year_i_end"]').set '1900'
-        expect { page.find(:xpath, '//*[@id="advanced-search-submit"]').click }.not_to raise_error
-        expect(page).to have_current_path('/')
-        expect(page).to have_content 'The start year must be before the end year.'
-      end
       it 'year facet will not raise an error' do
         visit '/?search_field=all_fields&q=New+York'
         page.find(:xpath, '//*[@id="year"]').click

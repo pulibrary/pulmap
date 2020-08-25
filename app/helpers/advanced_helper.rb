@@ -14,11 +14,6 @@ module AdvancedHelper
     end
   end
 
-  # Is facet value in adv facet search results?
-  def facet_value_checked?(field, value)
-    BlacklightAdvancedSearch::QueryParser.new(params, blacklight_config).filters_include_value?(field, value)
-  end
-
   # Current params without fields that will be over-written by adv. search,
   # or other fields we don't want.
   def advanced_search_context
@@ -33,9 +28,10 @@ module AdvancedHelper
     end
   end
 
-  # Use configured facet partial name for facet or fallback on 'catalog/facet_limit'
-  def advanced_search_facet_partial_name(display_facet)
-    facet_configuration_for_field(display_facet.name).try(:partial) || 'catalog/facet_limit'
+  def facet_field_names_for_advanced_search
+    @facet_field_names_for_advanced_search ||= begin
+      blacklight_config.facet_fields.select { |_k, v| v.include_in_advanced_search || v.include_in_advanced_search.nil? }.values.map(&:field)
+    end
   end
 
   def advanced_key_value
