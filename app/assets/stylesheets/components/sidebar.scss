@@ -1,4 +1,8 @@
 .tools-sidebar {
+  .card-header h2 {
+    font-size: 14px;
+  }
+
   .list-group {
     .list-group-item:not(.export) {
       padding: 0 20px;
@@ -22,13 +26,23 @@
       padding: 10px 4px;
     }
   }
+
+  .show-tools .list-group .list-group-item a {
+    padding: 10px;
+  }
+
+  .show-tools {
+    margin-bottom: 20px;
+    margin-top: 15px;
+  }
+  .source-card {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .relations .list-group .list-group-item a {
+    padding: 10px;
+  }
 }
 
-.show-tools {
-  margin-bottom: 20px;
-  margin-top: 15px;
-}
 
-.show-tools .list-group .list-group-item a {
-  padding: 10px;
-}
