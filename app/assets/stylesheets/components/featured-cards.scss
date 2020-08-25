@@ -35,10 +35,15 @@
     font-size: 48px;
     color: #777777;
     text-align: center;
-    &.geoblacklight-icon {
-      font-size: 44px;
-      margin-top: -11px;
-      margin-bottom: -7px;
+    height: inherit;
+    width: inherit;
+    &.blacklight-icons {
+      height: 48px;
+    }
+    svg {
+      height: 44px;
+      width: 44px;
+      margin-bottom: 44px;
     }
   }
 }
