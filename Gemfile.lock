@@ -1,15 +1,15 @@
 GIT
   remote: https://github.com/geoblacklight/geoblacklight_sidecar_images.git
-  revision: f520c98c0d889d701c0d731331b3e8a7d35934e6
+  revision: 57e8ef3daaa487c8c3583afa9ededc16b9f71adb
   branch: update-gbl
   specs:
-    geoblacklight_sidecar_images (0.6.5)
+    geoblacklight_sidecar_images (0.6.4)
       geoblacklight (~> 3.0)
       image_processing (~> 1.6)
       mimemagic (~> 0.3)
       mini_magick (~> 4.9.4)
       rails (>= 5.2, < 6)
-      statesman (>= 3.4)
+      statesman (~> 3.4)
 
 GIT
   remote: https://github.com/pulibrary/geoserver-worker
@@ -210,6 +210,8 @@ GEM
     faraday_middleware (1.0.0)
       faraday (~> 1.0)
     ffi (1.13.1)
+    font-awesome-rails (4.7.0.5)
+      railties (>= 3.2, < 6.1)
     geo_combine (0.5.0)
       activesupport
       json-schema
@@ -518,7 +520,7 @@ GEM
     sshkit (1.20.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
-    statesman (7.3.0)
+    statesman (3.5.0)
     sync (0.5.0)
     term-ansicolor (1.7.1)
       tins (~> 1.0)
@@ -587,6 +589,7 @@ DEPENDENCIES
   devise (~> 4.7.1)
   devise-guests
   factory_bot_rails
+  font-awesome-rails
   geoblacklight (= 3.0.0)
   geoblacklight_sidecar_images!
   geoserver-worker!
