@@ -243,7 +243,7 @@ class CatalogController < ApplicationController
     # Tools from Blacklight
     config.add_results_collection_tool(:sort_widget)
     config.add_results_collection_tool(:per_page_widget)
-    config.add_show_tools_partial :legend, partial: 'show_sanborn_legend', if: proc { |_context, _config, options| options[:document] && options[:document].published_by_sanborn? }
+    config.add_show_tools_partial :legend, partial: 'show_sanborn_legend', if: proc { |_context, _config, options| options[:document]&.published_by_sanborn? }
     config.add_show_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
     config.add_show_tools_partial(:citation)
     config.add_show_tools_partial(:email, callback: :email_action, validator: :validate_email_params)
@@ -255,7 +255,7 @@ class CatalogController < ApplicationController
     config.add_show_tools_partial :carto, partial: 'carto', if: proc { |_context, _config, options| options[:document] && options[:document].carto_reference.present? }
     config.add_show_tools_partial :arcgis, partial: 'arcgis', if: proc { |_context, _config, options| options[:document] && options[:document].arcgis_urls.present? }
     config.add_show_tools_partial :data_dictionary, partial: 'data_dictionary', if: proc { |_context, _config, options| options[:document] && options[:document].data_dictionary_download.present? }
-    config.add_show_tools_partial :downloads, partial: 'downloads', if: proc { |_context, _config, options| options[:document] }
+    config.add_show_tools_partial :access, partial: 'access', if: proc { |_context, _config, options| options[:document] }
 
     # Configure basemap provider for GeoBlacklight maps (uses https only basemap
     # providers with open licenses)

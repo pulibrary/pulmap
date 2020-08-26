@@ -3,6 +3,11 @@
     font-size: 14px;
   }
 
+  // Disable default authentication panel
+  .card.authentication {
+    display: none;
+  }
+
   .list-group {
     .list-group-item:not(.export) {
       padding: 0 20px;
@@ -44,5 +49,4 @@
     padding: 10px;
   }
 }
-
 
