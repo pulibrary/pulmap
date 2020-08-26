@@ -46,23 +46,23 @@ module PulmapGeoblacklightHelper
 
   private
 
-    def leaflet_viewer
-      content_tag(:div, nil, id: 'map',
-                             data: { map: 'item', protocol: @document.viewer_protocol.camelize,
-                                     url: @document.viewer_endpoint,
-                                     'layer-id' => @document.wxs_identifier,
-                                     'map-bbox' => @document.bounding_box_as_wsen,
-                                     'catalog-path' => search_catalog_path,
-                                     available: document_available?,
-                                     basemap: geoblacklight_basemap,
-                                     leaflet_options: leaflet_options })
-    end
+  def leaflet_viewer
+    tag.div(nil, id: 'map',
+                           data: { map: 'item', protocol: @document.viewer_protocol.camelize,
+                                   url: @document.viewer_endpoint,
+                                   'layer-id' => @document.wxs_identifier,
+                                   'map-bbox' => @document.bounding_box_as_wsen,
+                                   'catalog-path' => search_catalog_path,
+                                   available: document_available?,
+                                   basemap: geoblacklight_basemap,
+                                   leaflet_options: leaflet_options })
+  end
 
-    def manifest_viewer
-      content_tag :div, nil, class: "uv" do
-        content_tag :iframe, nil,
-                    allowfullscreen: true,
-                    src: "#{Pulmap.config['figgy_universal_viewer_url']}#?manifest=#{@document.references.references(:iiif_manifest).endpoint}&config=#{Pulmap.config['figgy_universal_viewer_config']}"
-      end
+  def manifest_viewer
+    tag.div nil, class: "uv" do
+      tag.iframe nil,
+                  allowfullscreen: true,
+                  src: "#{Pulmap.config['figgy_universal_viewer_url']}#?manifest=#{@document.references.references(:iiif_manifest).endpoint}&config=#{Pulmap.config['figgy_universal_viewer_config']}"
     end
+  end
 end

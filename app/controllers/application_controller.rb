@@ -16,15 +16,15 @@ class ApplicationController < ActionController::Base
 
   private
 
-    def after_sign_in_path_for(_resource)
-      if !request.env['omniauth.origin'].nil?
-        request.env['omniauth.origin']
-      else
-        root_path
-      end
+  def after_sign_in_path_for(_resource)
+    if !request.env['omniauth.origin'].nil?
+      request.env['omniauth.origin']
+    else
+      root_path
     end
+  end
 
-    def render_404
-      render file: Rails.root.join("public", "404"), status: :not_found
-    end
+  def render_404
+    render file: Rails.root.join("public", "404"), status: :not_found
+  end
 end

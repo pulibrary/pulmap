@@ -71,10 +71,10 @@ class RobotsGeneratorService
 
   private
 
-    # Generate the directives for all paths explicitly disallowed
-    def generate_disallow_directives
-      @disallowed_paths.each do |path|
-        disallow(path)
-      end
+  # Generate the directives for all paths explicitly disallowed
+  def generate_disallow_directives
+    @disallowed_paths.each do |path|
+      disallow(path)
     end
+  end
 end

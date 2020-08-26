@@ -22,20 +22,20 @@ class FeedbackController < ApplicationController
 
   protected
 
-    def build_feedback_form
-      @feedback_form = FeedbackForm.new(feedback_form_params)
-      @feedback_form.request = request
-      @feedback_form
-    end
+  def build_feedback_form
+    @feedback_form = FeedbackForm.new(feedback_form_params)
+    @feedback_form.request = request
+    @feedback_form
+  end
 
-    def feedback_form_params
-      params.require(:feedback_form).permit(:name, :email, :message, :current_url, :feedback_desc)
-    end
+  def feedback_form_params
+    params.require(:feedback_form).permit(:name, :email, :message, :current_url, :feedback_desc)
+  end
 
-    def current_user_email
-      return if current_user.nil?
-      return if current_user.provider != 'cas'
-      @user_email = "#{current_user.uid}@princeton.edu"
-      @user_email
-    end
+  def current_user_email
+    return if current_user.nil?
+    return if current_user.provider != 'cas'
+    @user_email = "#{current_user.uid}@princeton.edu"
+    @user_email
+  end
 end

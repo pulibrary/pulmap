@@ -10,11 +10,11 @@ module SourceHelper
 
   private
 
-    # Check's if an item's call number matches those from the historic map collection.
-    # @return [Bool]
-    def princeton_historic_map?
-      call_number = @document["call_number_s"]
-      return unless @document.same_institution? && call_number
-      /HMC/i.match(call_number)
-    end
+  # Check's if an item's call number matches those from the historic map collection.
+  # @return [Bool]
+  def princeton_historic_map?
+    call_number = @document["call_number_s"]
+    return unless @document.same_institution? && call_number
+    /HMC/i.match(call_number)
+  end
 end

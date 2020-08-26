@@ -77,7 +77,9 @@ module BlacklightAdvancedSearch
         @keyword_op << @params[:op2] if @params[:f1] != @params[:f2]
       end
       unless @params[:q3].blank? || @params[:op3] == 'NOT' || (@params[:q1].blank? && @params[:q2].blank?)
-        @keyword_op << @params[:op3] unless [@params[:f1], @params[:f2]].include?(@params[:f3]) && ((@params[:f1] == @params[:f3] && @params[:q1].present?) || (@params[:f2] == @params[:f3] && @params[:q2].present?))
+        unless [@params[:f1], @params[:f2]].include?(@params[:f3]) && ((@params[:f1] == @params[:f3] && @params[:q1].present?) || (@params[:f2] == @params[:f3] && @params[:q2].present?))
+          @keyword_op << @params[:op3]
+        end
       end
       @keyword_op
     end
@@ -86,7 +88,9 @@ module BlacklightAdvancedSearch
       unless @keyword_queries
         @keyword_queries = {}
 
-        return @keyword_queries unless @params[:search_field] == ::AdvancedController.blacklight_config.advanced_search[:url_key]
+        unless @params[:search_field] == ::AdvancedController.blacklight_config.advanced_search[:url_key]
+          return @keyword_queries
+        end
 
         q1 = @params[:q1]
         q2 = @params[:q2]
