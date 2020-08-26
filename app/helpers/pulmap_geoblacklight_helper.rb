@@ -44,6 +44,19 @@ module PulmapGeoblacklightHelper
     value.html_safe
   end
 
+  # Check's if an item's call number matches those from the historic map collection.
+  # @return [Bool]
+  def princeton_historic_map?
+    call_number = @document["call_number_s"]
+    return unless @document.same_institution? && call_number
+    /HMC/i.match(call_number)
+  end
+
+  def princeton_provenance(args)
+    return args[:value] unless princeton_historic_map?
+    'Princeton: Historic Map Division, Special Collections, Firestone Library'
+  end
+
   private
 
   def leaflet_viewer
