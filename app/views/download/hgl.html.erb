@@ -1,0 +1,28 @@
+<%# Remove this override partial when https://github.com/geoblacklight/geoblacklight/issues/978 is addressed %>
+<div class="modal-header">
+  <h1><%= t('geoblacklight.download.hgl_request') %></h1>
+  <button type="button" class="close" data-dismiss="modal">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal" role="form" id="hglRequest">
+    <p><%= t('geoblacklight.download.hgl_instructions')%></p>
+    <div class="form-group">
+      <div class="row">
+        <label for="requestEmail" class="col-sm-2 control-label"><%= t('geoblacklight.download.hgl_email')%></label>
+        <div class="col-sm-6">
+          <input class="form-control" type="email" id="requestEmail" />
+        </div>
+        <input type="hidden" id="requestUrl"
+          value="<%= download_hgl_path(id: @document) %>" />
+        <div class="col-sm-2">
+          <button type="submit" class="btn btn-primary"><%= t('geoblacklight.download.hgl_request_button')%></button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal"><%= t('geoblacklight.download.hgl_close')%></button>
+</div>

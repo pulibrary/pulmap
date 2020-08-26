@@ -41,6 +41,16 @@ class SolrDocument
     nil
   end
 
+  # Override to add Princeton specific citation
+  def geoblacklight_citation(solr_document_url)
+    return super unless same_institution?
+    <<~HEREDOC
+      The Princeton University Library makes available maps and geospatial data in order to support research, teaching, and private study. Please include the following credit statement in all publications that make use of the data:
+      \n
+      #{fetch(Settings.FIELDS.TITLE, nil).gsub(/[[:punct:]]/, '')}, Maps and Geospatial Data, Princeton University Library
+    HEREDOC
+  end
+
   def sidecar
     # Find or create, and set version
     sidecar = SolrDocumentSidecar.where(
