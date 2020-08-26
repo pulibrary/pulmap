@@ -276,9 +276,4 @@ class CatalogController < ApplicationController
   def has_search_parameters?
     !params[:q].nil? || super
   end
-
-  def downloads
-    @response, @document = search_service.fetch params[:id]
-    not_found unless @document.downloadable? && @document.same_institution?
-  end
 end

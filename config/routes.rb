@@ -38,8 +38,6 @@ Rails.application.routes.draw do
     concerns :gbl_exportable
   end
 
-  get '/catalog/:id/downloads' => 'catalog#downloads', as: 'downloads_solr_document'
-
   concern :gbl_wms, Geoblacklight::Routes::Wms.new
   namespace :wms do
     concerns :gbl_wms
