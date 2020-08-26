@@ -1,7 +1,7 @@
 GIT
-  remote: https://github.com/geoblacklight/geoblacklight_sidecar_images.git
-  revision: 57e8ef3daaa487c8c3583afa9ededc16b9f71adb
-  branch: update-gbl
+  remote: https://github.com/pulibrary/geoblacklight_sidecar_images.git
+  revision: 800e69fab4f5b236a18727823caa66fd954c76e9
+  branch: gbl-3
   specs:
     geoblacklight_sidecar_images (0.6.4)
       geoblacklight (~> 3.0)
@@ -220,7 +220,7 @@ GEM
       rsolr
       sanitize
       thor
-    geoblacklight (3.0.0)
+    geoblacklight (3.1.0)
       blacklight (~> 7.0)
       coderay
       config
@@ -590,7 +590,7 @@ DEPENDENCIES
   devise-guests
   factory_bot_rails
   font-awesome-rails
-  geoblacklight (= 3.0.0)
+  geoblacklight (~> 3.0)
   geoblacklight_sidecar_images!
   geoserver-worker!
   google-cloud-storage (~> 1.11)
