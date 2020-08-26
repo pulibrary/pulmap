@@ -36,11 +36,6 @@ class SolrDocument
     false
   end
 
-  # Override to disable the open in carto export button
-  def carto_reference
-    nil
-  end
-
   # Override to add Princeton specific citation
   def geoblacklight_citation(solr_document_url)
     return super unless same_institution?
