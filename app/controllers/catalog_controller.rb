@@ -243,6 +243,7 @@ class CatalogController < ApplicationController
     # Tools from Blacklight
     config.add_results_collection_tool(:sort_widget)
     config.add_results_collection_tool(:per_page_widget)
+    config.add_show_tools_partial :legend, partial: 'show_sanborn_legend', if: proc { |_context, _config, options| options[:document] && options[:document].published_by_sanborn? }
     config.add_show_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
     config.add_show_tools_partial(:citation)
     config.add_show_tools_partial(:email, callback: :email_action, validator: :validate_email_params)
