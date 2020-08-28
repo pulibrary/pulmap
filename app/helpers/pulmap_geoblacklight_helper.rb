@@ -53,7 +53,7 @@ module PulmapGeoblacklightHelper
   end
 
   def princeton_provenance(args)
-    return args[:value] unless princeton_historic_map?
+    return args[:value]&.first unless princeton_historic_map?
     'Princeton: Historic Map Division, Special Collections, Firestone Library'
   end
 
