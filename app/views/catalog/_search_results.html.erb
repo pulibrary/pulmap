@@ -7,7 +7,7 @@
 
 
 <% content_for(:head) do -%>
-  <%= render_opensearch_response_metadata %>
+  <%= render 'catalog/opensearch_response_metadata', response: @response %>
   <%= rss_feed_link_tag %>
   <%= atom_feed_link_tag %>
 <% end -%>

@@ -44,25 +44,38 @@ module PulmapGeoblacklightHelper
     value.html_safe
   end
 
+  # Check's if an item's call number matches those from the historic map collection.
+  # @return [Bool]
+  def princeton_historic_map?
+    call_number = @document["call_number_s"]
+    return unless @document.same_institution? && call_number
+    /HMC/i.match(call_number)
+  end
+
+  def princeton_provenance(args)
+    return args[:value]&.first unless princeton_historic_map?
+    'Princeton: Historic Map Division, Special Collections, Firestone Library'
+  end
+
   private
 
-    def leaflet_viewer
-      content_tag(:div, nil, id: 'map',
-                             data: { map: 'item', protocol: @document.viewer_protocol.camelize,
-                                     url: @document.viewer_endpoint,
-                                     'layer-id' => @document.wxs_identifier,
-                                     'map-bbox' => @document.bounding_box_as_wsen,
-                                     'catalog-path' => search_catalog_path,
-                                     available: document_available?,
-                                     basemap: geoblacklight_basemap,
-                                     leaflet_options: leaflet_options })
-    end
+  def leaflet_viewer
+    tag.div(nil, id: 'map',
+                           data: { map: 'item', protocol: @document.viewer_protocol.camelize,
+                                   url: @document.viewer_endpoint,
+                                   'layer-id' => @document.wxs_identifier,
+                                   'map-bbox' => @document.bounding_box_as_wsen,
+                                   'catalog-path' => search_catalog_path,
+                                   available: document_available?,
+                                   basemap: geoblacklight_basemap,
+                                   leaflet_options: leaflet_options })
+  end
 
-    def manifest_viewer
-      content_tag :div, nil, class: "uv" do
-        content_tag :iframe, nil,
-                    allowfullscreen: true,
-                    src: "#{Pulmap.config['figgy_universal_viewer_url']}#?manifest=#{@document.references.references(:iiif_manifest).endpoint}&config=#{Pulmap.config['figgy_universal_viewer_config']}"
-      end
+  def manifest_viewer
+    tag.div nil, class: "uv" do
+      tag.iframe nil,
+                  allowfullscreen: true,
+                  src: "#{Pulmap.config['figgy_universal_viewer_url']}#?manifest=#{@document.references.references(:iiif_manifest).endpoint}&config=#{Pulmap.config['figgy_universal_viewer_config']}"
     end
+  end
 end

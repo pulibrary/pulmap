@@ -9,24 +9,24 @@ class GeoblacklightEventProcessor
 
     private
 
-      def event_type
-        event['event']
-      end
+    def event_type
+      event['event']
+    end
 
-      def id
-        event['id']
-      end
+    def id
+      event['id']
+    end
 
-      def doc
-        event['doc']
-      end
+    def doc
+      event['doc']
+    end
 
-      def bulk?
-        event['bulk'] == 'true'
-      end
+    def bulk?
+      event['bulk'] == 'true'
+    end
 
-      def index
-        Blacklight.default_index.connection
-      end
+    def index
+      Blacklight.default_index.connection
+    end
   end
 end

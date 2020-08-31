@@ -22,13 +22,5 @@ describe 'advanced search' do
       expect(page).to have_css "#op2_NOT[checked='checked']", count: 1
       expect(page).to have_css "#op3_NOT[checked='checked']", count: 1
     end
-    it 'advanced facets are carried over' do
-      visit '/?f_inclusive%5Blayer_geom_type_s%5D%5B%5D=Image'\
-            '&f_inclusive%5Blayer_geom_type_s%5D%5B%5D=Line&'\
-            'search_field=advanced'
-      click_link 'Advanced'
-      expect(page).to have_css "option[value='Image'][selected='selected']", count: 1
-      expect(page).to have_css "option[value='Line'][selected='selected']", count: 1
-    end
   end
 end

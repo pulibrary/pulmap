@@ -2,18 +2,18 @@
 
 require 'rails_helper'
 
-describe 'Show page source card' do
+describe 'Princeton special collections provenance' do
   context 'with a Princeton historic maps collection record' do
-    it 'renders the source card' do
+    it 'renders a special provenance' do
       visit solr_document_path 'princeton-1r66j405w'
-      expect(page).to have_css '.card-header', text: 'Source'
+      expect(page).to have_css '.blacklight-dct_provenance_s', text: 'Princeton: Historic Map Division'
     end
   end
 
   context 'with a Princeton non-historic maps collection record' do
     it 'does not render the source card' do
       visit solr_document_path 'princeton-02870w62c'
-      expect(page).not_to have_css '.card-header', text: 'Source'
+      expect(page).not_to have_css '.blacklight-dct_provenance_s', text: 'Princeton: Historic Map Division'
     end
   end
 end

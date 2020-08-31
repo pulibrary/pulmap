@@ -1,8 +1,16 @@
 .tools-sidebar {
+  .card-header h2 {
+    font-size: 14px;
+  }
+
+  // Disable default authentication panel
+  .card.authentication {
+    display: none;
+  }
+
   .list-group {
     .list-group-item:not(.export) {
-      padding-bottom: 0;
-      padding-top: 0;
+      padding: 0 20px;
       > a {
         display: block;
         &:hover, &:focus {
@@ -16,5 +24,29 @@
       padding-top: 0;
       padding-bottom: 0;
     }
+    .list-group-item.bookmark {
+      padding-left: 29px;
+    }
+    &.list-group-flush {
+      padding: 10px 4px;
+    }
+  }
+
+  .show-tools .list-group .list-group-item a {
+    padding: 10px;
+  }
+
+  .show-tools {
+    margin-bottom: 20px;
+    margin-top: 15px;
+  }
+  .source-card {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .relations .list-group .list-group-item a {
+    padding: 10px;
   }
 }
+

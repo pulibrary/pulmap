@@ -14,11 +14,6 @@ module AdvancedHelper
     end
   end
 
-  # Is facet value in adv facet search results?
-  def facet_value_checked?(field, value)
-    BlacklightAdvancedSearch::QueryParser.new(params, blacklight_config).filters_include_value?(field, value)
-  end
-
   # Current params without fields that will be over-written by adv. search,
   # or other fields we don't want.
   def advanced_search_context
@@ -33,9 +28,10 @@ module AdvancedHelper
     end
   end
 
-  # Use configured facet partial name for facet or fallback on 'catalog/facet_limit'
-  def advanced_search_facet_partial_name(display_facet)
-    facet_configuration_for_field(display_facet.name).try(:partial) || 'catalog/facet_limit'
+  def facet_field_names_for_advanced_search
+    @facet_field_names_for_advanced_search ||= begin
+      blacklight_config.facet_fields.select { |_k, v| v.include_in_advanced_search || v.include_in_advanced_search.nil? }.values.map(&:field)
+    end
   end
 
   def advanced_key_value
@@ -81,7 +77,9 @@ module BlacklightAdvancedSearch
         @keyword_op << @params[:op2] if @params[:f1] != @params[:f2]
       end
       unless @params[:q3].blank? || @params[:op3] == 'NOT' || (@params[:q1].blank? && @params[:q2].blank?)
-        @keyword_op << @params[:op3] unless [@params[:f1], @params[:f2]].include?(@params[:f3]) && ((@params[:f1] == @params[:f3] && @params[:q1].present?) || (@params[:f2] == @params[:f3] && @params[:q2].present?))
+        unless [@params[:f1], @params[:f2]].include?(@params[:f3]) && ((@params[:f1] == @params[:f3] && @params[:q1].present?) || (@params[:f2] == @params[:f3] && @params[:q2].present?))
+          @keyword_op << @params[:op3]
+        end
       end
       @keyword_op
     end
@@ -90,7 +88,9 @@ module BlacklightAdvancedSearch
       unless @keyword_queries
         @keyword_queries = {}
 
-        return @keyword_queries unless @params[:search_field] == ::AdvancedController.blacklight_config.advanced_search[:url_key]
+        unless @params[:search_field] == ::AdvancedController.blacklight_config.advanced_search[:url_key]
+          return @keyword_queries
+        end
 
         q1 = @params[:q1]
         q2 = @params[:q2]

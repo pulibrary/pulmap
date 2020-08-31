@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require 'blacklight_advanced_search'
-//= require chosen-jquery
 //= require jquery_ujs
 //= require twitter/typeahead
 //= require aload
@@ -31,7 +30,6 @@
 //= stub modules/results
 //= require modules/map
 //= require modules/thumbnail
-//= require modules/advanced_chosen
 //= require modules/autocomplete
 //= require Leaflet.fullscreen
 //= require Leaflet.ExtraMarkers

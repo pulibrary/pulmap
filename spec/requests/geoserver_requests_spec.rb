@@ -20,7 +20,7 @@ describe 'Geoserver requests', type: :request do
 
       get "/geoserver/restricted-figgy/wms?#{query}"
 
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(response.body).not_to be_empty
     end
 

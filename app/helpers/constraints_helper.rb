@@ -3,7 +3,7 @@
 module ConstraintsHelper
   def render_constraints_filters(localized_params = params)
     content = super(localized_params)
-    localized_params = localized_params.to_unsafe_h unless localized_params.is_a?(Hash)
+    localized_params = localized_params.to_h unless localized_params.is_a?(Hash)
 
     if localized_params[:featured]
       value = localized_params[:featured].humanize.split.map(&:capitalize).join(' ')

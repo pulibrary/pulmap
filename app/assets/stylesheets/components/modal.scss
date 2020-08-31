@@ -1,0 +1,12 @@
+.modal-content {
+  // Allow line breaks in citation modal body
+  // Don't match the metadata modal body
+  > .modal-body:not(.metadata-body) {
+    white-space: pre-line;
+  }
+
+  // Set the whitespace to normal for harvard download modal
+  > .modal-body form {
+    white-space: normal;
+  }
+}

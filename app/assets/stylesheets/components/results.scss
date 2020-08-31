@@ -45,11 +45,17 @@
 }
 
 .index_title {
+  font-size: 14px;
+  display: block;
   white-space: normal;
   float: none;
   width: 100%;
   line-height: 1.4em;
   order: 0; // Pushes title to the top of the index page document display
+}
+
+.index_title a {
+  white-space: normal;
 }
 
 .document-wrapper {

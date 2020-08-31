@@ -151,7 +151,7 @@ class CatalogController < ApplicationController
     config.add_show_field Settings.FIELDS.SUBJECT, label: 'Subject(s)', itemprop: 'keywords', link_to_search: true
     config.add_show_field Settings.FIELDS.CALL_NUMBER, label: 'Call number', itemprop: 'call_number'
     config.add_show_field Settings.FIELDS.TEMPORAL, label: 'Year', itemprop: 'temporal'
-    config.add_show_field Settings.FIELDS.PROVENANCE, label: 'Held by', link_to_search: true
+    config.add_show_field Settings.FIELDS.PROVENANCE, label: 'Held by', link_to_search: true, helper_method: :princeton_provenance
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
@@ -243,17 +243,18 @@ class CatalogController < ApplicationController
     # Tools from Blacklight
     config.add_results_collection_tool(:sort_widget)
     config.add_results_collection_tool(:per_page_widget)
+    config.add_show_tools_partial :legend, partial: 'show_sanborn_legend', if: proc { |_context, _config, options| options[:document]&.published_by_sanborn? }
     config.add_show_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
+    config.add_show_tools_partial(:citation)
     config.add_show_tools_partial(:email, callback: :email_action, validator: :validate_email_params)
     config.add_show_tools_partial(:sms, if: :render_sms_action?, callback: :sms_action, validator: :validate_sms_params)
 
     # Custom tools for GeoBlacklight
     config.add_show_tools_partial :web_services, if: proc { |_context, _config, options| options[:document] && (Settings.WEBSERVICES_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any? }
-    config.add_show_tools_partial :exports, partial: 'exports', if: proc { |_context, _config, options| options[:document] }
     config.add_show_tools_partial :metadata, if: proc { |_context, _config, options| options[:document] && (Settings.METADATA_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any? }
-    config.add_show_tools_partial :downloads, partial: 'downloads', if: proc { |_context, _config, options| options[:document] }
-    # Removes Carto from the tools sidebar. It will not create an empty li tag ,exports class.
-    # config.add_show_tools_partial :exports, partial: 'exports', if: proc { |_context, _config, options| options[:document] }
+    config.add_show_tools_partial :arcgis, partial: 'arcgis', if: proc { |_context, _config, options| options[:document] && options[:document].arcgis_urls.present? }
+    config.add_show_tools_partial :data_dictionary, partial: 'data_dictionary', if: proc { |_context, _config, options| options[:document] && options[:document].data_dictionary_download.present? }
+    config.add_show_tools_partial :access, partial: 'access', if: proc { |_context, _config, options| options[:document] }
 
     # Configure basemap provider for GeoBlacklight maps (uses https only basemap
     # providers with open licenses)
@@ -273,10 +274,5 @@ class CatalogController < ApplicationController
   # @return [Boolean]
   def has_search_parameters?
     !params[:q].nil? || super
-  end
-
-  def downloads
-    @response, @document = search_service.fetch params[:id]
-    not_found unless @document.downloadable? && @document.same_institution?
   end
 end

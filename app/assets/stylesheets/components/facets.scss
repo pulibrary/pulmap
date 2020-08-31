@@ -257,6 +257,9 @@ ul.facet-values {
       a {
         color: $black;
         text-decoration: none;
+        // Makes anchor occupy the entire list element so it is all clickable.
+        // Solves issue where facets are difficult to apply.
+        display: block; 
       }
       &:hover {
         background-color: $white-smoke;
