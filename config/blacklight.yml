@@ -7,3 +7,6 @@ test: &test
 production:
   adapter: solr
   url: <%= ENV['PULMAP_SOLR_URL'] %>
+staging:
+  adapter: solr
+  url: <%= ENV['PULMAP_SOLR_URL'] %>
