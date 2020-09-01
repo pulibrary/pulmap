@@ -13,7 +13,7 @@ set :rails_env, 'production'
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
 server 'maps1', user: 'deploy', roles: %w[web app]
-server 'maps2', user: 'deploy', roles: %w[web app db]
+server 'maps2', user: 'deploy', roles: %w[web app db index]
 
 # role-based syntax
 # ==================
