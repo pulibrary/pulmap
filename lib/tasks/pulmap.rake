@@ -78,6 +78,21 @@ namespace :pulmap do
     robots.write
   end
 
+  namespace :geoblacklight_harvester do
+    desc 'Harvest documents from a configured GeoBlacklight instance'
+    task :index, [:site] => [:environment] do |_t, args|
+      raise ArgumentError, 'A site argument is required' unless args.site
+
+      # Set the solr url for GeoCombine
+      ENV["SOLR_URL"] = Blacklight.connection_config[:url]
+
+      GeoCombine::GeoBlacklightHarvester.new(args.site.to_sym).index
+
+      # Commit all added docs
+      Blacklight.default_index.connection.commit
+    end
+  end
+
   private
 
   def url_for_file(file)

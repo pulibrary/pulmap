@@ -21,3 +21,5 @@ production: &deploy
   host: <%= ENV["PULMAP_DB_HOST"] %>
   username: <%= ENV["PULMAP_DB_USERNAME"] %>
   password: <%= ENV["PULMAP_DB_PASSWORD"] %>
+
+staging: *deploy

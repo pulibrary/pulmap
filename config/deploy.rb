@@ -84,7 +84,7 @@ after 'deploy:published', 'robots_txt'
 
 desc "Generate the crontab tasks using Whenever"
 task :whenever do
-  on roles(:db) do
+  on roles(:index) do
     within release_path do
       execute("cd #{release_path} && bundle exec whenever --update-crontab #{fetch :application} --set environment=#{fetch :rails_env, fetch(:stage, 'production')} --user deploy")
     end
