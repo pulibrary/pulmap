@@ -22,31 +22,49 @@ every :saturday, at: "11:00 AM", roles: [:index] do
   rake "gblsci:images:harvest_retry"
 end
 
-# Harvest new records from other GeoBlacklight sites
+## Harvest new records from other GeoBlacklight sites
+
+# First day of every month at 1 AM
 every "0 1 1 * *", roles: [:index] do
   rake "pulmap:geoblacklight_harvester:index[STANFORD]"
 end
+
+# Second day of every month at 1 AM
 every "0 1 2 * *", roles: [:index] do
   rake "pulmap:geoblacklight_harvester:index[BIG10]"
 end
+
+# Third day of every month at 1 AM
 every "0 1 3 * *", roles: [:index] do
   rake "pulmap:geoblacklight_harvester:index[NYU]"
 end
+
+# Fourth day of every month at 1 AM
 every "0 1 4 * *", roles: [:index] do
   rake "pulmap:geoblacklight_harvester:index[BARUCH]"
 end
+
+# Fifth day of every month at 1 AM
 every "0 1 5 * *", roles: [:index] do
   rake "pulmap:geoblacklight_harvester:index[CORNELL]"
 end
+
+# Sixth day of every month at 1 AM
 every "0 1 6 * *", roles: [:index] do
   rake "pulmap:geoblacklight_harvester:index[MIT]"
 end
+
+# Seventh day of every month at 1 AM
 every "0 1 7 * *", roles: [:index] do
   rake "pulmap:geoblacklight_harvester:index[BERKELEY]"
 end
+
+# Eighth day of every month at 1 AM
 every "0 1 8 * *", roles: [:index] do
   rake "pulmap:geoblacklight_harvester:index[BOULDER]"
 end
+
+# Ninth day of every month at 1 AM
 every "0 1 9 * *", roles: [:index] do
   rake "pulmap:geoblacklight_harvester:index[TEXAS]"
 end
