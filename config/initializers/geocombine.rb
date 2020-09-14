@@ -20,7 +20,8 @@ GeoCombine::GeoBlacklightHarvester.configure do
           access: ['public'],
           dct_provenance_s: ['Stanford']
         },
-        q: '*'
+        q: '*',
+        format: 'json'
       }
     },
     HARVARD: {
@@ -30,7 +31,8 @@ GeoCombine::GeoBlacklightHarvester.configure do
         f: {
           dct_provenance_s: ['Harvard'],
           access: ['public']
-        }
+        },
+        format: 'json'
       }
     },
     COLUMBIA: {
@@ -40,7 +42,8 @@ GeoCombine::GeoBlacklightHarvester.configure do
         f: {
           dct_provenance_s: ['Columbia'],
           access: ['public']
-        }
+        },
+        format: 'json'
       }
     },
     TUFTS: {
@@ -50,7 +53,8 @@ GeoCombine::GeoBlacklightHarvester.configure do
         f: {
           dct_provenance_s: ['Tufts'],
           access: ['public']
-        }
+        },
+        format: 'json'
       }
     },
     NYU: {
@@ -102,7 +106,7 @@ GeoCombine::GeoBlacklightHarvester.configure do
       }
     },
     BERKELEY: {
-      crawl_delay: 5,
+      crawl_delay: 10,
       host: 'https://geodata.lib.berkeley.edu/',
       params: {
         q: '*',
@@ -123,7 +127,7 @@ GeoCombine::GeoBlacklightHarvester.configure do
       }
     },
     BOULDER: {
-      crawl_delay: 5,
+      crawl_delay: 10,
       host: 'https://geo.colorado.edu/',
       params: {
         q: '*',
@@ -134,7 +138,7 @@ GeoCombine::GeoBlacklightHarvester.configure do
       }
     },
     TEXAS: {
-      crawl_delay: 5,
+      crawl_delay: 10,
       host: 'https://geodata.lib.utexas.edu/',
       params: {
         q: '*',
