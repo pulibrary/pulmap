@@ -1,4 +1,18 @@
 GIT
+  remote: https://github.com/OpenGeoMetadata/GeoCombine.git
+  revision: a58ee6cbc94eb32b4c44bb4d4c31a2839a843e74
+  branch: 97-json-format
+  specs:
+    geo_combine (0.5.0)
+      activesupport
+      json-schema
+      net-http-persistent (~> 2.0)
+      nokogiri
+      rsolr
+      sanitize
+      thor
+
+GIT
   remote: https://github.com/pulibrary/geoblacklight_sidecar_images.git
   revision: 800e69fab4f5b236a18727823caa66fd954c76e9
   branch: gbl-3
@@ -214,14 +228,6 @@ GEM
     ffi (1.13.1)
     font-awesome-rails (4.7.0.5)
       railties (>= 3.2, < 6.1)
-    geo_combine (0.5.0)
-      activesupport
-      json-schema
-      net-http-persistent (~> 2.0)
-      nokogiri
-      rsolr
-      sanitize
-      thor
     geoblacklight (3.1.0)
       blacklight (~> 7.0)
       coderay
@@ -597,6 +603,7 @@ DEPENDENCIES
   devise-guests
   factory_bot_rails
   font-awesome-rails
+  geo_combine!
   geoblacklight (~> 3.0)
   geoblacklight_sidecar_images!
   geoserver-worker!

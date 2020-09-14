@@ -20,8 +20,7 @@ GeoCombine::GeoBlacklightHarvester.configure do
           access: ['public'],
           dct_provenance_s: ['Stanford']
         },
-        q: '*',
-        format: 'json'
+        q: '*'
       }
     },
     HARVARD: {
@@ -31,8 +30,7 @@ GeoCombine::GeoBlacklightHarvester.configure do
         f: {
           dct_provenance_s: ['Harvard'],
           access: ['public']
-        },
-        format: 'json'
+        }
       }
     },
     COLUMBIA: {
@@ -42,8 +40,7 @@ GeoCombine::GeoBlacklightHarvester.configure do
         f: {
           dct_provenance_s: ['Columbia'],
           access: ['public']
-        },
-        format: 'json'
+        }
       }
     },
     TUFTS: {
@@ -53,8 +50,7 @@ GeoCombine::GeoBlacklightHarvester.configure do
         f: {
           dct_provenance_s: ['Tufts'],
           access: ['public']
-        },
-        format: 'json'
+        }
       }
     },
     MASSGIS: {
@@ -64,12 +60,10 @@ GeoCombine::GeoBlacklightHarvester.configure do
         f: {
           dct_provenance_s: ['MassGIS'],
           access: ['public']
-        },
-        format: 'json'
+        }
       }
     },
     NYU: {
-      crawl_delay: 5,
       host: 'https://geo.nyu.edu/',
       params: {
         q: '*',
@@ -80,7 +74,6 @@ GeoCombine::GeoBlacklightHarvester.configure do
       }
     },
     BARUCH: {
-      crawl_delay: 5,
       host: 'https://geo.nyu.edu/',
       params: {
         q: '*',
@@ -106,7 +99,6 @@ GeoCombine::GeoBlacklightHarvester.configure do
       }
     },
     MIT: {
-      crawl_delay: 5,
       host: 'https://geodata.mit.edu/',
       params: {
         q: '-layer_geom_type_s:Mixed',
@@ -117,7 +109,6 @@ GeoCombine::GeoBlacklightHarvester.configure do
       }
     },
     BERKELEY: {
-      crawl_delay: 10,
       host: 'https://geodata.lib.berkeley.edu/',
       params: {
         q: '*',
@@ -128,7 +119,6 @@ GeoCombine::GeoBlacklightHarvester.configure do
       }
     },
     BOULDER: {
-      crawl_delay: 10,
       host: 'https://geo.colorado.edu/',
       params: {
         q: '*',
@@ -139,7 +129,6 @@ GeoCombine::GeoBlacklightHarvester.configure do
       }
     },
     TEXAS: {
-      crawl_delay: 10,
       host: 'https://geodata.lib.utexas.edu/',
       params: {
         q: '*',
