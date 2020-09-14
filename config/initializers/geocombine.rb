@@ -116,16 +116,6 @@ GeoCombine::GeoBlacklightHarvester.configure do
         }
       }
     },
-    UVA: {
-      crawl_delay: 5,
-      host: 'https://gis.lib.virginia.edu/',
-      params: {
-        q: '*',
-        f: {
-          dct_provenance_s: ['UVa']
-        }
-      }
-    },
     BOULDER: {
       crawl_delay: 10,
       host: 'https://geo.colorado.edu/',
