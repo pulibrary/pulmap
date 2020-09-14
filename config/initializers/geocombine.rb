@@ -98,7 +98,7 @@ GeoCombine::GeoBlacklightHarvester.configure do
       crawl_delay: 5,
       host: 'https://geodata.mit.edu/',
       params: {
-        q: '*',
+        q: '-layer_geom_type_s:Mixed',
         f: {
           dct_provenance_s: ['MIT'],
           dc_rights_s: ['Public']
