@@ -57,6 +57,17 @@ GeoCombine::GeoBlacklightHarvester.configure do
         format: 'json'
       }
     },
+    MASSGIS: {
+      host: 'https://earthworks.stanford.edu/',
+      params: {
+        q: '*',
+        f: {
+          dct_provenance_s: ['MassGIS'],
+          access: ['public']
+        },
+        format: 'json'
+      }
+    },
     NYU: {
       crawl_delay: 5,
       host: 'https://geo.nyu.edu/',
