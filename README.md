@@ -5,7 +5,6 @@ GeoBlacklight for Princeton University Library
 
 [![CircleCI](https://circleci.com/gh/pulibrary/pulmap.svg?style=svg)](https://circleci.com/gh/pulibrary/pulmap)
 [![Coverage Status](https://coveralls.io/repos/pulibrary/pulmap/badge.svg?branch=master&service=github)](https://coveralls.io/github/pulibrary/pulmap?branch=master)
-[![Stories in Ready](https://badge.waffle.io/pulibrary/pulmap.png?label=ready&title=Ready)](https://waffle.io/pulibrary/pulmap)
 
 ### Installation
 ```
@@ -24,12 +23,6 @@ yarn
    - `rake pulmap:development`
    - In a separate terminal: `rails s`
    - Access Pulmap at http://localhost:3000/
-
-### Production Requirements
-
-#### mod_xsendfile
-
-    $ sudo apt-get install libapache2-mod-xsendfile
 
 ### Auto-update from external services
 
