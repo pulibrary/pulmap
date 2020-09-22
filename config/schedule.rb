@@ -8,6 +8,11 @@ env :PATH, ENV['PATH']
 # It's helpful, but not entirely necessary to understand cron before proceeding.
 # http://en.wikipedia.org/wiki/Cron
 
+# Run a weekly rake task to regenerate the sitemap.
+every :wednesday, at: "11:00 PM", roles: [:app] do
+  rake "sitemap:refresh"
+end
+
 # Run a daily rake task to harvest new thumbnail images.
 # These could be from new records or from records
 # where there was a previous error during harvesting.
