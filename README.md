@@ -6,23 +6,24 @@ GeoBlacklight for Princeton University Library
 [![CircleCI](https://circleci.com/gh/pulibrary/pulmap.svg?style=svg)](https://circleci.com/gh/pulibrary/pulmap)
 [![Coverage Status](https://coveralls.io/repos/pulibrary/pulmap/badge.svg?branch=master&service=github)](https://coveralls.io/github/pulibrary/pulmap?branch=master)
 
-### Installation
-```
-bundle
-rake db:migrate
-npm install --global yarn
-yarn
+### Initial Setup
+```sh
+git clone https://github.com/pulibrary/pulmap.git
+cd pulmap
+bundle install
+yarn install
 ```
 
 ### Setup server
 
+1. Install Lando DMG from https://github.com/lando/lando/releases
+1. To start: `rake pulmap:server:start`
 1. For test:
-   - `rake pulmap:test`
-   - In a separate terminal: `bundle exec rspec`
-2. For development:
-   - `rake pulmap:development`
-   - In a separate terminal: `rails s`
+   - `bundle exec rspec`
+1. For development:
+   - `rails s`
    - Access Pulmap at http://localhost:3000/
+1. To stop: `rake pulmap:server:stop` or `lando stop`
 
 ### Auto-update from external services
 
