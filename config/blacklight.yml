@@ -3,7 +3,7 @@ development:
   url: <%= ENV['SOLR_URL'] || "http://#{ENV["lando_pulmap_development_solr_conn_host"] || "127.0.0.1"}:#{ENV["lando_pulmap_development_solr_conn_port"] || 8983}/solr/pulmap-core-dev" %>
 test: &test
   adapter: solr
-  url: <%= "http://#{ENV["lando_pulmap_test_solr_conn_host"] || "127.0.0.1"}:#{ENV['SOLR_TEST_PORT'] || ENV["lando_pulmap_test_solr_conn_port"] || 8888}/solr/pulmap-core-test" %>
+  url: <%= ENV['SOLR_URL'] || "http://#{ENV["lando_pulmap_test_solr_conn_host"] || "127.0.0.1"}:#{ENV['SOLR_TEST_PORT'] || ENV["lando_pulmap_test_solr_conn_port"] || 8984}/solr/pulmap-core-test" %>
 production:
   adapter: solr
   url: <%= ENV['PULMAP_SOLR_URL'] %>
