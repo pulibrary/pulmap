@@ -6,8 +6,6 @@ require "rubocop/rake_task" if Rails.env.development? || Rails.env.test?
 
 Rails.application.load_tasks
 
-require 'solr_wrapper/rake_task' if Rails.env.development? || Rails.env.test?
-
 if defined? RuboCop
   desc "Run RuboCop style checker"
   RuboCop::RakeTask.new(:rubocop) do |task|

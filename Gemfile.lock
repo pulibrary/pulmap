@@ -510,11 +510,6 @@ GEM
       rake (~> 12.3)
       serverengine (~> 2.1.0)
       thor
-    solr_wrapper (2.2.0)
-      faraday
-      retriable
-      ruby-progressbar
-      rubyzip
     spring (2.1.1)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
@@ -624,7 +619,6 @@ DEPENDENCIES
   simple_form
   sitemap_generator (~> 6.0)
   sneakers
-  solr_wrapper
   spring
   sqlite3
   turbolinks
