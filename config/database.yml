@@ -1,25 +1,26 @@
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
+  encoding: unicode
+  host: <%= ENV["lando_pulmap_database_conn_host"] || ENV["PULMAP_DB_HOST"] || "localhost" %>
+  port: <%= ENV["lando_pulmap_database_conn_port"] || 5432 %>
+  username: <%= ENV["lando_pulmap_database_creds_user"] || ENV["PULMAP_DB_USERNAME"] %>
+  password: <%= ENV["lando_pulmap_database_creds_password"] || ENV["PULMAP_DB_PASSWORD"] %>
+  database: <%= ENV['PULMAP_DB'] %>
   pool: 5
-  timeout: 5000
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: pulmap_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: pulmap_test
 
-production: &deploy
+production:
   <<: *default
-  adapter: postgresql
-  database: <%= ENV["PULMAP_DB"] %>
-  host: <%= ENV["PULMAP_DB_HOST"] %>
-  username: <%= ENV["PULMAP_DB_USERNAME"] %>
-  password: <%= ENV["PULMAP_DB_PASSWORD"] %>
 
-staging: *deploy
+staging:
+  <<: *default
