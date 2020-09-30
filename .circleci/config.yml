@@ -65,8 +65,8 @@ jobs:
           RAILS_ENV: test
           PULMAP_DB_HOST: localhost
           PULMAP_DB_USERNAME: geoblacklight
-      - image: solr:7.7-alpine
-        command: bin/solr -cloud -noprompt -f -p 8985
+      - image: solr:8.4
+        command: wget https://gist.githubusercontent.com/eliotjordan/a27be341dc2e7a532bad99203e0f55b7/raw/5866efab9242f953764c1b03d17763309e22948f/security.json && bin/solr zk cp file:/tmp/security.json zk:/security.json -z localhost:9983 && bin/solr -cloud -noprompt -f -p 8985
     steps: &test_steps
       - attach_workspace:
           at: '~/pulmap'
