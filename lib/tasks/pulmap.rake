@@ -29,41 +29,23 @@ namespace :pulmap do
     end
   end
 
-  desc "Start solr server for testing."
-  task :test do
-    if Rails.env.test?
-      shared_solr_opts = { managed: true, verbose: true, persist: false, download_dir: 'tmp' }
-      shared_solr_opts[:version] = ENV['SOLR_VERSION'] if ENV['SOLR_VERSION']
-
-      SolrWrapper.wrap(shared_solr_opts.merge(port: 8985, instance_dir: 'tmp/pulmap-core-test')) do |solr|
-        solr.with_collection(name: "pulmap-core-test", dir: Rails.root.join("solr", "conf").to_s) do
-          puts "Solr running at http://localhost:8985/solr/pulmap-core-test/, ^C to exit"
-          begin
-            Rake::Task['geoblacklight:solr:seed'].invoke
-            sleep
-          rescue Interrupt
-            puts "\nShutting down..."
-          end
-        end
-      end
-    else
-      system('rake pulmap:test RAILS_ENV=test')
+  namespace :server do
+    desc "Start solr and postgres servers using lando."
+    task :start do
+      system('lando start')
+      system('rake pulmap:server:seed')
+      system('rake pulmap:server:seed RAILS_ENV=test')
     end
-  end
 
-  desc "Start solr server for development."
-  task :development do
-    SolrWrapper.wrap(managed: true, verbose: true, port: 8983, instance_dir: 'tmp/pulmap-core-dev', persist: false, download_dir: 'tmp') do |solr|
-      solr.with_collection(name: "pulmap-core-dev", dir: Rails.root.join("solr", "conf").to_s) do
-        puts "Setup solr"
-        puts "Solr running at http://localhost:8983/solr/pulmap-core-dev/, ^C to exit"
-        begin
-          Rake::Task['geoblacklight:solr:seed'].invoke
-          sleep
-        rescue Interrupt
-          puts "\nShutting down..."
-        end
-      end
+    task :seed do
+      Rake::Task['db:create'].invoke
+      Rake::Task['db:migrate'].invoke
+      Rake::Task['geoblacklight:solr:seed'].invoke
+    end
+
+    desc "Stop lando solr and postgres servers."
+    task :stop do
+      system('lando stop')
     end
   end
 
