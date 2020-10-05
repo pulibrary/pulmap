@@ -4,7 +4,7 @@ Pulmap
 GeoBlacklight for Princeton University Library
 
 [![CircleCI](https://circleci.com/gh/pulibrary/pulmap.svg?style=svg)](https://circleci.com/gh/pulibrary/pulmap)
-[![Coverage Status](https://coveralls.io/repos/pulibrary/pulmap/badge.svg?branch=master&service=github)](https://coveralls.io/github/pulibrary/pulmap?branch=master)
+[![Coverage Status](https://coveralls.io/repos/pulibrary/pulmap/badge.svg?branch=main&service=github)](https://coveralls.io/github/pulibrary/pulmap?branch=main)
 
 ### Initial Setup
 ```sh
