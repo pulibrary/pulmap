@@ -26,4 +26,9 @@ class User < ApplicationRecord
       user.provider = access_token.provider
     end
   end
+
+  def admin?
+    netids = Rails.application.config.authorization
+    netids.include? uid
+  end
 end

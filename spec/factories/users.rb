@@ -7,5 +7,9 @@ FactoryBot.define do
     uid do |user|
       user.username
     end
+
+    factory :admin do
+      username { 'admin123' }
+    end
   end
 end

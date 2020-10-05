@@ -12,4 +12,20 @@ RSpec.describe User, type: :model do
       expect(user.uid).to eq('testuser')
     end
   end
+
+  describe '#admin?' do
+    context 'with an admin user' do
+      it 'returns true' do
+        user = FactoryBot.create(:admin)
+        expect(user.admin?).to be true
+      end
+    end
+
+    context 'with a non-admin user' do
+      it 'returns false' do
+        user = FactoryBot.create(:user)
+        expect(user.admin?).to be false
+      end
+    end
+  end
 end
