@@ -56,4 +56,9 @@ Rails.application.routes.draw do
     match 'geoserver/restricted-figgy/*path' => 'geoserver#index', via: [:get]
     match 'geoserver/restricted-figgy-staging/*path' => 'geoserver#index', via: [:get]
   end
+
+  require "sidekiq/web"
+  authenticate :user,  ->(u) { u.admin? } do
+    mount Sidekiq::Web => "/sidekiq"
+  end
 end
