@@ -81,6 +81,8 @@ module ApplicationHelper
     icon = Blacklight::Icon.new(icon_name)
     icon.svg.html_safe
     link_to icon.svg.html_safe, url_for_document(document), document_link_params(document, {})
+  rescue Blacklight::Exceptions::IconNotFound
+    link_to Blacklight::Icon.new('mixed').svg.html_safe, url_for_document(document), document_link_params(document, {})
   end
   # rubocop:enable Rails/OutputSafety
 end
