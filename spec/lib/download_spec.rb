@@ -54,4 +54,64 @@ describe Geoblacklight::Download do
       end
     end
   end
+
+  context 'when connection errors are encountered attempting to request a remote resource for download' do
+    let(:document) do
+      SolrDocument.new(
+        layer_slug_s: 'test',
+        dct_references_s: references
+      )
+    end
+    let(:error) { Faraday::ConnectionFailed.new(StandardError, 'connection failure') }
+
+    before do
+      allow(connection).to receive(:url_prefix).and_return('test')
+      allow(connection).to receive(:get).and_raise(error)
+      allow(Faraday).to receive(:new).and_return(connection)
+    end
+
+    it 'flashes an error message and redirects the client' do
+      expect { download.initiate_download }.to raise_error(Geoblacklight::Exceptions::ExternalDownloadFailed)
+    end
+  end
+
+  context 'when time-out errors are encountered attempting to request a remote resource for download' do
+    let(:document) do
+      SolrDocument.new(
+        layer_slug_s: 'test',
+        dct_references_s: references
+      )
+    end
+    let(:error) { Faraday::TimeoutError.new(StandardError, 'timeout error') }
+
+    before do
+      allow(connection).to receive(:url_prefix).and_return('test')
+      allow(connection).to receive(:get).and_raise(error)
+      allow(Faraday).to receive(:new).and_return(connection)
+    end
+
+    it 'flashes an error message and redirects the client' do
+      expect { download.initiate_download }.to raise_error(Geoblacklight::Exceptions::ExternalDownloadFailed)
+    end
+  end
+
+  context 'when TLS/SSL errors are encountered attempting to request a remote resource for download' do
+    let(:document) do
+      SolrDocument.new(
+        layer_slug_s: 'test',
+        dct_references_s: references
+      )
+    end
+    let(:error) { Faraday::SSLError.new(StandardError, 'TLS failure') }
+
+    before do
+      allow(connection).to receive(:url_prefix).and_return('test')
+      allow(connection).to receive(:get).and_raise(error)
+      allow(Faraday).to receive(:new).and_return(connection)
+    end
+
+    it 'flashes an error message and redirects the client' do
+      expect { download.initiate_download }.to raise_error(Geoblacklight::Exceptions::ExternalDownloadFailed)
+    end
+  end
 end

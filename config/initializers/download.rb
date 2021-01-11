@@ -22,6 +22,10 @@ module Geoblacklight
     raise Geoblacklight::Exceptions::ExternalDownloadFailed,
           message: 'Download timed out',
           url: conn.url_prefix.to_s
+  rescue Faraday::SSLError
+    raise Geoblacklight::Exceptions::ExternalDownloadFailed,
+      message: 'Download connection failed due to an error related to TLS (encryption)',
+          url: conn.url_prefix.to_s
   end
 
   private
