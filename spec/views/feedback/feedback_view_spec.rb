@@ -42,6 +42,7 @@ describe 'Feedback Form', type: :feature do
     it 'Populates Email Field' do
       sign_in user
       visit('/catalog/princeton-cv43nz62s')
+      click_link 'Login'
       click_link('Contact Us')
       expect(page).to have_field('feedback_form_email', with: "#{user.uid}@princeton.edu")
     end
