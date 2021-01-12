@@ -343,10 +343,13 @@ GEM
     omniauth (1.9.1)
       hashie (>= 3.4.6)
       rack (>= 1.6.2, < 3)
-    omniauth-cas (1.1.1)
+    omniauth-cas (2.0.0)
       addressable (~> 2.3)
       nokogiri (~> 1.5)
       omniauth (~> 1.2)
+    omniauth-rails_csrf_protection (0.1.2)
+      actionpack (>= 4.2)
+      omniauth (>= 1.3.1)
     orm_adapter (0.5.0)
     os (1.1.1)
     parallel (1.19.2)
@@ -607,7 +610,8 @@ DEPENDENCIES
   loofah (>= 2.2.3)
   mail_form
   modernizr-rails
-  omniauth-cas
+  omniauth-cas (~> 2.0)
+  omniauth-rails_csrf_protection (~> 0.1)
   pg (~> 1.0)
   pry-byebug
   puma (~> 5.0)
