@@ -36,15 +36,14 @@ Blacklight.onLoad(function() {
     var world = L.latLngBounds([[-90, -180], [90, 180]]);
     var filter_params = L.Control.GeoSearch.prototype.filterParams();
 
-    if (typeof data.mapBbox === 'string') {
+    if (typeof data.mapGeom === 'string') {
       GeoBlacklight.supressDynamicSearch = false; // Ensures that dynamic search is triggered
-      bbox = L.bboxToBounds(data.mapBbox);
+        bbox = L.geoJSONToBounds(data.mapGeom);
     } else {
       GeoBlacklight.supressDynamicSearch = true;
-      $('.document [data-bbox]').each(function() {
-
+      $('.document [data-geom]').each(function() {
         try {
-          var currentBounds = L.bboxToBounds($(this).data().bbox);
+          var currentBounds = L.geoJSONToBounds($(this).data().geom);
           if (!world.contains(currentBounds)) {
             throw "Invalid bounds";
           }
@@ -71,9 +70,9 @@ Blacklight.onLoad(function() {
     // Clear existing markers
     GeoBlacklight.Home.removeMarkers();
 
-    $('.document [data-bbox]').each(function() {
+    $('.document [data-geom]').each(function() {
       var _this = $(this),
-          currentBbox = _this.data().bbox,
+          currentBbox = _this.data().geom,
           layerId = _this.data().layerId;
           counter = _this.data().counter + 1,
           redMarker = L.ExtraMarkers.icon({
@@ -84,7 +83,7 @@ Blacklight.onLoad(function() {
           });
 
       if (currentBbox) {
-        var bounds = L.bboxToBounds(currentBbox);
+        var bounds = L.geoJSONToBounds(currentBbox);
         var marker = L.marker(bounds.getCenter(), {icon: redMarker});
 
         // Add marker to map
@@ -104,8 +103,8 @@ Blacklight.onLoad(function() {
     $('[data-map="index"]').each(function(i, element) {
       $('#content')
         .on('mouseenter', '#documents [data-layer-id]', function() {
-          var bounds = L.bboxToBounds($(this).data('bbox'));
-          GeoBlacklight.Home.addBoundsOverlay(bounds);
+          var geom = $(this).data('geom')
+          GeoBlacklight.Home.addGeoJsonOverlay(geom);
         })
         .on('mouseleave', '#documents [data-layer-id]', function() {
           GeoBlacklight.Home.removeBoundsOverlay();
