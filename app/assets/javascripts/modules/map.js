@@ -16,8 +16,8 @@ GeoBlacklight.Viewer.Map = GeoBlacklight.Viewer.Map.extend({
 
   // override load function to add map options
   load: function() {
-    if (this.data.mapBbox) {
-      this.options.bbox = L.bboxToBounds(this.data.mapBbox);
+    if (this.data.mapGeom) {
+      this.options.bbox = L.geoJSONToBounds(this.data.mapGeom);
     }
     this.map = L.map(this.element, this.mapOptions ).fitBounds(this.options.bbox);
     this.map.addLayer(this.selectBasemap());

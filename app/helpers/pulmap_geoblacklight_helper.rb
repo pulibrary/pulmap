@@ -60,15 +60,18 @@ module PulmapGeoblacklightHelper
   private
 
   def leaflet_viewer
-    tag.div(nil, id: 'map',
-                           data: { map: 'item', protocol: @document.viewer_protocol.camelize,
-                                   url: @document.viewer_endpoint,
-                                   'layer-id' => @document.wxs_identifier,
-                                   'map-bbox' => @document.bounding_box_as_wsen,
-                                   'catalog-path' => search_catalog_path,
-                                   available: document_available?,
-                                   basemap: geoblacklight_basemap,
-                                   leaflet_options: leaflet_options })
+    tag.div(nil,
+            id: 'map',
+            data: {
+              map: 'item', protocol: @document.viewer_protocol.camelize,
+                    url: @document.viewer_endpoint,
+                    'layer-id' => @document.wxs_identifier,
+                    'map-geom' => @document.geometry.geojson,
+                    'catalog-path' => search_catalog_path,
+                    available: document_available?,
+                    basemap: geoblacklight_basemap,
+                    leaflet_options: leaflet_options
+            })
   end
 
   def manifest_viewer
