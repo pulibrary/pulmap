@@ -9,6 +9,10 @@ class CatalogController < ApplicationController
     redirect_to '/', flash: { error: 'The start year must be before the end year.' }
   end
 
+  rescue_from Blacklight::Exceptions::RecordNotFound do
+    redirect_to '/404'
+  end
+
   configure_blacklight do |config|
     # Ensures that JSON representations of Solr Documents can be retrieved using
     # the path /catalog/:id/raw

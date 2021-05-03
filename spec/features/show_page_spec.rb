@@ -9,4 +9,12 @@ describe 'Show page' do
       expect(page).not_to have_content 'Login to view and download'
     end
   end
+
+  describe 'response to Blacklight::Exceptions::RecordNotFound exception' do
+    it 'redirects to the 404 page' do
+      visit solr_document_path 'princeton-kk91fn37znotfound'
+      expect(page).to have_content "The page you were looking for doesn't exist.\nYou may have mistyped the address or"
+      expect { page }.not_to raise_error
+    end
+  end
 end
