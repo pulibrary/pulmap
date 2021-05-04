@@ -15,6 +15,7 @@ describe 'Show page' do
       visit solr_document_path 'princeton-kk91fn37znotfound'
       expect(page).to have_content "The page you were looking for doesn't exist.\nYou may have mistyped the address or"
       expect { page }.not_to raise_error
+      expect(page.status_code).to eq 404
     end
   end
 end

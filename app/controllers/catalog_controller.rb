@@ -10,7 +10,7 @@ class CatalogController < ApplicationController
   end
 
   rescue_from Blacklight::Exceptions::RecordNotFound do
-    redirect_to '/404'
+    render file: Rails.root.join('public', '404.html'), layout: false, status: :not_found
   end
 
   configure_blacklight do |config|
