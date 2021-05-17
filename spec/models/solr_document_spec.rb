@@ -4,11 +4,11 @@ require 'rails_helper'
 describe Geoblacklight::SolrDocument do
   describe '#geoblacklight_citation' do
     context 'when creating a citation for a Princeton record' do
-      it 'creates a Princeton specific citation' do
+      it 'creates a generic citation' do
         document = SolrDocument.find('princeton-m613n013z')
         citation = document.geoblacklight_citation('http://example.com')
-        expect(citation).to include 'The Princeton University Library makes available'
-        expect(citation).to include 'Louisiana Tracts 2002, Maps and Geospatial Data, Princeton University Library'
+        expect(citation).not_to include 'The Princeton University Library makes available'
+        expect(citation).to include 'Environmental Systems Research Institute, Inc. (ESRI). Louisiana Tracts 2002.'
       end
     end
     context 'when creating a citation for a non-Princeton record' do
