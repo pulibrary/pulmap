@@ -85,4 +85,12 @@ module ApplicationHelper
     link_to Blacklight::Icon.new('mixed').svg.html_safe, url_for_document(document), document_link_params(document, {})
   end
   # rubocop:enable Rails/OutputSafety
+
+  # Shadows Blacklight's link_back_to_catalog but handles gracefully if there is an error generating the URL
+  # with the parameters in the request.
+  def link_back_to_catalog_safe(opts = { label: nil })
+    link_back_to_catalog(opts)
+  rescue ActionController::UrlGenerationError
+    "/"
+  end
 end
