@@ -10,6 +10,7 @@
     "lodash.template": "^4.5.0",
     "npm": "^6.14.6",
     "rails-erb-loader": "^5.5.0",
+    "trim-newlines": "~3",
     "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
