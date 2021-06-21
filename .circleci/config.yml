@@ -132,7 +132,7 @@ jobs:
     steps:
       - attach_workspace:
           at: '~/pulmap'
-      - run: gem install bundler rubocop
+      - setup-bundler
       - run: bundle exec rubocop --disable-pending-cops
 
   coverage_report:
