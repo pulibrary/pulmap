@@ -132,50 +132,22 @@ jobs:
     steps:
       - attach_workspace:
           at: '~/pulmap'
-      - setup-bundler
+      - run: gem install rubocop
       - run: bundle exec rubocop --disable-pending-cops
-#     working_directory: ~/pulmap
-#     docker:
-#       - image: circleci/ruby:2.6-node-browsers
-#         environment:
-#           RAILS_ENV: test
-#           PULMAP_DB_HOST: localhost
-#           PULMAP_DB_USERNAME: geoblacklight
-#     steps:
-#       - attach_workspace:
-#           at: '~/pulmap'
-#       - run:
-#           name: Install node@8.17.0 (need right version for `yarn`)
-#           command: |
-#             set +e
-#             touch $BASH_ENV
-#             curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
-#             echo 'export NVM_DIR="$HOME/.nvm"' >> $BASH_ENV
-#             echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV
-#             echo 'nvm install lts/erbium' >> $BASH_ENV
-#             echo 'nvm alias default lts/erbium' >> $BASH_ENV
-# 
-#       - run:
-#           name: Check current version of node
-#           command: node -v
-#       # Install Bundler
-#       - run: gem install bundler -v '~> 2.0'
-#       # Bundle install dependencies
-#       - run: bundle install --path vendor/bundle
-#       - run: bundle exec rake rubocop
-#   coverage_report:
-#     executor: pulmap-executor
-#     steps:
-#       - attach_workspace:
-#           at: '~/pulmap'
-#       - run: gem install simplecov
-#       - run:
-#           name: Inspect coverage report
-#           command: |
-#             RAILS_ENV=test ruby ./scripts/report_coverage.rb
-#       - store_artifacts:
-#           path: ~/pulmap/coverage
-#           destination: coverage
+
+  coverage_report:
+    executor: pulmap-executor
+    steps:
+      - attach_workspace:
+          at: '~/pulmap'
+      - run: gem install simplecov
+      - run:
+          name: Inspect coverage report
+          command: |
+            RAILS_ENV=test ruby ./scripts/report_coverage.rb
+      - store_artifacts:
+          path: ~/pulmap/coverage
+          destination: coverage
 workflows:
   build_accept:
     jobs:
@@ -186,6 +158,6 @@ workflows:
       - rubocop:
           requires:
             - build
-      # - coverage_report:
-      #    requires:
-      #     - test
+      - coverage_report:
+         requires:
+          - test
