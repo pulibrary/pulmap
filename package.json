@@ -1,9 +1,10 @@
 {
   "dependencies": {
-    "@rails/webpacker": "^4.2.0",
+    "@rails/webpacker": "~4",
     "babel-polyfill": "^6.26.0",
     "coffeescript": "2.3.2",
     "fstream": "^1.0.12",
+    "is-svg": ">=4.2.2",
     "leaflet-geosearch": "^2.7.0",
     "lodash": "^4.17.21",
     "lodash.template": "^4.5.0",
