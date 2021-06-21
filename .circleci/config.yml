@@ -171,17 +171,16 @@ jobs:
 #       - store_artifacts:
 #           path: ~/pulmap/coverage
 #           destination: coverage
-# workflows:
-#   version: 2
-#   build_accept_deploy:
-#     jobs:
-#       - build
-#       - test:
-#           requires:
-#             - build
-#       - rubocop:
-#           requires:
-#             - build
-#       - coverage_report:
-#          requires:
-#           - test
+workflows:
+  build_accept:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      # - rubocop:
+      #     requires:
+      #       - build
+      # - coverage_report:
+      #    requires:
+      #     - test
