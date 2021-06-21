@@ -120,15 +120,20 @@ jobs:
       - run: bundle exec rake db:migrate
       - run: bundle exec rake geoblacklight:solr:seed
       - run: bundle exec rspec spec/
-# 
-#       # Save test results for timing analysis
-#       - store_test_results:
-#           path: test_results
-# 
-#       - persist_to_workspace:
-#           root: '~/pulmap'
-#           paths: '*'
-#   rubocop:
+      # Save test results for timing analysis
+      - store_test_results:
+          path: test_results
+
+      - persist_to_workspace:
+          root: '~/pulmap'
+          paths: '*'
+  rubocop:
+    executor: pulmap-executor
+    steps:
+      - attach_workspace:
+          at: '~/pulmap'
+      - setup-bundler
+      - run: bundle exec rubocop --disable-pending-cops
 #     working_directory: ~/pulmap
 #     docker:
 #       - image: circleci/ruby:2.6-node-browsers
@@ -178,9 +183,9 @@ workflows:
       - test:
           requires:
             - build
-      # - rubocop:
-      #     requires:
-      #       - build
+      - rubocop:
+          requires:
+            - build
       # - coverage_report:
       #    requires:
       #     - test
