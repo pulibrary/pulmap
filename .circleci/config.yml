@@ -107,6 +107,7 @@ jobs:
             curl -H 'Content-type: application/json' http://localhost:8984/api/collections/ -d '{create: {name: pulmap-core-test, config: pulmap, numShards: 1}}'
       - run: bundle exec rake db:migrate
       - run: bundle exec rake geoblacklight:solr:seed
+      - run: bundle exec rake assets:precompile
       - run: bundle exec rspec spec/
   rubocop:
     working_directory: ~/pulmap
