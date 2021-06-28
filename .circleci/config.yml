@@ -108,6 +108,9 @@ jobs:
       - run: bundle exec rake db:migrate
       - run: bundle exec rake geoblacklight:solr:seed
       - run: bundle exec rspec spec/
+      - store_artifacts:
+          path: coverage
+          destination: coverage
   rubocop:
     working_directory: ~/pulmap
     docker:
