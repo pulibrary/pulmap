@@ -38,6 +38,10 @@ group :development do
   gem 'web-console', '~> 3.7.0'
 end
 
+group :test do
+  gem 'simplecov-shields-badge', require: false
+end
+
 gem 'blacklight_advanced_search', '~> 7.0.0'
 gem 'blacklight_range_limit'
 gem 'bootstrap'
