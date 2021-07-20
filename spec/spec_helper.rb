@@ -2,20 +2,17 @@
 
 ENV["RACK_ENV"] = "test"
 require 'simplecov'
-require 'coveralls'
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
-  [
-    SimpleCov::Formatter::HTMLFormatter,
-    Coveralls::SimpleCov::Formatter
-  ]
-)
 SimpleCov.start "rails" do
   add_filter '/spec'
   # TODO: Add full coverage for geoserver reverse proxy functionality.
   # This is difficult to test at the moment and could use refactoring in the future.
   add_filter 'app/controllers/geoserver_controller.rb'
+  minimum_coverage 99
 end
+
+require 'shields_badge'
+SimpleCov.formatter = SimpleCov::Formatter::ShieldsBadge
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

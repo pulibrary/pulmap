@@ -24,18 +24,22 @@ group :development, :test do
   gem 'bixby'
   gem 'byebug'
   gem 'capybara'
-  gem 'coveralls', require: false
   gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.5'
+  gem 'simplecov'
   gem 'spring'
   gem 'webdrivers'
 end
 
 group :development do
   gem 'web-console', '~> 3.7.0'
+end
+
+group :test do
+  gem 'simplecov-shields-badge', require: false
 end
 
 gem 'blacklight_advanced_search', '~> 7.0.0'

@@ -70,6 +70,12 @@ jobs:
           RAILS_ENV: test
           PULMAP_DB_HOST: localhost
           PULMAP_DB_USERNAME: geoblacklight
+          GITHUB_USER: $GITHUB_USER
+          GITHUB_MAIL: $GITHUB_MAIL
+          GITHUB_ORG: pulibrary
+          GITHUB_REPO: pulmap
+          GITHUB_ACCESS_TOKEN: $GITHUB_ACCESS_TOKEN
+
       - image: postgres:10.6-alpine
         environment:
           POSTGRES_USER: geoblacklight
@@ -108,6 +114,9 @@ jobs:
       - run: bundle exec rake db:migrate
       - run: bundle exec rake geoblacklight:solr:seed
       - run: bundle exec rspec spec/
+      - store_artifacts:
+          path: coverage
+          destination: coverage
   rubocop:
     working_directory: ~/pulmap
     docker:
