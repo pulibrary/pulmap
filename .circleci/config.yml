@@ -110,6 +110,11 @@ jobs:
       - run: bundle exec rake geoblacklight:solr:seed
       - run: bundle exec rspec spec/
       - run: mv badge.svg ./coverage/badge.svg
+      - run:
+          name: Set badge URL
+          command: |
+            badge_url="https://circleci.com/api/v1.1/project/github/pulibrary/pulmap/$CIRCLE_BUILD_NUM/artifacts/0/coverage/badge.svg"
+            echo "export BADGE_URL=$badge_url" >> $BASH_ENV
       - store_artifacts:
           path: coverage
           destination: coverage
