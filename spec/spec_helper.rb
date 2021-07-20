@@ -11,8 +11,17 @@ SimpleCov.start "rails" do
   minimum_coverage 99
 end
 
-require 'shields_badge'
-SimpleCov.formatter = SimpleCov::Formatter::ShieldsBadge
+if ENV["CI"] == "true"
+  require 'shields_badge'
+  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
+    [
+      SimpleCov::Formatter::HTMLFormatter,
+      SimpleCov::Formatter::ShieldsBadge
+    ]
+  )
+else
+  SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter
+end
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

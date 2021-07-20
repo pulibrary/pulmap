@@ -22,6 +22,7 @@
 !/tmp/cache/downloads/.keep
 
 /coverage
+badge.svg
 
 # Ignore node modules
 /node_modules
