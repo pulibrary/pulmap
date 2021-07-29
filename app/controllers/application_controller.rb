@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  rescue_from Blacklight::Exceptions::RecordNotFound do
+    render file: Rails.root.join('public', '404.html'), status: :not_found
+  end
+
   private
 
   def after_sign_in_path_for(_resource)
