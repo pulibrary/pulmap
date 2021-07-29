@@ -8,7 +8,12 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  rescue_from Blacklight::Exceptions::RecordNotFound do
+  RESCUE_WITH_404 = [
+    Blacklight::Exceptions::RecordNotFound,
+    ActiveSupport::MessageVerifier::InvalidSignature
+  ].freeze
+
+  rescue_from(*RESCUE_WITH_404) do
     render file: Rails.root.join('public', '404.html'), status: :not_found
   end
 
