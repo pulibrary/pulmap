@@ -1,13 +1,19 @@
 name: pulmap
 services:
   pulmap_test_solr:
-    type: solr:8.4
+    type: solr:custom
+    overrides:
+      image: pulibrary/pulmap-solr:8.4
+      command: /app/solr/start-solr.sh
     portforward: true
     core: pulmap-core-test
     config:
       dir: "solr/conf"
   pulmap_development_solr:
-    type: solr:8.4
+    type: solr:custom
+    overrides:
+      image: pulibrary/pulmap-solr:8.4
+      command: /app/solr/start-solr.sh
     portforward: true
     core: pulmap-core-dev
     config:
