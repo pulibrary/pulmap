@@ -17,5 +17,14 @@ describe 'Show page' do
       expect { page }.not_to raise_error
       expect(page.status_code).to eq 404
     end
+
+    context 'with an invalid download link' do
+      it 'redirects to the 404 page' do
+        visit '/download/hgl/pul-logo-new.svg'
+        expect(page).to have_content "The page you were looking for doesn't exist.\nYou may have mistyped the address or"
+        expect { page }.not_to raise_error
+        expect(page.status_code).to eq 404
+      end
+    end
   end
 end
