@@ -1,4 +1,17 @@
 GIT
+  remote: https://github.com/pulibrary/GeoCombine.git
+  revision: f3e42438a421fe4d2c99c567dbd251ed310ce89e
+  specs:
+    geo_combine (0.5.1)
+      activesupport
+      json-schema
+      net-http-persistent (~> 2.0)
+      nokogiri
+      rsolr
+      sanitize
+      thor
+
+GIT
   remote: https://github.com/pulibrary/geoblacklight_sidecar_images.git
   revision: 800e69fab4f5b236a18727823caa66fd954c76e9
   branch: gbl-3
@@ -221,14 +234,6 @@ GEM
     ffi (1.13.1)
     font-awesome-rails (4.7.0.5)
       railties (>= 3.2, < 6.1)
-    geo_combine (0.5.1)
-      activesupport
-      json-schema
-      net-http-persistent (~> 2.0)
-      nokogiri
-      rsolr
-      sanitize
-      thor
     geoblacklight (3.3.1)
       blacklight (~> 7.0)
       coderay
@@ -610,7 +615,7 @@ DEPENDENCIES
   execjs (= 2.7.0)
   factory_bot_rails
   font-awesome-rails
-  geo_combine (~> 0.5)
+  geo_combine!
   geoblacklight (>= 3.3.1)
   geoblacklight_sidecar_images!
   geoserver-worker!
