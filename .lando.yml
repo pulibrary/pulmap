@@ -4,7 +4,7 @@ services:
     type: solr:custom
     overrides:
       image: pulibrary/pulmap-solr:8.4
-      command: /opt/solr/server/scripts/lando-start.sh
+      command: server/scripts/lando-start.sh
     portforward: true
     core: pulmap-core-test
     config:
@@ -13,7 +13,7 @@ services:
     type: solr:custom
     overrides:
       image: pulibrary/pulmap-solr:8.4
-      command: /opt/solr/server/scripts/lando-start.sh
+      command: server/scripts/lando-start.sh
     portforward: true
     core: pulmap-core-dev
     config:
