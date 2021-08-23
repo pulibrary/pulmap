@@ -1,6 +1,26 @@
 # frozen_string_literal: true
 require Rails.root.join('app', 'services', 'robots_generator_service').to_s
 
+namespace :servers do
+  desc "Start solr and postgres servers using lando."
+  task :start do
+    system('lando start')
+    system('rake servers:seed')
+    system('rake servers:seed RAILS_ENV=test')
+  end
+
+  task :seed do
+    Rake::Task['db:create'].invoke
+    Rake::Task['db:migrate'].invoke
+    Rake::Task['geoblacklight:solr:seed'].invoke
+  end
+
+  desc "Stop lando solr and postgres servers."
+  task :stop do
+    system('lando stop')
+  end
+end
+
 namespace :pulmap do
   namespace :solr do
     desc 'Updates solr config files from github'
@@ -12,26 +32,6 @@ namespace :pulmap do
         response = Faraday.get url_for_file("conf/#{file}")
         File.open(File.join(solr_dir, file), 'wb') { |f| f.write(response.body) }
       end
-    end
-  end
-
-  namespace :server do
-    desc "Start solr and postgres servers using lando."
-    task :start do
-      system('lando start')
-      system('rake pulmap:server:seed')
-      system('rake pulmap:server:seed RAILS_ENV=test')
-    end
-
-    task :seed do
-      Rake::Task['db:create'].invoke
-      Rake::Task['db:migrate'].invoke
-      Rake::Task['geoblacklight:solr:seed'].invoke
-    end
-
-    desc "Stop lando solr and postgres servers."
-    task :stop do
-      system('lando stop')
     end
   end
 
