@@ -19,13 +19,13 @@ yarn install
 ### Setup server
 
 1. Install Lando DMG from https://github.com/lando/lando/releases
-1. To start: `rake pulmap:server:start`
+1. To start: `rake servers:start`
 1. For test:
    - `bundle exec rspec`
 1. For development:
    - `rails s`
    - Access Pulmap at http://localhost:3000/
-1. To stop: `rake pulmap:server:stop` or `lando stop`
+1. To stop: `rake servers:stop` or `lando stop`
 
 ### Auto-update from external services
 
