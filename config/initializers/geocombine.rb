@@ -24,7 +24,7 @@ GeoCombine::GeoBlacklightHarvester.configure do
       }
     },
     HARVARD: {
-      host: 'https://earthworks.stanford.edu/',
+      host: 'https://hgl.harvard.edu/',
       params: {
         q: '*',
         f: {
