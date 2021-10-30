@@ -11,7 +11,7 @@ end
 GeoCombine::GeoBlacklightHarvester.configure do
   {
     commit_within: '300000',
-    crawl_delay: 1,
+    crawl_delay: 60,
     debug: true,
     STANFORD: {
       host: 'https://earthworks.stanford.edu/',
