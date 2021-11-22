@@ -39,6 +39,7 @@ group :development do
 end
 
 group :test do
+  gem 'axe-core-rspec'
   gem 'simplecov-shields-badge', require: false
 end
 

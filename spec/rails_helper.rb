@@ -7,6 +7,7 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'devise'
 require 'factory_bot'
+require "axe-rspec"
 
 ActiveRecord::Migration.maintain_test_schema!
 
