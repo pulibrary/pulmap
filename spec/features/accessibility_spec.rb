@@ -10,7 +10,6 @@ describe "accessibility", type: :feature, js: true do
       expect(page).to be_axe_clean
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
         .excluding(".tt-hint") # Issue is in typeahead.js library
-        .skipping("button-name") # See issue: #1001
         .skipping("link-name") # See issue: #1002
     end
   end
@@ -22,7 +21,6 @@ describe "accessibility", type: :feature, js: true do
       expect(page).to be_axe_clean
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
         .excluding(".tt-hint") # Issue is in typeahead.js library
-        .skipping("button-name") # See issue: #1001
         .skipping("link-name") # See issue: #1002
         .skipping("nested-interactive") # See issue: #1004
     end
