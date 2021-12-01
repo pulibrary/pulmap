@@ -2,6 +2,9 @@
 
 ENV["RACK_ENV"] = "test"
 require 'simplecov'
+require "capybara/rspec"
+require 'capybara-screenshot/rspec'
+require "selenium-webdriver"
 
 SimpleCov.start "rails" do
   add_filter '/spec'
