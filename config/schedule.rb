@@ -34,10 +34,12 @@ every "0 1 1 * *", roles: [:index] do
   rake "pulmap:geoblacklight_harvester:index[STANFORD]"
 end
 
+# Task is commented out until we update our schema to 2.0
+# In the meantime, we will pull Big10 documents from OpenGeoMetadata.
 # Second day of every month at 1 AM
-every "0 1 2 * *", roles: [:index] do
-  rake "pulmap:geoblacklight_harvester:index[BIG10]"
-end
+# every "0 1 2 * *", roles: [:index] do
+#   rake "pulmap:geoblacklight_harvester:index[BIG10]"
+# end
 
 # Third day of every month at 1 AM
 every "0 1 3 * *", roles: [:index] do
