@@ -9,8 +9,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   RESCUE_WITH_404 = [
-    Blacklight::Exceptions::RecordNotFound,
-    ActiveSupport::MessageVerifier::InvalidSignature
+    Blacklight::Exceptions::RecordNotFound
   ].freeze
 
   rescue_from(*RESCUE_WITH_404) do
