@@ -27,7 +27,8 @@
     %>
 
     <%= link_to(content_tag(:span, '', class: 'remove-icon') + accessible_remove_label,
-      options[:remove], class: 'btn btn-default btn-constraint remove'
+      options[:remove], class: 'btn btn-default btn-constraint remove', 
+      'aria-label': 'remove constraint'
     ) %>
   <%- end -%>
 </span>
