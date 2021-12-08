@@ -10,16 +10,4 @@ describe CatalogController, type: :controller do
       it { is_expected.to be false }
     end
   end
-
-  describe 'ActiveStorage error handling' do
-    before do
-      allow(controller).to receive(:index).and_raise ActiveSupport::MessageVerifier::InvalidSignature
-    end
-
-    it 'does not raise error' do
-      get :index
-      expect { response }.not_to raise_error
-      expect(response).to have_http_status(404)
-    end
-  end
 end
