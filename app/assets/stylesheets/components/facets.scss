@@ -311,3 +311,9 @@ ul.facet-values {
 #facet-partials {
   line-height: 56px;
 }
+
+// Makes the institution facet wide enough to view long values
+ul[aria-labelledby="institution"] {
+  width: 350px;
+}
+
