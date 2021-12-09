@@ -57,7 +57,7 @@ gem 'execjs', '2.7.0'
 gem 'font-awesome-rails'
 # Use forked version until this PR is resolved:
 # https://github.com/OpenGeoMetadata/GeoCombine/pull/103
-gem 'geo_combine', git: 'https://github.com/pulibrary/GeoCombine.git'
+gem 'geo_combine', git: 'https://github.com/pulibrary/GeoCombine.git', branch: 'harvesting-updates'
 gem 'geoblacklight', '>= 3.3.1'
 gem 'geoblacklight_sidecar_images', git: 'https://github.com/pulibrary/geoblacklight_sidecar_images.git', branch: 'gbl-3'
 gem 'geoserver-worker', git: 'https://github.com/pulibrary/geoserver-worker', branch: 'master'

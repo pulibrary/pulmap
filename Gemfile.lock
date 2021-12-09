@@ -1,6 +1,7 @@
 GIT
   remote: https://github.com/pulibrary/GeoCombine.git
-  revision: f3e42438a421fe4d2c99c567dbd251ed310ce89e
+  revision: 488bffda6218040046e2da4cd21c58860601d22c
+  branch: harvesting-updates
   specs:
     geo_combine (0.5.1)
       activesupport
@@ -373,8 +374,6 @@ GEM
     nokogiri (1.12.5)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
-    nokogumbo (2.0.5)
-      nokogiri (~> 1.8, >= 1.8.4)
     omniauth (1.9.1)
       hashie (>= 3.4.6)
       rack (>= 1.6.2, < 3)
@@ -502,10 +501,9 @@ GEM
       ffi (~> 1.9)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.0)
-    sanitize (5.2.3)
+    sanitize (6.0.0)
       crass (~> 1.0.2)
-      nokogiri (>= 1.8.0)
-      nokogumbo (~> 2.0)
+      nokogiri (>= 1.12.0)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
