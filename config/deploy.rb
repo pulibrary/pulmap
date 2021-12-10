@@ -80,3 +80,19 @@ task :robots_txt do
   end
 end
 after 'deploy:published', 'robots_txt'
+
+namespace :solr do
+  desc "Opens Solr Console"
+  task :console do
+    primary_app = primary(:app)
+    solr_host = fetch(:stage, "production").to_s == "production" ? "lib-solr-prod4" : "lib-solr-staging4"
+    port = rand(9000..9999)
+    puts "Opening Solr Console on port #{port}"
+    Net::SSH.start(solr_host, primary_app.user) do |session|
+      session.forward.local(port, "localhost", 8983)
+      puts "Press Ctrl+C to end Console connection"
+      `open http://localhost:#{port}`
+      session.loop(0.1) { true }
+    end
+  end
+end

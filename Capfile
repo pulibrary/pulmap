@@ -18,6 +18,9 @@ require 'capistrano/rails/migrations'
 # deploy/restart task for passenger
 require 'capistrano/passenger'
 
+# include console
+require "capistrano/rails/console"
+
 # Run whenever crontab update tasks
 # https://github.com/javan/whenever/blob/master/lib/whenever/capistrano/v3/tasks/whenever.rake#L39-L40
 require "whenever/capistrano"
