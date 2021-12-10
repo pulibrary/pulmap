@@ -28,8 +28,8 @@ RSpec.describe GeoblacklightEventProcessor do
   context 'when given an unknown event' do
     let(:type) { 'UNKNOWNEVENT' }
 
-    it 'returns false' do
-      expect(processor.process).to eq false
+    it 'returns true (forcing ack)' do
+      expect(processor.process).to eq true
     end
   end
 
