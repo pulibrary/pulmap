@@ -139,6 +139,9 @@ GEM
     capistrano-rails (1.6.1)
       capistrano (~> 3.1)
       capistrano-bundler (>= 1.1, < 3)
+    capistrano-rails-console (2.3.0)
+      capistrano (>= 3.5.0, < 4.0.0)
+      sshkit-interactive (~> 0.3.0)
     capybara (3.33.0)
       addressable
       mini_mime (>= 0.1.3)
@@ -571,6 +574,8 @@ GEM
     sshkit (1.21.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
+    sshkit-interactive (0.3.0)
+      sshkit (~> 1.12)
     statesman (3.5.0)
     thor (1.1.0)
     thread_safe (0.3.6)
@@ -633,6 +638,7 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-passenger
   capistrano-rails
+  capistrano-rails-console
   capybara
   capybara-screenshot
   coffee-rails

@@ -51,6 +51,7 @@ gem 'capistrano'
 gem 'capistrano-bundler'
 gem 'capistrano-passenger'
 gem 'capistrano-rails'
+gem "capistrano-rails-console"
 gem 'devise', '~> 4.7.1'
 gem 'devise-guests'
 gem 'execjs', '2.7.0'
