@@ -40,10 +40,8 @@ Layout/LineLength:
     - 'spec/controllers/thumbnails_controller_spec.rb'
     - 'spec/requests/geoserver_requests_spec.rb'
 
-# TODO: Reduce method complexity in omniauth callback controller.
 Metrics/AbcSize:
   Exclude:
-    - 'app/controllers/users/omniauth_callbacks_controller.rb'
     - 'app/helpers/advanced_helper.rb'
     - 'app/helpers/pulmap_geoblacklight_helper.rb'
     - 'lib/tasks/ci.rake'
