@@ -4,11 +4,27 @@
 
 -%>
 <div class="card show-sanborn-legend">
-  <div class="collapse-toggle card-header collapsed" data-toggle="collapse" data-target="#sanborn-legend-card-body" aria-expanded="false">
+  <div class="collapse-toggle card-header" data-toggle="collapse" data-target="#sanborn-legend-card-body" aria-expanded="false">
     <h2 class="card-title text-center">Legend</h2>
   </div>
 
-  <div id="sanborn-legend-card-body" class="card-body collapse">
-    <%= image_tag("sanborn_legend.jpg", id: 'sanborn-legend', class: 'sanborn-legend', size: "571x934", alt: "Legend for Sanborn Maps") %>
+  <div id="sanborn-legend-card-body" class="card-body">
+    <button type="button" style="background:transparent; border:none; color:transparent;" data-toggle="modal" data-target="#sanbornModal">
+        <%= image_tag("sanborn_legend.jpg", id: 'sanborn-legend', class: 'sanborn-legend', size: "571x934", alt: "Legend for Sanborn Maps") %>
+    </button>
+  </div>
+</div>
+<!-- Sanborn Modal -->
+<div class="modal fade show" id="sanbornModal" tabindex="-1" aria-labelledby="sanbornModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content"  style="width: 120%;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Sanborn Legend</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">×</button>
+      </div>
+      <div class="modal-body">
+        <%= image_tag("sanborn_legend.jpg", id: 'sanborn-legend', class: 'sanborn-legend', size: "571x934", alt: "Legend for Sanborn Maps") %>
+      </div>
+    </div>
   </div>
 </div>
