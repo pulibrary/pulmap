@@ -166,7 +166,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.8)
-    config (3.1.0)
+    config (3.1.1)
       deep_merge (~> 1.2, >= 1.2.1)
       dry-validation (~> 1.0, >= 1.0.0)
     connection_pool (2.2.5)
@@ -176,7 +176,7 @@ GEM
       msgpack
     declarative (0.0.20)
     declarative-option (0.1.0)
-    deep_merge (1.2.1)
+    deep_merge (1.2.2)
     deprecation (1.1.0)
       activesupport
     descendants_tracker (0.0.4)
@@ -192,23 +192,22 @@ GEM
     diff-lcs (1.4.4)
     digest-crc (0.6.0)
     docile (1.3.2)
-    dry-configurable (0.12.1)
+    dry-configurable (0.14.0)
       concurrent-ruby (~> 1.0)
-      dry-core (~> 0.5, >= 0.5.0)
-    dry-container (0.7.2)
+      dry-core (~> 0.6)
+    dry-container (0.9.0)
       concurrent-ruby (~> 1.0)
-      dry-configurable (~> 0.1, >= 0.1.3)
-    dry-core (0.5.0)
+      dry-configurable (~> 0.13, >= 0.13.0)
+    dry-core (0.7.1)
       concurrent-ruby (~> 1.0)
-    dry-equalizer (0.3.0)
-    dry-inflector (0.2.0)
-    dry-initializer (3.0.4)
+    dry-inflector (0.2.1)
+    dry-initializer (3.1.1)
     dry-logic (1.2.0)
       concurrent-ruby (~> 1.0)
       dry-core (~> 0.5, >= 0.5)
-    dry-schema (1.6.2)
+    dry-schema (1.8.0)
       concurrent-ruby (~> 1.0)
-      dry-configurable (~> 0.8, >= 0.8.3)
+      dry-configurable (~> 0.13, >= 0.13.0)
       dry-core (~> 0.5, >= 0.5)
       dry-initializer (~> 3.0)
       dry-logic (~> 1.0)
@@ -219,13 +218,12 @@ GEM
       dry-core (~> 0.5, >= 0.5)
       dry-inflector (~> 0.1, >= 0.1.2)
       dry-logic (~> 1.0, >= 1.0.2)
-    dry-validation (1.6.0)
+    dry-validation (1.7.0)
       concurrent-ruby (~> 1.0)
       dry-container (~> 0.7, >= 0.7.1)
-      dry-core (~> 0.4)
-      dry-equalizer (~> 0.2)
+      dry-core (~> 0.5, >= 0.5)
       dry-initializer (~> 3.0)
-      dry-schema (~> 1.5, >= 1.5.2)
+      dry-schema (~> 1.8, >= 1.8.0)
     dumb_delegator (1.0.0)
     erubi (1.10.0)
     execjs (2.7.0)
@@ -256,8 +254,8 @@ GEM
     ffi (1.13.1)
     font-awesome-rails (4.7.0.5)
       railties (>= 3.2, < 6.1)
-    geoblacklight (3.3.1)
-      blacklight (~> 7.0)
+    geoblacklight (3.5.0)
+      blacklight (~> 7.8)
       coderay
       config
       deprecation
@@ -354,9 +352,9 @@ GEM
     marcel (1.0.1)
     memoist (0.16.2)
     method_source (1.0.0)
-    mime-types (3.3.1)
+    mime-types (3.4.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2021.0225)
+    mime-types-data (3.2022.0105)
     mimemagic (0.4.3)
       nokogiri (~> 1)
       rake
@@ -458,7 +456,7 @@ GEM
       railties (>= 5.0)
     retriable (3.1.2)
     rexml (3.2.5)
-    rgeo (2.3.0)
+    rgeo (2.4.0)
     rgeo-geojson (2.1.1)
       rgeo (>= 1.0.0)
     rsolr (2.3.0)
@@ -650,7 +648,7 @@ DEPENDENCIES
   factory_bot_rails
   font-awesome-rails
   geo_combine!
-  geoblacklight (>= 3.3.1)
+  geoblacklight (>= 3.5.0)
   geoblacklight_sidecar_images!
   geoserver-worker!
   google-cloud-storage (~> 1.11)
@@ -690,4 +688,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   2.2.20
+   2.3.5
