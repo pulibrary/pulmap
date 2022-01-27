@@ -9,8 +9,8 @@
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
-server 'maps1', user: 'deploy', roles: %w[web app]
-server 'maps2', user: 'deploy', roles: %w[web app db index]
+server 'maps1', user: 'deploy', roles: %w[web app worker]
+server 'maps2', user: 'deploy', roles: %w[web app db index worker]
 
 # role-based syntax
 # ==================
