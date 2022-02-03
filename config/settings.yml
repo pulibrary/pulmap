@@ -75,6 +75,9 @@ USE_GEOM_FOR_RELATIONS_ICON: true
 WEBSERVICES_SHOWN:
   - 'wms'
   - 'wfs'
+  - 'wmts'
+  - 'xyz'
+  - 'tms'
   - 'iiif'
   - 'feature_layer'
   - 'tiled_map_layer'
