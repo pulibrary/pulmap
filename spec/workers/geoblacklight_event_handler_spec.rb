@@ -6,8 +6,6 @@ RSpec.describe GeoblacklightEventHandler do
   let(:handler) { described_class.new }
 
   describe '#work' do
-    let(:processor) { instance_double(GeoblacklightEventProcessor, process: process) }
-    let(:process) {}
     let(:msg) do
       {
         'event' => 'CREATED'
@@ -20,26 +18,11 @@ RSpec.describe GeoblacklightEventHandler do
     end
 
     context 'when processing is successful' do
-      let(:process) { true }
-
       it 'sends the message to the GeoblacklightEventProcessor as a hash' do
-        allow(GeoblacklightEventProcessor).to receive(:new).and_return(processor)
+        allow(IndexJob).to receive(:perform_later)
         handler.work(msg.to_json)
-        expect(processor).to have_received(:process)
-        expect(GeoblacklightEventProcessor).to have_received(:new).with(msg)
+        expect(IndexJob).to have_received(:perform_later).with(msg)
         expect(handler).to have_received(:ack!)
-      end
-    end
-
-    context 'when processing is fails' do
-      let(:process) { false }
-
-      it 'rejects the message' do
-        allow(GeoblacklightEventProcessor).to receive(:new).and_return(processor)
-        handler.work(msg.to_json)
-        expect(processor).to have_received(:process)
-        expect(GeoblacklightEventProcessor).to have_received(:new).with(msg)
-        expect(handler).to have_received(:reject!)
       end
     end
   end

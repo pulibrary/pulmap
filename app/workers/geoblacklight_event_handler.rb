@@ -6,11 +6,7 @@ class GeoblacklightEventHandler
 
   def work(msg)
     msg = JSON.parse(msg)
-    result = GeoblacklightEventProcessor.new(msg).process
-    if result
-      ack!
-    else
-      reject!
-    end
+    IndexJob.perform_later(msg)
+    ack!
   end
 end
