@@ -19,7 +19,7 @@ describe 'search fields', type: :request do
     it 'matches search against publisher index, terms tokenized as text' do
       get '/catalog.json?search_field=publisher&q=British+Survey'
       r = JSON.parse(response.body)
-      expect(r['data'].length).to eq 1
+      expect(r['data'].length).to eq 4
     end
     it 'includes creator index' do
       get '/catalog.json?search_field=publisher&q=Circuit+Rider+Productions'
