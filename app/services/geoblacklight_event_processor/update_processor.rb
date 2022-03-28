@@ -4,11 +4,13 @@ class GeoblacklightEventProcessor
   class UpdateProcessor < Processor
     def process
       doc.delete("_aj_symbol_keys")
+      data = [doc].to_json
+      logger.info data
       index.update params: { overwrite: true },
-                   data: [doc].to_json,
+                   data: data,
                    headers: { 'Content-Type' => 'application/json' }
-      index.commit unless bulk?
-      true
+      result = index.commit unless bulk?
+      logger.info result
     end
   end
 end
