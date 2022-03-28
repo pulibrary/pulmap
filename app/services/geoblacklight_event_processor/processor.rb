@@ -25,6 +25,10 @@ class GeoblacklightEventProcessor
       event['bulk'] == 'true'
     end
 
+    def logger
+      @logger ||= Logger.new(STDOUT)
+    end
+
     def index
       Blacklight.default_index.connection
     end
