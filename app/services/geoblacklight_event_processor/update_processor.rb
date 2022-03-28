@@ -3,9 +3,9 @@
 class GeoblacklightEventProcessor
   class UpdateProcessor < Processor
     def process
+      raise "Update Processor"
       doc.delete("_aj_symbol_keys")
-      data = [doc].to_json
-      logger.info data
+      data = doc.to_json
       index.update params: { overwrite: true },
                    data: data,
                    headers: { 'Content-Type' => 'application/json' }

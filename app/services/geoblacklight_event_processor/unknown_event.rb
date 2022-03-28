@@ -8,6 +8,7 @@ class GeoblacklightEventProcessor
     end
 
     def process
+      raise "Unknown Event Processor"
       Rails.logger.info("Unable to process event type #{event_type}")
       true
     end
