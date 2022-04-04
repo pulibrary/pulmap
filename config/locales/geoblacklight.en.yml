@@ -80,7 +80,7 @@ en:
     show:
       attribute: 'Attribute'
       value: 'Value'
-      click_map: 'Click on map to inspect values'
+      click_map: 'Click on map to preview values (download file to work with all data)'
     help_text:
       viewer_protocol:
         dynamic_map_layer:
