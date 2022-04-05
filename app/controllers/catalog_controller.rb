@@ -153,6 +153,7 @@ class CatalogController < ApplicationController
     config.add_show_field Settings.FIELDS.CALL_NUMBER, label: 'Call number', itemprop: 'call_number'
     config.add_show_field Settings.FIELDS.TEMPORAL, label: 'Year', itemprop: 'temporal'
     config.add_show_field Settings.FIELDS.PROVENANCE, label: 'Held by', link_to_search: true, helper_method: :princeton_provenance
+    config.add_show_field 'rights_statement_s', label: 'Rights Statement', itemprop: 'rights', helper_method: :html_safe
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields

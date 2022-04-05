@@ -16,6 +16,10 @@ describe 'Metadata display on show page' do
       expect(page).to have_css '.blacklight-call_number_s', text: 'Call number:'
       expect(page).to have_css '.blacklight-dct_provenance_s', text: 'Held by:'
       expect(page).not_to have_content 'Thumbnail:'
+
+      # Rights statement
+      expect(page).to have_css '.blacklight-rights_statement_s', text: 'Rights Statement:'
+      expect(page).to have_link 'No Known Copyright', href: 'http://rightsstatements.org/vocab/NKC/1.0/'
     end
   end
 

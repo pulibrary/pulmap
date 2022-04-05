@@ -21,5 +21,6 @@
   "dct_references_s": "{\"http://schema.org/url\":\"https://catalog.princeton.edu/catalog/6865840\",\"http://schema.org/thumbnailUrl\":\"https://figgy.princeton.edu/downloads/f0705bc6-2bda-4f61-8459-7651a93efdce/file/6e0974f3-4bb8-40cb-81a7-baf82975617f\"}",
   "layer_geom_type_s": "Image",
   "dc_format_s": "TIFF",
-  "call_number_s": "G5784.D8.1963.I7"
+  "call_number_s": "G5784.D8.1963.I7",
+  "rights_statement_s": "<a href=\"http://rightsstatements.org/vocab/NKC/1.0/\">No Known Copyright</a><br><p>Princeton University Library reasonably believes that the Item is not restricted by copyright or related rights, but a conclusive determination could not be made.\n<br/>You are free to use this Item in any way that is permitted by the copyright and related rights legislation that applies to your use.</p><p>Princeton University Library claims no copyright or license governing this digital resource. It is provided for free, on a non-commercial, open-access basis, for fair-use academic and research purposes only. Anyone who claims copyright over any part of these resources and feels that they should not be presented in this manner is invited to contact Princeton University Library, who will in turn consider such concerns and make every effort to respond appropriately. We request that users reproducing this resource cite it according to the guidelines described at <a href=\"https://library.princeton.edu/special-collections/policies/forms-citation\">https://library.princeton.edu/special-collections/policies/forms-citation</a>.\n</p>"
 }

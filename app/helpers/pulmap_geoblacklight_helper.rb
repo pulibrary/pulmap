@@ -57,6 +57,10 @@ module PulmapGeoblacklightHelper
     'Princeton: Historic Map Division, Special Collections, Firestone Library'
   end
 
+  def html_safe(args)
+    args[:document][args[:field]].html_safe
+  end
+
   private
 
   def leaflet_viewer
