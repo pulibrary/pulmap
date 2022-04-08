@@ -24,7 +24,7 @@ FIELDS:
   :CREATOR: 'dc_creator_sm'
   :DESCRIPTION: 'dc_description_s'
   :FILE_FORMAT: 'dc_format_s'
-  :GEOM_TYPE: 'layer_geom_type_s'
+  :GEOM_TYPE: 'layer_geom_type_sm'
   :GEOMETRY: 'solr_geom'
   :IDENTIFIER: 'dc_identifier_s'
   :LANGUAGE: 'dc_language_s'
