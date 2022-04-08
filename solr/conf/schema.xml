@@ -166,7 +166,9 @@
   <copyField source="all_subject_sm"     dest="all_subject_tmi"      maxChars="10000"/>
   <copyField source="dc_title_s"         dest="dc_title_ti"         maxChars="1000"/>
   <copyField source="dct_isPartOf_sm"    dest="dct_isPartOf_tmi"    maxChars="1000"/>
-  <copyField source="layer_geom_type_s"  dest="layer_geom_type_ti"  maxChars="100"/>
+  <copyField source="layer_geom_type_s"  dest="layer_geom_type_tmi"  maxChars="100"/>
+  <copyField source="layer_geom_type_s"  dest="layer_geom_type_sm"  maxChars="100"/>
+  <copyField source="layer_geom_type_sm"  dest="layer_geom_type_tmi"  maxChars="100"/>
   <copyField source="layer_slug_s"       dest="layer_slug_ti"       maxChars="100"/>
 
   <!-- core text search -->
