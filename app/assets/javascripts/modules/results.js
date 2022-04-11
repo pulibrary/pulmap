@@ -74,7 +74,7 @@ Blacklight.onLoad(function() {
       var _this = $(this),
           currentBbox = _this.data().geom,
           layerId = _this.data().layerId;
-          counter = _this.data().counter + 1,
+          counter = _this.data().counter,
           redMarker = L.ExtraMarkers.icon({
             innerHTML: '<p style="color: white; margin-top: 8px;">' + counter + '</p>',
             markerColor: 'blue',
