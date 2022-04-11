@@ -1,6 +1,6 @@
 <% # header bar for doc items in index view -%>
-<%= content_tag :div, class: 'documentHeader row', data: { layer_id: document.id, geom: document.geometry.geojson, counter: document_counter} do %>
 <% counter = document_counter_with_offset(document_counter) %>
+<%= content_tag :div, class: 'documentHeader row', data: { layer_id: document.id, geom: document.geometry.geojson, counter: counter} do %>
 <h3 class="index_title col-12 text-span">
   <span class="document-counter">
     <%= t('blacklight.search.documents.counter', :counter => counter) if counter %>
