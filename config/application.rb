@@ -15,7 +15,6 @@ module Pulmap
 
     config.cache_store = :file_store, Rails.root.join("tmp", "thumbnails")
     config.robots = OpenStruct.new(config_for(:robots))
-    config.active_record.sqlite3.represent_boolean_as_integer = true
 
     # Configure user ids that are authorized for admin tasks
     config.authorization = []
