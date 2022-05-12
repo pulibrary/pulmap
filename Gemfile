@@ -13,7 +13,7 @@ gem 'loofah', '>= 2.2.3'
 gem 'modernizr-rails'
 gem 'pg', '~> 1.0'
 gem 'puma', '~> 5.6'
-gem 'rack', '>= 2.0.6'
+gem 'rack', '>= 2.2.3'
 gem 'rails', '~> 5.2'
 gem 'sass-rails', '~> 5.0'
 gem 'sqlite3'
@@ -29,14 +29,14 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'rails-controller-testing'
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails'
   gem 'simplecov'
   gem 'spring'
   gem 'webdrivers'
 end
 
 group :development do
-  gem 'web-console', '~> 3.7.0'
+  gem 'web-console'
 end
 
 group :test do
@@ -44,6 +44,7 @@ group :test do
   gem 'simplecov-shields-badge', require: false
 end
 
+gem 'blacklight', '7.24'
 gem 'blacklight_advanced_search', '~> 7.0.0'
 gem 'blacklight_range_limit'
 gem 'bootstrap'
@@ -58,9 +59,9 @@ gem 'execjs', '2.7.0'
 gem 'font-awesome-rails'
 # Use forked version until this PR is resolved:
 # https://github.com/OpenGeoMetadata/GeoCombine/pull/103
-gem 'geo_combine', git: 'https://github.com/pulibrary/GeoCombine.git'
+gem 'geo_combine'
 gem 'geoblacklight', '>= 3.5.0'
-gem 'geoblacklight_sidecar_images', git: 'https://github.com/pulibrary/geoblacklight_sidecar_images.git', branch: 'gbl-3'
+gem 'geoblacklight_sidecar_images'
 gem 'google-cloud-storage', '~> 1.11'
 gem 'honeybadger'
 gem 'mail_form'
