@@ -49,8 +49,8 @@ GEM
     amq-protocol (2.3.2)
     arel (9.0.0)
     ast (2.4.1)
-    autoprefixer-rails (9.8.6.3)
-      execjs
+    autoprefixer-rails (10.4.7.0)
+      execjs (~> 2)
     axe-core-api (4.3.2)
       dumb_delegator
       virtus
@@ -83,7 +83,7 @@ GEM
       parslet
     blacklight_range_limit (8.1.0)
       blacklight (~> 7.0)
-    bootstrap (4.5.2)
+    bootstrap (4.6.1)
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
@@ -613,7 +613,7 @@ DEPENDENCIES
   blacklight (= 7.24)
   blacklight_advanced_search (~> 7.0.0)
   blacklight_range_limit
-  bootstrap
+  bootstrap (~> 4.0)
   byebug
   capistrano
   capistrano-bundler

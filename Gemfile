@@ -47,7 +47,7 @@ end
 gem 'blacklight', '7.24'
 gem 'blacklight_advanced_search', '~> 7.0.0'
 gem 'blacklight_range_limit'
-gem 'bootstrap'
+gem 'bootstrap', '~> 4.0'
 gem 'capistrano'
 gem 'capistrano-bundler'
 gem 'capistrano-passenger'
