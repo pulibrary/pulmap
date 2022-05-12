@@ -23,15 +23,11 @@ module AdvancedHelper
   end
 
   def search_fields_for_advanced_search
-    @search_fields_for_advanced_search ||= begin
-      blacklight_config.search_fields.select { |_k, v| v.include_in_advanced_search || v.include_in_advanced_search.nil? }
-    end
+    @search_fields_for_advanced_search ||= blacklight_config.search_fields.select { |_k, v| v.include_in_advanced_search || v.include_in_advanced_search.nil? }
   end
 
   def facet_field_names_for_advanced_search
-    @facet_field_names_for_advanced_search ||= begin
-      blacklight_config.facet_fields.select { |_k, v| v.include_in_advanced_search || v.include_in_advanced_search.nil? }.values.map(&:field)
-    end
+    @facet_field_names_for_advanced_search ||= blacklight_config.facet_fields.select { |_k, v| v.include_in_advanced_search || v.include_in_advanced_search.nil? }.values.map(&:field)
   end
 
   def advanced_key_value
