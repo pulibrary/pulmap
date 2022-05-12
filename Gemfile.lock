@@ -648,7 +648,6 @@ DEPENDENCIES
   geoblacklight_sidecar_images
   google-cloud-storage (~> 1.11)
   honeybadger
-  jbuilder
   jquery-rails
   lograge
   logstash-event
