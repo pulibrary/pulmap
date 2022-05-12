@@ -3,7 +3,6 @@
 source 'https://rubygems.org'
 
 gem 'autoprefixer-rails'
-gem 'coffee-rails'
 gem 'ddtrace'
 gem 'jbuilder'
 gem 'jquery-rails'
@@ -53,7 +52,6 @@ gem 'capistrano-rails'
 gem "capistrano-rails-console"
 gem 'devise', '~> 4.7.1'
 gem 'devise-guests'
-gem 'execjs', '2.7.0'
 gem 'font-awesome-rails'
 gem 'geoblacklight', '>= 3.6.0'
 gem 'geoblacklight_sidecar_images'
