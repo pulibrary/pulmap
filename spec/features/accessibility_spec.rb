@@ -10,6 +10,7 @@ describe "accessibility", type: :feature, js: true do
       expect(page).to be_axe_clean
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
         .excluding(".tt-hint") # Issue is in typeahead.js library
+        .excluding(".grid-item") # See issue: #1085
         .skipping("link-name") # See issue: #1012
     end
   end
