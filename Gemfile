@@ -47,7 +47,7 @@ gem 'capistrano-bundler'
 gem 'capistrano-passenger'
 gem 'capistrano-rails'
 gem "capistrano-rails-console"
-gem 'devise', '~> 4.7.1'
+gem 'devise', '~> 4.8'
 gem 'devise-guests'
 gem 'font-awesome-rails'
 gem 'geoblacklight', '>= 3.6.0'
