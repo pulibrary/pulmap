@@ -8,6 +8,7 @@ Rails:
 AllCops:
   DisplayCopNames: true
   TargetRubyVersion: 2.6
+  NewCops: enable
 
   Exclude:
   - 'bin/*'
