@@ -40,7 +40,6 @@ end
 
 group :test do
   gem 'axe-core-rspec'
-  gem 'simplecov-shields-badge', require: false
 end
 
 gem 'blacklight', '7.24'
@@ -56,9 +55,9 @@ gem 'devise', '~> 4.7.1'
 gem 'devise-guests'
 gem 'execjs', '2.7.0'
 gem 'font-awesome-rails'
-gem 'geo_combine'
 gem 'geoblacklight', '>= 3.6.0'
 gem 'geoblacklight_sidecar_images'
+gem 'geo_combine'
 gem 'google-cloud-storage', '~> 1.11'
 gem 'honeybadger'
 gem 'mail_form'
