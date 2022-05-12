@@ -631,7 +631,7 @@ DEPENDENCIES
   factory_bot_rails
   font-awesome-rails
   geo_combine
-  geoblacklight (>= 3.5.0)
+  geoblacklight (>= 3.6.0)
   geoblacklight_sidecar_images
   google-cloud-storage (~> 1.11)
   honeybadger

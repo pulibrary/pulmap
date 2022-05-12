@@ -57,10 +57,8 @@ gem 'devise', '~> 4.7.1'
 gem 'devise-guests'
 gem 'execjs', '2.7.0'
 gem 'font-awesome-rails'
-# Use forked version until this PR is resolved:
-# https://github.com/OpenGeoMetadata/GeoCombine/pull/103
 gem 'geo_combine'
-gem 'geoblacklight', '>= 3.5.0'
+gem 'geoblacklight', '>= 3.6.0'
 gem 'geoblacklight_sidecar_images'
 gem 'google-cloud-storage', '~> 1.11'
 gem 'honeybadger'
