@@ -560,7 +560,7 @@ GEM
       rake (~> 12.3)
       serverengine (~> 2.1.0)
       thor
-    spring (2.1.1)
+    spring (4.0.0)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
