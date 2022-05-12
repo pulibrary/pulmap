@@ -13,7 +13,6 @@ gem 'pg', '~> 1.0'
 gem 'puma', '~> 5.6'
 gem 'rack', '>= 2.2.3'
 gem 'rails', '~> 6.1'
-gem 'sass-rails', '~> 5.0'
 gem 'turbolinks'
 gem 'uglifier'
 
