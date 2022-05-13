@@ -2,9 +2,9 @@
 
 namespace :gblsci do
   namespace :images do
-    desc 'Harvest all new thumbnails'
+    desc "Harvest all new thumbnails"
     task harvest_new: :environment do
-      query = '*:*'
+      query = "*:*"
       index = Geoblacklight::SolrDocument.index
       results = index.send_and_receive(index.blacklight_config.solr_path,
                                        q: query,
@@ -19,9 +19,9 @@ namespace :gblsci do
       end
     end
 
-    desc 'Harvest all images without built-in pause between records'
+    desc "Harvest all images without built-in pause between records"
     task harvest_all_quick: :environment do
-      query = '*:*'
+      query = "*:*"
       index = Geoblacklight::SolrDocument.index
       results = index.send_and_receive(index.blacklight_config.solr_path,
                                        q: query,
@@ -34,7 +34,7 @@ namespace :gblsci do
       end
     end
 
-    desc 'Harvest images by solr query'
+    desc "Harvest images by solr query"
     task :harvest_by_query, [:query] => [:environment] do |_t, args|
       raise 'Please supply required arguments [query]. harvest_by_query["layer_slug_s:*"]' unless args[:query]
       query = args[:query]

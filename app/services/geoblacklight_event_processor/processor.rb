@@ -10,19 +10,19 @@ class GeoblacklightEventProcessor
     private
 
     def event_type
-      event['event']
+      event["event"]
     end
 
     def id
-      event['id']
+      event["id"]
     end
 
     def doc
-      event['doc']
+      event["doc"]
     end
 
     def bulk?
-      event['bulk'] == 'true'
+      event["bulk"] == "true"
     end
 
     def index

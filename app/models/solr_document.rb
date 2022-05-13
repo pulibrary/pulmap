@@ -8,7 +8,7 @@ class SolrDocument
   include WmsRewriteConcern
 
   # self.unique_key = 'id'
-  self.unique_key = 'layer_slug_s'
+  self.unique_key = "layer_slug_s"
 
   # Email uses the semantic field mappings below to generate the body of an email.
   SolrDocument.use_extension(Blacklight::Document::Email)
@@ -32,7 +32,7 @@ class SolrDocument
 
   # Tests if record has a thumbnail reference for display on show page.
   def thumbnail_reference?
-    return true if fetch(references.reference_field, {})['http://schema.org/thumbnailUrl']
+    return true if fetch(references.reference_field, {})["http://schema.org/thumbnailUrl"]
     false
   end
 

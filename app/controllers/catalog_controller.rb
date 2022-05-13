@@ -6,7 +6,7 @@ class CatalogController < ApplicationController
   include Blacklight::Catalog
 
   rescue_from BlacklightRangeLimit::InvalidRange do
-    redirect_to '/', flash: { error: 'The start year must be before the end year.' }
+    redirect_to "/", flash: { error: "The start year must be before the end year." }
   end
 
   configure_blacklight do |config|
@@ -17,29 +17,29 @@ class CatalogController < ApplicationController
     # default advanced config values
     config.advanced_search ||= Blacklight::OpenStructWithHashAccess.new
     # config.advanced_search[:qt] ||= 'advanced'
-    config.advanced_search[:url_key] ||= 'advanced'
-    config.advanced_search[:query_parser] ||= 'edismax'
+    config.advanced_search[:url_key] ||= "advanced"
+    config.advanced_search[:query_parser] ||= "edismax"
     config.advanced_search[:form_solr_parameters] ||= {}
-    config.advanced_search[:form_solr_parameters]['facet.field'] ||= %W[#{Settings.FIELDS.GEOM_TYPE}
+    config.advanced_search[:form_solr_parameters]["facet.field"] ||= %W[#{Settings.FIELDS.GEOM_TYPE}
                                                                         #{Settings.FIELDS.PROVENANCE}
                                                                         #{Settings.FIELDS.FILE_FORMAT}]
-    config.advanced_search[:form_solr_parameters]['facet.query'] ||= ''
-    config.advanced_search[:form_solr_parameters]['facet.limit'] ||= -1
-    config.advanced_search[:form_solr_parameters]['facet.sort'] ||= 'index'
+    config.advanced_search[:form_solr_parameters]["facet.query"] ||= ""
+    config.advanced_search[:form_solr_parameters]["facet.limit"] ||= -1
+    config.advanced_search[:form_solr_parameters]["facet.sort"] ||= "index"
 
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
     config.default_solr_params = {
       :start => 0,
       :rows => 10,
-      'q.alt' => '*:*'
+      "q.alt" => "*:*"
     }
 
     ## Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or
     ## parameters included in the Blacklight-jetty document requestHandler.
     #
     config.default_document_solr_params = {
-      qt: 'document',
-      q: '{!raw f=layer_slug_s v=$id}'
+      qt: "document",
+      q: "{!raw f=layer_slug_s v=$id}"
     }
 
     config.navbar.partials.delete(:bookmark)
@@ -94,17 +94,17 @@ class CatalogController < ApplicationController
     #    :years_10 => { :label => 'within 10 Years', :fq => "pub_date:[#{Time.now.year - 10 } TO *]" },
     #    :years_25 => { :label => 'within 25 Years', :fq => "pub_date:[#{Time.now.year - 25 } TO *]" }
     # }
-    config.add_facet_field Settings.FIELDS.YEAR, label: 'Year', limit: 10, all: 'Any year', range: {
+    config.add_facet_field Settings.FIELDS.YEAR, label: "Year", limit: 10, all: "Any year", range: {
       assumed_boundaries: [1100, 2016]
       # :num_segments => 6,
       # :segments => true
     }
-    config.add_facet_field 'access', label: 'Access', query: {
+    config.add_facet_field "access", label: "Access", query: {
       public: {
-        label: 'Public', fq: "#{Settings.FIELDS.RIGHTS}:Public"
+        label: "Public", fq: "#{Settings.FIELDS.RIGHTS}:Public"
       },
       restricted: {
-        label: 'Restricted', fq: "#{Settings.FIELDS.RIGHTS}:Restricted"
+        label: "Restricted", fq: "#{Settings.FIELDS.RIGHTS}:Restricted"
       }
       # available: {
       #   label: 'Available', fq: "(layer_availability_score_f:[#{Settings.GEOMONITOR_TOLERANCE} TO 1])"
@@ -112,11 +112,11 @@ class CatalogController < ApplicationController
       # unavailable: {
       #   label: 'Unavailable', fq: "layer_availability_score_f:[0 TO #{Settings.GEOMONITOR_TOLERANCE}]"
       # }
-    }, partial: 'icon_facet', all: 'All types', collapse: false
-    config.add_facet_field Settings.FIELDS.PROVENANCE, label: 'Institution', limit: 8, partial: 'icon_facet', single: true, all: 'All institutions'
-    config.add_facet_field Settings.FIELDS.GEOM_TYPE, label: 'Format', limit: 8, partial: 'icon_facet', collapse: false, single: true, all: 'All data types'
-    config.add_facet_field Settings.FIELDS.SUBJECT, label: 'Subject', limit: 8, show: true, all: 'All subjects'
-    config.add_facet_field Settings.FIELDS.SOURCE, label: 'Source', show: false
+    }, partial: "icon_facet", all: "All types", collapse: false
+    config.add_facet_field Settings.FIELDS.PROVENANCE, label: "Institution", limit: 8, partial: "icon_facet", single: true, all: "All institutions"
+    config.add_facet_field Settings.FIELDS.GEOM_TYPE, label: "Format", limit: 8, partial: "icon_facet", collapse: false, single: true, all: "All data types"
+    config.add_facet_field Settings.FIELDS.SUBJECT, label: "Subject", limit: 8, show: true, all: "All subjects"
+    config.add_facet_field Settings.FIELDS.SOURCE, label: "Source", show: false
     # config.add_facet_field Settings.FIELDS.CREATOR, label: 'Author', limit: 8
     # config.add_facet_field Settings.FIELDS.PUBLISHER, label: 'Publisher', limit: 8, single: true
     # config.add_facet_field Settings.FIELDS.SPATIAL_COVERAGE, label: 'Place', limit: 8
@@ -132,7 +132,7 @@ class CatalogController < ApplicationController
     config.add_index_field Settings.FIELDS.TITLE
     config.add_index_field Settings.FIELDS.FILE_FORMAT
     config.add_index_field Settings.FIELDS.PUBLISHER
-    config.add_index_field 'layer_slug_s'
+    config.add_index_field "layer_slug_s"
     config.add_index_field Settings.FIELDS.YEAR
     config.add_index_field Settings.FIELDS.CREATOR
     config.add_index_field Settings.FIELDS.DESCRIPTION, helper_method: :snippit
@@ -143,17 +143,17 @@ class CatalogController < ApplicationController
     # item_prop: [String] property given to span with Schema.org item property
     # link_to_search: [Boolean] that can be passed to link to a facet search
     # helper_method: [Symbol] method that can be used to render the value
-    config.add_show_field Settings.FIELDS.CREATOR, label: 'Author(s)', itemprop: 'author'
-    config.add_show_field Settings.FIELDS.PUBLISHER, label: 'Publisher', itemprop: 'publisher'
-    config.add_show_field Settings.FIELDS.RIGHTS, label: 'Access', itemprop: 'access'
-    config.add_show_field Settings.FIELDS.DESCRIPTION, label: 'Description', itemprop: 'description', helper_method: :render_value_as_truncate_abstract
-    config.add_show_field Settings.FIELDS.PART_OF, label: 'Collection', itemprop: 'isPartOf'
-    config.add_show_field Settings.FIELDS.SPATIAL_COVERAGE, label: 'Place(s)', itemprop: 'spatial', link_to_search: true
-    config.add_show_field Settings.FIELDS.SUBJECT, label: 'Subject(s)', itemprop: 'keywords', link_to_search: true
-    config.add_show_field Settings.FIELDS.CALL_NUMBER, label: 'Call number', itemprop: 'call_number'
-    config.add_show_field Settings.FIELDS.TEMPORAL, label: 'Year', itemprop: 'temporal'
-    config.add_show_field Settings.FIELDS.PROVENANCE, label: 'Held by', link_to_search: true, helper_method: :princeton_provenance
-    config.add_show_field 'rights_statement_s', label: 'Rights Statement', itemprop: 'rights', helper_method: :html_safe
+    config.add_show_field Settings.FIELDS.CREATOR, label: "Author(s)", itemprop: "author"
+    config.add_show_field Settings.FIELDS.PUBLISHER, label: "Publisher", itemprop: "publisher"
+    config.add_show_field Settings.FIELDS.RIGHTS, label: "Access", itemprop: "access"
+    config.add_show_field Settings.FIELDS.DESCRIPTION, label: "Description", itemprop: "description", helper_method: :render_value_as_truncate_abstract
+    config.add_show_field Settings.FIELDS.PART_OF, label: "Collection", itemprop: "isPartOf"
+    config.add_show_field Settings.FIELDS.SPATIAL_COVERAGE, label: "Place(s)", itemprop: "spatial", link_to_search: true
+    config.add_show_field Settings.FIELDS.SUBJECT, label: "Subject(s)", itemprop: "keywords", link_to_search: true
+    config.add_show_field Settings.FIELDS.CALL_NUMBER, label: "Call number", itemprop: "call_number"
+    config.add_show_field Settings.FIELDS.TEMPORAL, label: "Year", itemprop: "temporal"
+    config.add_show_field Settings.FIELDS.PROVENANCE, label: "Held by", link_to_search: true, helper_method: :princeton_provenance
+    config.add_show_field "rights_statement_s", label: "Rights Statement", itemprop: "rights", helper_method: :html_safe
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
@@ -181,12 +181,12 @@ class CatalogController < ApplicationController
     # case for a BL "search field", which is really a dismax aggregate
     # of Solr search fields.
 
-    config.add_search_field('all_fields') do |field|
-      field.qt = 'search'
-      field.label = 'Keyword'
+    config.add_search_field("all_fields") do |field|
+      field.qt = "search"
+      field.label = "Keyword"
     end
 
-    config.add_search_field('title') do |field|
+    config.add_search_field("title") do |field|
       # solr_parameters hash are sent to Solr as ordinary url query params.
       # field.solr_parameters = { :'spellcheck.dictionary' => 'title' }
 
@@ -195,29 +195,29 @@ class CatalogController < ApplicationController
       # Solr parameter de-referencing like $title_qf.
       # See: http://wiki.apache.org/solr/LocalParams
       field.solr_parameters = {
-        qf: '${title_qf}',
-        pf: '${title_pf}'
+        qf: "${title_qf}",
+        pf: "${title_pf}"
       }
     end
 
-    config.add_search_field('publisher') do |field|
-      field.qt = 'search'
-      field.label = 'Publisher/Creator'
+    config.add_search_field("publisher") do |field|
+      field.qt = "search"
+      field.label = "Publisher/Creator"
       field.solr_parameters = {
-        qf: '${publisher_qf}',
-        pf: '${publisher_pf}'
+        qf: "${publisher_qf}",
+        pf: "${publisher_pf}"
       }
     end
 
     # Specifying a :qt only to show it's possible, and so our internal automated
     # tests can test it. In this case it's the same as
     # config[:default_solr_parameters][:qt], so isn't actually neccesary.
-    config.add_search_field('subject') do |field|
+    config.add_search_field("subject") do |field|
       # field.solr_parameters = { :'spellcheck.dictionary' => 'subject' }
-      field.qt = 'search'
+      field.qt = "search"
       field.solr_parameters = {
-        qf: '${subject_qf}',
-        pf: '${subject_pf}'
+        qf: "${subject_qf}",
+        pf: "${subject_pf}"
       }
     end
 
@@ -233,10 +233,10 @@ class CatalogController < ApplicationController
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
-    config.add_sort_field 'score desc', label: 'relevance'
-    config.add_sort_field "#{Settings.FIELDS.YEAR} desc, dc_title_sort asc", label: 'year'
-    config.add_sort_field "#{Settings.FIELDS.PUBLISHER} asc, dc_title_sort asc", label: 'publisher'
-    config.add_sort_field "#{Settings.FIELDS.TITLE} asc", label: 'title'
+    config.add_sort_field "score desc", label: "relevance"
+    config.add_sort_field "#{Settings.FIELDS.YEAR} desc, dc_title_sort asc", label: "year"
+    config.add_sort_field "#{Settings.FIELDS.PUBLISHER} asc, dc_title_sort asc", label: "publisher"
+    config.add_sort_field "#{Settings.FIELDS.TITLE} asc", label: "title"
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
@@ -245,8 +245,8 @@ class CatalogController < ApplicationController
     # Tools from Blacklight
     config.add_results_collection_tool(:sort_widget)
     config.add_results_collection_tool(:per_page_widget)
-    config.add_show_tools_partial :legend, partial: 'show_sanborn_legend', if: proc { |_context, _config, options| options[:document]&.published_by_sanborn? }
-    config.add_show_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
+    config.add_show_tools_partial :legend, partial: "show_sanborn_legend", if: proc { |_context, _config, options| options[:document]&.published_by_sanborn? }
+    config.add_show_tools_partial(:bookmark, partial: "bookmark_control", if: :render_bookmarks_control?)
     config.add_show_tools_partial(:citation)
     config.add_show_tools_partial(:email, callback: :email_action, validator: :validate_email_params)
     config.add_show_tools_partial(:sms, if: :render_sms_action?, callback: :sms_action, validator: :validate_sms_params)
@@ -254,9 +254,9 @@ class CatalogController < ApplicationController
     # Custom tools for GeoBlacklight
     config.add_show_tools_partial :web_services, if: proc { |_context, _config, options| options[:document] && (Settings.WEBSERVICES_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any? }
     config.add_show_tools_partial :metadata, if: proc { |_context, _config, options| options[:document] && (Settings.METADATA_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any? }
-    config.add_show_tools_partial :arcgis, partial: 'arcgis', if: proc { |_context, _config, options| options[:document] && options[:document].arcgis_urls.present? }
-    config.add_show_tools_partial :data_dictionary, partial: 'data_dictionary', if: proc { |_context, _config, options| options[:document] && options[:document].data_dictionary_download.present? }
-    config.add_show_tools_partial :access, partial: 'access', if: proc { |_context, _config, options| options[:document] }
+    config.add_show_tools_partial :arcgis, partial: "arcgis", if: proc { |_context, _config, options| options[:document] && options[:document].arcgis_urls.present? }
+    config.add_show_tools_partial :data_dictionary, partial: "data_dictionary", if: proc { |_context, _config, options| options[:document] && options[:document].data_dictionary_download.present? }
+    config.add_show_tools_partial :access, partial: "access", if: proc { |_context, _config, options| options[:document] }
 
     # Configure basemap provider for GeoBlacklight maps (uses https only basemap
     # providers with open licenses)
@@ -264,11 +264,11 @@ class CatalogController < ApplicationController
     # 'mapquest' http://developer.mapquest.com/web/products/open/map
     # 'positron' http://cartodb.com/basemaps/
     # 'darkMatter' http://cartodb.com/basemaps/
-    config.basemap_provider = 'esri'
+    config.basemap_provider = "esri"
 
     # Configuration for autocomplete suggestor
     config.autocomplete_enabled = true
-    config.autocomplete_path = 'suggest'
+    config.autocomplete_path = "suggest"
   end
 
   ##

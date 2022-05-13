@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
 # config valid only for current version of Capistrano
-lock '>=3.4'
+lock ">=3.4"
 
-set :application, 'pulmap'
-set :repo_url, 'https://github.com/pulibrary/pulmap.git'
+set :application, "pulmap"
+set :repo_url, "https://github.com/pulibrary/pulmap.git"
 
 # Default branch is :main
-set :branch, ENV['BRANCH'] || 'main'
+set :branch, ENV["BRANCH"] || "main"
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/opt/pulmap'
+set :deploy_to, "/opt/pulmap"
 
 # Default value for :scm is :git
 set :scm, :git
@@ -25,18 +25,18 @@ set :log_level, :debug
 set :pty, true
 
 # Default value for linked_dirs is []
-set :linked_dirs, fetch(:linked_dirs, []).push('log',
-                                               'tmp/pids',
-                                               'tmp/cache/downloads',
-                                               'tmp/sockets',
-                                               'tmp/thumbnails')
+set :linked_dirs, fetch(:linked_dirs, []).push("log",
+                                               "tmp/pids",
+                                               "tmp/cache/downloads",
+                                               "tmp/sockets",
+                                               "tmp/thumbnails")
 
 set :passenger_restart_with_touch, true
 
 namespace :sneakers do
   task :restart do
     on roles(:worker) do
-      execute :sudo, :service, 'pulmap-sneakers', :restart
+      execute :sudo, :service, "pulmap-sneakers", :restart
     end
   end
 end
@@ -50,18 +50,18 @@ namespace :sidekiq do
   end
   task :restart do
     on roles(:worker) do
-      execute :sudo, :service, 'sidekiq-workers', :restart
+      execute :sudo, :service, "sidekiq-workers", :restart
     end
   end
 end
-after 'deploy:starting', 'sidekiq:quiet'
-after 'deploy:reverted', 'sidekiq:restart'
-after 'deploy:reverted', 'sneakers:restart'
-after 'deploy:published', 'sidekiq:restart'
-after 'deploy:published', 'sneakers:restart'
+after "deploy:starting", "sidekiq:quiet"
+after "deploy:reverted", "sidekiq:restart"
+after "deploy:reverted", "sneakers:restart"
+after "deploy:published", "sidekiq:restart"
+after "deploy:published", "sneakers:restart"
 
 namespace :deploy do
-  desc 'Run yarn install'
+  desc "Run yarn install"
   task :yarn_install do
     on roles(:web) do
       within release_path do
@@ -75,11 +75,11 @@ before "deploy:assets:precompile", "deploy:yarn_install"
 task :robots_txt do
   on roles(:app) do
     within release_path do
-      execute :rake, 'pulmap:robots_txt'
+      execute :rake, "pulmap:robots_txt"
     end
   end
 end
-after 'deploy:published', 'robots_txt'
+after "deploy:published", "robots_txt"
 
 namespace :solr do
   desc "Opens Solr Console"

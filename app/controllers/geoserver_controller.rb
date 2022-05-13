@@ -3,14 +3,14 @@
 class GeoserverController < ApplicationController
   def index
     url = Settings.INSTITUTION_GEOSERVER_URL
-    url += '/geoserver/' unless /geoserver\/?$/.match?(url)
-    url += '/' unless url.last == '/'
+    url += "/geoserver/" unless /geoserver\/?$/.match?(url)
+    url += "/" unless url.last == "/"
     path = params[:path]
     query = request.query_string
     uri = Addressable::URI.parse("#{url}#{path}?#{query}")
 
     proxied_response = Faraday.get(uri) do |req|
-      req.headers['Authorization'] = Settings.PROXY_GEOSERVER_AUTH
+      req.headers["Authorization"] = Settings.PROXY_GEOSERVER_AUTH
     end
 
     # Get the status code
@@ -33,12 +33,12 @@ class GeoserverController < ApplicationController
 
   def headers
     {
-      'Authorization' => Settings.PROXY_GEOSERVER_AUTH
+      "Authorization" => Settings.PROXY_GEOSERVER_AUTH
     }
   end
 
   def proxy_redirect(proxied_response, code)
-    redirect_url = proxied_response['Location']
+    redirect_url = proxied_response["Location"]
     request_uri = Addressable::URI.parse(request.url)
     redirect_uri = Addressable::URI.parse(redirect_url)
 
@@ -55,7 +55,7 @@ class GeoserverController < ApplicationController
   end
 
   def proxy_success(proxied_response, code)
-    content_type = proxied_response['Content-Type']
+    content_type = proxied_response["Content-Type"]
     body = proxied_response.body.to_s
 
     if content_type&.match(/image/)

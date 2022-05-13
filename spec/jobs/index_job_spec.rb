@@ -5,7 +5,7 @@ describe IndexJob do
   describe "#perform" do
     let(:msg) do
       {
-        'event' => 'CREATED'
+        "event" => "CREATED"
       }
     end
     let(:processor) { instance_double(GeoblacklightEventProcessor) }

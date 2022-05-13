@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'mail_form'
+require "mail_form"
 
 class FeedbackForm < MailForm::Base
   attribute :name, validate: true
@@ -13,9 +13,9 @@ class FeedbackForm < MailForm::Base
   def headers
     {
       subject: "#{I18n.t(:'blacklight.application_name')} Feedback Form",
-      to: ENV['MAP_FEEDBACK_TO'] || 'lsupport@princeton.edu',
+      to: ENV["MAP_FEEDBACK_TO"] || "lsupport@princeton.edu",
       from: %("#{name}" <#{email}>),
-      cc: ENV['MAP_FEEDBACK_CC']
+      cc: ENV["MAP_FEEDBACK_CC"]
     }
   end
 
