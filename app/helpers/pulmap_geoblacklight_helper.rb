@@ -19,7 +19,7 @@ module PulmapGeoblacklightHelper
 
   def all_facet_values_label(field)
     field_config = blacklight_config.facet_fields[field]
-    field_config[:all] || 'All types'
+    field_config[:all] || "All types"
   end
 
   def remove_all_facet_values(field)
@@ -32,15 +32,15 @@ module PulmapGeoblacklightHelper
 
   def facet_active(facet_field)
     if facet_field_in_params?(facet_field)
-      ' facet-limit-active'
+      " facet-limit-active"
     else
-      ''
+      ""
     end
   end
 
   def data_download_text(format)
     download_format = proper_case_format(format)
-    value = t('geoblacklight.data_download.download_link', download_format: download_format)
+    value = t("geoblacklight.data_download.download_link", download_format: download_format)
     value.html_safe
   end
 
@@ -54,7 +54,7 @@ module PulmapGeoblacklightHelper
 
   def princeton_provenance(args)
     return args[:value]&.first unless princeton_historic_map?
-    'Princeton: Historic Map Division, Special Collections, Firestone Library'
+    "Princeton: Historic Map Division, Special Collections, Firestone Library"
   end
 
   def html_safe(args)
@@ -65,13 +65,13 @@ module PulmapGeoblacklightHelper
 
   def leaflet_viewer
     tag.div(nil,
-            id: 'map',
+            id: "map",
             data: {
-              map: 'item', protocol: @document.viewer_protocol.camelize,
+              map: "item", protocol: @document.viewer_protocol.camelize,
                     url: @document.viewer_endpoint,
-                    'layer-id' => @document.wxs_identifier,
-                    'map-geom' => @document.geometry.geojson,
-                    'catalog-path' => search_catalog_path,
+                    "layer-id" => @document.wxs_identifier,
+                    "map-geom" => @document.geometry.geojson,
+                    "catalog-path" => search_catalog_path,
                     available: document_available?,
                     basemap: geoblacklight_basemap,
                     leaflet_options: leaflet_options

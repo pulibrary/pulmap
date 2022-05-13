@@ -13,12 +13,12 @@ class ApplicationController < ActionController::Base
   ].freeze
 
   rescue_from(*RESCUE_WITH_404) do
-    render file: Rails.root.join('public', '404.html'), status: :not_found
+    render file: Rails.root.join("public", "404.html"), status: :not_found
   end
 
   private
 
   def after_sign_in_path_for(_resource)
-    request.env['omniauth.origin']
+    request.env["omniauth.origin"]
   end
 end

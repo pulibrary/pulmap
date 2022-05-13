@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require_relative 'config/application'
-require 'sneakers/tasks'
+require_relative "config/application"
+require "sneakers/tasks"
 require "rubocop/rake_task" if Rails.env.development? || Rails.env.test?
 
 Rails.application.load_tasks

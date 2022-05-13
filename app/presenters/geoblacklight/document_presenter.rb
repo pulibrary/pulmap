@@ -15,11 +15,11 @@ module Geoblacklight
       @configuration.index_fields.each_value do |field|
         val = field_value(field)
         if val.present?
-          val += '.' unless val.end_with?('.')
+          val += "." unless val.end_with?(".")
           fields_values << val
         end
       end
-      safe_join(fields_values, ' ')
+      safe_join(fields_values, " ")
     end
   end
 end

@@ -5,7 +5,7 @@ module SanbornConcern
 
   def published_by_sanborn?
     if key?(Settings.FIELDS.PUBLISHER)
-      fetch(Settings.FIELDS.PUBLISHER).downcase.include?('sanborn')
+      fetch(Settings.FIELDS.PUBLISHER).downcase.include?("sanborn")
     else
       false
     end

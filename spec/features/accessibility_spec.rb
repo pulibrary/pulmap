@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 describe "accessibility", type: :feature, js: true do
   context "when visiting main page" do
@@ -17,7 +17,7 @@ describe "accessibility", type: :feature, js: true do
 
   context "when visiting search results page" do
     it "complies with WCAG" do
-      visit '/?f[dc_source_sm][]=princeton-1r66j405w&q='
+      visit "/?f[dc_source_sm][]=princeton-1r66j405w&q="
 
       expect(page).to be_axe_clean
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)
@@ -29,7 +29,7 @@ describe "accessibility", type: :feature, js: true do
 
   context "when visiting record show page" do
     it "complies with WCAG" do
-      visit solr_document_path 'princeton-kk91fn37z'
+      visit solr_document_path "princeton-kk91fn37z"
 
       expect(page).to be_axe_clean
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa)

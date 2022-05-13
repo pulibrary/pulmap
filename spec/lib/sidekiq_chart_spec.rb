@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe SidekiqChart do
   let(:stats) { instance_double(Sidekiq::Stats, enqueued: 100, processed: 50, failed: 3) }

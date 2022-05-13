@@ -13,7 +13,7 @@ class FeedbackController < ApplicationController
     respond_to do |format|
       if @feedback_form.valid?
         @feedback_form.deliver
-        format.js { flash.now[:notice] = I18n.t('blacklight.feedback.success') }
+        format.js { flash.now[:notice] = I18n.t("blacklight.feedback.success") }
       else
         format.js { flash.now[:error] = @feedback_form.error_message }
       end
@@ -34,7 +34,7 @@ class FeedbackController < ApplicationController
 
   def current_user_email
     return if current_user.nil?
-    return if current_user.provider != 'cas'
+    return if current_user.provider != "cas"
     @user_email = "#{current_user.uid}@princeton.edu"
     @user_email
   end

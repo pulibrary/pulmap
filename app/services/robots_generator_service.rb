@@ -4,12 +4,12 @@
 class RobotsGeneratorService
   # Generate a robots.txt with the default values
   def self.default
-    file_path = Rails.root.join('public', 'robots.txt')
+    file_path = Rails.root.join("public", "robots.txt")
     robots = RobotsGeneratorService.new(
       path: file_path,
       disallowed_paths: Rails.configuration.robots.disallowed_paths
     )
-    robots.insert_group(user_agent: '*')
+    robots.insert_group(user_agent: "*")
     robots.insert_crawl_delay(10)
     robots.insert_sitemap(Rails.configuration.robots.sitemap_url)
     robots.generate
@@ -24,7 +24,7 @@ class RobotsGeneratorService
     @disallowed_paths = disallowed_paths
 
     @groups = [[]]
-    @content = ''
+    @content = ""
   end
 
   # Insert a Disallow directive
@@ -45,7 +45,7 @@ class RobotsGeneratorService
 
   # Write the directives to a file
   def write
-    File.open(@path, 'w+b') do |f|
+    File.open(@path, "w+b") do |f|
       f << @content
     end
   end

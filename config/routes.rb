@@ -2,21 +2,21 @@
 
 Rails.application.routes.draw do
   concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
-  mount Blacklight::Engine => '/'
-  mount BlacklightAdvancedSearch::Engine => '/'
+  mount Blacklight::Engine => "/"
+  mount BlacklightAdvancedSearch::Engine => "/"
 
-  root to: 'catalog#index'
+  root to: "catalog#index"
   concern :searchable, Blacklight::Routes::Searchable.new
 
-  resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
+  resource :catalog, only: [:index], as: "catalog", path: "/catalog", controller: "catalog" do
     concerns :searchable
     concerns :range_searchable
   end
 
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   concern :exportable, Blacklight::Routes::Exportable.new
 
-  resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog' do
+  resources :solr_documents, only: [:show], path: "/catalog", controller: "catalog" do
     concerns :exportable
   end
 
@@ -24,17 +24,17 @@ Rails.application.routes.draw do
     concerns :exportable
 
     collection do
-      delete 'clear'
+      delete "clear"
     end
   end
 
-  get 'contact-us', to: 'feedback#new'
-  post 'contact-us', to: 'feedback#create'
+  get "contact-us", to: "feedback#new"
+  post "contact-us", to: "feedback#create"
 
-  mount Geoblacklight::Engine => 'geoblacklight'
+  mount Geoblacklight::Engine => "geoblacklight"
 
   concern :gbl_exportable, Geoblacklight::Routes::Exportable.new
-  resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog' do
+  resources :solr_documents, only: [:show], path: "/catalog", controller: "catalog" do
     concerns :gbl_exportable
   end
 
@@ -50,11 +50,11 @@ Rails.application.routes.draw do
 
   resources :download, only: [:show]
 
-  resources :suggest, only: :index, defaults: { format: 'json' }
+  resources :suggest, only: :index, defaults: { format: "json" }
 
   authenticate :user do
-    get 'geoserver/restricted-figgy/*path' => 'geoserver#index'
-    get 'geoserver/restricted-figgy-staging/*path' => 'geoserver#index'
+    get "geoserver/restricted-figgy/*path" => "geoserver#index"
+    get "geoserver/restricted-figgy-staging/*path" => "geoserver#index"
   end
 
   require "sidekiq/web"
