@@ -110,7 +110,6 @@ jobs:
       - run: bundle exec rake db:migrate
       - run: bundle exec rake geoblacklight:solr:seed
       - run: bundle exec rspec spec/
-      - run: mv badge.svg ./coverage/badge.svg
       - store_artifacts:
           path: coverage
           destination: coverage
