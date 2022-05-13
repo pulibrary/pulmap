@@ -154,8 +154,10 @@ GEM
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
-    ddtrace (0.39.0)
+    ddtrace (0.54.2)
+      debase-ruby_core_source (<= 0.10.14)
       msgpack
+    debase-ruby_core_source (0.10.14)
     declarative (0.0.20)
     deep_merge (1.2.2)
     deprecation (1.1.0)
@@ -371,7 +373,7 @@ GEM
     mini_portile2 (2.8.0)
     minitest (5.15.0)
     modernizr-rails (2.7.1)
-    msgpack (1.3.3)
+    msgpack (1.5.1)
     multi_json (1.15.0)
     multipart-post (2.1.1)
     net-http-persistent (2.9.4)
@@ -642,7 +644,7 @@ DEPENDENCIES
   capybara
   capybara-screenshot
   database_cleaner
-  ddtrace
+  ddtrace (~> 0.54)
   devise (~> 4.8)
   devise-guests
   factory_bot_rails
