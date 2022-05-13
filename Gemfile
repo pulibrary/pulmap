@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 
 gem "autoprefixer-rails"
-gem "ddtrace"
+gem "ddtrace", "~> 0.54"
 gem "jquery-rails"
 gem "lograge"
 gem "logstash-event"
