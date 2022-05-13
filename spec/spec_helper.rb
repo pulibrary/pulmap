@@ -11,7 +11,7 @@ SimpleCov.start "rails" do
   # TODO: Add full coverage for geoserver reverse proxy functionality.
   # This is difficult to test at the moment and could use refactoring in the future.
   add_filter "app/controllers/geoserver_controller.rb"
-  minimum_coverage 99
+  minimum_coverage 100
 end
 
 SimpleCov.formatter = if ENV["CI"] == "true"

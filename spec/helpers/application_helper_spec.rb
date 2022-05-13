@@ -93,4 +93,23 @@ describe ApplicationHelper, type: :helper do
       end
     end
   end
+  describe "#link_back_to_catalog_safe" do
+    define_method :link_back_to_catalog do |_|
+      "http://localhost/catalog"
+    end
+
+    it "returns a link to the search page" do
+      expect(link_back_to_catalog_safe).to eq "http://localhost/catalog"
+    end
+
+    context "when there is an error" do
+      define_method :link_back_to_catalog do |_doc|
+        raise ActionController::UrlGenerationError, "Error"
+      end
+
+      it "returns a default link to the search page" do
+        expect(link_back_to_catalog_safe).to include "Back to search"
+      end
+    end
+  end
 end
