@@ -1,11 +1,14 @@
 ---
-version: 2
+version: 2.1
+orbs:
+  browser-tools: circleci/browser-tools@1.2.5
+  node: circleci/node@5.0.2
 jobs:
   build:
     working_directory: ~/pulmap
     docker:
       # The primary container is an instance of the first list image listed. Your build commands run in this container.
-      - image: circleci/ruby:2.7-node-browsers
+      - image: cimg/ruby:2.7.5-browsers
         environment:
           RAILS_ENV: test
           PULMAP_DB_HOST: localhost
@@ -16,44 +19,29 @@ jobs:
           POSTGRES_DB: pulmap_test
           POSTGRES_HOST_AUTH_METHOD: trust
     steps:
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       - checkout
-      # Restore Cached Dependencies
-      - type: cache-restore
-        name: Restore bundle cache
-        key: pulmap-{{ checksum "Gemfile.lock" }}
-      # Install Bundler
-      - run: gem install bundler -v '~> 2.0'
-      - run:
-          name: Install node@lts/gallium
-          command: |
-            set +e
-            touch $BASH_ENV
-            curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.39.1/install.sh | bash
-            echo 'export NVM_DIR="$HOME/.nvm"' >> $BASH_ENV
-            echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV
-            echo 'nvm install lts/gallium' >> $BASH_ENV
-            echo 'nvm alias default lts/gallium' >> $BASH_ENV
-      - run:
-          name: Check current version of node
-          command: node -v
-      # Bundle install dependencies
-      - run: bundle install --path vendor/bundle
-      # Cache Dependencies
-      - type: cache-save
-        name: Store bundle cache
-        key: pulmap-{{ checksum "Gemfile.lock" }}
-        paths:
-          - vendor/bundle
-      # Only necessary if app uses webpacker or yarn in some other way
       - restore_cache:
           keys:
+            - pulmap-{{ checksum "Gemfile.lock" }}
             - pulmap-yarn-{{ checksum "yarn.lock" }}
-            - pulmap-yarn-
+      # Install Bundler
+      - run: gem install bundler -v '~> 2.0'
+      - node/install:
+          install-yarn: true
+          node-version: '16.15.0'
+      # Bundle install dependencies
+      - run: bundle install --path vendor/bundle
+      - save_cache:
+          key: pulmap-{{ checksum "Gemfile.lock" }}
+          paths:
+            - ./vendor/bundle
       - run:
           name: Install NPM Dependencies via Yarn
-          command: yarn install
-      # Store yarn / webpacker cache
+          command: yarn install --frozen-lockfile
       - save_cache:
+          name: Save Yarn Package Cache
           key: pulmap-yarn-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
@@ -65,7 +53,7 @@ jobs:
   test:
     working_directory: ~/pulmap
     docker:
-      - image: circleci/ruby:2.7-node-browsers
+      - image: cimg/ruby:2.7.5-browsers
         environment:
           RAILS_ENV: test
           PULMAP_DB_HOST: localhost
@@ -79,24 +67,16 @@ jobs:
           POSTGRES_HOST_AUTH_METHOD: trust
       - image: pulibrary/ci-solr:8.4-v1.0.0
         command: server/scripts/ci-start.sh
-    steps: &test_steps
+    steps:
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       - attach_workspace:
           at: '~/pulmap'
       # Install Bundler
       - run: gem install bundler -v '~> 2.0'
-      - run:
-          name: Install node@lts/gallium
-          command: |
-            set +e
-            touch $BASH_ENV
-            curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.39.1/install.sh | bash
-            echo 'export NVM_DIR="$HOME/.nvm"' >> $BASH_ENV
-            echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV
-            echo 'nvm install lts/gallium' >> $BASH_ENV
-            echo 'nvm alias default lts/gallium' >> $BASH_ENV
-      - run:
-          name: Check current version of node
-          command: node -v
+      - node/install:
+          install-yarn: true
+          node-version: '16.15.0'
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
       - run:
@@ -115,28 +95,19 @@ jobs:
   rubocop:
     working_directory: ~/pulmap
     docker:
-      - image: circleci/ruby:2.7-node-browsers
+      - image: cimg/ruby:2.7.5-browsers
         environment:
           RAILS_ENV: test
           PULMAP_DB_HOST: localhost
           PULMAP_DB_USERNAME: geoblacklight
     steps:
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       - attach_workspace:
           at: '~/pulmap'
-      - run:
-          name: Install node@8.17.0 (need right version for `yarn`)
-          command: |
-            set +e
-            touch $BASH_ENV
-            curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
-            echo 'export NVM_DIR="$HOME/.nvm"' >> $BASH_ENV
-            echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV
-            echo 'nvm install lts/erbium' >> $BASH_ENV
-            echo 'nvm alias default lts/erbium' >> $BASH_ENV
-
-      - run:
-          name: Check current version of node
-          command: node -v
+      - node/install:
+          install-yarn: true
+          node-version: '16.15.0'
       # Install Bundler
       - run: gem install bundler -v '~> 2.0'
       # Bundle install dependencies

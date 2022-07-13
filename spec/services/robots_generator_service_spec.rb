@@ -14,7 +14,7 @@ RSpec.describe RobotsGeneratorService do
   describe ".default" do
     let(:service_class) { class_double(described_class).as_stubbed_const(transfer_nested_constants: true) }
     let(:service) { instance_double(described_class) }
-    let(:path) { Rails.root.join("public", "robots.txt") }
+    let(:path) { Rails.public_path.join("robots.txt") }
     let(:disallowed_paths) { Rails.configuration.robots.disallowed_paths }
 
     before do

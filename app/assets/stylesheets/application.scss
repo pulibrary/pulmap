@@ -2,20 +2,18 @@
 /*
  *= require  'blacklight_range_limit'
 
- *= require 'blacklight_advanced_search'
-
  *= require geoblacklight_sidecar_images/application
-
- *= require font-awesome
 */
 
 // Import font first
 @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
 
+@import "font-awesome";
 @import 'utils/mixins';
 @import 'utils/variables';
 @import 'icons/variables';
 @import 'icons/icons';
+@import 'bootstrap';
 @import 'bootstrap-config';
 @import 'blacklight';
 @import 'geoblacklight';
