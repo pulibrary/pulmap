@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   ].freeze
 
   rescue_from(*RESCUE_WITH_404) do
-    render file: Rails.root.join("public", "404.html"), status: :not_found
+    render file: Rails.public_path.join("404.html"), status: :not_found
   end
 
   private

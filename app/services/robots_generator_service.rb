@@ -4,7 +4,7 @@
 class RobotsGeneratorService
   # Generate a robots.txt with the default values
   def self.default
-    file_path = Rails.root.join("public", "robots.txt")
+    file_path = Rails.public_path.join("robots.txt")
     robots = RobotsGeneratorService.new(
       path: file_path,
       disallowed_paths: Rails.configuration.robots.disallowed_paths
