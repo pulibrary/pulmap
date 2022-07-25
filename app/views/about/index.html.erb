@@ -1,0 +1,75 @@
+<% @page_title = t('blacklight.about.page_title', :application_name => application_name) %>
+
+<%= render 'shared/start_over_row' %>
+
+<div id="content" class="col-lg-12">
+<h1 class='page-heading'><%= t('blacklight.about.title') %></h1>
+<p>
+  The Princeton University Library’s Digital Maps and Geospatial Data website allows researchers to discover and access online maps and geospatial data in the Princeton Maps Collection, one of the largest cartographic collections at any academic institution.
+</p>
+<h2>Types of Maps found in the Portal</h2>
+
+<h3>Sanborn Maps</h3>
+
+<p>(Something about Sanborn here since they don’t fall into the other categories.)
+
+[Example Sanborn Map Here.]
+</p>
+
+<h3>Scanned Maps</h3>
+<p>
+Scanned Maps are print maps that have been digitized and combined with geographic information, allowing for accurate positioning of the map on an interactive, modern globe. Many of the Scanned Maps available in the Digital Map and Geospatial Data Portal are historic, allowing researchers to compare past geographic boundaries and names with their modern counterparts. Princeton University Library has a strong commitment to scanning our print maps collection, so scanned maps are added to the portal on a regular basis.
+
+[Example Scanned Map Here.]
+</p>
+
+<h3>Vector Data</h3>
+<p>
+Vector graphics are stored via mathematical calculations from one point to another that form smooth lines and shapes. They can be resized to any dimension without losing clarity. Vector Data is spatially referenced data which is represented by three types of marks: point, line (or arc), and polygon data.
+
+Point Data is most commonly used to represent non-adjacent features and to represent discrete data points. Examples would be bus stops, schools, city names, and other points of interest.
+Line Data is ...
+Polygon Data is ...
+[Example Images of the three above Vector data types.]
+</p>
+
+<h3>Raster Data</h3>
+<p>
+Raster images are made of tiny squares called pixels. Raster data (also known as grid data) represents “surfaces”. Raster data is grid-based, often by pixel, and each unit expresses a data value that is represented visually. Raster Data often includes topographies as well as aerial and satellite imagery. There are two types of raster data: continuous and discrete. An example of discrete raster data is population density. Continuous data examples are temperature and elevation measurements. There are also three types of raster datasets: thematic data, spectral data, and pictures (imagery).
+</p><p>
+Thematic Data can be used for Digital Elevation Model (DEM). Each cell represents a 30m pixel size with an elevation value assigned to that cell.
+Spectral Data can be used for spatial hydrology modeling such as extracting watersheds and flow lines in a geographic area. Spectral data is often used in aerial or satellite imagery which, for example, can be used to derive vegetation geologic information by classifying the spectral signatures of each type of feature.
+Image Aerial and satellite imagery is one type of raster data. Raster Image file types include BMP, TIFF, GIF, and JPEG.
+[Example Image for each of the Raster data types here.]
+</p><p>
+Raster images accompanied by a second file known as a world file. The world file has the same name as the raster image file but has a different extension. The world file is a text file that contains the map projection information needed to properly georeference the raster image.
+</p>
+
+<h3>Subject Areas</h3>
+
+<p>The maps and data in this collection may be used for many areas of scholarship, but highlights include:</p>
+<ul>
+  <li>Geology</li>
+  <li>Geochemistry</li>
+  <li>Geophysics</li>
+  <li>Climatology</li>
+  <li>Natural Resources</li>
+  <li>Land Use</li>
+  <li>Soils</li>
+  <li>Water Resources</li>
+  <li>Remote Sensing</li>
+  <li>Topography</li>
+  <li>Political and Cultural Geography</li>
+  <li>Physiography</li>
+  <li>Bathymetry</li>
+  <li>Transportation</li>
+  <li>Navigation</li>
+  <li>Urban and Regional Planning</li>
+  <li>Public Policy</li>
+  <li>Research Support</li>
+</ul>
+
+<p>If you need help in finding or locating the data you are looking for,
+  contact Tsering Wangyal Shawa, GIS and Map Librarian via the
+  <%= link_to "Contact Us page", "/contact-us" %>.</p>
+</div>

@@ -28,6 +28,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get "about", to: "about#index"
+
   get "contact-us", to: "feedback#new"
   post "contact-us", to: "feedback#create"
 
