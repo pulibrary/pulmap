@@ -9,8 +9,8 @@
         <div class="logo__pul col-12 col-md-6 col-lg-5">
           <%= render :partial => 'shared/pul_logo_site_title' %>
         </div>
-      <% end %>  
-      
+      <% end %>
+
       <% if index_layout? %>
         <div class="col-12 col-md-5 col-lg-4">
           <%= render :partial=>'catalog/search_form_index' %>
@@ -24,10 +24,11 @@
         </div>
       <% else %>
         <div class="d-none d-md-block col-md-4">
-        </div> 
+        </div>
       <% end %>
       <div class="menu--level-1 d-none d-md-block col-md-2 col-lg-3">
         <ul>
+          <li><a href="/about">About This Site</a></li>
           <li><a href="/contact-us">Contact Us</a></li>
           <%= render :partial=>'/account' %>
         </ul>
