@@ -1,0 +1,26 @@
+<div class="l-branding__pul <%= layout_type %>-branding">
+    <nav>
+      <h1 id="nav-title logo__pul"><%= render :partial => 'shared/pul_logo_site_title' %></h1>
+      <% if index_layout? %>
+      <div class="nav-search-wrapper">
+        <div>
+          <%= render :partial=>'catalog/search_form_index' %>
+        </div>
+        <div class="d-none d-lg-block">
+          <ul class="search-options">
+            <li>
+              <%= link_to 'Advanced', blacklight_advanced_search_engine.advanced_search_path(search_state.to_h), :class=>'advanced_search'%>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <% end %>
+      <div class="menu--level-1 d-none d-md-block">
+        <ul id="main-menu">
+          <li><a href="/about">About This Site</a></li>
+          <li><a href="/contact-us">Contact Us</a></li>
+          <%= render :partial=>'/account' %>
+        </ul>
+      </div>
+    </nav>
+</div>

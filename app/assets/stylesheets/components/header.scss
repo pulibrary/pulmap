@@ -3,6 +3,68 @@
   .l-branding__pul.index-branding .logo__pul {
     padding: 4px !important;
   }
+  .l-branding__pul a img {
+    height: 2.4em;
+  }
+
+  .l-branding__pul h1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .l-branding__pul .site-title {
+    border-left: 1px solid #746d54;
+    padding-left: 10px;
+    color: white;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  /* Nav */
+  nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 50px;
+      box-shadow: 0 1px 8px #ddd;
+  }
+
+  .nav-search-wrapper {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .nav-search-wrapper form {
+    width: 400px;
+  }
+
+  header h1 > a {
+      padding-right: 10px;
+      color: white;
+      font-size: 16px;
+      line-height: 18px;
+  }
+
+  header nav ul #main-menu li {
+      list-style: none;
+      display: inline-block;
+      padding: 0 20px;
+  }
+
+  header nav li > a {
+      text-decoration: none;
+      color: white;
+      transition: all 0.3s ease 0s;
+  }
+
+  header nav a:hover {
+      color: #b2dfdb;
+  }
+
+  .btn-account {
+    margin-top: 2px;
+  }
 }
 
 /* 768px < screens < 992px, md and lg screens in BS4 */
@@ -146,7 +208,7 @@
     border: none;
     background: none;
     color: $gray;
-    font-size: 0.75em;
+    font-size: .90rem;
     vertical-align: middle;
   }
 
@@ -189,6 +251,7 @@
 
 .navbar {
   margin-bottom: 0;
+  display: flex;
 }
 
 .svg .logo-svg {
@@ -518,11 +581,6 @@
   #search-navbar .search-query-form {
     margin-left: 2em;
   }
-}
-
-// Align Contact Us with Your Account
-.menu--level-1 > ul:first-child {
-  padding-top: 2px;
 }
 
 .container-fluid > .container {
