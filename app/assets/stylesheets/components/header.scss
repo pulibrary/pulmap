@@ -19,6 +19,8 @@
     color: white;
     font-size: 16px;
     line-height: 20px;
+    white-space: nowrap;
+    min-width: 175px;
   }
 
   /* Nav */
@@ -69,21 +71,108 @@
 
 /* 768px < screens < 992px, md and lg screens in BS4 */
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .l-branding__pul.item-branding .logo__pul {
-    padding: 0.5px;
-  }
+
   .l-branding__pul.index-branding .logo__pul {
-    padding: 0.75rem;
+    padding: 4px !important;
   }
+  .l-branding__pul a img {
+    height: 2.4em;
+  }
+
+  .l-branding__pul h1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .l-branding__pul .site-title {
+    border-left: 1px solid #746d54;
+    padding-left: 10px;
+    color: white;
+    font-size: 16px;
+    line-height: 20px;
+    white-space: nowrap;
+    min-width: 175px;
+  }
+
+  /* Nav */
+  nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 50px;
+      box-shadow: 0 1px 8px #ddd;
+  }
+
+  .nav-search-wrapper {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .nav-search-wrapper form {
+    width: 300px;
+  }
+
+  header h1 > a {
+      padding-right: 10px;
+      color: white;
+      font-size: 16px;
+      line-height: 18px;
+  }
+
+  header nav ul #main-menu li {
+      list-style: none;
+      display: inline-block;
+      padding: 0 20px;
+  }
+
+  header nav li > a {
+      text-decoration: none;
+      color: white;
+      transition: all 0.3s ease 0s;
+  }
+
+  header nav a:hover {
+      color: #b2dfdb;
+  }
+
+  .btn-account {
+    margin-top: 2px;
+  }
+
 }
 
 /* screens < 768px, xs and sm screens in BS4 */
 @media (max-width: 767.98px) {
-  .l-branding__pul.item-branding .logo__pul {
-    padding: 0.5px;
-  }
   .l-branding__pul.index-branding .logo__pul {
-    padding:1rem;
+    padding: 4px !important;
+  }
+  .l-branding__pul a img {
+    height: 2.4em;
+  }
+
+  .l-branding__pul h1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .l-branding__pul .site-title {
+    border-left: 1px solid #746d54;
+    padding-left: 10px;
+    color: white;
+    font-size: 16px;
+    line-height: 20px;
+    white-space: nowrap;
+    min-width: 175px;
+  }
+
+  header h1 > a {
+      padding-right: 10px;
+      color: white;
+      font-size: 16px;
+      line-height: 18px;
   }
 }
 
