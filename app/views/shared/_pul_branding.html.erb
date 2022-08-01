@@ -1,6 +1,6 @@
 <div class="l-branding__pul <%= layout_type %>-branding">
   <div class="<% unless index_layout? %>container<% end %> <%= layout_type %>-container ">
-    <nav class="navbar <%= navbar_type %> navbar-dark pul-header">
+    <nav class="navbar fixed-top navbar-dark pul-header">
       <% if index_layout? %>
         <div class="logo__pul col-12 col-md-5 col-lg-4">
           <%= render :partial => 'shared/pul_logo_site_title' %>

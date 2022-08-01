@@ -30,14 +30,6 @@ module ApplicationHelper
     end
   end
 
-  def navbar_type
-    if index_layout?
-      "navbar-expand-md fixed-top"
-    else
-      "navbar-expand-md"
-    end
-  end
-
   def hide_constraints?
     skip_params = constraint_params_to_skip
     skip_params << "q" if params[:q]&.empty?
