@@ -26,6 +26,25 @@ yarn install
    - Access Pulmap at http://localhost:3000/
 1. To stop: `rake servers:stop` or `lando stop`
 
+### Reindex from figgy
+
+The reindex is triggered on the figgy side.
+
+```
+$ ssh deploy@lib-proc7
+$ tmux new -t [yourname]
+$ cd /opt/figgy/current
+$ BULK=true bundle exec rails c
+> GeoResourceIndexer.reindex_geoblacklight
+```
+
+It takes a few minutes to get all the complete georesources. Then it invokes the
+updated event on each, which sends them to rabbitmq.
+
+Then you'll start to see output like "Indexed into GeoBlacklight:..."
+
+We usually run this overnight.
+
 ### Auto-update from external services
 
 Pulmap can listen for events published on a RabbitMQ fanout exhange. In order to use them, do the
