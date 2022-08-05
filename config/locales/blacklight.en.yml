@@ -21,7 +21,7 @@ en:
       confirmation: 'Thank you for your comments. They are helpful as we work to improve this new Library service.'
       title: 'Princeton Digital Maps Feedback Form'
     about:
-      title: 'About the Digital Maps and Geospatial Data Portal'
+      page_title: 'About the Digital Maps and Geospatial Data Portal'
   views:
     pagination:
       previous: 'Previous'

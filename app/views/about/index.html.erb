@@ -3,7 +3,7 @@
 <%= render 'shared/start_over_row' %>
 
 <div id="content" class="col-lg-12">
-<h1 class='page-heading'><%= t('blacklight.about.title') %></h1>
+<h1 class='page-heading'><%= t('blacklight.about.page_title') %></h1>
 <p>
   In this Portal, we publish our scanned maps and most of our geospatial data. The site will allow
 researchers to discover data published on our Portal. If the scanned maps and geospatial data are in the
@@ -19,10 +19,16 @@ also use map (spatial search) to find the data on a particular location on earth
 Scanned Maps are print maps that have been digitized and combined with geographic information, allowing for accurate positioning of the map on an interactive, modern globe. Many of the Scanned Maps available in the Digital Map and Geospatial Data Portal are historic, allowing researchers to compare past geographic boundaries and names with their modern counterparts. Princeton University Library has a strong commitment to scanning our print maps collection, so scanned maps are added to the portal on a regular basis.
 </p>
 
-<p class="examples">
-  <%=image_tag("about/pulmap-scannedmap.png", alt: "Example of a Scanned Map", width: "400px")%>
-  <%=image_tag("about/pulmap-scannedmap-gis.png", alt: "Example of a Georeferenced Scanned Map", width: "400px")%>
-</p>
+<div class="examples">
+  <figure>
+    <%=image_tag("about/pulmap-scannedmap.png", alt: "Example of a Scanned Map", width: "400px")%>
+    <figcaption>Example of a Scanned Map</figcaption>
+  </figure>
+  <figure>
+    <%=image_tag("about/pulmap-scannedmap-gis.png", alt: "Example of a Georeferenced Scanned Map", width: "400px")%>
+    <figcaption>Example of a Georeferenced Scanned Map</figcaption>
+  </figure>
+</div>
 
 <h3>Sanborn Maps</h3>
 
@@ -37,9 +43,12 @@ Scanned Maps are print maps that have been digitized and combined with geographi
   Genealogists, local history buffs, city planners, architects, and countless others have
   been drawn to the quality of detail found in them. </p>
 
-<p>
-  <%=image_tag("about/pulmap-sanborn.jpg", alt: "Example of a Sandborn map of Princeton, Mercer County, New Jersey", width: "800px")%>
-</p>
+<div class="examples">
+  <figure>
+    <%=image_tag("about/pulmap-sanborn.jpg", alt: "Example of a Sandborn Georeferenced map of Princeton, Mercer County, New Jersey", width: "400px")%>
+    <figcaption>Example of a Sandborn Georeferenced map of Princeton, Mercer County, New Jersey</figcaption>
+  </figure>
+</div>
 
 <h3>Vector Data</h3>
 <p>
@@ -49,12 +58,17 @@ to each geometry. For example, locations of bus stops, schools, and other points
 represented by points, road networks and rivers could be represented by lines, and property, country,
 city, and census boundaries could be represented by polygons.
 </p>
-<p>
-  <%=image_tag("about/pulmap-vector-example.png", alt: "Points, lines, and polygons (area) shown here are examples of vector data", width: "400px")%>
-</p>
-<p>
-  <%=image_tag("about/pulmap-vector-full-example.png", alt: "Example of Vector data shown on a map", width: "400px")%>
-</p>
+
+<div class="examples">
+  <figure>
+    <%=image_tag("about/pulmap-vector-example.png", alt: "Points, lines, and polygons (area) shown here are examples of vector data", width: "400px")%>
+    <figcaption>Points, lines, and polygons (area) shown here are examples of vector data</figcaption>
+  </figure>
+  <figure>
+    <%=image_tag("about/pulmap-vector-full-example.png", alt: "Example of Vector data shown on a map", width: "400px")%>
+    <figcaption>Example of Vector data shown on a map</figcaption>
+  </figure>
+</div>
 
 <h3>Raster Data</h3>
 <p>
@@ -64,9 +78,12 @@ land cover data, etc. are usually stored in raster data format. The spatial
 resolution of data depends on pixel/cell size. Higher resolution raster data has
 smaller pixels and a larger file size.</p>
 
-<p>
-  <%=image_tag("about/pulmap-raster-example.png", alt: "The elevation map shown here is an example of raster data", width: "400px")%>
-</p>
+<div class="examples">
+  <figure>
+    <%=image_tag("about/pulmap-raster-example.png", alt: "The elevation map shown here is an example of raster data", width: "400px")%>
+    <figcaption>The elevation map shown here is an example of raster data</figcaption>
+  </figure>
+</div>
 
 <h3>Subject Areas</h3>
 
