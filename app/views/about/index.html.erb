@@ -5,18 +5,23 @@
 <div id="content" class="col-lg-12">
 <h1 class='page-heading'><%= t('blacklight.about.page_title') %></h1>
 <p>
-  In this Portal, we publish our scanned maps and most of our geospatial data. The site will allow
-researchers to discover data published on our Portal. If the scanned maps and geospatial data are in the
-public domain, users can view and download them. However, copyrighted scanned maps are not
-accessible online they can be viewed only at the library. Furthermore, the licensed geospatial data is
-accessible only to people who have Princeton University NetIDs. The Portal allows researchers to search
-digital maps and geospatial data by using keyword, title, publisher/creator, and subject, but they can
-also use map (spatial search) to find the data on a particular location on earth.
+This website provides access to geospatial data and scanned maps from our own collections,
+as well as the collections of other institutions, in the service of our students, researchers,
+and the global community. Patrons may easily search for content in a variety of ways, including
+a user-friendly geographic spatial search, to find relevant data on a particular location on earth.
+Much of the content is freely available, but some maps and datasets are restricted to Princeton
+University-affiliated patrons or on-site use.
 </p>
 
-<h3>Scanned Maps</h3>
+<h3>Scanned Maps and Georeferenced Maps</h3>
 <p>
-Scanned Maps are print maps that have been digitized and combined with geographic information, allowing for accurate positioning of the map on an interactive, modern globe. Many of the Scanned Maps available in the Digital Map and Geospatial Data Portal are historic, allowing researchers to compare past geographic boundaries and names with their modern counterparts. Princeton University Library has a strong commitment to scanning our print maps collection, so scanned maps are added to the portal on a regular basis.
+Scanned Maps are print maps that have been digitized. Many of these maps are
+historic, allowing researchers to compare past geographic boundaries and names with their
+modern counterparts. Princeton University Library has a strong commitment to scanning our
+print maps collection, so scanned maps are added to the portal on a regular basis.
+Georeferenced Maps are Scanned Maps that contain additional GIS information which allows for
+them to be superimposed on a modern globe. Both Scanned Maps and
+Georeferenced Maps are discoverable through the site's spatial search feature.
 </p>
 
 <div class="examples">
@@ -25,23 +30,23 @@ Scanned Maps are print maps that have been digitized and combined with geographi
     <figcaption>Example of a Scanned Map</figcaption>
   </figure>
   <figure>
-    <%=image_tag("about/pulmap-scannedmap-gis.png", alt: "Example of a Georeferenced Scanned Map", width: "400px")%>
-    <figcaption>Example of a Georeferenced Scanned Map</figcaption>
+    <%=image_tag("about/pulmap-scannedmap-gis.png", alt: "Example of a Georeferenced Map", width: "400px")%>
+    <figcaption>Example of a Georeferenced Map</figcaption>
   </figure>
 </div>
 
 <h3>Sanborn Maps</h3>
 
-<p>Sanborn Maps are some of the most popular resources in our collection of Scanned Maps.
-  The Sanborn Map Company is the oldest mapping company in the United States.
-  Founded in 1866, the company created detailed building maps of cities and towns
-  all across the country, primarily for use by insurance companies. These maps
-  also have been used extensively by local government agencies for over a century
-  in conducting their daily operations efficiently. Approximately 12,000 American
-  cities and towns are chronicled in the company's collection of over one million maps.
-  As a result of its history, the name "Sanborn" has become synonymous with this kind of map.
-  Genealogists, local history buffs, city planners, architects, and countless others have
-  been drawn to the quality of detail found in them. </p>
+<p>
+  The Sanborn Map Company, founded in 1866, created detailed building maps of cities
+  and towns all across the country, primarily for use by the insurance industry.
+  These maps also have been used extensively by local government agencies for over
+  a century in conducting their daily operations efficiently. As a result of its history,
+  the name "Sanborn" has become synonymous with this kind of map. Genealogists, local history buffs,
+  city planners, architects, and countless others have been drawn to the quality of detail found in them.
+  Princeton University Library holds the entire collection of the company’s New Jersey volumes,
+  which are made available on this website.
+</p>
 
 <div class="examples">
   <figure>
@@ -108,8 +113,8 @@ smaller pixels and a larger file size.</p>
   <li>Public Policy</li>
   <li>Research Support</li>
 </ul>
-
-<p>If you need help in finding the data you are looking for,
+<br/>
+<p>Only a subset of Princeton University Library's Maps Collection is available on this site. If you need help in finding the data you are looking for,
   contact Tsering Wangyal Shawa, GIS and Map Librarian via the
   <%= link_to "Contact Us page", "/contact-us" %>.</p>
 </div>
