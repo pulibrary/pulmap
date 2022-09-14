@@ -20,7 +20,8 @@ GeoCombine::GeoBlacklightHarvester.configure do
           access: ['public'],
           dct_provenance_s: ['Stanford']
         },
-        q: '*'
+        q: '*',
+        format: 'json'
       }
     },
     HARVARD: {
@@ -40,7 +41,8 @@ GeoCombine::GeoBlacklightHarvester.configure do
         f: {
           dct_provenance_s: ['Columbia'],
           access: ['public']
-        }
+        },
+        format: 'json'
       }
     },
     TUFTS: {
@@ -50,7 +52,8 @@ GeoCombine::GeoBlacklightHarvester.configure do
         f: {
           dct_provenance_s: ['Tufts'],
           access: ['public']
-        }
+        },
+        format: 'json'
       }
     },
     MASSGIS: {
@@ -60,7 +63,8 @@ GeoCombine::GeoBlacklightHarvester.configure do
         f: {
           dct_provenance_s: ['MassGIS'],
           access: ['public']
-        }
+        },
+        format: 'json'
       }
     },
     NYU: {
