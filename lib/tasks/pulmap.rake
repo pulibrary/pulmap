@@ -89,6 +89,20 @@ namespace :pulmap do
     end
   end
 
+  namespace :delete_record do
+    desc "Delete a single record"
+    task :index, :id do |_t, args|
+      # Set up connection and args
+      id = args[:id]
+      raise ArgumentError, "An id argument is required" unless id
+      solr = Blacklight.default_index.connection
+
+      # Delete and commit
+      solr.delete_by_query "layer_slug_s:#{RSolr.solr_escape(id)}"
+      solr.commit
+    end
+  end
+
   private
 
   def url_for_file(file)
