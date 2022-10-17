@@ -67,3 +67,10 @@ gem "sneakers"
 gem "twitter-typeahead-rails"
 gem "webpacker"
 gem "whenever"
+
+# Added for Ruby 3.1 support
+gem "matrix"
+gem "net-imap", require: false
+gem "net-pop", require: false
+gem "net-smtp", require: false
+gem "strscan", "3.0.1"
