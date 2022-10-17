@@ -13,6 +13,7 @@ gem "pg"
 gem "puma", "~> 4.3"
 gem "rack"
 gem "rails", "~> 6.1"
+gem "rake", ">= 13"
 gem "turbolinks"
 gem "uglifier"
 
