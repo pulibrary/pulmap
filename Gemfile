@@ -66,6 +66,7 @@ gem "simple_form"
 gem "sitemap_generator", "~> 6.0"
 gem "sneakers"
 gem "twitter-typeahead-rails"
+# See: https://github.com/pulibrary/pulmap/issues/111://github.com/pulibrary/pulmap/issues/1116
 gem "view_component", "2.57.1"
 gem "webpacker"
 gem "whenever"
