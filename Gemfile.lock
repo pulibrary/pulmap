@@ -87,7 +87,7 @@ GEM
       rubocop-performance
       rubocop-rails
       rubocop-rspec
-    blacklight (7.27.1)
+    blacklight (7.31.0)
       deprecation
       globalid
       hashdiff
@@ -612,8 +612,9 @@ GEM
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (2.3.0)
-    view_component (2.57.1)
+    view_component (2.74.1)
       activesupport (>= 5.0.0, < 8.0)
+      concurrent-ruby (~> 1.0)
       method_source (~> 1.0)
     virtus (2.0.0)
       axiom-types (~> 0.1)
@@ -653,7 +654,7 @@ DEPENDENCIES
   autoprefixer-rails
   axe-core-rspec
   bixby
-  blacklight (= 7.27.1)
+  blacklight (= 7.31.0)
   blacklight_advanced_search (~> 7.0.0)
   blacklight_range_limit
   bootstrap (~> 4.0)
@@ -707,7 +708,6 @@ DEPENDENCIES
   turbolinks
   twitter-typeahead-rails
   uglifier
-  view_component (= 2.57.1)
   web-console
   webdrivers
   webpacker

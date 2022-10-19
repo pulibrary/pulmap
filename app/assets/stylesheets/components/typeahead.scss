@@ -4,6 +4,11 @@
 
   width: 100%;
 
+  .tt-input {
+    // Fixes gray input background in newer versions of blacklight
+    background-color: white !important;
+  }
+
   .tt-input.form-control {
     width: 100%;
   }
