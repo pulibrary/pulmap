@@ -16,7 +16,7 @@ jobs:
           bundle install
           bundle update
       - name: Create Pull Request
-        uses: pulibrary/pulmap@main
+        uses: peter-evans/create-pull-request@v4
         with:
             token: ${{ secrets.PAT }}
             commit-message: Update dependencies
