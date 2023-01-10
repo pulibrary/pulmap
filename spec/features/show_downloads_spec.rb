@@ -8,6 +8,16 @@ describe "Show page downloads" do
     expect(page).to have_link "Login to view"
   end
 
+  it "does not render a link to request offline access for Princeton Documents unavailable online" do
+    visit solr_document_path("princeton-fk4bk1p41f")
+    expect(page).not_to have_link "Request offline access"
+  end
+
+  it "renders the card containing the download links for non-Princeton Documents" do
+    visit solr_document_path("stanford-cz128vq0535")
+    expect(page).to have_link "Original Shapefile"
+  end
+
   context "when the user logs in" do
     before do
       OmniAuth.config.test_mode = true
@@ -19,15 +29,11 @@ describe "Show page downloads" do
       find(".list-group-item.access > a").click # login to view link
       expect(page).to have_css ".download-link-container"
     end
-  end
 
-  it "renders a link to request offline access for Princeton Documents unavailable online" do
-    visit solr_document_path("princeton-fk4bk1p41f")
-    expect(page).to have_link "Request offline access"
-  end
-
-  it "renders the card containing the download links for non-Princeton Documents" do
-    visit solr_document_path("stanford-cz128vq0535")
-    expect(page).to have_link "Original Shapefile"
+    it "renders a link to request offline access for Princeton Documents unavailable online" do
+      visit solr_document_path("princeton-fk4bk1p41f")
+      click_link "Login"
+      expect(page).to have_link "Request offline access"
+    end
   end
 end
