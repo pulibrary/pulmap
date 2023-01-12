@@ -31,11 +31,7 @@ module FeaturedContentBehavior
     ]
   end
 
-  def raster_content_params
-    ["layer_geom_type_sm:Raster"]
-  end
-
-  def vector_content_params
-    ["layer_geom_type_sm:Line OR layer_geom_type_sm:Polygon OR layer_geom_type_sm:Point"]
+  def geospatial_content_params
+    ["layer_geom_type_sm:Raster OR layer_geom_type_sm:Line OR layer_geom_type_sm:Polygon OR layer_geom_type_sm:Point"]
   end
 end

@@ -35,16 +35,11 @@ describe SearchBuilder do
       expect(builder.add_featured_content(solr_params)[:fq].to_s).to include("-dc_title_s:*Sanborn")
     end
 
-    it "returns search for raster datasets when featured param is set to raster" do
-      params = { featured: "raster" }
-      builder.with(params)
-      expect(builder.add_featured_content(solr_params)[:fq].to_s).to include("Raster")
-    end
-
-    it "returns search for vector datasets when featured param is set to vector" do
-      params = { featured: "vector" }
+    it "returns search for vector and raster datasets when featured param is set to geospatial" do
+      params = { featured: "geospatial" }
       builder.with(params)
       expect(builder.add_featured_content(solr_params)[:fq].to_s).to include("Polygon")
+      expect(builder.add_featured_content(solr_params)[:fq].to_s).to include("Raster")
     end
   end
 end

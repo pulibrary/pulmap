@@ -1,13 +1,16 @@
 .featured-cards {
-  .card {
-    transition: all 0.2s ease-in-out;
-    border: 0px solid transparentize(#333, 0.8);
-    outline: none;
-
-    &:focus,
-    &:hover {
+  .featured-card {
+    &:focus, &:hover {
       background: transparentize(#333, 0.95);
     }
+  }
+
+  .card {
+    flex-direction: row;
+    transition: all 0.2s ease-in-out;
+    border: 0px;
+    outline: none;
+    background: transparent;
   }
 
   a {
@@ -16,23 +19,27 @@
 
   h1 {
     color: #494f57;
-    font-size: 1.3em;
+    font-size: 1.6em;
     margin-top: 0.625em;
     margin-bottom: 0.4em;
-    text-align: center;
   }
 
   p {
     color: rgba(0, 0, 0, 0.6);
     margin: auto;
-    text-align: center;
+    font-size: 1.2em;
+  }
+
+  .card-img-top {
+    width: 25%;
+    align-self: center;
   }
 
   span {
     display: block;
     margin-bottom: 1em;
     margin: auto;
-    font-size: 48px;
+    font-size: 60px;
     color: #777777;
     text-align: center;
     height: inherit;
@@ -41,8 +48,8 @@
       height: 48px;
     }
     svg {
-      height: 44px;
-      width: 44px;
+      height: 60px;
+      width: 60px;
       margin-bottom: 44px;
     }
   }
