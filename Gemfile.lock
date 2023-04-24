@@ -146,7 +146,7 @@ GEM
     config (4.0.0)
       deep_merge (~> 1.2, >= 1.2.1)
       dry-validation (~> 1.0, >= 1.0.0)
-    connection_pool (2.3.0)
+    connection_pool (2.4.0)
     crass (1.0.6)
     database_cleaner (2.0.1)
       database_cleaner-active_record (~> 2.0.0)
@@ -427,8 +427,6 @@ GEM
       nio4r (~> 2.0)
     racc (1.7.1)
     rack (2.2.6.2)
-    rack-protection (3.0.2)
-      rack
     rack-proxy (0.7.4)
       rack
     rack-test (2.0.2)
@@ -466,7 +464,8 @@ GEM
     rainbow (3.1.1)
     rake (13.0.6)
     rbtree (0.4.5)
-    redis (4.5.1)
+    redis-client (0.14.1)
+      connection_pool
     regexp_parser (2.6.0)
     representable (3.2.0)
       declarative (< 0.1.0)
@@ -546,11 +545,11 @@ GEM
     serverengine (2.0.7)
       sigdump (~> 0.2.2)
     set (1.0.3)
-    sidekiq (5.2.10)
-      connection_pool (~> 2.2, >= 2.2.2)
-      rack (~> 2.0)
-      rack-protection (>= 1.5.0)
-      redis (~> 4.5, < 4.6.0)
+    sidekiq (7.0.8)
+      concurrent-ruby (< 2)
+      connection_pool (>= 2.3.0)
+      rack (>= 2.2.4)
+      redis-client (>= 0.11.0)
     sigdump (0.2.4)
     signet (0.17.0)
       addressable (~> 2.8)
@@ -696,7 +695,7 @@ DEPENDENCIES
   rake (>= 13)
   rsolr (~> 2.3)
   rspec-rails
-  sidekiq (~> 5.0)
+  sidekiq (~> 7.0)
   simple_form
   simplecov
   sitemap_generator (~> 6.0)
