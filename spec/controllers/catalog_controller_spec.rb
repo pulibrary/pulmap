@@ -10,4 +10,14 @@ describe CatalogController, type: :controller do
       it { is_expected.to be false }
     end
   end
+
+  describe "#after_sign_in_path_for" do
+    context "when omniauth.origin is not set" do
+      it "redirects to the root path" do
+        mock_request = instance_double(ActionDispatch::Request, env: {})
+        controller.instance_eval { @request = mock_request }
+        expect(controller.after_sign_in_path_for(nil)).to eq "/"
+      end
+    end
+  end
 end

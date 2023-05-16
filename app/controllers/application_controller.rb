@@ -16,9 +16,11 @@ class ApplicationController < ActionController::Base
     render file: Rails.public_path.join("404.html"), status: :not_found
   end
 
-  private
-
   def after_sign_in_path_for(_resource)
-    request.env["omniauth.origin"]
+    if !request.env["omniauth.origin"].nil?
+      request.env["omniauth.origin"]
+    else
+      root_path
+    end
   end
 end
