@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 Datadog.configure do |c|
   c.tracer(enabled: false) unless Rails.env.production?
+  c.env = Rails.env.to_s
+  c.service = "pulmap"
+
   # Rails
   c.use :rails
 
