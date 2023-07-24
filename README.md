@@ -35,7 +35,7 @@ $ ssh deploy@lib-proc7
 $ tmux new -t [yourname]
 $ cd /opt/figgy/current
 $ BULK=true bundle exec rails c
-> GeoResourceIndexer.reindex_geoblacklight
+> GeoResourceReindexer.reindex_geoblacklight
 ```
 
 It takes a few minutes to get all the complete georesources. Then it invokes the
