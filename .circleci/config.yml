@@ -1,7 +1,7 @@
 ---
 version: 2.1
 orbs:
-  browser-tools: circleci/browser-tools@1.2.5
+  browser-tools: circleci/browser-tools@1.4.4
   node: circleci/node@5.0.2
 jobs:
   build:
@@ -19,11 +19,10 @@ jobs:
           POSTGRES_DB: pulmap_test
           POSTGRES_HOST_AUTH_METHOD: trust
     steps:
-      - browser-tools/install-chrome
+      - run: sudo apt-get update
+      - browser-tools/install-chrome:
+          chrome-version: 116.0.5845.96
       - browser-tools/install-chromedriver
-      - run:
-          name: remove errant LICENSE file
-          command: rm LICENSE.chromedriver
       - checkout
       - restore_cache:
           keys:
@@ -71,7 +70,9 @@ jobs:
       - image: pulibrary/ci-solr:8.4-v1.0.0
         command: server/scripts/ci-start.sh
     steps:
-      - browser-tools/install-chrome
+      - run: sudo apt-get update
+      - browser-tools/install-chrome:
+          chrome-version: 116.0.5845.96
       - browser-tools/install-chromedriver
       - attach_workspace:
           at: '~/pulmap'
@@ -104,7 +105,9 @@ jobs:
           PULMAP_DB_HOST: localhost
           PULMAP_DB_USERNAME: geoblacklight
     steps:
-      - browser-tools/install-chrome
+      - run: sudo apt-get update
+      - browser-tools/install-chrome:
+          chrome-version: 116.0.5845.96
       - browser-tools/install-chromedriver
       - attach_workspace:
           at: '~/pulmap'
