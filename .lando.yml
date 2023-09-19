@@ -19,7 +19,7 @@ services:
     config:
       dir: "solr/conf"
   pulmap_database:
-    type: postgres:13
+    type: postgres:15
     portforward: true
 proxy:
   pulmap_test_solr:
