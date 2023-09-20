@@ -32,6 +32,8 @@ group :development, :test do
 end
 
 group :development do
+  gem "bcrypt_pbkdf"
+  gem "ed25519"
   gem "web-console"
 end
 
@@ -61,7 +63,7 @@ gem "mail_form"
 gem "omniauth-cas", "~> 2.0"
 gem "omniauth-rails_csrf_protection", "~> 0.1"
 gem "rsolr", "~> 2.3"
-gem "sidekiq", "~> 5.0"
+gem "sidekiq", "~> 7.0"
 gem "simple_form"
 gem "sitemap_generator", "~> 6.0"
 gem "sneakers"
