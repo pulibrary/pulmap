@@ -47,8 +47,8 @@ jobs:
           key: pulmap-yarn-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
-      # Disable spring while precompiling webpacker
-      - run: DISABLE_SPRING=1 NODE_ENV=test bundle exec rails webpacker:compile
+      # Disable spring while precompiling
+      - run: DISABLE_SPRING=1 NODE_ENV=test bundle exec rake vite:build
       - persist_to_workspace:
           root: '~/pulmap'
           paths: '*'

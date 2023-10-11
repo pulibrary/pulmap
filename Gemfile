@@ -68,9 +68,9 @@ gem "simple_form"
 gem "sitemap_generator", "~> 6.0"
 gem "sneakers"
 gem "twitter-typeahead-rails"
-gem "webpacker"
+gem "vite_rails"
 gem "whenever"
-
+#
 # Added for Ruby 3.1 support
 gem "matrix"
 gem "net-imap", require: false

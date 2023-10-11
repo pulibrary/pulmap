@@ -12,6 +12,8 @@
 //= require geoblacklight/modules/svg_tooltips
 //= require geoblacklight/modules/util
 //= require geoblacklight/downloaders
+//= require viewers/pmtiles
+//= require viewers/cog
 
 //= require leaflet-iiif
 //= require esri-leaflet
