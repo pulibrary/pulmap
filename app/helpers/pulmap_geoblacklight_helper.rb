@@ -10,7 +10,9 @@ module PulmapGeoblacklightHelper
   end
 
   def viewer_container
-    if @document.references.references(:iiif_manifest)
+    if @document.item_viewer.pmtiles || @document.item_viewer.cog
+      ol_viewer
+    elsif @document.references.references(:iiif_manifest)
       manifest_viewer
     else
       leaflet_viewer
@@ -66,6 +68,21 @@ module PulmapGeoblacklightHelper
   def leaflet_viewer
     tag.div(nil,
             id: "map",
+            data: {
+              map: "item", protocol: @document.viewer_protocol.camelize,
+                    url: @document.viewer_endpoint,
+                    "layer-id" => @document.wxs_identifier,
+                    "map-geom" => @document.geometry.geojson,
+                    "catalog-path" => search_catalog_path,
+                    available: document_available?,
+                    basemap: geoblacklight_basemap,
+                    leaflet_options: leaflet_options
+            })
+  end
+
+  def ol_viewer
+    tag.div(nil,
+            id: "ol-map",
             data: {
               map: "item", protocol: @document.viewer_protocol.camelize,
                     url: @document.viewer_endpoint,

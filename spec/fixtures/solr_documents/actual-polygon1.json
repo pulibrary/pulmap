@@ -9,7 +9,7 @@
     "dc_type_s": "Dataset",
     "dct_issued_s": "2005",
     "dct_provenance_s": "Tufts",
-    "dct_references_s": "{\"http://www.opengis.net/def/serviceType/ogc/wfs\":\"http://geoserver01.uit.tufts.edu/wfs\",\"http://www.opengis.net/def/serviceType/ogc/wms\":\"http://geoserver01.uit.tufts.edu/wms\",\"http://www.opengis.net/cat/csw/csdgm\":\"https://raw.githubusercontent.com/OpenGeoMetadata/edu.tufts/master/165/242/110/132/fgdc.xml\"}",
+    "dct_references_s": "{\"http://www.opengis.net/cat/csw/csdgm\":\"https://raw.githubusercontent.com/OpenGeoMetadata/edu.tufts/master/165/242/110/132/fgdc.xml\",\"http://www.opengis.net/def/serviceType/ogc/wfs\":\"http://geoserver01.uit.tufts.edu/wfs\",\"http://www.opengis.net/def/serviceType/ogc/wms\":\"http://geoserver01.uit.tufts.edu/wms\",\"https://github.com/protomaps/PMTiles\":\"https://test-data.cloudgbl.org/tufts-cambridgegrid100-04.pmtiles\"}",
     "dct_temporal_sm": [
         "2004"
     ],

@@ -3,9 +3,9 @@ import {Map, View} from 'ol';
 import TileLayer from 'ol/layer/Tile';
 import VectorTile from 'ol/layer/VectorTile';
 import OSM from 'ol/source/OSM'
-import GeoJSON from 'ol/format/geojson'
+import GeoJSON from 'ol/format/GeoJSON.js'
 import { useGeographic, transform } from 'ol/proj';
-import {Style, Stroke, Fill} from 'ol/style';
+import {Style, Stroke, Fill, Circle} from 'ol/style';
 import GeoTIFF from 'ol/source/GeoTIFF.js';
 import WebGLTileLayer from 'ol/layer/WebGLTile.js';
 import { PMTilesVectorSource } from '@/components/pmtiles-layer'
@@ -22,8 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const vectorLayer = new VectorTile({
         declutter: true,
         source: new PMTilesVectorSource({
-          // url: "https://pul-tile-images.s3.amazonaws.com/Dept_of_Public_Works_Roadwork_Projects.pmtiles",
-          // url: "https://pul-tile-images.s3.amazonaws.com/pmtiles/parcels.pmtiles",
           url: data.url
         }),
         style: new Style({
@@ -33,6 +31,16 @@ document.addEventListener('DOMContentLoaded', () => {
           }),
           fill: new Fill({
             color: '#FFFFFF',
+          }),
+          image: new Circle({
+            radius: 7,
+            fill: new Fill({
+              color: '#7070B3'
+            }),
+            stroke: new Stroke({
+              color: '#FFFFFF',
+              width: 2
+            })
           })
         })
       });
