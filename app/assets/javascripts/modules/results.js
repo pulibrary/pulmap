@@ -16,6 +16,9 @@ Blacklight.onLoad(function() {
     // Instantiate new map
     GeoBlacklight.Home = new GeoBlacklight.Viewer.Map(this, { bbox: bbox });
 
+    // Add geocoder
+    addGeocoder(GeoBlacklight.Home.map)
+
     // Remove initial overlay
     GeoBlacklight.Home.removeBoundsOverlay();
 
@@ -114,7 +117,7 @@ Blacklight.onLoad(function() {
    * @param {L.Map} map Leaflet Map instance
    */
   function addGeocoder(map) {
-    window.geoCoder.addTo(map);
+    map.addControl(window.geoCoder);
 
     var options = {
       placement: 'bottom',

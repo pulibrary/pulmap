@@ -23,7 +23,9 @@
     <%= stylesheet_link_tag "print", media: "print" %>
     <%= javascript_include_tag "application" %>
     <%= vite_client_tag %>
-    <%= vite_javascript_tag 'application' %>
+    <% if layout_type == "index" %>
+      <%= vite_javascript_tag 'geocoder' %>
+    <% end %>
     <% if openlayers_container? %>
       <%= vite_javascript_tag 'ol' %>
     <% end %>
