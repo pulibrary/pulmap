@@ -10,13 +10,18 @@ module PulmapGeoblacklightHelper
   end
 
   def viewer_container
-    if @document.item_viewer.pmtiles || @document.item_viewer.cog
+    if openlayers_container?
       ol_viewer
     elsif @document.references.references(:iiif_manifest)
       manifest_viewer
     else
       leaflet_viewer
     end
+  end
+
+  def openlayers_container?
+    return false unless @document
+    @document.item_viewer.pmtiles || @document.item_viewer.cog
   end
 
   def all_facet_values_label(field)
