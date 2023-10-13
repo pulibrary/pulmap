@@ -1,5 +1,5 @@
-import OlInitializer from '@/openlayers/ol_initializer';
+import OlInitializer from '@/openlayers/ol_initializer'
 
 document.addEventListener('DOMContentLoaded', () => {
-  new OlInitializer();
-});
+  new OlInitializer().run()
+})

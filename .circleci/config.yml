@@ -93,6 +93,7 @@ jobs:
       - run: bundle exec rake db:migrate
       - run: bundle exec rake geoblacklight:solr:seed
       - run: bundle exec rspec spec/
+      - run: npm run lint
       - store_artifacts:
           path: coverage
           destination: coverage

@@ -1,2 +1,2 @@
 document.addEventListener('DOMContentLoaded', () => {
-});
+})
