@@ -2,6 +2,8 @@
 
 # Overridden from:
 # https://github.com/geoblacklight/geoblacklight/blob/main/lib/geoblacklight/constants.rb
+# Adds `cog` and `pmtiles` references
+# If this work is merged upstream, this file can be removed.
 module Geoblacklight
   # Module to declare application level constants and lookup hash
   module Constants

@@ -1,4 +1,5 @@
 module Geoblacklight
+  # Overridden from: https://github.com/geoblacklight/geoblacklight/blob/v3.8.0/lib/geoblacklight/download.rb
   class Download
     ##
     # Monkey patch of Geoblacklight::Download that injects geoserver auth

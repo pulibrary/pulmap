@@ -2,6 +2,8 @@
 
 # Overridden from:
 # https://github.com/geoblacklight/geoblacklight/blob/main/lib/geoblacklight/item_viewer.rb
+# Adds methods for `cog` and `pmtiles` layers.
+# If this work is merged upstream, this file can be removed.
 module Geoblacklight
   class ItemViewer
     def initialize(references)
