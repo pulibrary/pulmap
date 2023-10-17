@@ -7,7 +7,7 @@
     "leaflet-geosearch": "^2.7.0",
     "lodash": "^4.17.21",
     "lodash.template": "^4.5.0",
-    "npm": "^6.14.6",
+    "npm": "^10.2.0",
     "ol": "8.1.0",
     "ol-pmtiles": "^0.3.0",
     "rails-erb-loader": "^5.5.0",
