@@ -117,7 +117,7 @@ Blacklight.onLoad(function() {
    * @param {L.Map} map Leaflet Map instance
    */
   function addGeocoder(map) {
-    window.geoCoder.addTo(map);
+    map.addControl(window.geoCoder);
 
     var options = {
       placement: 'bottom',

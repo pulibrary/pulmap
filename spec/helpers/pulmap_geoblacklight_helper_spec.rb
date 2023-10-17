@@ -42,8 +42,28 @@ describe PulmapGeoblacklightHelper, type: :helper do
       it "renders a Leaflet container" do
         assign(:document, document)
         allow(helper).to receive(:leaflet_viewer)
+        allow(helper).to receive(:geoblacklight_basemap)
         helper.viewer_container
         expect(helper).to have_received(:leaflet_viewer)
+      end
+    end
+
+    context "with pmtiles layer" do
+      let(:ol_viewer) { double }
+      let(:document_attributes) do
+        {
+          references_field => {
+            "https://github.com/protomaps/PMTiles" => "https://test-data.cloudgbl.org/tufts-cambridgegrid100-04.pmtiles"
+          }.to_json
+        }
+      end
+
+      it "renders an OpenLayers container" do
+        allow(helper).to receive(:geoblacklight_basemap).and_return("esri")
+        assign(:document, document)
+        node = Capybara.string(helper.viewer_container)
+        div = node.first("div")
+        expect(div[:id]).to eq "ol-map"
       end
     end
 

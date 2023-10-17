@@ -22,6 +22,13 @@
     <%= stylesheet_link_tag "application", media: "all" %>
     <%= stylesheet_link_tag "print", media: "print" %>
     <%= javascript_include_tag "application" %>
+    <%= vite_client_tag %>
+    <% if layout_type == "index" %>
+      <%= vite_javascript_tag 'geocoder' %>
+    <% end %>
+    <% if openlayers_container? %>
+      <%= vite_javascript_tag 'ol' %>
+    <% end %>
     <%= csrf_meta_tags %>
     <%= content_for(:head) %>
 
