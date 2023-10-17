@@ -11,7 +11,7 @@ import {
 import GeoTIFF from 'ol/source/GeoTIFF'
 import WebGLTileLayer from 'ol/layer/WebGLTile'
 import { FullScreen, defaults as defaultControls } from 'ol/control'
-import { PMTilesVectorSource } from '@/openlayers/pmtiles-layer'
+import { PMTilesVectorSource } from 'ol-pmtiles'
 
 export default class OlInitializer {
   constructor () {
