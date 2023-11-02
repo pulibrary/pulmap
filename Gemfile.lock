@@ -378,7 +378,7 @@ GEM
       rake
     mini_magick (4.9.5)
     mini_mime (1.1.2)
-    mini_portile2 (2.8.4)
+    mini_portile2 (2.8.5)
     minitest (5.17.0)
     modernizr-rails (2.7.1)
     msgpack (1.6.0)
@@ -428,7 +428,7 @@ GEM
     public_suffix (5.0.0)
     puma (5.6.7)
       nio4r (~> 2.0)
-    racc (1.7.1)
+    racc (1.7.2)
     rack (2.2.6.4)
     rack-proxy (0.7.7)
       rack
@@ -529,7 +529,7 @@ GEM
       ffi (~> 1.12)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
-    sanitize (6.0.1)
+    sanitize (6.1.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     sassc (2.4.0)
