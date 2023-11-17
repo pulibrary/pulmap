@@ -4,12 +4,14 @@ import TileLayer from 'ol/layer/Tile'
 import VectorTile from 'ol/layer/VectorTile'
 import XYZ from 'ol/source/XYZ'
 import GeoJSON from 'ol/format/GeoJSON'
-import { useGeographic } from 'ol/proj'
+import { Projection, useGeographic } from 'ol/proj'
 import {
   Style, Stroke, Fill, Circle
 } from 'ol/style'
 import GeoTIFF from 'ol/source/GeoTIFF'
 import WebGLTileLayer from 'ol/layer/WebGLTile'
+import VectorLayer from 'ol/layer/Vector'
+import VectorSource from 'ol/source/Vector'
 import { FullScreen, defaults as defaultControls } from 'ol/control'
 import { PMTilesVectorSource } from 'ol-pmtiles'
 
@@ -24,7 +26,9 @@ export default class OlInitializer {
 
   run () {
     if (!this.element) return false
-    if (this.data.protocol === 'Pmtiles') {
+    if (this.data.available !== 'true') {
+      this.initializeBoundsOverlay()
+    } else if (this.data.protocol === 'Pmtiles') {
       this.initializePmtiles()
     } else if (this.data.protocol === 'Cog') {
       this.initializeCog()
@@ -99,5 +103,30 @@ export default class OlInitializer {
       })
       map.getView().fit(view.extent, map.getSize())
     })
+  }
+
+  initializeBoundsOverlay () {
+    const vectorLayer = new VectorLayer({
+      source: new VectorSource({
+        features: new GeoJSON().readFeatures(this.data.mapGeom)
+      })
+    })
+
+    const proj = new Projection({
+      code: 'EPSG:4326',
+      units: 'degrees'
+    })
+
+    const map = new Map({
+      layers: [
+        this.baseLayer(),
+        vectorLayer
+      ],
+      target: 'ol-map',
+      view: new View({
+        projection: proj
+      })
+    })
+    map.getView().fit(this.extent, { size: map.getSize(), padding: [10, 10, 10, 10] })
   }
 }
