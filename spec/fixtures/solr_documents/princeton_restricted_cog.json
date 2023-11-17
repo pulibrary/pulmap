@@ -1,0 +1,41 @@
+{
+    "geoblacklight_version": "1.0",
+    "dc_identifier_s": "ark:/88435/dcgx41mw63n",
+    "layer_slug_s": "princeton-dcgx41mw63n",
+    "uuid": "princeton-dcgx41mw63n",
+    "dc_title_s": "Part of Kam in Eastern Tibet [cartographic material] / by Eric Teichman, C.I.E., B.A. (geotiff)",
+    "solr_geom": "ENVELOPE(96.05, 100.2, 33.35, 28.8)",
+    "dct_provenance_s": "Princeton",
+    "dc_rights_s": "Restricted",
+    "dc_description_s": "Relief shown by spot heights. Mr. Teichman's routes, passes, and boundaries of states and provinces are shown. Includes information on terrain and ground cover. \"Names are all given in Tibetan, with Chinese names, where the latter are in common use, added in brackets.\" Includes East Tibetan Glossary of geographical terms. Includes inset showing area of map within Asia. From: Geographical Journal. Vol. 59, no. 1 (January 1922), pp. 1-19; held in Firestone Library. Call number: G7 .J6874",
+    "dc_creator_sm": [
+        "Teichman, Eric, 1884-1944"
+    ],
+    "dc_language_s": "en",
+    "dc_publisher_s": "London : Edward Stanford, 1922.",
+    "all_subject_sm": [
+        "Tibet\u2014Description and travel\u2014Maps",
+        "Physical geography\u2014Tibet",
+        "Tibet\u2014Maps",
+        "Physical maps",
+        "Maps"
+    ],
+    "dct_spatial_sm": [
+        "Tibet (China)"
+    ],
+    "solr_year_i": 1922,
+    "layer_modified_dt": "2023-11-10T21:04:40Z",
+    "layer_id_s": "public-figgy:p-726b457b-09a8-49ec-bf9b-fa37b488a693",
+    "dct_references_s": "{\"http://schema.org/url\":\"https://catalog.princeton.edu/catalog/9975632383506421\",\"http://schema.org/downloadUrl\":\"https://figgy.princeton.edu/downloads/726b457b-09a8-49ec-bf9b-fa37b488a693/file/91ebee67-0fd7-4689-9fad-aa295ec4239f\",\"http://schema.org/thumbnailUrl\":\"https://figgy.princeton.edu/downloads/726b457b-09a8-49ec-bf9b-fa37b488a693/file/ed5b7d8d-982a-46c7-9844-504ab821ef68\",\"http://www.opengis.net/def/serviceType/ogc/wmts\":\"https://map-tiles.princeton.edu/cog/WMTSCapabilities.xml?id=c2a0cc9fe29641e99a6981f71b0d773b\",\"https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames\":\"https://map-tiles.princeton.edu/cog/tiles/WebMercatorQuad/{z}/{x}/{y}@1x.png?id=c2a0cc9fe29641e99a6981f71b0d773b\",\"https://github.com/cogeotiff/cog-spec\":\"https://geodata.lib.princeton.edu/f6/df/29/f6df291284ad483bad2517d4c75273dd/display_raster.tif\"}",
+    "layer_geom_type_s": "Raster",
+    "layer_geom_type_sm": [
+        "Raster"
+    ],
+    "dc_format_s": "GeoTIFF",
+    "suppressed_b": true,
+    "dc_source_sm": [
+        "princeton-70795b14w"
+    ],
+    "call_number_s": "G7823.T5C1 1922 .R6",
+    "rights_statement_s": "<a href=\"http://rightsstatements.org/vocab/NKC/1.0/\">No Known Copyright</a><br><p>Princeton University Library reasonably believes that the Item is not restricted by copyright or related rights, but a conclusive determination could not be made.\n<br/>You are free to use this Item in any way that is permitted by the copyright and related rights legislation that applies to your use.</p><p>Princeton University Library claims no copyright or license governing this digital resource. It is provided for free, on a non-commercial, open-access basis, for fair-use academic and research purposes only. Anyone who claims copyright over any part of these resources and feels that they should not be presented in this manner is invited to contact Princeton University Library, who will in turn consider such concerns and make every effort to respond appropriately. We request that users reproducing this resource cite it according to the guidelines described at <a href=\"https://library.princeton.edu/special-collections/policies/forms-citation\">https://library.princeton.edu/special-collections/policies/forms-citation</a>.\n</p>"
+}
