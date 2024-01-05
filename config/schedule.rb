@@ -30,9 +30,9 @@ end
 ## Harvest new records from other GeoBlacklight sites
 
 # First day of every month at 1 AM
-every "0 1 1 * *", roles: [:index] do
-  rake "pulmap:geoblacklight_harvester:index[STANFORD]"
-end
+# every "0 1 1 * *", roles: [:index] do
+#   rake "pulmap:geoblacklight_harvester:index[STANFORD]"
+# end
 
 # Task is commented out until we update our schema to 2.0
 # In the meantime, we will pull Big10 documents from OpenGeoMetadata.
@@ -42,36 +42,36 @@ end
 # end
 
 # Third day of every month at 1 AM
-every "0 1 3 * *", roles: [:index] do
-  rake "pulmap:geoblacklight_harvester:index[NYU]"
-end
+# every "0 1 3 * *", roles: [:index] do
+#   rake "pulmap:geoblacklight_harvester:index[NYU]"
+# end
 
 # Fourth day of every month at 1 AM
-every "0 1 4 * *", roles: [:index] do
-  rake "pulmap:geoblacklight_harvester:index[BARUCH]"
-end
+# every "0 1 4 * *", roles: [:index] do
+#   rake "pulmap:geoblacklight_harvester:index[BARUCH]"
+# end
 
 # Fifth day of every month at 1 AM
-every "0 1 5 * *", roles: [:index] do
-  rake "pulmap:geoblacklight_harvester:index[CORNELL]"
-end
+# every "0 1 5 * *", roles: [:index] do
+#   rake "pulmap:geoblacklight_harvester:index[CORNELL]"
+# end
 
 # Sixth day of every month at 1 AM
-every "0 1 6 * *", roles: [:index] do
-  rake "pulmap:geoblacklight_harvester:index[MIT]"
-end
+# every "0 1 6 * *", roles: [:index] do
+#   rake "pulmap:geoblacklight_harvester:index[MIT]"
+# end
 
 # Seventh day of every month at 1 AM
-every "0 1 7 * *", roles: [:index] do
-  rake "pulmap:geoblacklight_harvester:index[BERKELEY]"
-end
+# every "0 1 7 * *", roles: [:index] do
+#   rake "pulmap:geoblacklight_harvester:index[BERKELEY]"
+# end
 
 # Eighth day of every month at 1 AM
-every "0 1 8 * *", roles: [:index] do
-  rake "pulmap:geoblacklight_harvester:index[BOULDER]"
-end
+# every "0 1 8 * *", roles: [:index] do
+#   rake "pulmap:geoblacklight_harvester:index[BOULDER]"
+# end
 
 # Ninth day of every month at 1 AM
-every "0 1 9 * *", roles: [:index] do
-  rake "pulmap:geoblacklight_harvester:index[TEXAS]"
-end
+# every "0 1 9 * *", roles: [:index] do
+#   rake "pulmap:geoblacklight_harvester:index[TEXAS]"
+# end
