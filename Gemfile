@@ -4,6 +4,7 @@ source "https://rubygems.org"
 
 gem "autoprefixer-rails"
 gem "ddtrace", "~> 0.54"
+gem "health-monitor-rails"
 gem "jquery-rails"
 gem "lograge"
 gem "logstash-event"
