@@ -40,6 +40,7 @@ end
 
 group :test do
   gem "axe-core-rspec"
+  gem "webmock"
 end
 
 gem "blacklight", "7.31.0"
