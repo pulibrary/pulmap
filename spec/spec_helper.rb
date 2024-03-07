@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 ENV["RACK_ENV"] = "test"
+require "webmock/rspec"
 require "simplecov"
 require "capybara/rspec"
 require "capybara-screenshot/rspec"
@@ -32,3 +33,9 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 end
+
+WebMock.disable_net_connect!(allow_localhost: true,
+                             net_http_connect_on_start: true,
+                             allow: ["chromedriver.storage.googleapis.com", "googlechromelabs.github.io",
+                                     "storage.googleapis.com",
+                                     "edgedl.me.gvt1.com"])
