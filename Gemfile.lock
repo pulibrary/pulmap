@@ -476,6 +476,8 @@ GEM
     rainbow (3.1.1)
     rake (13.1.0)
     rbtree (0.4.5)
+    redis (5.0.8)
+      redis-client (>= 0.17.0)
     redis-client (0.18.0)
       connection_pool
     regexp_parser (2.6.0)
@@ -712,6 +714,7 @@ DEPENDENCIES
   rails (~> 6.1)
   rails-controller-testing
   rake (>= 13)
+  redis
   rsolr (~> 2.3)
   rspec-rails
   sidekiq (~> 7.1)
