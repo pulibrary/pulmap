@@ -69,6 +69,7 @@ jobs:
           POSTGRES_HOST_AUTH_METHOD: trust
       - image: pulibrary/ci-solr:8.4-v1.0.0
         command: server/scripts/ci-start.sh
+      - image: redis:7
     steps:
       - run: sudo apt-get update
       - browser-tools/install-chrome:
