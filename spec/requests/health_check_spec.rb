@@ -4,8 +4,15 @@ require "rails_helper"
 RSpec.describe "Health Check", type: :request do
   describe "GET /health" do
     it "has a health check" do
+      allow(Net::SMTP).to receive(:new).and_return(instance_double(Net::SMTP, "open_timeout=": nil, start: true))
       get "/health.json"
       expect(response).to be_successful
+    end
+
+    it "errors when it can't contact the SMTP server" do
+      get "/health.json?providers[]=smtpstatus"
+
+      expect(response).not_to be_successful
     end
 
     it "errors when a service is down" do
@@ -14,7 +21,7 @@ RSpec.describe "Health Check", type: :request do
         body: { responseHeader: { status: 500 } }.to_json, headers: { "Content-Type" => "text/json" }
       )
 
-      get "/health.json"
+      get "/health.json?providers[]=solrstatus"
 
       expect(response).not_to be_successful
       expect(response.status).to eq 503
