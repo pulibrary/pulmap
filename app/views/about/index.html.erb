@@ -1,0 +1,118 @@
+<% @page_title = t('blacklight.about.page_title', :application_name => application_name) %>
+
+<div id="content" class="col-lg-12">
+<h1 class='page-heading'><%= t('blacklight.about.page_title') %></h1>
+<p>
+This website provides access to geospatial data and scanned maps from our own collections,
+as well as the collections of other institutions, in the service of our students, researchers,
+and the global community. Patrons may discover content in a variety of ways, including
+an intuitive geographic spatial search, to find relevant data on a particular location on earth.
+Much of the content is freely available, but some maps and datasets are restricted to Princeton
+University-affiliated patrons or on-site use.
+</p>
+
+<h3>Scanned Maps and Georeferenced Maps</h3>
+<p>
+Scanned Maps are print maps that have been digitized. Many of these maps are
+historic, allowing researchers to compare past geographic boundaries and names with their
+modern counterparts. Princeton University Library has a strong commitment to scanning our
+print maps collection, so scanned maps are added to the portal on a regular basis.
+Georeferenced maps are scanned maps that contain coordinate reference system information which allows for
+them to be superimposed on any georeferenced maps or geospatial data. Both Scanned Maps and
+Georeferenced Maps are discoverable through the site's spatial search feature.
+</p>
+
+<div class="examples">
+  <figure>
+    <%=image_tag("about/pulmap-scannedmap.png", alt: "Example of a Scanned Map", width: "400px")%>
+    <figcaption>Example of a Scanned Map</figcaption>
+  </figure>
+  <figure>
+    <%=image_tag("about/pulmap-scannedmap-gis.png", alt: "Example of a Georeferenced Map", width: "400px")%>
+    <figcaption>Example of a Georeferenced Map</figcaption>
+  </figure>
+</div>
+
+<h3>Sanborn Maps</h3>
+
+<p>
+  The Sanborn Map Company, founded in 1867, created detailed building maps of cities
+  and towns all across the country, primarily for use by the insurance industry.
+  These maps also have been used extensively by local government agencies for over
+  a century in conducting their daily operations efficiently. As a result of its history,
+  the name "Sanborn" has become synonymous with this kind of map. Genealogists, local history buffs,
+  city planners, architects, and countless others have been drawn to the quality of detail found in them.
+  Princeton University Library holds the entire collection of the company’s New Jersey volumes,
+  which are made available on this website.
+</p>
+
+<div class="examples">
+  <figure>
+    <%=image_tag("about/pulmap-sanborn.jpg", alt: "Example of a Sandborn Georeferenced map of Princeton, Mercer County, New Jersey", width: "400px")%>
+    <figcaption>Example of a Sandborn Georeferenced map of Princeton, Mercer County, New Jersey</figcaption>
+  </figure>
+</div>
+
+<h3>Vector Data</h3>
+<p>
+Vector Data is one model of GIS data where geospatial data is represented in three different geometry
+types such as points, lines, and polygons and all the attribute values associated with the data are linked
+to each geometry. For example, locations of bus stops, schools, and other points of interest could be
+represented by points, road networks and rivers could be represented by lines, and property, country,
+city, and census boundaries could be represented by polygons.
+</p>
+
+<div class="examples">
+  <figure>
+    <%=image_tag("about/pulmap-vector-example.png", alt: "Points, lines, and polygons (area) shown here are examples of vector data", width: "400px")%>
+    <figcaption>Points, lines, and polygons (area) shown here are examples of vector data</figcaption>
+  </figure>
+  <figure>
+    <%=image_tag("about/pulmap-vector-full-example.png", alt: "Example of Vector data shown on a map", width: "400px")%>
+    <figcaption>Example of Vector data shown on a map</figcaption>
+  </figure>
+</div>
+
+<h3>Raster Data</h3>
+<p>
+Raster is another model of GIS data where geospatial data is represented as a
+matrix of cells and each contains an attribute value. Satellite image, elevation,
+land cover data, etc. are usually stored in raster data format. The spatial
+resolution of data depends on pixel/cell size. Higher resolution raster data has
+smaller pixels and a larger file size.</p>
+
+<div class="examples">
+  <figure>
+    <%=image_tag("about/pulmap-raster-example.png", alt: "The elevation map shown here is an example of raster data", width: "400px")%>
+    <figcaption>The elevation map shown here is an example of raster data</figcaption>
+  </figure>
+</div>
+
+<h3>Subject Areas</h3>
+
+<p>The maps and data in this collection may be used for many areas of scholarship, but highlights include:</p>
+<ul>
+  <li>Geology</li>
+  <li>Geochemistry</li>
+  <li>Geophysics</li>
+  <li>Climatology</li>
+  <li>Natural Resources</li>
+  <li>Land Use</li>
+  <li>Soils</li>
+  <li>Water Resources</li>
+  <li>Remote Sensing</li>
+  <li>Topography</li>
+  <li>Political and Cultural Geography</li>
+  <li>Physiography</li>
+  <li>Bathymetry</li>
+  <li>Transportation</li>
+  <li>Navigation</li>
+  <li>Urban and Regional Planning</li>
+  <li>Public Policy</li>
+  <li>Research Support</li>
+</ul>
+<br/>
+<p>Only a subset of Princeton University Library's Maps Collection is available on this site. If you need help in finding the data you are looking for,
+  contact Tsering Wangyal Shawa, GIS and Map Librarian via the
+  <%= link_to "Contact Us page", "/contact-us" %>.</p>
+</div>

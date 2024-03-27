@@ -50,3 +50,21 @@ li.bullet:hover {
         background: $black;
     }
 }
+
+.examples {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.examples figure {
+  width: 400px;
+  margin: auto;
+}
+
+figcaption {
+  padding-top: .5rem;
+}
