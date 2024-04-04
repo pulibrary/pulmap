@@ -30,8 +30,18 @@ yarn install
 
 The reindex is triggered on the figgy side.
 
+## Production
 ```
-$ ssh deploy@lib-proc7
+$ ssh deploy@figgy-worker-prod1
+$ tmux new -t [yourname]
+$ cd /opt/figgy/current
+$ BULK=true bundle exec rails c
+> GeoResourceReindexer.reindex_geoblacklight
+```
+
+## Staging
+```
+$ ssh deploy@figgy-web-staging1
 $ tmux new -t [yourname]
 $ cd /opt/figgy/current
 $ BULK=true bundle exec rails c
