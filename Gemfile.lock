@@ -686,6 +686,7 @@ DEPENDENCIES
   loofah
   mail_form
   matrix
+  mini_portile2 (~> 2.8, >= 2.8.6)
   modernizr-rails
   net-imap
   net-pop
