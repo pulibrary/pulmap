@@ -475,7 +475,7 @@ GEM
       thor (~> 1.0)
     rainbow (3.1.1)
     rake (13.1.0)
-    rbtree (0.4.5)
+    rbtree (0.4.6)
     redis (5.0.8)
       redis-client (>= 0.17.0)
     redis-client (0.18.0)
