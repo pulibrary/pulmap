@@ -43,7 +43,6 @@ gem "sitemap_generator"
 gem "sneakers"
 gem "turbolinks"
 gem "twitter-typeahead-rails"
-gem "uglifier"
 gem "vite_rails"
 gem "whenever"
 
