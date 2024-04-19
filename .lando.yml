@@ -21,6 +21,9 @@ services:
   pulmap_database:
     type: postgres:15
     portforward: true
+  redis:
+    type: redis:7
+    portforward: true
 proxy:
   pulmap_test_solr:
     - pulmap.test.solr.lndo.site:8983
