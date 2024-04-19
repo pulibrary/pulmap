@@ -27,6 +27,9 @@ badge.svg
 # Ignore node modules
 /node_modules
 
+# Ignore npm generated lock files
+package-lock.json
+
 # Vite Ruby
 /public/vite*
 # Vite uses dotenv and suggests to ignore local-only env files. See
