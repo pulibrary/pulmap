@@ -3,6 +3,8 @@
 source "https://rubygems.org"
 
 gem "autoprefixer-rails"
+# Pin to prevent passenger error
+gem "base64", "0.1.1"
 gem "blacklight", "7.31.0"
 gem "blacklight_advanced_search", "~> 7.0.0"
 gem "blacklight_range_limit"
@@ -27,7 +29,7 @@ gem "lograge"
 gem "logstash-event"
 gem "loofah"
 gem "mail_form"
-gem "mini_portile2", "~> 2.8", ">= 2.8.6"
+gem "mini_portile2", "~> 2.8"
 gem "modernizr-rails"
 gem "omniauth-cas", "~> 2.0"
 gem "omniauth-rails_csrf_protection", "~> 0.1"
