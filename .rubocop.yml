@@ -41,6 +41,10 @@ Layout/LineLength:
     - 'spec/controllers/thumbnails_controller_spec.rb'
     - 'spec/requests/geoserver_requests_spec.rb'
 
+Lint/MissingSuper:
+  Exclude:
+    - 'app/components/blacklight/response/facet_group_component.rb'
+
 # TODO: Reduce method complexity in omniauth callback controller.
 Metrics/AbcSize:
   Exclude:

@@ -12,8 +12,8 @@ module Blacklight
         @response = response
         @fields = fields
         @title = title
-        @id = id ? "facets-#{id}" : 'facets'
-        @panel_id = id ? "facet-panel-#{id}-collapse" : 'facet-panel-collapse'
+        @id = id ? "facets-#{id}" : "facets"
+        @panel_id = id ? "facet-panel-#{id}-collapse" : "facet-panel-collapse"
       end
 
       def render?
@@ -22,7 +22,7 @@ module Blacklight
         end
       end
 
-      def start_over_path query_params = params
+      def start_over_path(query_params = params)
         h = {}
         current_index_view_type = helpers.document_index_view_type(query_params)
         h[:view] = current_index_view_type unless current_index_view_type == helpers.default_document_index_view_type
