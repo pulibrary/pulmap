@@ -9,7 +9,6 @@ SitemapGenerator::Sitemap.default_host = if Rails.env.production?
                                          end
 
 SitemapGenerator::Sitemap.create do
-  add "/advanced"
   add "/contact-us"
 
   cursor_mark = "*"

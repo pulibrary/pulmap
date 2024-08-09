@@ -15,13 +15,6 @@
         <div class="col-12 col-md-5 col-lg-4">
           <%= render :partial=>'catalog/search_form_index' %>
         </div>
-        <div class="d-none d-lg-block col-lg-1">
-          <ul class="search-options">
-            <li>
-              <%= link_to 'Advanced', blacklight_advanced_search_engine.advanced_search_path(search_state.to_h), :class=>'advanced_search'%>
-            </li>
-          </ul>
-        </div>
       <% else %>
         <div class="d-none d-md-block col-md-3">
         </div> 

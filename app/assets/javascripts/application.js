@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require rails-ujs
-//= require 'blacklight_advanced_search'
 //= require twitter/typeahead
 //= require aload
 
