@@ -5,7 +5,7 @@ source "https://rubygems.org"
 gem "autoprefixer-rails"
 # Pin to prevent passenger error
 gem "base64", "0.1.1"
-gem "blacklight", "7.31.0"
+gem "blacklight", "~> 7.0"
 gem "blacklight_range_limit"
 gem "bootstrap", "~> 4.0"
 gem "capistrano"
