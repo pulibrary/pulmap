@@ -89,16 +89,7 @@ class CatalogController < ApplicationController
 
     # config.add_facet_field 'example_pivot_field', :label => 'Pivot Field', :pivot => ['format', 'language_facet']
 
-    # config.add_facet_field 'example_query_facet_field', :label => 'Publish Date', :query => {
-    #    :years_5 => { :label => 'within 5 Years', :fq => "pub_date:[#{Time.now.year - 5 } TO *]" },
-    #    :years_10 => { :label => 'within 10 Years', :fq => "pub_date:[#{Time.now.year - 10 } TO *]" },
-    #    :years_25 => { :label => 'within 25 Years', :fq => "pub_date:[#{Time.now.year - 25 } TO *]" }
-    # }
-    config.add_facet_field Settings.FIELDS.YEAR, label: "Year", limit: 10, all: "Any year", range: {
-      assumed_boundaries: [1100, 2016]
-      # :num_segments => 6,
-      # :segments => true
-    }
+    config.add_facet_field Settings.FIELDS.YEAR, label: "Year", limit: 10, all: "Any year", range: {}
     config.add_facet_field "access", label: "Access", query: {
       public: {
         label: "Public", fq: "#{Settings.FIELDS.RIGHTS}:Public"
@@ -106,15 +97,9 @@ class CatalogController < ApplicationController
       restricted: {
         label: "Restricted", fq: "#{Settings.FIELDS.RIGHTS}:Restricted"
       }
-      # available: {
-      #   label: 'Available', fq: "(layer_availability_score_f:[#{Settings.GEOMONITOR_TOLERANCE} TO 1])"
-      # },
-      # unavailable: {
-      #   label: 'Unavailable', fq: "layer_availability_score_f:[0 TO #{Settings.GEOMONITOR_TOLERANCE}]"
-      # }
-    }, partial: "icon_facet", all: "All types", collapse: false
+    }, partial: "icon_facet", all: "All types"
     config.add_facet_field Settings.FIELDS.PROVENANCE, label: "Institution", limit: 8, partial: "icon_facet", single: true, all: "All institutions"
-    config.add_facet_field Settings.FIELDS.GEOM_TYPE, label: "Format", limit: 8, partial: "icon_facet", collapse: false, single: true, all: "All data types"
+    config.add_facet_field Settings.FIELDS.GEOM_TYPE, label: "Format", limit: 8, partial: "icon_facet", single: true, all: "All data types"
     config.add_facet_field Settings.FIELDS.SUBJECT, label: "Subject", limit: 8, show: true, all: "All subjects"
     config.add_facet_field Settings.FIELDS.SOURCE, label: "Source", show: false
     # config.add_facet_field Settings.FIELDS.CREATOR, label: 'Author', limit: 8
