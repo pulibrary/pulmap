@@ -24,27 +24,6 @@ module PulmapGeoblacklightHelper
     @document.item_viewer.pmtiles || @document.item_viewer.cog
   end
 
-  def all_facet_values_label(field)
-    field_config = blacklight_config.facet_fields[field]
-    field_config[:all] || "All types"
-  end
-
-  def remove_all_facet_values(field)
-    p = search_state.to_h.dup
-    p[:f] = (p[:f] || {}).dup
-    p[:f].delete(field)
-    p.delete(:f) if p[:f].empty?
-    p
-  end
-
-  def facet_active(facet_field)
-    if facet_field_in_params?(facet_field)
-      " facet-limit-active"
-    else
-      ""
-    end
-  end
-
   def data_download_text(format)
     download_format = proper_case_format(format)
     value = t("geoblacklight.data_download.download_link", download_format: download_format)
