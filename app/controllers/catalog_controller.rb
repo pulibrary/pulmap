@@ -12,6 +12,7 @@ class CatalogController < ApplicationController
     # Ensures that JSON representations of Solr Documents can be retrieved using
     # the path /catalog/:id/raw
     config.raw_endpoint.enabled = true
+    config.advanced_search.enabled = true
 
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
     config.default_solr_params = {
