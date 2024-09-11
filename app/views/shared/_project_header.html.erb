@@ -3,5 +3,12 @@
     <div class="col-12 col-lg-5">
       <%= render :partial=>'catalog/search_form_index' %>
     </div>
+    <div class="col-12 col-lg-2">
+      <ul class="search-options">
+        <li>
+          <%= link_to 'Advanced Search', advanced_search_catalog_path(search_state.to_h), :class=>'advanced_search'%>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
