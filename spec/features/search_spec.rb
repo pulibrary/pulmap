@@ -17,16 +17,15 @@ describe "Search" do
       visit "/?q="
       fill_in "range_solr_year_i_begin", with: "1778"
       fill_in "range_solr_year_i_end", with: "1800"
-      click_button "Apply"
+      page.first(:button, "Apply").click
       expect(page).to have_content "1 entry found"
     end
     context "wrong date_range_limit" do
       it "year facet will not raise an error" do
         visit "/?search_field=all_fields&q=New+York"
-        page.find(:xpath, '//*[@id="year"]').click
-        page.find(:xpath, '//*[@id="range_solr_year_i_begin"]').set "2000"
-        page.find(:xpath, '//*[@id="range_solr_year_i_end"]').set "1900"
-        expect { page.find(:xpath, '//*[@id="facet-partials"]/div[1]/ul/div/form/input[6]').click }.not_to raise_error
+        fill_in "range_solr_year_i_begin", with: "2000"
+        fill_in "range_solr_year_i_end", with: "1900"
+        expect { page.first(:button, "Apply").click }.not_to raise_error
         expect(page).to have_current_path("/")
         expect(page).to have_content "The start year must be before the end year."
       end

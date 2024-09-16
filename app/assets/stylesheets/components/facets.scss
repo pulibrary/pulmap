@@ -1,319 +1,351 @@
-@import "utils/variables";
 
-.facet {
-  display: inline-block;
-}
+.facets-toggleable {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $next: breakpoint-next($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
-.facet .btn {
-  font-size: small;
-  text-align: left;
-  padding: 4px 10px;
-}
 
-.facet > .btn-default > small {
-  color: $dark-gray;
-  display: block;
-}
+    &#{$infix} {
+      @include media-breakpoint-down($next) {
+        border: var(--bl-facets-smallish-border);
+        padding: var(--bl-facets-smallish-padding);
+        margin-bottom: var(--bl-facets-smallish-margin-bottom);
+        border-radius: var(--bl-facets-smallish-border-radius);
 
-.facet > .btn-default a:hover {
-  text-decoration: none;
-}
-
-.facet > .btn-default a {
-  color: $dark-gray;
-}
-
-.start-over-row {
-  padding-top: 1em;
-  padding-bottom: 1em;
-}
-
-.facet_limit-active {
-    color: #333;
-    border-color: #ddd;
-}
-
-.facet-values li .selected {
-    color: #333;
-}
-
-.facet-values .remove {
-    text-indent: 0;
-    margin-left: 1em;
-    vertical-align: middle;
-}
-
-.facet-values .remove .fa-times {
-    top: -1px;
-    font-size: 1.2em;
-}
-
-.facet-values .icon,
-.facet-values .facet-label,
-.facet-values .facet-count {
-    text-indent: 0;
-    line-height: 1.8em;
-    padding: 0;
-}
-
-.facet-values .icon {
-    font-size: 1.275em;
-    line-height: 1.4em;
-}
-
-.icon + .facet-label {
-    padding-left: .5em;
-}
-
-.facet-values .icon,
-.facet-values .facet-label,
-.facet-values .facet-count,
-.facet-label .selected,
-.facet-values .remove .fa-times {
-    vertical-align: middle;
-}
-
-.facets-heading {
-    margin-top: 0;
-    font-size: 18px;
-}
-
-.pivot-facet .facet-label {
-    display: inline;
-    padding-left: 0;
-    word-break: none;
-}
-
-.document .icon,
-.facet-values .icon {
-    width: 22px;
-    height: 22px;
-    display: table-cell;
-    background-position: center;
-    background-size: contain;
-    padding-right: .5em;
-}
-
-ul.facet-values {
-    border-spacing: 0 .3em;
-    margin-bottom: 0;
-
-    .facet-values,
-    > ul {
-        border-spacing: 0;
-    }
-}
-
-.pivot-facet .pivot-facet {
-    width: 100%;
-    padding: 0 0 0 3.5em;
-
-    &.collapse.in,
-    &.collapsing {
-        display: table;
-    }
-
-}
-
-@media (max-width: $bp-small) {
-    #facets {
-        padding-left: 1em;
-        padding-top: .5em;
-    }
-    h2.facets-heading {
-        font-size: 1.6em;
-        margin-bottom: 0;
-        margin-top: .2em;
-    }
-}
-
-@media (max-width: $bp-small) {
-    .facets-heading {
-        padding:0.5em;
-        margin-bottom: 0;
-    }
-}
-
-.range_limit input.range_begin, .range_limit input.range_end {
-    display: inline-block;
-    width: 4.5em;
-}
-
-#sidebar {
-    padding-left: 0;
-}
-
-.facet-values .icon,
-.facet-values .geoblacklight-icon,
-.facet-values .facet-label,
-.facet-values .facet-count {
-    text-indent: 0;
-    line-height: 1.8em;
-    padding: 0;
-}
-
-.facet-values .icon,
-.facet-values .geoblacklight-icon {
-    font-size: 1.275em;
-    line-height: 1.4em;
-}
-
-li.active > a > .geoblacklight-icon {
-  color: $white;
-}
-
-.icon + .facet-label,
-.geoblacklight-icon + .facet-label {
-    padding-left: .5em;
-}
-
-.facet-values .icon,
-.facet-values .geoblacklight-icon,
-.facet-values .facet-label,
-.facet-values .facet-count,
-.facet-label .selected,
-.facet-values .remove .fa-times {
-    vertical-align: middle;
-}
-
-.facet-values .facet-label,
-.facet-values .facet-count {
-    -moz-hyphens: none;
-}
-
-.facets-heading {
-    margin-top: 0;
-    font-size: 18px;
-}
-
-.pivot-facet .facet-label {
-    display: inline;
-    padding-left: 0;
-    word-break: none;
-}
-
-.document .icon,
-.facet-values .icon,
-.facet-values .geoblacklight-icon, {
-    width: 22px;
-    height: 22px;
-    display: table-cell;
-    background-position: center;
-    background-size: contain;
-    padding-right: .5em;
-}
-
-ul.facet-values {
-    border-spacing: 0 .3em;
-    margin-bottom: 0;
-
-    .facet-values,
-    > ul {
-        border-spacing: 0;
-    }
-}
-
-.pivot-facet .pivot-facet {
-    width: 100%;
-    padding: 0 0 0 3.5em;
-
-    &.collapse.in,
-    &.collapsing {
-        display: table;
-    }
-
-}
-
-#facet-view, .params {
-  padding: 0;
-  display: inline-block;
-  .btn {
-    min-height: 40px;
-  }
-  .btn-filter {
-    color: #333;
-    background-color: #fff;
-    border-color: #ccc;
-
-    &:hover {
-      background-color: $whisper;
-      border-color: #adadad;
-    }
-
-  }
-  .show {
-    > .btn-filter {
-      background-color: $whisper;
-    }
-  }
-
-  ul.dropdown-menu {
-    z-index: 999;
-    min-width: 200px;
-    font-size: 14px;
-    padding: 5px 0;
-    > li {
-      padding: 0 20px;
-      a {
-        color: $black;
-        text-decoration: none;
-        // Makes anchor occupy the entire list element so it is all clickable.
-        // Solves issue where facets are difficult to apply.
-        display: block; 
       }
-      &:hover {
-        background-color: $white-smoke;
-      }
-    }
-    > li.active {
-      background-color: $blue;
-      a {
-        color: $white;
+      @include media-breakpoint-up($next) {
+        // OVERRIDE: ensure "filter" toggle is always displyed
+        .navbar-toggler {
+          display: block;
+        }
       }
     }
   }
 }
 
-
-.facet ul.dropdown-menu {
-  line-height: 24px;
-  margin-top: 8px;
-  padding-left: 20px;
-  padding-right: 20px;
+.facet-limit {
+  margin-bottom: 7px;
+  margin-top: 7px;
 }
 
-.facets-container {
-  margin-top: 1em;
-  margin-bottom: 1em;
-  background: none;
+#facets-toggler {
+  font-size: 14px
 }
 
-.list-unstyled {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-.limit_content.range_limit {
-  padding: 0 0 10px 15px;
-  width: 240px;
-
-  form {
-    margin-top: 8px;
-  }
-
-  input[value=Limit] {
-    height: 34px;
-    margin-left: 10px;
-    min-height: 0 !important;
-  }
-}
-
-#facet-partials {
-  line-height: 56px;
-}
-
-// Makes the institution facet wide enough to view long values
-ul[aria-labelledby="institution"] {
-  width: 350px;
-}
+// .facet {
+//   display: inline-block;
+// }
+//
+// .facet .btn {
+//   font-size: small;
+//   text-align: left;
+//   padding: 4px 10px;
+// }
+//
+// .facet > .btn-default > small {
+//   color: $dark-gray;
+//   display: block;
+// }
+//
+// .facet > .btn-default a:hover {
+//   text-decoration: none;
+// }
+//
+// .facet > .btn-default a {
+//   color: $dark-gray;
+// }
+//
+// .start-over-row {
+//   padding-top: 1em;
+//   padding-bottom: 1em;
+// }
+//
+// .facet_limit-active {
+//     color: #333;
+//     border-color: #ddd;
+// }
+//
+// .facet-values li .selected {
+//     color: #333;
+// }
+//
+// .facet-values .remove {
+//     text-indent: 0;
+//     margin-left: 1em;
+//     vertical-align: middle;
+// }
+//
+// .facet-values .remove .fa-times {
+//     top: -1px;
+//     font-size: 1.2em;
+// }
+//
+// .facet-values .icon,
+// .facet-values .facet-label,
+// .facet-values .facet-count {
+//     text-indent: 0;
+//     line-height: 1.8em;
+//     padding: 0;
+// }
+//
+// .facet-values .icon {
+//     font-size: 1.275em;
+//     line-height: 1.4em;
+// }
+//
+// .icon + .facet-label {
+//     padding-left: .5em;
+// }
+//
+// .facet-values .icon,
+// .facet-values .facet-label,
+// .facet-values .facet-count,
+// .facet-label .selected,
+// .facet-values .remove .fa-times {
+//     vertical-align: middle;
+// }
+//
+// .facets-heading {
+//     margin-top: 0;
+//     font-size: 18px;
+// }
+//
+// .pivot-facet .facet-label {
+//     display: inline;
+//     padding-left: 0;
+//     word-break: none;
+// }
+//
+// .document .icon,
+// .facet-values .icon {
+//     width: 22px;
+//     height: 22px;
+//     display: table-cell;
+//     background-position: center;
+//     background-size: contain;
+//     padding-right: .5em;
+// }
+//
+// ul.facet-values {
+//     border-spacing: 0 .3em;
+//     margin-bottom: 0;
+//
+//     .facet-values,
+//     > ul {
+//         border-spacing: 0;
+//     }
+// }
+//
+// .pivot-facet .pivot-facet {
+//     width: 100%;
+//     padding: 0 0 0 3.5em;
+//
+//     &.collapse.in,
+//     &.collapsing {
+//         display: table;
+//     }
+//
+// }
+//
+// @media (max-width: $bp-small) {
+//     #facets {
+//         padding-left: 1em;
+//         padding-top: .5em;
+//     }
+//     h2.facets-heading {
+//         font-size: 1.6em;
+//         margin-bottom: 0;
+//         margin-top: .2em;
+//     }
+// }
+//
+// @media (max-width: $bp-small) {
+//     .facets-heading {
+//         padding:0.5em;
+//         margin-bottom: 0;
+//     }
+// }
+//
+// .range_limit input.range_begin, .range_limit input.range_end {
+//     display: inline-block;
+//     width: 4.5em;
+// }
+//
+// #sidebar {
+//     padding-left: 0;
+// }
+//
+// .facet-values .icon,
+// .facet-values .geoblacklight-icon,
+// .facet-values .facet-label,
+// .facet-values .facet-count {
+//     text-indent: 0;
+//     line-height: 1.8em;
+//     padding: 0;
+// }
+//
+// .facet-values .icon,
+// .facet-values .geoblacklight-icon {
+//     font-size: 1.275em;
+//     line-height: 1.4em;
+// }
+//
+// li.active > a > .geoblacklight-icon {
+//   color: $white;
+// }
+//
+// .icon + .facet-label,
+// .geoblacklight-icon + .facet-label {
+//     padding-left: .5em;
+// }
+//
+// .facet-values .icon,
+// .facet-values .geoblacklight-icon,
+// .facet-values .facet-label,
+// .facet-values .facet-count,
+// .facet-label .selected,
+// .facet-values .remove .fa-times {
+//     vertical-align: middle;
+// }
+//
+// .facet-values .facet-label,
+// .facet-values .facet-count {
+//     -moz-hyphens: none;
+// }
+//
+// .facets-heading {
+//     margin-top: 0;
+//     font-size: 18px;
+// }
+//
+// .pivot-facet .facet-label {
+//     display: inline;
+//     padding-left: 0;
+//     word-break: none;
+// }
+//
+// .document .icon,
+// .facet-values .icon,
+// .facet-values .geoblacklight-icon, {
+//     width: 22px;
+//     height: 22px;
+//     display: table-cell;
+//     background-position: center;
+//     background-size: contain;
+//     padding-right: .5em;
+// }
+//
+// ul.facet-values {
+//     border-spacing: 0 .3em;
+//     margin-bottom: 0;
+//
+//     .facet-values,
+//     > ul {
+//         border-spacing: 0;
+//     }
+// }
+//
+// .pivot-facet .pivot-facet {
+//     width: 100%;
+//     padding: 0 0 0 3.5em;
+//
+//     &.collapse.in,
+//     &.collapsing {
+//         display: table;
+//     }
+//
+// }
+//
+// #facet-view, .params {
+//   padding: 0;
+//   display: inline-block;
+//   .btn {
+//     min-height: 40px;
+//   }
+//   .btn-filter {
+//     color: #333;
+//     background-color: #fff;
+//     border-color: #ccc;
+//
+//     &:hover {
+//       background-color: $whisper;
+//       border-color: #adadad;
+//     }
+//
+//   }
+//   .show {
+//     > .btn-filter {
+//       background-color: $whisper;
+//     }
+//   }
+//
+//   ul.dropdown-menu {
+//     z-index: 999;
+//     min-width: 200px;
+//     font-size: 14px;
+//     padding: 5px 0;
+//     > li {
+//       padding: 0 20px;
+//       a {
+//         color: $black;
+//         text-decoration: none;
+//         // Makes anchor occupy the entire list element so it is all clickable.
+//         // Solves issue where facets are difficult to apply.
+//         display: block; 
+//       }
+//       &:hover {
+//         background-color: $white-smoke;
+//       }
+//     }
+//     > li.active {
+//       background-color: $blue;
+//       a {
+//         color: $white;
+//       }
+//     }
+//   }
+// }
+//
+//
+// .facet ul.dropdown-menu {
+//   line-height: 24px;
+//   margin-top: 8px;
+//   padding-left: 20px;
+//   padding-right: 20px;
+// }
+//
+// .facets-container {
+//   margin-top: 1em;
+//   margin-bottom: 1em;
+//   background: none;
+// }
+//
+// .list-unstyled {
+//   padding-right: 15px;
+//   padding-left: 15px;
+// }
+//
+// .limit_content.range_limit {
+//   padding: 0 0 10px 15px;
+//   width: 240px;
+//
+//   form {
+//     margin-top: 8px;
+//   }
+//
+//   input[value=Limit] {
+//     height: 34px;
+//     margin-left: 10px;
+//     min-height: 0 !important;
+//   }
+// }
+//
+// #facet-partials {
+//   line-height: 56px;
+// }
+//
+// // Makes the institution facet wide enough to view long values
+// ul[aria-labelledby="institution"] {
+//   width: 350px;
+// }
 

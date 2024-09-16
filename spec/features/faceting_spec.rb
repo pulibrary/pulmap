@@ -10,7 +10,6 @@ RSpec.describe "Faceting", type: :feature do
 
   it "User can remove all facets values when faceting on a single value field," do
     visit "/?f[layer_geom_type_sm][]=Polygon&q=Uganda"
-    expect(page).to have_content "All data types"
     expect(first("a.remove")[:href]).to eq("/?q=Uganda")
   end
 end
