@@ -748,6 +748,7 @@ DEPENDENCIES
   redis
   rsolr
   rspec-rails
+  sassc-rails
   sidekiq
   simple_form
   simplecov
