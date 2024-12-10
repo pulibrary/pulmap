@@ -1,14 +1,14 @@
 ---
 version: 2.1
 orbs:
-  browser-tools: circleci/browser-tools@1.4.8
-  node: circleci/node@5.0.2
+  browser-tools: circleci/browser-tools@1.4.9
+  node: circleci/node@7.0.0
 jobs:
   build:
     working_directory: ~/pulmap
     docker:
       # The primary container is an instance of the first list image listed. Your build commands run in this container.
-      - image: cimg/ruby:3.1.0-browsers
+      - image: cimg/ruby:3.2.6-browsers
         environment:
           RAILS_ENV: test
           PULMAP_DB_HOST: localhost
@@ -36,7 +36,7 @@ jobs:
       - run: gem install bundler -v '~> 2.0'
       - node/install:
           install-yarn: true
-          node-version: '18.18.0'
+          node-version: '22.10.0'
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
       - save_cache:
@@ -59,7 +59,7 @@ jobs:
   test:
     working_directory: ~/pulmap
     docker:
-      - image: cimg/ruby:3.1.0-browsers
+      - image: cimg/ruby:3.2.6-browsers
         environment:
           RAILS_ENV: test
           PULMAP_DB_HOST: localhost
@@ -89,7 +89,7 @@ jobs:
       - run: gem install bundler -v '~> 2.0'
       - node/install:
           install-yarn: true
-          node-version: '18.18.0'
+          node-version: '22.10.0'
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
       - run:
@@ -109,7 +109,7 @@ jobs:
   rubocop:
     working_directory: ~/pulmap
     docker:
-      - image: cimg/ruby:3.1.0-browsers
+      - image: cimg/ruby:3.2.6-browsers
         environment:
           RAILS_ENV: test
           PULMAP_DB_HOST: localhost
@@ -127,7 +127,7 @@ jobs:
           at: '~/pulmap'
       - node/install:
           install-yarn: true
-          node-version: '18.18.0'
+          node-version: '22.10.0'
       # Install Bundler
       - run: gem install bundler -v '~> 2.0'
       # Bundle install dependencies
