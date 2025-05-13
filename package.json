@@ -3,12 +3,14 @@
     "leaflet-geosearch": "^2.7.0",
     "lodash": "^4.17.21",
     "ol": "^9.1",
-    "ol-pmtiles": "^0.4"
+    "ol-pmtiles": "^0.4",
+    "@geoblacklight/frontend": "^4.4"
   },
   "devDependencies": {
     "standard": "^17.1",
     "vite": "^5.2",
-    "vite-plugin-ruby": "^5.0"
+    "vite-plugin-ruby": "^5.0",
+    "vite-plugin-rails": "^0.5.0"
   },
   "scripts": {
     "lint": "standard app/javascript/"
