@@ -21,12 +21,17 @@ class CatalogController < ApplicationController
       "q.alt" => "*:*"
     }
 
+    # GeoBlacklight Defaults
+    # * Adds the "map" split view for catalog#index
+    config.view.split(partials: ["index"])
+    config.view.delete_field("list")
+
     ## Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or
     ## parameters included in the Blacklight-jetty document requestHandler.
     #
     config.default_document_solr_params = {
       qt: "document",
-      q: "{!raw f=layer_slug_s v=$id}"
+      q: "{!raw f=#{Settings.FIELDS.ID} v=$id}"
     }
 
     config.navbar.partials.delete(:bookmark)
@@ -85,10 +90,11 @@ class CatalogController < ApplicationController
         label: "Restricted", fq: "#{Settings.FIELDS.RIGHTS}:Restricted"
       }
     }, partial: "icon_facet", all: "All types"
-    config.add_facet_field Settings.FIELDS.PROVENANCE, label: "Institution", limit: 8, partial: "icon_facet", single: true, all: "All institutions"
+    config.add_facet_field Settings.FIELDS.PROVIDER, label: "Institution", limit: 8, partial: "icon_facet", single: true, all: "All institutions"
     config.add_facet_field Settings.FIELDS.GEOM_TYPE, label: "Format", limit: 8, partial: "icon_facet", single: true, all: "All data types"
     config.add_facet_field Settings.FIELDS.SUBJECT, label: "Subject", limit: 8, show: true, all: "All subjects"
     config.add_facet_field Settings.FIELDS.SOURCE, label: "Source", show: false
+    config.add_facet_field Settings.FIELDS.GEOMETRY, item_presenter: Geoblacklight::BboxItemPresenter, filter_class: Geoblacklight::BboxFilterField, filter_query_builder: Geoblacklight::BboxFilterQuery, within_boost: Settings.BBOX_WITHIN_BOOST, overlap_boost: Settings.OVERLAP_RATIO_BOOST, overlap_field: Settings.FIELDS.OVERLAP_FIELD, label: 'Bounding Box'
     # config.add_facet_field Settings.FIELDS.CREATOR, label: 'Author', limit: 8
     # config.add_facet_field Settings.FIELDS.PUBLISHER, label: 'Publisher', limit: 8, single: true
     # config.add_facet_field Settings.FIELDS.SPATIAL_COVERAGE, label: 'Place', limit: 8
@@ -102,9 +108,9 @@ class CatalogController < ApplicationController
     # Solr fields to be displayed in the index (search results) view
     # Necessary to return needed metadata fields in the index JSON builder
     config.add_index_field Settings.FIELDS.TITLE
-    config.add_index_field Settings.FIELDS.FILE_FORMAT
+    config.add_index_field Settings.FIELDS.FORMAT
     config.add_index_field Settings.FIELDS.PUBLISHER
-    config.add_index_field "layer_slug_s"
+    config.add_index_field Settings.ID
     config.add_index_field Settings.FIELDS.YEAR
     config.add_index_field Settings.FIELDS.CREATOR
     config.add_index_field Settings.FIELDS.DESCRIPTION, helper_method: :snippit
@@ -124,7 +130,7 @@ class CatalogController < ApplicationController
     config.add_show_field Settings.FIELDS.SUBJECT, label: "Subject(s)", itemprop: "keywords", link_to_search: true
     config.add_show_field Settings.FIELDS.CALL_NUMBER, label: "Call number", itemprop: "call_number"
     config.add_show_field Settings.FIELDS.TEMPORAL, label: "Year", itemprop: "temporal"
-    config.add_show_field Settings.FIELDS.PROVENANCE, label: "Held by", link_to_search: true, helper_method: :princeton_provenance
+    config.add_show_field Settings.FIELDS.PROVIDER, label: "Held by", link_to_search: true, helper_method: :princeton_provenance
     config.add_show_field "rights_statement_s", label: "Rights Statement", itemprop: "rights", helper_method: :html_safe
 
     # "fielded" search configuration. Used by pulldown among other places.
@@ -205,8 +211,8 @@ class CatalogController < ApplicationController
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
-    config.add_sort_field "score desc", label: "relevance"
-    config.add_sort_field "#{Settings.FIELDS.YEAR} desc, dc_title_sort asc", label: "year"
+    config.add_sort_field "score desc, dct_title_sort asc", label: "relevance"
+    config.add_sort_field "#{Settings.FIELDS.INDEX_YEAR} desc, dc_title_sort asc", label: "year"
     config.add_sort_field "#{Settings.FIELDS.PUBLISHER} asc, dc_title_sort asc", label: "publisher"
     config.add_sort_field "#{Settings.FIELDS.TITLE} asc", label: "title"
 
@@ -248,5 +254,16 @@ class CatalogController < ApplicationController
   # @return [Boolean]
   def has_search_parameters?
     !params[:q].nil? || super
+  end
+
+  def web_services
+    @response, @documents = action_documents
+
+    respond_to do |format|
+      format.html do
+        return render layout: false if request.xhr?
+        # Otherwise draw the full page
+      end
+    end
   end
 end

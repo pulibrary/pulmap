@@ -1,6 +1,10 @@
 en:
   geoblacklight:
     bbox_label: 'Current Map View'
+    location: 'Location'
+    clipboard:
+      citation: 'Citation copied to clipboard'
+      web_service: 'Web service copied to clipboard'
     download:
       download: 'Download'
       success: 'Your file %{title} is ready for download'
@@ -17,6 +21,8 @@ en:
       export_shapefile_link: 'Shapefile'
       export_kmz_link: 'KMZ'
       export_geojson_link: 'GeoJSON'
+      export_geotiff_link: 'GeoTIFF'
+      export_csv_link: 'CSV'
     data_download:
       download_link: 'Download %{download_format}'
     home:
@@ -31,7 +37,6 @@ en:
       version: 'GeoBlacklight version %{version}'
     tools:
       login_to_view: 'Login to view'
-      open_carto: 'Open in Carto'
       open_arcgis: 'Open in ArcGIS Online'
     formats:
       arcgrid: 'ArcGRID'
@@ -50,6 +55,8 @@ en:
       more_details: 'More details at'
       metadata_error: 'The metadata view for selected schema is not available'
       metadata_trace: 'Please select another metadata view. Alternately, try downloading the file or reaching out to the holding institution.'
+    modal:
+      copy-citation: "Copy Citation"
     references:
       wms: 'Web Mapping Service (WMS)'
       wms_abv: 'WMS'
@@ -72,17 +79,36 @@ en:
       data_dictionary: 'Documentation'
       services: 'Web services'
       services_close: 'Close'
+      pmtiles: 'PMTiles Layer'
+      cog: 'COG Layer'
     relations:
       ancestor: 'Parent Records'
       descendant: 'Child Records'
       browse_all: "Browse all %{count} records..."
       title: 'Relationships'
+      member_of_ancestors: 'Belongs to collection...'
+      member_of_descendants: 'Collection records...'
+      part_of_ancestors: 'Is part of...'
+      part_of_descendants: 'Has part...'
+      relation_ancestors: 'Related records...'
+      relation_descendants: 'Related records...'
+      replaces_ancestors: 'Replaces...'
+      replaces_descendants: 'Is replaced by...'
+      source_ancestors: 'Source records...'
+      source_descendants: 'Derived records...'
+      version_of_ancestors: 'Is version of...'
+      version_of_descendants: 'Has version...'
+      browse_all_no_count: "Browse all records..."
+      browse_all: "Browse all %{count} records..."
     show:
       attribute: 'Attribute'
       value: 'Value'
       click_map: 'Click on map to preview values (download file to work with all data)'
     help_text:
       viewer_protocol:
+        cog:
+          title: COG Layer
+          content: A Cloud Optimized GeoTIFF
         dynamic_map_layer:
           title: ArcGIS Dynamic Map Layer
           content: An ArcGIS Dynamic Map Layer represents vector data (points, lines, and polygons). Map image layers are dynamically rendered image tiles.
@@ -104,9 +130,15 @@ en:
         oembed:
           title: Embedded Content
           content: This content is embedded through a third-party viewer.
+        pmtiles:
+          title: PMTiles Layer
+          content: A PMTiles layer is a single-file archive format for tiled data.
         tiled_map_layer:
           title: ArcGIS Tiled Map Layer
           content: An ArcGIS Tiled Map Layer Service displays set of web-accessible tiles that reside on a server.
+        tms:
+          title: Tile Map Service
+          content: A Tile Map Service displays georeferenced map tiles as an image on a map.
         wms:
           title: Web Map Service (WMS)
           content: A Web Map Service displays a geospatial dataset as map images.
