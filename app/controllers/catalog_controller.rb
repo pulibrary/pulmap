@@ -39,6 +39,11 @@ class CatalogController < ApplicationController
     config.navbar.partials.delete(:search_history)
     config.show.partials.delete(:show_header)
     config.show.document_actions.delete(:citation)
+    config.show.partials << "show_default_display_note"
+    config.show.partials << "show_default_viewer_container"
+    config.show.partials << "show_default_attribute_table"
+    config.show.partials << "show_default_viewer_information"
+    config.show.partials << :show
     # solr field configuration for search results/index views
     # config.index.show_link = 'title_display'
     # config.index.record_display_type = 'layer_geom_type_s'

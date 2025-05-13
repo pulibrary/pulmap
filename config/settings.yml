@@ -6,9 +6,6 @@ BBOX_WITHIN_BOOST: '10'
 # The bf boost value for overlap ratio
 OVERLAP_RATIO_BOOST: '10'
 
-# Carto OneClick Service https://cartodb.com/open-in-cartodb/
-CARTO_ONECLICK_LINK: 'http://oneclick.cartodb.com/'
-
 # ArcGIS Online Base URL
 ARCGIS_BASE_URL: 'https://www.arcgis.com/home/webmap/viewer.html'
 
@@ -17,6 +14,8 @@ DOWNLOAD_PATH: <%= ENV['PULMAP_DOWNLOAD_PATH'] || "./tmp/cache/downloads" %>
 
 # DEPRECATED Main Solr geometry field used for spatial search and bounding box. Should be type 'rpt'
 GEOMETRY_FIELD: 'solr_geom'
+
+INSTITUTION: 'Princeton'
 
 #Solr field mappings
 FIELDS:
@@ -27,6 +26,7 @@ FIELDS:
   :CREATOR: 'dc_creator_sm'
   :DATE_ISSUED: 'dct_issued_s'
   :DATE_RANGE: 'gbl_dateRange_drsim'
+  :DISPLAY_NOTE: 'gbl_displayNote_sm'
   :DESCRIPTION: 'dc_description_s'
   :FILE_SIZE: 'gbl_fileSize_s'
   :FORMAT: 'dct_format_s'
@@ -85,54 +85,103 @@ GBL_PARAMS:
   - :X
   - :Y
 
+DISPLAY_NOTES_SHOWN:
+  danger:
+    bootstrap_alert_class: alert-danger
+    icon: fire-solid
+    note_prefix: "Danger: "
+  info:
+    bootstrap_alert_class: alert-info
+    icon: circle-info-solid
+    note_prefix: "Info: "
+  tip:
+    bootstrap_alert_class: alert-success
+    icon: lightbulb-solid
+    note_prefix: "Tip: "
+  warning:
+    bootstrap_alert_class: alert-warning
+    icon: triangle-exclamation-solid
+    note_prefix: "Warning: "
+
+# Relationships to display
 RELATIONSHIPS_SHOWN:
-  MEMBER_OF:
+  MEMBER_OF_ANCESTORS:
     field: pcdm_memberOf_sm
+    icon: parent-item
+    inverse: :MEMBER_OF_DESCENDANTS
+    label: geoblacklight.relations.member_of_ancestors
     query_type: ancestors
-    icon: nil
-    label: geoblacklight.relations.member_of
+  MEMBER_OF_DESCENDANTS:
+    field: pcdm_memberOf_sm
+    icon: child-item
+    inverse: :MEMBER_OF_ANCESTORS
+    label: geoblacklight.relations.member_of_descendants
+    query_type: descendants
   PART_OF_ANCESTORS:
     field: dct_isPartOf_sm
-    query_type: ancestors
-    icon: nil
+    icon: parent-item
+    inverse: :PART_OF_DESCENDANTS
     label: geoblacklight.relations.part_of_ancestors
+    query_type: ancestors
   PART_OF_DESCENDANTS:
     field: dct_isPartOf_sm
-    query_type: descendants
     icon: child-item
+    inverse: :PART_OF_ANCESTORS
     label: geoblacklight.relations.part_of_descendants
-  RELATION:
-    field: dct_relation_sm
-    query_type: ancestors
-    icon: nil
-    label: geoblacklight.relations.relation
-  REPLACES:
-    field: dct_replaces_sm
-    query_type: ancestors
-    icon: nil
-    label: geoblacklight.relations.replaces
-  REPLACED_BY:
-    field: dct_isReplacedBy_sm
     query_type: descendants
+  RELATION_ANCESTORS:
+    field: dct_relation_sm
     icon: nil
-    label: geoblacklight.relations.replaced_by
+    inverse: :RELATION_DESCENDANTS
+    label: geoblacklight.relations.relation_ancestors
+    query_type: ancestors
+  RELATION_DESCENDANTS:
+    field: dct_relation_sm
+    icon: nil
+    inverse: :RELATION_ANCESTORS
+    label: geoblacklight.relations.relation_descendants
+    query_type: descendants
+  REPLACES_ANCESTORS:
+    field: dct_replaces_sm
+    icon: nil
+    inverse: :REPLACES_DESCENDANTS
+    label: geoblacklight.relations.replaces_ancestors
+    query_type: ancestors
+  REPLACES_DESCENDANTS:
+    field: dct_replaces_sm
+    icon: nil
+    inverse: :REPLACES_ANCESTORS
+    label: geoblacklight.relations.replaces_descendants
+    query_type: descendants
   SOURCE_ANCESTORS:
     field: dct_source_sm
-    query_type: ancestors
     icon: parent-item
-    label: geoblacklight.relations.ancestor
+    inverse: :SOURCE_DESCENDANTS
+    label: geoblacklight.relations.source_ancestors
+    query_type: ancestors
   SOURCE_DESCENDANTS:
-    field: dc_source_sm
-    query_type: descendants
+    field: dct_source_sm
     icon: child-item
-    label: geoblacklight.relations.descendant
-  VERSION_OF:
-    field: dct_isVersionOf_sm
+    inverse: :SOURCE_ANCESTORS
+    label: geoblacklight.relations.source_descendants
     query_type: descendants
-    icon: nil
-    label: geoblacklight.relations.version_of
+  VERSION_OF_ANCESTORS:
+    field: dct_isVersionOf_sm
+    icon: parent-item
+    inverse: :VERSION_OF_DESCENDANTS
+    label: geoblacklight.relations.version_of_ancestors
+    query_type: ancestors
+  VERSION_OF_DESCENDANTS:
+    field: dct_isVersionOf_sm
+    icon: child-item
+    inverse: :VERSION_OF_ANCESTORS
+    label: geoblacklight.relations.version_of_descendants
+    query_type: descendants
 
-INSTITUTION: 'Princeton'
+# Enable catalog#show sidebar static map for items with the following viewer protocols
+SIDEBAR_STATIC_MAP:
+  - 'iiif'
+  - 'iiif_manifest'
 
 # Settings for thumbnail image generation and GeoServer proxy
 INSTITUTION_LOCAL_NAME: 'Princeton'
