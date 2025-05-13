@@ -19,7 +19,7 @@
 //= require popper
 //= require bootstrap
 //= require blacklight/blacklight
-//= require 'blacklight_range_limit'
+// require 'blacklight_range_limit'
 
 //= require modernizr
 

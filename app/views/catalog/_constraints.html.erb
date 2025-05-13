@@ -1,8 +1,6 @@
-<% if query_has_constraints? %>
-  <div class="clearfix facets-container">
-    <%= render partial: 'facets' %>
-  </div>
-<% end %>
+<div class="clearfix facets-container">
+  <%= render partial: 'facets' %>
+</div>
 
 <% if query_has_constraints? && !hide_constraints? %>
     <div id="appliedParams" class="clearfix constraints-container">

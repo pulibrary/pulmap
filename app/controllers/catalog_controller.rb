@@ -40,10 +40,10 @@ class CatalogController < ApplicationController
     config.show.partials.delete(:show_header)
     config.show.document_actions.delete(:citation)
     config.show.partials << "show_default_display_note"
-    config.show.partials << "show_default_viewer_container"
-    config.show.partials << "show_default_attribute_table"
-    config.show.partials << "show_default_viewer_information"
-    config.show.partials << :show
+    # config.show.partials << "show_default_viewer_container"
+    # config.show.partials << "show_default_attribute_table"
+    # config.show.partials << "show_default_viewer_information"
+    # config.show.partials << :show
     # solr field configuration for search results/index views
     # config.index.show_link = 'title_display'
     # config.index.record_display_type = 'layer_geom_type_s'
@@ -94,12 +94,12 @@ class CatalogController < ApplicationController
       restricted: {
         label: "Restricted", fq: "#{Settings.FIELDS.RIGHTS}:Restricted"
       }
-    }, partial: "icon_facet", all: "All types"
-    config.add_facet_field Settings.FIELDS.PROVIDER, label: "Institution", limit: 8, partial: "icon_facet", single: true, all: "All institutions"
-    config.add_facet_field Settings.FIELDS.GEOM_TYPE, label: "Format", limit: 8, partial: "icon_facet", single: true, all: "All data types"
+    }, all: "All types", item_component: Geoblacklight::IconFacetItemComponent
+    config.add_facet_field Settings.FIELDS.PROVIDER, label: "Institution", limit: 8, single: true, all: "All institutions", item_component: Geoblacklight::IconFacetItemComponent
+    config.add_facet_field Settings.FIELDS.GEOM_TYPE, label: "Format", limit: 8, single: true, all: "All data types"
     config.add_facet_field Settings.FIELDS.SUBJECT, label: "Subject", limit: 8, show: true, all: "All subjects"
     config.add_facet_field Settings.FIELDS.SOURCE, label: "Source", show: false
-    config.add_facet_field Settings.FIELDS.GEOMETRY, item_presenter: Geoblacklight::BboxItemPresenter, filter_class: Geoblacklight::BboxFilterField, filter_query_builder: Geoblacklight::BboxFilterQuery, within_boost: Settings.BBOX_WITHIN_BOOST, overlap_boost: Settings.OVERLAP_RATIO_BOOST, overlap_field: Settings.FIELDS.OVERLAP_FIELD, label: 'Bounding Box'
+    config.add_facet_field Settings.FIELDS.GEOMETRY, item_presenter: Geoblacklight::BboxItemPresenter, filter_class: Geoblacklight::BboxFilterField, filter_query_builder: Geoblacklight::BboxFilterQuery, within_boost: Settings.BBOX_WITHIN_BOOST, overlap_boost: Settings.OVERLAP_RATIO_BOOST, overlap_field: Settings.FIELDS.OVERLAP_FIELD, label: "Bounding Box"
     # config.add_facet_field Settings.FIELDS.CREATOR, label: 'Author', limit: 8
     # config.add_facet_field Settings.FIELDS.PUBLISHER, label: 'Publisher', limit: 8, single: true
     # config.add_facet_field Settings.FIELDS.SPATIAL_COVERAGE, label: 'Place', limit: 8
@@ -115,7 +115,7 @@ class CatalogController < ApplicationController
     config.add_index_field Settings.FIELDS.TITLE
     config.add_index_field Settings.FIELDS.FORMAT
     config.add_index_field Settings.FIELDS.PUBLISHER
-    config.add_index_field Settings.ID
+    config.add_index_field Settings.FIELDS.ID
     config.add_index_field Settings.FIELDS.YEAR
     config.add_index_field Settings.FIELDS.CREATOR
     config.add_index_field Settings.FIELDS.DESCRIPTION, helper_method: :snippit

@@ -1,10 +1,6 @@
 // Pulmap modules, pul style, variables/mixins
-/*
- *= require  'blacklight_range_limit'
 
- *= require geoblacklight_sidecar_images/application
-
-*/
+// require  'blacklight_range_limit'
 
 // Import font first
 @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
@@ -20,3 +16,4 @@
 @import 'geoblacklight';
 @import 'pulmap';
 @import 'leaflet-geosearch';
+@import 'geoblacklight_sidecar_images/gblsci';
