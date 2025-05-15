@@ -26,6 +26,7 @@ GeoBlacklight.Viewer.Map = GeoBlacklight.Viewer.Map.extend({
     if (this.data.map !== 'home') {
       this.addBoundsOverlay(this.options.bbox);
     }
+    console.log(this.map)
   },
 
   removeMarkers: function() {

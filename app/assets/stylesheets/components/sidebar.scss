@@ -33,10 +33,11 @@
     padding: 10px;
   }
 
-  .show-tools {
+  .card {
     margin-bottom: 20px;
     margin-top: 15px;
   }
+
   .source-card {
     margin-bottom: 20px;
     margin-top: 20px;
@@ -45,5 +46,13 @@
   .relations .list-group .list-group-item a {
     padding: 10px;
   }
-}
 
+  // Styling and initial height for sidebar map
+  [data-map="item"] {
+    height: 280px;
+
+    .leaflet-control-attribution {
+      display: none;
+    }
+  }
+}
