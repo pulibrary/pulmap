@@ -38,6 +38,11 @@ module ApplicationHelper
     end
   end
 
+  def show_facets?
+    skip_params = constraint_params_to_skip
+    params.reject { |p| skip_params.include?(p) }.present?
+  end
+
   def hide_constraints?
     skip_params = constraint_params_to_skip
     skip_params << "q" if params[:q]&.empty?
