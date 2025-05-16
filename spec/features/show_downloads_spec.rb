@@ -27,7 +27,7 @@ describe "Show page downloads" do
       visit solr_document_path("princeton-m613n013z")
       expect(page).not_to have_css ".download-link-container"
       find(".list-group-item.access > a").click # login to view link
-      expect(page).to have_css ".download-link-container"
+      expect(page).to have_link "Original Shapefile"
     end
 
     it "renders a link to request offline access for Princeton Documents unavailable online" do
