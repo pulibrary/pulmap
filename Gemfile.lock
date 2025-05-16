@@ -398,9 +398,8 @@ GEM
       logger
       mime-types-data (~> 3.2025, >= 3.2025.0507)
     mime-types-data (3.2025.0507)
-    mimemagic (0.4.3)
+    mimemagic (0.3.8)
       nokogiri (~> 1)
-      rake
     mini_magick (4.9.5)
     mini_mime (1.1.5)
     minitest (5.25.5)
@@ -788,6 +787,7 @@ DEPENDENCIES
   loofah
   mail_form
   matrix
+  mimemagic (= 0.3.8)
   modernizr-rails
   net-imap
   net-pop
