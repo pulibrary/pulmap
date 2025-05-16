@@ -22,6 +22,6 @@ module Pulmap
     netids = authorization["netids"]
     config.authorization = netids.split if netids
 
-    config.active_record.yaml_column_permitted_classes = [Symbol, Date, Time, Hash, HashWithIndifferentAccess]
+    config.active_record.yaml_column_permitted_classes = [ Symbol, Date, Time, Hash, HashWithIndifferentAccess ]
   end
 end

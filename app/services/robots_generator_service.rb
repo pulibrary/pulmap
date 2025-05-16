@@ -23,7 +23,7 @@ class RobotsGeneratorService
     @path = path
     @disallowed_paths = disallowed_paths
 
-    @groups = [[]]
+    @groups = [ [] ]
     @content = ""
   end
 

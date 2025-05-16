@@ -12,7 +12,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -21,7 +21,7 @@ Devise.setup do |config|
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
-  require 'devise/orm/active_record'
+  require "devise/orm/active_record"
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
@@ -79,7 +79,7 @@ Devise.setup do |config|
   # Notice that if you are skipping storage for all authentication paths, you
   # may want to disable generating routes to Devise's sessions controller by
   # passing skip: :sessions to `devise_for` in your config/routes.rb
-  config.skip_session_storage = [:http_auth]
+  config.skip_session_storage = [ :http_auth ]
 
   # By default, Devise cleans up the CSRF token on authentication to
   # avoid CSRF token fixation attacks. This means that, when using AJAX
@@ -236,7 +236,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :cas, host: 'fed.princeton.edu', url: 'https://fed.princeton.edu/cas'
+  config.omniauth :cas, host: "fed.princeton.edu", url: "https://fed.princeton.edu/cas"
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
@@ -260,5 +260,5 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
-  config.secret_key = ENV['DEVISE_SECRET_KEY'] || '696acf756fc36cde5c1654ade4ff0449fc095863a4bdccbc6cb55f5321d7268337128e5deee3771d5bee26a21f31bd160b2e91dfdec9dcd4d354b5e9404b6455'
+  config.secret_key = ENV["DEVISE_SECRET_KEY"] || "696acf756fc36cde5c1654ade4ff0449fc095863a4bdccbc6cb55f5321d7268337128e5deee3771d5bee26a21f31bd160b2e91dfdec9dcd4d354b5e9404b6455"
 end

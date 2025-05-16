@@ -4,14 +4,14 @@ require "rails_helper"
 
 describe "catalog/_web_services.html.erb", type: :view do
   before do
-    assign(:documents, [document])
+    assign(:documents, [ document ])
     render
   end
 
   context "when the resource links to web service resources" do
-    let(:wms_reference) { Geoblacklight::Reference.new(["http://www.opengis.net/def/serviceType/ogc/wms", "http://geoserver01.uit.tufts.edu/wms"]) }
-    let(:wfs_reference) { Geoblacklight::Reference.new(["http://www.opengis.net/def/serviceType/ogc/wfs", "http://geoserver01.uit.tufts.edu/wfs"]) }
-    let(:references) { instance_double(Geoblacklight::References, refs: [wms_reference, wfs_reference]) }
+    let(:wms_reference) { Geoblacklight::Reference.new([ "http://www.opengis.net/def/serviceType/ogc/wms", "http://geoserver01.uit.tufts.edu/wms" ]) }
+    let(:wfs_reference) { Geoblacklight::Reference.new([ "http://www.opengis.net/def/serviceType/ogc/wfs", "http://geoserver01.uit.tufts.edu/wfs" ]) }
+    let(:references) { instance_double(Geoblacklight::References, refs: [ wms_reference, wfs_reference ]) }
     let(:document) { instance_double(SolrDocument, references: references, wxs_identifier: "sde:GISPORTAL.GISOWNER01.CAMBRIDGEGRID100_04") }
 
     it "links to each reference" do

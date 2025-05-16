@@ -5,9 +5,9 @@ class CreateSolrDocumentSidecars < ActiveRecord::Migration[5.2]
       t.string "document_id"
       t.string "document_type"
       t.string "image"
-      t.integer "version", :limit => 8
+      t.integer "version", limit: 8
 
-      t.index ["document_type", "document_id"], name: "sidecars_solr_document"
+      t.index [ "document_type", "document_id" ], name: "sidecars_solr_document"
 
       t.timestamps
     end

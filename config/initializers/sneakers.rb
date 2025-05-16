@@ -1,6 +1,6 @@
-require 'sneakers'
-require 'sneakers/handlers/maxretry'
-require_relative 'pulmap_config'
+require "sneakers"
+require "sneakers/handlers/maxretry"
+require_relative "pulmap_config"
 Sneakers.configure(
   amqp: Pulmap.config["events"]["server"],
   exchange: Pulmap.config["events"]["exchange"],

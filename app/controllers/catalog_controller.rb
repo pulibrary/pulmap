@@ -23,7 +23,7 @@ class CatalogController < ApplicationController
 
     # GeoBlacklight Defaults
     # * Adds the "map" split view for catalog#index
-    config.view.split(partials: ["index"])
+    config.view.split(partials: [ "index" ])
     config.view.delete_field("list")
 
     ## Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or

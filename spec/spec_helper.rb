@@ -21,9 +21,9 @@ SimpleCov.formatter = if ENV["CI"] == "true"
                             SimpleCov::Formatter::HTMLFormatter
                           ]
                         )
-                      else
+else
                         SimpleCov::Formatter::HTMLFormatter
-                      end
+end
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
@@ -36,6 +36,6 @@ end
 
 WebMock.disable_net_connect!(allow_localhost: true,
                              net_http_connect_on_start: true,
-                             allow: ["chromedriver.storage.googleapis.com", "googlechromelabs.github.io",
+                             allow: [ "chromedriver.storage.googleapis.com", "googlechromelabs.github.io",
                                      "storage.googleapis.com",
-                                     "edgedl.me.gvt1.com"])
+                                     "edgedl.me.gvt1.com" ])

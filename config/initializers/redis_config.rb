@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module RedisConfig
   def config
     @config ||= config_yaml.with_indifferent_access

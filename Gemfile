@@ -50,7 +50,6 @@ gem "vite_rails"
 gem "whenever"
 
 group :development, :test do
-  gem "bixby"
   gem "capybara"
   gem "capybara-screenshot"
   gem "database_cleaner"
@@ -58,6 +57,7 @@ group :development, :test do
   gem "pry-byebug"
   gem "rails-controller-testing"
   gem "rspec-rails"
+  gem "rubocop-rails-omakase"
   gem "simplecov"
   gem "spring"
   gem "webdrivers"
