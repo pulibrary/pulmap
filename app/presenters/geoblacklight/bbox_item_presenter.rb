@@ -2,11 +2,11 @@
 module Geoblacklight
   class BboxItemPresenter < Blacklight::FacetItemPresenter
     def field_label
-      I18n.t("geoblacklight.bbox_label")
+      "Bounding Box"
     end
 
     def label
-      super.to_param
+      I18n.t("geoblacklight.bbox_label")
     end
   end
 end

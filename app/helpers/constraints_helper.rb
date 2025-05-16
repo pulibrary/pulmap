@@ -6,14 +6,12 @@ module ConstraintsHelper
   end
 
   def query_has_constraints?(localized_params = params)
-    !(localized_params[:q].blank? && localized_params[:f].blank? && localized_params[:featured].blank?)
-  end
-
-  def render_constraint_element(label, value, options = {})
-    if params[:bbox]
-      value = nil if label == t("geoblacklight.bbox_label")
-    end
-    super(label, value, options)
+    !(
+      localized_params[:q].blank? &&
+      localized_params[:f].blank? &&
+      localized_params[:featured].blank? &&
+      localized_params[:bbox].blank?
+    )
   end
 
   def render_constraints_filters(localized_params = params)
