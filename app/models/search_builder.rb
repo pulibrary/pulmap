@@ -3,7 +3,6 @@
 class SearchBuilder < Blacklight::SearchBuilder
   include Blacklight::Solr::SearchBuilderBehavior
   include BlacklightRangeLimit::RangeLimitBuilder
-  # include Geoblacklight::SpatialSearchBehavior
   include Geoblacklight::SuppressedRecordsSearchBehavior
   include ::FeaturedContentBehavior
 

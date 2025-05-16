@@ -10,7 +10,7 @@ describe "index jbuilder", type: :request do
       attributes = r["data"].first["attributes"].keys
       expect(attributes).to include Settings.FIELDS.DESCRIPTION,
                                     Settings.FIELDS.TITLE,
-                                    Settings.FIELDS.FILE_FORMAT,
+                                    Settings.FIELDS.FORMAT,
                                     Settings.FIELDS.PUBLISHER,
                                     "layer_slug_s"
     end

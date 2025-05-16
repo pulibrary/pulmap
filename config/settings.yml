@@ -160,7 +160,7 @@ RELATIONSHIPS_SHOWN:
     label: geoblacklight.relations.source_ancestors
     query_type: ancestors
   SOURCE_DESCENDANTS:
-    field: dct_source_sm
+    field: dc_source_sm
     icon: child-item
     inverse: :SOURCE_ANCESTORS
     label: geoblacklight.relations.source_descendants
