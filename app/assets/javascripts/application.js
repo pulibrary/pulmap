@@ -33,24 +33,24 @@
 //= require Leaflet.ExtraMarkers
 
 // Leaflet layer visibility control.
-GeoBlacklight.Controls.Layers = function() {
-  var baseMap = {
-    "Basemap": this.selectBasemap(),
-    "None": L.tileLayer('')
-  };
-
-  var overlay = {
-    "Overlay": this.overlay
+GeoBlacklight.Controls.Layers = function () {
+  const baseMap = {
+    Basemap: this.selectBasemap(),
+    None: L.tileLayer('')
   }
 
-  this.map.addControl(new L.control.layers(baseMap, overlay));
-};
+  const overlay = {
+    Overlay: this.overlay
+  }
 
-GeoBlacklight.Controls.Fullscreen = function() {
+  this.map.addControl(new L.control.layers(baseMap, overlay))
+}
+
+GeoBlacklight.Controls.Fullscreen = function () {
   this.map.addControl(new L.Control.Fullscreen({
     position: 'topright'
-  }));
-};
+  }))
+}
 
 // Controls whether dynamic search on index page map is supressed
-GeoBlacklight.supressDynamicSearch = false;
+GeoBlacklight.supressDynamicSearch = false

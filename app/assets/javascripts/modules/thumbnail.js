@@ -1,4 +1,4 @@
 // asynchronously load images with aload.js
-$(document).ready(function() {
-  aload();
-});
+$(document).ready(function () {
+  aload()
+})

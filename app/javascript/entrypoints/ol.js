@@ -5,14 +5,14 @@ import XYZ from 'ol/source/XYZ'
 import { pulmapBasemaps } from '../openlayers/basemaps'
 
 // Override baseLayer function to add ESRI basemap
-class pulmapOlInitializer extends OlInitializer {
+class PulmapOlInitializer extends OlInitializer {
   baseLayer () {
     const basemap = pulmapBasemaps[this.data.basemap]
     const layer = new TileLayer({
       source: new XYZ({
-        attributions: basemap["attribution"],
-        url: basemap["url"],
-        maxZoom: basemap["maxZoom"]
+        attributions: basemap.attribution,
+        url: basemap.url,
+        maxZoom: basemap.maxZoom
       })
     })
     return layer
@@ -20,5 +20,5 @@ class pulmapOlInitializer extends OlInitializer {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  new pulmapOlInitializer().run()
+  new PulmapOlInitializer().run()
 })
