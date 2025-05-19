@@ -19,8 +19,6 @@
 //= require popper
 //= require bootstrap
 //= require blacklight/blacklight
-// require 'blacklight_range_limit'
-
 //= require modernizr
 
 //= require_tree .
@@ -29,7 +27,6 @@
 //= require modules/map
 //= require modules/thumbnail
 //= require modules/autocomplete
-// require Leaflet.fullscreen
 //= require Leaflet.ExtraMarkers
 
 // Leaflet layer visibility control.

@@ -40,22 +40,13 @@ class CatalogController < ApplicationController
     config.show.partials.delete(:show_header)
     config.show.document_actions.delete(:citation)
     config.show.partials << "show_default_display_note"
-    # config.show.partials << "show_default_viewer_container"
-    # config.show.partials << "show_default_attribute_table"
-    # config.show.partials << "show_default_viewer_information"
-    # config.show.partials << :show
-    # solr field configuration for search results/index views
-    # config.index.show_link = 'title_display'
-    # config.index.record_display_type = 'layer_geom_type_s'
-
-    config.index.title_field = Settings.FIELDS.TITLE
 
     # solr field configuration for document/show views
-
     config.show.display_type_field = Settings.FIELDS.GEOM_TYPE
 
     # Configure the index document presenter.
     config.index.document_presenter_class = Geoblacklight::DocumentPresenter
+    config.index.title_field = Settings.FIELDS.TITLE
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
