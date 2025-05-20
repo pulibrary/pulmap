@@ -4,9 +4,9 @@ require "sitemap_generator"
 
 SitemapGenerator::Sitemap.default_host = if Rails.env.production?
                                            "https://maps.princeton.edu"
-                                         else
+else
                                            "http://localhost"
-                                         end
+end
 
 SitemapGenerator::Sitemap.create do
   add "/contact-us"

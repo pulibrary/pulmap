@@ -27,4 +27,18 @@ describe "Show page" do
       end
     end
   end
+
+  describe "web services modal" do
+    it "renders wms / wfs links" do
+      visit solr_document_path "stanford-cz128vq0535"
+      click_link "Web services"
+      within ".modal-body" do
+        expect(page).to have_css "label", text: "Web Feature Service (WFS)"
+        expect(page).to have_css 'input[value="https://geowebservices.stanford.edu/geoserver/wfs"]'
+        expect(page).to have_css 'input[value="druid:cz128vq0535"]', count: 2
+        expect(page).to have_css "label", text: "Web Mapping Service (WMS)"
+        expect(page).to have_css 'input[value="https://geowebservices.stanford.edu/geoserver/wms"]'
+      end
+    end
+  end
 end

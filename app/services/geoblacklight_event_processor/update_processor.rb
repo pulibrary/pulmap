@@ -4,7 +4,7 @@ class GeoblacklightEventProcessor
   class UpdateProcessor < Processor
     def process
       index.update params: { overwrite: true },
-                   data: [doc].to_json,
+                   data: [ doc ].to_json,
                    headers: { "Content-Type" => "application/json" }
       index.commit unless bulk?
       true

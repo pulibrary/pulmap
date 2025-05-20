@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 Rails.application.configure do
   # Lograge config
   config.lograge.enabled = true
@@ -8,7 +9,7 @@ Rails.application.configure do
 
   # This is is useful if you want to log query parameters
   config.lograge.custom_options = lambda do |event|
-    { ddsource: ["ruby"],
+    { ddsource: [ "ruby" ],
       params: event.payload[:params].reject { |k| %w[controller action].include? k } }
   end
 end

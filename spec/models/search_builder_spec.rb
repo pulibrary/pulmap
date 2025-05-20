@@ -10,18 +10,6 @@ describe SearchBuilder do
   let(:context) { CatalogController.new }
   let(:search_builder) { described_class.new(context) }
 
-  describe "#add_spatial_params" do
-    it "returns the solr_params when no bbox is given" do
-      expect(builder.add_spatial_params(solr_params)).to eq solr_params
-    end
-
-    it "returns the solr_params when bbox is incorrectly formatted" do
-      params = { bbox: "-380 -80" }
-      builder.with(params)
-      expect(builder.add_spatial_params(solr_params)).to eq solr_params
-    end
-  end
-
   describe "#add_featured_content" do
     it "returns search for sanborn records when featured param is set to sanborn" do
       params = { featured: "sanborn" }

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require "capybara/rspec"
 require "selenium-webdriver"
 
@@ -18,7 +19,7 @@ Capybara.register_driver(:selenium) do |app|
   http_client.open_timeout = 120
   Capybara::Selenium::Driver.new(app,
                                  browser: :chrome,
-                                 capabilities: [capabilities, browser_options],
+                                 capabilities: [ capabilities, browser_options ],
                                  http_client: http_client)
 end
 

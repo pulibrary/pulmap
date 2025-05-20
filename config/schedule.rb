@@ -9,29 +9,29 @@ env :PATH, ENV["PATH"]
 # http://en.wikipedia.org/wiki/Cron
 
 # Run a weekly rake task to regenerate the sitemap.
-every :wednesday, at: "11:30 PM", roles: [:app] do
+every :wednesday, at: "11:30 PM", roles: [ :app ] do
   rake "sitemap:refresh"
 end
 
 # Run a daily rake task to harvest new thumbnail images.
 # These could be from new records or from records
 # where there was a previous error during harvesting.
-every :day, at: "11:00 PM", roles: [:index] do
+every :day, at: "11:00 PM", roles: [ :index ] do
   rake "gblsci:images:harvest_new"
 end
 
 # Run a weekly rake task to harvest thumbnail in incomplete states.
 # These could be from new records or from records
 # where there was a previous error during harvesting.
-every :saturday, at: "11:00 AM", roles: [:index] do
+every :saturday, at: "11:00 AM", roles: [ :index ] do
   rake "gblsci:images:harvest_retry"
 end
 
-every 1.day, at: "10:00pm", roles: [:db] do
+every 1.day, at: "10:00pm", roles: [ :db ] do
   rake "blacklight:delete_old_searches"
 end
 
-every 1.day, at: "10:30pm", roles: [:db] do
+every 1.day, at: "10:30pm", roles: [ :db ] do
   rake "devise_guests:delete_old_guest_users"
 end
 

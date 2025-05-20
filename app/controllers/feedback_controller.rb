@@ -2,7 +2,7 @@
 
 class FeedbackController < ApplicationController
   before_action :current_user_email
-  before_action :build_feedback_form, only: [:create]
+  before_action :build_feedback_form, only: [ :create ]
 
   def new
     @feedback_form = FeedbackForm.new if @feedback_form.nil?

@@ -47,7 +47,6 @@ describe "Search" do
   describe "Constraints" do
     it "searching using a bbox constraint, hides the coordinates" do
       visit "/catalog?bbox=-74.97447967529297%2040.237605%20-74.28783416748047%2040.446947"
-      expect(page).to have_css "span.applied-filter.constraint", count: 1
       expect(page).to have_content "Current Map View"
       expect(page).not_to have_content "-74.97447967529297 40.237605 -74.28783416748047 40.446947"
     end

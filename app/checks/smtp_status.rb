@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class SmtpStatus < HealthMonitor::Providers::Base
   def check!
     settings = ActionMailer::Base.smtp_settings

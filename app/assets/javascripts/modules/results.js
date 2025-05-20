@@ -1,145 +1,145 @@
-Blacklight.onLoad(function() {
-  var historySupported = !!(window.history && window.history.pushState);
+Blacklight.onLoad(function () {
+  const historySupported = !!(window.history && window.history.pushState)
 
   if (historySupported) {
-    History.Adapter.bind(window, 'statechange', function() {
-      var state = History.getState();
-      updatePage(state.url);
-    });
+    History.Adapter.bind(window, 'statechange', function () {
+      const state = History.getState()
+      updatePage(state.url)
+    })
   }
 
-  $('[data-map="index"]').each(function(i, element) {
-    var data = $(this).data(),
-        opts = { baseUrl: data.catalogPath }.
-        bbox = initialBoundingBox(data);
+  $('[data-map="index"]').each(function (i, element) {
+    const data = $(this).data()
+    const opts = { baseUrl: data.catalogPath }
+      .bbox = initialBoundingBox(data)
 
     // Instantiate new map
-    GeoBlacklight.Home = new GeoBlacklight.Viewer.Map(this, { bbox: bbox });
+    GeoBlacklight.Home = new GeoBlacklight.Viewer.Map(this, { bbox })
 
     // Add geocoder
     addGeocoder(GeoBlacklight.Home.map)
 
     // Remove initial overlay
-    GeoBlacklight.Home.removeBoundsOverlay();
+    GeoBlacklight.Home.removeBoundsOverlay()
 
     // Add geosearch control
-    L.control.geosearch(opts).addTo(GeoBlacklight.Home.map);
+    L.control.geosearch(opts).addTo(GeoBlacklight.Home.map)
 
     // Set document markers
-    placeMarkers();
+    placeMarkers()
 
     // Set hover listeners
-    setHoverListeners();
-  });
+    setHoverListeners()
+  })
 
-  function initialBoundingBox(data) {
-    var world = L.latLngBounds([[-90, -180], [90, 180]]);
-    var filter_params = L.Control.GeoSearch.prototype.filterParams();
+  function initialBoundingBox (data) {
+    const world = L.latLngBounds([[-90, -180], [90, 180]])
+    const filter_params = L.Control.GeoSearch.prototype.filterParams()
 
     if (typeof data.mapGeom === 'string') {
-      GeoBlacklight.supressDynamicSearch = false; // Ensures that dynamic search is triggered
-        bbox = L.geoJSONToBounds(data.mapGeom);
+      GeoBlacklight.supressDynamicSearch = false // Ensures that dynamic search is triggered
+      bbox = L.geoJSONToBounds(data.mapGeom)
     } else {
-      GeoBlacklight.supressDynamicSearch = true;
-      $('.document [data-geom]').each(function() {
+      GeoBlacklight.supressDynamicSearch = true
+      $('.document [data-geom]').each(function () {
         try {
-          var currentBounds = L.geoJSONToBounds($(this).data().geom);
+          const currentBounds = L.geoJSONToBounds($(this).data().geom)
           if (!world.contains(currentBounds)) {
-            throw "Invalid bounds";
+            throw 'Invalid bounds'
           }
           if (typeof bbox === 'undefined') {
-            bbox = currentBounds;
+            bbox = currentBounds
           } else {
-            bbox.extend(currentBounds);
+            bbox.extend(currentBounds)
           }
         } catch (e) {
-          bbox = L.bboxToBounds("-180 -90 180 90");
+          bbox = L.bboxToBounds('-180 -90 180 90')
         }
-      });
+      })
     }
 
     // Set bbox to default value if bbox is empty or there are no filter params
     if ((typeof bbox === 'undefined') || (filter_params.length === 0)) {
-      bbox = L.latLngBounds([[-20, -100],[45, 100]]);
+      bbox = L.latLngBounds([[-20, -100], [45, 100]])
     }
 
-    return bbox;
+    return bbox
   }
 
-  function placeMarkers() {
+  function placeMarkers () {
     // Clear existing markers
-    GeoBlacklight.Home.removeMarkers();
+    GeoBlacklight.Home.removeMarkers()
 
-    $('.document [data-geom]').each(function() {
-      var _this = $(this),
-          currentBbox = _this.data().geom,
-          layerId = _this.data().layerId;
-          counter = _this.data().counter,
-          redMarker = L.ExtraMarkers.icon({
-            innerHTML: '<p style="color: white; margin-top: 8px;">' + counter + '</p>',
-            markerColor: 'blue',
-            shape: 'square',
-            prefix: 'fa'
-          });
+    $('.document [data-geom]').each(function () {
+      const _this = $(this)
+      const currentBbox = _this.data().geom
+      const layerId = _this.data().layerId
+      counter = _this.data().counter,
+      redMarker = L.ExtraMarkers.icon({
+        innerHTML: '<p style="color: white; margin-top: 8px;">' + counter + '</p>',
+        markerColor: 'blue',
+        shape: 'square',
+        prefix: 'fa'
+      })
 
       if (currentBbox) {
-        var bounds = L.geoJSONToBounds(currentBbox);
-        var marker = L.marker(bounds.getCenter(), {icon: redMarker});
+        const bounds = L.geoJSONToBounds(currentBbox)
+        const marker = L.marker(bounds.getCenter(), { icon: redMarker })
 
         // Add marker to map
-        marker.addTo(GeoBlacklight.Home.markers);
+        marker.addTo(GeoBlacklight.Home.markers)
 
         // Set scroll click event on marker
-        marker.on('click', function() {
-          $( ".document .selected" ).removeClass( "selected" );
-          $('html, body').animate({scrollTop: _this.offset().top - 120}, 200);
-          $( _this ).addClass( "selected" );
-        });
+        marker.on('click', function () {
+          $('.document .selected').removeClass('selected')
+          $('html, body').animate({ scrollTop: _this.offset().top - 120 }, 200)
+          $(_this).addClass('selected')
+        })
       }
-    });
+    })
   }
 
-  function setHoverListeners() {
-    $('[data-map="index"]').each(function(i, element) {
+  function setHoverListeners () {
+    $('[data-map="index"]').each(function (i, element) {
       $('#content')
-        .on('mouseenter', '#documents [data-layer-id]', function() {
-          var geom = $(this).data('geom')
-          GeoBlacklight.Home.addGeoJsonOverlay(geom);
+        .on('mouseenter', '#documents [data-layer-id]', function () {
+          const geom = $(this).data('geom')
+          GeoBlacklight.Home.addGeoJsonOverlay(geom)
         })
-        .on('mouseleave', '#documents [data-layer-id]', function() {
-          GeoBlacklight.Home.removeBoundsOverlay();
-      });
-    });
+        .on('mouseleave', '#documents [data-layer-id]', function () {
+          GeoBlacklight.Home.removeBoundsOverlay()
+        })
+    })
   }
 
   /**
    * Add a geocoding plugin to the map
    * @param {L.Map} map Leaflet Map instance
    */
-  function addGeocoder(map) {
-    map.addControl(window.geoCoder);
+  function addGeocoder (map) {
+    map.addControl(window.geoCoder)
 
-    var options = {
+    const options = {
       placement: 'bottom',
-      delay: { "show": 1000, "hide": 100 },
+      delay: { show: 1000, hide: 100 },
       container: 'body',
       title: 'Zoom map to location'
-    };
+    }
 
     // Set tooltips on geocoder
-    $('.geosearch a.leaflet-bar-part-single').attr('data-toggle','tooltip');
-    $('.geosearch a.leaflet-bar-part-single').tooltip(options);
+    $('.geosearch a.leaflet-bar-part-single').attr('data-toggle', 'tooltip')
+    $('.geosearch a.leaflet-bar-part-single').tooltip(options)
   }
 
-  function updatePage(url) {
-    $( ".overlay" ).fadeIn( 100 );
+  function updatePage (url) {
+    $('.overlay').fadeIn(100)
 
-    $.get(url).done(function(data) {
-      var resp = $.parseHTML(data);
-      $doc = $(resp);
+    $.get(url).done(function (data) {
+      const resp = $.parseHTML(data)
+      $doc = $(resp)
 
       // Reload content
-      $('#content').replaceWith($doc.find('#content'));
+      $('#content').replaceWith($doc.find('#content'))
 
       // Append hidden bbox seach input to improve push state search behavior
       if ($('form.search-query-form.form-inline.home-search.navbar-form').find('input[name=bbox]').length) {
@@ -149,14 +149,14 @@ Blacklight.onLoad(function() {
       }
 
       // Reload thumbnail images
-      aload();
+      aload()
 
       // Reload markers and listeners
-      placeMarkers();
-      setHoverListeners();
+      placeMarkers()
+      setHoverListeners()
 
       // Allow interaction with results
-      $( ".overlay" ).fadeOut( 500 );
-    });
+      $('.overlay').fadeOut(500)
+    })
   }
-});
+})

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class SolrStatus < HealthMonitor::Providers::Base
   def check!
     uri = Blacklight.default_index.connection.uri

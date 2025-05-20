@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root to: "catalog#index"
   concern :searchable, Blacklight::Routes::Searchable.new
 
-  resource :catalog, only: [:index], as: "catalog", path: "/catalog", controller: "catalog" do
+  resource :catalog, only: [ :index ], as: "catalog", path: "/catalog", controller: "catalog" do
     concerns :searchable
     concerns :range_searchable
   end
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   concern :exportable, Blacklight::Routes::Exportable.new
 
-  resources :solr_documents, only: [:show], path: "/catalog", controller: "catalog" do
+  resources :solr_documents, only: [ :show ], path: "/catalog", controller: "catalog" do
     concerns :exportable
   end
 
@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   mount Geoblacklight::Engine => "geoblacklight"
 
   concern :gbl_exportable, Geoblacklight::Routes::Exportable.new
-  resources :solr_documents, only: [:show], path: "/catalog", controller: "catalog" do
+  resources :solr_documents, only: [ :show ], path: "/catalog", controller: "catalog" do
     concerns :gbl_exportable
   end
 
@@ -48,7 +48,7 @@ Rails.application.routes.draw do
     concerns :gbl_downloadable
   end
 
-  resources :download, only: [:show]
+  resources :download, only: [ :show ]
 
   resources :suggest, only: :index, defaults: { format: "json" }
 

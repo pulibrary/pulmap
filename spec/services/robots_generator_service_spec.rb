@@ -3,7 +3,7 @@
 require "rails_helper"
 
 RSpec.describe RobotsGeneratorService do
-  subject(:robots) { described_class.new(path: file.path, disallowed_paths: ["/path1", "/path2"]) }
+  subject(:robots) { described_class.new(path: file.path, disallowed_paths: [ "/path1", "/path2" ]) }
 
   let(:file) { Tempfile.new("robots.txt") }
 

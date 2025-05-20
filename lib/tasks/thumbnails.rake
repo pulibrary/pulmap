@@ -35,7 +35,7 @@ namespace :gblsci do
     end
 
     desc "Harvest images by solr query"
-    task :harvest_by_query, [:query] => [:environment] do |_t, args|
+    task :harvest_by_query, [ :query ] => [ :environment ] do |_t, args|
       raise 'Please supply required arguments [query]. harvest_by_query["layer_slug_s:*"]' unless args[:query]
       query = args[:query]
       begin

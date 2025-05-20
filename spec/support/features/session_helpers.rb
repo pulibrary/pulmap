@@ -30,9 +30,9 @@ module Features
     def sign_in(who = :user)
       user = if who.instance_of?(User)
                who.username
-             else
+      else
                FactoryBot.create(:user).username
-             end
+      end
       OmniAuth.config.add_mock(:cas, uid: user)
       visit user_cas_omniauth_authorize_path
     end
