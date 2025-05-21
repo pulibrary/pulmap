@@ -2,6 +2,10 @@
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+
+  # For serving pmtiles and cogs in development
+  config.middleware.use Rack::Static, urls: [ "/fixtures/files/restricted" ], root: "spec"
+
   config.secret_key_base = "bf9d4812490b2814733348bbe1848dccbcf8fab3688b7801c43e102d98f5ef4bf934ad798dc33a5b17d8de9f52d0b995baefa97a86e07ef27841d416346456eb"
 
   # In the development environment your application's code is reloaded on

@@ -52,10 +52,7 @@ Rails.application.routes.draw do
 
   resources :suggest, only: :index, defaults: { format: "json" }
 
-  authenticate :user do
-    get "geoserver/restricted-figgy/*path" => "geoserver#index"
-    get "geoserver/restricted-figgy-staging/*path" => "geoserver#index"
-  end
+  get "proxy/geodata/*path" => "proxy#index"
 
   require "sidekiq/web"
   authenticate :user,  ->(u) { u.admin? } do

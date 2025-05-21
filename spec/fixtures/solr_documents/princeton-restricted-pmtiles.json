@@ -1,0 +1,41 @@
+{
+    "geoblacklight_version": "1.0",
+    "dc_identifier_s": "ark:/88435/00000351g",
+    "layer_slug_s": "princeton-00000351g",
+    "uuid": "princeton-00000351g",
+    "dc_title_s": "Vermont voting districts from 2010 Census",
+    "solr_geom": "ENVELOPE(-73.437905, -71.465039, 45.016659, 42.72685)",
+    "dct_provenance_s": "Princeton",
+    "dc_rights_s": "Restricted",
+    "dc_description_s": "Voting districts in Vermont based on the US decennial Census of 2010. The TIGER/Line shapefiles and related database files (.dbf) are an extract of selected geographic and cartographic information from the U.S. Census Bureau's Master Address File / Topologically Integrated Geographic Encoding and Referencing (MAF/TIGER) Database (MTDB). The MTDB represents a seamless national file with no overlaps or gaps between parts, however, each TIGER/Line shapefile is designed to stand alone as an independent data set, or they can be combined to cover the entire nation. Voting district is the generic name for geographic entities such as precincts, wards, and election districts established by State governments for the purpose of conducting elections. States participating in the 2010 Census Redistricting Data Program as part of Public Law 94-171 (1975) provided the Census Bureau with boundaries, codes, and names for their VTDs. Each VTD is identified by a 1- to 6-character alphanumeric census code that is unique within county. For the 2010 Census, Rhode Island is the only State that did not participate in Phase 2 (the Voting District Project) of the Redistricting Data Program and no VTDs exist for this State in the 2010 Census data products. Note that only Montana and Oregon do not have complete coverage of VTDs for the 2010 Census.",
+    "dc_creator_sm": [
+        "US Census Bureau, Geography Division"
+    ],
+    "dc_subject_sm": [
+        "Boundaries"
+    ],
+    "all_subject_sm": [
+        "Census",
+        "voting districts",
+        "electoral districts",
+        "electoral boundaries",
+        "state legislative district",
+        "Boundaries"
+    ],
+    "dct_spatial_sm": [
+        "Vermont"
+    ],
+    "dct_temporal_sm": [
+        "2010",
+        "2012",
+        "2012"
+    ],
+    "solr_year_i": 2010,
+    "layer_modified_dt": "2023-10-27T21:13:24Z",
+    "dct_references_s": "{\"http://www.opengis.net/cat/csw/csdgm\":\"https://figgy.princeton.edu/downloads/29e193a1-3dd0-47c3-9c68-d1ab796f2af3/file/66d816bd-5eec-46bc-94a6-42efc6df725c\",\"http://schema.org/downloadUrl\":\"https://figgy.princeton.edu/downloads/9d633fde-1889-44c8-b7af-7ea56d86af1e/file/320296b9-25d3-475a-b8fd-c473653a5dc4\",\"http://schema.org/thumbnailUrl\":\"https://figgy.princeton.edu/downloads/9d633fde-1889-44c8-b7af-7ea56d86af1e/file/a88afad3-49a8-4c59-91cd-ee18a99b78ca\",\"https://github.com/protomaps/PMTiles\":\"http://localhost:3000/proxy/geodata/restricted/vermont.pmtiles\"}",
+    "layer_geom_type_s": "Polygon",
+    "dc_format_s": "Shapefile",
+    "dct_issued_dt": "2012-01-01T00:00:00Z",
+    "suppressed_b": false,
+    "rights_statement_s": "<a href=\"http://rightsstatements.org/vocab/NKC/1.0/\">No Known Copyright</a><br><p>Princeton University Library reasonably believes that the Item is not restricted by copyright or related rights, but a conclusive determination could not be made.\n<br/>You are free to use this Item in any way that is permitted by the copyright and related rights legislation that applies to your use.</p><p>Princeton University Library claims no copyright or license governing this digital resource. It is provided for free, on a non-commercial, open-access basis, for fair-use academic and research purposes only. Anyone who claims copyright over any part of these resources and feels that they should not be presented in this manner is invited to contact Princeton University Library, who will in turn consider such concerns and make every effort to respond appropriately. We request that users reproducing this resource cite it according to the guidelines described at <a href=\"https://library.princeton.edu/special-collections/policies/forms-citation\">https://library.princeton.edu/special-collections/policies/forms-citation</a>.\n</p>"
+}

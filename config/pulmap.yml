@@ -8,6 +8,7 @@ defaults: &defaults
       key: <%= ENV['LEAFLET_GEOCODER_KEY'] || 'secret' %>
   figgy_universal_viewer_url: 'https://figgy.princeton.edu/viewer'
   figgy_universal_viewer_config: 'https://figgy.princeton.edu/uv/uv_config.json'
+  geodata_url: <%= ENV['GEODATA_RESTRICTED_URL'] || 'http://localhost:3000/fixtures/files' %>
 
 development:
   <<: *defaults
