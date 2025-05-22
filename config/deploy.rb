@@ -92,7 +92,8 @@ namespace :solr do
   desc "Opens Solr Console"
   task :console do
     primary_app = primary(:app)
-    solr_host = fetch(:stage, "production").to_s == "production" ? "lib-solr-prod7" : "lib-solr-staging4d"
+    solr_host = "lib-solr-staging4d.princeton.edu"
+    # solr_host = fetch(:stage, "production").to_s == "production" ? "lib-solr-prod7" : "lib-solr-staging4d"
     port = rand(9000..9999)
     puts "Opening Solr Console on port #{port}"
     Net::SSH.start(solr_host, primary_app.user) do |session|

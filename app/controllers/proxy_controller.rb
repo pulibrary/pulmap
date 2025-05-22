@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ProxyController < ApplicationController
-  before_action :validate_user
+  # before_action :validate_user
 
   def index
     url = Pulmap.config["geodata_url"]
@@ -31,13 +31,15 @@ class ProxyController < ApplicationController
   private
 
   def proxy_success(proxied_response, code)
+    response.headers["Content-Length"] = proxied_response["Content-Length"]
     content_type = proxied_response["Content-Type"]
-    body = proxied_response.body.to_s
-    send_data body, content_type: content_type, disposition: "inline", status: code
+    body = proxied_response.body
+    # send_data body, content_type: content_type, disposition: "inline", status: code
+    render body: body, content_type: content_type, status: code
   end
 
-  def validate_user
-    return if current_user
-    head 401
-  end
+  # def validate_user
+  #   return if current_user
+  #   head 401
+  # end
 end
