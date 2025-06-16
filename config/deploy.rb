@@ -30,6 +30,9 @@ set :linked_dirs, fetch(:linked_dirs, []).push("log",
 
 set :passenger_restart_with_touch, true
 
+# Set roles defined in schedule.rb
+set :whenever_roles, -> { [ :app, :db, :index ] }
+
 desc "Write the current version to public/version.txt"
 task :write_version do
   on roles(:app), in: :sequence do
