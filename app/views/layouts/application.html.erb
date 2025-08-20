@@ -42,6 +42,9 @@
     <% end %>
   </head>
   <body class="<%= render_body_class %>">
+    <% if Rails.env.production? %>
+      <%= render partial: 'shared/analytics_noscript' %>
+    <% end %>
   <div class="wrapper">
     <%= render partial: 'shared/header_navbar' %>
     <%= render partial: 'shared/modal' %>
