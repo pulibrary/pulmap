@@ -5,15 +5,31 @@ require "rails_helper"
 RSpec.describe "Health Check", type: :request do
   describe "GET /health" do
     it "has a health check" do
+      SmtpStatus.next_check_timestamp = 0
       allow(Net::SMTP).to receive(:new).and_return(instance_double(Net::SMTP, "open_timeout=": nil, start: true))
       get "/health.json"
       expect(response).to be_successful
     end
 
     it "errors when it can't contact the SMTP server" do
+      SmtpStatus.next_check_timestamp = 0
       get "/health.json?providers[]=smtpstatus"
 
       expect(response).not_to be_successful
+    end
+
+    it "caches a success on SMTP and doesn't call it twice in a short window" do
+      SmtpStatus.next_check_timestamp = 0
+      smtp_double = instance_double(Net::SMTP)
+      allow(Net::SMTP).to receive(:new).and_return(smtp_double)
+      allow(smtp_double).to receive(:open_timeout=)
+      allow(smtp_double).to receive(:start)
+
+      get "/health.json?providers[]=smtpstatus"
+      expect(response).to be_successful
+      get "/health.json?providers[]=smtpstatus"
+
+      expect(Net::SMTP).to have_received(:new).exactly(1).times
     end
 
     it "errors when a service is down" do
