@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-source "https://rubygems.org"
+source "https://gem.coop"
 
 gem "autoprefixer-rails"
 # Pin to prevent passenger error
