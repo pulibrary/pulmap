@@ -14,6 +14,7 @@ import VectorLayer from 'ol/layer/Vector'
 import VectorSource from 'ol/source/Vector'
 import { FullScreen, defaults as defaultControls } from 'ol/control'
 import { PMTilesVectorSource } from 'ol-pmtiles'
+import { pulmapBasemaps } from '../openlayers/basemaps'
 
 export default class OlInitializer {
   constructor () {
@@ -26,6 +27,7 @@ export default class OlInitializer {
 
   run () {
     if (!this.element) return false
+
     if (this.data.available !== 'true') {
       this.initializeBoundsOverlay()
     } else if (this.data.protocol === 'Pmtiles') {
@@ -36,11 +38,12 @@ export default class OlInitializer {
   }
 
   baseLayer () {
+    const basemap = pulmapBasemaps[this.data.basemap]
     const layer = new TileLayer({
       source: new XYZ({
-        attributions:
-          'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012',
-        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}'
+        attributions: basemap.attribution,
+        url: basemap.url,
+        maxZoom: basemap.maxZoom
       })
     })
     return layer
