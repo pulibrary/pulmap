@@ -18,19 +18,29 @@ yarn install
 ### Setup server
 
 1. Install Lando DMG from https://github.com/lando/lando/releases
-1. To start: `rake servers:start`
+1. To start: `bundle exec rake servers:start`
 1. For test:
    - `bundle exec rspec`
 1. For development:
-   - `rails s`
+   - `bundle exec rails s`
    - Access Pulmap at http://localhost:3000/
-1. To stop: `rake servers:stop` or `lando stop`
+1. To stop: `bundle exec rake servers:stop` or `lando stop`
+
+### Deployment
+
+There are two  methods for deploying Pulmap:
+
+1. Deploy from [Ansible Tower](https://github.com/pulibrary/pul-it-handbook/blob/main/services/tower.md) (preferred).
+1. Deploy using Capistrano.
+    - Connect to the Princeton VPN
+    - `bundle exec cap staging deploy`
+    - `bundle exec cap production deploy`
 
 ### Reindex from figgy
 
 The reindex is triggered on the figgy side.
 
-## Production
+#### Production
 ```
 $ ssh deploy@figgy-worker-prod1
 $ tmux new -t [yourname]
@@ -39,7 +49,7 @@ $ BULK=true bundle exec rails c
 > GeoResourceReindexer.reindex_geoblacklight
 ```
 
-## Staging
+#### Staging
 ```
 $ ssh deploy@figgy-web-staging1
 $ tmux new -t [yourname]
