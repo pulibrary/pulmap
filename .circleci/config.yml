@@ -8,7 +8,7 @@ jobs:
     working_directory: ~/pulmap
     docker:
       # The primary container is an instance of the first list image listed. Your build commands run in this container.
-      - image: cimg/ruby:3.2.6-browsers
+      - image: cimg/ruby:3.4.8-browsers
         environment:
           RAILS_ENV: test
           PULMAP_DB_HOST: localhost
@@ -38,7 +38,8 @@ jobs:
           install-yarn: true
           node-version: '22.10.0'
       # Bundle install dependencies
-      - run: bundle install --path vendor/bundle
+      - run: bundle config set path 'vendor/bundle'
+      - run: bundle install
       - save_cache:
           key: pulmap-{{ checksum "Gemfile.lock" }}
           paths:
@@ -59,7 +60,7 @@ jobs:
   test:
     working_directory: ~/pulmap
     docker:
-      - image: cimg/ruby:3.2.6-browsers
+      - image: cimg/ruby:3.4.8-browsers
         environment:
           RAILS_ENV: test
           PULMAP_DB_HOST: localhost
@@ -91,7 +92,8 @@ jobs:
           install-yarn: true
           node-version: '22.10.0'
       # Bundle install dependencies
-      - run: bundle install --path vendor/bundle
+      - run: bundle config set path 'vendor/bundle'
+      - run: bundle install
       - run:
           name: Load config into solr
           command: |
@@ -109,7 +111,7 @@ jobs:
   rubocop:
     working_directory: ~/pulmap
     docker:
-      - image: cimg/ruby:3.2.6-browsers
+      - image: cimg/ruby:3.4.8-browsers
         environment:
           RAILS_ENV: test
           PULMAP_DB_HOST: localhost
@@ -131,7 +133,8 @@ jobs:
       # Install Bundler
       - run: gem install bundler -v '~> 2.0'
       # Bundle install dependencies
-      - run: bundle install --path vendor/bundle
+      - run: bundle config set path 'vendor/bundle'
+      - run: bundle install
       - run: bundle exec rubocop
 workflows:
   version: 2

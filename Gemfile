@@ -13,7 +13,8 @@ gem "capistrano-bundler"
 gem "capistrano-passenger"
 gem "capistrano-rails"
 gem "capistrano-rails-console"
-gem "ddtrace"
+gem "csv"
+gem "datadog", require: "datadog/auto_instrument"
 gem "devise", "~> 4.8"
 gem "devise-guests"
 gem "faraday"
@@ -61,7 +62,6 @@ group :development, :test do
   gem "rubocop-rails-omakase"
   gem "simplecov"
   gem "spring"
-  gem "webdrivers"
 end
 
 group :development do
@@ -72,14 +72,7 @@ end
 
 group :test do
   gem "axe-core-rspec"
+  gem "selenium-webdriver"
   gem "timecop"
   gem "webmock"
 end
-
-#
-# Added for Ruby 3.1 support
-gem "matrix"
-gem "net-imap", require: false
-gem "net-pop", require: false
-gem "net-smtp", require: false
-gem "strscan", "3.0.1"

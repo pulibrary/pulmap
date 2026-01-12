@@ -165,22 +165,20 @@ GEM
       bigdecimal
       rexml
     crass (1.0.6)
+    csv (3.3.5)
     database_cleaner (2.1.0)
       database_cleaner-active_record (>= 2, < 3)
     database_cleaner-active_record (2.2.1)
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
-    datadog-ci (0.8.3)
+    datadog (2.7.1)
+      datadog-ruby_core_source (~> 3.3)
+      libdatadog (~> 14.1.0.1.0)
+      libddwaf (~> 1.15.0.0.0)
       msgpack
+    datadog-ruby_core_source (3.5.0)
     date (3.4.1)
-    ddtrace (1.23.3)
-      datadog-ci (~> 0.8.1)
-      debase-ruby_core_source (= 3.3.1)
-      libdatadog (~> 7.0.0.1.0)
-      libddwaf (~> 1.14.0.0.0)
-      msgpack
-    debase-ruby_core_source (3.3.1)
     declarative (0.0.20)
     deep_merge (1.2.2)
     deprecation (1.1.0)
@@ -359,18 +357,8 @@ GEM
       addressable (~> 2.8)
       childprocess (~> 5.0)
       logger (~> 1.6)
-    libdatadog (7.0.0.1.0)
-    libdatadog (7.0.0.1.0-aarch64-linux)
-    libdatadog (7.0.0.1.0-x86_64-linux)
-    libddwaf (1.14.0.0.0)
-      ffi (~> 1.0)
-    libddwaf (1.14.0.0.0-aarch64-linux)
-      ffi (~> 1.0)
-    libddwaf (1.14.0.0.0-arm64-darwin)
-      ffi (~> 1.0)
-    libddwaf (1.14.0.0.0-x86_64-darwin)
-      ffi (~> 1.0)
-    libddwaf (1.14.0.0.0-x86_64-linux)
+    libdatadog (14.1.0.1.0)
+    libddwaf (1.15.0.0.2)
       ffi (~> 1.0)
     lint_roller (1.1.0)
     logger (1.7.0)
@@ -674,7 +662,6 @@ GEM
       sshkit (~> 1.12)
     statesman (12.1.0)
     stringio (3.1.7)
-    strscan (3.0.1)
     thor (1.3.2)
     thread_safe (0.3.6)
     tilt (2.6.0)
@@ -720,10 +707,6 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webdrivers (5.3.1)
-      nokogiri (~> 1.6)
-      rubyzip (>= 1.3.0)
-      selenium-webdriver (~> 4.0, < 4.11)
     webmock (3.25.1)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
@@ -767,8 +750,9 @@ DEPENDENCIES
   capistrano-rails-console
   capybara
   capybara-screenshot
+  csv
   database_cleaner
-  ddtrace
+  datadog
   devise (~> 4.8)
   devise-guests
   ed25519
@@ -786,12 +770,8 @@ DEPENDENCIES
   logstash-event
   loofah
   mail_form
-  matrix
   mimemagic (= 0.3.8)
   modernizr-rails
-  net-imap
-  net-pop
-  net-smtp
   omniauth-cas (~> 2.0)
   omniauth-rails_csrf_protection (~> 0.1)
   pg
@@ -806,21 +786,20 @@ DEPENDENCIES
   rspec-rails
   rubocop-rails-omakase
   sassc-rails
+  selenium-webdriver
   sidekiq
   simple_form
   simplecov
   sitemap_generator
   sneakers
   spring
-  strscan (= 3.0.1)
   timecop
   turbolinks
   twitter-typeahead-rails
   vite_rails
   web-console
-  webdrivers
   webmock
   whenever
 
 BUNDLED WITH
-   2.5.22
+   2.6.9
