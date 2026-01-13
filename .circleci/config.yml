@@ -8,7 +8,7 @@ jobs:
     working_directory: ~/pulmap
     docker:
       # The primary container is an instance of the first list image listed. Your build commands run in this container.
-      - image: cimg/ruby:3.2.6-browsers
+      - image: cimg/ruby:3.4.8-browsers
         environment:
           RAILS_ENV: test
           PULMAP_DB_HOST: localhost
@@ -18,6 +18,7 @@ jobs:
           POSTGRES_USER: geoblacklight
           POSTGRES_DB: pulmap_test
           POSTGRES_HOST_AUTH_METHOD: trust
+    resource_class: large
     steps:
       - run: sudo apt-get update
       - browser-tools/install-chrome
@@ -33,12 +34,13 @@ jobs:
             - pulmap-{{ checksum "Gemfile.lock" }}
             - pulmap-yarn-{{ checksum "yarn.lock" }}
       # Install Bundler
-      - run: gem install bundler -v '~> 2.0'
+      - run: gem install bundler -v '2.6.9'
       - node/install:
           install-yarn: true
           node-version: '22.10.0'
       # Bundle install dependencies
-      - run: bundle install --path vendor/bundle
+      - run: bundle config set path 'vendor/bundle'
+      - run: bundle install
       - save_cache:
           key: pulmap-{{ checksum "Gemfile.lock" }}
           paths:
@@ -59,7 +61,7 @@ jobs:
   test:
     working_directory: ~/pulmap
     docker:
-      - image: cimg/ruby:3.2.6-browsers
+      - image: cimg/ruby:3.4.8-browsers
         environment:
           RAILS_ENV: test
           PULMAP_DB_HOST: localhost
@@ -86,12 +88,13 @@ jobs:
       - attach_workspace:
           at: '~/pulmap'
       # Install Bundler
-      - run: gem install bundler -v '~> 2.0'
+      - run: gem install bundler -v '2.6.9'
       - node/install:
           install-yarn: true
           node-version: '22.10.0'
       # Bundle install dependencies
-      - run: bundle install --path vendor/bundle
+      - run: bundle config set path 'vendor/bundle'
+      - run: bundle install
       - run:
           name: Load config into solr
           command: |
@@ -109,7 +112,7 @@ jobs:
   rubocop:
     working_directory: ~/pulmap
     docker:
-      - image: cimg/ruby:3.2.6-browsers
+      - image: cimg/ruby:3.4.8-browsers
         environment:
           RAILS_ENV: test
           PULMAP_DB_HOST: localhost
@@ -129,9 +132,10 @@ jobs:
           install-yarn: true
           node-version: '22.10.0'
       # Install Bundler
-      - run: gem install bundler -v '~> 2.0'
+      - run: gem install bundler -v '2.6.9'
       # Bundle install dependencies
-      - run: bundle install --path vendor/bundle
+      - run: bundle config set path 'vendor/bundle'
+      - run: bundle install
       - run: bundle exec rubocop
 workflows:
   version: 2
