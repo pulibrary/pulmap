@@ -2,7 +2,7 @@
   "dependencies": {
     "@geoblacklight/frontend": "^4.4",
     "leaflet-geosearch": "^2.7.0",
-    "lodash": "^4.17.21",
+    "lodash": "^4.17.23",
     "ol": "^9.1",
     "ol-pmtiles": "^0.4",
     "blacklight-range-limit": "^9.0.0"
