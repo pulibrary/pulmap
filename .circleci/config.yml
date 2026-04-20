@@ -47,7 +47,7 @@ jobs:
             - ./vendor/bundle
       - run:
           name: Install NPM Dependencies via Yarn
-          command: yarn install --frozen-lockfile
+          command: yarn install --frozen-lockfile --ignore-scripts
       - save_cache:
           name: Save Yarn Package Cache
           key: pulmap-yarn-{{ checksum "yarn.lock" }}
