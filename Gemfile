@@ -35,9 +35,9 @@ gem "mimemagic", "0.3.8"
 gem "modernizr-rails"
 gem "omniauth-cas", "~> 2.0"
 gem "omniauth-rails_csrf_protection", "~> 0.1"
-gem 'opentelemetry-sdk'
-gem 'opentelemetry-exporter-otlp'
-gem 'opentelemetry-instrumentation-all'
+gem "opentelemetry-exporter-otlp"
+gem "opentelemetry-instrumentation-all"
+gem "opentelemetry-sdk"
 gem "pg"
 gem "puma"
 gem "rack"
