@@ -1,24 +1,43 @@
 {
-  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.17.2/.schema/devbox.schema.json",
-  "packages": [
-    "ruby@3.4.1",
-    "nodejs@24",
-    "yarn@latest",
-    "git@latest",
-    "bash@latest",
-    "zlib@latest",
-    "pkg-config@latest",
-    "libyaml@latest",
-    "shared-mime-info@latest"
-  ],
+  "packages": {
+    "ruby":             "3.4.8",
+    "bundler":          "latest",
+    "nodejs":           "22.10.0",
+    "yarn":             "1.22.22",
+    "git":              "latest",
+    "openssh":          "latest",
+    "zsh":              "latest",
+    "pkg-config":       "latest",
+    "shared-mime-info": "latest",
+    "postgresql":       { "version": "latest", "outputs": ["out", "lib", "dev"] },
+    "libyaml":          { "version": "latest", "outputs": ["out", "dev"] },
+    "zlib":             { "version": "latest", "outputs": ["out", "dev"] },
+    "libffi":           { "version": "latest", "outputs": ["out", "dev"] },
+    "openssl":          { "version": "latest", "outputs": ["out", "dev"] }
+  },
+  "env": {
+    "LANG": "C.UTF-8",
+    "PATH": "$PWD/node_modules/.bin:$PATH",
+    "FREEDESKTOP_MIME_TYPES_PATH": "$DEVBOX_PROJECT_ROOT/.devbox/nix/profile/default/share/mime/packages/freedesktop.org.xml"
+  },
   "shell": {
     "init_hook": [
-      "echo 'Welcome to devbox!' > /dev/null",
-      "export FREEDESKTOP_MIME_TYPES_PATH=\"$(dirname $(which update-mime-database))/../share/mime/packages/freedesktop.org.xml\""
+      "echo 'devbox: pulmap environment ready'"
     ],
     "scripts": {
-      "test": [
-        "echo \"Error: no test specified\" && exit 1"
+      "shell": [
+        "exec zsh"
+      ],
+      "setup": [
+        "export FREEDESKTOP_MIME_TYPES_PATH=\"$(dirname \"$(dirname \"$(command -v update-mime-database)\")\")/share/mime/packages/freedesktop.org.xml\"",
+        "bundle install",
+        "yarn install"
+      ],
+      "deploy": [
+        "bundle exec cap production deploy"
+      ],
+      "deploy-staging": [
+        "bundle exec cap staging deploy"
       ]
     }
   }
