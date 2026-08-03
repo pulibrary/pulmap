@@ -1,24 +1,34 @@
 <%# Renders the options of the downloads dropdown button %>
+<%# Each link is wrapped in a download_event_tag so that Umami records a
+    "download" custom event when it is clicked. %>
 <% document ||= @document %>
 
 <% if document.direct_download.present? %>
   <% if document.direct_download[:download].is_a? Array %>
     <% document.direct_download[:download].each do |download| %>
-      <%= download_link_file(download['label'], document.id, download['url']) %>
+      <%= download_event_tag(type: 'direct', id: document.id) do %>
+        <%= download_link_file(download['label'], document.id, download['url']) %>
+      <% end %>
     <% end %>
   <% end %>
   <% if document.direct_download[:download].is_a? String %>
-    <%= download_link_file(download_text(document.file_format), document.id, document.direct_download[:download]) %>
+    <%= download_event_tag(type: 'direct', id: document.id) do %>
+      <%= download_link_file(download_text(document.file_format), document.id, document.direct_download[:download]) %>
+    <% end %>
   <% end %>
 <% end %>
 
 <% if document.iiif_download.present? %>
-  <%= download_link_iiif %>
+  <%= download_event_tag(type: 'iiif', id: document.id) do %>
+    <%= download_link_iiif %>
+  <% end %>
 <% end %>
 
 <%# Don't display exported downloads for Princeton content  %>
 <% if document.download_types.present? && !document.same_institution? %>
   <% document.download_types.each do |type| %>
-    <%= download_link_generated(type.first, document) %>
+    <%= download_event_tag(type: type.first.to_s, id: document.id) do %>
+      <%= download_link_generated(type.first, document) %>
+    <% end %>
   <% end %>
 <% end %>

@@ -24,6 +24,16 @@ module PulmapGeoblacklightHelper
     @document.item_viewer.pmtiles || @document.item_viewer.cog
   end
 
+  # Wraps a download link in a span with custom Umami download event attributes
+  def download_event_tag(type:, id:, &block)
+    tag.span(capture(&block),
+             data: {
+               umami_event: "download",
+               umami_event_type: type,
+               umami_event_id: id
+             })
+  end
+
   def data_download_text(format)
     download_format = proper_case_format(format)
     value = t("geoblacklight.data_download.download_link", download_format: download_format)
