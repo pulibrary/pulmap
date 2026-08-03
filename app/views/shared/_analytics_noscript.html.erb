@@ -1,3 +1,8 @@
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KXG5VX6B"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<% if Rails.env.production? %>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KXG5VX6B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<% elsif Rails.env.staging? %>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56S3XFR4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+<% end %>
