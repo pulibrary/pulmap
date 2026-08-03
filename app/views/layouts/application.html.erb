@@ -31,20 +31,10 @@
     <% end %>
     <%= csrf_meta_tags %>
     <%= content_for(:head) %>
-
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <% if Rails.env.production? %>
-      <%= render partial: 'shared/analytics' %>
-    <% end %>
+    <%= render partial: 'shared/analytics' %>
   </head>
   <body class="<%= render_body_class %>">
-    <% if Rails.env.production? %>
-      <%= render partial: 'shared/analytics_noscript' %>
-    <% end %>
+    <%= render partial: 'shared/analytics_noscript' %>
   <div class="wrapper">
     <%= render partial: 'shared/header_navbar' %>
     <%= render partial: 'shared/modal' %>

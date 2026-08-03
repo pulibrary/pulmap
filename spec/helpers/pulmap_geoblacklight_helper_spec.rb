@@ -177,4 +177,20 @@ describe PulmapGeoblacklightHelper, type: :helper do
       expect(helper.data_download_text("GeoTIFF")).to eq "Download GeoTIFF"
     end
   end
+
+  describe "#download_event_tag" do
+    let(:html) do
+      helper.download_event_tag(type: "geojson", id: "princeton-1r66j405w") do
+        helper.link_to "Download GeoJSON", ""
+      end
+    end
+    let(:wrapper) { Capybara.string(html).first("span") }
+
+    it "wraps the link in a span with Umami event attributes" do
+      expect(wrapper[:"data-umami-event"]).to eq "download"
+      expect(wrapper[:"data-umami-event-type"]).to eq "geojson"
+      expect(wrapper[:"data-umami-event-id"]).to eq "princeton-1r66j405w"
+      expect(wrapper).to have_link "Download GeoJSON"
+    end
+  end
 end

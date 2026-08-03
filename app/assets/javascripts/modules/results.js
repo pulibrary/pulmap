@@ -91,12 +91,19 @@ Blacklight.onLoad(function () {
 
         // Set scroll click event on marker
         marker.on('click', function () {
+          trackSpatialSearch(layerId)
           $('.document .selected').removeClass('selected')
           $('html, body').animate({ scrollTop: _this.offset().top - 120 }, 200)
           $(_this).addClass('selected')
         })
       }
     })
+  }
+
+  // Umami patial search tacking
+  function trackSpatialSearch (layerId) {
+    if (!window.umami) return
+    window.umami.track('spatial-search', { id: layerId })
   }
 
   function setHoverListeners () {
