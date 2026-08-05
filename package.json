@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "standard": "^17.1",
-    "vite": "^6.4.2",
+    "vite": "^6.4.3",
     "vite-plugin-ruby": "^5.1.0"
   },
   "scripts": {
