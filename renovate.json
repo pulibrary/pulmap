@@ -48,6 +48,15 @@
         "mimemagic"
       ],
       "enabled": false
+    },
+    {
+      "matchManagers": [
+        "bundler"
+      ],
+      "matchPackageNames": [
+        "blacklight"
+      ],
+      "enabled": false
     }
   ],
   "customManagers": [
