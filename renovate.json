@@ -15,7 +15,6 @@
     "enabled": true
   },
   "minimumReleaseAge": "14 days",
-  "rangeStrategy": "update-lockfile",
   "packageRules": [
     {
       "matchDatasources": [
@@ -30,7 +29,25 @@
       "matchManagers": [
         "bundler"
       ],
-      "rangeStrategy": "pin"
+      "rangeStrategy": "update-lockfile"
+    },
+    {
+      "matchManagers": [
+        "bundler"
+      ],
+      "matchPackageNames": [
+        "sneakers"
+      ],
+      "enabled": false
+    },
+    {
+      "matchManagers": [
+        "bundler"
+      ],
+      "matchPackageNames": [
+        "mimemagic"
+      ],
+      "enabled": false
     }
   ],
   "customManagers": [
