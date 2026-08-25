@@ -56,6 +56,23 @@
       "matchPackageNames": [
         "blacklight"
       ],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
+      "matchManagers": [
+        "bundler"
+      ],
+      "matchPackageNames": [
+        "geoblacklight"
+      ],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["@geoblacklight/frontend"],
+      "matchUpdateTypes": ["major"],
       "enabled": false
     }
   ],

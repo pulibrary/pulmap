@@ -950,7 +950,7 @@ DEPENDENCIES
   axe-core-rspec
   base64 (= 0.3.0)
   bcrypt_pbkdf
-  blacklight (~> 7.42)
+  blacklight (= 7.42)
   blacklight_range_limit
   bootstrap (~> 4.0)
   capistrano
