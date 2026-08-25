@@ -4,7 +4,7 @@ source "https://rubygems.org", cooldown: 14
 
 gem "autoprefixer-rails"
 # Pin to prevent passenger error
-gem "base64", "0.1.1"
+gem "base64", "0.3.0"
 gem "blacklight", "~> 7.42"
 gem "blacklight_range_limit"
 gem "bootstrap", "~> 4.0"
@@ -31,7 +31,7 @@ gem "lograge"
 gem "logstash-event"
 gem "loofah"
 gem "mail_form"
-gem "mimemagic", "0.3.8"
+gem "mimemagic", "0.4.3"
 gem "modernizr-rails"
 gem "omniauth-cas", "~> 2.0"
 gem "omniauth-rails_csrf_protection", "~> 0.1"
