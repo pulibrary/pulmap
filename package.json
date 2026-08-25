@@ -10,7 +10,7 @@
   "devDependencies": {
     "standard": "^17.1",
     "vite": "^6.4.3",
-    "vite-plugin-ruby": "^5.1.0"
+    "vite-plugin-ruby": "^5.2.0"
   },
   "scripts": {
     "lint": "standard app/javascript/"
