@@ -946,7 +946,7 @@ DEPENDENCIES
   capistrano-rails-console
   capybara
   capybara-screenshot
-  connection_pool (< 3)
+  connection_pool (< 4)
   csv
   database_cleaner
   datadog
