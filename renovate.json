@@ -74,6 +74,11 @@
       "matchPackageNames": ["@geoblacklight/frontend"],
       "matchUpdateTypes": ["major"],
       "enabled": false
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["leaflet-geosearch"],
+      "enabled": false
     }
   ],
   "customManagers": [
