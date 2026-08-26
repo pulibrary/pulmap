@@ -443,16 +443,18 @@ GEM
       racc (~> 1.4)
     nokogiri (1.19.4-x86_64-linux-musl)
       racc (~> 1.4)
-    omniauth (1.9.2)
+    omniauth (2.1.4)
       hashie (>= 3.4.6)
-      rack (>= 1.6.2, < 3)
-    omniauth-cas (2.0.0)
-      addressable (~> 2.3)
-      nokogiri (~> 1.5)
-      omniauth (~> 1.2)
-    omniauth-rails_csrf_protection (0.1.2)
+      logger
+      rack (>= 2.2.3)
+      rack-protection
+    omniauth-cas (3.0.2)
+      addressable (~> 2.8)
+      nokogiri (~> 1.12)
+      omniauth (~> 2.1)
+    omniauth-rails_csrf_protection (2.0.1)
       actionpack (>= 4.2)
-      omniauth (>= 1.3.1)
+      omniauth (~> 2.0)
     opentelemetry-api (1.11.0)
       logger
     opentelemetry-common (0.25.1)
@@ -661,16 +663,20 @@ GEM
     puma (7.2.1)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (2.2.24)
+    rack (3.2.7)
+    rack-protection (4.2.1)
+      base64 (>= 0.1.0)
+      logger (>= 1.6.0)
+      rack (>= 3.0.0, < 4)
     rack-proxy (0.8.3)
       rack
-    rack-session (1.0.2)
-      rack (< 3)
+    rack-session (2.1.2)
+      base64 (>= 0.1.0)
+      rack (>= 3.0.0)
     rack-test (2.2.0)
       rack (>= 1.3)
-    rackup (1.0.1)
-      rack (< 3)
-      webrick
+    rackup (2.3.1)
+      rack (>= 3)
     rails (8.1.3.1)
       actioncable (= 8.1.3.1)
       actionmailbox (= 8.1.3.1)
@@ -907,7 +913,6 @@ GEM
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
-    webrick (1.9.2)
     websocket (1.2.11)
     websocket-driver (0.8.2)
       base64
@@ -969,8 +974,8 @@ DEPENDENCIES
   mail_form
   mimemagic (= 0.3.10)
   modernizr-rails
-  omniauth-cas (~> 2.0)
-  omniauth-rails_csrf_protection (~> 0.1)
+  omniauth-cas (~> 3.0)
+  omniauth-rails_csrf_protection (~> 2.0)
   opentelemetry-exporter-otlp
   opentelemetry-instrumentation-all
   opentelemetry-sdk
