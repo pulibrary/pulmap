@@ -30,55 +30,6 @@
         "bundler"
       ],
       "rangeStrategy": "update-lockfile"
-    },
-    {
-      "matchManagers": [
-        "bundler"
-      ],
-      "matchPackageNames": [
-        "sneakers"
-      ],
-      "enabled": false
-    },
-    {
-      "matchManagers": [
-        "bundler"
-      ],
-      "matchPackageNames": [
-        "mimemagic"
-      ],
-      "enabled": false
-    },
-    {
-      "matchManagers": [
-        "bundler"
-      ],
-      "matchPackageNames": [
-        "blacklight"
-      ],
-      "matchUpdateTypes": ["major"],
-      "enabled": false
-    },
-    {
-      "matchManagers": [
-        "bundler"
-      ],
-      "matchPackageNames": [
-        "geoblacklight"
-      ],
-      "matchUpdateTypes": ["major"],
-      "enabled": false
-    },
-    {
-      "matchManagers": ["npm"],
-      "matchPackageNames": ["@geoblacklight/frontend"],
-      "matchUpdateTypes": ["major"],
-      "enabled": false
-    },
-    {
-      "matchManagers": ["npm"],
-      "matchPackageNames": ["leaflet-geosearch"],
-      "enabled": false
     }
   ],
   "customManagers": [
