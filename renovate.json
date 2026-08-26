@@ -30,6 +30,24 @@
         "bundler"
       ],
       "rangeStrategy": "update-lockfile"
+    },
+    {
+      "matchManagers": [
+        "bundler"
+      ],
+      "matchPackageNames": [
+        "sneakers"
+      ],
+      "enabled": false
+    },
+    {
+      "matchManagers": [
+        "bundler"
+      ],
+      "matchPackageNames": [
+        "mimemagic"
+      ],
+      "enabled": false
     }
   ],
   "customManagers": [
