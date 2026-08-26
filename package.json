@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "@geoblacklight/frontend": "^4.4",
     "leaflet-geosearch": "^2.7.0",
     "lodash": "^4.18.1",
     "ol": "^10.0.0",
