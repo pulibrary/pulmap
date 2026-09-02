@@ -1,0 +1,70 @@
+name: Run nightly vulnerability check
+permissions:
+  issues: write
+  pull-requests: write
+  discussions: write
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+# Defines two custom environment variables for the workflow. These are used for the Container registry domain, and a name for the Docker image that this workflow builds.
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+# There is a single job in this workflow. It's configured to run on the latest available version of Ubuntu.
+jobs:
+  container-vuln-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run Grype vulnerability scanner
+        uses: anchore/scan-action@v7
+        id: runscanner
+        continue-on-error: true
+        with:
+          image: 'ghcr.io/pulibrary/pulmap:${{ steps.meta.outputs.version }}'
+          fail-build: true
+          severity-cutoff: high
+          output-format: table
+          output-file: "vulnerabilities.table"
+          only-fixed: true
+      - name: Set variables
+        id: scanner
+        if: job.steps.runscanner.status == failure()
+        run: |
+          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+          echo "results<<$EOF" >> $GITHUB_OUTPUT
+          echo "$(cat vulnerabilities.table)" >> $GITHUB_OUTPUT
+          echo "$EOF" >> $GITHUB_OUTPUT
+      - name: Output variable
+        if: job.steps.runscanner.status == failure()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WORKFLOW_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: echo "${{ steps.scanner.outputs.results }}"
+      - name: Create issue
+        if: steps.runscanner.outcome != 'success'
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WORKFLOW_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          SCANNER_OUTPUTS: ${{ steps.scanner.outputs.results }}
+        with:
+          filename: .github/failed-vuln-check.md
+          update_existing: true
+      - name: Find existing security issue
+        id: issues
+        if: steps.runscanner.outcome == 'success'
+        uses: lee-dohm/select-matching-issues@v1
+        with:
+          query: 'Container Vulnerability Scanner Failed is:open '
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Close found issues
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: steps.runscanner.outcome == 'success'
+        run: cat ${{ steps.issues.outputs.path }} | xargs gh issue close -c 'Container Scan Passing on Merge to Main'

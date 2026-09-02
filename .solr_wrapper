@@ -1,4 +1,0 @@
-mirror_url: http://lib-solr-mirror.princeton.edu/dist/
-version: 7.7.2
-validate: false
-tmp_save_dir: tmp/solr
