@@ -1,0 +1,17 @@
+.git
+.gitignore
+.github
+
+node_modules
+
+tmp
+log
+
+.lando.yml
+.planning
+coverage
+.DS_Store
+**/.DS_Store
+*.log
+
+config/deploy
