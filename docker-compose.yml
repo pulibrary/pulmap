@@ -1,0 +1,76 @@
+name: pulmap-compose
+
+services:
+  web:
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    environment:
+      RAILS_ENV: staging
+      PULMAP_SECRET_KEY_BASE: 1111111
+      PULMAP_DB_HOST: postgres-db
+      PULMAP_DB_USERNAME: root
+      PULMAP_DB_PASSWORD: password
+      PULMAP_DB: pulmap
+      PULMAP_SOLR_URL: http://solr:8983/solr/pulmap-core
+      PULMAP_REDIS_URL: redis
+      PULMAP_REDIS_PORT: 6379
+      PULMAP_REDIS_DB: 0
+    depends_on:
+      postgres-db:
+        condition: service_healthy
+      solr:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  postgres-db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: pulmap
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U root -d pulmap"]
+      interval: 2s
+      timeout: 5s
+      retries: 30
+
+  solr:
+    image: solr:9.9
+    environment:
+      SOLR_MODULES: analysis-extras
+    ports:
+      - "8983:8983"
+    volumes:
+      - ./solr/conf:/opt/solr/server/solr/configsets/pulmap/conf:ro
+      - solr-data:/var/solr
+    command: ["solr-precreate", "pulmap-core", "/opt/solr/server/solr/configsets/pulmap"]
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8983/solr/pulmap-core/admin/ping || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 30s
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      timeout: 5s
+      retries: 30
+
+volumes:
+  postgres-data:
+  solr-data:
+  redis-data:
