@@ -75,3 +75,12 @@ following:
 
 This will subscribe pulmap to the events and update geoblacklight records when they're
 created, updated, or deleted.
+
+#### Docker
+
+To test the docker container, run docker compose:
+```sh
+docker compose up --build
+```
+
+Then visit http://localhost:3000
