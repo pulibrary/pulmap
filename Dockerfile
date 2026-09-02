@@ -15,7 +15,7 @@ RUN gem update --system --no-document && \
 
 # Install base packages
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libjemalloc2 postgresql-client shared-mime-info sqlite3 && \
+    apt-get install --no-install-recommends -y curl imagemagick libjemalloc2 postgresql-client shared-mime-info sqlite3 && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Set production environment
