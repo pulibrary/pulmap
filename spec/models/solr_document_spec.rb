@@ -21,4 +21,22 @@ describe Geoblacklight::SolrDocument do
       end
     end
   end
+
+  describe "#thumbnail_url" do
+    context "when the document has a thumbnail reference" do
+      it "returns the url" do
+        document = SolrDocument.find("princeton-kk91fn37z")
+        expect(document.thumbnail_url).to start_with "https://iiif-cloud.princeton.edu/iiif/2/"
+        expect(document.thumbnail_reference?).to be true
+      end
+    end
+
+    context "when the document has no thumbnail reference" do
+      it "returns nil" do
+        document = SolrDocument.find("princeton-fk4bk1p41f")
+        expect(document.thumbnail_url).to be_nil
+        expect(document.thumbnail_reference?).to be false
+      end
+    end
+  end
 end

@@ -2,7 +2,7 @@
 
 # Overridden from:
 # https://github.com/geoblacklight/geoblacklight/blob/main/lib/geoblacklight/constants.rb
-# Adds `cog` and `pmtiles` references
+# Adds `cog`, `pmtiles`, and `thumbnail` references
 # If this work is merged upstream, this file can be removed.
 module Geoblacklight
   # Module to declare application level constants and lookup hash
@@ -34,7 +34,8 @@ module Geoblacklight
       index_map: "https://openindexmaps.org",
       oembed: "https://oembed.com",
       cog: "https://github.com/cogeotiff/cog-spec",
-      pmtiles: "https://github.com/protomaps/PMTiles"
+      pmtiles: "https://github.com/protomaps/PMTiles",
+      thumbnail: "http://schema.org/thumbnailUrl"
     }.freeze
   end
 end
