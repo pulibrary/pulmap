@@ -183,12 +183,6 @@ SIDEBAR_STATIC_MAP:
   - 'iiif'
   - 'iiif_manifest'
 
-# Settings for the GeoServer proxy
-INSTITUTION_LOCAL_NAME: 'Princeton'
-INSTITUTION_GEOSERVER_URL: <%= ENV['PRINCETON_GEOSERVER_URL'] || "https://geoserver.princeton.edu" %>
-PROXY_GEOSERVER_URL: <%= ENV['PROXY_GEOSERVER_URL'] || "http://localhost:3000" %>
-PROXY_GEOSERVER_AUTH: <%= ENV['PROXY_GEOSERVER_AUTH'] || "Basic base64encodedusername:password" %>
-
 # Metadata shown in tool card
 METADATA_SHOWN:
   - 'fgdc'
