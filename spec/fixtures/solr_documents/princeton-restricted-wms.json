@@ -1,36 +1,50 @@
 {
-  "geoblacklight_version": "1.0",
-  "dc_identifier_s": "ark:/88435/m613n013z",
-  "layer_slug_s": "princeton-m613n013z",
-  "uuid": "princeton-m613n013z",
-  "dc_title_s": "Louisiana Tracts 2002",
-  "solr_geom": "ENVELOPE(-94.043341, -88.816516, 33.019544, 28.926454)",
-  "dct_provenance_s": "Princeton",
-  "dc_rights_s": "Restricted",
-  "dc_description_s": "Louisiana Tracts represents the U.S. Census tracts and block numbering areas (BNA) of Louisiana.",
-  "dc_creator_sm": [
-    "Geographic Data Technology, Inc. (GDT)",
-    "Environmental Systems Research Institute, Inc. (ESRI)"
-  ],
-  "dc_publisher_s": "Environmental Systems Research Institute, Inc. (ESRI)",
-  "dc_subject_sm": [
-    "Boundaries",
-    "Society"
-  ],
-  "dct_spatial_sm": [
-    "United States",
-    "Louisiana"
-  ],
-  "dct_temporal_sm": [
-    "2002",
-    "2000",
-    "2001"
-  ],
-  "solr_year_i": 2002,
-  "layer_modified_dt": "2018-06-13T18:42:36Z",
-  "layer_id_s": "restricted-figgy:p-735d9ddb-d293-4454-b85b-e4d972f0708a",
-  "dct_references_s": "{\"http://www.opengis.net/cat/csw/csdgm\":\"https://figgy.princeton.edu/downloads/295c9e22-1163-461b-aff3-862a995c0600/file/b61ded13-7b29-4652-af80-0678fef09f9e\",\"http://schema.org/downloadUrl\":\"https://figgy.princeton.edu/downloads/735d9ddb-d293-4454-b85b-e4d972f0708a/file/021997fa-ba79-4445-989a-fb79f8b7382d\",\"http://schema.org/thumbnailUrl\":\"https://figgy.princeton.edu/downloads/735d9ddb-d293-4454-b85b-e4d972f0708a/file/97427a6b-6e78-47a7-9515-27a21e4162fa\",\"http://www.opengis.net/def/serviceType/ogc/wms\":\"https://geoserver.princeton.edu/geoserver/restricted-figgy/wms\",\"http://www.opengis.net/def/serviceType/ogc/wfs\":\"https://geoserver.princeton.edu/geoserver/restricted-figgy/wfs\"}",
-  "layer_geom_type_s": "Polygon",
-  "dc_format_s": "Shapefile",
-  "rights_statement_s": "<a href=\"http://rightsstatements.org/vocab/NKC/1.0/\">No Known Copyright</a><br><p>Princeton University Library reasonably believes that the Item is not restricted by copyright or related rights, but a conclusive determination could not be made.\n<br/>You are free to use this Item in any way that is permitted by the copyright and related rights legislation that applies to your use.</p><p>Princeton University Library claims no copyright or license governing this digital resource. It is provided for free, on a non-commercial, open-access basis, for fair-use academic and research purposes only. Anyone who claims copyright over any part of these resources and feels that they should not be presented in this manner is invited to contact Princeton University Library, who will in turn consider such concerns and make every effort to respond appropriately. We request that users reproducing this resource cite it according to the guidelines described at <a href=\"https://library.princeton.edu/special-collections/policies/forms-citation\">https://library.princeton.edu/special-collections/policies/forms-citation</a>.\n</p>"
+    "geoblacklight_version": "1.0",
+    "dc_identifier_s": "ark:/88435/m613n013z",
+    "layer_slug_s": "princeton-m613n013z",
+    "uuid": "princeton-m613n013z",
+    "dc_title_s": "Louisiana Tracts 2002",
+    "solr_geom": "ENVELOPE(-94.043341, -88.816516, 33.019544, 28.926454)",
+    "dct_provenance_s": "Princeton",
+    "dc_rights_s": "Restricted",
+    "dc_description_s": "Louisiana Tracts represents the U.S. Census tracts and block numbering areas (BNA) of Louisiana.",
+    "dc_creator_sm": [
+        "Geographic Data Technology, Inc. (GDT)"
+    ],
+    "dc_publisher_s": "Environmental Systems Research Institute, Inc. (ESRI)",
+    "dc_subject_sm": [
+        "Boundaries",
+        "Society"
+    ],
+    "all_subject_sm": [
+        "polygon",
+        "census tracts",
+        "census block numbering areas",
+        "demographics",
+        "population",
+        "households",
+        "Boundaries",
+        "Society"
+    ],
+    "dct_spatial_sm": [
+        "United States",
+        "Louisiana"
+    ],
+    "dct_temporal_sm": [
+        "2002",
+        "2000",
+        "2001",
+        "2002"
+    ],
+    "solr_year_i": 2002,
+    "layer_modified_dt": "2025-11-04T14:46:30Z",
+    "dct_references_s": "{\"http://www.opengis.net/cat/csw/csdgm\":\"https://figgy.princeton.edu/downloads/295c9e22-1163-461b-aff3-862a995c0600/file/b61ded13-7b29-4652-af80-0678fef09f9e\",\"http://schema.org/downloadUrl\":\"https://figgy.princeton.edu/downloads/735d9ddb-d293-4454-b85b-e4d972f0708a/file/021997fa-ba79-4445-989a-fb79f8b7382d\",\"http://schema.org/thumbnailUrl\":\"https://iiif-cloud.princeton.edu/iiif/2/66%2Fa8%2F51%2F66a85126e09349a480b01868df304ba6%2Fthumbnail/full/!400,300/0/default.png\",\"https://github.com/protomaps/PMTiles\":\"https://geodata-restricted.lib.princeton.edu/ff/e3/e1/ffe3e12707614fb4ba5e97421523d71f/display_vector.pmtiles\"}",
+    "layer_geom_type_s": "Polygon",
+    "layer_geom_type_sm": [
+        "Polygon"
+    ],
+    "dc_format_s": "Shapefile",
+    "dct_issued_dt": "2002-01-01T00:00:00Z",
+    "suppressed_b": false,
+    "rights_statement_s": "<a href=\"http://rightsstatements.org/vocab/InC/1.0/\">In Copyright</a><br><p>This Item is protected by copyright and/or related rights.\n<br/>You are free to use this Item in any way that is permitted by the copyright and related rights legislation that applies to your use.\n<br/>For other uses you need to obtain permission from the rights-holder(s).</p><p>Princeton University Library claims no copyright or license governing this digital resource. It is provided for free, on a non-commercial, open-access basis, for fair-use academic and research purposes only. Anyone who claims copyright over any part of these resources and feels that they should not be presented in this manner is invited to contact Princeton University Library, who will in turn consider such concerns and make every effort to respond appropriately. We request that users reproducing this resource cite it according to the guidelines described at <a href=\"https://library.princeton.edu/about/policies/special-collections-copyright-credit-and-citation-guidelines\">https://library.princeton.edu/about/policies/special-collections-copyright-credit-and-citation-guidelines</a>.\n</p>"
 }

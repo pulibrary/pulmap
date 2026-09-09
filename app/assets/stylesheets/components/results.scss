@@ -14,6 +14,40 @@
       margin: 0;
       padding: 0;
   }
+
+  .index_title {
+    font-size: 1rem;
+  }
+
+  .status-icons {
+    display: inline-block;
+
+    span {
+      min-width: 0px;
+    }
+  }
+
+  .thumbnail {
+    height: 100px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+
+    img {
+      max-height: 160px;
+      width: inherit;
+    }
+  }
+
+  .icon .blacklight-icons {
+    height: 4.5rem;
+    width: 4.5rem;
+
+    svg {
+      height: 95%;
+      width: 95%;
+    }
+  }
 }
 
 .documentHeader.row {

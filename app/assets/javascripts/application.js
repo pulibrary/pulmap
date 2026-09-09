@@ -13,7 +13,6 @@
 //= require jquery
 //= require rails-ujs
 //= require twitter/typeahead
-//= require aload
 
 // Required by Blacklight
 //= require popper
@@ -25,7 +24,6 @@
 
 //= stub modules/results
 //= require modules/map
-//= require modules/thumbnail
 //= require modules/autocomplete
 //= require Leaflet.ExtraMarkers
 

@@ -4,7 +4,6 @@ class SolrDocument
   include Blacklight::Solr::Document
   include Geoblacklight::SolrDocument
   include SanbornConcern
-  include WmsRewriteConcern
 
   self.unique_key = "layer_slug_s"
 
@@ -25,21 +24,13 @@ class SolrDocument
     false
   end
 
-  # Tests if record has a thumbnail reference for display on show page.
-  def thumbnail_reference?
-    return true if fetch(references.reference_field, {})["http://schema.org/thumbnailUrl"]
-    false
+  # Thumbnail image link
+  def thumbnail_url
+    references.thumbnail&.endpoint
   end
 
-  def sidecar
-    # Find or create, and set version
-    sidecar = SolrDocumentSidecar.where(
-      document_id: id,
-      document_type: self.class.to_s
-    ).first_or_create do |sc|
-      sc.version = _source["_version_"]
-    end
-
-    sidecar
+  # Tests if record has a thumbnail reference
+  def thumbnail_reference?
+    thumbnail_url.present?
   end
 end

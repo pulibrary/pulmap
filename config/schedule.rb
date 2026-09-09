@@ -13,20 +13,6 @@ every :wednesday, at: "11:30 PM", roles: [ :app ] do
   rake "sitemap:refresh"
 end
 
-# Run a daily rake task to harvest new thumbnail images.
-# These could be from new records or from records
-# where there was a previous error during harvesting.
-every :day, at: "11:00 PM", roles: [ :index ] do
-  rake "gblsci:images:harvest_new"
-end
-
-# Run a weekly rake task to harvest thumbnail in incomplete states.
-# These could be from new records or from records
-# where there was a previous error during harvesting.
-every :saturday, at: "11:00 AM", roles: [ :index ] do
-  rake "gblsci:images:harvest_retry"
-end
-
 every 1.day, at: "10:00pm", roles: [ :db ] do
   rake "blacklight:delete_old_searches"
 end

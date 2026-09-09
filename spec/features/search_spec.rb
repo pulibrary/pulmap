@@ -69,8 +69,8 @@ describe "Search" do
   end
 
   it "thumbnails in the results link to the items" do
-    visit "/?q="
-    expect(page).to have_css ".document .row .thumbnail .placeholder a"
-    expect(first(".document .row .thumbnail .placeholder a")[:href]).to include("/catalog/")
+    visit "/?q=Dublin"
+    expect(page).to have_css ".document .row .thumbnail img[src^='https://iiif-cloud.princeton.edu/iiif/2/']"
+    expect(page).to have_css ".document .row .index_title a[href^='/catalog/princeton-kk91fn37z']"
   end
 end

@@ -1,31 +1,44 @@
 {
-  "geoblacklight_version": "1.0",
-  "dc_identifier_s": "ark:/88435/5425kc10m",
-  "layer_slug_s": "princeton-5425kc10m",
-  "uuid": "princeton-5425kc10m",
-  "dc_title_s": "Fire Insurance Map of Princeton, New Jersey (Sheet 4) (1895)",
-  "solr_geom": "ENVELOPE(-74.68, -74.63, 40.37, 40.33)",
-  "dct_provenance_s": "Princeton",
-  "dc_rights_s": "Public",
-  "dc_description_s": "Title taken from sheet 1 of 1927 map. Oriented with the north to the upper right. Includes location map, key, streets and specials index, and text. \"Nov. 1896.\"",
-  "dc_creator_sm": [
-    "Sanborn Map Company"
-  ],
-  "dc_language_s": "English",
-  "dc_publisher_s": "New York : Sanborn-Perris Map Co. Limited, 1895.",
-  "dc_subject_sm": [
-    "Real property—New Jersey—Princeton—Maps",
-    "Princeton (N.J.)—Maps"
-  ],
-  "layer_modified_dt": "2018-02-23T23:37:50Z",
-  "layer_id_s": "public-figgy:f7074845-f1c4-4993-95cc-1ac34b2d07de",
-  "dct_references_s": "{\"http://schema.org/url\":\"https://catalog.princeton.edu/catalog/4266648\",\"http://schema.org/downloadUrl\":\"https://figgy.princeton.edu/downloads/f7074845-f1c4-4993-95cc-1ac34b2d07de/file/dc07f19e-806b-49e0-8f3e-d93e795220cf\",\"http://schema.org/thumbnailUrl\":\"https://figgy.princeton.edu/downloads/f7074845-f1c4-4993-95cc-1ac34b2d07de/file/8604e132-4d77-4346-ac76-ed303656bbcc\",\"http://iiif.io/api/image\":\"https://iiif.princeton.edu/loris/figgy_prod/46%2F2a%2Fc0%2F462ac078bf2c4b99a3c247841d23195f%2Fintermediate_file.jp2/info.json\",\"http://iiif.io/api/presentation#manifest\":\"https://figgy.princeton.edu/concern/scanned_maps/4bf7b087-3675-4791-bc3d-3fcbf5c1ba5e/manifest\"}",
-  "layer_geom_type_s": "Image",
-  "dc_format_s": "TIFF",
-  "suppressed_b": true,
-  "dc_source_sm": [
-    "princeton-1r66j405w"
-  ],
-  "call_number_s": "HMC04 (Princeton)",
-  "rights_statement_s": "<a href=\"http://rightsstatements.org/vocab/NKC/1.0/\">No Known Copyright</a><br><p>Princeton University Library reasonably believes that the Item is not restricted by copyright or related rights, but a conclusive determination could not be made.\n<br/>You are free to use this Item in any way that is permitted by the copyright and related rights legislation that applies to your use.</p><p>Princeton University Library claims no copyright or license governing this digital resource. It is provided for free, on a non-commercial, open-access basis, for fair-use academic and research purposes only. Anyone who claims copyright over any part of these resources and feels that they should not be presented in this manner is invited to contact Princeton University Library, who will in turn consider such concerns and make every effort to respond appropriately. We request that users reproducing this resource cite it according to the guidelines described at <a href=\"https://library.princeton.edu/special-collections/policies/forms-citation\">https://library.princeton.edu/special-collections/policies/forms-citation</a>.\n</p>"
+    "geoblacklight_version": "1.0",
+    "dc_identifier_s": "ark:/88435/5425kc10m",
+    "layer_slug_s": "princeton-5425kc10m",
+    "uuid": "princeton-5425kc10m",
+    "dc_title_s": "Princeton, Mercer County, New Jersey (Sheet 4 1895)",
+    "solr_geom": "ENVELOPE(-74.68, -74.63, 40.37, 40.33)",
+    "dct_provenance_s": "Princeton",
+    "dc_rights_s": "Public",
+    "dc_description_s": "Title taken from sheet 1 of 1927 map. \"Nov. 1896.\" Includes location map, key, streets and specials index, and text. Oriented with the north to the upper right.",
+    "dc_creator_sm": [
+        "Sanborn Map Company"
+    ],
+    "dc_language_s": "en",
+    "dc_publisher_s": "New York : Sanborn-Perris Map Co. Limited, 1895.",
+    "dc_subject_sm": [
+        "Real property\u2014New Jersey\u2014Princeton\u2014Maps",
+        "Princeton (N.J.)\u2014Maps",
+        "Fire insurance maps\u2014New Jersey\u2014Princeton\u20141896",
+        "Maps\u2014New Jersey\u2014Princeton\u20141896",
+        "Maps"
+    ],
+    "all_subject_sm": [
+        "Real property\u2014New Jersey\u2014Princeton\u2014Maps",
+        "Princeton (N.J.)\u2014Maps",
+        "Fire insurance maps\u2014New Jersey\u2014Princeton\u20141896",
+        "Maps\u2014New Jersey\u2014Princeton\u20141896",
+        "Maps"
+    ],
+    "solr_year_i": 1895,
+    "layer_modified_dt": "2025-11-17T20:15:55Z",
+    "dct_references_s": "{\"http://schema.org/url\":\"https://catalog.princeton.edu/catalog/9942666573506421\",\"http://schema.org/downloadUrl\":\"https://figgy.princeton.edu/downloads/f7074845-f1c4-4993-95cc-1ac34b2d07de/file/dc07f19e-806b-49e0-8f3e-d93e795220cf\",\"http://schema.org/thumbnailUrl\":\"https://iiif-cloud.princeton.edu/iiif/2/dd%2Fa2%2F24%2Fdda2242de72546d1a91a91b0afcd500e%2Fthumbnail/full/!400,300/0/default.png\",\"http://iiif.io/api/image\":\"https://iiif-cloud.princeton.edu/iiif/2/0f%2F47%2Fa1%2F0f47a1a7d3de42d3870a03d7adde9846%2Fintermediate_file/info.json\",\"http://iiif.io/api/presentation#manifest\":\"https://figgy.princeton.edu/concern/scanned_maps/4bf7b087-3675-4791-bc3d-3fcbf5c1ba5e/manifest\"}",
+    "layer_geom_type_s": "Image",
+    "layer_geom_type_sm": [
+        "Image"
+    ],
+    "dc_format_s": "TIFF",
+    "suppressed_b": true,
+    "dc_source_sm": [
+        "princeton-1r66j405w"
+    ],
+    "call_number_s": "HMC04 (Princeton)",
+    "rights_statement_s": "<a href=\"http://rightsstatements.org/vocab/NKC/1.0/\">No Known Copyright</a><br><p>Princeton University Library reasonably believes that the Item is not restricted by copyright or related rights, but a conclusive determination could not be made.\n<br/>You are free to use this Item in any way that is permitted by the copyright and related rights legislation that applies to your use.</p><p>Princeton University Library claims no copyright or license governing this digital resource. It is provided for free, on a non-commercial, open-access basis, for fair-use academic and research purposes only. Anyone who claims copyright over any part of these resources and feels that they should not be presented in this manner is invited to contact Princeton University Library, who will in turn consider such concerns and make every effort to respond appropriately. We request that users reproducing this resource cite it according to the guidelines described at <a href=\"https://library.princeton.edu/about/policies/special-collections-copyright-credit-and-citation-guidelines\">https://library.princeton.edu/about/policies/special-collections-copyright-credit-and-citation-guidelines</a>.\n</p>"
 }

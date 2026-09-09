@@ -155,9 +155,6 @@ Blacklight.onLoad(function () {
         $('form.search-query-form.form-inline.home-search.navbar-form').prepend($doc.find('input[name=bbox]')[0])
       }
 
-      // Reload thumbnail images
-      aload()
-
       // Reload markers and listeners
       placeMarkers()
       setHoverListeners()
