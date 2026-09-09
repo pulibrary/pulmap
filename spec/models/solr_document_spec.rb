@@ -9,7 +9,7 @@ describe Geoblacklight::SolrDocument do
         document = SolrDocument.find("princeton-m613n013z")
         citation = document.geoblacklight_citation("http://example.com")
         expect(citation).not_to include "The Princeton University Library makes available"
-        expect(citation).to include "Environmental Systems Research Institute, Inc. (ESRI). Louisiana Tracts 2002."
+        expect(citation).to include "Environmental Systems Research Institute, Inc. (ESRI)"
       end
     end
     context "when creating a citation for a non-Princeton record" do

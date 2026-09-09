@@ -1,26 +1,44 @@
 {
-  "geoblacklight_version": "1.0",
-  "dc_identifier_s": "ark:/88435/kk91fn37z",
-  "layer_slug_s": "princeton-kk91fn37z",
-  "uuid": "princeton-kk91fn37z",
-  "dc_title_s": "Dublin",
-  "solr_geom": "ENVELOPE(-6.316666666666666, -6.033333333333333, 53.4, 53.266666666666666)",
-  "dct_provenance_s": "Princeton",
-  "dc_rights_s": "Restricted",
-  "dc_description_s": "Popular edition, revised 1962. Ireland. Ordnance Survey Office. Inset: map of Dublin city center. Postal districts are located. Index of national grid. In lower left margin: \"Revised in 1962.\" In lower right margin: \"6-63; 10,000.\".",
-  "dc_language_s": "eng",
-  "dc_publisher_s": "Dublin : [s.n.], 1963.",
-  "dc_subject_sm": [
-    "Road maps",
-    "Cities and towns",
-    "Postal zones",
-    "Ireland—Maps"
-  ],
-  "layer_modified_dt": "2018-10-12T19:21:35Z",
-  "layer_id_s": "restricted-figgy:p-f0705bc6-2bda-4f61-8459-7651a93efdce",
-  "dct_references_s": "{\"http://schema.org/url\":\"https://catalog.princeton.edu/catalog/6865840\",\"http://schema.org/thumbnailUrl\":\"https://figgy.princeton.edu/downloads/f0705bc6-2bda-4f61-8459-7651a93efdce/file/6e0974f3-4bb8-40cb-81a7-baf82975617f\"}",
-  "layer_geom_type_s": "Image",
-  "dc_format_s": "TIFF",
-  "call_number_s": "G5784.D8.1963.I7",
-  "rights_statement_s": "<a href=\"http://rightsstatements.org/vocab/NKC/1.0/\">No Known Copyright</a><br><p>Princeton University Library reasonably believes that the Item is not restricted by copyright or related rights, but a conclusive determination could not be made.\n<br/>You are free to use this Item in any way that is permitted by the copyright and related rights legislation that applies to your use.</p><p>Princeton University Library claims no copyright or license governing this digital resource. It is provided for free, on a non-commercial, open-access basis, for fair-use academic and research purposes only. Anyone who claims copyright over any part of these resources and feels that they should not be presented in this manner is invited to contact Princeton University Library, who will in turn consider such concerns and make every effort to respond appropriately. We request that users reproducing this resource cite it according to the guidelines described at <a href=\"https://library.princeton.edu/special-collections/policies/forms-citation\">https://library.princeton.edu/special-collections/policies/forms-citation</a>.\n</p>"
+    "geoblacklight_version": "1.0",
+    "dc_identifier_s": "ark:/88435/kk91fn37z",
+    "layer_slug_s": "princeton-kk91fn37z",
+    "uuid": "princeton-kk91fn37z",
+    "dc_title_s": "Dublin",
+    "solr_geom": "ENVELOPE(-6.376944, -6.045, 53.408889, 53.263611)",
+    "dct_provenance_s": "Princeton",
+    "dc_rights_s": "Restricted",
+    "dc_description_s": "Ireland. Ordinance Survey Office. Inset: map of Dublin city center. Postal districts are numbered. Index of national grid. In lower left margin: \"Revised in 1962.\" In lower right margin: \"6-63; 10,000.\" \u00a9 Government of Ireland 1963",
+    "dc_creator_sm": [
+        "Ireland 1963"
+    ],
+    "dc_language_s": "en",
+    "dc_publisher_s": "Dublin Ordinance Survey Office, 1963.",
+    "dc_subject_sm": [
+        "Roads\u2014Maps",
+        "Cities and towns",
+        "Postal zones",
+        "Dublin (Ireland)\u2014Maps",
+        "Maps"
+    ],
+    "all_subject_sm": [
+        "Roads\u2014Maps",
+        "Cities and towns",
+        "Postal zones",
+        "Dublin (Ireland)\u2014Maps",
+        "Maps"
+    ],
+    "dct_spatial_sm": [
+        "Ireland"
+    ],
+    "solr_year_i": 1963,
+    "layer_modified_dt": "2025-11-17T20:27:56Z",
+    "dct_references_s": "{\"http://schema.org/url\":\"https://catalog.princeton.edu/catalog/9968658403506421\",\"http://schema.org/thumbnailUrl\":\"https://iiif-cloud.princeton.edu/iiif/2/cd%2F50%2Fbb%2Fcd50bbd4a7024b1596bba2dd87b94193%2Fthumbnail/full/!400,300/0/default.png\"}",
+    "layer_geom_type_s": "Image",
+    "layer_geom_type_sm": [
+        "Image"
+    ],
+    "dc_format_s": "TIFF",
+    "suppressed_b": false,
+    "call_number_s": "G5784.D8.1963.I7",
+    "rights_statement_s": "<a href=\"http://rightsstatements.org/vocab/InC/1.0/\">In Copyright</a><br><p>This Item is protected by copyright and/or related rights.\n<br/>You are free to use this Item in any way that is permitted by the copyright and related rights legislation that applies to your use.\n<br/>For other uses you need to obtain permission from the rights-holder(s).</p><p>Princeton University Library claims no copyright or license governing this digital resource. It is provided for free, on a non-commercial, open-access basis, for fair-use academic and research purposes only. Anyone who claims copyright over any part of these resources and feels that they should not be presented in this manner is invited to contact Princeton University Library, who will in turn consider such concerns and make every effort to respond appropriately. We request that users reproducing this resource cite it according to the guidelines described at <a href=\"https://library.princeton.edu/about/policies/special-collections-copyright-credit-and-citation-guidelines\">https://library.princeton.edu/about/policies/special-collections-copyright-credit-and-citation-guidelines</a>.\n</p>"
 }

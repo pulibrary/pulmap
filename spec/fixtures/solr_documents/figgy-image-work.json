@@ -1,24 +1,37 @@
 {
-  "geoblacklight_version": "1.0",
-  "dc_identifier_s": "ark:/88435/cv43nz62s",
-  "layer_slug_s": "princeton-cv43nz62s",
-  "uuid": "princeton-cv43nz62s",
-  "dc_title_s": "Carte geologique de la France a1/80,000; Sierck-Sarreguemines",
-  "solr_geom": "ENVELOPE(6.2819, 7.1915, 49.4037, 49.0756)",
-  "dct_provenance_s": "Princeton",
-  "dc_rights_s": "Public",
-  "dc_description_s": "West Decimal Degree 6.2819 North Decimal Degree 49.4037 East Decimal Degree 7.1915 Explanatory text: 1 sheet in MC folder. South Decimal Degree 49.0756",
-  "dc_language_s": "French",
-  "dc_publisher_s": "Orléans : Bureau de recherches géogiques et minières, 1957.",
-  "dc_subject_sm": [
-    "Geology",
-    "Mines and mineral resources",
-    "France—Maps"
-  ],
-  "layer_modified_dt": "2018-02-24T00:18:36Z",
-  "layer_id_s": "public-figgy:e5bf2360-6533-4f5d-b306-cf7a4ed461a6",
-  "dct_references_s": "{\"http://schema.org/url\":\"https://figgy.princeton.edu/concern/scanned_maps/32146ff6-c93d-4b14-b198-6fb518b44042\",\"http://schema.org/downloadUrl\":\"https://figgy.princeton.edu/downloads/e5bf2360-6533-4f5d-b306-cf7a4ed461a6/file/f7eebaac-7cab-446e-8466-194a44e0e718\",\"http://schema.org/thumbnailUrl\":\"https://figgy.princeton.edu/downloads/e5bf2360-6533-4f5d-b306-cf7a4ed461a6/file/2c4f5a95-6ade-49d8-9e49-3cc8378f7ed0\",\"http://iiif.io/api/image\":\"https://iiif.princeton.edu/loris/figgy_prod/bf%2F5d%2F7f%2Fbf5d7fc1dcbc48118dfc5831a3e08861%2Fintermediate_file.jp2/info.json\",\"http://iiif.io/api/presentation#manifest\":\"https://figgy.princeton.edu/concern/scanned_maps/32146ff6-c93d-4b14-b198-6fb518b44042/manifest\"}",
-  "layer_geom_type_s": "Image",
-  "dc_format_s": "TIFF",
-  "rights_statement_s": "<a href=\"http://rightsstatements.org/vocab/NKC/1.0/\">No Known Copyright</a><br><p>Princeton University Library reasonably believes that the Item is not restricted by copyright or related rights, but a conclusive determination could not be made.\n<br/>You are free to use this Item in any way that is permitted by the copyright and related rights legislation that applies to your use.</p><p>Princeton University Library claims no copyright or license governing this digital resource. It is provided for free, on a non-commercial, open-access basis, for fair-use academic and research purposes only. Anyone who claims copyright over any part of these resources and feels that they should not be presented in this manner is invited to contact Princeton University Library, who will in turn consider such concerns and make every effort to respond appropriately. We request that users reproducing this resource cite it according to the guidelines described at <a href=\"https://library.princeton.edu/special-collections/policies/forms-citation\">https://library.princeton.edu/special-collections/policies/forms-citation</a>.\n</p>"
+    "geoblacklight_version": "1.0",
+    "dc_identifier_s": "ark:/88435/cv43nz62s",
+    "layer_slug_s": "princeton-cv43nz62s",
+    "uuid": "princeton-cv43nz62s",
+    "dc_title_s": "Carte geologique de la France a1/80,000; Sierck-Sarreguemines",
+    "solr_geom": "ENVELOPE(6.2819, 7.1915, 49.4037, 49.0756)",
+    "dct_provenance_s": "Princeton",
+    "dc_rights_s": "Public",
+    "dc_description_s": "Explanatory text: 1 sheet in MC folder. North Decimal Degree 49.4037 South Decimal Degree 49.0756 East Decimal Degree 7.1915 West Decimal Degree 6.2819",
+    "dc_language_s": "fr",
+    "dc_publisher_s": "Orle\u0301ans : Bureau de recherches ge\u0301ogiques et minie\u0300res, 1957.",
+    "dc_subject_sm": [
+        "Geology",
+        "Mines and mineral resources",
+        "France\u2014Maps"
+    ],
+    "all_subject_sm": [
+        "Geology",
+        "Mines and mineral resources",
+        "France\u2014Maps"
+    ],
+    "dct_spatial_sm": [
+        "France"
+    ],
+    "solr_year_i": 1957,
+    "layer_modified_dt": "2025-11-17T20:14:21Z",
+    "dct_references_s": "{\"http://schema.org/url\":\"https://catalog.princeton.edu/catalog/9965184233506421\",\"http://schema.org/downloadUrl\":\"https://figgy.princeton.edu/downloads/e5bf2360-6533-4f5d-b306-cf7a4ed461a6/file/f7eebaac-7cab-446e-8466-194a44e0e718\",\"http://schema.org/thumbnailUrl\":\"https://iiif-cloud.princeton.edu/iiif/2/a3%2F78%2F12%2Fa37812b116f04b2c8818925203d18668%2Fthumbnail/full/!400,300/0/default.png\",\"http://iiif.io/api/image\":\"https://iiif-cloud.princeton.edu/iiif/2/93%2Fe9%2F60%2F93e960e592b647eea0c35ec03874657f%2Fintermediate_file/info.json\",\"http://iiif.io/api/presentation#manifest\":\"https://figgy.princeton.edu/concern/scanned_maps/32146ff6-c93d-4b14-b198-6fb518b44042/manifest\"}",
+    "layer_geom_type_s": "Image",
+    "layer_geom_type_sm": [
+        "Image"
+    ],
+    "dc_format_s": "TIFF",
+    "suppressed_b": false,
+    "call_number_s": "G5831.C5.s80.F7 CG-37",
+    "rights_statement_s": "<a href=\"http://rightsstatements.org/vocab/NKC/1.0/\">No Known Copyright</a><br><p>Princeton University Library reasonably believes that the Item is not restricted by copyright or related rights, but a conclusive determination could not be made.\n<br/>You are free to use this Item in any way that is permitted by the copyright and related rights legislation that applies to your use.</p><p>Princeton University Library claims no copyright or license governing this digital resource. It is provided for free, on a non-commercial, open-access basis, for fair-use academic and research purposes only. Anyone who claims copyright over any part of these resources and feels that they should not be presented in this manner is invited to contact Princeton University Library, who will in turn consider such concerns and make every effort to respond appropriately. We request that users reproducing this resource cite it according to the guidelines described at <a href=\"https://library.princeton.edu/about/policies/special-collections-copyright-credit-and-citation-guidelines\">https://library.princeton.edu/about/policies/special-collections-copyright-credit-and-citation-guidelines</a>.\n</p>"
 }
