@@ -65,17 +65,6 @@ Then you'll start to see output like "Indexed into GeoBlacklight:..."
 
 We usually run this overnight.
 
-### Auto-update from external services
-
-Pulmap can listen for events published on a RabbitMQ fanout exhange. In order to use them, do the
-following:
-
-1. Configure the `events` settings in `config/pulmap.yml`
-2. Run `WORKERS=GeoblacklightEventHandler rake sneakers:run`
-
-This will subscribe pulmap to the events and update geoblacklight records when they're
-created, updated, or deleted.
-
 #### Docker
 
 To test the docker container, run docker compose:

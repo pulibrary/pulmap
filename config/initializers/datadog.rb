@@ -16,9 +16,6 @@ Datadog.configure do |c|
   # Net::HTTP
   c.tracing.instrument :http
 
-  # Sidekiq
-  c.tracing.instrument :sidekiq
-
   # Faraday
   c.tracing.instrument :faraday
 end

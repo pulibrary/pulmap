@@ -79,7 +79,6 @@ GEM
       public_suffix (>= 2.0.2, < 8.0)
     airbrussh (1.6.2)
       sshkit (>= 1.6.1, != 1.7.0)
-    amq-protocol (2.8.0)
     ast (2.4.3)
     autoprefixer-rails (10.4.21.0)
       execjs (~> 2)
@@ -110,9 +109,6 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 1.16.1, < 2)
     builder (3.3.0)
-    bunny (2.24.0)
-      amq-protocol (~> 2.3)
-      sorted_set (~> 1, >= 1.0.2)
     byebug (13.0.0)
       reline (>= 0.6.0)
     capistrano (3.20.1)
@@ -675,7 +671,6 @@ GEM
       logger
       prism (>= 1.6.0)
       tsort
-    rbtree (0.4.7)
     rchardet (1.10.2)
     rdoc (8.0.0)
       erb
@@ -767,29 +762,12 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 4.0)
       websocket (~> 1.0)
-    serverengine (2.0.7)
-      sigdump (~> 0.2.2)
-    sidekiq (8.1.7)
-      connection_pool (>= 3.0.0)
-      json (>= 2.16.0)
-      logger (>= 1.7.0)
-      rack (>= 3.2.0)
-      redis-client (>= 0.29.0)
-    sigdump (0.2.5)
     simple_form (5.4.1)
       actionpack (>= 7.0)
       activemodel (>= 7.0)
     simplecov (1.1.1)
     sitemap_generator (7.1.1)
       builder (~> 3.0)
-    sneakers (2.11.0)
-      bunny (~> 2.12)
-      concurrent-ruby (~> 1.0)
-      rake
-      serverengine (~> 2.0.5)
-      thor
-    sorted_set (1.1.0)
-      rbtree
     spring (4.7.0)
     sprockets (4.4.1)
       concurrent-ruby (~> 1.1)
@@ -927,11 +905,9 @@ DEPENDENCIES
   rubocop-rails-omakase
   sassc-rails
   selenium-webdriver
-  sidekiq
   simple_form
   simplecov
   sitemap_generator
-  sneakers (~> 2.11.0)
   spring
   timecop
   turbolinks
