@@ -4,7 +4,6 @@ Rails.application.config.after_initialize do
   HealthMonitor.configure do |config|
     config.cache
 
-    config.add_custom_provider(CheckOverrides::Redis)
     config.add_custom_provider(SolrStatus)
     config.add_custom_provider(SmtpStatus)
 
