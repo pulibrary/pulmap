@@ -40,6 +40,4 @@ Rails.application.configure do
   config.assets.raise_runtime_errors = true
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-  config.active_job.queue_adapter = :sidekiq
-  config.active_storage.service = :local
 end

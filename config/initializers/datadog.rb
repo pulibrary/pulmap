@@ -10,14 +10,8 @@ Datadog.configure do |c|
   # Rails
   c.tracing.instrument :rails
 
-  # Redis
-  c.tracing.instrument :redis
-
   # Net::HTTP
   c.tracing.instrument :http
-
-  # Sidekiq
-  c.tracing.instrument :sidekiq
 
   # Faraday
   c.tracing.instrument :faraday
