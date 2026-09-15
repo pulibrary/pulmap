@@ -17,6 +17,27 @@ job "pulmap-production" {
     }
     service {
       port = "http"
+      name = "pulmap-production-web"
+      tags = [
+        "frontend",
+        "logging",
+        # Enable traefik for bot protection.
+        "traefik.enable=true",
+        # Router 1: pulmap-staging-skip-all-mw
+        # Skips middleware if it's an ajax request.
+        "traefik.http.routers.pulmap-production-skip-all-mw.rule=Header(`X-Forwarded-Host`, `maps.princeton.edu`) && Header(`Sec-Fetch-Dest`, `empty`)",
+        "traefik.http.routers.pulmap-production-skip-all-mw.priority=11",
+        # Router 2: pulmap-production-apply-mw
+        # Applies captcha-protect middleware if it's not ajax. 
+        "traefik.http.routers.pulmap-production-apply-mw.rule=Header(`X-Forwarded-Host`, `maps.princeton.edu`)",
+        # NOTE: Disabled this because we can take the traffic right now. If that changes, put this back in.
+        # "traefik.http.routers.pulmap-production-apply-mw.middlewares=captcha-protect@file",
+        "traefik.http.routers.pulmap-production-apply-mw.priority=10",
+        # Health checks lets Traefik keep track of down nodes and lets us monitor uptime.
+        "traefik.http.services.pulmap-production-web.loadbalancer.healthcheck.path=/health",
+        "traefik.http.services.pulmap-production-web.loadbalancer.healthcheck.interval=10s",
+        "traefik.http.services.pulmap-production-web.loadbalancer.healthcheck.timeout=2s"
+      ]
       check {
         type = "http"
         port = "http"
