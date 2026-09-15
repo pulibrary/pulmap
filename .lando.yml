@@ -21,9 +21,6 @@ services:
   pulmap_database:
     type: postgres:15
     portforward: true
-  redis:
-    type: redis:7
-    portforward: true
   chrome:
     type: compose
     app_mount: false
