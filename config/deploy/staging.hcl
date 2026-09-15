@@ -31,7 +31,7 @@ job "pulmap-staging" {
         # Applies captcha-protect middleware if it's not ajax. 
         "traefik.http.routers.pulmap-staging-apply-mw.rule=Header(`X-Forwarded-Host`, `maps-staging.princeton.edu`)",
         # NOTE: Disabled this because we can take the traffic right now. If that changes, put this back in.
-        # "traefik.http.routers.pulmap-staging-apply-mw.middlewares=captcha-protect@file",
+        "traefik.http.routers.pulmap-staging-apply-mw.middlewares=captcha-protect@file",
         "traefik.http.routers.pulmap-staging-apply-mw.priority=10",
         # Health checks lets Traefik keep track of down nodes and lets us monitor uptime.
         "traefik.http.services.pulmap-staging-web.loadbalancer.healthcheck.path=/health",
