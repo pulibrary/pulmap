@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v7
       - name: Run Grype vulnerability scanner
         uses: anchore/scan-action@v7
         id: runscanner
