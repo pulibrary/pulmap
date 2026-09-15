@@ -15,7 +15,7 @@ RUN gem update --system --no-document && \
 
 # Install base packages
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libjemalloc2 postgresql-client shared-mime-info sqlite3 && \
+    apt-get install --no-install-recommends -y curl imagemagick libjemalloc2 postgresql-client shared-mime-info sqlite3 && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Set production environment
@@ -118,6 +118,7 @@ COPY --from=build /rails /rails
 # Run and own only the runtime files as a non-root user for security
 RUN groupadd --system --gid 1000 rails && \
     useradd rails --uid 1000 --gid 1000 --create-home --shell /bin/bash && \
+    mkdir -p /rails/tmp/pids /rails/log && \
     chown 1000:1000 /var/lib/nginx /var/log/nginx/* && \
     chown -R 1000:1000 db log tmp
 USER 1000:1000
