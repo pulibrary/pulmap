@@ -30,8 +30,7 @@ job "pulmap-production" {
         # Router 2: pulmap-production-apply-mw
         # Applies captcha-protect middleware if it's not ajax. 
         "traefik.http.routers.pulmap-production-apply-mw.rule=Header(`X-Forwarded-Host`, `maps.princeton.edu`)",
-        # NOTE: Disabled this because we can take the traffic right now. If that changes, put this back in.
-        "traefik.http.routers.pulmap-production-apply-mw.middlewares=captcha-protect@file",
+        "traefik.http.routers.pulmap-production-apply-mw.middlewares=append-catalog-regex@file,captcha-protect@file",
         "traefik.http.routers.pulmap-production-apply-mw.priority=10",
         # Health checks lets Traefik keep track of down nodes and lets us monitor uptime.
         "traefik.http.services.pulmap-production-web.loadbalancer.healthcheck.path=/health",
