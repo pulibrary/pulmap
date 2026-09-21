@@ -28,13 +28,15 @@ yarn install
 
 ### Deployment
 
-There are two  methods for deploying Pulmap:
+You can deploy to Nomad from the command line:
 
-1. Deploy from [Ansible Tower](https://github.com/pulibrary/pul-it-handbook/blob/main/services/tower.md) (preferred).
-1. Deploy using Capistrano.
-    - Connect to the Princeton VPN
-    - `bundle exec cap staging deploy`
-    - `bundle exec cap production deploy`
+```
+BRANCH=branch_name ./bin/deploy staging
+```
+
+```
+./bin/deploy production
+```
 
 ### Reindex from figgy
 
