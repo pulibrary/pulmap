@@ -27,6 +27,8 @@ job "pulmap-staging" {
         # Skips middleware if it's an ajax request.
         "traefik.http.routers.pulmap-staging-skip-all-mw.rule=Header(`X-Forwarded-Host`, `maps-staging.princeton.edu`) && Header(`Sec-Fetch-Dest`, `empty`)",
         "traefik.http.routers.pulmap-staging-skip-all-mw.priority=11",
+        # Redirect root searches (e.g. /?q=maps) to /catalog
+        "traefik.http.routers.pulmap-staging-skip-all-mw.middlewares=append-catalog-regex@file",
         # Router 2: pulmap-staging-apply-mw
         # Applies captcha-protect middleware if it's not ajax. 
         "traefik.http.routers.pulmap-staging-apply-mw.rule=Header(`X-Forwarded-Host`, `maps-staging.princeton.edu`)",
