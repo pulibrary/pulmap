@@ -198,7 +198,7 @@ GEM
       rsolr
       sanitize
       thor
-    geoblacklight (4.5.1)
+    geoblacklight (4.6.0)
       blacklight (>= 7.41, < 8.0)
       coderay
       config
@@ -818,7 +818,7 @@ DEPENDENCIES
   faraday
   font-awesome-rails
   geo_combine
-  geoblacklight (= 4.5.1)
+  geoblacklight (= 4.6.0)
   health-monitor-rails
   honeybadger
   jquery-rails
