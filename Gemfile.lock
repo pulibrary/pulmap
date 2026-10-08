@@ -157,6 +157,10 @@ GEM
     devise-guests (0.8.3)
       devise
     diff-lcs (1.6.2)
+    dotenv (3.2.0)
+    dotenv-rails (3.2.0)
+      dotenv (= 3.2.0)
+      railties (>= 6.1)
     drb (2.2.3)
     dry-cli (1.4.1)
     dumb_delegator (1.1.0)
@@ -855,6 +859,7 @@ DEPENDENCIES
   database_cleaner
   devise (~> 5.0)
   devise-guests
+  dotenv-rails
   ed25519
   factory_bot_rails
   faraday

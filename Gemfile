@@ -59,6 +59,7 @@ end
 
 group :development do
   gem "bcrypt_pbkdf"
+  gem "dotenv-rails"
   gem "ed25519"
   gem "web-console"
 end
