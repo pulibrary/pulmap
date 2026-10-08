@@ -33,7 +33,25 @@ module Features
       else
                FactoryBot.create(:user).username
       end
-      OmniAuth.config.add_mock(:openid_connect, uid: user)
+      OmniAuth.config.mock_auth[:openid_connect] = OmniAuth::AuthHash.new(
+        {
+          "provider" => :openid_connect,
+          "uid" => "#{user}@princeton.edu",
+          "info" => {},
+          "credentials" => {
+            "id_token" => "secret",
+            "token" => "secret",
+            "refresh_token" => nil,
+            "expires_in" => 4489,
+            "scope" => "email openid profile"
+          },
+          "extra" => {
+            "raw_info" => {
+              "sub" => "",
+              "preferred_username" => "#{user}@princeton.edu"
+            }
+          }
+        })
       visit user_openid_connect_omniauth_authorize_path
     end
   end

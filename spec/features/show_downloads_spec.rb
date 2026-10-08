@@ -21,6 +21,7 @@ describe "Show page downloads" do
   context "when the user logs in" do
     before do
       OmniAuth.config.test_mode = true
+      sign_in
     end
 
     it "renders download links for access-restricted Princeton Documents" do

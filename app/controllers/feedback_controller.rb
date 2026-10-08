@@ -34,7 +34,7 @@ class FeedbackController < ApplicationController
 
   def current_user_email
     return if current_user.nil?
-    return if current_user.provider != "cas"
+    return if current_user.provider != "openid_connect"
     @user_email = "#{current_user.uid}@princeton.edu"
     @user_email
   end

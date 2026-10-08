@@ -239,7 +239,7 @@ Devise.setup do |config|
   # config.omniauth :cas, host: "fed.princeton.edu", url: "https://fed.princeton.edu/cas"
   config.omniauth :openid_connect, {
     name: :openid_connect,
-    scope: [:openid, :profile],
+    scope: [ :openid, :profile ],
     response_type: :code,
     uid_field: "preferred_username",
     issuer: "https://login.microsoftonline.com/2ff60116-7431-425d-b5af-077d7791bda4/v2.0",
