@@ -33,8 +33,8 @@ module Features
       else
                FactoryBot.create(:user).username
       end
-      OmniAuth.config.add_mock(:cas, uid: user)
-      visit user_cas_omniauth_authorize_path
+      # OmniAuth.config.add_mock(:cas, uid: user)
+      # visit user_cas_omniauth_authorize_path
     end
   end
 end
