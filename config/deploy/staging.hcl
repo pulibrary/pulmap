@@ -78,6 +78,9 @@ job "pulmap-staging" {
         OTEL_EXPORTER_OTLP_ENDPOINT = '{{ .OTEL_EXPORTER_OTLP_ENDPOINT }}'
         OTEL_EXPORTER_OTLP_INSECURE = '{{ .OTEL_EXPORTER_OTLP_INSECURE }}'
         OTEL_EXPORTER_OTLP_TRACES_PROTOCOL = '{{ .OTEL_EXPORTER_OTLP_TRACES_PROTOCOL }}'
+        ENTRA_CLIENT_ID = 'f05f4c00-ff98-466c-bbfb-9603eecdd6ac'
+        ENTRA_CLIENT_SECRET = '{{ .PULMAP_ENTRA_SECRET }}'
+        ENTRA_REDIRECT_URI = 'https://maps-staging.princeton.edu/users/auth/openid_connect/callback'
         {{- end -}}
         EOF
       }
