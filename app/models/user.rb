@@ -18,12 +18,13 @@ class User < ApplicationRecord
   end
 
   def self.from_omniauth(access_token)
-    User.where(provider: access_token.provider, uid: access_token.uid).first_or_create do |user|
-      user.uid = access_token.uid
-      user.username = access_token.uid
-      user.email = "#{access_token.uid}@princeton.edu"
-      user.password = SecureRandom.urlsafe_base64
-      user.provider = access_token.provider
+    uid = access_token.uid.split("@princeton.edu").first
+    User.where(uid: uid).first_or_create.tap do |updated_user|
+      updated_user.username = access_token.uid
+      updated_user.provider = access_token.provider
+      updated_user.email = access_token.uid
+      updated_user.password = SecureRandom.urlsafe_base64
+      updated_user.save!
     end
   end
 
