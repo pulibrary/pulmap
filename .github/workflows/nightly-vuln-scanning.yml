@@ -7,6 +7,7 @@ permissions:
 on:
   schedule:
     - cron: '0 0 * * *'
+  workflow_dispatch:
 
 # Defines two custom environment variables for the workflow. These are used for the Container registry domain, and a name for the Docker image that this workflow builds.
 env:
@@ -25,7 +26,7 @@ jobs:
         id: runscanner
         continue-on-error: true
         with:
-          image: 'ghcr.io/pulibrary/pulmap:${{ steps.meta.outputs.version }}'
+          image: 'ghcr.io/pulibrary/pulmap:main'
           fail-build: true
           severity-cutoff: high
           output-format: table
