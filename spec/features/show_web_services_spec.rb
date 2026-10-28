@@ -11,6 +11,7 @@ describe "Show page web services" do
   context "when the user logs in" do
     before do
       OmniAuth.config.test_mode = true
+      sign_in
     end
 
     it "does  render the the web services link for access-restricted Princeton Documents" do
