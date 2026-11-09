@@ -13,14 +13,6 @@ every :wednesday, at: "11:30 PM", roles: [ :app ] do
   rake "sitemap:refresh"
 end
 
-every 1.day, at: "10:00pm", roles: [ :db ] do
-  rake "blacklight:delete_old_searches"
-end
-
-every 1.day, at: "10:30pm", roles: [ :db ] do
-  rake "devise_guests:delete_old_guest_users"
-end
-
 ## Harvest new records from other GeoBlacklight sites
 
 # First day of every month at 1 AM

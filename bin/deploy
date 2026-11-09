@@ -51,8 +51,12 @@ fi
 curl -s -X POST -H "Accept: application/vnd.github+json-H" -H "Content-Type: application/x-www-form-urlencoded" -H "Authorization: Bearer ${GH_TOKEN}" --data "{\"environment\":\"${ENV}\",\"state\":\"in_progress\",\"log_url\": \"https://nomad.lib.princeton.edu/ui/jobs/${JOB_NAME}-${ENV}\", \"description\":\"Deployment started.\"}" "https://api.github.com/repos/pulibrary/${REPOSITORY}/deployments/${DEPLOY_ID}/statuses" > /dev/null
 
 # Deploy using nomad-host-prod1, which has the nomad management key.
+IMAGE_TAG="sha-$(git ls-remote https://github.com/pulibrary/${REPOSITORY}.git ${BRANCH_NAME} | awk '{ print substr($1,1,7) }')"
+# set -e so a failed web deploy is reported instead of being masked by the periodic job's exit status.
 ssh deploy@nomad-host-prod1.lib.princeton.edu << EOF
-  curl -H 'Cache-Control: no-cache' -s "https://raw.githubusercontent.com/pulibrary/${REPOSITORY}/${BRANCH_NAME}/config/deploy/${ENV}.hcl" | nomad job run -var "branch_or_sha=sha-$(git ls-remote https://github.com/pulibrary/${REPOSITORY}.git ${BRANCH_NAME} | awk '{ print substr($1,1,7) }')" -
+  set -e
+  curl -H 'Cache-Control: no-cache' -s "https://raw.githubusercontent.com/pulibrary/${REPOSITORY}/${BRANCH_NAME}/config/deploy/${ENV}.hcl" | nomad job run -var "branch_or_sha=${IMAGE_TAG}" -
+  curl -H 'Cache-Control: no-cache' -s "https://raw.githubusercontent.com/pulibrary/${REPOSITORY}/${BRANCH_NAME}/config/deploy/${ENV}-periodic.hcl" | nomad job run -var "branch_or_sha=${IMAGE_TAG}" -
 EOF
 retcode=$?
 
