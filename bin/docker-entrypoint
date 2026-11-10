@@ -8,6 +8,7 @@ fi
 
 if [ "${1}" == "foreman" ] || { [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; }; then
   ./bin/rails db:prepare
+  ./bin/rake sitemap:refresh:no_ping || echo "Sitemap generation failed" >&2
 fi
 
 exec "${@}"

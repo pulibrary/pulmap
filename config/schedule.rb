@@ -8,11 +8,6 @@ env :PATH, ENV["PATH"]
 # It's helpful, but not entirely necessary to understand cron before proceeding.
 # http://en.wikipedia.org/wiki/Cron
 
-# Run a weekly rake task to regenerate the sitemap.
-every :wednesday, at: "11:30 PM", roles: [ :app ] do
-  rake "sitemap:refresh"
-end
-
 ## Harvest new records from other GeoBlacklight sites
 
 # First day of every month at 1 AM
