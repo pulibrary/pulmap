@@ -37,7 +37,7 @@ job "pulmap-staging-periodic" {
         env = true
         change_mode = "restart"
         data = <<EOF
-        {{- with nomadVar "nomad/jobs/pulmap-staging" -}}
+        {{- with nomadVar "nomad/jobs/pulmap-staging-periodic" -}}
         RAILS_ENV = 'staging'
         PULMAP_SECRET_KEY_BASE = '{{ .PULMAP_SECRET_KEY_BASE }}'
         PULMAP_DB = '{{ .PULMAP_DB }}'

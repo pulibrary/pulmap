@@ -38,7 +38,7 @@ job "pulmap-production-periodic" {
         env = true
         change_mode = "restart"
         data = <<EOF
-        {{- with nomadVar "nomad/jobs/pulmap-production" -}}
+        {{- with nomadVar "nomad/jobs/pulmap-production-periodic" -}}
         RAILS_ENV = 'production'
         PULMAP_SECRET_KEY_BASE = '{{ .PULMAP_SECRET_KEY_BASE }}'
         PULMAP_DB = '{{ .PULMAP_DB }}'
