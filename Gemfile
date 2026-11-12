@@ -42,7 +42,6 @@ gem "sitemap_generator"
 gem "turbolinks"
 gem "twitter-typeahead-rails"
 gem "vite_rails"
-gem "whenever"
 
 group :development, :test do
   gem "capybara"

@@ -1,6 +1,6 @@
 User-agent: *
 Crawl-delay: 10
-Sitemap: https://maps.princeton.edu/sitemap.xml.gz
+Sitemap: https://maps.princeton.edu/sitemap/sitemap.xml.gz
 Disallow: /*?q=*
 Disallow: /*?f*
 Disallow: /bookmarks

@@ -54,6 +54,10 @@ job "pulmap-staging" {
         ports = ["http"]
         force_pull = true
       }
+      action "refresh-sitemap" {
+        command = "/rails/bin/rake"
+        args    = ["sitemap:refresh:no_ping"]
+      }
       resources {
         cpu    = 1000
         memory = 500

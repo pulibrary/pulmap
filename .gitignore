@@ -44,6 +44,7 @@ package-lock.json
 /public/thumbnails
 /public/packs
 /public/packs-test
+/public/sitemap
 
 .byebug_history
 .DS_Store
