@@ -783,6 +783,11 @@ GEM
       faraday (~> 2.0)
       faraday-follow_redirects
     thor (1.5.0)
+    thruster (0.1.27)
+    thruster (0.1.27-aarch64-linux)
+    thruster (0.1.27-arm64-darwin)
+    thruster (0.1.27-x86_64-darwin)
+    thruster (0.1.27-x86_64-linux)
     tilt (2.9.0)
     timecop (0.9.11)
     timeout (0.6.1)
@@ -905,6 +910,7 @@ DEPENDENCIES
   simplecov
   sitemap_generator
   spring
+  thruster
   timecop
   turbolinks
   twitter-typeahead-rails
