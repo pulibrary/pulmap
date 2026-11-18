@@ -12,7 +12,7 @@ export default defineConfig({
       // Enables the newest version of leaflet-geosearch work with our current javascript.
       {
         find: /^leaflet$/,
-        replacement: fileURLToPath(new URL('./app/javascript/shims/leaflet_global.js', import.meta.url)),
+        replacement: fileURLToPath(new URL('./app/javascript/shims/leaflet_global.cjs', import.meta.url)),
       },
     ],
   },
