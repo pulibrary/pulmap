@@ -16,6 +16,7 @@ RUN gem update --system --no-document && \
 # Install base packages
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y curl libjemalloc2 postgresql-client shared-mime-info sqlite3 && \
+    apt-get install --only-upgrade -y zlib1g && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Set production environment
@@ -23,7 +24,6 @@ ENV BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle" \
     BUNDLE_WITHOUT="development:test" \
     RAILS_ENV="production"
-
 
 # Throw-away build stages to reduce size of final image
 FROM base AS prebuild
@@ -75,41 +75,7 @@ FROM base
 
 # Install packages needed for deployment
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y nginx && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
-
-# configure nginx
-RUN gem install foreman && \
-    sed -i 's|pid /run|pid /rails/tmp/pids|' /etc/nginx/nginx.conf && \
-    sed -i 's/access_log\s.*;/access_log \/dev\/stdout;/' /etc/nginx/nginx.conf && \
-    sed -i 's/error_log\s.*;/error_log \/dev\/stderr info;/' /etc/nginx/nginx.conf
-
-COPY <<-"EOF" /etc/nginx/sites-available/default
-server {
-  listen 3000 default_server;
-  listen [::]:3000 default_server;
-  access_log /dev/stdout;
-
-  root /rails/public;
-
-  location /cable {
-    proxy_pass http://localhost:8082/cable;
-    proxy_http_version 1.1;
-    proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header Connection "Upgrade";
-    proxy_set_header Host $host;
-  }
-
-  location / {
-    try_files $uri @backend;
-  }
-
-  location @backend {
-    proxy_pass http://localhost:3001;
-    proxy_set_header Host $http_host;
-  }
-}
-EOF
 
 # Copy built artifacts: gems, application
 COPY --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
@@ -121,7 +87,6 @@ RUN groupadd --system --gid 1000 rails && \
     mkdir -p /rails/tmp/pids /rails/log && \
     mkdir -p /rails/public/sitemap/ && \
     chown 1000:1000 /rails/public/sitemap/ && \
-    chown 1000:1000 /var/lib/nginx /var/log/nginx/* && \
     chown -R 1000:1000 db log tmp
 USER 1000:1000
 
@@ -131,12 +96,6 @@ ENV PORT="3001"
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
-# Build a Procfile for production use
-COPY <<-"EOF" /rails/Procfile.prod
-nginx: /usr/sbin/nginx -g "daemon off;"
-rails: ./bin/rails server -p 3001
-EOF
-
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-CMD ["foreman", "start", "--procfile=Procfile.prod"]
+CMD ["bundle", "exec", "thrust", "./bin/rails", "server"]

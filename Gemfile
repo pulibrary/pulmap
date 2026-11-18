@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-source "https://rubygems.org", cooldown: 14
+source "https://rubygems.org", cooldown: 4
 
 gem "autoprefixer-rails"
 # Pin to prevent passenger error
@@ -39,6 +39,7 @@ gem "rsolr"
 gem "sassc-rails"
 gem "simple_form"
 gem "sitemap_generator"
+gem "thruster"
 gem "turbolinks"
 gem "twitter-typeahead-rails"
 gem "vite_rails"
