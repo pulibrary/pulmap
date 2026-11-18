@@ -134,8 +134,8 @@ Blacklight.onLoad(function () {
     }
 
     // Set tooltips on geocoder
-    $('.geosearch a.leaflet-bar-part-single').attr('data-toggle', 'tooltip')
-    $('.geosearch a.leaflet-bar-part-single').tooltip(options)
+    $('.leaflet-control-geosearch a.leaflet-bar-part-single').attr('data-toggle', 'tooltip')
+    $('.leaflet-control-geosearch a.leaflet-bar-part-single').tooltip(options)
   }
 
   function updatePage (url) {
