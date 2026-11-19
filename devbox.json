@@ -1,8 +1,8 @@
 {
   "packages": {
-    "ruby":             "3.4.8",
+    "ruby":             "4.0.9",
     "bundler":          "latest",
-    "nodejs":           "22.10.0",
+    "nodejs":          "latest",
     "yarn":             "1.22.22",
     "git":              "latest",
     "openssh":          "latest",
