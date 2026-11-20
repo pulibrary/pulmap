@@ -1,19 +1,19 @@
 {
   "packages": {
     "ruby":             "4.0.9",
-    "bundler":          "latest",
+    "bundler":          "2.7.2",
     "nodejs":          "latest",
     "yarn":             "1.22.22",
-    "git":              "latest",
+    "git":              "2.56.0",
     "openssh":          "latest",
-    "zsh":              "latest",
+    "zsh":              "5.9.2",
     "pkg-config":       "latest",
     "shared-mime-info": "latest",
     "postgresql":       { "version": "latest", "outputs": ["out", "lib", "dev"] },
-    "libyaml":          { "version": "latest", "outputs": ["out", "dev"] },
-    "zlib":             { "version": "latest", "outputs": ["out", "dev"] },
-    "libffi":           { "version": "latest", "outputs": ["out", "dev"] },
-    "openssl":          { "version": "latest", "outputs": ["out", "dev"] }
+    "libyaml":          { "version": "0.2.5", "outputs": ["out", "dev"] },
+    "zlib":             { "version": "1.3.2", "outputs": ["out", "dev"] },
+    "libffi":           { "version": "3.8.0", "outputs": ["out", "dev"] },
+    "openssl":          { "version": "3.6.4", "outputs": ["out", "dev"] }
   },
   "env": {
     "LANG": "C.UTF-8",
