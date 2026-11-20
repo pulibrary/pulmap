@@ -37,7 +37,7 @@ services:
       retries: 30
 
   solr:
-    image: solr:9.9
+    image: solr:10.1
     environment:
       SOLR_MODULES: analysis-extras
     ports:
