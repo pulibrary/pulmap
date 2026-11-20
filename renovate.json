@@ -6,10 +6,16 @@
     "customManagers:dockerfileVersions"
   ],
   "enabledManagers": [
+    "asdf",
     "bundler",
+    "circleci",
+    "devbox",
+    "docker-compose",
+    "dockerfile",
+    "github-actions",
     "nodenv",
     "npm",
-    "github-actions"
+    "custom.regex"
   ],
   "lockFileMaintenance": {
     "enabled": true,
