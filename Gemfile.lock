@@ -878,7 +878,6 @@ DEPENDENCIES
   factory_bot_rails
   faraday
   font-awesome-rails
-  geo_combine
   geoblacklight (= 4.7.0)
   health-monitor-rails
   honeybadger
