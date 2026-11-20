@@ -197,11 +197,11 @@ GEM
     ffi (1.17.4-x86_64-linux-musl)
     font-awesome-rails (4.7.0.9)
       railties (>= 3.2, < 9.0)
-    geo_combine (0.11.0)
+    geo_combine (0.12.0)
       activesupport
       faraday-net_http_persistent (~> 2.0)
       faraday-retry (~> 2.2)
-      git
+      git (~> 6.0)
       json-schema
       nokogiri
       rsolr
@@ -329,9 +329,9 @@ GEM
       mime-types-data (~> 3.2025, >= 3.2025.0507)
     mime-types-data (3.2026.1103)
     mini_mime (1.1.5)
-    minitest (6.0.6)
+    minitest (6.1.0)
       drb (~> 2.0)
-      prism (~> 1.5)
+      prism (>= 1.5, < 3)
     modernizr-rails (2.7.1)
     multi_json (1.21.2)
     mutex_m (0.3.0)
@@ -597,7 +597,7 @@ GEM
       prettyprint
     prettyprint (0.2.1)
     prism (1.9.0)
-    process_executer (4.1.1)
+    process_executer (4.1.2)
       track_open_instances (~> 0.1)
     pry (0.16.1)
       coderay (~> 1.1)
@@ -878,7 +878,6 @@ DEPENDENCIES
   factory_bot_rails
   faraday
   font-awesome-rails
-  geo_combine
   geoblacklight (= 4.7.0)
   health-monitor-rails
   honeybadger

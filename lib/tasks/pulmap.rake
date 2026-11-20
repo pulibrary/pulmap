@@ -23,34 +23,6 @@ namespace :servers do
 end
 
 namespace :pulmap do
-  namespace :geocombine do
-    # This task is copied from
-    # https://github.com/OpenGeoMetadata/GeoCombine/blob/f5f9e45599b3c388d2e5e5401fa91639b23a584e/lib/tasks/geo_combine.rake#L40-L58
-    # and modified to skip records in the aardvark metadata schema
-    # when we use aardvark it will need to be updated or maybe there will be a
-    # flag for the rake task provided by geocombine
-    desc "Index all JSON documents except Layers.json"
-    task :index do
-      ogm_path = Rails.root.join("tmp", "opengeometadata")
-      solr = Blacklight.default_index.connection
-      Find.find(ogm_path) do |path|
-        next if path.to_s.include?("aardvark")
-        next unless File.basename(path).include?(".json") && File.basename(path) != "layers.json"
-
-        doc = JSON.parse(File.read(path))
-        [ doc ].flatten.each do |record|
-          puts "Indexing #{record['layer_slug_s']}: #{path}" if $DEBUG
-          solr.update params: { commitWithin: 1000, overwrite: true },
-                      data: [ record ].to_json,
-                      headers: { "Content-Type" => "application/json" }
-        rescue RSolr::Error::Http => e
-          puts e
-        end
-      end
-      solr.commit
-    end
-  end
-
   namespace :solr do
     desc "Updates solr config files from github"
     task :update, :solr_dir do |_t, args|
@@ -73,21 +45,6 @@ namespace :pulmap do
     robots.insert_sitemap(Rails.configuration.robots.sitemap_url)
     robots.generate
     robots.write
-  end
-
-  namespace :geoblacklight_harvester do
-    desc "Harvest documents from a configured GeoBlacklight instance"
-    task :index, [ :site ] => [ :environment ] do |_t, args|
-      raise ArgumentError, "A site argument is required" unless args.site
-
-      # Set the solr url for GeoCombine
-      ENV["SOLR_URL"] = Blacklight.connection_config[:url]
-
-      GeoCombine::GeoBlacklightHarvester.new(args.site.to_sym).index
-
-      # Commit all added docs
-      Blacklight.default_index.connection.commit
-    end
   end
 
   desc "Delete a single record"
