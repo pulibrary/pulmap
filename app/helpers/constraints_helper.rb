@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 module ConstraintsHelper
+  # Make sure RenderConstraints loads first.
+  include Blacklight::RenderConstraintsHelperBehavior
+
   def render_constraints(localized_params = params, local_search_state = search_state)
     super(localized_params, local_search_state)
   end
