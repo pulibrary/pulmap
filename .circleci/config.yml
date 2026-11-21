@@ -61,7 +61,7 @@ jobs:
   test:
     working_directory: ~/pulmap
     docker:
-      - image: cimg/ruby:4.0.9-browsers
+      - image: cimg/ruby:4.0.10-browsers
         environment:
           RAILS_ENV: test
           PULMAP_DB_HOST: localhost
@@ -112,7 +112,7 @@ jobs:
   rubocop:
     working_directory: ~/pulmap
     docker:
-      - image: cimg/ruby:4.0.9-browsers
+      - image: cimg/ruby:4.0.10-browsers
         environment:
           RAILS_ENV: test
           PULMAP_DB_HOST: localhost
