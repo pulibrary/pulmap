@@ -38,7 +38,7 @@ FROM prebuild AS node
 
 # Install JavaScript dependencies
 # renovate: datasource=node-version depName=node
-ARG NODE_VERSION=24.19.0
+ARG NODE_VERSION=24.22.3
 # renovate: datasource=npm depName=yarn versioning=npm
 ARG YARN_VERSION=1.22.22
 ENV PATH=/usr/local/node/bin:$PATH
