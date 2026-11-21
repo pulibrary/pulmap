@@ -8,7 +8,7 @@
     "openssh":          "latest",
     "zsh":              "5.9.2",
     "pkg-config":       "latest",
-    "shared-mime-info": "latest",
+    "shared-mime-info": "2.5.1",
     "postgresql":       { "version": "latest", "outputs": ["out", "lib", "dev"] },
     "libyaml":          { "version": "0.2.5", "outputs": ["out", "dev"] },
     "zlib":             { "version": "1.3.2", "outputs": ["out", "dev"] },
