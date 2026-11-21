@@ -32,9 +32,9 @@
     eslint-visitor-keys "^3.4.3"
 
 "@eslint-community/regexpp@^4.6.1":
-  version "4.12.2"
-  resolved "https://registry.yarnpkg.com/@eslint-community/regexpp/-/regexpp-4.12.2.tgz#bccdf615bcf7b6e8db830ec0b8d21c9a25de597b"
-  integrity sha512-EriSTlt5OC9/7SXkRSCAhfSxxoSUgBm33OH+IkwbdpgoqsSsUg7y3uh+IICI/Qg4BBWr3U2i39RpmycbxMq4ew==
+  version "4.12.3"
+  resolved "https://registry.yarnpkg.com/@eslint-community/regexpp/-/regexpp-4.12.3.tgz#332c2660e7dd03ce7017ea3354123fb19b21cdd6"
+  integrity sha512-R76UKbvsqI68DJJVTVyqFKqU98CN4+B+acxNfEA2IFarSzP0SjtKf/3+fFiXzTyv5Fj3PxLkGHe2wnVWWMxobQ==
 
 "@eslint/eslintrc@^2.1.4":
   version "2.1.4"
@@ -227,9 +227,9 @@
     tslib "^2.4.0"
 
 "@types/google.maps@^3.53.1", "@types/google.maps@^3.65.3":
-  version "3.66.10"
-  resolved "https://registry.yarnpkg.com/@types/google.maps/-/google.maps-3.66.10.tgz#dcc3ef863788d993b596d46105b2daf548f2b1bd"
-  integrity sha512-LEB9EgUn6w1tbLfHtqXyiJQnugugTXvwimYCQAiMstMv69Hk3LymTugitvXArpWAIP6Uzh47iqZbz4rJ2ln0xQ==
+  version "3.67.0"
+  resolved "https://registry.yarnpkg.com/@types/google.maps/-/google.maps-3.67.0.tgz#6772ae3fe1ec660512406ffb072b6367b8a9abf5"
+  integrity sha512-LQ+kWi0BOWeEUpcMaag/cqOMI3DmOPCE34aST1jpeCw5mjoS0hI0P7eV1PUk+8PwpqXeO31Cy+HzBN3dSz103g==
 
 "@types/json5@^0.0.29":
   version "0.0.29"
@@ -246,13 +246,13 @@
   resolved "https://registry.yarnpkg.com/@ungap/structured-clone/-/structured-clone-1.4.0.tgz#5e2e1374c0a30b5a42e8b083523a225c6945f88a"
   integrity sha512-1mEZtMKPM09vDmQt5y7YvmN2+DFTP7Tg0EWXdic8/C6VRnpb33e4ghisCIE3WZjsE2N8mf+QV1Zqh7ZFYLWInQ==
 
-"@zarrita/storage@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@zarrita/storage/-/storage-0.2.0.tgz#b555ed467a59e49bf104eeab2e4c0beaea01e6f1"
-  integrity sha512-855ZXqtnds7spnT8vNvD+MXa3QExP1m2GqShe8yt7uZXHnQLgJHgkpVwFjE1B0KDDRO0ki09hmk6OboTaIfPsQ==
+"@zarrita/storage@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@zarrita/storage/-/storage-0.2.1.tgz#66b0fa02bb2a11b9e33420c1ac44b6583520d2bb"
+  integrity sha512-IdRYg9hFUXEvZ2KFtJktOMRtzCWIT7In0UU+LFSZejoeUBH/b89Ok9FodLM7Qx9cQGt1ASD9AK9LFogaNzLGhQ==
   dependencies:
     reference-spec-reader "^0.2.0"
-    unzipit "2.0.0"
+    unzipit "2.1.1"
 
 acorn-jsx@^5.3.2:
   version "5.3.2"
@@ -407,9 +407,9 @@ blacklight-range-limit@^9.0.0:
     chart.js "^ 4.4.1"
 
 brace-expansion@^1.1.7:
-  version "1.1.21"
-  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.21.tgz#edf4fab5c64d051aea5a8def49aba1c7522279f3"
-  integrity sha512-9zeA+KLZNNzglF2TPKRQEDyx6Yby7daAkuy8MiPzpXPsYDWi/DRM8jmwUDxokQjYqBpv5DgPiwD4h4ZZSy1Ujw==
+  version "1.1.22"
+  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.22.tgz#82f87655acd0bae5c8a717bb0a81573e43ab42c0"
+  integrity sha512-CKLDTuSsN0+r1ThM0WkzzBI7dnPI6xEGfa/JnVYIK9JNBA1N1NyPwXVHor//NKD/y3sDxp764sZdLhFK7pH8XQ==
   dependencies:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
@@ -1163,9 +1163,9 @@ gopd@^1.0.1, gopd@^1.2.0:
   integrity sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==
 
 graceful-fs@^4.1.15:
-  version "4.2.11"
-  resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.11.tgz#4183e4e8bf08bb6e05bbb2f7d2e0c8f712ca40e3"
-  integrity sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==
+  version "4.2.12"
+  resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.12.tgz#7f6162dee07bc600281cea1b038e5f7cf215a6c2"
+  integrity sha512-iuyGF2E4oafQfPsRrG2wtY2ILupMhvtdrhzrxB+0VcjsPpSPttpfYdjnGFGsTi5MaJFjI1jOKHPQ6UTbTj9TAw==
 
 graphemer@^1.4.0:
   version "1.4.0"
@@ -1529,9 +1529,9 @@ keyv@^4.5.3:
     json-buffer "3.0.1"
 
 leaflet-geosearch@^5.2.1:
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/leaflet-geosearch/-/leaflet-geosearch-5.2.1.tgz#1661fc5d8b68f1e92247b68bcd011bf027bff5b2"
-  integrity sha512-hGd8aVwt5dM3+i97FAgW+KpFbZRznd3F0x1TO/ZEJypHnxD6HkIMFEFtiHHG24ZYvAbEFKO/eif/3sufXZtdhg==
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/leaflet-geosearch/-/leaflet-geosearch-5.3.0.tgz#50b30f7b6e2e973c39b7b7cc6f9a1a4df6d21420"
+  integrity sha512-CtX+vkB+9VIvdFvSgoth10WsGAkGm9WO00v7sdRzoSoB/YmlDkGj1ScBHAxbW6szm7mBdgxEm7tno/DHtLTHNA==
   dependencies:
     "@types/google.maps" "^3.53.1"
   optionalDependencies:
@@ -1728,9 +1728,9 @@ object-assign@^4.1.1:
   integrity sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==
 
 object-inspect@^1.13.3, object-inspect@^1.13.4:
-  version "1.13.4"
-  resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.13.4.tgz#8375265e21bc20d0fa582c22e1b13485d6e00213"
-  integrity sha512-W67iLl4J2EXEGTbfeHCffrjDfitvLANg0UlX3wFUUSTx92KXRFegMHUVgSqE+wvhAbi4WqjGg9czysTV2Epbew==
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.14.0.tgz#8d373f7293f9d0ba656de41bdb7a55992255af46"
+  integrity sha512-IVgHNlp/jwQX271+Xzoq9LZNTWXxZK+cEOrGBOBxXNbn7fapnZ+Ts6TVMgNOuAezwG2wdtnMX97tTPK6VEnuOQ==
 
 object-keys@^1.1.1:
   version "1.1.1"
@@ -2487,10 +2487,10 @@ unbox-primitive@^1.1.0:
     has-symbols "^1.1.0"
     which-boxed-primitive "^1.1.1"
 
-unzipit@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/unzipit/-/unzipit-2.0.0.tgz#9461b6a9b067ed9b13f9eda1bc5b93bc448307fa"
-  integrity sha512-DVeVIWUZCAQPNzm5sB0hpsG1GygTTdBnzNtYYEpInkttx5evkyqRgZi6rTczoySqp8hO5jHVKzrH0f23X8FZLg==
+unzipit@2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/unzipit/-/unzipit-2.1.1.tgz#e69110036e3971036045f35d1bd7451db702de72"
+  integrity sha512-GNIM737c1VV8Z5VD2gSs3SERnqe7KS+dHAmqN9GzdXHB3k4NfXcgNv0+z0br7gJZdhJvv8+MCxBwLvRy7fOhyg==
 
 uri-js@^4.2.2:
   version "4.4.1"
@@ -2616,11 +2616,11 @@ yocto-queue@^0.1.0:
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 
 zarrita@^0.7.1:
-  version "0.7.5"
-  resolved "https://registry.yarnpkg.com/zarrita/-/zarrita-0.7.5.tgz#74a4d5d5047cd1e930bffaed9234b62437a3fe13"
-  integrity sha512-ZriOSEne+Wf2iuM0yjDZvUKpHNlug3dO7qJ6mAxXoOgsYV18DPOkAkwB9e0rf21bHcKcOffFuwoZwn5g6pvUeA==
+  version "0.7.6"
+  resolved "https://registry.yarnpkg.com/zarrita/-/zarrita-0.7.6.tgz#441ebcb80237d8492621adc2e271a8ac7d4d7661"
+  integrity sha512-PuPZ/3AClcDXWt5E6zrY3BZoj4PgV+SShRm0lWvsx3qQEsAOvSpVqlpHXv68H+JHpz8MghnGU+6ydf832F2ovw==
   dependencies:
-    "@zarrita/storage" "^0.2.0"
+    "@zarrita/storage" "^0.2.1"
     numcodecs "^0.3.2"
 
 zstddec@^0.2.0:
