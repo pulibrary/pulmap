@@ -801,67 +801,53 @@
         }
       }
     },
-    "shared-mime-info@latest": {
-      "last_modified": "2026-04-23T13:07:47Z",
-      "resolved": "github:NixOS/nixpkgs/01fbdeef22b76df85ea168fbfe1bfd9e63681b30#shared-mime-info",
+    "shared-mime-info@2.5.1": {
+      "last_modified": "2026-11-19T13:46:25Z",
+      "resolved": "github:NixOS/nixpkgs/19cfded70b91ca0981373973c5b1efffdd4d6647#shared-mime-info",
       "source": "devbox-search",
-      "version": "2.4",
+      "version": "2.5.1",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/wrxxg8r5s70mk9hw02ix0nwa74nxdca7-shared-mime-info-2.4",
+              "path": "/nix/store/67vxr81sr46k8l90as6n22fx50ryq2w1-shared-mime-info-2.5.1",
               "default": true
             },
             {
               "name": "dev",
-              "path": "/nix/store/mfbqc6ymz74jk74v11d1cwxpzmnamh1l-shared-mime-info-2.4-dev"
+              "path": "/nix/store/q7bdyv4c6ala08jvrc33ypwdr182ns1q-shared-mime-info-2.5.1-dev"
             }
           ],
-          "store_path": "/nix/store/wrxxg8r5s70mk9hw02ix0nwa74nxdca7-shared-mime-info-2.4"
+          "store_path": "/nix/store/67vxr81sr46k8l90as6n22fx50ryq2w1-shared-mime-info-2.5.1"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/bpq6w8rsxsq8l9fh6rb54mvxc059zmrk-shared-mime-info-2.4",
+              "path": "/nix/store/pcih4yawpfmfcqhpg47iynla6q8idz97-shared-mime-info-2.5.1",
               "default": true
             },
             {
               "name": "dev",
-              "path": "/nix/store/99z2mkqxpw1w7hm0vvqhplmzmz7ky2hs-shared-mime-info-2.4-dev"
+              "path": "/nix/store/bvcw2j1vbr8mg5n62ch9m9pvx4ibcdwc-shared-mime-info-2.5.1-dev"
             }
           ],
-          "store_path": "/nix/store/bpq6w8rsxsq8l9fh6rb54mvxc059zmrk-shared-mime-info-2.4"
-        },
-        "x86_64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/gqrkxp3xvsy2p4viib6awk0m0aphssb1-shared-mime-info-2.4",
-              "default": true
-            },
-            {
-              "name": "dev",
-              "path": "/nix/store/p6w1gij9khiqgnhpzp355rzgcvkgzwbq-shared-mime-info-2.4-dev"
-            }
-          ],
-          "store_path": "/nix/store/gqrkxp3xvsy2p4viib6awk0m0aphssb1-shared-mime-info-2.4"
+          "store_path": "/nix/store/pcih4yawpfmfcqhpg47iynla6q8idz97-shared-mime-info-2.5.1"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/by7j9pj785n9y8zv2xp7zv0w6ldc5cvb-shared-mime-info-2.4",
+              "path": "/nix/store/z3a2jiqszbcix6rqnknzvaxvp0ihh6fc-shared-mime-info-2.5.1",
               "default": true
             },
             {
               "name": "dev",
-              "path": "/nix/store/nif4axyzicjvwaknspavmf72sbifi71v-shared-mime-info-2.4-dev"
+              "path": "/nix/store/9qgb1cnz006jx9dy8x6ird7qyblk3cfq-shared-mime-info-2.5.1-dev"
             }
           ],
-          "store_path": "/nix/store/by7j9pj785n9y8zv2xp7zv0w6ldc5cvb-shared-mime-info-2.4"
+          "store_path": "/nix/store/z3a2jiqszbcix6rqnknzvaxvp0ihh6fc-shared-mime-info-2.5.1"
         }
       }
     },
