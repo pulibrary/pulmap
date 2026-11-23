@@ -3,7 +3,7 @@
     "ruby":             "4.0.9",
     "bundler":          "2.7.2",
     "nodejs":          "latest",
-    "yarn":             "1.22.22",
+    "pnpm":             "latest",
     "git":              "2.56.0",
     "openssh":          "latest",
     "zsh":              "5.9.2",
@@ -31,7 +31,7 @@
       "setup": [
         "export FREEDESKTOP_MIME_TYPES_PATH=\"$(dirname \"$(dirname \"$(command -v update-mime-database)\")\")/share/mime/packages/freedesktop.org.xml\"",
         "bundle install",
-        "yarn install"
+        "pnpm install"
       ],
       "deploy": [
         "bundle exec cap production deploy"

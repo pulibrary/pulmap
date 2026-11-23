@@ -1,0 +1,7 @@
+# pnpm settings: https://pnpm.io/settings
+
+# 4 day cool down (in minutes)
+minimumReleaseAge: 5760
+
+strictDepBuilds: true
+allowBuilds: {}

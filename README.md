@@ -12,7 +12,7 @@ GeoBlacklight for Princeton University Library
 git clone https://github.com/pulibrary/pulmap.git
 cd pulmap
 bundle install
-yarn install
+pnpm install
 ```
 
 ### Setup server

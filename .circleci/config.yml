@@ -32,11 +32,13 @@ jobs:
       - restore_cache:
           keys:
             - pulmap-{{ checksum "Gemfile.lock" }}
-            - pulmap-yarn-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          keys:
+            - pulmap-pnpm-{{ checksum "pnpm-lock.yaml" }}
       # Install Bundler
       - run: gem install bundler -v '2.6.9'
       - node/install:
-          install-yarn: true
+          install-pnpm: true
           node-version: '24.22.3'
       # Bundle install dependencies
       - run: bundle config set path 'vendor/bundle'
@@ -46,13 +48,13 @@ jobs:
           paths:
             - ./vendor/bundle
       - run:
-          name: Install NPM Dependencies via Yarn
-          command: yarn install --frozen-lockfile --ignore-scripts
+          name: Install NPM Dependencies via pnpm
+          command: pnpm install --frozen-lockfile --ignore-scripts
       - save_cache:
-          name: Save Yarn Package Cache
-          key: pulmap-yarn-{{ checksum "yarn.lock" }}
+          name: Save pnpm Package Store
+          key: pulmap-pnpm-{{ checksum "pnpm-lock.yaml" }}
           paths:
-            - ~/.cache/yarn
+            - ~/.local/share/pnpm/store
       # Disable spring while precompiling
       - run: DISABLE_SPRING=1 NODE_ENV=test bundle exec rake vite:build
       - persist_to_workspace:
@@ -90,7 +92,7 @@ jobs:
       # Install Bundler
       - run: gem install bundler -v '2.6.9'
       - node/install:
-          install-yarn: true
+          install-pnpm: true
           node-version: '24.22.3'
       # Bundle install dependencies
       - run: bundle config set path 'vendor/bundle'
@@ -105,7 +107,7 @@ jobs:
       - run: bundle exec rake db:migrate
       - run: bundle exec rake geoblacklight:solr:seed
       - run: bundle exec rspec spec/
-      - run: npm run lint
+      - run: pnpm run lint
       - store_artifacts:
           path: coverage
           destination: coverage
@@ -129,7 +131,6 @@ jobs:
       - attach_workspace:
           at: '~/pulmap'
       - node/install:
-          install-yarn: true
           node-version: '24.22.3'
       # Install Bundler
       - run: gem install bundler -v '2.6.9'
