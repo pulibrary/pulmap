@@ -561,7 +561,7 @@
         }
       }
     },
-    "pnpm@latest": {
+    "pnpm@12.9.0": {
       "last_modified": "2026-11-22T18:15:35Z",
       "resolved": "github:NixOS/nixpkgs/619c39f6eac5d1ed6b8f073a9414baf7034b2356#pnpm",
       "source": "devbox-search",
