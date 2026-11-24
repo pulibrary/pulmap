@@ -38,7 +38,7 @@ FROM prebuild AS node
 
 # Install JavaScript dependencies
 # renovate: datasource=node-version depName=node
-ARG NODE_VERSION=24.22.3
+ARG NODE_VERSION=26.13.1
 ENV PATH=/usr/local/node/bin:$PATH
 RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz -C /tmp/ && \
     /tmp/node-build-master/bin/node-build "${NODE_VERSION}" /usr/local/node && \
