@@ -39,7 +39,7 @@ jobs:
       - run: gem install bundler -v '2.6.9'
       - node/install:
           install-pnpm: true
-          node-version: '24.22.3'
+          node-version: '26.13.1'
       # Bundle install dependencies
       - run: bundle config set path 'vendor/bundle'
       - run: bundle install
@@ -93,7 +93,7 @@ jobs:
       - run: gem install bundler -v '2.6.9'
       - node/install:
           install-pnpm: true
-          node-version: '24.22.3'
+          node-version: '26.13.1'
       # Bundle install dependencies
       - run: bundle config set path 'vendor/bundle'
       - run: bundle install
@@ -131,7 +131,7 @@ jobs:
       - attach_workspace:
           at: '~/pulmap'
       - node/install:
-          node-version: '24.22.3'
+          node-version: '26.13.1'
       # Install Bundler
       - run: gem install bundler -v '2.6.9'
       # Bundle install dependencies
