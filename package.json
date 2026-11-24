@@ -13,5 +13,6 @@
   },
   "scripts": {
     "lint": "standard app/javascript/"
-  }
+  },
+  "packageManager": "pnpm@12.22.0"
 }
