@@ -50,7 +50,7 @@ job "pulmap-production" {
     task "webserver" {
       driver = "docker"
       config {
-        image = "ghcr.io/pulibrary/pulmap:${ var.branch_or_sha }"
+        image = "ghcr.io/pulibrary/pulmap:sha-${ var.branch_or_sha }"
         ports = ["http"]
         force_pull = true
       }

@@ -23,7 +23,7 @@ job "pulmap-staging-periodic" {
     task "delete-old-records" {
       driver = "docker"
       config {
-        image = "ghcr.io/pulibrary/pulmap:${ var.branch_or_sha }"
+        image = "ghcr.io/pulibrary/pulmap:sha-${ var.branch_or_sha }"
         command = "./bin/rake"
         args = ["blacklight:delete_old_searches", "devise_guests:delete_old_guest_users"]
         force_pull = true
