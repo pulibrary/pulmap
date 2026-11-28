@@ -1,9 +1,9 @@
 {
   "packages": {
-    "ruby":             "4.0.9",
+    "ruby":             "4.0.10",
     "bundler":          "2.7.2",
     "nodejs":          "latest",
-    "pnpm":             "latest",
+    "pnpm":             "9.15.3",
     "git":              "2.56.0",
     "openssh":          "latest",
     "zsh":              "5.9.2",
